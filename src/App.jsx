@@ -1,6 +1,6 @@
-import "./App.css"
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import ApproachSection from "./components/ApproachSection"
 import CategoryFilters from "./components/CategoryFilters"
 import QuickLinks from "./components/QuickLinks"
 import FeaturedInsights from "./components/FeaturedInsights"
@@ -90,12 +90,15 @@ function App() {
           <ExploreTopics />
         </div>
 
-        {/* 14. Common Questions (FAQ) */}
+        {/* 14. Experience a different approach section */}
+        <ApproachSection />
+
+        {/* 15. Common Questions (FAQ) */}
         <div className="bg-surface">
           <FAQ />
         </div>
 
-        {/* 15. Strategic Network CTA (subscribe) */}
+        {/* 16. Strategic Network CTA (subscribe) */}
         <StrategicNetwork />
       </main>
 

@@ -22,6 +22,25 @@
   border-radius: 9999px !important;
 }
 
+.blog-page {
+  font-family: "Ro Sans", Arial, Helvetica, sans-serif !important;
+}
+
+/* Keep section spacing tighter across landing page */
+.landing-page main > div > section:not(.custom-approach-section),
+.landing-page main > section:not(.custom-approach-section) {
+  padding-top: 4.5rem !important;
+  padding-bottom: 4.5rem !important;
+}
+
+@media (max-width: 768px) {
+  .landing-page main > div > section:not(.custom-approach-section),
+  .landing-page main > section:not(.custom-approach-section) {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
 .blog-page h1,
 .blog-page h2,
 .blog-page h3,

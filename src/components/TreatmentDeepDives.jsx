@@ -18,19 +18,35 @@ const treatments = [
 
 function TreatmentDeepDives() {
   return (
-    <section className="w-full py-24 bg-navy-deep text-white my-20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="mb-16">
-          <h2 className="text-4xl font-extrabold mb-4 text-white">Treatment Deep-dives</h2>
-          <p className="text-white/90 max-w-2xl text-lg">
+    <section className="relative overflow-hidden bg-[#171d2b] px-5 py-[100px] md:py-[120px] text-white">
+      <svg
+        className="absolute top-0 left-0 w-full h-12"
+        fill="none"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M0 0H1440V24C1200 56 960 56 720 24C480 -8 240 -8 0 24V0Z" fill="#ffffff" />
+      </svg>
+
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute -top-24 -left-20 h-64 w-64 rounded-full bg-[#2a3244]/45 blur-3xl" />
+        <div className="absolute right-[-80px] top-[22%] h-72 w-72 rounded-full bg-[#25354d]/50 blur-3xl" />
+        <div className="absolute bottom-[-110px] left-[28%] h-80 w-80 rounded-full bg-[#1f2940]/55 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-[1120px] mx-auto">
+        <div className="mb-16 md:mb-20">
+          <h2 className="text-[36px] md:text-[48px] leading-[1.2] font-normal mb-4 text-white">Treatment Deep-dives</h2>
+          <p className="text-[#b0b5c0] max-w-3xl text-[18px] leading-[1.65]">
             Detailed clinical pathways and prescribing information for the most critical therapies in modern rheumatology.
           </p>
         </div>
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {treatments.map((item) => (
             <div
               key={item.title}
-              className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:bg-white/10 transition-colors cursor-pointer group"
+              className="bg-[#1f2635]/90 border border-white/10 p-8 rounded-3xl hover:bg-[#252f42] transition-colors cursor-pointer group"
             >
               <div className="bg-primary text-navy-deep w-12 h-12 rounded-xl flex items-center justify-center mb-6">
                 <span className="material-symbols-outlined">{item.icon}</span>

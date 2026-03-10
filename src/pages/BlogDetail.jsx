@@ -30,7 +30,7 @@ function BlogDetail() {
   const reviewerImage = article.reviewedBy.image
 
   return (
-    <div className="blog-page bg-[#f5f5f5] text-[#1a1a1a]" style={{ fontFamily: '"Ro Sans", var(--font-base)' }}>
+    <div className="blog-page bg-[#f5f5f5] text-[#1a1a1a]">
       <Header />
 
       <section className="bg-[#f3f5f6] border-b border-[#e0e0e0]">
@@ -105,7 +105,11 @@ function BlogDetail() {
             <div className="p-0">
               <div className="flex items-center justify-between mb-5">
                 <h3 className="text-xl leading-none tracking-tight font-semibold">Here's what we'll cover</h3>
-                <span className="text-[#4a4a4a]">^</span>
+                <span className="inline-flex items-center justify-center text-[#4a4a4a]" aria-hidden="true">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 14l6-6 6 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </span>
               </div>
               <div className="space-y-4">
                 {article.tableOfContents.map((item) => (
