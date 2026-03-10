@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@import url("https://use.typekit.net/cry8bnw.css");
+
+@font-face {
+  font-family: "Ro Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("https://ro.co/weight-loss/wegovy-results/fonts/Ro_Sans-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ro Sans";
+  font-weight: 600;
+  font-style: normal;
+  src: url("https://ro.co/weight-loss/wegovy-results/fonts/Ro_Sans-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Ro Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("https://ro.co/weight-loss/wegovy-results/fonts/Ro_Sans-Bold.woff") format("woff");
+}
+
+@theme {
+  --color-primary: #92d9d5;
+  --color-primary-hover: #7ecfc9;
+  --color-accent: #feccbc;
+  --color-accent-strong: #ffb59d;
+  --color-sky: #8ebfff;
+  --color-sky-soft: #c7dfff;
+  --color-sky-faint: #e3efff;
+  --color-ghost: #f0f4fb;
+  --color-surface: #ffffff;
+  --color-background-light: #f8fafd;
+  --color-background-dark: #182439;
+  --color-navy-deep: #182439;
+  --color-navy-muted: #3b5b80;
+  --color-gray: #a0a4ac;
+  --color-border: #dadfe8;
+  --font-base: "usual", Arial, Helvetica, sans-serif;
+  --font-display: "loretta", serif;
+}
+
+:root {
+  color: var(--color-navy-deep);
+  background: var(--color-background-light);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  background: var(--color-background-light);
+  color: var(--color-navy-deep);
+  letter-spacing: 0.015em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: inherit;
+}
+
+.muted-text {
+  color: var(--color-navy-muted);
+}
