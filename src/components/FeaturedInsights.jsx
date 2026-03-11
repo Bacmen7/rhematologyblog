@@ -33,7 +33,7 @@ function FeaturedInsights() {
             </p>
           </div>
           {/* Filter Pills */}
-          <div className="flex gap-2 flex-nowrap overflow-x-auto pl-1 md:pl-0">
+          <div className="flex gap-2 flex-nowrap overflow-x-auto pl-1 md:pl-0 hide-scrollbar">
             {filters.map((filter, i) => (
               <button
                 key={filter}
@@ -53,7 +53,7 @@ function FeaturedInsights() {
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 -mx-4 px-4"
+            className="flex gap-5 overflow-x-auto snap-x snap-mandatory pb-6 px-1"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
           >
             {insightArticles.slice(0, 4).map((article) => (

@@ -70,7 +70,7 @@ function Specialists() {
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6"
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-1"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
           >
             {specialists.map((doc) => (
