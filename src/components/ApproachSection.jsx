@@ -12,9 +12,9 @@ function ApproachSection() {
       </svg>
 
       <div className="relative z-10 mx-auto max-w-[1120px]">
-        <h2 className="mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2] font-normal">
+        <h2 className="font-display mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2]">
           Experience a{" "}
-          <span className="relative inline-block">
+          <span className="relative inline-block italic font-normal">
             different approach
             <svg
               className="absolute -bottom-2 left-0 h-3 w-full"

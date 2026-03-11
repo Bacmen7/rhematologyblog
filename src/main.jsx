@@ -6,6 +6,9 @@ import "./index.css"
 import "./App.css"
 import App from "./App.jsx"
 import BlogDetail from "./pages/BlogDetail.jsx"
+import OurApproach from "./pages/OurApproach.jsx"
+import PricingInsurance from "./pages/PricingInsurance.jsx"
+import AboutUs from "./pages/AboutUs.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -21,6 +24,9 @@ createRoot(document.getElementById('root')).render(
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="/our-approach" element={<OurApproach />} />
+        <Route path="/pricing" element={<PricingInsurance />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/article/:id" element={<BlogDetail />} />
       </Routes>
     </BrowserRouter>

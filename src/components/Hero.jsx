@@ -5,7 +5,7 @@ function Hero() {
       <section
         className="custom-approach-section relative overflow-hidden hidden lg:block"
         style={{
-          background: "radial-gradient(circle at top right, #c7dfff 0%, transparent 40%), radial-gradient(circle at bottom left, #b1efec 0%, transparent 40%)",
+          background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b1efec 0%, transparent 45%), #f8fafd",
         }}
       >
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 gap-10 items-stretch min-h-[76vh]">
@@ -13,8 +13,8 @@ function Hero() {
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-teal-soft text-xs font-bold uppercase tracking-wider w-fit">
               Latest Research Update
             </div>
-            <h1 className="text-7xl font-extrabold text-navy-deep leading-[1.1] tracking-tight">
-              Advanced Care for Rheumatic Health
+            <h1 className="font-display text-7xl leading-[0.96] tracking-tight text-navy-deep">
+              Advanced Care for <span className="italic font-normal">Rheumatic Health</span>
             </h1>
             <p className="text-xl text-teal-soft/80 leading-relaxed max-w-xl">
               Empowering clinicians and patients with research-driven insights, clinical evidence, and personalized care protocols for complex autoimmune conditions.
@@ -40,11 +40,11 @@ function Hero() {
         <div
           className="flex flex-col items-center text-center px-6 pt-14 pb-10"
           style={{
-            background: "radial-gradient(circle at top right, #c7dfff 0%, transparent 40%), radial-gradient(circle at bottom left, #b1efec 0%, transparent 40%)",
+            background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b1efec 0%, transparent 45%), #f8fafd",
           }}
         >
-          <h1 className="text-[2.4rem] font-display font-extrabold text-navy-deep leading-[1.12] tracking-tight mb-5">
-            Advanced Care for Rheumatic Health
+          <h1 className="text-[2.8rem] font-display text-navy-deep leading-[0.96] tracking-tight mb-5">
+            Advanced Care for <span className="italic font-normal">Rheumatic Health</span>
           </h1>
           <p className="text-base text-navy-muted leading-relaxed mb-8 max-w-sm">
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.

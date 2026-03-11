@@ -8,7 +8,7 @@ const topics = [
 function ExploreTopics() {
   return (
     <section className="py-20 max-w-7xl mx-auto px-6">
-      <h2 className="text-3xl font-semibold text-gray-900 mb-8">Explore more topics</h2>
+      <h2 className="font-display text-3xl text-navy-deep leading-[1.05] tracking-tight mb-8">Explore more <span className="italic font-normal">topics</span></h2>
       <div className="flex gap-4 overflow-x-auto hide-scrollbar pb-8">
         {topics.map((topic) => (
           <div

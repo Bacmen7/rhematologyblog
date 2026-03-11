@@ -21,7 +21,7 @@ function ResearchUpdates() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl font-bold">Research Updates</h2>
+          <h2 className="font-display text-3xl leading-[1.05] tracking-tight">Research <span className="italic font-normal">Updates</span></h2>
           <div className="flex-1 h-px bg-slate-200"></div>
         </div>
         <div className="space-y-6">

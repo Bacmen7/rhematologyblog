@@ -160,17 +160,29 @@ function Header() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
-            {desktopNav.map((item) => (
-              <a
-                key={item}
-                className="relative px-3.5 py-2 text-[13.5px] font-bold text-navy-deep hover:text-teal-soft rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
-                href="javascript:void(0)"
-              >
-                {item}
-              </a>
-            ))}
+            {desktopNav.map((item) => {
+              const routes = { "Our Approach": "/our-approach", "Pricing & Insurance": "/pricing", "About Us": "/about" }
+              const to = routes[item]
+              return to ? (
+                <Link
+                  key={item}
+                  to={to}
+                  className="relative px-3.5 py-2 text-[15px] font-bold text-navy-deep hover:text-teal-soft rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
+                >
+                  {item}
+                </Link>
+              ) : (
+                <a
+                  key={item}
+                  className="relative px-3.5 py-2 text-[15px] font-bold text-navy-deep hover:text-teal-soft rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
+                  href="javascript:void(0)"
+                >
+                  {item}
+                </a>
+              )
+            })}
             <button
-              className={`relative inline-flex items-center gap-1 px-3.5 py-2 text-[13.5px] font-bold rounded-lg transition-all duration-200 ${
+              className={`relative inline-flex items-center gap-1 px-3.5 py-2 text-[15px] font-bold rounded-lg transition-all duration-200 ${
                 partnershipOpen
                   ? "text-teal-soft bg-navy-deep/[0.06]"
                   : "text-navy-deep hover:text-teal-soft hover:bg-navy-deep/[0.04]"
@@ -192,7 +204,7 @@ function Header() {
             </button>
             <button
               aria-expanded={learnOpen}
-              className={`relative inline-flex items-center gap-1 px-3.5 py-2 text-[13.5px] font-bold rounded-lg transition-all duration-200 ${
+              className={`relative inline-flex items-center gap-1 px-3.5 py-2 text-[15px] font-bold rounded-lg transition-all duration-200 ${
                 learnOpen
                   ? "text-teal-soft bg-navy-deep/[0.06]"
                   : "text-navy-deep hover:text-teal-soft hover:bg-navy-deep/[0.04]"
@@ -344,6 +356,17 @@ function Header() {
                   {item}
                   <span className="material-symbols-outlined text-[18px] text-navy-muted/50">chevron_right</span>
                 </button>
+              ) : item === "Our Approach" || item === "Pricing & Insurance" || item === "About Us" ? (
+                <Link
+                  key={item}
+                  to={{ "Our Approach": "/our-approach", "Pricing & Insurance": "/pricing", "About Us": "/about" }[item]}
+                  className={baseClass}
+                  style={linkStyle}
+                  onClick={closeMobileMenu}
+                >
+                  {item}
+                  <span className="material-symbols-outlined text-[18px] text-navy-muted/50">chevron_right</span>
+                </Link>
               ) : (
                 <a
                   key={item}
