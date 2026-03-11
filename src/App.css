@@ -15,7 +15,7 @@
   transition: transform 0.3s ease;
 }
 
-.landing-page button,
+.landing-page button:not(.faq-btn),
 .landing-page input[type="button"],
 .landing-page input[type="submit"],
 .landing-page input[type="reset"] {

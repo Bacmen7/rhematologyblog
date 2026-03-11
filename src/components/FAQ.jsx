@@ -28,9 +28,9 @@ function FAQ() {
         <h2 className="text-3xl font-bold text-center mb-12">Common Questions</h2>
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <div key={index} className="border border-slate-100 rounded-xl overflow-hidden">
+            <div key={index} className="border border-slate-100 overflow-hidden">
               <button
-                className={`w-full px-6 py-5 text-left font-bold flex justify-between items-center ${openIndex === index ? "bg-slate-50" : ""}`}
+                className={`faq-btn w-full px-6 py-5 text-left font-bold flex justify-between items-center ${openIndex === index ? "bg-slate-50" : ""}`}
                 onClick={() => setOpenIndex(openIndex === index ? -1 : index)}
               >
                 {faq.question}
