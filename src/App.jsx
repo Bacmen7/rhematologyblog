@@ -85,7 +85,7 @@ function App() {
           <FAQ />
         </div>
 
-        <WellnessSeminars />
+        {/* <WellnessSeminars /> */}
 
         {/* <StrategicNetwork /> */}
       </main>
