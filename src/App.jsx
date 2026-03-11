@@ -1,21 +1,21 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import HealthGuideHero from "./components/HealthGuideHero"
 import ApproachSection from "./components/ApproachSection"
 import CategoryFilters from "./components/CategoryFilters"
 import QuickLinks from "./components/QuickLinks"
 import FeaturedInsights from "./components/FeaturedInsights"
 import RAArticles from "./components/RAArticles"
 import PsAArticles from "./components/PsAArticles"
-import TreatmentDeepDives from "./components/TreatmentDeepDives"
 import Specialists from "./components/Specialists"
-import PatientStories from "./components/PatientStories"
-import SymptomChecker from "./components/SymptomChecker"
+
 import BriefingHero from "./components/BriefingHero"
 import FocusJAK from "./components/FocusJAK"
 import FocusDiagnostic from "./components/FocusDiagnostic"
 import ResearchUpdates from "./components/ResearchUpdates"
 import ExploreTopics from "./components/ExploreTopics"
 import FAQ from "./components/FAQ"
+import WellnessSeminars from "./components/WellnessSeminars"
 import StrategicNetwork from "./components/StrategicNetwork"
 import BriefingFooter from "./components/BriefingFooter"
 import PrivacyBanner from "./components/PrivacyBanner"
@@ -25,87 +25,73 @@ function App() {
     <div className="landing-page bg-background-light text-navy-deep antialiased">
       <Header />
       <main>
-        {/* 1. Hero */}
-        <div className="bg-background-light">
-          <Hero />
-        </div>
+        {/* ═══════════════════════════════════════════════
+            ZONE 1 — INTRO & DISCOVERY
+        ═══════════════════════════════════════════════ */}
+        <Hero />
 
-        {/* 2. Category Filters */}
-        <div className="bg-surface">
+        {/* <div className="bg-white">
           <CategoryFilters />
-        </div>
+        </div> */}
 
-        {/* 3. Quick Links (RA, PsA, Biologics) */}
-        <div className="bg-surface">
-          <QuickLinks />
-        </div>
-
-        {/* 4. Featured Insights (3-column articles grid) */}
-        <div className="bg-surface">
+        <div className="bg-white">
           <FeaturedInsights />
         </div>
 
-        {/* 5. RA Articles (horizontal scroll) */}
-        <div className="bg-[#f0f4fb]">
+        {/* ═══════════════════════════════════════════════
+            ZONE 2 — HEALTH GUIDE & CONDITIONS
+        ═══════════════════════════════════════════════ */}
+        <HealthGuideHero />
+        <QuickLinks />
+
+        <div className="bg-ghost">
           <RAArticles />
         </div>
 
-        {/* 6. PsA Articles (horizontal scroll) */}
-        <div className="bg-surface">
+        <div className="bg-white">
           <PsAArticles />
         </div>
 
-        {/* 7. Treatment Deep-dives (dark section - JAK, NSAID, Biosimilar) */}
-        <TreatmentDeepDives />
+        {/* ═══════════════════════════════════════════════
+            ZONE 3 — CLINICAL EXPERTISE & SPECIALISTS
+        ═══════════════════════════════════════════════ */}
+        <ApproachSection />
 
-        {/* 8. World-Class Specialists */}
-        <div className="bg-background-light">
+        <div className="bg-white">
           <Specialists />
         </div>
 
-        {/* 9. Patient Success Stories */}
-        <div className="bg-surface">
-          <PatientStories />
-        </div>
-
-        {/* 10. Symptom Checker CTA */}
-        <div className="bg-background-light">
-          <SymptomChecker />
-        </div>
-
-        {/* 11. Executive Briefing - Biologic Innovation */}
-        <div className="bg-surface">
+        {/* ═══════════════════════════════════════════════
+            ZONE 4 — EXECUTIVE BRIEFING & RESEARCH
+        ═══════════════════════════════════════════════ */}
+        <div className="bg-ghost">
           <BriefingHero />
           <FocusJAK />
           <FocusDiagnostic />
         </div>
 
-        {/* 12. Research Updates */}
-        <div className="bg-ghost">
+        <div className="bg-white">
           <ResearchUpdates />
         </div>
 
-        {/* 13. Explore More Topics */}
-        <div className="bg-surface">
+        {/* ═══════════════════════════════════════════════
+            ZONE 5 — ENGAGE & CONVERT
+        ═══════════════════════════════════════════════ */}
+        <div className="bg-white">
           <ExploreTopics />
         </div>
 
-        {/* 14. Experience a different approach section */}
-        <ApproachSection />
-
-        {/* 15. Common Questions (FAQ) */}
-        <div className="bg-surface">
+        <div className="bg-ghost">
           <FAQ />
         </div>
 
-        {/* 16. Strategic Network CTA (subscribe) */}
-        <StrategicNetwork />
+        <WellnessSeminars />
+
+        {/* <StrategicNetwork /> */}
       </main>
 
-      {/* Footer */}
       <BriefingFooter />
-
-      <PrivacyBanner />
+      {/* <PrivacyBanner /> */}
     </div>
   )
 }

@@ -1,6 +1,6 @@
 function ApproachSection() {
   return (
-    <section className="custom-approach-section relative overflow-hidden bg-[#171d2b] px-5 py-[100px] md:py-[120px] text-white">
+    <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 py-[100px] md:py-[120px] text-white">
       <svg
         className="absolute top-0 left-0 w-full h-12"
         fill="none"

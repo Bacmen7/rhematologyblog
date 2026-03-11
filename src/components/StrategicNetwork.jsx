@@ -3,7 +3,7 @@ function StrategicNetwork() {
     <section className="bg-navy-deep text-white py-28">
       <div className="max-w-7xl mx-auto px-6 flex flex-col items-center text-center">
         <span className="text-xs uppercase tracking-[0.5em] font-bold text-white mb-8">The Strategic Network</span>
-        <h2 className="font-serif text-5xl lg:text-6xl mb-12 max-w-3xl leading-tight text-white">
+        <h2 className="font-display text-5xl lg:text-6xl mb-12 max-w-3xl leading-tight text-white">
           Join the leadership circle shaping future clinical pathways.
         </h2>
         <form className="flex flex-col sm:flex-row gap-4 w-full max-w-xl" onSubmit={(e) => e.preventDefault()}>

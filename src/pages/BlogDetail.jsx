@@ -9,7 +9,7 @@ function BlogDetail() {
 
   if (!article) {
     return (
-      <div className="bg-background-light text-navy-deep min-h-screen">
+      <div className="bg-background-light text-navy-deep min-h-screen" style={{ fontFamily: "'LINESeedSans', system-ui, sans-serif" }}>
         <Header />
         <section className="max-w-5xl mx-auto px-6 py-32 text-center">
           <h1 className="text-5xl font-semibold mb-4">Article not found</h1>
@@ -30,17 +30,18 @@ function BlogDetail() {
   const reviewerImage = article.reviewedBy.image
 
   return (
-    <div className="blog-page bg-[#f5f5f5] text-[#1a1a1a]">
+    <>
       <Header />
+      <div className="blog-page bg-[#f5f5f5] text-[#1a1a1a] min-h-screen">
 
       <section className="bg-[#f3f5f6] border-b border-[#e0e0e0]">
         <div className="max-w-[1180px] mx-auto px-6 py-14">
           <nav className="flex items-center flex-wrap gap-2 text-[13px] text-[#5f5f5f] mb-10">
-            <Link to="/" className="hover:text-[#1a1a1a] transition-colors">Ro</Link>
+            <Link to="/" className="hover:text-[#1a1a1a] transition-colors">RHEUMA.</Link>
             <span>&gt;</span>
-            <span>Weight loss</span>
+            <span>{article.category}</span>
             <span>&gt;</span>
-            <span>Wegovy</span>
+            <span className="text-[#1a1a1a]">{article.title.length > 40 ? article.title.slice(0, 40) + "..." : article.title}</span>
           </nav>
 
           <div className="grid lg:grid-cols-[minmax(0,1fr)_450px] xl:grid-cols-[minmax(0,1fr)_480px] gap-10 items-end">
@@ -63,14 +64,14 @@ function BlogDetail() {
 
               <Link
                 to="/"
-                className="inline-flex items-center justify-center mt-8 px-10 py-3 rounded-full bg-[#1a1a1a] text-white text-[14px] font-semibold hover:bg-[#2a2a2a] transition-colors"
+                className="inline-flex items-center justify-center mt-8 px-10 py-3 rounded-full bg-navy-deep text-white text-[14px] font-semibold hover:bg-navy-deep/90 transition-colors"
               >
-                Check my options
+                Explore more articles
               </Link>
             </div>
 
             <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 shadow-sm">
-              <div className="grid grid-cols-[115px_1fr] min-h-[150px]">
+              <div className="grid grid-cols-[90px_1fr] md:grid-cols-[115px_1fr]">
                 <div className="h-full relative overflow-hidden bg-gradient-to-b from-slate-300 to-slate-500">
                   {reviewerImage && (
                     <img
@@ -84,13 +85,13 @@ function BlogDetail() {
                   )}
                 </div>
 
-                <div className="p-3.5">
-                  <p className="text-[10px] font-semibold text-[#0d7744] mb-1">Reviewed By</p>
-                  <h3 className="text-[1.3rem] md:text-[1.45rem] leading-tight tracking-tight font-semibold mb-2 text-[#1a1a1a]">
+                <div className="p-3 md:p-3.5">
+                  <p className="text-[10px] font-semibold text-[#0d7744] mb-0.5 md:mb-1">Reviewed By</p>
+                  <h3 className="text-[1rem] md:text-[1.45rem] leading-tight tracking-tight font-semibold mb-1 md:mb-2 text-[#1a1a1a]">
                     {article.reviewedBy.name}
                   </h3>
-                  <p className="text-[12px] leading-6 text-[#333] mb-3">{article.reviewedBy.bio}</p>
-                  <span className="text-[12px] font-semibold underline">View bio</span>
+                  <p className="text-[11px] md:text-[12px] leading-5 md:leading-6 text-[#333] mb-2 md:mb-3 line-clamp-3">{article.reviewedBy.bio}</p>
+                  <span className="text-[11px] md:text-[12px] font-semibold underline cursor-pointer">View bio</span>
                 </div>
               </div>
             </div>
@@ -100,8 +101,7 @@ function BlogDetail() {
 
       <section className="max-w-[1100px] mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-[250px_minmax(0,1fr)] gap-12">
-          <aside className="lg:sticky lg:top-24 h-fit">
-            <h2 className="text-2xl font-semibold leading-none lg:hidden mb-6">Contents</h2>
+          <aside className="hidden lg:block lg:sticky lg:top-24 h-fit">
             <div className="p-0">
               <div className="flex items-center justify-between mb-5">
                 <h3 className="text-xl leading-none tracking-tight font-semibold">Here's what we'll cover</h3>
@@ -158,10 +158,80 @@ function BlogDetail() {
         </div>
       </section>
 
+      {/* Why trust our experts? */}
+      <section className="bg-[#f3f5f6] border-t border-[#e0e0e0]">
+        <div className="max-w-[1100px] mx-auto px-6 py-16">
+          <div className="grid md:grid-cols-[1fr_1fr] gap-12 items-start">
+            <div>
+              <h3 className="text-3xl md:text-4xl font-semibold tracking-tight text-[#1a1a1a] mb-6">
+                Why trust our experts?
+              </h3>
+              <p className="text-[16px] leading-7 text-[#333] mb-4">
+                Every article on health guide goes through rigorous fact-checking by our team of medical reviewers.
+              </p>
+              <p className="text-[16px] leading-7 text-[#333]">
+                Our reviewers are trained medical professionals who ensure each article contains the most up-to-date information, and that medical details have been correctly interpreted by the writer.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {/* Trust stat cards */}
+              <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 flex items-center gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-[#ecfdf5] flex items-center justify-center shrink-0">
+                  <svg className="w-7 h-7 text-[#0d7744]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 className="text-[15px] font-semibold text-[#1a1a1a] mb-1">Clinically Reviewed</h5>
+                  <p className="text-[13px] text-[#666] leading-snug">Every article verified by board-certified specialists</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 flex items-center gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-[#eff6ff] flex items-center justify-center shrink-0">
+                  <svg className="w-7 h-7 text-[#2563eb]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 className="text-[15px] font-semibold text-[#1a1a1a] mb-1">Evidence-Based</h5>
+                  <p className="text-[13px] text-[#666] leading-snug">Sourced from peer-reviewed journals and clinical data</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl border border-[#e5e5e5] p-6 flex items-center gap-5">
+                <div className="w-14 h-14 rounded-2xl bg-[#fef3c7] flex items-center justify-center shrink-0">
+                  <svg className="w-7 h-7 text-[#d97706]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </div>
+                <div>
+                  <h5 className="text-[15px] font-semibold text-[#1a1a1a] mb-1">Regularly Updated</h5>
+                  <p className="text-[13px] text-[#666] leading-snug">Content reviewed and refreshed with latest research</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Written by / Last update row */}
+          <div className="mt-12 pt-8 border-t border-[#dcdcdc] grid grid-cols-2 gap-8">
+            <div>
+              <p className="text-[13px] text-[#666] mb-1">Written by</p>
+              <p className="text-[15px] font-semibold text-[#1a1a1a] underline cursor-pointer">{article.author.name}</p>
+            </div>
+            <div className="text-right">
+              <p className="text-[13px] text-[#666] mb-1">Last update</p>
+              <p className="text-[15px] font-semibold text-[#1a1a1a]">{article.date}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {related.length > 0 && (
         <section className="py-20 max-w-7xl mx-auto px-6 border-t border-[#e3e3e3]">
           <div className="flex items-end justify-between mb-8">
-            <h3 className="text-3xl font-semibold text-gray-900">Rheumatoid Arthritis Articles</h3>
+            <h3 className="text-3xl font-semibold text-gray-900">Related Articles</h3>
             <div className="flex gap-2">
               <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -187,7 +257,7 @@ function BlogDetail() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow justify-between">
                   <div>
-                    <h4 className="text-xl font-medium leading-snug mb-4 break-words">{item.title}</h4>
+                    <h4 className="text-xl font-medium leading-snug mb-4 line-clamp-2">{item.title}</h4>
                     <p className="text-gray-500 text-sm flex items-center gap-2">
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
@@ -207,8 +277,9 @@ function BlogDetail() {
         </section>
       )}
 
+      </div>
       <BriefingFooter />
-    </div>
+    </>
   )
 }
 

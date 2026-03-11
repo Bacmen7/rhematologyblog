@@ -22,8 +22,9 @@
   border-radius: 9999px !important;
 }
 
-.blog-page {
-  font-family: "Ro Sans", Arial, Helvetica, sans-serif !important;
+.blog-page,
+.blog-page *:not(.material-symbols-outlined) {
+  font-family: "LINESeedSans", system-ui, sans-serif;
 }
 
 /* Keep section spacing tighter across landing page */
@@ -47,7 +48,7 @@
 .blog-page h4,
 .blog-page h5,
 .blog-page h6 {
-  font-family: "Ro Sans", sans-serif !important;
+  font-family: "LINESeedSans", system-ui, sans-serif !important;
   font-weight: 600 !important;
   color: #1a1a1a !important;
 }

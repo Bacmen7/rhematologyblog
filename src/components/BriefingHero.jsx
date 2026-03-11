@@ -7,7 +7,7 @@ function BriefingHero() {
             <span className="h-px w-8 bg-primary"></span>
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Volume IV &bull; Q4 2023</span>
           </div>
-          <h2 className="font-serif text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-8">
+          <h2 className="font-display text-6xl lg:text-7xl leading-[0.95] tracking-tight mb-8">
             The State of <span className="italic">Biologic Innovation</span>
           </h2>
           <p className="text-xl text-slate-500 leading-relaxed mb-10 font-light">

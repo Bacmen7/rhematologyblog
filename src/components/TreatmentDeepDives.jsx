@@ -18,21 +18,10 @@ const treatments = [
 
 function TreatmentDeepDives() {
   return (
-    <section className="relative overflow-hidden bg-[#171d2b] px-5 py-[100px] md:py-[120px] text-white">
-      <svg
-        className="absolute top-0 left-0 w-full h-12"
-        fill="none"
-        preserveAspectRatio="none"
-        viewBox="0 0 1440 48"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0 0H1440V24C1200 56 960 56 720 24C480 -8 240 -8 0 24V0Z" fill="#ffffff" />
-      </svg>
-
+    <section className="relative overflow-hidden bg-[#171d2b] px-5 pt-10 pb-[100px] md:pt-16 md:pb-[120px] text-white">
       <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-24 -left-20 h-64 w-64 rounded-full bg-[#2a3244]/45 blur-3xl" />
-        <div className="absolute right-[-80px] top-[22%] h-72 w-72 rounded-full bg-[#25354d]/50 blur-3xl" />
-        <div className="absolute bottom-[-110px] left-[28%] h-80 w-80 rounded-full bg-[#1f2940]/55 blur-3xl" />
+        <div className="absolute right-[-100px] top-[22%] h-72 w-72 rounded-full bg-[#25354d]/42 blur-3xl" />
+        <div className="absolute bottom-[-120px] left-[30%] h-80 w-80 rounded-full bg-[#1f2940]/46 blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-[1120px] mx-auto">

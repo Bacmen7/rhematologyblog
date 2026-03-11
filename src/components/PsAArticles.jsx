@@ -1,3 +1,4 @@
+import { useRef } from "react"
 import { Link } from "react-router-dom"
 
 const articles = [
@@ -16,28 +17,37 @@ const articles = [
 ]
 
 function PsAArticles() {
+  const scrollRef = useRef(null)
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const amount = 320
+      scrollRef.current.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" })
+    }
+  }
+
   return (
-    <section className="py-20 max-w-7xl mx-auto px-6 border-t border-teal-soft/10">
+    <section className="py-20 max-w-7xl mx-auto px-6">
       <div className="flex items-end justify-between mb-8">
         <h2 className="text-3xl font-semibold text-gray-900">Psoriatic Arthritis Articles</h2>
         <div className="flex gap-2">
-          <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+          <button onClick={() => scroll("left")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
           </button>
-          <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+          <button onClick={() => scroll("right")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
             </svg>
           </button>
         </div>
       </div>
-      <div className="flex gap-6 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+      <div ref={scrollRef} className="flex gap-6 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
         {/* Feature Card */}
         <Link
           to="/article/managing-dual-impact-skin-joint-pain"
-          className="min-w-[300px] md:min-w-[400px] flex-shrink-0 relative overflow-hidden group cursor-pointer h-[450px] block"
+          className="w-[300px] min-w-[300px] flex-shrink-0 relative overflow-hidden group cursor-pointer h-[450px] block"
         >
           <img alt="PsA Insight" className="absolute inset-0 h-full w-full object-cover" src="/images/psa-insight.jpg" />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
@@ -57,14 +67,14 @@ function PsAArticles() {
           <Link
             key={article.id}
             to={`/article/${article.id}`}
-            className="min-w-[300px] flex-shrink-0 flex flex-col article-card bg-[#fcfcfc] border border-gray-100"
+            className="w-[300px] min-w-[300px] flex-shrink-0 flex flex-col article-card bg-[#fcfcfc] border border-gray-100"
           >
             <div className="h-56 overflow-hidden">
               <img alt={article.title} className="w-full h-full object-cover transition-transform duration-300" src={article.image} />
             </div>
             <div className="p-6 flex flex-col flex-grow justify-between">
               <div>
-                <h4 className="text-xl font-medium leading-snug mb-4">{article.title}</h4>
+                <h4 className="text-xl font-medium leading-snug mb-4 line-clamp-2">{article.title}</h4>
                 <p className="text-gray-500 text-sm flex items-center gap-2">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />

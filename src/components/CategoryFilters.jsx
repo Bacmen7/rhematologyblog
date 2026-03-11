@@ -10,7 +10,7 @@ const categories = [
 
 function CategoryFilters() {
   return (
-    <section className="py-12 border-y border-teal-soft/10 bg-transparent">
+    <section className="py-12 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-wrap justify-center gap-3">
           {categories.map((cat) => (

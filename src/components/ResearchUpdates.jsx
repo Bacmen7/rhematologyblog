@@ -30,7 +30,7 @@ function ResearchUpdates() {
               key={item.title}
               className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-slate-100 hover:bg-white transition-colors cursor-pointer group"
             >
-              <div className="text-black font-mono font-bold text-sm min-w-[120px]">{item.date}</div>
+              <div className="text-black font-base font-bold text-sm min-w-[120px]">{item.date}</div>
               <div className="flex-1">
                 <h4 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h4>
                 <p className="text-slate-500">{item.summary}</p>

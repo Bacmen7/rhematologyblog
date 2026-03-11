@@ -1,7 +1,7 @@
+/* @import url("https://use.typekit.net/cry8bnw.css"); */
 @import "tailwindcss";
-@import url("https://use.typekit.net/cry8bnw.css");
 
-@font-face {
+/* @font-face {
   font-family: "Ro Sans";
   font-weight: 400;
   font-style: normal;
@@ -20,7 +20,7 @@
   font-weight: 700;
   font-style: normal;
   src: url("https://ro.co/weight-loss/wegovy-results/fonts/Ro_Sans-Bold.woff") format("woff");
-}
+} */
 
 @theme {
   --color-primary: #92d9d5;
@@ -38,8 +38,9 @@
   --color-navy-muted: #3b5b80;
   --color-gray: #a0a4ac;
   --color-border: #dadfe8;
-  --font-base: "usual", Arial, Helvetica, sans-serif;
-  --font-display: "loretta", serif;
+  --color-rheuma-blue: #0000f0;
+  --font-base: "LINESeedSans", system-ui, sans-serif;
+  --font-display: "LINESeedSans", "Times New Roman", serif;
 }
 
 :root {
