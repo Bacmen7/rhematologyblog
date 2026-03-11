@@ -139,7 +139,7 @@ function Header() {
               <a
                 key={item}
                 className="relative px-3.5 py-2 text-[13.5px] font-bold text-navy-deep hover:text-teal-soft rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
-                href="#"
+                href="javascript:void(0)"
               >
                 {item}
               </a>
@@ -324,7 +324,7 @@ function Header() {
                   key={item}
                   className={baseClass}
                   style={linkStyle}
-                  href="#"
+                  href="javascript:void(0)"
                   onClick={closeMobileMenu}
                 >
                   {item}
@@ -389,7 +389,7 @@ function Header() {
                     <a
                       key={item.label}
                       className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-[#f0f5ff] transition-all duration-200 group"
-                      href="#"
+                      href="javascript:void(0)"
                       onClick={closeLearn}
                     >
                       <span className="flex items-center gap-3 text-navy-deep font-medium text-[14.5px]">
@@ -414,7 +414,7 @@ function Header() {
                     <a
                       key={item}
                       className="flex items-center justify-between py-2.5 text-[14.5px] font-medium text-navy-deep hover:text-sky transition-colors group"
-                      href="#"
+                      href="javascript:void(0)"
                       onClick={closeLearn}
                     >
                       {item}
@@ -434,7 +434,7 @@ function Header() {
                     <a
                       key={item}
                       className="flex items-center justify-between py-2.5 text-[14.5px] font-medium text-navy-deep hover:text-sky transition-colors group"
-                      href="#"
+                      href="javascript:void(0)"
                       onClick={closeLearn}
                     >
                       {item}
@@ -544,7 +544,7 @@ function Header() {
                 <a
                   key={item.label}
                   className="flex items-center justify-between py-4 border-b border-gray-100"
-                  href="#"
+                  href="javascript:void(0)"
                   onClick={closeLearn}
                   style={{
                     opacity: learnVisible ? 1 : 0,
@@ -626,7 +626,7 @@ function Header() {
                   <h3 className="mt-4 text-[19px] leading-[1.3] tracking-[-0.01em] font-display text-navy-deep">{card.title}</h3>
                   <a
                     className="mt-5 inline-flex items-center gap-2.5 text-[14px] leading-none font-semibold text-navy-deep group-hover:text-sky transition-colors"
-                    href="#"
+                    href="javascript:void(0)"
                     onClick={closePartnership}
                   >
                     Learn More
@@ -643,7 +643,7 @@ function Header() {
                 <a
                   key={item.label}
                   className="inline-flex items-center gap-2 rounded-full bg-[#f5f7fa] hover:bg-[#edf1f7] px-4 py-2.5 text-[13px] font-semibold text-navy-deep transition-colors"
-                  href="#"
+                  href="javascript:void(0)"
                   onClick={closePartnership}
                 >
                   <span className="material-symbols-outlined text-[16px] text-navy-muted">{item.icon}</span>
@@ -716,7 +716,7 @@ function Header() {
                 <h3 className="mt-4 text-[19px] leading-[1.3] font-display text-navy-deep">{card.title}</h3>
                 <a
                   className="mt-3 inline-flex items-center gap-2 text-base font-semibold text-navy-deep"
-                  href="#"
+                  href="javascript:void(0)"
                   onClick={closePartnership}
                 >
                   Learn More
