@@ -17,6 +17,7 @@ import ExploreTopics from "./components/ExploreTopics"
 import FAQ from "./components/FAQ"
 import WellnessSeminars from "./components/WellnessSeminars"
 import StrategicNetwork from "./components/StrategicNetwork"
+import Newsletter from "./components/Newsletter"
 import BriefingFooter from "./components/BriefingFooter"
 import PrivacyBanner from "./components/PrivacyBanner"
 
@@ -81,13 +82,17 @@ function App() {
           <ExploreTopics />
         </div>
 
-        <div className="bg-ghost">
+        {/* <div className="bg-ghost">
           <FAQ />
-        </div>
+        </div> */}
 
         {/* <WellnessSeminars /> */}
 
         {/* <StrategicNetwork /> */}
+
+        <div className="bg-ghost">
+          <Newsletter />
+        </div>
       </main>
 
       <BriefingFooter />

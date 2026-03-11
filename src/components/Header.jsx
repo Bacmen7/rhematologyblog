@@ -105,11 +105,36 @@ function Header() {
     }
   }, [learnOpen])
 
-  // Lock body scroll
+  // Lock body scroll (mobile-safe)
   useEffect(() => {
-    document.body.style.overflow = partnershipOpen || learnOpen || mobileMenuOpen ? "hidden" : ""
-    return () => {
+    const isOpen = partnershipOpen || learnOpen || mobileMenuOpen
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+      document.body.style.position = "fixed"
+      document.body.style.width = "100%"
+      document.body.style.top = `-${window.scrollY}px`
+      document.documentElement.style.overflow = "hidden"
+    } else {
+      const scrollY = document.body.style.top
       document.body.style.overflow = ""
+      document.body.style.position = ""
+      document.body.style.width = ""
+      document.body.style.top = ""
+      document.documentElement.style.overflow = ""
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1)
+      }
+    }
+    return () => {
+      const scrollY = document.body.style.top
+      document.body.style.overflow = ""
+      document.body.style.position = ""
+      document.body.style.width = ""
+      document.body.style.top = ""
+      document.documentElement.style.overflow = ""
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0") * -1)
+      }
     }
   }, [partnershipOpen, learnOpen, mobileMenuOpen])
 
