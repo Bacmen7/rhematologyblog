@@ -364,7 +364,7 @@ function Header() {
           }`}
           onClick={closeLearn}
         >
-          <div className={`absolute inset-0 backdrop-blur-[3px] transition-colors duration-300 ${learnVisible ? "bg-navy-deep/40" : "bg-navy-deep/0"}`} />
+          <div className={`absolute inset-0 transition-colors duration-300 ${learnVisible ? "bg-black/10" : "bg-black/0"}`} />
           <div
             className={`absolute left-1/2 -translate-x-1/2 top-3 w-[min(1240px,calc(100%-24px))] rounded-3xl overflow-hidden bg-white shadow-[0_20px_60px_rgba(24,36,57,0.18)] transition-all duration-300 ease-out ${
               learnVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-[0.97]"
@@ -594,7 +594,7 @@ function Header() {
           }`}
           onClick={closePartnership}
         >
-          <div className={`absolute inset-0 backdrop-blur-[3px] transition-colors duration-300 ${partnershipVisible ? "bg-navy-deep/40" : "bg-navy-deep/0"}`} />
+          <div className={`absolute inset-0 transition-colors duration-300 ${partnershipVisible ? "bg-black/10" : "bg-black/0"}`} />
           <div
             className={`absolute left-1/2 -translate-x-1/2 top-3 w-[min(1260px,calc(100%-32px))] rounded-3xl bg-white p-6 lg:p-8 shadow-[0_20px_60px_rgba(24,36,57,0.18)] transition-all duration-300 ease-out ${
               partnershipVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-[0.97]"

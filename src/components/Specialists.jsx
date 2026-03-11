@@ -1,3 +1,5 @@
+import { useState, useRef, useEffect } from "react"
+
 const specialists = [
   {
     id: 1,
@@ -23,6 +25,33 @@ const specialists = [
 ]
 
 function Specialists() {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const scrollRef = useRef(null)
+
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const scrollLeft = container.scrollLeft
+      const cardWidth = container.firstElementChild?.offsetWidth || 220
+      const gap = 16
+      const index = Math.round(scrollLeft / (cardWidth + gap))
+      setActiveIndex(Math.min(index, specialists.length - 1))
+    }
+
+    container.addEventListener("scroll", handleScroll, { passive: true })
+    return () => container.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToIndex = (index) => {
+    const container = scrollRef.current
+    if (!container) return
+    const cardWidth = container.firstElementChild?.offsetWidth || 220
+    const gap = 16
+    container.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" })
+  }
+
   return (
     <section className="py-16 md:py-24 px-6 md:px-12 overflow-hidden">
       <div className="max-w-7xl mx-auto">
@@ -40,6 +69,7 @@ function Specialists() {
         {/* Mobile: Horizontal Carousel */}
         <div className="md:hidden">
           <div
+            ref={scrollRef}
             className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-6 px-6"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
           >
@@ -66,7 +96,12 @@ function Specialists() {
           </div>
           <div className="flex justify-center gap-1.5 mt-4">
             {specialists.map((_, i) => (
-              <span key={i} className={`w-2 h-2 rounded-full ${i === 0 ? "bg-navy-deep" : "bg-gray-300"}`} />
+              <button
+                key={i}
+                onClick={() => scrollToIndex(i)}
+                className={`w-2 h-2 rounded-full transition-colors ${i === activeIndex ? "bg-navy-deep" : "bg-gray-300"}`}
+                aria-label={`Go to specialist ${i + 1}`}
+              />
             ))}
           </div>
         </div>

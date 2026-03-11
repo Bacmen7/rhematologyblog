@@ -22,7 +22,7 @@ import PrivacyBanner from "./components/PrivacyBanner"
 
 function App() {
   return (
-    <div className="landing-page bg-background-light text-navy-deep antialiased">
+    <div className="landing-page bg-background-light text-navy-deep antialiased overflow-x-hidden">
       <Header />
       <main>
         {/* ═══════════════════════════════════════════════

@@ -33,11 +33,11 @@ function FeaturedInsights() {
             </p>
           </div>
           {/* Filter Pills */}
-          <div className="flex gap-2 flex-wrap">
+          <div className="flex gap-2 flex-nowrap overflow-x-auto pl-1 md:pl-0">
             {filters.map((filter, i) => (
               <button
                 key={filter}
-                className={`px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
+                className={`shrink-0 px-5 py-2 rounded-full text-sm font-semibold transition-colors ${
                   i === 0
                     ? "bg-navy-deep text-white"
                     : "bg-[#bcf0ef] text-navy-deep hover:bg-[#a5e8e6]"

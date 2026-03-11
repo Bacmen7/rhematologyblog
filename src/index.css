@@ -54,6 +54,7 @@ body {
   background: var(--color-background-light);
   color: var(--color-navy-deep);
   letter-spacing: 0.015em;
+  overflow-x: hidden;
 }
 
 h1,
