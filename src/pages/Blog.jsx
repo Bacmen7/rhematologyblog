@@ -217,7 +217,7 @@ function Blog() {
           </section>
 
           {/* Newsletter CTA */}
-          <section className="relative bg-[#182439] text-white pt-24 pb-28 mt-16 text-center">
+          <section className="relative bg-[#182439] text-white pt-28 pb-36 mt-16 text-center">
             {/* Top Wave */}
             <div className="absolute top-[-31px] left-0 w-full overflow-hidden leading-none z-10">
               <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[32px] md:h-[40px]">
@@ -225,29 +225,35 @@ function Blog() {
               </svg>
             </div>
 
-            <div className="relative z-20 max-w-4xl mx-auto px-6">
-              <p className="uppercase tracking-[0.2em] text-[11px] font-semibold text-gray-200 mb-6">From our GI experts to your inbox</p>
-              <h2 className="font-serif-blog text-[42px] md:text-[52px] font-normal leading-tight mb-10 text-white">
-                Get <span className="relative inline-block z-10">
-                  gut friendly recipes
-                  <svg className="absolute -bottom-1.5 left-0 w-full h-[10px] -z-10" preserveAspectRatio="none" viewBox="0 0 456 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 7.40487C152.958 2.78597 303.264 0.160341 453 8" stroke="#8EBFFF" strokeWidth="5" strokeMiterlimit="10" strokeLinecap="round"></path>
+            <div className="relative z-20 max-w-3xl mx-auto px-6 flex flex-col items-center">
+              <p className="tracking-[0.22em] mb-10" style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 600, fontSize: "13px", lineHeight: "20px", color: "rgba(255,255,255,0.45)" }}>From our rheumatology experts to your inbox</p>
+              <h2 className="font-serif-blog font-normal leading-[1.1] text-white max-w-[860px]" style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.5px", marginBottom: "120px" }}>
+                Get{" "}
+                <span className="relative inline-block z-10">
+                  joint-friendly
+                  <svg className="absolute -bottom-1 left-0 w-full h-[6px] -z-10" preserveAspectRatio="none" viewBox="0 0 400 12" fill="none">
+                    <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="3" />
                   </svg>
-                </span>, news, and more—<br className="hidden md:block" />delivered weekly.
+                </span>{" "}
+                tips, news, and more&#8202;&#8212;&#8202;delivered weekly.
               </h2>
 
-              <form className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto" onSubmit={(e) => e.preventDefault()}>
+              <form className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md" onSubmit={(e) => e.preventDefault()}>
                 <input
                   type="email"
                   placeholder="Email Address*"
                   required
-                  className="w-full sm:w-[320px] px-8 py-[18px] rounded-full text-[#182439] placeholder-[#A0A4AC] text-[15px] focus:outline-none focus:ring-2 focus:ring-[#aeeee7] leading-none"
+                  className="w-full sm:w-2/3 px-6 py-3.5 md:py-4 rounded-full bg-white text-[#182439] placeholder-[#a0a4ac] text-sm md:text-base border border-[#dadfe8] focus:outline-none focus:ring-2 focus:ring-[#8ebfff]/30 focus:border-[#8ebfff] transition-all"
                 />
                 <button
                   type="submit"
-                  className="bg-[#aeeee7] hover:bg-[#90e0d8] text-[#182439] font-bold py-[18px] px-8 rounded-full transition-colors flex items-center justify-center gap-2 w-full sm:w-auto text-[15px] leading-none whitespace-nowrap"
+                  className="w-full sm:w-1/3 px-6 py-3.5 md:py-4 rounded-full text-sm md:text-base font-medium hover:opacity-90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+                  style={{ backgroundColor: "#b1efec", color: "#182439" }}
                 >
-                  Subscribe <ArrowRight size={16} strokeWidth={2.5} />
+                  Subscribe
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
                 </button>
               </form>
             </div>

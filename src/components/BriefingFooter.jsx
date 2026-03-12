@@ -78,16 +78,18 @@ function BriefingFooter() {
 
         {/* Bottom Legal */}
         <div className="border-t border-gray-200 pt-8 text-[#515a6a]">
-          <p className="leading-relaxed text-[12px] mb-6">
-            Rheuma delivers personalized, whole-person medical care to people living with rheumatic conditions. Testimonials reflect individual patient experiences and results may vary.
-          </p>
-          <div className="flex flex-wrap gap-x-5 gap-y-3 mb-6 mt-8 text-[12px] underline decoration-gray-300 underline-offset-4">
-            <a href="#" className="hover:text-[#182439]">Privacy Policy</a>
-            <a href="#" className="hover:text-[#182439]">Terms of Use</a>
-            <a href="#" className="hover:text-[#182439]">Informed Consent</a>
-            <a href="#" className="hover:text-[#182439]">Notice of Privacy Practices</a>
+          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
+            <p className="leading-relaxed text-[12px] md:max-w-[65%]">
+              Rheuma delivers personalized, whole-person medical care to people living with rheumatic conditions. Testimonials reflect individual patient experiences and results may vary.
+            </p>
+            <div className="flex flex-wrap gap-x-5 gap-y-3 text-[12px] underline decoration-gray-300 underline-offset-4 md:text-right">
+              <a href="#" className="hover:text-[#182439]">Privacy Policy</a>
+              <a href="#" className="hover:text-[#182439]">Terms of Use</a>
+              <a href="#" className="hover:text-[#182439]">Informed Consent</a>
+              <a href="#" className="hover:text-[#182439]">Notice of Privacy Practices</a>
+            </div>
           </div>
-          <p className="text-[12px]">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
+          <p className="text-[12px] mt-8">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
