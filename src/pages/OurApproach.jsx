@@ -96,10 +96,7 @@ function HeroSection() {
 /* ───────── 2. PHILOSOPHY (full-width statement) ───────── */
 function PhilosophySection() {
   return (
-    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden">
-      <svg className="absolute top-0 left-0 w-full h-12" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 48">
-        <path d="M0 0H1440V24C1200 56 960 56 720 24C480 -8 240 -8 0 24V0Z" fill="#f8fafd" />
-      </svg>
+    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden pb-16">
 
       <div className="max-w-[1120px] mx-auto px-6 py-28 md:py-36 relative z-10">
         <p className="font-display text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
@@ -114,6 +111,10 @@ function PhilosophySection() {
           <span className="italic text-primary/80">your life</span> — not the other way around.
         </p>
       </div>
+      {/* Bottom wave */}
+      <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+      </svg>
     </section>
   )
 }
@@ -358,6 +359,11 @@ function PrinciplesSection() {
 
 /* ───────── 8. TEAM ───────── */
 function TeamSection() {
+  const team = [
+    { name: "Dr. Sarah Mitchell", role: "Lead Rheumatologist", badge: "MD, FACR", image: "/images/specialist-1.jpg" },
+    { name: "Dr. James Chen", role: "Immunology Specialist", badge: "MD, PhD", image: "/images/specialist-2.jpg" },
+    { name: "Dr. Priya Sharma", role: "Rehabilitation Medicine", badge: "DPT, OCS", image: "/images/specialist-3.jpg" },
+  ]
   return (
     <section className="py-24 md:py-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-8">
@@ -371,19 +377,35 @@ function TeamSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { name: "Dr. Sarah Mitchell", role: "Lead Rheumatologist", badge: "MD, FACR", image: "/images/dr-sarah-miller.jpg" },
-            { name: "Dr. James Chen", role: "Immunology Specialist", badge: "MD, PhD", image: "/images/hero-consult.jpg" },
-            { name: "Dr. Priya Sharma", role: "Rehabilitation Medicine", badge: "DPT, OCS", image: "/images/featured-main.jpg" },
-          ].map((doc, i) => (
+        {/* Mobile: Horizontal Carousel */}
+        <div className="md:hidden">
+          <div
+            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-1 hide-scrollbar"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
+            {team.map((doc) => (
+              <div key={doc.name} className="snap-start shrink-0 w-[220px]">
+                <div className="group cursor-pointer">
+                  <div className="aspect-[3/4] overflow-hidden rounded-xl mb-4 shadow-[0_4px_30px_rgba(0,0,0,0.05)] relative">
+                    <img src={doc.image} alt={doc.name} className="w-full h-full object-cover" />
+                    <div className="absolute bottom-3 left-3 bg-white/60 backdrop-blur-[8px] px-3 py-1.5 rounded-full text-[10px] font-bold text-navy-deep">
+                      {doc.badge}
+                    </div>
+                  </div>
+                  <h3 className="text-lg font-bold text-navy-deep mb-0.5">{doc.name}</h3>
+                  <p className="text-navy-muted uppercase tracking-widest text-[10px] font-semibold">{doc.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop: 3-Column Grid */}
+        <div className="hidden md:grid grid-cols-3 gap-8">
+          {team.map((doc, i) => (
             <div key={doc.name} className={`group cursor-pointer ${i === 1 ? "md:translate-y-12" : ""}`}>
               <div className="aspect-[3/4] overflow-hidden mb-6 shadow-[0_4px_30px_rgba(0,0,0,0.05)] relative">
-                <img
-                  src={doc.image}
-                  alt={doc.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
+                <img src={doc.image} alt={doc.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
                 <div className="absolute bottom-4 left-4 bg-white/60 backdrop-blur-[8px] px-4 py-2 rounded-full text-xs font-bold text-navy-deep">
                   {doc.badge}
                 </div>

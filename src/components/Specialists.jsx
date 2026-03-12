@@ -6,21 +6,21 @@ const specialists = [
     name: "Dr. Sarah Chen",
     title: "Chief of Clinical Research",
     badge: "Lupus Specialist",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBoYvzDTNphyMZk3HbNrbMqgevJc9x9Tu29tJqEkSSE4kmr_Hoe9J5QiwRrlf0RnwJhk-zz7xvddzicxSynrzM24t0VgUcRGKWJLZXfxAZTqHg3rA_0ilk-4iwdklcFwph0w-3YHR8R3xSPZHDR30nVcThJCC3C36V1NFAbu-CVorwNxGlgJpnPHr5O8mYdpIrj5kmfMbXEYH-P0mgV_H-MaLIzXYINcxRT7wlY_RHZcWyrLr3stVjzOV6JjYCcNZDlU6OkN8Y0djI",
+    image: "/images/specialist-1.jpg",
   },
   {
     id: 2,
     name: "Dr. Marcus Thorne",
     title: "Senior Immunologist",
     badge: "RA & Osteo",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCrMg0Nm_Ic4eWSJEYZEFN6M6RjLmDFVpdKW63yMN_WwXwIDWJB5CFkxS20wv_sSi17G1jvOGylgqlXskmv627onKRgJVhcoDoIbdGwd2WQ44MaO_cBJqW45lbhDCmDU6GQE-iSB1pMYBwOFG8lQBF-Xv9ELoPYjkpG8jD5EhFU9KNOuhl27XHgzloIOipyee6K2ilCUdjTfV9NzPmDqzRvJLPRzsh30AKTmeEzwFfoTIRtnQJOd987ITncqf74pon3iT-JO3y-sJw",
+    image: "/images/specialist-2.jpg",
   },
   {
     id: 3,
     name: "Dr. Elena Rodriguez",
     title: "Lead Consultant",
     badge: "Pediatric Specialist",
-    image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIPnbSjPty-UlbaeJE82WI5wUzqh1leXK_G-4c-RWMjPDHKBE64Ypdhwiid7XIv0HFwT-NX2ieSSsh5xZcxXqqDcPVu1RDtBJVB-6QrQgXW7Qe4KbPAyyMkUCerXHXmwRBdZzhIWfj74qNtc9CAXMoe5SvJ24xvO7p4FugyqQcT9Pc8gHY7yk_GtaNX41V3F5easJLJY8yy-3e1tQmiRNl9kRhE5gYGS3GU0MY1QaPOdIeM6l9VQQquUek4KPaJQPOpeotakRqsiY",
+    image: "/images/specialist-3.jpg",
   },
 ]
 

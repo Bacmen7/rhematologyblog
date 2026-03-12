@@ -91,10 +91,8 @@ function HeroSection() {
 /* ───────── 2. PHILOSOPHY BANNER ───────── */
 function PhilosophyBanner() {
   return (
-    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden">
-      <svg className="absolute top-0 left-0 w-full h-12" fill="none" preserveAspectRatio="none" viewBox="0 0 1440 48">
-        <path d="M0 0H1440V24C1200 56 960 56 720 24C480 -8 240 -8 0 24V0Z" fill="#f8fafd" />
-      </svg>
+    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden pb-16">
+
       <div className="max-w-[1120px] mx-auto px-6 py-28 md:py-36 relative z-10">
         <p className="font-display text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
           Healthcare billing is{" "}
@@ -108,6 +106,10 @@ function PhilosophyBanner() {
           <span className="italic text-primary/80">before</span> your visit — not three months after.
         </p>
       </div>
+      {/* Bottom wave */}
+      <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+      </svg>
     </section>
   )
 }
