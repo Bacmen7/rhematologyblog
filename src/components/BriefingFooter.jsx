@@ -31,7 +31,7 @@ function BriefingFooter() {
 
           {/* Link Columns — each is its own grid child now */}
             <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px" }}>Who We Serve</h4>
+              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Who We Serve</h4>
               <ul className="space-y-4 text-sm font-semibold text-[#182439]">
                 <li><a href="#" className="hover:text-[#515a6a]">Individuals</a></li>
                 <li><a href="#" className="hover:text-[#515a6a]">Employers</a></li>
@@ -41,7 +41,7 @@ function BriefingFooter() {
             </div>
 
             <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px" }}>What We Treat</h4>
+              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>What We Treat</h4>
               <ul className="space-y-4 text-sm font-semibold text-[#182439]">
                 <li><a href="#" className="hover:text-[#515a6a]">Rheumatoid Arthritis</a></li>
                 <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li>
@@ -53,7 +53,7 @@ function BriefingFooter() {
             </div>
 
             <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px" }}>Resources</h4>
+              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Resources</h4>
               <ul className="space-y-4 text-sm font-semibold text-[#182439]">
                 <li><Link to="/blog" className="hover:text-[#515a6a]">Blog</Link></li>
                 <li><a href="#" className="hover:text-[#515a6a]">Clinical Guides</a></li>
@@ -65,7 +65,7 @@ function BriefingFooter() {
             </div>
 
             <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px" }}>Company</h4>
+              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Company</h4>
               <ul className="space-y-4 text-sm font-semibold text-[#182439]">
                 <li><Link to="/about" className="hover:text-[#515a6a]">About Us</Link></li>
                 <li><Link to="/our-approach" className="hover:text-[#515a6a]">Our Approach</Link></li>
