@@ -10,6 +10,7 @@ import PsAArticles from "./components/PsAArticles"
 import Specialists from "./components/Specialists"
 import Testimonials from "./components/Testimonials"
 import CTASection from "./components/CTASection"
+import StatsBar from "./components/StatsBar"
 
 import BriefingHero from "./components/BriefingHero"
 import FocusJAK from "./components/FocusJAK"
@@ -32,6 +33,7 @@ function App() {
             ZONE 1 — INTRO & DISCOVERY
         ═══════════════════════════════════════════════ */}
         <Hero />
+        {/* <StatsBar /> */}
 
         {/* <div className="bg-white">
           <CategoryFilters />

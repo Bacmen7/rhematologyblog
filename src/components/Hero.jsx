@@ -11,7 +11,19 @@ function Hero() {
         <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
           <div className="flex flex-col justify-center gap-6 py-16 pl-[max(5rem,calc((100%-80rem)/2+5rem))] pr-10">
             <h1 className="text-[4.375rem] font-light leading-[1.03] tracking-[-1.6px] text-navy-deep">
-              Advanced Care for Rheumatic Health
+              Advanced Care for{" "}
+              <span className="relative inline-block">
+                Rheumatic
+                <svg
+                  className="absolute -bottom-2 left-0 w-full h-3"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 400 12"
+                >
+                  <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="4" />
+                </svg>
+              </span>{" "}
+              Health
             </h1>
             <p className="text-xl font-light text-navy-deep leading-relaxed max-w-xl">
               Empowering clinicians and patients with research-driven insights, clinical evidence, and personalized care protocols for complex autoimmune conditions.
@@ -41,7 +53,19 @@ function Hero() {
           }}
         >
           <h1 className="text-[3.0625rem] font-light text-navy-deep leading-[1.06] tracking-[-1.4px] mb-5">
-            Advanced Care for Rheumatic Health
+            Advanced Care for{" "}
+            <span className="relative inline-block">
+              Rheumatic
+              <svg
+                className="absolute -bottom-1 left-0 w-full h-2.5"
+                fill="none"
+                preserveAspectRatio="none"
+                viewBox="0 0 400 12"
+              >
+                <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="4" />
+              </svg>
+            </span>{" "}
+            Health
           </h1>
           <p className="text-base text-navy-muted leading-relaxed mb-8 max-w-sm">
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.
