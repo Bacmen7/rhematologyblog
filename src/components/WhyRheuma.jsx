@@ -18,11 +18,11 @@ const conditions = [
   //   icon: "https://oshihealth.com/wp-content/uploads/2024/11/Irritable-Bowel-Syndrome.svg",
   // },
   {
-    name: "Lupus (SLE)",
+    name: "Lupus",
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Bloating.svg",
   },
   {
-    name: "Joint Pain & Stiffness",
+    name: "Joint Pain",
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Abdominal-Pain.svg",
   },
   {
@@ -30,7 +30,7 @@ const conditions = [
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Crohns-Disease.svg",
   },
   {
-    name: "Ankylosing Spondylitis",
+    name: "Spondylitis",
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Ulcerative-Colitis.svg",
   },
   {
@@ -38,7 +38,7 @@ const conditions = [
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Small-Intestinal-Bacterial-Overgrowth.svg",
   },
   {
-    name: "Undiagnosed Autoimmune Symptoms",
+    name: "Undiagnosed Symptoms",
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Undiagnosed-GI-Symptoms.svg",
   },
 ]
@@ -55,9 +55,9 @@ function WhyRheuma() {
   }
 
   return (
-    <section className="custom-approach-section relative overflow-x-clip overflow-y-visible bg-navy-deep px-5 pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
+    <section className="custom-approach-section relative overflow-x-clip overflow-y-visible bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
-      <div className="relative z-10 mx-auto max-w-[1120px]">
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-20">
           <div>
@@ -77,11 +77,11 @@ function WhyRheuma() {
         {/* Carousel */}
         <div
           ref={scrollRef}
-          className="relative z-10 mx-auto max-w-[1120px] flex overflow-x-auto pb-4 snap-x snap-mandatory"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none", gap: "24px" }}
+          className="relative z-10 mx-auto max-w-7xl flex overflow-x-auto pb-4 snap-x snap-mandatory px-6 md:px-6"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", gap: "32px" }}
         >
           {conditions.map((c, i) => (
-            <div key={c.name} className="group cursor-pointer snap-start shrink-0" style={{ width: "calc((100% - 96px) / 5)" }}>
+            <div key={c.name} className="group cursor-pointer snap-start shrink-0 w-[38%] md:shrink md:flex-1 md:min-w-0">
               <div className="relative w-[70px] h-[74px] mb-5">
                 <div className="absolute inset-0">{blobs[i % blobs.length]}</div>
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -96,7 +96,7 @@ function WhyRheuma() {
         </div>
 
         {/* Carousel arrows */}
-        <div className="relative z-10 mx-auto max-w-[1120px] flex justify-end gap-3 mt-8">
+        <div className="relative z-10 mx-auto max-w-7xl px-6 flex justify-center md:justify-end gap-3 mt-8">
           <button
             onClick={() => scroll("left")}
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"

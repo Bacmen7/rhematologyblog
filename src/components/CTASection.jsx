@@ -16,7 +16,7 @@ function CTASection() {
       </svg>
 
       <div className="bg-navy-deep pt-32 pb-20 md:pt-40 md:pb-28">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left — Text + CTA */}
           <div>
             <h2 className="text-[2.5rem] md:text-[3.5rem] leading-[1.08] tracking-[-1.2px] text-white mb-8">

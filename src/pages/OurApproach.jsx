@@ -38,7 +38,7 @@ function HeroSection() {
         background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b1efec 0%, transparent 45%), #f8fafd",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[80vh]">
           <div className="lg:col-span-6 py-20 lg:py-28">
             <div className="mb-6 flex items-center gap-4">
@@ -212,7 +212,7 @@ function PillarsSection() {
 function HowItWorks() {
   return (
     <section id="how-it-works" className="py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-28">
             <div className="mb-6 flex items-center gap-4">
@@ -274,7 +274,7 @@ function HowItWorks() {
 function ComparisonSection() {
   return (
     <section className="py-24 md:py-36">
-      <div className="max-w-5xl mx-auto px-6 md:px-8">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="mb-14 max-w-xl">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-8 bg-navy-deep/20" />
@@ -320,7 +320,7 @@ function ComparisonSection() {
 function PrinciplesSection() {
   return (
     <section className="bg-ghost py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4">
             <div className="mb-6 flex items-center gap-4">
@@ -366,7 +366,7 @@ function TeamSection() {
   ]
   return (
     <section className="py-24 md:py-36 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-navy-deep">
             Meet the<br />
@@ -424,7 +424,7 @@ function TeamSection() {
 function TestimonialsSection() {
   return (
     <section className="custom-approach-section bg-navy-deep text-white py-24 md:py-36 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-8 bg-primary/40" />
@@ -473,7 +473,7 @@ function TestimonialsSection() {
 function FaqSection() {
   return (
     <section className="py-24 md:py-36">
-      <div className="max-w-3xl mx-auto px-6 md:px-8">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="mb-14">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-8 bg-navy-deep/20" />

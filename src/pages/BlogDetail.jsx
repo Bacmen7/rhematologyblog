@@ -37,7 +37,7 @@ function BlogDetail() {
       <div className="blog-detail-page bg-background-light min-h-screen">
 
       <section className="bg-ghost border-b border-border">
-        <div className="max-w-[1180px] mx-auto px-5 md:px-6 py-8 md:py-14">
+        <div className="max-w-7xl mx-auto px-6 py-8 md:py-14">
           <nav className="flex items-center flex-wrap gap-1.5 md:gap-2 text-[12px] md:text-[13px] text-navy-muted mb-6 md:mb-10" style={{ fontFamily: "var(--font-base)", fontWeight: 600 }}>
             <Link to="/" className="hover:text-navy-deep transition-colors">RHEUMA.</Link>
             <span>&gt;</span>
@@ -152,7 +152,7 @@ function BlogDetail() {
         </div>
       </div>
 
-      <section className="max-w-[1100px] mx-auto px-5 md:px-6 py-10 md:py-16">
+      <section className="max-w-7xl mx-auto px-6 py-10 md:py-16">
         <div className="grid lg:grid-cols-[250px_minmax(0,1fr)] gap-8 md:gap-12">
           <aside className="hidden lg:block lg:sticky lg:top-24 h-fit">
             <div className="p-0">
@@ -213,7 +213,7 @@ function BlogDetail() {
 
       {/* Why trust our experts? */}
       <section className="bg-ghost border-t border-border">
-        <div className="max-w-[1100px] mx-auto px-5 md:px-6 py-10 md:py-16">
+        <div className="max-w-7xl mx-auto px-6 py-10 md:py-16">
           <div className="grid md:grid-cols-[1fr_1fr] gap-8 md:gap-12 items-start">
             <div>
               <h3 className="text-2xl md:text-4xl tracking-tight text-navy-deep mb-4 md:mb-6" style={{ fontFamily: "var(--font-display)" }}>
@@ -282,7 +282,7 @@ function BlogDetail() {
       </section>
 
       {related.length > 0 && (
-        <section className="py-12 md:py-20 max-w-7xl mx-auto px-5 md:px-6 border-t border-border">
+        <section className="py-12 md:py-20 max-w-7xl mx-auto px-6 border-t border-border">
           <div className="flex items-end justify-between mb-6 md:mb-8">
             <h3 className="text-2xl md:text-3xl text-navy-deep" style={{ fontFamily: "var(--font-display)" }}>Related Articles</h3>
             <div className="flex gap-2">

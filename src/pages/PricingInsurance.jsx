@@ -37,7 +37,7 @@ function HeroSection() {
         background: "radial-gradient(ellipse at 70% 0%, #b1efec 0%, transparent 50%), radial-gradient(ellipse at 20% 100%, #c7dfff 0%, transparent 45%), #f8fafd",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[80vh]">
           <div className="lg:col-span-7 py-20 lg:py-28">
             <div className="mb-6 flex items-center gap-4">
@@ -118,7 +118,7 @@ function PhilosophyBanner() {
 function PlansSection() {
   return (
     <section id="plans" className="py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 max-w-xl">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-8 bg-primary" />
@@ -298,7 +298,7 @@ function WhatsIncluded() {
 function InsuranceSection() {
   return (
     <section className="py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4 lg:sticky lg:top-28">
             <div className="mb-6 flex items-center gap-4">
@@ -344,7 +344,7 @@ function InsuranceSection() {
 function ComparisonSection() {
   return (
     <section className="bg-ghost py-24 md:py-36">
-      <div className="max-w-5xl mx-auto px-6 md:px-8">
+      <div className="max-w-5xl mx-auto px-6">
         <div className="mb-14 max-w-xl">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-8 bg-navy-deep/20" />
@@ -390,7 +390,7 @@ function ComparisonSection() {
 function PaymentOptions() {
   return (
     <section className="py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4">
             <div className="mb-6 flex items-center gap-4">
@@ -431,7 +431,7 @@ function PaymentOptions() {
 function EmployerSection() {
   return (
     <section className="custom-approach-section bg-navy-deep text-white py-24 md:py-36 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
             <div className="mb-6 flex items-center gap-4">
@@ -485,7 +485,7 @@ function EmployerSection() {
 function FaqSection() {
   return (
     <section className="py-24 md:py-36">
-      <div className="max-w-3xl mx-auto px-6 md:px-8">
+      <div className="max-w-3xl mx-auto px-6">
         <div className="mb-14">
           <div className="mb-6 flex items-center gap-4">
             <span className="h-px w-8 bg-navy-deep/20" />

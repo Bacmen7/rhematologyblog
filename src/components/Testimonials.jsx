@@ -31,7 +31,7 @@ function Testimonials() {
 
   return (
     <section className="py-20 md:py-28 bg-[#f8fafd] overflow-hidden">
-      <div className="text-center mb-10 md:mb-14 px-6">
+      <div className="max-w-7xl mx-auto text-center mb-10 md:mb-14 px-6">
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-navy-muted mb-4">
           Trusted by 33K+ People
         </p>
@@ -42,7 +42,7 @@ function Testimonials() {
 
       <div className="relative">
         <div
-          className="flex gap-4 sm:gap-6 px-4 sm:px-6 md:px-12 testimonial-marquee"
+          className="flex gap-4 sm:gap-6 px-6 testimonial-marquee"
         >
           {doubledReviews.map((r, i) => (
             <div

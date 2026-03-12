@@ -105,14 +105,14 @@ function Blog() {
           .blog-page .font-sans-blog { font-family: 'Open Sans', sans-serif; }
           .blog-page .font-serif-blog { font-family: 'Lora', serif; }
           .blog-hero-wave { position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; }
-          .blog-hero-wave svg { position: relative; display: block; width: calc(100% + 1.3px); height: 80px; }
+          .blog-hero-wave svg { position: relative; display: block; width: calc(100% + 1.3px); height: 50px; }
           .filter-checkbox { accent-color: #182439; width: 16px; height: 16px; margin-right: 8px; cursor: pointer; }
         `}} />
 
         <div className="blog-page font-sans-blog text-[#182439] bg-white">
           {/* Hero Section */}
-          <section className="relative bg-[#f0f4fb] pt-16 pb-32 px-6 md:px-12">
-            <div className="max-w-7xl mx-auto">
+          <section className="relative bg-[#f0f4fb] pt-16 pb-32 px-6">
+            <div className="max-w-7xl mx-auto relative z-10">
               <a href="#" className="text-[#515a6a] text-sm underline hover:no-underline mb-6 inline-block">Learn</a>
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-16">
                 <h1 className="font-serif-blog text-5xl md:text-6xl text-[#182439] md:w-1/2">
@@ -133,7 +133,7 @@ function Blog() {
           </section>
 
           {/* Main Content Area */}
-          <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+          <section className="py-12 px-6 max-w-7xl mx-auto relative z-10">
 
             {/* Filter Bar */}
             <div className="flex justify-end mb-12 relative -mt-24 md:-mt-20 z-20">
@@ -173,7 +173,7 @@ function Blog() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
               {articles.map((article) => (
                 <a key={article.id} href="#" className="group block flex flex-col h-full">
-                  <div className="aspect-[16/10] overflow-hidden bg-gray-100 mb-6 rounded-sm shrink-0 relative">
+                  <div className="aspect-[16/10] overflow-hidden bg-gray-100 mb-5 rounded-sm shrink-0 relative">
                     <img
                       src={article.image}
                       alt={article.title}
@@ -181,23 +181,23 @@ function Blog() {
                     />
                   </div>
                   <div className="flex-grow flex flex-col">
-                    <div className="mb-4">
+                    <div className="mb-3">
                       <span className="inline-block bg-[#e3efff] text-[#3b5b80] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
                         {article.category}
                       </span>
                     </div>
-                    <h3 className="font-serif-blog text-2xl leading-tight mb-3 text-[#182439] group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-serif-blog text-xl leading-snug mb-2 text-[#182439] group-hover:text-blue-600 transition-colors">
                       {article.title}
                     </h3>
-                    <p className="text-xs text-[#515a6a] mb-3">
+                    <p className="text-xs text-[#515a6a] mb-2">
                       By <strong className="text-[#182439] font-semibold">{article.author}</strong>
                     </p>
                     {article.excerpt && (
-                      <p className="text-sm text-[#515a6a] font-light mb-6 flex-grow">
+                      <p className="text-sm text-[#515a6a] font-light mb-4 flex-grow leading-relaxed">
                         {article.excerpt}
                       </p>
                     )}
-                    <div className={`flex items-center gap-2 text-sm font-bold text-[#182439] ${article.excerpt ? 'mt-auto' : 'mb-4 mt-auto'}`}>
+                    <div className={`flex items-center gap-2 text-sm font-bold text-[#182439] ${article.excerpt ? 'mt-auto' : 'mt-auto'}`}>
                       Read More
                       <div className="w-6 h-6 rounded-full bg-[#aeeee7] flex items-center justify-center">
                         <ArrowRight size={12} strokeWidth={3} />

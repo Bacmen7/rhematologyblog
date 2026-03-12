@@ -3,7 +3,7 @@ function CtaBanner() {
     <section className="w-full flex flex-col bg-white overflow-visible">
       {/* Wave SVG */}
       <svg
-        className="w-full h-[60px] sm:h-[90px] md:h-[120px] text-[#142131] block"
+        className="w-full h-[24px] sm:h-[90px] md:h-[120px] text-[#142131] block"
         preserveAspectRatio="none"
         viewBox="0 0 1440 120"
         fill="none"
@@ -17,12 +17,12 @@ function CtaBanner() {
 
       {/* Content Area */}
       <div className="bg-[#142131] w-full overflow-visible">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-10 pb-12 md:pb-16 pt-6 sm:pt-10">
+        <div className="max-w-7xl mx-auto px-6 pb-24 md:pb-32 pt-6 sm:pt-10">
           <div className="flex flex-col md:flex-row items-stretch gap-10 md:gap-16">
             {/* Left — Text */}
-            <div className="flex-[1.1] flex flex-col justify-center py-4">
+            <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">
               <h2
-                className="leading-[1.1] font-normal mb-9 md:mb-10"
+                className="leading-[1.1] font-normal !mb-14 md:!mb-14 text-center md:text-left"
                 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: "clamp(44px, 5.5vw, 68px)",
@@ -32,7 +32,7 @@ function CtaBanner() {
               >
                 Ready to get started?
               </h2>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6">
                 <a
                   href="#"
                   className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"
@@ -54,13 +54,13 @@ function CtaBanner() {
             </div>
 
             {/* Right — Image (overflow top into wave) */}
-            <div className="flex-1 relative hidden md:block" style={{ minHeight: "300px" }}>
+            <div className="flex-1 relative block" style={{ minHeight: "250px" }}>
               <img
                 src="/images/hero-consult.jpg"
                 alt="Doctor consulting with patient"
                 className="w-full block rounded-[4px] absolute bottom-0"
                 style={{
-                  height: "520px",
+                  height: "clamp(280px, 40vw, 520px)",
                   objectFit: "cover",
                   objectPosition: "center 20%",
                 }}

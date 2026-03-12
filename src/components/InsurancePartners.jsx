@@ -10,7 +10,7 @@ const insurers = [
 function InsurancePartners() {
   return (
     <section className="py-20 md:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Left — Text */}
           <div>

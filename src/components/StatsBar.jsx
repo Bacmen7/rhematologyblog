@@ -1,7 +1,7 @@
 function StatsBar() {
   return (
     <section className="py-16 md:py-24">
-      <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-start justify-between gap-10 md:gap-[60px]">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start justify-between gap-10 md:gap-[60px]">
         {/* Left — Heading */}
         <div className="flex-[1.5]">
           <h2
@@ -26,7 +26,7 @@ function StatsBar() {
         </div>
 
         {/* Stat 1 */}
-        <div className="flex-1">
+        <div className="flex-1 text-center md:text-left">
           <p
             className="leading-none mb-3 text-navy-deep font-light"
             style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
@@ -40,7 +40,7 @@ function StatsBar() {
         </div>
 
         {/* Stat 2 */}
-        <div className="flex-1">
+        <div className="flex-1 text-center md:text-left">
           <p
             className="leading-none mb-3 text-navy-deep font-light"
             style={{ fontSize: "clamp(40px, 5vw, 72px)" }}

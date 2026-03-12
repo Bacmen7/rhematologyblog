@@ -1,7 +1,7 @@
 function HealthGuideHero() {
   return (
     <section className="relative bg-background-light overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-4 items-center">
           <div className="py-4 md:py-6 relative z-10">
             <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px" }}>

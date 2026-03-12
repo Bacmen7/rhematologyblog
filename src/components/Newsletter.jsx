@@ -19,7 +19,7 @@ function Newsletter() {
 
         {/* Heading */}
         <h2
-          className="mx-auto !mb-16"
+          className="mx-auto !mb-16 max-w-[300px] sm:max-w-[860px]"
           style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(32px, 4vw, 52px)",
@@ -27,7 +27,6 @@ function Newsletter() {
             letterSpacing: "-0.5px",
             fontWeight: 400,
             color: "var(--color-navy-deep)",
-            maxWidth: "860px",
           }}
         >
           Get{" "}

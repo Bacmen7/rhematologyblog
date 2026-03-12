@@ -63,7 +63,7 @@ function RAArticles() {
           <Link
             key={article.id}
             to={`/article/${article.id}`}
-            className="w-[300px] min-w-[300px] flex-shrink-0 flex flex-col group bg-[#fcfcfc] border border-gray-100"
+            className="w-[340px] min-w-[340px] flex-shrink-0 flex flex-col group bg-[#fcfcfc] border border-gray-100"
           >
             <div className="h-56 overflow-hidden">
               <img alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={article.image} />

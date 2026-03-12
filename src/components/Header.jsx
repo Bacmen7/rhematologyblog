@@ -50,10 +50,10 @@ function Header() {
     },
   ]
   const learnLinks = [
-    { icon: "edit", label: "Blog" },
-    { icon: "menu_book", label: "Clinical Guides" },
-    { icon: "bar_chart", label: "Research and Outcomes" },
-    { icon: "group", label: "Patient Stories" },
+    { label: "Blog" },
+    { label: "Clinical Guides" },
+    { label: "Research and Outcomes" },
+    { label: "Patient Stories" },
   ]
 
   // Track scroll for header shadow
@@ -150,7 +150,7 @@ function Header() {
           : "bg-white/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 md:px-8 h-[72px] flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
         {/* ===== Left: Logo + Nav ===== */}
         <div className="flex items-center gap-10 lg:gap-14">
           {/* Logo */}
@@ -427,52 +427,44 @@ function Header() {
             <div className="grid md:grid-cols-[1.05fr_1fr_1fr]">
               {/* Left Panel */}
               <div className="bg-gradient-to-b from-[#f6f9ff] to-white px-10 py-9 border-r border-border/40">
-                <div className="inline-flex items-center gap-2 mb-4">
-                  <span className="w-8 h-8 rounded-lg bg-sky/15 inline-flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[18px] text-sky">school</span>
-                  </span>
-                  <h3 className="text-2xl text-navy-deep">Rheuma Learn</h3>
-                </div>
+                <h3 className="text-[28px] text-navy-deep mb-3" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>Rheuma Learn</h3>
                 <p className="text-[14px] text-navy-muted mb-8 leading-relaxed">
-                  Your go-to resource for expert advice and insights on chronic rheumatic care.
+                  Your go-to resource for expert advice and insights on all things rheumatic care.
                 </p>
                 <div className="space-y-1">
                   {learnLinks.map((item) => {
                     const linkRoutes = { "Blog": "/blog" }
                     const to = linkRoutes[item.label]
+                    const inner = (
+                      <>
+                        <span className="flex items-center gap-3.5 text-navy-deep font-semibold text-[15px]">
+                          <span className="w-8 h-8 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                            <span className="material-symbols-outlined text-[15px] text-[#182439]">bookmark</span>
+                          </span>
+                          {item.label}
+                        </span>
+                        <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                          <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                        </span>
+                      </>
+                    )
                     return to ? (
                       <Link
                         key={item.label}
                         to={to}
-                        className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-[#f0f5ff] transition-all duration-200 group"
+                        className="flex items-center justify-between rounded-xl px-2 py-3.5 hover:bg-[#f0f5ff] transition-all duration-200 group"
                         onClick={closeLearn}
                       >
-                        <span className="flex items-center gap-3 text-navy-deep font-medium text-[14.5px]">
-                          <span className="w-9 h-9 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center group-hover:bg-sky/20 transition-colors">
-                            <span className="material-symbols-outlined text-[18px] text-navy-muted group-hover:text-sky transition-colors">{item.icon}</span>
-                          </span>
-                          {item.label}
-                        </span>
-                        <span className="material-symbols-outlined text-[16px] text-navy-muted/40 group-hover:text-navy-muted group-hover:translate-x-0.5 transition-all">
-                          arrow_forward
-                        </span>
+                        {inner}
                       </Link>
                     ) : (
                       <a
                         key={item.label}
-                        className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-[#f0f5ff] transition-all duration-200 group"
+                        className="flex items-center justify-between rounded-xl px-2 py-3.5 hover:bg-[#f0f5ff] transition-all duration-200 group"
                         href="javascript:void(0)"
                         onClick={closeLearn}
                       >
-                        <span className="flex items-center gap-3 text-navy-deep font-medium text-[14.5px]">
-                          <span className="w-9 h-9 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center group-hover:bg-sky/20 transition-colors">
-                            <span className="material-symbols-outlined text-[18px] text-navy-muted group-hover:text-sky transition-colors">{item.icon}</span>
-                          </span>
-                          {item.label}
-                        </span>
-                        <span className="material-symbols-outlined text-[16px] text-navy-muted/40 group-hover:text-navy-muted group-hover:translate-x-0.5 transition-all">
-                          arrow_forward
-                        </span>
+                        {inner}
                       </a>
                     )
                   })}
@@ -491,8 +483,8 @@ function Header() {
                       onClick={closeLearn}
                     >
                       {item}
-                      <span className="w-7 h-7 rounded-full bg-ghost inline-flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="material-symbols-outlined text-[15px] text-sky">arrow_forward</span>
+                      <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
                       </span>
                     </a>
                   ))}
@@ -511,22 +503,22 @@ function Header() {
                       onClick={closeLearn}
                     >
                       {item}
-                      <span className="w-7 h-7 rounded-full bg-ghost inline-flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="material-symbols-outlined text-[15px] text-sky">arrow_forward</span>
+                      <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
                       </span>
                     </a>
                   ))}
                 </div>
 
                 {/* Newsletter CTA */}
-                <div className="rounded-2xl bg-gradient-to-r from-[#e8f0ff] to-[#f0e8ff] p-4 flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-white/90 flex-shrink-0 flex items-center justify-center shadow-sm">
-                    <span className="material-symbols-outlined text-sky">mail</span>
+                <div className="rounded-2xl bg-[#dce7f7] p-5 flex items-center gap-4">
+                  <div className="w-[80px] h-[80px] rounded-xl overflow-hidden flex-shrink-0">
+                    <img src="/images/featured-main.jpg" alt="Newsletter" className="w-full h-full object-cover" />
                   </div>
                   <div>
-                    <p className="text-[10px] font-bold tracking-widest text-navy-muted/70 uppercase">Gut Check Weekly</p>
-                    <p className="text-[13px] font-semibold text-navy-deep leading-snug mt-0.5">
-                      Get exclusive access to new resources when you subscribe.
+                    <p className="text-[10px] font-bold tracking-widest text-navy-muted/70 uppercase mb-1">Rheuma Weekly</p>
+                    <p className="text-[13px] font-semibold text-navy-deep leading-snug">
+                      Get exclusive access to new recipes &amp; resources when you subscribe today!
                     </p>
                   </div>
                 </div>
@@ -578,37 +570,27 @@ function Header() {
 
           {/* Content */}
           <div className="px-6 pt-4 pb-10">
-            <div className="flex justify-center mb-3">
-              <span
-                className="w-10 h-10 rounded-xl bg-sky/15 inline-flex items-center justify-center"
-                style={{
-                  opacity: learnVisible ? 1 : 0,
-                  transform: learnVisible ? "translateY(0)" : "translateY(10px)",
-                  transition: "opacity 0.35s ease 80ms, transform 0.35s ease 80ms",
-                }}
-              >
-                <span className="material-symbols-outlined text-[22px] text-sky">school</span>
-              </span>
-            </div>
             <h3
-              className="text-2xl text-center mb-2 text-navy-deep"
+              className="text-[26px] mb-2 text-navy-deep"
               style={{
+                fontFamily: "var(--font-display)",
+                fontWeight: 400,
                 opacity: learnVisible ? 1 : 0,
                 transform: learnVisible ? "translateY(0)" : "translateY(10px)",
-                transition: "opacity 0.35s ease 100ms, transform 0.35s ease 100ms",
+                transition: "opacity 0.35s ease 80ms, transform 0.35s ease 80ms",
               }}
             >
               Rheuma Learn
             </h3>
             <p
-              className="text-sm text-navy-muted text-center mb-8 max-w-xs mx-auto"
+              className="text-sm text-navy-muted mb-8"
               style={{
                 opacity: learnVisible ? 1 : 0,
                 transform: learnVisible ? "translateY(0)" : "translateY(10px)",
                 transition: "opacity 0.35s ease 150ms, transform 0.35s ease 150ms",
               }}
             >
-              Your go-to resource for expert advice and insights on chronic rheumatic care.
+              Your go-to resource for expert advice and insights on all things rheumatic care.
             </p>
 
             {/* Learn Links */}
@@ -621,6 +603,19 @@ function Header() {
                   transform: learnVisible ? "translateY(0)" : "translateY(12px)",
                   transition: `opacity 0.35s ease ${200 + index * 60}ms, transform 0.35s ease ${200 + index * 60}ms`,
                 }
+                const inner = (
+                  <>
+                    <span className="flex items-center gap-3.5 text-navy-deep font-semibold text-[15px]">
+                      <span className="w-8 h-8 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-[15px] text-[#182439]">bookmark</span>
+                      </span>
+                      {item.label}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                      <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                    </span>
+                  </>
+                )
                 return to ? (
                   <Link
                     key={item.label}
@@ -629,13 +624,7 @@ function Header() {
                     onClick={closeLearn}
                     style={commonStyle}
                   >
-                    <span className="flex items-center gap-3.5 text-navy-deep font-medium text-[15px]">
-                      <span className="w-10 h-10 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center">
-                        <span className="material-symbols-outlined text-[20px] text-navy-muted">{item.icon}</span>
-                      </span>
-                      {item.label}
-                    </span>
-                    <span className="material-symbols-outlined text-[18px] text-navy-muted/40">arrow_forward</span>
+                    {inner}
                   </Link>
                 ) : (
                   <a
@@ -645,13 +634,7 @@ function Header() {
                     onClick={closeLearn}
                     style={commonStyle}
                   >
-                    <span className="flex items-center gap-3.5 text-navy-deep font-medium text-[15px]">
-                      <span className="w-10 h-10 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center">
-                        <span className="material-symbols-outlined text-[20px] text-navy-muted">{item.icon}</span>
-                      </span>
-                      {item.label}
-                    </span>
-                    <span className="material-symbols-outlined text-[18px] text-navy-muted/40">arrow_forward</span>
+                    {inner}
                   </a>
                 )
               })}
@@ -659,20 +642,20 @@ function Header() {
 
             {/* Newsletter CTA */}
             <div
-              className="rounded-2xl bg-gradient-to-r from-[#e8f0ff] to-[#f0e8ff] p-4 flex items-center gap-3"
+              className="rounded-2xl bg-[#dce7f7] p-4 flex items-center gap-3.5"
               style={{
                 opacity: learnVisible ? 1 : 0,
                 transform: learnVisible ? "translateY(0)" : "translateY(12px)",
                 transition: "opacity 0.4s ease 450ms, transform 0.4s ease 450ms",
               }}
             >
-              <div className="w-14 h-14 rounded-xl bg-white/90 flex-shrink-0 flex items-center justify-center shadow-sm">
-                <span className="material-symbols-outlined text-sky">mail</span>
+              <div className="w-[70px] h-[70px] rounded-xl overflow-hidden flex-shrink-0">
+                <img src="/images/featured-main.jpg" alt="Newsletter" className="w-full h-full object-cover" />
               </div>
               <div>
-                <p className="text-[10px] font-bold tracking-widest text-navy-muted/70 uppercase">Gut Check Weekly</p>
-                <p className="text-sm font-semibold text-navy-deep leading-snug">
-                  Get exclusive access to new resources when you subscribe.
+                <p className="text-[10px] font-bold tracking-widest text-navy-muted/70 uppercase mb-1">Rheuma Weekly</p>
+                <p className="text-[13px] font-semibold text-navy-deep leading-snug">
+                  Get exclusive access to new recipes &amp; resources when you subscribe today!
                 </p>
               </div>
             </div>
@@ -690,61 +673,48 @@ function Header() {
         >
           <div className={`absolute inset-0 transition-colors duration-300 ${partnershipVisible ? "bg-black/10" : "bg-black/0"}`} />
           <div
-            className={`absolute left-1/2 -translate-x-1/2 top-3 w-[min(1260px,calc(100%-32px))] rounded-3xl bg-white p-6 lg:p-8 shadow-[0_20px_60px_rgba(24,36,57,0.18)] transition-all duration-300 ease-out ${
+            className={`absolute left-1/2 -translate-x-1/2 top-3 w-[min(1100px,calc(100%-48px))] rounded-3xl bg-white p-7 lg:p-9 shadow-[0_20px_60px_rgba(24,36,57,0.18)] transition-all duration-300 ease-out ${
               partnershipVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-[0.97]"
             }`}
             onClick={(event) => event.stopPropagation()}
             onMouseLeave={closePartnership}
           >
-            <div className="grid gap-5 lg:grid-cols-3">
+            <div className="grid gap-6 lg:grid-cols-3">
               {partnershipCards.map((card, index) => (
                 <article
                   key={card.title}
-                  className="group rounded-2xl bg-[#f7f9fc] hover:bg-white p-4 transition-all duration-300 hover:shadow-[0_8px_32px_rgba(24,36,57,0.1)]"
+                  className="group rounded-2xl bg-[#f7f9fc] p-5 transition-all duration-300 hover:shadow-[0_4px_20px_rgba(24,36,57,0.08)]"
                   style={{
                     opacity: partnershipVisible ? 1 : 0,
                     transform: partnershipVisible ? "translateY(0)" : "translateY(12px)",
                     transition: `opacity 0.35s ease ${80 + index * 60}ms, transform 0.35s ease ${80 + index * 60}ms, background-color 0.3s, box-shadow 0.3s`,
                   }}
                 >
-                  <div className="relative overflow-hidden rounded-xl">
+                  <div className="relative overflow-hidden rounded-xl mb-4">
                     <img
-                      className="h-48 lg:h-52 w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      className="h-44 lg:h-48 w-full object-cover group-hover:scale-[1.03] transition-transform duration-500"
                       src={card.image}
                       alt={card.alt}
                     />
-                    <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur-sm px-4 py-1 text-[11px] font-bold tracking-[0.14em] uppercase text-navy-deep shadow-sm">
+                    <span className="absolute top-3 left-3 rounded-full bg-[#aeeee7] px-4 py-1.5 text-[10px] font-bold tracking-[0.14em] uppercase text-[#182439]">
                       {card.audience}
                     </span>
                   </div>
-                  <h3 className="mt-4 text-[19px] leading-[1.3] tracking-[-0.01em] text-navy-deep">{card.title}</h3>
+                  <h3 className="text-[18px] leading-[1.35] tracking-[-0.01em] text-navy-deep mb-4" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>{card.title}</h3>
                   <a
-                    className="mt-5 inline-flex items-center gap-2.5 text-[14px] leading-none font-semibold text-navy-deep group-hover:text-sky transition-colors"
+                    className="inline-flex items-center gap-2.5 text-[13px] leading-none font-semibold text-navy-deep group-hover:text-sky transition-colors"
                     href="javascript:void(0)"
                     onClick={closePartnership}
                   >
                     Learn More
-                    <span className="w-8 h-8 rounded-full bg-primary/20 group-hover:bg-sky/15 inline-flex items-center justify-center transition-colors">
-                      <span className="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+                    <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
                     </span>
                   </a>
                 </article>
               ))}
             </div>
 
-            <div className="mt-6 pt-5 border-t border-border/50 flex flex-wrap items-center gap-2.5">
-              {learnLinks.map((item) => (
-                <a
-                  key={item.label}
-                  className="inline-flex items-center gap-2 rounded-full bg-[#f5f7fa] hover:bg-[#edf1f7] px-4 py-2.5 text-[13px] font-semibold text-navy-deep transition-colors"
-                  href="javascript:void(0)"
-                  onClick={closePartnership}
-                >
-                  <span className="material-symbols-outlined text-[16px] text-navy-muted">{item.icon}</span>
-                  {item.label}
-                </a>
-              ))}
-            </div>
           </div>
         </div>
       )}

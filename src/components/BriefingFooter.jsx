@@ -3,79 +3,78 @@ import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react'
 
 function BriefingFooter() {
   return (
-    <footer className="bg-[#f0f4fb] pt-16 pb-8 px-6 md:px-12" style={{ fontFamily: "var(--font-base)" }}>
+    <footer className="bg-[#f0f4fb] pt-16 pb-8 px-6" style={{ fontFamily: "var(--font-base)" }}>
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr_1fr_1fr] gap-x-10 gap-y-12 mb-16">
+        {/* Logo & Social */}
+        <div className="mb-12">
+          <Link to="/" className="inline-block mb-8">
+            <span className="text-2xl font-extrabold tracking-tighter text-[#182439]">RHEUMA.</span>
+          </Link>
+          <div className="flex gap-4 mb-8">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+              <Facebook fill="currentColor" strokeWidth={0} size={20} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+              <Instagram size={20} strokeWidth={2.5} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+              <Twitter fill="currentColor" strokeWidth={0} size={20} />
+            </a>
+            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+              <Linkedin fill="currentColor" strokeWidth={0} size={20} />
+            </a>
+          </div>
+          <p className="text-xs text-[#515a6a] hidden lg:block">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
+        </div>
 
-          {/* Logo & Social */}
+        {/* Link Columns — 2-col on mobile, 4-col on desktop */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 mb-16">
           <div>
-            <Link to="/" className="inline-block mb-8">
-              <span className="text-2xl font-extrabold tracking-tighter text-[#182439]">RHEUMA.</span>
-            </Link>
-            <div className="flex gap-4 mb-8">
-              <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
-                <Facebook fill="currentColor" strokeWidth={0} size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
-                <Instagram size={20} strokeWidth={2.5} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
-                <Twitter fill="currentColor" strokeWidth={0} size={20} />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
-                <Linkedin fill="currentColor" strokeWidth={0} size={20} />
-              </a>
-            </div>
-            <p className="text-xs text-[#515a6a] hidden lg:block">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
+            <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Who We Serve</h4>
+            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+              <li><a href="#" className="hover:text-[#515a6a]">Individuals</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Employers</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Health Plans</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Providers</a></li>
+            </ul>
           </div>
 
-          {/* Link Columns — each is its own grid child now */}
-            <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Who We Serve</h4>
-              <ul className="space-y-4 text-sm font-semibold text-[#182439]">
-                <li><a href="#" className="hover:text-[#515a6a]">Individuals</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Employers</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Health Plans</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Providers</a></li>
-              </ul>
-            </div>
+          <div>
+            <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>What We Treat</h4>
+            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+              <li><a href="#" className="hover:text-[#515a6a]">Rheumatoid Arthritis</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Lupus (SLE)</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Ankylosing Spondylitis</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Gout</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Undiagnosed Symptoms</a></li>
+            </ul>
+          </div>
 
-            <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>What We Treat</h4>
-              <ul className="space-y-4 text-sm font-semibold text-[#182439]">
-                <li><a href="#" className="hover:text-[#515a6a]">Rheumatoid Arthritis</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Lupus (SLE)</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Ankylosing Spondylitis</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Gout</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Undiagnosed Symptoms</a></li>
-              </ul>
-            </div>
+          <div>
+            <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Resources</h4>
+            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+              <li><Link to="/blog" className="hover:text-[#515a6a]">Blog</Link></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Clinical Guides</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Research & Outcomes</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Patient Stories</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Flare Management</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Clinical Trials</a></li>
+            </ul>
+          </div>
 
-            <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Resources</h4>
-              <ul className="space-y-4 text-sm font-semibold text-[#182439]">
-                <li><Link to="/blog" className="hover:text-[#515a6a]">Blog</Link></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Clinical Guides</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Research & Outcomes</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Patient Stories</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Flare Management</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Clinical Trials</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Company</h4>
-              <ul className="space-y-4 text-sm font-semibold text-[#182439]">
-                <li><Link to="/about" className="hover:text-[#515a6a]">About Us</Link></li>
-                <li><Link to="/our-approach" className="hover:text-[#515a6a]">Our Approach</Link></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Our Providers</a></li>
-                <li><Link to="/pricing" className="hover:text-[#515a6a]">Pricing & Insurance</Link></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Careers</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">Newsroom</a></li>
-                <li><a href="#" className="hover:text-[#515a6a]">FAQs</a></li>
-              </ul>
-            </div>
+          <div>
+            <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Company</h4>
+            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+              <li><Link to="/about" className="hover:text-[#515a6a]">About Us</Link></li>
+              <li><Link to="/our-approach" className="hover:text-[#515a6a]">Our Approach</Link></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Our Providers</a></li>
+              <li><Link to="/pricing" className="hover:text-[#515a6a]">Pricing & Insurance</Link></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Careers</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">Newsroom</a></li>
+              <li><a href="#" className="hover:text-[#515a6a]">FAQs</a></li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Legal */}

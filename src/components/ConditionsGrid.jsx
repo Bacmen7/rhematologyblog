@@ -36,7 +36,7 @@ const conditions = [
 function ConditionsGrid() {
   return (
     <section className="py-20 md:py-28 bg-ghost">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14 max-w-2xl mx-auto">
           <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
             Expert care for all rheumatic symptoms and conditions
