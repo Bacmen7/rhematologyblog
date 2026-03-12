@@ -1,5 +1,3 @@
-import { useRef } from "react"
-
 const reviews = [
   {
     quote: "Every clinician I have dealt with has been terrific and the proof is in the treatment of my symptoms. My thanks to all!",
@@ -28,16 +26,11 @@ const reviews = [
 ]
 
 function Testimonials() {
-  const scrollRef = useRef(null)
-
-  const scroll = (dir) => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: dir * 340, behavior: "smooth" })
-    }
-  }
+  // Duplicate reviews for seamless infinite loop
+  const doubledReviews = [...reviews, ...reviews]
 
   return (
-    <section className="py-20 md:py-28 bg-[#f8fafd]">
+    <section className="py-20 md:py-28 bg-[#f8fafd] overflow-hidden">
       <div className="text-center mb-14">
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-navy-muted mb-4">
           Trusted by 33K+ People
@@ -49,14 +42,12 @@ function Testimonials() {
 
       <div className="relative">
         <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto px-6 md:px-12 pb-4 scroll-smooth"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          className="flex gap-6 px-6 md:px-12 testimonial-marquee"
         >
-          {reviews.map((r, i) => (
+          {doubledReviews.map((r, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[300px] md:w-[340px] bg-white rounded-2xl p-8 flex flex-col justify-between shadow-sm"
+              className="flex-shrink-0 w-[300px] md:w-[340px] p-8 flex flex-col justify-between"
             >
               <div>
                 <svg className="w-10 h-10 mb-5 text-sky-soft" viewBox="0 0 40 40" fill="currentColor">
