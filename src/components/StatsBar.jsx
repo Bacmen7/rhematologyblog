@@ -10,7 +10,7 @@ function StatsBar() {
           >
             Clinically-proven
             <br />
-            gastrointestinal relief
+            rheumatic care
           </h2>
 
           <div className="flex items-center gap-3 mt-8">
