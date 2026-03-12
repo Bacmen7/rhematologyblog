@@ -45,9 +45,9 @@ function HeroSection() {
               <span className="h-px w-8 bg-navy-deep/30" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Approach</span>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
               Care that starts with{" "}
-              <span className="italic font-normal">actually listening</span>
+              actually listening
             </h1>
             <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg">
               Most rheumatology care treats symptoms in isolation. We bring together specialists, time, and technology to understand what's really going on.
@@ -99,7 +99,7 @@ function PhilosophySection() {
     <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden pb-16">
 
       <div className="max-w-[1120px] mx-auto px-6 py-28 md:py-36 relative z-10">
-        <p className="font-display text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
+        <p className="text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
           We believe rheumatology care should be{" "}
           <span className="relative inline-block">
             collaborative
@@ -108,7 +108,7 @@ function PhilosophySection() {
             </svg>
           </span>
           , transparent, and built around{" "}
-          <span className="italic text-primary/80">your life</span> — not the other way around.
+          <span className="text-primary/80">your life</span> — not the other way around.
         </p>
       </div>
       {/* Bottom wave */}
@@ -219,8 +219,8 @@ function HowItWorks() {
               <span className="h-px w-8 bg-primary" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">The Process</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              How it <span className="italic font-normal">works</span>
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              How it works
             </h2>
             <p className="text-navy-muted text-lg leading-relaxed">
               From first contact to ongoing care. No surprises, no runaround.
@@ -280,9 +280,9 @@ function ComparisonSection() {
             <span className="h-px w-8 bg-navy-deep/20" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">The Difference</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight">
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
             Traditional care vs.{" "}
-            <span className="italic font-normal">Rheuma</span>
+            Rheuma
           </h2>
         </div>
 
@@ -327,8 +327,8 @@ function PrinciplesSection() {
               <span className="h-px w-8 bg-navy-deep/20" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">What We Believe</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              Guiding <span className="italic font-normal">principles</span>
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              Guiding principles
             </h2>
             <p className="text-navy-muted text-lg leading-relaxed max-w-sm">
               The non-negotiables behind every patient interaction.
@@ -430,8 +430,8 @@ function TestimonialsSection() {
             <span className="h-px w-8 bg-primary/40" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/30">Patient Stories</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
-            In their <span className="italic">own words</span>
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
+            In their own words
           </h2>
         </div>
 
@@ -479,8 +479,8 @@ function FaqSection() {
             <span className="h-px w-8 bg-navy-deep/20" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">FAQ</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight">
-            Common <span className="italic font-normal">questions</span>
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            Common questions
           </h2>
         </div>
 
@@ -525,9 +525,9 @@ function CtaSection() {
       }}
     >
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
           Ready for a different kind of{" "}
-          <span className="italic font-normal">rheumatology care?</span>
+          rheumatology care?
         </h2>
         <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg mx-auto">
           Book your first visit. If it's not the right fit, no pressure. Most people wish they'd started sooner.

@@ -1,4 +1,4 @@
-/* @import url("https://use.typekit.net/cry8bnw.css"); */
+@import url("https://use.typekit.net/cry8bnw.css");
 @import "tailwindcss";
 
 /* @font-face {
@@ -40,8 +40,8 @@
   --color-border: #dadfe8;
   --color-rheuma-blue: #0000f0;
   --color-teal-soft: #5ba8a3;
-  --font-base: "LINESeedSans", system-ui, sans-serif;
-  --font-display: "LINESeedSans", "Times New Roman", serif;
+  --font-base: "usual", system-ui, sans-serif;
+  --font-display: "loretta", Georgia, serif;
 }
 
 :root {
@@ -65,7 +65,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: -0.01em;
   color: inherit;
 }

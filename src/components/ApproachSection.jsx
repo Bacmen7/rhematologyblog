@@ -3,9 +3,9 @@ function ApproachSection() {
     <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
       <div className="relative z-10 mx-auto max-w-[1120px]">
-        <h2 className="font-display mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2]">
+        <h2 className="mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2]">
           Experience a{" "}
-          <span className="relative inline-block italic font-normal">
+          <span className="relative inline-block">
             different approach
             <svg
               className="absolute -bottom-2 left-0 h-3 w-full"

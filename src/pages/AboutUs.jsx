@@ -45,9 +45,9 @@ function HeroSection() {
               <span className="h-px w-8 bg-navy-deep/30" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">About Us</span>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
               Built by people who've been{" "}
-              <span className="italic font-normal">the patient</span>
+              the patient
             </h1>
             <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg">
               Rheuma was founded because the people who started it got tired of the way autoimmune care works. So they built something different.
@@ -81,7 +81,7 @@ function OriginStory() {
     <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden pb-16">
 
       <div className="max-w-[1120px] mx-auto px-6 py-28 md:py-36 relative z-10">
-        <p className="font-display text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
+        <p className="text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
           Our co-founder waited{" "}
           <span className="relative inline-block">
             nine months
@@ -90,7 +90,7 @@ function OriginStory() {
             </svg>
           </span>{" "}
           for a rheumatology appointment. By the time she got one, irreversible joint damage had already set in. That{" "}
-          <span className="italic text-primary/80">shouldn't happen</span> to anyone.
+          <span className="text-primary/80">shouldn't happen</span> to anyone.
         </p>
       </div>
       {/* Bottom wave */}
@@ -112,9 +112,9 @@ function MissionSection() {
               <span className="h-px w-8 bg-primary" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Mission</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
               Close the gap between{" "}
-              <span className="italic font-normal">diagnosis and relief</span>
+              diagnosis and relief
             </h2>
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
@@ -285,9 +285,9 @@ function ClinicalTeam() {
               <span className="h-px w-8 bg-navy-deep/20" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Clinical Team</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
               The people behind{" "}
-              <span className="italic font-normal">your care</span>
+              your care
             </h2>
             <p className="text-navy-muted text-lg leading-relaxed max-w-sm">
               Every specialist on our team was hand-picked, not for credentials alone, but for how they treat patients.
@@ -327,8 +327,8 @@ function TimelineSection() {
               <span className="h-px w-8 bg-primary" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Journey</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              How we <span className="italic font-normal">got here</span>
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              How we got here
             </h2>
             <p className="text-navy-muted text-lg leading-relaxed">
               From a personal frustration to a new standard of care.
@@ -374,9 +374,9 @@ function PartnersSection() {
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Affiliations</span>
             <span className="h-px w-8 bg-navy-deep/20" />
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight">
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
             Trusted by the institutions{" "}
-            <span className="italic font-normal">that matter</span>
+            that matter
           </h2>
         </div>
 
@@ -410,8 +410,8 @@ function PressSection() {
             <span className="h-px w-8 bg-primary/40" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/30">In the Press</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
-            What others are <span className="italic">saying</span>
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
+            What others are saying
           </h2>
         </div>
 
@@ -460,9 +460,9 @@ function CareersSection() {
               <span className="h-px w-8 bg-primary" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Careers</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
               Help us build the future of{" "}
-              <span className="italic font-normal">rheumatology</span>
+              rheumatology
             </h2>
             <p className="text-navy-muted text-lg leading-[1.8] mb-8 max-w-lg">
               We're looking for rheumatologists, engineers, designers, and operators who believe healthcare can work better. Remote-first, competitive compensation, and the chance to build something patients actually need.
@@ -518,9 +518,9 @@ function CtaSection() {
       }}
     >
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
           We'd love to{" "}
-          <span className="italic font-normal">hear from you</span>
+          hear from you
         </h2>
         <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg mx-auto">
           Whether you're a patient, a provider, an employer, or just curious — we're always happy to talk.

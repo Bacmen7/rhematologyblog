@@ -8,6 +8,8 @@ import FeaturedInsights from "./components/FeaturedInsights"
 import RAArticles from "./components/RAArticles"
 import PsAArticles from "./components/PsAArticles"
 import Specialists from "./components/Specialists"
+import Testimonials from "./components/Testimonials"
+import CTASection from "./components/CTASection"
 
 import BriefingHero from "./components/BriefingHero"
 import FocusJAK from "./components/FocusJAK"
@@ -62,13 +64,15 @@ function App() {
           <Specialists />
         </div>
 
+        <Testimonials />
+
         {/* ═══════════════════════════════════════════════
             ZONE 4 — EXECUTIVE BRIEFING & RESEARCH
         ═══════════════════════════════════════════════ */}
         <div className="bg-ghost">
-          <BriefingHero />
-          <FocusJAK />
-          <FocusDiagnostic />
+          {/* <BriefingHero /> */}
+          {/* <FocusJAK /> */}
+          {/* <FocusDiagnostic /> */}
         </div>
 
         <div className="bg-white">
@@ -93,6 +97,8 @@ function App() {
         <div className="bg-ghost">
           <Newsletter />
         </div>
+
+        {/* <CTASection /> */}
       </main>
 
       <BriefingFooter />

@@ -43,7 +43,7 @@ function Footer() {
           ))}
         </div>
         <div className="border-t border-teal-soft/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-xs text-teal-soft/60 italic">Medical disclaimer: This content is for professional educational purposes only.</p>
+          <p className="text-xs text-teal-soft/60">Medical disclaimer: This content is for professional educational purposes only.</p>
           <p className="text-xs text-teal-soft/60">&copy; 2024 RheumaInsights Medical Media. All rights reserved.</p>
         </div>
       </div>

@@ -25,8 +25,8 @@ function FeaturedInsights() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <div className="max-w-xl">
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep mb-4">
-              Featured <span className="italic font-normal">Insights</span>
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep mb-4">
+              Featured Insights
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed">
               What's new in rheumatic disease treatment, written by the doctors who actually prescribe it.

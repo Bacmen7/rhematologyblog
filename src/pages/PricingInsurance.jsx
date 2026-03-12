@@ -44,9 +44,9 @@ function HeroSection() {
               <span className="h-px w-8 bg-navy-deep/30" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Pricing & Insurance</span>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
               Quality care shouldn't be{" "}
-              <span className="italic font-normal">a guessing game</span>
+              a guessing game
             </h1>
             <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg">
               Transparent pricing. In-network with most major insurers. No surprise bills, no fine print, no "we'll figure it out later."
@@ -94,7 +94,7 @@ function PhilosophyBanner() {
     <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden pb-16">
 
       <div className="max-w-[1120px] mx-auto px-6 py-28 md:py-36 relative z-10">
-        <p className="font-display text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
+        <p className="text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
           Healthcare billing is{" "}
           <span className="relative inline-block">
             broken
@@ -103,7 +103,7 @@ function PhilosophyBanner() {
             </svg>
           </span>
           . We think you should know exactly what you're paying{" "}
-          <span className="italic text-primary/80">before</span> your visit — not three months after.
+          <span className="text-primary/80">before</span> your visit — not three months after.
         </p>
       </div>
       {/* Bottom wave */}
@@ -124,8 +124,8 @@ function PlansSection() {
             <span className="h-px w-8 bg-primary" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Care Plans</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-            Simple plans, <span className="italic font-normal">real pricing</span>
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            Simple plans, real pricing
           </h2>
           <p className="text-navy-muted text-lg leading-relaxed">
             Choose the level of care that fits your situation. Switch or cancel anytime.
@@ -305,9 +305,9 @@ function InsuranceSection() {
               <span className="h-px w-8 bg-primary" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Insurance</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
               In-network with plans{" "}
-              <span className="italic font-normal">you already have</span>
+              you already have
             </h2>
             <p className="text-navy-muted text-lg leading-relaxed">
               We work with most major insurance carriers. Don't see yours? Reach out — we're adding new partners regularly.
@@ -350,9 +350,9 @@ function ComparisonSection() {
             <span className="h-px w-8 bg-navy-deep/20" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Cost Comparison</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight">
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
             What you'd pay{" "}
-            <span className="italic font-normal">elsewhere</span>
+            elsewhere
           </h2>
         </div>
 
@@ -397,8 +397,8 @@ function PaymentOptions() {
               <span className="h-px w-8 bg-navy-deep/20" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Flexible Payment</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              Ways to <span className="italic font-normal">pay</span>
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              Ways to pay
             </h2>
             <p className="text-navy-muted text-lg leading-relaxed max-w-sm">
               We never want cost to be the reason you don't get care.
@@ -438,9 +438,9 @@ function EmployerSection() {
               <span className="h-px w-8 bg-primary/40" />
               <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/30">For Employers</span>
             </div>
-            <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal mb-6">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal mb-6">
               Bring Rheuma to{" "}
-              <span className="italic">your team</span>
+              your team
             </h2>
             <p className="text-lg leading-[1.7] text-white/60 mb-8 max-w-lg">
               Autoimmune conditions cost employers an average of $20,000 per affected employee annually in direct and indirect costs. Our coordinated care model reduces ER visits, shortens time-to-treatment, and gets people back to work faster.
@@ -491,8 +491,8 @@ function FaqSection() {
             <span className="h-px w-8 bg-navy-deep/20" />
             <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Billing FAQ</span>
           </div>
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight">
-            Pricing <span className="italic font-normal">questions</span>
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            Pricing questions
           </h2>
         </div>
 
@@ -541,9 +541,9 @@ function CtaSection() {
       }}
     >
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+        <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
           Let's figure out your{" "}
-          <span className="italic font-normal">coverage</span>
+          coverage
         </h2>
         <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg mx-auto">
           Enter your insurance details and we'll tell you exactly what's covered — before you commit to anything.

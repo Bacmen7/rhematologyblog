@@ -8,9 +8,9 @@ function Newsletter() {
         </span>
 
         {/* Heading */}
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.15] text-navy-deep max-w-2xl mx-auto mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.15] text-navy-deep max-w-2xl mx-auto mb-10">
           Get{" "}
-          <span className="italic font-normal">gut friendly</span>{" "}
+          gut friendly{" "}
           recipes, news, and more&#8202;&#8212;&#8202;delivered weekly.
         </h2>
 

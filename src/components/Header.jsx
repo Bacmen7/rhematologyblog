@@ -154,7 +154,7 @@ function Header() {
         {/* ===== Left: Logo + Nav ===== */}
         <div className="flex items-center gap-10 lg:gap-14">
           {/* Logo */}
-          <Link to="/" className="text-2xl font-extrabold tracking-tighter text-rheuma-blue">
+          <Link to="/" className="text-2xl font-extrabold tracking-tighter text-navy-deep">
             RHEUMA.
           </Link>
 
@@ -300,7 +300,7 @@ function Header() {
           {/* Top Bar */}
           <div className="flex items-center justify-between px-5 pt-5">
             {/* Logo in mobile menu */}
-            <Link to="/" className="text-xl font-extrabold tracking-tighter text-rheuma-blue" onClick={closeMobileMenu}>
+            <Link to="/" className="text-xl font-extrabold tracking-tighter text-navy-deep" onClick={closeMobileMenu}>
               RHEUMA.
             </Link>
             <button
@@ -427,7 +427,7 @@ function Header() {
                   <span className="w-8 h-8 rounded-lg bg-sky/15 inline-flex items-center justify-center">
                     <span className="material-symbols-outlined text-[18px] text-sky">school</span>
                   </span>
-                  <h3 className="font-display text-2xl text-navy-deep">Rheuma Learn</h3>
+                  <h3 className="text-2xl text-navy-deep">Rheuma Learn</h3>
                 </div>
                 <p className="text-[14px] text-navy-muted mb-8 leading-relaxed">
                   Your go-to resource for expert advice and insights on chronic rheumatic care.
@@ -566,7 +566,7 @@ function Header() {
               </span>
             </div>
             <h3
-              className="font-display text-2xl text-center mb-2 text-navy-deep"
+              className="text-2xl text-center mb-2 text-navy-deep"
               style={{
                 opacity: learnVisible ? 1 : 0,
                 transform: learnVisible ? "translateY(0)" : "translateY(10px)",
@@ -671,7 +671,7 @@ function Header() {
                       {card.audience}
                     </span>
                   </div>
-                  <h3 className="mt-4 text-[19px] leading-[1.3] tracking-[-0.01em] font-display text-navy-deep">{card.title}</h3>
+                  <h3 className="mt-4 text-[19px] leading-[1.3] tracking-[-0.01em] text-navy-deep">{card.title}</h3>
                   <a
                     className="mt-5 inline-flex items-center gap-2.5 text-[14px] leading-none font-semibold text-navy-deep group-hover:text-sky transition-colors"
                     href="javascript:void(0)"
@@ -761,7 +761,7 @@ function Header() {
                     {card.audience}
                   </span>
                 </div>
-                <h3 className="mt-4 text-[19px] leading-[1.3] font-display text-navy-deep">{card.title}</h3>
+                <h3 className="mt-4 text-[19px] leading-[1.3] text-navy-deep">{card.title}</h3>
                 <a
                   className="mt-3 inline-flex items-center gap-2 text-base font-semibold text-navy-deep"
                   href="javascript:void(0)"

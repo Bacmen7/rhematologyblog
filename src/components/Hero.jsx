@@ -5,18 +5,15 @@ function Hero() {
       <section
         className="custom-approach-section relative overflow-hidden hidden lg:block"
         style={{
-          background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b1efec 0%, transparent 45%), #f8fafd",
+          background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 gap-10 items-stretch min-h-[76vh]">
-          <div className="flex flex-col justify-center gap-6 py-16">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-teal-soft text-xs font-bold uppercase tracking-wider w-fit">
-              Latest Research Update
-            </div>
-            <h1 className="font-display text-7xl leading-[0.96] tracking-tight text-navy-deep">
-              Advanced Care for <span className="italic font-normal">Rheumatic Health</span>
+        <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
+          <div className="flex flex-col justify-center gap-6 py-16 pl-[max(5rem,calc((100%-80rem)/2+5rem))] pr-10">
+            <h1 className="text-[4.375rem] font-light leading-[1.03] tracking-[-1.6px] text-navy-deep">
+              Advanced Care for Rheumatic Health
             </h1>
-            <p className="text-xl text-teal-soft/80 leading-relaxed max-w-xl">
+            <p className="text-xl font-light text-navy-deep leading-relaxed max-w-xl">
               Empowering clinicians and patients with research-driven insights, clinical evidence, and personalized care protocols for complex autoimmune conditions.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
@@ -27,7 +24,7 @@ function Hero() {
           </div>
           <div className="relative">
             <img
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               src="/images/hero-doctor.jpg"
               alt="Rheumatologist consulting a patient"
             />
@@ -40,11 +37,11 @@ function Hero() {
         <div
           className="flex flex-col items-center text-center px-6 pt-14 pb-10"
           style={{
-            background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b1efec 0%, transparent 45%), #f8fafd",
+            background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd",
           }}
         >
-          <h1 className="text-[2.8rem] font-display text-navy-deep leading-[0.96] tracking-tight mb-5">
-            Advanced Care for <span className="italic font-normal">Rheumatic Health</span>
+          <h1 className="text-[3.0625rem] font-light text-navy-deep leading-[1.06] tracking-[-1.4px] mb-5">
+            Advanced Care for Rheumatic Health
           </h1>
           <p className="text-base text-navy-muted leading-relaxed mb-8 max-w-sm">
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.

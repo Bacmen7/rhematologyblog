@@ -57,9 +57,9 @@ function Specialists() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6">
-          <h2 className="font-display text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep">
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep">
             Meet the<br />
-            <span className="italic font-normal text-navy-muted/40">Specialists</span>
+            <span className="text-navy-muted/40">Specialists</span>
           </h2>
           <p className="max-w-xs text-sm text-navy-muted pb-2">
             Our board-certified experts represent the global frontier of autoimmune research and clinical care.
