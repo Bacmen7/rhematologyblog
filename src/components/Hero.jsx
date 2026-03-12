@@ -10,7 +10,7 @@ function Hero() {
         }}
       >
         <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
-          <div className="flex flex-col justify-center gap-6 py-16 pl-[max(5rem,calc((100%-80rem)/2+5rem))] pr-10">
+          <div className="flex flex-col justify-center gap-6 py-16 pl-[max(8rem,calc((100%-80rem)/2+8rem))] pr-10">
             <h1 className="text-[4.375rem] font-light leading-[1.03] tracking-[-1.6px] text-navy-deep">
               Advanced Care for{" "}
               <span className="relative inline-block">
