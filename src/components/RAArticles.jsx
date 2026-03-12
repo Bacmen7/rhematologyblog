@@ -35,7 +35,7 @@ function RAArticles() {
   return (
     <section className="py-20 max-w-7xl mx-auto px-6">
       <div className="flex items-end justify-between mb-8">
-        <h2 className="text-3xl text-navy-deep leading-[1.05] tracking-tight">Rheumatoid Arthritis Articles</h2>
+        <h2 className="text-3xl text-navy-deep leading-[1.05] tracking-tight" style={{ fontFamily: "var(--font-display)" }}>Rheumatoid Arthritis Articles</h2>
         <div className="flex gap-2">
           <button onClick={() => scroll("left")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -58,7 +58,7 @@ function RAArticles() {
           <img alt="RA Treatment" className="absolute inset-0 h-full w-full object-cover" src="/images/ra-treatment.jpg" />
           <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors" />
           <div className="absolute inset-0 p-8 flex flex-col justify-between text-white">
-            <h3 className="text-2xl font-bold leading-tight text-white">Modern Treatments for RA: What You Need to Know</h3>
+            <h3 className="text-2xl leading-tight text-white" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>Modern Treatments for RA: What You Need to Know</h3>
             <div className="flex items-center gap-2">
               <span className="bg-white/20 backdrop-blur-sm p-2 rounded-full">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -80,8 +80,8 @@ function RAArticles() {
             </div>
             <div className="p-6 flex flex-col flex-grow justify-between">
               <div>
-                <h4 className="text-xl font-medium leading-snug mb-4 line-clamp-2">{article.title}</h4>
-                <p className="text-gray-500 text-sm flex items-center gap-2">
+                <h4 className="text-xl leading-snug mb-4 line-clamp-2" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>{article.title}</h4>
+                <p className="text-navy-muted text-sm flex items-center gap-2" style={{ fontFamily: "var(--font-base)" }}>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
                   </svg>

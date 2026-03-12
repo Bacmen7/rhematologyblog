@@ -167,14 +167,16 @@ function Header() {
                 <Link
                   key={item}
                   to={to}
-                  className="relative px-3.5 py-2 text-[15px] font-bold text-navy-deep hover:text-teal-soft rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
+                  className="relative px-3.5 py-2 rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
+                  style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#182439" }}
                 >
                   {item}
                 </Link>
               ) : (
                 <a
                   key={item}
-                  className="relative px-3.5 py-2 text-[15px] font-bold text-navy-deep hover:text-teal-soft rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
+                  className="relative px-3.5 py-2 rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
+                  style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#182439" }}
                   href="javascript:void(0)"
                 >
                   {item}
@@ -182,11 +184,12 @@ function Header() {
               )
             })}
             <button
-              className={`relative inline-flex items-center gap-1 px-3.5 py-2 text-[15px] font-bold rounded-lg transition-all duration-200 ${
+              className={`relative inline-flex items-center gap-1 px-3.5 py-2 rounded-lg transition-all duration-200 ${
                 partnershipOpen
-                  ? "text-teal-soft bg-navy-deep/[0.06]"
-                  : "text-navy-deep hover:text-teal-soft hover:bg-navy-deep/[0.04]"
+                  ? "bg-navy-deep/[0.06]"
+                  : "hover:bg-navy-deep/[0.04]"
               }`}
+              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: partnershipOpen ? "rgba(91,168,163,1)" : "#182439" }}
               onClick={() => {
                 setPartnershipOpen((prev) => !prev)
                 setMobileMenuOpen(false)
@@ -204,11 +207,12 @@ function Header() {
             </button>
             <button
               aria-expanded={learnOpen}
-              className={`relative inline-flex items-center gap-1 px-3.5 py-2 text-[15px] font-bold rounded-lg transition-all duration-200 ${
+              className={`relative inline-flex items-center gap-1 px-3.5 py-2 rounded-lg transition-all duration-200 ${
                 learnOpen
-                  ? "text-teal-soft bg-navy-deep/[0.06]"
-                  : "text-navy-deep hover:text-teal-soft hover:bg-navy-deep/[0.04]"
+                  ? "bg-navy-deep/[0.06]"
+                  : "hover:bg-navy-deep/[0.04]"
               }`}
+              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: learnOpen ? "rgba(91,168,163,1)" : "#182439" }}
               onClick={() => {
                 setLearnOpen((prev) => !prev)
                 setMobileMenuOpen(false)

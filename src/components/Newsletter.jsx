@@ -3,15 +3,25 @@ function Newsletter() {
     <section className="py-28 md:py-40">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Eyebrow */}
-        <span className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-6 block">
-          From our GI experts to your inbox
+        <span className="mb-6 block" style={{ fontFamily: "var(--font-base)", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.25em", color: "var(--color-navy-muted)" }}>
+          From our rheumatology experts to your inbox
         </span>
 
         {/* Heading */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.15] text-navy-deep max-w-2xl mx-auto mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[3.4rem] leading-[1.15] text-navy-deep mx-auto mb-10" style={{ maxWidth: "820px" }}>
           Get{" "}
-          gut friendly{" "}
-          recipes, news, and more&#8202;&#8212;&#8202;delivered weekly.
+          <span className="relative inline-block">
+            joint-friendly
+            <svg
+              className="absolute -bottom-1 left-0 w-full h-2"
+              fill="none"
+              preserveAspectRatio="none"
+              viewBox="0 0 400 12"
+            >
+              <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="3" />
+            </svg>
+          </span>{" "}
+          tips, news, and more&#8202;&#8212;&#8202;delivered weekly.
         </h2>
 
         {/* Form */}

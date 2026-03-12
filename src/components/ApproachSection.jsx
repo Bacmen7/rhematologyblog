@@ -1,9 +1,9 @@
 function ApproachSection() {
   return (
-    <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
+    <section className="custom-approach-section relative overflow-hidden bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
-      <div className="relative z-10 mx-auto max-w-[1120px]">
-        <h2 className="mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2]">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        <h2 className="mb-16 max-w-[800px]">
           Experience a{" "}
           <span className="relative inline-block">
             different approach
@@ -17,7 +17,7 @@ function ApproachSection() {
               <path d="M2 10C80 4 200 2 398 6" stroke="#8da4d0" strokeLinecap="round" strokeWidth="4" />
             </svg>
           </span>{" "}
-          to digestive health
+          to rheumatic care
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 md:gap-y-[60px] gap-x-[80px]">
@@ -27,9 +27,9 @@ function ApproachSection() {
               <span className="material-symbols-outlined relative z-10 text-[32px] text-white">volunteer_activism</span>
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 text-[20px] font-semibold leading-[1.4]">Whole-person &amp; collaborative care</h3>
-              <p className="text-[16px] leading-[1.6] font-normal text-[#b0b5c0]">
-                <strong className="font-semibold text-white">GI experts working across specialities</strong> (medical, dietary, and gut-brain) to treat you, not
+              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Whole-person &amp; collaborative care</h3>
+              <p className="!text-[16px] !leading-[1.6] font-normal text-[#b0b5c0]">
+                <strong className="font-semibold text-white">Rheumatologists working across specialities</strong> (immunology, orthopedics, and pain management) to treat you, not
                 just your symptoms.
               </p>
             </div>
@@ -41,9 +41,9 @@ function ApproachSection() {
               <span className="material-symbols-outlined relative z-10 text-[32px] text-white">task_alt</span>
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 text-[20px] font-semibold leading-[1.4]">Quality care that works</h3>
-              <p className="text-[16px] leading-[1.6] font-normal text-[#b0b5c0]">
-                Clinically-proven results, with <strong className="font-semibold text-white">92% of patients</strong> finding relief in 10 weeks or less.
+              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Quality care that works</h3>
+              <p className="!text-[16px] !leading-[1.6] font-normal text-[#b0b5c0]">
+                Evidence-based treatment plans, with <strong className="font-semibold text-white">92% of patients</strong> reporting meaningful improvement within their first 3 months.
               </p>
             </div>
           </div>
@@ -55,9 +55,9 @@ function ApproachSection() {
               <span className="material-symbols-outlined relative z-10 text-[32px] text-white">chat</span>
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 text-[20px] font-semibold leading-[1.4]">Convenient &amp; accessible</h3>
-              <p className="text-[16px] leading-[1.6] font-normal text-[#b0b5c0]">
-                Easy to schedule, virtual-first GI care visits <strong className="font-semibold text-white">available anytime you need us.</strong>
+              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Convenient &amp; accessible</h3>
+              <p className="!text-[16px] !leading-[1.6] font-normal text-[#b0b5c0]">
+                Easy to schedule, virtual-first rheumatology visits <strong className="font-semibold text-white">available anytime you need us.</strong>
               </p>
             </div>
           </div>
@@ -68,8 +68,8 @@ function ApproachSection() {
               <span className="material-symbols-outlined relative z-10 text-[32px] text-white">hearing</span>
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 text-[20px] font-semibold leading-[1.4]">Be seen &amp; heard</h3>
-              <p className="text-[16px] leading-[1.6] font-normal text-[#b0b5c0]">
+              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Be seen &amp; heard</h3>
+              <p className="!text-[16px] !leading-[1.6] font-normal text-[#b0b5c0]">
                 We take the time to listen, ensuring you feel validated and{" "}
                 <strong className="font-semibold text-white">empowered with personalized support.</strong> We&apos;re proud to have 98% patient satisfaction.
               </p>
@@ -78,7 +78,7 @@ function ApproachSection() {
         </div>
       </div>
       {/* Bottom wave */}
-      <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+      <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
         <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
       </svg>
     </section>

@@ -5,7 +5,8 @@ function Hero() {
       <section
         className="custom-approach-section relative overflow-hidden hidden lg:block"
         style={{
-          background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd",
+          background: "#d1ebfd",
+          /* background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd", */
         }}
       >
         <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
@@ -49,7 +50,8 @@ function Hero() {
         <div
           className="flex flex-col items-center text-center px-6 pt-14 pb-10"
           style={{
-            background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd",
+            background: "#d1ebfd",
+            /* background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd", */
           }}
         >
           <h1 className="text-[3.0625rem] font-light text-navy-deep leading-[1.06] tracking-[-1.4px] mb-5">

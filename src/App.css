@@ -37,9 +37,11 @@
   }
 }
 
-/* Article page — reset letter-spacing */
+/* Article page — match home page font system */
 .blog-detail-page {
-  letter-spacing: normal;
+  font-family: var(--font-base);
+  letter-spacing: 0.6px;
+  color: var(--color-navy-deep);
 }
 
 .blog-detail-page h1,
@@ -48,21 +50,28 @@
 .blog-detail-page h4,
 .blog-detail-page h5,
 .blog-detail-page h6 {
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variant-numeric: lining-nums proportional-nums;
+  color: var(--color-navy-deep);
 }
 
 .blog-article-content h2 {
+  font-family: var(--font-display);
   margin: 2rem 0 1rem;
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-  font-weight: 700 !important;
+  font-size: calc(2.625rem);
+  line-height: calc(1.14286);
+  letter-spacing: -0.4px;
+  font-weight: 400;
 }
 
 .blog-article-content p {
+  font-family: var(--font-base);
   margin: 0 0 1rem;
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  line-height: calc(1.75);
+  color: var(--color-navy-deep);
 }
 
 .blog-article-content ul {
@@ -71,25 +80,32 @@
 }
 
 .blog-article-content li {
-  font-size: 1.03rem;
-  line-height: 1.7;
+  font-family: var(--font-base);
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  line-height: calc(1.75);
   margin-bottom: 0.5rem;
+  color: var(--color-navy-deep);
 }
 
 .blog-article-content blockquote {
+  font-family: var(--font-base);
   margin: 1.4rem 0;
   padding-left: 1rem;
-  border-left: 3px solid #c1c1c1;
-  color: #415b7d;
-  font-size: 1.05rem;
+  border-left: 3px solid var(--color-border);
+  color: var(--color-navy-muted);
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  line-height: calc(1.75);
 }
 
 .blog-article-content h3 {
+  font-family: var(--font-display);
   margin: 1.8rem 0 0.8rem;
-  font-size: clamp(1.2rem, 1.6vw, 1.5rem);
-  line-height: 1.3;
-  letter-spacing: -0.005em;
-  font-weight: 500;
+  font-size: calc(2rem);
+  line-height: calc(1.25);
+  letter-spacing: -0.2px;
+  font-weight: 400;
 }
 
 .blog-article-content img {
@@ -218,12 +234,17 @@
 /* Strong text inside paragraphs */
 .blog-article-content strong {
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-navy-deep);
 }
 
 @media (max-width: 1024px) {
   .blog-article-content h2 {
-    font-size: 1.5rem;
+    font-size: calc(2rem);
+    letter-spacing: -0.2px;
+  }
+
+  .blog-article-content h3 {
+    font-size: calc(1.5rem);
   }
 
   .blog-article-content p,

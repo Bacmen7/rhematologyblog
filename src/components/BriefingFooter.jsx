@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function BriefingFooter() {
   return (
-    <footer className="bg-navy-deep">
+    <footer className="bg-navy-deep" style={{ fontFamily: "var(--font-base)" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-10 md:pb-12">
         {/* Main Grid */}
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10 mb-12 md:mb-20">
@@ -32,10 +32,10 @@ function BriefingFooter() {
 
           {/* Clinical Care */}
           <div>
-            <h4 className="inline-block mb-5 text-xs font-bold uppercase tracking-[0.15em] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40">
+            <h4 className="inline-block mb-5 uppercase tracking-[1.2px] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40" style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, lineHeight: "15px" }}>
               Clinical Care
             </h4>
-            <ul className="space-y-3 text-[15px] text-white/60">
+            <ul className="space-y-3 text-white/60" style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px" }}>
               <li><a className="hover:text-white transition-colors" href="#">Biological Therapies</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Joint Ultrasound</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Infusion Center</a></li>
@@ -45,10 +45,10 @@ function BriefingFooter() {
 
           {/* Conditions */}
           <div>
-            <h4 className="inline-block mb-5 text-xs font-bold uppercase tracking-[0.15em] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40">
+            <h4 className="inline-block mb-5 uppercase tracking-[1.2px] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40" style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, lineHeight: "15px" }}>
               Conditions
             </h4>
-            <ul className="space-y-3 text-[15px] text-white/60">
+            <ul className="space-y-3 text-white/60" style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px" }}>
               <li><a className="hover:text-white transition-colors" href="#">Rheumatoid Arthritis</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Psoriatic Arthritis</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Lupus (SLE)</a></li>
@@ -59,10 +59,10 @@ function BriefingFooter() {
 
           {/* Resources */}
           <div>
-            <h4 className="inline-block mb-5 text-xs font-bold uppercase tracking-[0.15em] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40">
+            <h4 className="inline-block mb-5 uppercase tracking-[1.2px] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40" style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, lineHeight: "15px" }}>
               Resources
             </h4>
-            <ul className="space-y-3 text-[15px] text-white/60">
+            <ul className="space-y-3 text-white/60" style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px" }}>
               <li><a className="hover:text-white transition-colors" href="#">Patient Portal</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Flare Management</a></li>
               <li><a className="hover:text-white transition-colors" href="#">Financial Advocacy</a></li>
@@ -72,10 +72,10 @@ function BriefingFooter() {
 
           {/* Company */}
           <div>
-            <h4 className="inline-block mb-5 text-xs font-bold uppercase tracking-[0.15em] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40">
+            <h4 className="inline-block mb-5 uppercase tracking-[1.2px] text-navy-deep px-3 py-1 rounded-full bg-sky-soft/40" style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, lineHeight: "15px" }}>
               Company
             </h4>
-            <ul className="space-y-3 text-[15px] text-white/60">
+            <ul className="space-y-3 text-white/60" style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px" }}>
               <li><Link className="hover:text-white transition-colors" to="/about">About Us</Link></li>
               <li><Link className="hover:text-white transition-colors" to="/our-approach">Our Approach</Link></li>
               <li><Link className="hover:text-white transition-colors" to="/pricing">Pricing &amp; Insurance</Link></li>
@@ -87,7 +87,6 @@ function BriefingFooter() {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
-          <p>This site is for informational purposes only and does not provide medical advice. Always consult a qualified healthcare professional.</p>
           <div className="flex gap-6">
             <a className="hover:text-white transition-colors" href="#">Privacy Policy</a>
             <a className="hover:text-white transition-colors" href="#">Terms of Service</a>

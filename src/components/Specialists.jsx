@@ -3,23 +3,20 @@ import { useState, useRef, useEffect } from "react"
 const specialists = [
   {
     id: 1,
-    name: "Dr. Sarah Chen",
-    title: "Chief of Clinical Research",
-    badge: "Lupus Specialist",
+    name: "Dr. Sarah Chen, MD, MBA",
+    title: "Chief of Clinical Research, Rheumatologist",
     image: "/images/specialist-1.jpg",
   },
   {
     id: 2,
-    name: "Dr. Marcus Thorne",
-    title: "Senior Immunologist",
-    badge: "RA & Osteo",
+    name: "Dr. Marcus Thorne, MD",
+    title: "Senior Immunologist, RA Specialist",
     image: "/images/specialist-2.jpg",
   },
   {
     id: 3,
-    name: "Dr. Elena Rodriguez",
-    title: "Lead Consultant",
-    badge: "Pediatric Specialist",
+    name: "Dr. Elena Rodriguez, MD",
+    title: "Lead Consultant, Pediatric Rheumatology",
     image: "/images/specialist-3.jpg",
   },
 ]
@@ -34,8 +31,8 @@ function Specialists() {
 
     const handleScroll = () => {
       const scrollLeft = container.scrollLeft
-      const cardWidth = container.firstElementChild?.offsetWidth || 220
-      const gap = 16
+      const cardWidth = container.firstElementChild?.offsetWidth || 280
+      const gap = 24
       const index = Math.round(scrollLeft / (cardWidth + gap))
       setActiveIndex(Math.min(index, specialists.length - 1))
     }
@@ -47,8 +44,8 @@ function Specialists() {
   const scrollToIndex = (index) => {
     const container = scrollRef.current
     if (!container) return
-    const cardWidth = container.firstElementChild?.offsetWidth || 220
-    const gap = 16
+    const cardWidth = container.firstElementChild?.offsetWidth || 280
+    const gap = 24
     container.scrollTo({ left: index * (cardWidth + gap), behavior: "smooth" })
   }
 
@@ -58,7 +55,7 @@ function Specialists() {
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6">
           <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep">
-            Meet the<br />
+            Meet Our<br />
             <span className="text-navy-muted/40">Specialists</span>
           </h2>
           <p className="max-w-xs text-sm text-navy-muted pb-2">
@@ -70,27 +67,12 @@ function Specialists() {
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-1"
+            className="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-4 px-1"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}
           >
             {specialists.map((doc) => (
-              <div key={doc.id} className="snap-start shrink-0 w-[220px]">
-                <div className="group cursor-pointer">
-                  <div className="aspect-[3/4] overflow-hidden rounded-xl mb-4 shadow-[0_4px_30px_rgba(0,0,0,0.05)] relative">
-                    <img
-                      src={doc.image}
-                      alt={doc.name}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                    />
-                    <div className="absolute bottom-3 left-3 bg-white/60 backdrop-blur-[8px] px-3 py-1.5 rounded-full text-[10px] font-bold text-navy-deep">
-                      {doc.badge}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-navy-deep mb-0.5">{doc.name}</h3>
-                  <p className="text-navy-muted uppercase tracking-widest text-[10px] font-semibold">
-                    {doc.title}
-                  </p>
-                </div>
+              <div key={doc.id} className="snap-start shrink-0 w-[280px]">
+                <SpecialistCard doc={doc} />
               </div>
             ))}
           </div>
@@ -106,13 +88,10 @@ function Specialists() {
           </div>
         </div>
 
-        {/* Desktop: 3-Column Magazine Grid */}
+        {/* Desktop: 3-Column Grid */}
         <div className="hidden md:grid grid-cols-3 gap-8">
-          {specialists.map((doc, index) => (
-            <div
-              key={doc.id}
-              className={`group cursor-pointer ${index === 1 ? "md:translate-y-12" : ""}`}
-            >
+          {specialists.map((doc) => (
+            <div key={doc.id}>
               <SpecialistCard doc={doc} />
             </div>
           ))}
@@ -124,21 +103,28 @@ function Specialists() {
 
 function SpecialistCard({ doc }) {
   return (
-    <div className="group cursor-pointer">
-      <div className="aspect-[3/4] overflow-hidden rounded-xl mb-6 shadow-[0_4px_30px_rgba(0,0,0,0.05)] relative">
+    <div className="group">
+      <div className="rounded-2xl overflow-hidden mb-6 bg-[#f0cfc4]">
         <img
           src={doc.image}
           alt={doc.name}
-          className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+          className="w-full aspect-[3/4] object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
         />
-        <div className="absolute bottom-4 left-4 bg-white/60 backdrop-blur-[8px] px-4 py-2 rounded-full text-xs font-bold text-navy-deep">
-          {doc.badge}
-        </div>
       </div>
-      <h3 className="text-2xl font-bold text-navy-deep mb-1">{doc.name}</h3>
-      <p className="text-navy-muted uppercase tracking-widest text-xs font-semibold">
+      <h3 className="text-[1.5rem] md:text-[1.75rem] leading-[1.2] tracking-[-0.5px] text-navy-deep mb-1">
+        {doc.name}
+      </h3>
+      <p className="text-sm text-navy-muted mb-4">
         {doc.title}
       </p>
+      <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/link">
+        Read bio
+        <span className="w-7 h-7 rounded-full bg-primary/40 flex items-center justify-center group-hover/link:bg-primary/60 transition-colors">
+          <svg className="w-3.5 h-3.5 text-navy-deep" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+          </svg>
+        </span>
+      </a>
     </div>
   )
 }

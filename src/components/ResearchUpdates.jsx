@@ -21,21 +21,21 @@ function ResearchUpdates() {
     <section className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center gap-4 mb-12">
-          <h2 className="text-3xl leading-[1.05] tracking-tight">Research Updates</h2>
-          <div className="flex-1 h-px bg-slate-200"></div>
+          <h2>Research Updates</h2>
+          <div className="flex-1 h-px bg-border"></div>
         </div>
         <div className="space-y-6">
           {updates.map((item) => (
             <div
               key={item.title}
-              className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-slate-100 hover:bg-white transition-colors cursor-pointer group"
+              className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl border border-border hover:bg-white transition-colors cursor-pointer group"
             >
-              <div className="text-black font-base font-bold text-sm min-w-[120px]">{item.date}</div>
+              <div className="text-navy-deep text-sm min-w-[120px]" style={{ fontFamily: "var(--font-base)", fontWeight: 600 }}>{item.date}</div>
               <div className="flex-1">
-                <h4 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">{item.title}</h4>
-                <p className="text-slate-500">{item.summary}</p>
+                <h4 className="text-xl mb-2 group-hover:text-primary transition-colors">{item.title}</h4>
+                <p className="text-navy-muted">{item.summary}</p>
               </div>
-              <span className="material-symbols-outlined self-center text-slate-300">chevron_right</span>
+              <span className="material-symbols-outlined self-center text-navy-muted/30">chevron_right</span>
             </div>
           ))}
         </div>

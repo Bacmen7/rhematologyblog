@@ -11,6 +11,9 @@ import Specialists from "./components/Specialists"
 import Testimonials from "./components/Testimonials"
 import CTASection from "./components/CTASection"
 import StatsBar from "./components/StatsBar"
+import InsurancePartners from "./components/InsurancePartners"
+import ConditionsGrid from "./components/ConditionsGrid"
+import WhyRheuma from "./components/WhyRheuma"
 
 import BriefingHero from "./components/BriefingHero"
 import FocusJAK from "./components/FocusJAK"
@@ -35,13 +38,18 @@ function App() {
         <Hero />
         {/* <StatsBar /> */}
 
+        <InsurancePartners />
+        {/* <ConditionsGrid /> */}
+
+        <WhyRheuma />
+
         {/* <div className="bg-white">
           <CategoryFilters />
         </div> */}
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <FeaturedInsights />
-        </div>
+        </div> */}
 
         {/* ═══════════════════════════════════════════════
             ZONE 2 — HEALTH GUIDE & CONDITIONS
