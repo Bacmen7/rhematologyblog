@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-import { useState } from "react"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
 import BriefingFooter from "../components/BriefingFooter"
@@ -10,13 +9,14 @@ function AboutUs() {
       <Header />
       <main>
         <HeroSection />
-        <OriginStory />
+        <CeoQuoteSection />
+        <PersonalStorySection />
         <MissionSection />
-        <ValuesSection />
-        <LeadershipSection />
-        <ClinicalTeam />
-        <TimelineSection />
+        <CoreValuesSection />
+        <LeadershipTeamSection />
+        <MedicalAdvisorsSection />
         <PartnersSection />
+        <FeaturedInSection />
         <PressSection />
         <CareersSection />
         <CtaSection />
@@ -43,22 +43,14 @@ function HeroSection() {
           <div className="lg:col-span-6 py-20 lg:py-28">
             <div className="mb-6 flex items-center gap-4">
               <span className="h-px w-8 bg-navy-deep/30" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">About Us</span>
+              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Vision</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
-              Built by people who've been{" "}
-              the patient
+              A world where people live free from autoimmune suffering
             </h1>
             <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg">
-              Rheuma was founded because the people who started it got tired of the way autoimmune care works. So they built something different.
+              We're on a mission to free people from the burden of autoimmune conditions by redesigning how specialist care is delivered.
             </p>
-            <div className="mt-14 flex items-center gap-8 text-xs uppercase tracking-widest font-bold text-navy-muted/50">
-              <span>Boston, MA</span>
-              <span className="text-navy-deep/15">|</span>
-              <span>Founded 2021</span>
-              <span className="text-navy-deep/15">|</span>
-              <span>38 Specialists</span>
-            </div>
           </div>
           <div className="lg:col-span-6 relative hidden lg:block">
             <div className="aspect-[4/5] overflow-hidden">
@@ -75,24 +67,38 @@ function HeroSection() {
   )
 }
 
-/* ───────── 2. ORIGIN STORY ───────── */
-function OriginStory() {
+/* ───────── 2. CEO QUOTE ───────── */
+function CeoQuoteSection() {
   return (
-    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden pb-16">
+    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden">
+      {/* Top wave */}
+      <svg className="absolute top-0 left-0 w-full" style={{ height: "40px", transform: "translateY(-99%)" }} preserveAspectRatio="none" viewBox="0 0 1440 32" fill="none">
+        <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#182439" />
+      </svg>
 
-      <div className="max-w-[1120px] mx-auto px-6 py-28 md:py-36 relative z-10">
-        <p className="text-3xl md:text-[2.8rem] lg:text-5xl leading-[1.25] font-normal max-w-4xl">
-          Our co-founder waited{" "}
-          <span className="relative inline-block">
-            nine months
-            <svg className="absolute -bottom-2 left-0 h-3 w-full" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
-              <path d="M2 10C80 4 200 2 398 6" stroke="#92d9d5" strokeLinecap="round" strokeWidth="4" />
-            </svg>
-          </span>{" "}
-          for a rheumatology appointment. By the time she got one, irreversible joint damage had already set in. That{" "}
-          <span className="text-primary/80">shouldn't happen</span> to anyone.
-        </p>
+      <div className="max-w-7xl mx-auto px-6 py-28 md:py-36 relative z-10">
+        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
+          <div className="w-full md:w-5/12">
+            <div className="aspect-[4/5] overflow-hidden">
+              <img
+                src="/images/specialist-1.jpg"
+                alt="Dr. Amara Osei"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          <div className="w-full md:w-7/12">
+            <blockquote className="text-3xl md:text-[2.5rem] lg:text-[2.8rem] leading-[1.25] font-normal mb-8" style={{ fontFamily: "var(--font-base)" }}>
+              "From the beginning, our vision has been to scale access to care that millions of Americans need — bringing center-of-excellence quality rheumatology care to them, wherever they are."
+            </blockquote>
+            <cite className="not-italic flex items-center gap-3 font-semibold text-[15px]">
+              <span className="w-6 h-[1px] bg-primary block" />
+              Dr. Amara Osei, Co-Founder & CEO
+            </cite>
+          </div>
+        </div>
       </div>
+
       {/* Bottom wave */}
       <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
         <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
@@ -101,10 +107,47 @@ function OriginStory() {
   )
 }
 
-/* ───────── 3. MISSION ───────── */
-function MissionSection() {
+/* ───────── 3. WHY REDESIGNING CARE IS PERSONAL ───────── */
+function PersonalStorySection() {
   return (
     <section className="py-24 md:py-36">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-10">
+              Why redesigning rheumatology care is personal.
+            </h2>
+            <div className="space-y-6 text-navy-muted text-lg leading-[1.8]">
+              <p>
+                In 2019, our co-founder Dr. Amara Osei was diagnosed with rheumatoid arthritis after waiting nine months for a specialist appointment. By the time she saw a rheumatologist, irreversible joint damage had already set in — damage that could have been prevented with earlier intervention.
+              </p>
+              <p>
+                As she unpacked what had happened and why she hadn't gotten the care she needed in those critical early months, her passion for solving systemic problems in rheumatology was ignited. This passion and accountability to patients shaped Rheuma's path to reinvent the autoimmune patient experience, and democratize access to proven multi-disciplinary care — something that had eluded her own journey.
+              </p>
+              <p>
+                Since 2021, Rheuma has been the industry leader in virtual-first rheumatology, gaining national recognition for evidence-based care through proven outcomes. But we measure success with every patient who tells us we've changed their life.
+              </p>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="aspect-[4/5] overflow-hidden">
+              <img
+                src="/images/hero-consult.jpg"
+                alt="Why redesigning care is personal"
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ───────── 4. MISSION ───────── */
+function MissionSection() {
+  return (
+    <section className="py-24 md:py-36 bg-ghost">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-5">
@@ -134,138 +177,80 @@ function MissionSection() {
   )
 }
 
-/* ───────── 4. VALUES ───────── */
-function ValuesSection() {
-  return (
-    <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 py-[100px] md:py-[120px] text-white">
-      <div className="relative z-10 mx-auto max-w-[1120px]">
-        <div className="mb-6 flex items-center gap-4">
-          <span className="h-px w-8 bg-primary/40" />
-          <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/40">Our Values</span>
-        </div>
-        <h2 className="mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2] font-normal">
-          What drives every{" "}
-          <span className="relative inline-block">
-            decision we make
-            <svg className="absolute -bottom-2 left-0 h-3 w-full" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
-              <path d="M2 10C80 4 200 2 398 6" stroke="#8da4d0" strokeLinecap="round" strokeWidth="4" />
-            </svg>
-          </span>
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 md:gap-y-[60px] gap-x-[80px]">
-          {[
-            {
-              icon: "speed",
-              title: "Urgency over bureaucracy",
-              text: (
-                <>
-                  Autoimmune conditions progress. Every week of delay can mean <strong className="font-semibold text-white">permanent damage.</strong> We treat access as a clinical imperative, not an operational convenience.
-                </>
-              ),
-            },
-            {
-              icon: "diversity_3",
-              title: "Patients are partners",
-              text: (
-                <>
-                  Treatment plans are built <strong className="font-semibold text-white">with patients, not for them.</strong> You understand your body better than any test result — we listen before we prescribe.
-                </>
-              ),
-            },
-            {
-              icon: "auto_graph",
-              title: "Measure everything",
-              text: (
-                <>
-                  "Feeling a bit better" isn't a clinical outcome. We track <strong className="font-semibold text-white">specific, quantifiable metrics</strong> so both you and your care team know what's working.
-                </>
-              ),
-            },
-            {
-              icon: "lightbulb",
-              title: "Stay uncomfortable",
-              text: (
-                <>
-                  Healthcare is full of "that's how we've always done it." We <strong className="font-semibold text-white">question every process</strong> and rebuild anything that doesn't serve the patient.
-                </>
-              ),
-              dot: true,
-            },
-          ].map((item) => (
-            <div key={item.title} className="flex items-start gap-6">
-              <div className="relative flex h-16 w-16 shrink-0 items-center justify-center">
-                <div className="absolute h-14 w-14 rounded-full bg-[#212836]" />
-                {item.dot && <div className="absolute -right-1 top-2 h-3 w-3 rounded-full bg-[#dcaea8]" />}
-                <span className="material-symbols-outlined relative z-10 text-[32px] text-white">{item.icon}</span>
-              </div>
-              <div className="flex-1">
-                <h3 className="mb-3 text-[20px] font-semibold leading-[1.4]">{item.title}</h3>
-                <p className="text-[16px] leading-[1.6] font-normal text-[#b0b5c0]">{item.text}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 5. LEADERSHIP ───────── */
-function LeadershipSection() {
-  const team = [
-    { name: "Dr. Amara Osei", role: "Co-Founder & CEO", badge: "MD, MBA", image: "/images/specialist-1.jpg" },
-    { name: "Raj Patel", role: "Co-Founder & CTO", badge: "MS CS, Stanford", image: "/images/specialist-2.jpg" },
-    { name: "Dr. Elena Vasquez", role: "Chief Medical Officer", badge: "MD, FACR", image: "/images/specialist-3.jpg" },
+/* ───────── 5. CORE VALUES (6 values with organic blob shapes) ───────── */
+function CoreValuesSection() {
+  const valuesData = [
+    {
+      title: "Urgency over bureaucracy",
+      desc: "Every week of delay can mean permanent damage",
+      icon: "speed",
+      path: "M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z",
+    },
+    {
+      title: "Patients are partners",
+      desc: "Treatment plans built with patients, not for them",
+      icon: "diversity_3",
+      path: "M55.1256 5.62319C69.5284 18.4233 75.3527 39.7894 70.0964 55.9976C65.1006 71.3957 49.3485 76.6043 33.3275 72.8197C18.4814 69.3135 4.89883 56.0577 0.773067 39.6249C-2.87611 25.0844 7.0102 15.5753 17.3399 9.11354C28.7557 1.97144 42.7234 -5.39849 55.1256 5.62319Z",
+    },
+    {
+      title: "Measure everything",
+      desc: "Quantifiable metrics over subjective impressions",
+      icon: "auto_graph",
+      path: "M61.2722 61.651C48.113 74.675 28.0401 77.5078 13.8247 69.6181C0.313371 62.1241 -2.78863 44.9948 2.32593 28.9416C7.06625 14.0642 20.5554 1.95861 35.9545 0.146643C49.5794 -1.45508 57.2138 10.23 62.0234 21.9179C67.3404 34.8367 72.6018 50.4362 61.2694 61.6482L61.2722 61.651Z",
+    },
+    {
+      title: "Stay uncomfortable",
+      desc: "Question every process that doesn't serve the patient",
+      icon: "lightbulb",
+      path: "M6.18816 64.3795C-3.39958 48.4772 -1.49202 26.3721 9.46198 11.9611C19.8727 -1.73098 37.2185 -2.93384 51.6141 4.63228C64.9551 11.6447 73.574 27.7867 71.7584 44.7011C70.1524 59.6658 57.0392 66.4641 44.5771 70.2053C30.8047 74.3397 14.4416 78.0716 6.18816 64.3795Z",
+    },
+    {
+      title: "Cultivate strong relationships",
+      desc: "Between patients, providers, and each other",
+      icon: "group",
+      path: "M73.3102 21.5931C76.7302 40.5231 67.1102 60.6731 51.6902 69.8631C37.0302 78.6031 20.2602 72.7031 9.36024 59.7131C-0.739762 47.6731 -3.15976 28.9031 4.53024 13.6331C11.3402 0.123064 26.1102 -0.996936 39.1802 0.513064C53.6302 2.18306 70.3702 5.28306 73.3102 21.5831V21.5931Z",
+    },
+    {
+      title: "Thrive on diversity",
+      desc: "An inclusive culture that reflects our patients",
+      icon: "emoji_people",
+      path: "M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z",
+    },
   ]
+
   return (
-    <section className="py-24 md:py-36 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6">
-          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-navy-deep">
-            Leadership<br />
-            <span className="text-teal-soft">Team</span>
+    <section className="relative overflow-hidden py-28 md:py-36">
+      {/* Top wave */}
+      <svg className="absolute top-0 left-0 w-full" style={{ height: "80px", transform: "translateY(-99%)" }} preserveAspectRatio="none" viewBox="0 0 1440 120" fill="none">
+        <path d="M902.287 110.844C616.272 102.591 308.233 0.726051 45.0151 80.1802C29.7923 84.7785 14.8114 90.0303 0 95.8629V120H1440V0C1273.37 78.0746 1092.39 116.337 902.287 110.844Z" fill="#f8fafd" />
+      </svg>
+
+      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <div className="mb-6 flex items-center justify-center gap-4">
+            <span className="h-px w-8 bg-navy-deep/20" />
+            <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Values</span>
+            <span className="h-px w-8 bg-navy-deep/20" />
+          </div>
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-4">
+            What drives every decision we make
           </h2>
-          <p className="max-w-xs text-sm text-navy-muted pb-2">
-            Clinicians, technologists, and operators who've lived the problems they're solving.
+          <p className="text-navy-muted text-lg max-w-2xl mx-auto">
+            These six values give us the courage to do the right thing for our patients, partners, and each other, every day.
           </p>
         </div>
 
-        {/* Mobile: Horizontal Carousel */}
-        <div className="md:hidden">
-          <div
-            className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 px-1 hide-scrollbar"
-            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-          >
-            {team.map((doc) => (
-              <div key={doc.name} className="snap-start shrink-0 w-[220px]">
-                <div className="group cursor-pointer">
-                  <div className="aspect-[3/4] overflow-hidden rounded-xl mb-4 shadow-[0_4px_30px_rgba(0,0,0,0.05)] relative">
-                    <img src={doc.image} alt={doc.name} className="w-full h-full object-cover" />
-                    <div className="absolute bottom-3 left-3 bg-white/60 backdrop-blur-[8px] px-3 py-1.5 rounded-full text-[10px] font-bold text-navy-deep">
-                      {doc.badge}
-                    </div>
-                  </div>
-                  <h3 className="text-lg font-bold text-navy-deep mb-0.5">{doc.name}</h3>
-                  <p className="text-navy-muted uppercase tracking-widest text-[10px] font-semibold">{doc.role}</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {valuesData.map((val, idx) => (
+            <div key={idx} className="bg-white p-10 flex flex-col items-center text-center shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300">
+              <div className="relative w-[70px] h-[74px] flex items-center justify-center mb-5">
+                <svg className="absolute top-0 left-0 w-full h-full z-0" viewBox="0 0 74 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fillRule="evenodd" clipRule="evenodd" d={val.path} fill="#e3efff" />
+                </svg>
+                <span className="material-symbols-outlined relative z-10 text-[28px] text-navy-deep/70">{val.icon}</span>
               </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Desktop: 3-Column Grid */}
-        <div className="hidden md:grid grid-cols-3 gap-8">
-          {team.map((doc, i) => (
-            <div key={doc.name} className={`group cursor-pointer ${i === 1 ? "md:translate-y-12" : ""}`}>
-              <div className="aspect-[3/4] overflow-hidden mb-6 shadow-[0_4px_30px_rgba(0,0,0,0.05)] relative">
-                <img src={doc.image} alt={doc.name} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" />
-                <div className="absolute bottom-4 left-4 bg-white/60 backdrop-blur-[8px] px-4 py-2 rounded-full text-xs font-bold text-navy-deep">
-                  {doc.badge}
-                </div>
-              </div>
-              <h3 className="text-2xl font-bold text-navy-deep mb-1">{doc.name}</h3>
-              <p className="text-navy-muted uppercase tracking-widest text-xs font-semibold">{doc.role}</p>
+              <h3 className="text-xl font-semibold mb-2 tracking-tight">{val.title}</h3>
+              <p className="text-sm text-navy-muted leading-relaxed">{val.desc}</p>
             </div>
           ))}
         </div>
@@ -274,89 +259,106 @@ function LeadershipSection() {
   )
 }
 
-/* ───────── 6. CLINICAL TEAM ───────── */
-function ClinicalTeam() {
+/* ───────── 6. LEADERSHIP TEAM (horizontal scroll) ───────── */
+function LeadershipTeamSection() {
+  const leadershipData = [
+    { name: "Dr. Amara Osei", role: "Co-Founder & CEO", badge: "MD, MBA", image: "/images/specialist-1.jpg", bg: "bg-sky-soft/40" },
+    { name: "Raj Patel", role: "Co-Founder & CTO", badge: "MS CS, Stanford", image: "/images/specialist-2.jpg", bg: "bg-accent/30" },
+    { name: "Dr. Elena Vasquez", role: "Chief Medical Officer", badge: "MD, FACR", image: "/images/specialist-3.jpg", bg: "bg-primary/20" },
+    { name: "David Chen", role: "Chief Financial Officer", badge: "CPA, MBA", image: "/images/hero-doctor.jpg", bg: "bg-sky-soft/40" },
+    { name: "Sarah Mitchell", role: "Chief Product Officer", badge: "MS HCI", image: "/images/hero-consult.jpg", bg: "bg-[#485c6a]/20" },
+  ]
+
   return (
-    <section className="bg-ghost py-24 md:py-36">
+    <section className="py-24 md:py-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-4">
+        <div className="flex flex-col md:flex-row gap-8 mb-16">
+          <div className="w-full md:w-1/3">
             <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Clinical Team</span>
+              <span className="h-px w-8 bg-primary" />
+              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Team</span>
             </div>
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              The people behind{" "}
-              your care
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
+              Leadership team
             </h2>
-            <p className="text-navy-muted text-lg leading-relaxed max-w-sm">
-              Every specialist on our team was hand-picked, not for credentials alone, but for how they treat patients.
+          </div>
+          <div className="w-full md:w-2/3">
+            <p className="text-navy-muted text-lg leading-relaxed max-w-3xl">
+              Our expert rheumatologists, engineers, and operators are{" "}
+              <span className="bg-accent/40 px-1 rounded-sm">leaders in their fields</span>
+              , with deep experience in autoimmune care, health technology, and patient experience. They've lived the problems they're solving.
             </p>
           </div>
+        </div>
 
-          <div className="lg:col-span-7 lg:col-start-6 grid sm:grid-cols-2 gap-x-12 gap-y-14">
-            {[
-              { icon: "medical_services", title: "Rheumatologists", desc: "Board-certified physicians specializing in autoimmune and inflammatory conditions. Average 15+ years clinical experience." },
-              { icon: "fitness_center", title: "Physiotherapists", desc: "Certified in rheumatic disease rehabilitation. They design movement programs that work around flares, not through them." },
-              { icon: "restaurant", title: "Dietitians", desc: "Registered dietitians trained in anti-inflammatory nutrition. Evidence-based meal planning, not fad diets." },
-              { icon: "psychology", title: "Behavioral health", desc: "Licensed therapists who understand the emotional weight of chronic illness. Integrated into your care plan, not an afterthought." },
-              { icon: "local_pharmacy", title: "Clinical pharmacists", desc: "Medication specialists who monitor interactions, optimize dosing, and navigate insurance formularies on your behalf." },
-              { icon: "hub", title: "Care coordinators", desc: "Your single point of contact. They manage scheduling, follow-ups, referrals, and make sure nothing falls through the cracks." },
-            ].map((p) => (
-              <div key={p.title}>
-                <span className="material-symbols-outlined text-[28px] text-navy-deep/30 mb-4 block">{p.icon}</span>
-                <h3 className="text-[18px] font-semibold mb-2 tracking-tight">{p.title}</h3>
-                <p className="text-navy-muted text-[15px] leading-relaxed">{p.desc}</p>
+        {/* Horizontal scroll container */}
+        <div
+          className="flex overflow-x-auto gap-6 pb-8"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {leadershipData.map((member, idx) => (
+            <div key={idx} className="flex-none w-[280px] group cursor-pointer">
+              <div className={`${member.bg} w-full aspect-square overflow-hidden mb-4 relative flex items-end justify-center`}>
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute bottom-3 left-3 bg-white/60 backdrop-blur-[8px] px-3 py-1.5 rounded-full text-[10px] font-bold text-navy-deep">
+                  {member.badge}
+                </div>
               </div>
-            ))}
-          </div>
+              <h3 className="text-xl font-semibold tracking-tight">{member.name}</h3>
+              <p className="text-sm text-navy-muted mt-1">{member.role}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   )
 }
 
-/* ───────── 7. TIMELINE ───────── */
-function TimelineSection() {
+/* ───────── 7. MEDICAL ADVISORS ───────── */
+function MedicalAdvisorsSection() {
+  const advisorsData = [
+    { name: "Dr. James Richardson", desc: "ACR President (2024), renowned RA specialist and clinical trial leader" },
+    { name: "Dr. Maria Santos", desc: "Distinguished rheumatology researcher, Past ACR Board Member" },
+    { name: "Dr. Kevin Park", desc: "Lupus & Vasculitis Expert, Associate Editor, Arthritis & Rheumatology" },
+    { name: "Dr. Lisa Huang", desc: "Inflammatory Arthritis Expert, Clinical Professor at Stanford Medicine" },
+  ]
+
   return (
-    <section className="py-24 md:py-36">
+    <section className="bg-ghost py-24 md:py-36">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-4 lg:sticky lg:top-28">
+        <div className="flex flex-col md:flex-row gap-8 mb-16">
+          <div className="w-full md:w-1/3">
             <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-primary" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Journey</span>
+              <span className="h-px w-8 bg-navy-deep/20" />
+              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Advisors</span>
             </div>
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              How we got here
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
+              Medical advisors
             </h2>
-            <p className="text-navy-muted text-lg leading-relaxed">
-              From a personal frustration to a new standard of care.
+          </div>
+          <div className="w-full md:w-2/3">
+            <p className="text-navy-muted text-lg leading-relaxed max-w-3xl">
+              Our advisory board includes{" "}
+              <span className="bg-accent/40 px-1 rounded-sm">leaders in their fields</span>
+              , with advanced expertise in rheumatology, autoimmune research, and clinical innovation. Their guidance shapes our approach to evidence-based care.
             </p>
           </div>
+        </div>
 
-          <div className="lg:col-span-7 lg:col-start-6">
-            {[
-              { year: "2021", title: "The idea", desc: "After Dr. Osei's personal experience with delayed RA diagnosis, she and Raj Patel begin building the first virtual-first rheumatology platform." },
-              { year: "2022", title: "First patients", desc: "Rheuma launches in Massachusetts with three rheumatologists and a waitlist of 400+ patients transferred from local practices with 6-month backlogs." },
-              { year: "2023", title: "Multi-disciplinary model", desc: "We add physiotherapy, dietetics, and behavioral health — becoming the first fully integrated virtual rheumatology practice in the Northeast." },
-              { year: "2024", title: "National expansion", desc: "Licensed in 18 states. Partnership with three major insurance carriers. Clinical outcomes data published in the Journal of Rheumatology." },
-              { year: "2025", title: "Where we are now", desc: "38 specialists, thousands of patients across the country, and a care model that's being studied by health systems looking to replicate the results." },
-            ].map((item, i) => (
-              <div
-                key={item.year}
-                className={`flex gap-8 ${i < 4 ? "pb-14 mb-14 border-b border-border/50" : ""}`}
-              >
-                <span className="text-5xl md:text-6xl font-extrabold text-primary/20 leading-none shrink-0 select-none">
-                  {item.year}
-                </span>
-                <div className="pt-1">
-                  <h3 className="text-2xl font-semibold mb-3 tracking-tight">{item.title}</h3>
-                  <p className="text-navy-muted text-[16px] leading-[1.7]">{item.desc}</p>
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {advisorsData.map((advisor, idx) => (
+            <div key={idx} className="bg-white p-8 shadow-[0_2px_20px_rgba(0,0,0,0.04)]">
+              <div className="w-10 h-10 rounded-full bg-sky-faint flex items-center justify-center mb-4">
+                <span className="material-symbols-outlined text-[20px] text-navy-deep/40">school</span>
               </div>
-            ))}
-          </div>
+              <h3 className="text-lg font-semibold mb-2 tracking-tight">{advisor.name}</h3>
+              <p className="text-sm text-navy-muted leading-relaxed">{advisor.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -366,7 +368,7 @@ function TimelineSection() {
 /* ───────── 8. PARTNERS & AFFILIATIONS ───────── */
 function PartnersSection() {
   return (
-    <section className="bg-[#f0f4fb] border-y border-border/40">
+    <section className="border-y border-border/40">
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <div className="text-center mb-14">
           <div className="mb-6 flex items-center justify-center gap-4">
@@ -400,22 +402,51 @@ function PartnersSection() {
   )
 }
 
-/* ───────── 9. PRESS & RECOGNITION ───────── */
+/* ───────── 11. FEATURED IN (Logo Garden) ───────── */
+function FeaturedInSection() {
+  return (
+    <section className="bg-navy-deep py-24 md:py-32 text-center">
+      <div className="max-w-[1200px] mx-auto px-6">
+        <div className="mb-6 flex items-center justify-center gap-4">
+          <span className="h-px w-8 bg-white/20" />
+          <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/40">Featured In</span>
+          <span className="h-px w-8 bg-white/20" />
+        </div>
+
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 mt-14">
+          {[
+            "STAT News",
+            "Modern Healthcare",
+            "Fierce Healthcare",
+            "Journal of Rheumatology",
+            "Digital Health 150",
+          ].map((name, i) => (
+            <div key={i} className="text-white/30 text-lg md:text-xl font-semibold tracking-wide hover:text-white/60 transition-colors cursor-default select-none">
+              {name}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ───────── 12. PRESS & RECOGNITION ───────── */
 function PressSection() {
   return (
-    <section className="custom-approach-section bg-navy-deep text-white py-24 md:py-36 relative overflow-hidden">
+    <section className="py-24 md:py-36">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
           <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-8 bg-primary/40" />
-            <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/30">In the Press</span>
+            <span className="h-px w-8 bg-primary" />
+            <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">In the Press</span>
           </div>
           <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
             What others are saying
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-px bg-white/[0.06]">
+        <div className="grid md:grid-cols-3 gap-px bg-border/30">
           {[
             {
               quote: "Rheuma is doing for rheumatology what One Medical did for primary care — making the experience of seeing a specialist feel human again.",
@@ -433,13 +464,13 @@ function PressSection() {
               year: "2023",
             },
           ].map((t) => (
-            <div key={t.source} className="bg-navy-deep p-8 md:p-10 flex flex-col">
-              <p className="text-[17px] md:text-lg leading-[1.7] text-white/80 mb-8 flex-1">
+            <div key={t.source} className="bg-ghost p-8 md:p-10 flex flex-col">
+              <p className="text-[17px] md:text-lg leading-[1.7] text-navy-muted mb-8 flex-1">
                 "{t.quote}"
               </p>
               <div>
-                <span className="block font-semibold text-white">{t.source}</span>
-                <span className="text-sm text-white/40">{t.year}</span>
+                <span className="block font-semibold text-navy-deep">{t.source}</span>
+                <span className="text-sm text-navy-muted/60">{t.year}</span>
               </div>
             </div>
           ))}
@@ -449,10 +480,10 @@ function PressSection() {
   )
 }
 
-/* ───────── 10. CAREERS CTA ───────── */
+/* ───────── 13. CAREERS CTA ───────── */
 function CareersSection() {
   return (
-    <section className="py-24 md:py-36">
+    <section className="py-24 md:py-36 bg-ghost">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
@@ -508,7 +539,7 @@ function CareersSection() {
   )
 }
 
-/* ───────── 11. FINAL CTA ───────── */
+/* ───────── 14. FINAL CTA ───────── */
 function CtaSection() {
   return (
     <section
@@ -519,18 +550,17 @@ function CtaSection() {
     >
       <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
         <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-          We'd love to{" "}
-          hear from you
+          Interested in Rheuma?
         </h2>
         <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg mx-auto">
-          Whether you're a patient, a provider, an employer, or just curious — we're always happy to talk.
+          We're always looking for people who share our passion for redesigning autoimmune care — the way it should be.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             to="/"
             className="bg-navy-deep hover:bg-navy-deep/90 text-white px-10 py-4 rounded-full font-semibold text-[15px] transition-colors"
           >
-            Get in Touch →
+            Get Started →
           </Link>
           <Link
             to="/our-approach"
