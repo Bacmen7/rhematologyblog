@@ -24,6 +24,7 @@ import FAQ from "./components/FAQ"
 import WellnessSeminars from "./components/WellnessSeminars"
 import StrategicNetwork from "./components/StrategicNetwork"
 import Newsletter from "./components/Newsletter"
+import CtaBanner from "./components/CtaBanner"
 import BriefingFooter from "./components/BriefingFooter"
 import PrivacyBanner from "./components/PrivacyBanner"
 
@@ -36,9 +37,9 @@ function App() {
             ZONE 1 — INTRO & DISCOVERY
         ═══════════════════════════════════════════════ */}
         <Hero />
-        {/* <StatsBar /> */}
+        <StatsBar />
 
-        <InsurancePartners />
+        {/* <InsurancePartners /> */}
         {/* <ConditionsGrid /> */}
 
         <WhyRheuma />
@@ -103,6 +104,8 @@ function App() {
         {/* <WellnessSeminars /> */}
 
         {/* <StrategicNetwork /> */}
+
+        <CtaBanner />
 
         <div className="bg-ghost">
           <Newsletter />

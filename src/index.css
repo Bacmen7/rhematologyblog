@@ -58,20 +58,29 @@ body {
   overflow-x: hidden;
 }
 
-@layer base {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin: 0;
-    font-family: var(--font-display);
-    font-weight: 400;
-    font-variant-numeric: lining-nums proportional-nums;
-    color: inherit;
-  }
+/* Global heading font — outside @layer so it always wins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-variant-numeric: lining-nums proportional-nums;
+  color: inherit;
+}
 
+p {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  letter-spacing: 0.6px;
+  line-height: calc(1.75);
+  margin: 0;
+}
+
+@layer base {
   h1 {
     font-size: calc(3.5rem);
     letter-spacing: -0.8px;
@@ -89,14 +98,6 @@ body {
     font-size: calc(2rem);
     letter-spacing: -0.2px;
     line-height: calc(1.25);
-  }
-
-  p {
-    font-family: var(--font-base);
-    font-size: 1rem;
-    letter-spacing: 0.6px;
-    line-height: calc(1.75);
-    margin: 0;
   }
 }
 

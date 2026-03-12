@@ -1,7 +1,7 @@
 function Newsletter() {
   return (
-    <section className="py-28 md:py-40">
-      <div className="max-w-7xl mx-auto px-6 text-center">
+    <section className="relative z-10 py-28 md:py-40">
+      <div className="max-w-4xl mx-auto px-6 text-center">
         {/* Eyebrow */}
         <span className="mb-6 block" style={{ fontFamily: "var(--font-base)", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.25em", color: "var(--color-navy-muted)" }}>
           From our rheumatology experts to your inbox

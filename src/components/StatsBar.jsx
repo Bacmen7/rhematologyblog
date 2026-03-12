@@ -1,50 +1,58 @@
 function StatsBar() {
   return (
-    <section className="relative bg-navy-deep overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-10 md:py-14">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
-          {/* Left — Heading */}
-          <div>
-            <h2 className="text-[1.5rem] md:text-[1.75rem] leading-[1.2] tracking-[-0.5px] font-normal" style={{ color: "#ffffff" }}>
-              Clinically-proven rheumatic care
-            </h2>
-          </div>
+    <section className="py-16 md:py-24">
+      <div className="max-w-[1200px] mx-auto px-6 flex flex-col md:flex-row items-start justify-between gap-10 md:gap-[60px]">
+        {/* Left — Heading */}
+        <div className="flex-[1.5]">
+          <h2
+            className="leading-[1.1] font-normal mb-16 text-navy-deep"
+            style={{ fontFamily: "var(--font-display)", fontSize: "48px" }}
+          >
+            Clinically-proven
+            <br />
+            gastrointestinal relief
+          </h2>
 
-          {/* Stat 1 */}
-          <div>
-            <p className="text-[3.5rem] md:text-[4rem] font-light leading-none tracking-tight text-white mb-1">
-              92%
-            </p>
-            <p className="text-sm text-white/60 leading-relaxed">
-              of patients find relief in <strong className="text-white font-semibold">10 weeks or less</strong>
-            </p>
-          </div>
-
-          {/* Stat 2 */}
-          <div>
-            <p className="text-[3.5rem] md:text-[4rem] font-light leading-none tracking-tight text-white mb-1">
-              88%
-            </p>
-            <p className="text-sm text-white/60 leading-relaxed">
-              of undiagnosed patients get a <strong className="text-white font-semibold">clear diagnosis within 3 months</strong>
+          <div className="flex items-center gap-3 mt-8">
+            <div className="w-[24px] h-[24px] rounded-full bg-[#fdd3bc] flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" className="w-[10px]" fill="#192333">
+                <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" />
+              </svg>
+            </div>
+            <p className="text-[10px] leading-[1.4] text-navy-muted">
+              Source: Results of a clinical trial conducted in partnership with a national health plan
             </p>
           </div>
         </div>
-      </div>
 
-      {/* Bottom wave */}
-      <svg
-        className="absolute bottom-0 left-0 w-full"
-        style={{ height: "60px" }}
-        preserveAspectRatio="none"
-        viewBox="0 0 1440 60"
-        fill="none"
-      >
-        <path
-          d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z"
-          fill="#f8fafd"
-        />
-      </svg>
+        {/* Stat 1 */}
+        <div className="flex-1">
+          <p
+            className="leading-none mb-3 text-navy-deep font-light"
+            style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
+          >
+            92%
+          </p>
+          <p className="text-[15px] leading-[1.6] font-light tracking-[0.3px] text-navy-muted">
+            of patients find relief in{" "}
+            <strong className="font-semibold text-navy-deep">10 weeks or less</strong>
+          </p>
+        </div>
+
+        {/* Stat 2 */}
+        <div className="flex-1">
+          <p
+            className="leading-none mb-3 text-navy-deep font-light"
+            style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
+          >
+            88%
+          </p>
+          <p className="text-[15px] leading-[1.6] font-light tracking-[0.3px] text-navy-muted">
+            of undiagnosed patients get a{" "}
+            <strong className="font-semibold text-navy-deep">clear diagnosis within 3 months</strong>
+          </p>
+        </div>
+      </div>
     </section>
   )
 }
