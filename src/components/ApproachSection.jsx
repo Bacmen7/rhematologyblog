@@ -1,15 +1,6 @@
 function ApproachSection() {
   return (
-    <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 py-[100px] md:py-[120px] text-white">
-      <svg
-        className="absolute top-0 left-0 w-full h-12"
-        fill="none"
-        preserveAspectRatio="none"
-        viewBox="0 0 1440 48"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M0 0H1440V24C1200 56 960 56 720 24C480 -8 240 -8 0 24V0Z" fill="#ffffff" />
-      </svg>
+    <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
       <div className="relative z-10 mx-auto max-w-[1120px]">
         <h2 className="font-display mb-16 max-w-[800px] text-[36px] md:text-[48px] leading-[1.2]">
@@ -86,6 +77,10 @@ function ApproachSection() {
           </div>
         </div>
       </div>
+      {/* Bottom wave */}
+      <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+      </svg>
     </section>
   )
 }

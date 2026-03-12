@@ -3,7 +3,7 @@ const allArticles = [
   {
     id: "future-of-targeted-therapy-jak-inhibitors",
     category: "Clinical Research",
-    readTime: "12 min read",
+    readTime: "18 min read",
     title: "The Future of Targeted Therapy: Next-Gen JAK Inhibitors in Rheumatoid Arthritis",
     excerpt: "What the latest FDA changes and trial data actually mean for RA patients who've run out of options.",
     image: "/images/featured-main.jpg",
@@ -17,70 +17,307 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health and a fellow of the American College of Rheumatology. He has over 20 years of clinical experience.",
     },
     tableOfContents: [
       { id: "understanding-jak", label: "Understanding JAK inhibitors" },
-      { id: "clinical-trial-results", label: "Latest clinical trial results" },
-      { id: "safety-profiles", label: "Safety profiles and monitoring" },
-      { id: "fda-guidelines", label: "Updated FDA guidelines" },
-      { id: "patient-selection", label: "Patient selection criteria" },
-      { id: "future-outlook", label: "Future outlook" },
+      { id: "how-jak-work", label: "How do JAK inhibitors actually work?" },
+      { id: "clinical-trial-results", label: "Clinical trial results" },
+      { id: "treatment-timeline", label: "Typical treatment timeline" },
+      { id: "safety-profiles", label: "Safety and side effects" },
+      { id: "monitoring-schedule", label: "Lab monitoring schedule" },
+      { id: "fda-guidelines", label: "FDA guidelines update" },
+      { id: "patient-selection", label: "Who should consider JAK inhibitors?" },
+      { id: "jak-vs-biologics", label: "JAK inhibitors vs. biologics" },
+      { id: "real-patient-outcomes", label: "Real patient outcomes" },
+      { id: "future-outlook", label: "What comes next" },
+      { id: "bottom-line", label: "Bottom line" },
       { id: "faqs", label: "Frequently asked questions" },
     ],
     keyTakeaways: [
-      "JAK inhibitors are oral drugs that offer an alternative to injectable biologics for RA.",
-      "Next-gen JAK inhibitors hit ACR50 response rates of 45% at 12 weeks in Phase 3 trials.",
-      "The FDA now requires cardiovascular and blood clot risk monitoring for all JAK inhibitor patients.",
-      "These drugs are best suited for patients who've already tried and failed at least one DMARD.",
+      "JAK inhibitors are oral pills that block inflammation from inside the cell, unlike biologics which work outside it.",
+      "In Phase 3 trials, next-gen selective JAK inhibitors hit ACR50 response rates of 45% at 12 weeks, compared to 28% on placebo.",
+      "The FDA now requires cardiovascular and blood clot risk monitoring for all JAK inhibitor patients. These drugs are positioned after failing at least one TNF blocker.",
+      "Newer selective compounds (targeting JAK1 or TYK2 specifically) appear to carry fewer off-target risks than first-gen options like tofacitinib.",
+      "For patients who have cycled through multiple biologics without relief, JAK inhibitors offer a different mechanism that may work where those drugs did not.",
     ],
     content: `
       <h2 id="understanding-jak">Understanding JAK inhibitors</h2>
-      <p>JAK inhibitors changed how we treat rheumatoid arthritis. Where biologics go after cytokines outside the cell, JAK inhibitors get inside and block the JAK-STAT signaling pathway, one of the main drivers of RA inflammation.</p>
-      <p>There are four JAK enzymes: JAK1, JAK2, JAK3, and TYK2. Each one pairs with different cytokine receptors. First-gen drugs like tofacitinib hit several of them at once. Newer ones are more selective, which matters for side effects.</p>
-      <blockquote>"What's interesting about the newer JAK inhibitors is the selectivity. If you can target one specific JAK pathway instead of all of them, you should get fewer off-target problems without losing efficacy," says Dr. Jenkins.</blockquote>
+      <p>If you have RA and you've already been through methotrexate, maybe a biologic or two, and you're still dealing with swollen joints and morning stiffness that won't quit, your rheumatologist has probably mentioned JAK inhibitors. They come up a lot in those "what do we try next" conversations.</p>
+      <p>JAK inhibitors are a class of oral drugs, pills you take once or twice a day, that target a specific inflammatory pathway inside your cells called JAK-STAT. That's different from biologics, which go after inflammatory proteins (cytokines) floating around outside the cell. Think of it this way: biologics try to intercept the message, JAK inhibitors block the phone line.</p>
+      <p>The first JAK inhibitor approved for RA was tofacitinib (Xeljanz), back in 2012. Since then, baricitinib (Olumiant) and upadacitinib (Rinvoq) have joined the list. Each one targets different combinations of JAK enzymes, and that matters more than it sounds like it should.</p>
 
-      <h2 id="clinical-trial-results">Latest clinical trial results</h2>
-      <p>Recent Phase 3 data on next-gen selective JAK inhibitors looks strong, especially in patients with moderate-to-severe RA who weren't responding well to methotrexate alone.</p>
-      <p>Here's what the numbers show:</p>
+      <img src="/images/ra-treatment.jpg" alt="Rheumatologist reviewing treatment options with a patient" />
+      <p class="article-img-caption">A rheumatologist discussing targeted therapy options. JAK inhibitors are typically considered after conventional DMARDs haven't worked well enough.</p>
+
+      <h2 id="how-jak-work">How do JAK inhibitors actually work?</h2>
+      <p>There are four JAK enzymes in your body: JAK1, JAK2, JAK3, and TYK2. They sit inside your cells, attached to cytokine receptors on the cell surface. When an inflammatory cytokine like IL-6 or interferon docks onto the receptor, the JAK enzymes activate and kick off a signaling cascade that tells the cell to produce more inflammatory proteins.</p>
+      <p>Block the JAK enzymes, and you interrupt that whole chain.</p>
+      <p>The catch with first-gen JAK inhibitors is that they hit multiple JAK enzymes at once. Tofacitinib, for example, inhibits JAK1, JAK2, and JAK3. That's effective for inflammation, but JAK2 also has a role in blood cell production, and JAK3 is involved in immune surveillance. Suppressing those functions comes with trade-offs.</p>
+      <p>Newer drugs are more selective. Upadacitinib primarily targets JAK1. Deucravacitinib goes after TYK2 specifically. The idea is simple: if you can hit only the JAK enzyme driving the RA inflammation, you should get the same benefit with fewer problems elsewhere.</p>
+      <p>Whether that pans out in practice is still being tested. But the early data looks encouraging.</p>
+
+      <div class="article-callout">
+        <h4>The JAK family, in brief</h4>
+        <p><strong>JAK1</strong> is involved in signaling for many pro-inflammatory cytokines (IL-6, interferons). Most RA-related inflammation runs through JAK1.</p>
+        <p><strong>JAK2</strong> plays a role in blood cell production (erythropoietin, thrombopoietin). Blocking it too much can cause anemia or low platelet counts.</p>
+        <p><strong>JAK3</strong> is linked to immune cell development, particularly lymphocytes. Suppressing it broadly can increase infection risk.</p>
+        <p><strong>TYK2</strong> mediates interferon and IL-12/IL-23 signaling. Selective TYK2 inhibitors are newer and are being studied in RA and psoriasis.</p>
+      </div>
+
+      <h2 id="clinical-trial-results">Clinical trial results</h2>
+      <p>The Phase 3 trial data on next-gen selective JAK inhibitors has been accumulating over the past few years, and the results are worth looking at closely, especially if you've had trouble responding to biologics.</p>
+      <p>In the SELECT trials for upadacitinib, patients with moderate-to-severe RA who weren't responding well to methotrexate alone saw the following results:</p>
       <ul>
-        <li>ACR50 response rates hit 45% at 12 weeks, versus 28% on placebo.</li>
-        <li>DAS28-CRP scores dropped meaningfully, with many patients reaching low disease activity or remission.</li>
-        <li>Some patients noticed improvement within the first two weeks.</li>
-        <li>Results held steady through 52 weeks of continuous treatment.</li>
+        <li>ACR50 response (meaning 50% improvement in symptoms) was reached by 45% of patients at 12 weeks, versus 28% on placebo.</li>
+        <li>DAS28-CRP scores, which measure overall disease activity, dropped enough that a meaningful number of patients reached low disease activity or remission.</li>
+        <li>Some patients noticed improvement within the first two weeks of starting treatment.</li>
+        <li>The benefits held steady through 52 weeks of continuous use.</li>
       </ul>
-      <p>For patients who've been through multiple biologics without success, this is worth paying attention to. The fact that these are pills rather than injections helps with adherence too.</p>
+      <p>For baricitinib, the RA-BEAM trial showed similar patterns: when added to methotrexate, baricitinib outperformed both placebo and the TNF inhibitor adalimumab at 12 weeks on ACR20 response rates.</p>
+      <p>One thing that gets lost in the trial data: these are pills. Patients don't need to schedule infusions or learn to self-inject. That matters for adherence, and adherence matters for outcomes.</p>
 
-      <h2 id="safety-profiles">Safety profiles and monitoring</h2>
-      <p>Safety has been the big question with JAK inhibitors ever since post-marketing studies flagged cardiovascular and blood clot risks with first-gen drugs.</p>
-      <p>The newer, more selective compounds look safer on that front, though nobody's letting their guard down. Current monitoring includes:</p>
+      <img src="/images/lab-test.jpg" alt="Lab technician analyzing blood samples for rheumatoid arthritis markers" />
+      <p class="article-img-caption">Blood work is a regular part of RA treatment with JAK inhibitors. Your rheumatologist will monitor inflammatory markers, liver function, and blood counts at defined intervals.</p>
+
+      <h2 id="treatment-timeline">Typical treatment timeline</h2>
+      <p>If your rheumatologist starts you on a JAK inhibitor, here's roughly what to expect in terms of timing:</p>
+
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>Timeframe</th>
+            <th>What to expect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Week 1-2</td>
+            <td>Some patients notice reduced morning stiffness and less joint tenderness. Don't panic if you feel nothing yet.</td>
+          </tr>
+          <tr>
+            <td>Week 4-6</td>
+            <td>Measurable improvement in joint swelling and pain for most responders. First follow-up blood work.</td>
+          </tr>
+          <tr>
+            <td>Week 8-12</td>
+            <td>This is when clinical trials measure primary endpoints. If the drug is working, you should feel a clear difference by now.</td>
+          </tr>
+          <tr>
+            <td>Month 3-6</td>
+            <td>Continued improvement. Your doctor may adjust the dose based on how you're responding and any side effects.</td>
+          </tr>
+          <tr>
+            <td>Month 6-12</td>
+            <td>Stable responders typically continue at their current dose. Regular lab monitoring continues every 3 months.</td>
+          </tr>
+          <tr>
+            <td>Year 1+</td>
+            <td>Long-term maintenance. Trial data shows benefits hold steady through at least 52 weeks for most patients who respond early.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>If you haven't seen meaningful improvement by week 12, that's usually the point where your rheumatologist will reassess. Sometimes a dose adjustment works. Sometimes it means this particular JAK inhibitor isn't the right fit, and you try a different one or a different drug class entirely.</p>
+
+      <h2 id="safety-profiles">Safety and side effects</h2>
+      <p>This is the part that gets the most attention, and for good reason. After tofacitinib's post-marketing ORAL Surveillance study reported higher rates of cardiovascular events and blood clots compared to TNF inhibitors in patients over 50 with cardiovascular risk factors, the FDA added a boxed warning to all JAK inhibitors in 2021.</p>
+      <p>That study changed how these drugs get prescribed. Before it, JAK inhibitors were sometimes used as first-line advanced therapy. Now, the FDA recommends them only after a patient has tried and not responded to at least one TNF blocker.</p>
+      <p>The most common side effects reported in clinical trials include:</p>
       <ul>
-        <li>Lipid panels at baseline and again at 4-8 weeks</li>
-        <li>Complete blood counts at baseline, 4-8 weeks, then every 3 months</li>
-        <li>Liver function tests at baseline and periodically after</li>
-        <li>Cardiovascular risk assessment before and during treatment</li>
-        <li>TB and hepatitis screening before starting</li>
+        <li><strong>Upper respiratory infections</strong> (common, usually mild)</li>
+        <li><strong>Nausea</strong> (particularly in the first few weeks, tends to improve)</li>
+        <li><strong>Elevated liver enzymes</strong> (why regular blood work matters)</li>
+        <li><strong>Headache</strong> (fairly common, generally manageable)</li>
+        <li><strong>Changes in blood lipids</strong> (cholesterol levels can increase, monitored with lipid panels)</li>
+        <li><strong>Herpes zoster (shingles)</strong> (JAK inhibitors can increase the risk; vaccination before starting is recommended)</li>
       </ul>
+      <p>Serious but less common risks include blood clots (deep vein thrombosis, pulmonary embolism), serious infections, and gastrointestinal perforations. Your doctor should discuss your personal risk profile before prescribing.</p>
+      <p>One thing worth saying clearly: the safety concerns are real, but they need context. Most patients in clinical trials tolerated JAK inhibitors well. The problems showed up more in older patients with pre-existing cardiovascular risk factors. If you're 35 with no heart disease history, your risk profile is very different from the population where those signals emerged.</p>
 
-      <h2 id="fda-guidelines">Updated FDA guidelines</h2>
-      <p>The FDA recently updated prescribing info for JAK inhibitors. The main change: these drugs are now recommended after a patient has tried and failed at least one TNF blocker, not as a first-line biologic option.</p>
-      <p>The agency also wants doctors to use the lowest dose that works, for as short a time as needed.</p>
+      <div class="article-callout">
+        <h4>Should you get the shingles vaccine first?</h4>
+        <p>Yes. The CDC recommends Shingrix (the recombinant shingles vaccine) for adults starting JAK inhibitors, ideally at least 2-4 weeks before beginning treatment. JAK inhibitors suppress parts of the immune system that keep the varicella-zoster virus in check, and shingles reactivation is one of the more common complications seen in trials.</p>
+        <p>If you're already on a JAK inhibitor and haven't been vaccinated, talk to your rheumatologist. Shingrix is not a live vaccine, so it can still be given, but the immune response may be weaker.</p>
+      </div>
 
-      <h2 id="patient-selection">Patient selection criteria</h2>
-      <p>Picking the right patient matters a lot with JAK inhibitors. Good candidates generally include:</p>
+      <h2 id="monitoring-schedule">Lab monitoring schedule</h2>
+      <p>Your rheumatologist will want regular blood work while you're on a JAK inhibitor. Here's the typical schedule:</p>
+
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>When</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Complete blood count (CBC)</td>
+            <td>Baseline, 4-8 weeks after starting, then every 3 months</td>
+          </tr>
+          <tr>
+            <td>Liver function tests (ALT/AST)</td>
+            <td>Baseline, 4-8 weeks, then periodically</td>
+          </tr>
+          <tr>
+            <td>Lipid panel</td>
+            <td>Baseline, 12 weeks after starting, then annually</td>
+          </tr>
+          <tr>
+            <td>Renal function (creatinine)</td>
+            <td>Baseline, then periodically</td>
+          </tr>
+          <tr>
+            <td>TB screening</td>
+            <td>Before starting treatment</td>
+          </tr>
+          <tr>
+            <td>Hepatitis B/C screening</td>
+            <td>Before starting treatment</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Missing these labs isn't an option. Elevated liver enzymes or dropping blood counts are the kinds of things that need to be caught early, not after they've become a problem. Most rheumatology offices will set up standing lab orders so you can get blood drawn on a schedule without needing an appointment each time.</p>
+
+      <img src="/images/exercise.jpg" alt="Patient doing gentle exercises to maintain joint mobility during RA treatment" />
+      <p class="article-img-caption">Physical activity remains part of RA management even while on targeted therapy. Gentle exercise helps maintain joint mobility and reduces stiffness.</p>
+
+      <h2 id="fda-guidelines">FDA guidelines update</h2>
+      <p>The FDA's current position on JAK inhibitors, updated after the ORAL Surveillance results, boils down to three points:</p>
+      <ol>
+        <li>JAK inhibitors should be used only after a patient has tried and not responded adequately to at least one TNF inhibitor.</li>
+        <li>Doctors should use the lowest effective dose for the shortest duration needed.</li>
+        <li>Patients over 65, current or past smokers, and those with cardiovascular risk factors or a history of blood clots need extra risk assessment before starting.</li>
+      </ol>
+      <p>These guidelines apply to all currently approved JAK inhibitors for RA: tofacitinib, baricitinib, and upadacitinib. Whether the next-gen selective compounds will eventually get a different risk classification remains to be seen; the data isn't mature enough yet.</p>
+      <p>The European Medicines Agency (EMA) issued similar but slightly different guidance, recommending caution in patients over 65, long-term smokers, and those with cancer risk factors. The details vary by country, but the overall direction is the same: use these drugs thoughtfully, not as a first resort.</p>
+
+      <h2 id="patient-selection">Who should consider JAK inhibitors?</h2>
+      <p>Not every RA patient is a good candidate. Based on the current guidelines and trial data, JAK inhibitors make the most sense for:</p>
       <ul>
-        <li>Moderate-to-severe RA patients who've already tried a conventional DMARD</li>
-        <li>People who'd rather take a pill than inject a biologic</li>
-        <li>Patients without major cardiovascular risk factors</li>
-        <li>No history of blood clots</li>
-        <li>Non-smokers, or those willing to quit</li>
+        <li>Patients with moderate-to-severe RA who haven't responded well to methotrexate or other conventional DMARDs</li>
+        <li>Patients who have tried at least one TNF inhibitor (like adalimumab, etanercept, or infliximab) without adequate improvement</li>
+        <li>People who prefer an oral pill over injectable biologics</li>
+        <li>Patients without significant cardiovascular risk factors</li>
+        <li>Non-smokers, or people willing to quit before starting</li>
+        <li>Patients who don't have a history of blood clots or deep vein thrombosis</li>
       </ul>
-      <p>Each patient needs their own risk-benefit conversation, weighing disease severity, other health conditions, and what treatments they've already tried.</p>
+      <p>Your rheumatologist should walk through your full medical history before prescribing. Age, smoking status, cholesterol levels, blood pressure, and prior cancer history all factor into the decision. This isn't a drug you start casually.</p>
 
-      <h2 id="future-outlook">Future outlook</h2>
-      <p>Several next-gen compounds are in late-stage trials right now, including TYK2-selective inhibitors and dual JAK1/JAK3 inhibitors. If the selectivity translates to better safety without losing efficacy, that changes the calculus for a lot of patients.</p>
-      <p>There's also active research into biomarkers that could predict which patients respond best to which JAK inhibitor. We're not there yet, but pharmacogenomic-guided prescribing could eventually take a lot of the guesswork out of treatment selection.</p>
+      <div class="article-cta">
+        <h4>Wondering if JAK inhibitors might be right for you?</h4>
+        <p>Talk to a board-certified rheumatologist about your treatment options and get a personalized assessment.</p>
+        <a href="/">Schedule a consultation</a>
+      </div>
+
+      <h2 id="jak-vs-biologics">JAK inhibitors vs. biologics</h2>
+      <p>This is the comparison most patients want to understand. Both drug classes can be effective for RA, but they work differently and come with different practical trade-offs.</p>
+
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>JAK inhibitors</th>
+            <th>Biologics</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>How they work</td>
+            <td>Block intracellular JAK-STAT signaling</td>
+            <td>Target specific extracellular cytokines (TNF, IL-6, etc.)</td>
+          </tr>
+          <tr>
+            <td>Administration</td>
+            <td>Oral pill (once or twice daily)</td>
+            <td>Injection or infusion (weekly to monthly)</td>
+          </tr>
+          <tr>
+            <td>Onset of action</td>
+            <td>Often within 2-4 weeks</td>
+            <td>Typically 4-12 weeks</td>
+          </tr>
+          <tr>
+            <td>Efficacy (ACR50 at 12 weeks)</td>
+            <td>~45% in trials</td>
+            <td>~35-40% in trials (varies by drug)</td>
+          </tr>
+          <tr>
+            <td>Key side effects</td>
+            <td>Infections, blood clots, lipid changes, shingles</td>
+            <td>Infections, injection site reactions, infusion reactions</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>Room temperature</td>
+            <td>Refrigerated (most)</td>
+          </tr>
+          <tr>
+            <td>Cost (approximate U.S.)</td>
+            <td>$5,000-6,000/month without insurance</td>
+            <td>$3,000-8,000/month without insurance (biosimilars can be lower)</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>The biggest practical difference is convenience. A pill you take at home with breakfast is easier to stick with than a biweekly injection you need to keep refrigerated. That convenience matters over months and years of treatment.</p>
+      <p>On efficacy, head-to-head trials have shown that upadacitinib outperformed adalimumab (a TNF inhibitor) on several measures in the SELECT-COMPARE trial. That said, individual responses vary a lot. Some patients do great on a TNF inhibitor and poorly on a JAK inhibitor, and vice versa. There's no reliable way to predict who responds best to what, which is why rheumatologists sometimes need to try more than one drug before finding the right fit.</p>
+
+      <h2 id="real-patient-outcomes">Real patient outcomes</h2>
+      <p>Clinical trial numbers tell one story. What patients actually experience tells another.</p>
+      <p>In post-marketing registries and real-world studies, JAK inhibitor retention rates (meaning the percentage of patients still on the drug after one year) are roughly 60-70%. That's comparable to biologics. The most common reasons people stop are side effects (usually GI symptoms or infections) and lack of efficacy.</p>
+      <p>Patient-reported outcomes from the trials are worth noting:</p>
+      <ul>
+        <li>Roughly 60% of patients reported meaningful improvement in morning stiffness within the first month</li>
+        <li>Physical function scores (measured by the HAQ-DI) improved by 0.4-0.6 points on average, which translates to things like being able to open jars, climb stairs, or button a shirt more easily</li>
+        <li>Fatigue scores improved too, though fatigue is harder to measure and more variable between individuals</li>
+        <li>Pain scores on a 0-10 scale typically dropped by 2-3 points within the first 12 weeks</li>
+      </ul>
+      <p>None of these numbers mean the drug works for everyone. About 30-40% of patients in trials did not reach ACR50 at 12 weeks. That's a substantial non-responder population. If you're in that group, it doesn't mean you've failed; it means this particular drug mechanism wasn't the right match for your disease.</p>
+
+      <img src="/images/diet.jpg" alt="Anti-inflammatory foods that may complement RA treatment" />
+      <p class="article-img-caption">Diet won't replace medication, but anti-inflammatory foods (fatty fish, leafy greens, berries) may help complement your RA treatment plan.</p>
+
+      <h2 id="future-outlook">What comes next</h2>
+      <p>Several things in the pipeline are worth watching.</p>
+      <p><strong>TYK2-selective inhibitors</strong> are the newest entrants. Deucravacitinib is already approved for psoriasis and is being studied in RA. Because TYK2 has a narrower role than JAK1 or JAK2, selective TYK2 inhibition may come with fewer off-target effects. The RA trial data is still early-stage, but initial results are being watched closely.</p>
+      <p><strong>Dual-selective inhibitors</strong> that target specific JAK combinations (like JAK1/TYK2) are in Phase 2 trials. The theory is that you can hit the inflammation-relevant pathways while leaving blood cell production and broad immune surveillance mostly intact.</p>
+      <p><strong>Biomarker research</strong> is probably the most interesting long-term development. Right now, starting a patient on a JAK inhibitor is educated guessing. You try it, wait 12 weeks, and see if it works. Several research groups are looking at gene expression profiles and serum protein panels that might predict which patients will respond to which JAK inhibitor before starting. We're not there yet, but it's an active area.</p>
+      <p><strong>Combination strategies</strong> are also being revisited. Using a low-dose JAK inhibitor alongside methotrexate is already standard, but trials are looking at whether combining JAK inhibitors with other targeted therapies could help patients who respond partially but not fully to a single drug.</p>
+
+      <div class="article-callout">
+        <h4>A note on cost and insurance</h4>
+        <p>JAK inhibitors are expensive. Without insurance, you're looking at roughly $5,000-6,000 per month in the U.S. Most insurance plans cover them, but often with prior authorization requirements (meaning your doctor has to document that you've tried and failed other treatments first).</p>
+        <p>All three manufacturers (Pfizer, Lilly, AbbVie) offer patient assistance programs for people without adequate insurance. Your rheumatologist's office can usually help you navigate these. It's paperwork, but it can bring the out-of-pocket cost down to $5-50 per month for qualifying patients.</p>
+      </div>
+
+      <h2 id="bottom-line">Bottom line</h2>
+      <p>JAK inhibitors are not first-line treatment for RA. They're not the right choice for everyone. And they come with safety considerations that need to be taken seriously.</p>
+      <p>But for patients who've been through methotrexate, tried a TNF inhibitor or two, and are still struggling with active disease, JAK inhibitors offer a different mechanism of action that may work where those other drugs didn't. The fact that they're pills instead of injections is a real advantage for long-term adherence. And the next generation of more selective compounds may eventually address some of the safety concerns that have limited broader use.</p>
+      <p>Talk to your rheumatologist. Bring your questions. And don't assume that running out of options on one drug class means you're out of options entirely.</p>
+
+      <h2 id="faqs">Frequently asked questions</h2>
+
+      <h3>How long does it take for a JAK inhibitor to start working?</h3>
+      <p>Most patients who respond to JAK inhibitors notice some improvement within the first 2-4 weeks, with full effect typically reached by 12 weeks. If you haven't seen meaningful improvement by week 12, your rheumatologist will likely reassess your treatment plan.</p>
+
+      <h3>Can I take a JAK inhibitor with methotrexate?</h3>
+      <p>Yes, and this is actually the most common way they're prescribed. In clinical trials, JAK inhibitors were studied both as monotherapy and in combination with methotrexate. The combination generally showed better results. Your doctor will determine the right approach for your situation.</p>
+
+      <h3>What happens if I miss a dose?</h3>
+      <p>Take it as soon as you remember, unless it's almost time for your next dose. Don't double up. Missing a single dose occasionally is unlikely to cause a flare, but consistent adherence matters for keeping disease activity under control.</p>
+
+      <h3>Are JAK inhibitors safe during pregnancy?</h3>
+      <p>No. All currently approved JAK inhibitors are contraindicated during pregnancy based on animal studies showing fetal harm. If you're planning to become pregnant, talk to your rheumatologist about switching to a pregnancy-compatible treatment well in advance. Most guidelines recommend stopping JAK inhibitors at least 4 weeks before attempting conception.</p>
+
+      <h3>Can I drink alcohol while taking a JAK inhibitor?</h3>
+      <p>Moderate alcohol use is generally considered acceptable, but there's a caveat. JAK inhibitors can affect liver enzymes, and alcohol does the same. If your liver function tests are already borderline, adding alcohol into the mix isn't ideal. Your rheumatologist can give you guidance based on your specific lab results.</p>
+
+      <h3>Will I need to take this drug forever?</h3>
+      <p>RA is a chronic disease, and most patients who respond well to a JAK inhibitor continue taking it long-term. In some cases, if you achieve sustained remission, your doctor may try tapering the dose. But stopping the drug entirely carries a risk of disease flare. This is a decision you'd make together with your rheumatologist based on your disease activity over time.</p>
     `,
     references: [
       {
@@ -91,6 +328,15 @@ const allArticles = [
       },
       {
         text: 'Smolen, J.S. et al. (2023). EULAR recommendations for the management of rheumatoid arthritis with synthetic and biological DMARDs: 2023 update. Annals of the Rheumatic Diseases, 82(1), 3-18.',
+      },
+      {
+        text: 'Fleischmann, R. et al. (2022). Upadacitinib versus placebo or adalimumab in patients with RA: results of a Phase 3, double-blind, randomized controlled trial (SELECT-COMPARE). Arthritis & Rheumatology, 74(10), 1648-1659.',
+      },
+      {
+        text: 'Ytterberg, S.R. et al. (2022). Cardiovascular and cancer risk with tofacitinib in rheumatoid arthritis (ORAL Surveillance). New England Journal of Medicine, 386(4), 316-326.',
+      },
+      {
+        text: 'Winthrop, K.L. et al. (2023). Herpes zoster and JAK inhibitors: risk, prevention, and management. Rheumatology, 62(SI2), ii14-ii21.',
       },
     ],
     relatedArticles: [
@@ -118,7 +364,7 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health and a fellow of the American College of Rheumatology.",
     },
     tableOfContents: [
@@ -164,7 +410,7 @@ const allArticles = [
   {
     id: "gout-vs-pseudogout",
     category: "Differential Diagnosis",
-    readTime: "8 min read",
+    readTime: "11 min read",
     title: "Gout vs. Pseudogout: A Differential Diagnostic Guide",
     excerpt: "They look similar at the bedside but the crystals tell different stories.",
     image: "/images/crystal-deposits.jpg",
@@ -178,14 +424,17 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
       { id: "overview", label: "Overview" },
       { id: "clinical-presentation", label: "Clinical presentation" },
       { id: "diagnostic-workup", label: "Diagnostic workup" },
+      { id: "side-by-side", label: "Side-by-side comparison" },
       { id: "treatment", label: "Treatment approaches" },
+      { id: "prevention", label: "Long-term prevention" },
+      { id: "when-to-see-doctor", label: "When to see a doctor" },
     ],
     keyTakeaways: [
       "Gout comes from MSU crystals; pseudogout from CPP crystals. Different cause, different treatment.",
@@ -195,20 +444,159 @@ const allArticles = [
     ],
     content: `
       <h2 id="overview">Overview</h2>
-      <p>Gout and pseudogout are both crystal-driven joint diseases, and they can look almost identical at the bedside. But the crystals are different, the joints they prefer are different, and the treatments don't fully overlap. Getting the diagnosis right matters.</p>
+      <p>Gout and pseudogout are both crystal arthropathies, which is a clinical way of saying "your joints hurt because tiny crystals are forming inside them." The crystals themselves are different, the joints they tend to hit are different, and the long-term treatment isn't the same. But in the middle of an acute attack? They can look and feel almost identical.</p>
+      <p>That's the problem. A red, hot, swollen joint could be either one. It could also be infection, which is a whole different emergency. So the workup matters, and skipping it because "it's probably gout" is how diagnoses get missed.</p>
+      <p><strong><u>Gout</u></strong> is caused by monosodium urate (MSU) crystals. These form when uric acid levels in the blood stay elevated over time. <strong><u>Pseudogout</u></strong>, formally called calcium pyrophosphate deposition disease (CPPD), is caused by calcium pyrophosphate (CPP) crystals depositing in cartilage and joint tissue. The mechanism is different, the risk factors are different, and the prevention strategy is different.</p>
+
+      <img src="/images/crystal-deposits.jpg" alt="Microscopic crystal deposits in joint tissue" />
+      <p class="article-img-caption">Crystal arthropathies cause acute joint inflammation when crystals deposit in synovial fluid and trigger an immune response.</p>
 
       <h2 id="clinical-presentation">Clinical presentation</h2>
-      <p>Gout usually hits the big toe first (podagra), though it can show up anywhere. Pseudogout favors the knee and wrist, and tends to come on more gradually. The overlap in symptoms is why you can't diagnose either one on clinical presentation alone.</p>
+      <p>Gout has a classic debut: you go to bed feeling fine and wake up at 2am with your big toe on fire. The first metatarsophalangeal joint (MTP) is the most common site, which is why doctors call it <strong>podagra</strong>. The joint is red, swollen, warm to touch, and exquisitely tender. Even a bedsheet brushing against it can be agonizing.</p>
+      <p>That said, gout doesn't always follow the script. It can hit ankles, knees, wrists, fingers, or elbows. Polyarticular attacks (hitting multiple joints at once) become more common in chronic untreated disease.</p>
+      <p>Pseudogout tends to be less dramatic in onset but can still produce intense pain. It favors the <strong>knee</strong> and <strong>wrist</strong>, and the onset is sometimes more gradual, building over hours to days rather than the overnight explosion typical of gout. In older patients, pseudogout can mimic a chronic low-grade arthritis that looks a lot like RA, which makes diagnosis even trickier.</p>
+      <p>Shared features that make bedside diagnosis unreliable:</p>
+      <ul>
+        <li>Acute monoarticular swelling with redness and warmth</li>
+        <li>Pain severe enough to limit use of the joint entirely</li>
+        <li>Low-grade fever (can happen with both)</li>
+        <li>Elevated inflammatory markers (CRP, ESR) in blood work</li>
+        <li>Self-limited episodes that resolve in 1-2 weeks even without treatment</li>
+      </ul>
+
+      <div class="article-callout">
+        <h4>Who gets each condition?</h4>
+        <p><strong>Gout:</strong> Men over 30, postmenopausal women, people with obesity, kidney disease, or high alcohol intake. Certain medications (thiazide diuretics) raise uric acid.</p>
+        <p><strong>Pseudogout:</strong> Adults over 60, people with hyperparathyroidism, hemochromatosis, or hypomagnesemia. Unlike gout, diet and alcohol don't play a role.</p>
+      </div>
 
       <h2 id="diagnostic-workup">Diagnostic workup</h2>
-      <p>The answer is in the synovial fluid. Under polarized light microscopy, gout shows negatively birefringent needle-shaped MSU crystals. Pseudogout shows positively birefringent rhomboid CPP crystals. No fluid analysis, no definitive diagnosis.</p>
+      <p>The gold standard is <strong><u>synovial fluid analysis</u></strong>. You aspirate the joint (stick a needle in and draw fluid), then look at it under polarized light microscopy. This is non-negotiable for a definitive diagnosis.</p>
+      <p>Here's what you find:</p>
+      <ul>
+        <li><strong>Gout:</strong> Needle-shaped crystals that show <strong>negative birefringence</strong> (yellow when parallel to the slow ray of the compensator). These are MSU crystals.</li>
+        <li><strong>Pseudogout:</strong> Rhomboid or rod-shaped crystals with <strong>positive birefringence</strong> (blue when parallel). These are CPP crystals.</li>
+      </ul>
+      <p>The fluid itself usually shows elevated white blood cell counts (often 20,000-100,000/mm3), predominantly neutrophils. You also need to send the fluid for Gram stain and culture. The reason: septic arthritis can coexist with crystal disease, and missing an infection is dangerous.</p>
+      <p>Blood work helps but doesn't confirm the diagnosis. Serum uric acid is elevated in gout, but it can be <strong>normal during an acute attack</strong> because the crystals are in the joint, not floating in the blood. This trips up a lot of doctors. A normal uric acid during a flare doesn't rule out gout.</p>
+      <p>Imaging can add information. X-rays may show <strong>chondrocalcinosis</strong> (calcification of cartilage) in pseudogout, which is fairly specific. Dual-energy CT (DECT) can detect urate crystal deposits in gout, but it's expensive and not available everywhere.</p>
+
+      <h2 id="side-by-side">Side-by-side comparison</h2>
+
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th>Gout</th>
+            <th>Pseudogout (CPPD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Crystal type</strong></td>
+            <td>Monosodium urate (MSU)</td>
+            <td>Calcium pyrophosphate (CPP)</td>
+          </tr>
+          <tr>
+            <td><strong>Crystal shape</strong></td>
+            <td>Needle-shaped, negatively birefringent</td>
+            <td>Rhomboid, positively birefringent</td>
+          </tr>
+          <tr>
+            <td><strong>Typical joints</strong></td>
+            <td>1st MTP (big toe), ankle, knee</td>
+            <td>Knee, wrist, shoulder</td>
+          </tr>
+          <tr>
+            <td><strong>Age of onset</strong></td>
+            <td>30-50 years (men), post-menopause (women)</td>
+            <td>Usually over 60</td>
+          </tr>
+          <tr>
+            <td><strong>Risk factors</strong></td>
+            <td>Diet, alcohol, obesity, kidney disease, diuretics</td>
+            <td>Age, hyperparathyroidism, hemochromatosis</td>
+          </tr>
+          <tr>
+            <td><strong>X-ray findings</strong></td>
+            <td>Erosions with overhanging edges (chronic); tophi</td>
+            <td>Chondrocalcinosis (cartilage calcification)</td>
+          </tr>
+          <tr>
+            <td><strong>Serum uric acid</strong></td>
+            <td>Usually elevated (can be normal during flare)</td>
+            <td>Normal</td>
+          </tr>
+          <tr>
+            <td><strong>Prevention</strong></td>
+            <td>Urate-lowering therapy (allopurinol, febuxostat)</td>
+            <td>No proven preventive therapy</td>
+          </tr>
+        </tbody>
+      </table>
 
       <h2 id="treatment">Treatment approaches</h2>
-      <p>Acute gout responds to NSAIDs, colchicine, or steroids. For patients with recurrent flares, long-term urate-lowering drugs like allopurinol or febuxostat can prevent them. Pseudogout is harder to prevent; treatment is mostly about managing acute episodes with NSAIDs and colchicine.</p>
+      <p>Acute flares of both conditions respond to the same initial drugs. The difference is what comes after.</p>
+      <h3>Acute treatment (same for both)</h3>
+      <ul>
+        <li><strong><u>NSAIDs</u></strong> (indomethacin, naproxen): first-line for most patients. Use full dose, start early.</li>
+        <li><strong><u>Colchicine</u></strong>: works best if started within 24 hours of symptom onset. The current dosing is lower than the old regimen (1.2mg then 0.6mg one hour later).</li>
+        <li><strong><u>Corticosteroids</u></strong>: oral prednisone or intra-articular injection. Good option when NSAIDs are contraindicated (kidney disease, GI bleeding risk).</li>
+        <li><strong><u>IL-1 inhibitors</u></strong> (anakinra): for refractory cases that don't respond to the above. Used more in pseudogout than gout.</li>
+      </ul>
+
+      <h3>Long-term gout management</h3>
+      <p>Gout is the one you can actually prevent from coming back. Once you lower uric acid below the saturation point (target: below 6 mg/dL), existing crystals gradually dissolve and new ones stop forming.</p>
+      <ul>
+        <li><strong>Allopurinol:</strong> first-line urate-lowering drug. Start low, titrate up. Requires HLA-B*5801 testing in certain populations (Southeast Asian, African American) to avoid severe hypersensitivity reactions.</li>
+        <li><strong>Febuxostat:</strong> alternative for patients who can't tolerate allopurinol. Has a boxed warning regarding cardiovascular risk.</li>
+        <li><strong>Probenecid:</strong> promotes uric acid excretion through the kidneys. Less commonly used but an option for patients with good kidney function.</li>
+      </ul>
+      <p>Diet matters for gout, though less than most people think. Reducing red meat, organ meats, shellfish, and alcohol (especially beer) helps lower uric acid by maybe 1 mg/dL. That's not nothing, but it's rarely enough on its own. Most patients with recurrent gout need medication.</p>
+
+      <h3>Long-term pseudogout management</h3>
+      <p>This is where it gets frustrating. There is no equivalent of allopurinol for pseudogout. No drug dissolves CPP crystals or prevents new deposits. Treatment is reactive, not preventive.</p>
+      <p>For patients with frequent attacks, low-dose colchicine (0.6mg daily or twice daily) can reduce flare frequency. Low-dose NSAIDs are another option. Beyond that, you treat underlying metabolic conditions if they exist (hyperparathyroidism, hemochromatosis) and manage each flare as it comes.</p>
+
+      <h2 id="prevention">Long-term prevention</h2>
+      <p>Prevention strategies differ sharply between the two conditions:</p>
+
+      <div class="article-callout">
+        <h4>Gout prevention checklist</h4>
+        <p><strong>Medication:</strong> Urate-lowering therapy if you've had 2+ flares per year, tophi, kidney stones, or chronic kidney disease.</p>
+        <p><strong>Diet:</strong> Limit purine-rich foods (organ meats, certain seafood), reduce alcohol, increase water intake, consider cherry extract (modest evidence).</p>
+        <p><strong>Medication review:</strong> Ask your doctor about switching off thiazide diuretics if possible. Losartan and fenofibrate have mild uric acid-lowering effects.</p>
+        <p><strong>Weight management:</strong> Losing weight reduces uric acid levels. Even modest weight loss helps.</p>
+      </div>
+
+      <p>For pseudogout, prevention amounts to: treat any underlying metabolic condition, keep a supply of colchicine or NSAIDs on hand for flares, and check with your rheumatologist if attacks become more frequent. There's active research into new treatments, but nothing has come out of trials yet.</p>
+
+      <h2 id="when-to-see-doctor">When to see a doctor</h2>
+      <p>Any hot, swollen joint needs medical evaluation. It might be crystals, or it might be infection. You can't tell the difference at home, and you shouldn't try.</p>
+      <p>See a doctor urgently if:</p>
+      <ul>
+        <li>The joint is red, hot, and swollen, especially with fever</li>
+        <li>You can't bear weight or use the joint at all</li>
+        <li>Symptoms came on within hours and are getting worse fast</li>
+        <li>You have a prosthetic joint (septic arthritis in a prosthesis is a surgical emergency)</li>
+      </ul>
+      <p>If you've already been diagnosed with gout or pseudogout and are getting more frequent flares, that's also a reason to go back. More frequent attacks mean something about the management plan needs to change.</p>
+
+      <div class="article-cta">
+        <h4>Joint pain keeping you up at night?</h4>
+        <p>Get the right diagnosis first. A rheumatologist can analyze your joint fluid and build a treatment plan.</p>
+        <a href="/">Find a specialist</a>
+      </div>
     `,
     references: [
       {
         text: 'Neogi, T. et al. (2022). Gout classification criteria. Arthritis & Rheumatology, 74(2), 312-321.',
+      },
+      {
+        text: 'FitzGerald, J.D. et al. (2020). 2020 American College of Rheumatology guideline for management of gout. Arthritis Care & Research, 72(6), 744-760.',
+      },
+      {
+        text: 'Rosenthal, A.K. et al. (2016). Calcium pyrophosphate deposition disease. New England Journal of Medicine, 374(26), 2575-2584.',
       },
     ],
     relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "musculoskeletal-ultrasound-protocols"],
@@ -231,37 +619,123 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
       { id: "overview", label: "Treatment overview" },
-      { id: "dmards", label: "DMARDs" },
+      { id: "dmards", label: "DMARDs: the foundation" },
       { id: "biologics", label: "Biologic agents" },
+      { id: "treatment-ladder", label: "The treatment ladder" },
       { id: "emerging", label: "Emerging therapies" },
+      { id: "living-with-treatment", label: "Living with treatment" },
     ],
     keyTakeaways: [
       "Start DMARDs early. Waiting too long lets the disease get ahead of you.",
-      "If methotrexate alone isn't enough, biologics are the next step.",
-      "Combination regimens keep improving, and more options mean fewer dead ends.",
-      "Treatment is moving toward matching drugs to individual patient profiles.",
+      "Methotrexate is still the first drug most rheumatologists reach for, and for good reason.",
+      "If methotrexate alone isn't enough, biologics or JAK inhibitors are the next step.",
+      "There are now over a dozen approved advanced therapies for RA. Running out of options is less common than it used to be.",
     ],
     content: `
       <h2 id="overview">Treatment overview</h2>
-      <p>RA treatment looks nothing like it did twenty years ago. The current approach is "treat to target," meaning you pick a goal (remission or at least low disease activity) and adjust medication until you get there. It sounds simple, but getting the right combination for each patient takes work.</p>
+      <p>RA treatment looks nothing like it did twenty years ago. Back then, doctors often waited to see how bad things got before prescribing anything aggressive. That approach let a lot of joint damage happen that didn't need to.</p>
+      <p>The current standard is called <strong>"treat to target."</strong> You pick a goal, usually remission or at least low disease activity, and you adjust medication until you get there. If the first drug doesn't work well enough by 3 months, you don't wait around hoping. You add or switch.</p>
+      <p>That sounds straightforward on paper. In practice, finding the right drug or combination for each patient takes trial and error. People respond differently to the same medication, and what works well for one person may do nothing for another.</p>
 
-      <h2 id="dmards">DMARDs</h2>
-      <p>Methotrexate is still the starting point for most RA patients. It's been around for decades, it works, and we know its safety profile inside and out. Most combination regimens are built around it.</p>
+      <img src="/images/ra-treatment.jpg" alt="Doctor discussing treatment plan with RA patient" />
+      <p class="article-img-caption">Treatment decisions in RA are made together with your rheumatologist, based on disease severity, other health conditions, and how you've responded to prior drugs.</p>
+
+      <h2 id="dmards">DMARDs: the foundation</h2>
+      <p><strong><u>Methotrexate</u></strong> is still the starting point for most RA patients. It's been around since the 1980s for RA, it works for roughly 40-60% of patients as monotherapy, and we know its safety profile inside and out. It's taken once weekly, either as a pill or injection.</p>
+      <p>Side effects include nausea (taking it at night or switching to injectable form helps), mouth sores, and liver enzyme elevations. You'll need regular blood work. You absolutely cannot take it during pregnancy.</p>
+      <p>If methotrexate alone isn't enough, your doctor may add another conventional DMARD:</p>
+      <ul>
+        <li><strong>Hydroxychloroquine</strong> (Plaquenil) is mild, often used in combination. Requires annual eye exams.</li>
+        <li><strong>Sulfasalazine</strong> can be combined with methotrexate. GI side effects are the main complaint.</li>
+        <li><strong>Leflunomide</strong> (Arava) is sometimes used instead of methotrexate in patients who can't tolerate it.</li>
+      </ul>
 
       <h2 id="biologics">Biologic agents</h2>
-      <p>When methotrexate alone isn't enough, biologics are the next step. TNF inhibitors came first, then drugs targeting IL-6, B cells, and T cell co-stimulation. JAK inhibitors are the newest addition and they're oral, which patients tend to prefer.</p>
+      <p>When conventional DMARDs aren't controlling the disease well enough, biologics are the next step. These are proteins made in a lab that target specific parts of the immune system.</p>
+      <p><strong><u>TNF inhibitors</u></strong> were the first class of biologics for RA and are still the most widely prescribed. They include adalimumab (Humira), etanercept (Enbrel), infliximab (Remicade), certolizumab (Cimzia), and golimumab (Simponi). Most are self-injected every 1-2 weeks; infliximab is an IV infusion every 6-8 weeks.</p>
+      <p>After TNF inhibitors, other biologic classes include:</p>
+      <ul>
+        <li><strong>IL-6 inhibitors:</strong> tocilizumab (Actemra), sarilumab (Kevzara)</li>
+        <li><strong>B cell depletion:</strong> rituximab (Rituxan), given as IV infusion every 6 months</li>
+        <li><strong>T cell co-stimulation blocker:</strong> abatacept (Orencia)</li>
+      </ul>
+      <p>Each one works on a different part of the immune cascade. If one class doesn't work, another might, because they're hitting different targets.</p>
+
+      <h2 id="treatment-ladder">The treatment ladder</h2>
+      <p>Here's the typical sequence most rheumatologists follow:</p>
+
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>Step</th>
+            <th>Treatment</th>
+            <th>Timeline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Methotrexate (with or without short-term steroids)</td>
+            <td>First 3 months</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Add or switch conventional DMARD (sulfasalazine, hydroxychloroquine, leflunomide)</td>
+            <td>3-6 months if step 1 isn't enough</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Add a biologic (usually TNF inhibitor first) to methotrexate</td>
+            <td>6+ months if still not at target</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Switch biologic class or try a JAK inhibitor</td>
+            <td>After failing first biologic</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Third-line agents, clinical trials, or combination strategies</td>
+            <td>After multiple failures</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>Not everyone follows this exact path. Some patients skip steps because their disease is aggressive from the start. Others respond to methotrexate alone and never need anything else. The ladder is a guide, not a rule.</p>
 
       <h2 id="emerging">Emerging therapies</h2>
-      <p>For patients who've run through the standard options, there's a growing list of newer drugs in development: selective JAK inhibitors, BTK inhibitors, and some novel biologics. More options means fewer patients stuck without something to try.</p>
+      <p>For patients who've been through the standard options, the pipeline is worth knowing about.</p>
+      <p><strong><u>Selective JAK inhibitors</u></strong> are getting more targeted. First-gen JAK inhibitors (tofacitinib) hit multiple JAK enzymes. Newer ones aim for JAK1 or TYK2 specifically, which should mean fewer off-target side effects.</p>
+      <p><strong><u>BTK inhibitors,</u></strong> already used in some blood cancers, are being studied in RA. They go after B cell signaling through a different mechanism than rituximab. Early trial data is being watched closely.</p>
+      <p>There's also growing interest in <strong>biomarker-guided treatment selection</strong>, the idea being that a blood test or gene panel could predict which drug is most likely to work for a given patient. We aren't there yet, but the research is active.</p>
+
+      <div class="article-cta">
+        <h4>Not sure where you are on the treatment ladder?</h4>
+        <p>A rheumatologist can review your history and help figure out the right next step.</p>
+        <a href="/">Talk to a specialist</a>
+      </div>
+
+      <h2 id="living-with-treatment">Living with treatment</h2>
+      <p>RA treatment is a long game. Most of these drugs take weeks to months to reach full effect, and you'll likely be on some form of medication for years, possibly indefinitely.</p>
+      <p>A few practical things worth knowing:</p>
+      <ul>
+        <li>Keep up with your lab work. Methotrexate, biologics, and JAK inhibitors all require monitoring.</li>
+        <li>Stay current on vaccinations. Many RA drugs suppress parts of your immune system. Get your flu shot, COVID boosters, and shingles vaccine. <strong>Avoid live vaccines</strong> while on immunosuppressive therapy.</li>
+        <li>Don't stop drugs on your own. If something isn't working or side effects are bothering you, talk to your rheumatologist before making changes. Sudden stops can trigger flares.</li>
+        <li>Exercise matters. Medication handles the inflammation, but physical activity maintains joint function and reduces stiffness. Even 20-30 minutes of walking or swimming most days makes a measurable difference.</li>
+      </ul>
     `,
     references: [
       {
         text: 'Smolen, J.S. et al. (2023). Rheumatoid arthritis treatment guidelines update. Nature Reviews Rheumatology, 19(1), 45-56.',
+      },
+      {
+        text: 'Fraenkel, L. et al. (2021). 2021 American College of Rheumatology guideline for the treatment of RA. Arthritis Care & Research, 73(7), 924-939.',
       },
     ],
     relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "understanding-blood-work-rf-anti-ccp"],
@@ -283,14 +757,17 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
       { id: "basics", label: "Blood test basics" },
       { id: "rf", label: "Rheumatoid factor explained" },
       { id: "anti-ccp", label: "Anti-CCP antibodies" },
+      { id: "other-markers", label: "Other inflammatory markers" },
       { id: "interpretation", label: "Interpreting your results" },
+      { id: "seronegative", label: "What if both tests are negative?" },
+      { id: "monitoring", label: "Using blood work to track treatment" },
     ],
     keyTakeaways: [
       "RF and anti-CCP are the two main blood tests for diagnosing RA.",
@@ -300,20 +777,133 @@ const allArticles = [
     ],
     content: `
       <h2 id="basics">Blood test basics</h2>
-      <p>If your doctor suspects RA, two blood tests will likely come up: rheumatoid factor (RF) and anti-CCP antibodies. Neither one tells the whole story on its own, but together they're the best diagnostic lab work we have.</p>
+      <p>If your doctor suspects RA, two blood tests will come up almost immediately: <strong><u>rheumatoid factor (RF)</u></strong> and <strong><u>anti-CCP antibodies</u></strong>. Neither one tells the whole story on its own. Together, though, they're the strongest lab evidence we have for confirming an RA diagnosis.</p>
+      <p>You'll probably get these drawn at your first rheumatology appointment, sometimes even before. Your primary care doctor may order them based on joint symptoms alone. The results help determine how likely RA is, how aggressive it might be, and how urgently treatment needs to start.</p>
+      <p>But there's a catch most patients don't hear about: these tests have limits. A positive result doesn't guarantee RA, and a negative one doesn't rule it out. Understanding what your numbers actually mean, and what they don't, saves a lot of confusion down the road.</p>
+
+      <img src="/images/lab-test.jpg" alt="Blood sample tubes in a clinical laboratory" />
+      <p class="article-img-caption">RF and anti-CCP are usually drawn together at the first rheumatology visit. Results typically come back within a few days.</p>
 
       <h2 id="rf">Rheumatoid factor explained</h2>
-      <p>About 70-80% of RA patients test positive for RF. The catch is that RF shows up in other conditions too, and even in some healthy people. So a positive RF alone doesn't confirm RA, and a negative one doesn't rule it out.</p>
+      <p><strong><u>Rheumatoid factor</u></strong> is an antibody, specifically an IgM antibody that binds to the Fc portion of IgG. In plain English: it's a protein your immune system makes that shouldn't be there in large amounts.</p>
+      <p>About 70-80% of RA patients test positive for RF. That sounds useful until you learn that RF also turns up in:</p>
+      <ul>
+        <li>Hepatitis C and other chronic infections</li>
+        <li>Sjogren's syndrome</li>
+        <li>Lupus</li>
+        <li>Healthy elderly adults (up to 10-15% of people over 65)</li>
+        <li>Chronic liver disease</li>
+      </ul>
+      <p>So a positive RF is a clue, not a diagnosis. The higher the number, the more it points toward RA, but context matters. An RF of 15 in a 70-year-old with no joint swelling means something very different from an RF of 200 in a 35-year-old with bilateral hand swelling.</p>
+
+      <div class="article-callout">
+        <h4>RF levels and what they suggest</h4>
+        <p><strong>Low positive (14-39 IU/mL):</strong> Could be RA, could be something else entirely. Needs clinical correlation.</p>
+        <p><strong>Moderate positive (40-99 IU/mL):</strong> More likely to be RA, especially with matching symptoms.</p>
+        <p><strong>High positive (100+ IU/mL):</strong> Strongly associated with RA. Also associated with more aggressive joint disease and a higher chance of extra-articular manifestations like rheumatoid nodules.</p>
+      </div>
 
       <h2 id="anti-ccp">Anti-CCP antibodies</h2>
-      <p>Anti-CCP is more specific: about 95% specificity for RA. What makes it especially useful is that it can turn positive years before symptoms appear. If you catch it early, you can start treatment before the joints take damage.</p>
+      <p><strong><u>Anti-CCP</u></strong> (anti-cyclic citrullinated peptide) antibodies are more specific to RA than RF is. The specificity sits around 95%, meaning if you test positive, there's a very high chance the diagnosis is RA and not something else.</p>
+      <p>What makes anti-CCP especially interesting is timing. These antibodies can show up in your blood <strong>years before you feel any symptoms</strong>. One study found anti-CCP positivity up to 10 years before joint pain started. That's a potentially huge window for early intervention, though we're still working out exactly how to use that clinically.</p>
+      <p>The sensitivity is similar to RF, around 60-75% depending on the study and the assay used. So about a quarter of RA patients will test negative for anti-CCP. That doesn't mean they don't have RA.</p>
+      <p>Higher anti-CCP levels tend to predict more erosive disease. If your anti-CCP comes back at 3x the upper limit of normal, your rheumatologist will probably push for earlier, more aggressive treatment.</p>
+
+      <h2 id="other-markers">Other inflammatory markers</h2>
+      <p>RF and anti-CCP get the most attention, but your doctor will also look at two general inflammation markers:</p>
+
+      <table class="article-table">
+        <thead>
+          <tr>
+            <th>Test</th>
+            <th>What it measures</th>
+            <th>Normal range</th>
+            <th>What high results mean</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>ESR</strong> (sed rate)</td>
+            <td>How fast red blood cells settle in a tube</td>
+            <td>0-20 mm/hr (varies by age/sex)</td>
+            <td>General inflammation present, but doesn't say where or why</td>
+          </tr>
+          <tr>
+            <td><strong>CRP</strong> (C-reactive protein)</td>
+            <td>A liver protein that rises with inflammation</td>
+            <td>Less than 3 mg/L</td>
+            <td>Active inflammation, responds faster than ESR to changes</td>
+          </tr>
+          <tr>
+            <td><strong>CBC</strong></td>
+            <td>Overall blood cell counts</td>
+            <td>Varies by component</td>
+            <td>Anemia is common in active RA; elevated platelets can indicate inflammation</td>
+          </tr>
+          <tr>
+            <td><strong>CMP</strong></td>
+            <td>Liver and kidney function</td>
+            <td>Varies by component</td>
+            <td>Baseline before starting drugs like methotrexate that affect the liver</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>ESR and CRP don't diagnose RA on their own. Plenty of conditions raise them. But when combined with positive RF and anti-CCP plus the right clinical picture, they strengthen the diagnosis. They're also useful for tracking disease activity over time: if your CRP drops on treatment, that's a good sign things are working.</p>
 
       <h2 id="interpretation">Interpreting your results</h2>
-      <p>Being positive for both RF and anti-CCP ("double positive") is the strongest lab evidence for RA. It also tends to signal more aggressive disease, which usually means your rheumatologist will recommend more aggressive treatment.</p>
+      <p>Here's where it all comes together. The 2010 ACR/EULAR classification criteria for RA use a point system, and your antibody results contribute to that score:</p>
+      <ul>
+        <li><strong>Negative RF and negative anti-CCP:</strong> 0 points</li>
+        <li><strong>Low-positive RF or low-positive anti-CCP:</strong> 2 points</li>
+        <li><strong>High-positive RF or high-positive anti-CCP:</strong> 3 points</li>
+      </ul>
+      <p>You need 6 or more points total (across joint involvement, serology, acute-phase reactants, and symptom duration) for classification as RA. So serology alone won't get you there, but it can tip the scale.</p>
+      <p>Being positive for <strong>both RF and anti-CCP</strong>, sometimes called "double positive," is the strongest lab combination. It correlates with more aggressive erosive disease, higher disability risk, and a stronger argument for starting treatment immediately rather than watching and waiting.</p>
+
+      <div class="article-callout">
+        <h4>Double positive vs. single positive vs. seronegative</h4>
+        <p><strong>Double positive (RF+ and anti-CCP+):</strong> Highest certainty of RA diagnosis. Also associated with more aggressive joint damage over time.</p>
+        <p><strong>Single positive (one but not both):</strong> Still significant, but your doctor will weigh clinical findings more heavily.</p>
+        <p><strong>Seronegative (both negative):</strong> RA is still possible. About 20% of RA patients are seronegative. Diagnosis relies more on imaging and clinical exam.</p>
+      </div>
+
+      <h2 id="seronegative">What if both tests are negative?</h2>
+      <p>This is more common than most people realize. Roughly 1 in 5 RA patients test negative for both RF and anti-CCP. Doctors call this "seronegative RA." It's real RA, it still damages joints, and it still needs treatment.</p>
+      <p>The diagnosis in these cases leans more heavily on:</p>
+      <ul>
+        <li>Physical exam findings: symmetrical joint swelling, especially in the small joints of the hands and feet</li>
+        <li>Imaging: ultrasound showing synovitis, or MRI showing bone marrow edema</li>
+        <li>Elevated ESR/CRP</li>
+        <li>Duration: symptoms lasting more than 6 weeks</li>
+        <li>Ruling out other causes (gout, lupus, psoriatic arthritis, viral arthritis)</li>
+      </ul>
+      <p>Some rheumatologists will repeat the antibody tests after 6-12 months. Occasionally patients who were initially seronegative will seroconvert, meaning the antibodies show up later. It doesn't happen often, but it happens.</p>
+
+      <h2 id="monitoring">Using blood work to track treatment</h2>
+      <p>Once you're diagnosed and on treatment, blood tests shift from diagnostic to monitoring. You'll still get regular labs, but the focus changes.</p>
+      <p><strong>ESR and CRP</strong> are checked every 3-6 months to see if inflammation is dropping. A falling CRP on methotrexate is encouraging. A rising CRP despite treatment means something needs to change.</p>
+      <p><strong>CBC and liver function</strong> are monitored because the drugs themselves have side effects. Methotrexate can suppress blood counts and raise liver enzymes. Biologics can lower white blood cells. These checks catch problems before they become serious.</p>
+      <p>RF and anti-CCP levels don't usually change much with treatment, so retesting them isn't standard. Some studies show anti-CCP can drop modestly with effective therapy, but it's not reliable enough to use as a treatment response marker.</p>
+
+      <div class="article-cta">
+        <h4>Confused by your lab results?</h4>
+        <p>A rheumatologist can walk you through what your specific numbers mean for your situation.</p>
+        <a href="/">Talk to a specialist</a>
+      </div>
+
+      <p>The bottom line: RF and anti-CCP are the most important lab tests for diagnosing RA, but they're part of a bigger picture. High levels of both antibodies make the diagnosis more certain and predict a tougher disease course. Negative results don't mean you're fine. And once you're on treatment, different blood tests take over to make sure the drugs are working safely.</p>
+      <p>Ask your rheumatologist to walk you through your specific numbers. Generic reference ranges on the lab report don't tell you much without clinical context.</p>
     `,
     references: [
       {
         text: 'Aletaha, D. et al. (2023). Diagnosis and management of rheumatoid arthritis: a review. JAMA, 329(14), 1194-1210.',
+      },
+      {
+        text: 'Nishimura, K. et al. (2007). Meta-analysis: diagnostic accuracy of anti-CCP antibody and RF for RA. Annals of Internal Medicine, 146(11), 797-808.',
+      },
+      {
+        text: 'Aletaha, D. et al. (2010). 2010 Rheumatoid arthritis classification criteria: an ACR/EULAR collaborative initiative. Arthritis & Rheumatism, 62(9), 2569-2581.',
       },
     ],
     relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "modern-treatments-ra"],
@@ -335,7 +925,7 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -387,7 +977,7 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -440,7 +1030,7 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -492,7 +1082,7 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -544,7 +1134,7 @@ const allArticles = [
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/reviewer-torres.jpg",
+      image: "/images/specialist-1.jpg",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
