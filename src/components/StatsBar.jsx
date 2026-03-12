@@ -14,8 +14,8 @@ function StatsBar() {
           </h2>
 
           <div className="flex items-center gap-3 mt-8">
-            <div className="w-[24px] h-[24px] rounded-full bg-[#fdd3bc] flex items-center justify-center shrink-0">
-              <svg viewBox="0 0 24 24" className="w-[10px]" fill="#192333">
+            <div className="w-[36px] h-[36px] rounded-full bg-[#fdd3bc] flex items-center justify-center shrink-0">
+              <svg viewBox="0 0 24 24" className="w-[14px]" fill="#192333">
                 <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" />
               </svg>
             </div>
