@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -437,24 +437,45 @@ function Header() {
                   Your go-to resource for expert advice and insights on chronic rheumatic care.
                 </p>
                 <div className="space-y-1">
-                  {learnLinks.map((item) => (
-                    <a
-                      key={item.label}
-                      className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-[#f0f5ff] transition-all duration-200 group"
-                      href="javascript:void(0)"
-                      onClick={closeLearn}
-                    >
-                      <span className="flex items-center gap-3 text-navy-deep font-medium text-[14.5px]">
-                        <span className="w-9 h-9 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center group-hover:bg-sky/20 transition-colors">
-                          <span className="material-symbols-outlined text-[18px] text-navy-muted group-hover:text-sky transition-colors">{item.icon}</span>
+                  {learnLinks.map((item) => {
+                    const linkRoutes = { "Blog": "/blog" }
+                    const to = linkRoutes[item.label]
+                    return to ? (
+                      <Link
+                        key={item.label}
+                        to={to}
+                        className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-[#f0f5ff] transition-all duration-200 group"
+                        onClick={closeLearn}
+                      >
+                        <span className="flex items-center gap-3 text-navy-deep font-medium text-[14.5px]">
+                          <span className="w-9 h-9 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center group-hover:bg-sky/20 transition-colors">
+                            <span className="material-symbols-outlined text-[18px] text-navy-muted group-hover:text-sky transition-colors">{item.icon}</span>
+                          </span>
+                          {item.label}
                         </span>
-                        {item.label}
-                      </span>
-                      <span className="material-symbols-outlined text-[16px] text-navy-muted/40 group-hover:text-navy-muted group-hover:translate-x-0.5 transition-all">
-                        arrow_forward
-                      </span>
-                    </a>
-                  ))}
+                        <span className="material-symbols-outlined text-[16px] text-navy-muted/40 group-hover:text-navy-muted group-hover:translate-x-0.5 transition-all">
+                          arrow_forward
+                        </span>
+                      </Link>
+                    ) : (
+                      <a
+                        key={item.label}
+                        className="flex items-center justify-between rounded-xl px-3 py-3 hover:bg-[#f0f5ff] transition-all duration-200 group"
+                        href="javascript:void(0)"
+                        onClick={closeLearn}
+                      >
+                        <span className="flex items-center gap-3 text-navy-deep font-medium text-[14.5px]">
+                          <span className="w-9 h-9 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center group-hover:bg-sky/20 transition-colors">
+                            <span className="material-symbols-outlined text-[18px] text-navy-muted group-hover:text-sky transition-colors">{item.icon}</span>
+                          </span>
+                          {item.label}
+                        </span>
+                        <span className="material-symbols-outlined text-[16px] text-navy-muted/40 group-hover:text-navy-muted group-hover:translate-x-0.5 transition-all">
+                          arrow_forward
+                        </span>
+                      </a>
+                    )
+                  })}
                 </div>
               </div>
 
@@ -592,27 +613,48 @@ function Header() {
 
             {/* Learn Links */}
             <div className="space-y-1 mb-8">
-              {learnLinks.map((item, index) => (
-                <a
-                  key={item.label}
-                  className="flex items-center justify-between py-4 border-b border-gray-100"
-                  href="javascript:void(0)"
-                  onClick={closeLearn}
-                  style={{
-                    opacity: learnVisible ? 1 : 0,
-                    transform: learnVisible ? "translateY(0)" : "translateY(12px)",
-                    transition: `opacity 0.35s ease ${200 + index * 60}ms, transform 0.35s ease ${200 + index * 60}ms`,
-                  }}
-                >
-                  <span className="flex items-center gap-3.5 text-navy-deep font-medium text-[15px]">
-                    <span className="w-10 h-10 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center">
-                      <span className="material-symbols-outlined text-[20px] text-navy-muted">{item.icon}</span>
+              {learnLinks.map((item, index) => {
+                const mobileLinkRoutes = { "Blog": "/blog" }
+                const to = mobileLinkRoutes[item.label]
+                const commonStyle = {
+                  opacity: learnVisible ? 1 : 0,
+                  transform: learnVisible ? "translateY(0)" : "translateY(12px)",
+                  transition: `opacity 0.35s ease ${200 + index * 60}ms, transform 0.35s ease ${200 + index * 60}ms`,
+                }
+                return to ? (
+                  <Link
+                    key={item.label}
+                    to={to}
+                    className="flex items-center justify-between py-4 border-b border-gray-100"
+                    onClick={closeLearn}
+                    style={commonStyle}
+                  >
+                    <span className="flex items-center gap-3.5 text-navy-deep font-medium text-[15px]">
+                      <span className="w-10 h-10 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center">
+                        <span className="material-symbols-outlined text-[20px] text-navy-muted">{item.icon}</span>
+                      </span>
+                      {item.label}
                     </span>
-                    {item.label}
-                  </span>
-                  <span className="material-symbols-outlined text-[18px] text-navy-muted/40">arrow_forward</span>
-                </a>
-              ))}
+                    <span className="material-symbols-outlined text-[18px] text-navy-muted/40">arrow_forward</span>
+                  </Link>
+                ) : (
+                  <a
+                    key={item.label}
+                    className="flex items-center justify-between py-4 border-b border-gray-100"
+                    href="javascript:void(0)"
+                    onClick={closeLearn}
+                    style={commonStyle}
+                  >
+                    <span className="flex items-center gap-3.5 text-navy-deep font-medium text-[15px]">
+                      <span className="w-10 h-10 rounded-xl bg-[#ecf2fb] inline-flex items-center justify-center">
+                        <span className="material-symbols-outlined text-[20px] text-navy-muted">{item.icon}</span>
+                      </span>
+                      {item.label}
+                    </span>
+                    <span className="material-symbols-outlined text-[18px] text-navy-muted/40">arrow_forward</span>
+                  </a>
+                )
+              })}
             </div>
 
             {/* Newsletter CTA */}

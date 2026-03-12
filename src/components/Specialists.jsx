@@ -104,20 +104,20 @@ function Specialists() {
 function SpecialistCard({ doc }) {
   return (
     <div className="group">
-      <div className="rounded-2xl overflow-hidden mb-6 bg-[#f0cfc4]">
+      <div className="rounded-2xl overflow-hidden mb-8 bg-[#f0cfc4]">
         <img
           src={doc.image}
           alt={doc.name}
           className="w-full aspect-[3/4] object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
         />
       </div>
-      <h3 className="text-[1.5rem] md:text-[1.75rem] leading-[1.2] tracking-[-0.5px] text-navy-deep mb-1">
+      <h3 className="text-[1.5rem] md:text-[1.75rem] leading-[1.2] tracking-[-0.5px] text-navy-deep mb-3">
         {doc.name}
       </h3>
-      <p className="text-sm text-navy-muted mb-4">
+      <p className="text-sm text-navy-muted mb-6">
         {doc.title}
       </p>
-      <a href="#" className="inline-flex items-center gap-2 text-sm font-semibold text-navy-deep group/link">
+      <a href="#" className="inline-flex items-center gap-2 text-sm font-bold text-navy-deep group/link mt-6" style={{ fontFamily: "var(--font-base)" }}>
         Read bio
         <span className="w-7 h-7 rounded-full bg-primary/40 flex items-center justify-center group-hover/link:bg-primary/60 transition-colors">
           <svg className="w-3.5 h-3.5 text-navy-deep" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

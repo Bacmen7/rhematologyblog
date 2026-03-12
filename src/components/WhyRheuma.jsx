@@ -9,14 +9,14 @@ const blobs = [
 ]
 
 const conditions = [
-  {
-    name: "Rheumatoid Arthritis",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Acid-Reflux-GERD.svg",
-  },
-  {
-    name: "Psoriatic Arthritis",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Irritable-Bowel-Syndrome.svg",
-  },
+  // {
+  //   name: "Rheumatoid Arthritis",
+  //   icon: "https://oshihealth.com/wp-content/uploads/2024/11/Acid-Reflux-GERD.svg",
+  // },
+  // {
+  //   name: "Psoriatic Arthritis",
+  //   icon: "https://oshihealth.com/wp-content/uploads/2024/11/Irritable-Bowel-Syndrome.svg",
+  // },
   {
     name: "Lupus (SLE)",
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Bloating.svg",
@@ -48,12 +48,14 @@ function WhyRheuma() {
 
   const scroll = (dir) => {
     if (!scrollRef.current) return
-    const amount = 280
+    const containerWidth = scrollRef.current.offsetWidth
+    const itemWidth = (containerWidth - 96) / 5 + 24
+    const amount = itemWidth * 5
     scrollRef.current.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" })
   }
 
   return (
-    <section className="custom-approach-section relative overflow-hidden bg-navy-deep px-5 pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
+    <section className="custom-approach-section relative overflow-x-clip overflow-y-visible bg-navy-deep px-5 pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
       <div className="relative z-10 mx-auto max-w-[1120px]">
         {/* Header */}
@@ -70,9 +72,31 @@ function WhyRheuma() {
             </p>
           </div>
         </div>
+      </div>
+
+        {/* Carousel */}
+        <div
+          ref={scrollRef}
+          className="relative z-10 mx-auto max-w-[1120px] flex overflow-x-auto pb-4 snap-x snap-mandatory"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none", gap: "24px" }}
+        >
+          {conditions.map((c, i) => (
+            <div key={c.name} className="group cursor-pointer snap-start shrink-0" style={{ width: "calc((100% - 96px) / 5)" }}>
+              <div className="relative w-[70px] h-[74px] mb-5">
+                <div className="absolute inset-0">{blobs[i % blobs.length]}</div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img src={c.icon} alt={c.name} className="w-[40px] h-[40px]" />
+                </div>
+              </div>
+              <h3 style={{ fontFamily: "var(--font-base)", fontSize: "18px", fontWeight: 600, lineHeight: 1.4, letterSpacing: "0.4px", color: "#ffffff" }}>
+                {c.name}
+              </h3>
+            </div>
+          ))}
+        </div>
 
         {/* Carousel arrows */}
-        <div className="flex justify-end gap-3 mb-8">
+        <div className="relative z-10 mx-auto max-w-[1120px] flex justify-end gap-3 mt-8">
           <button
             onClick={() => scroll("left")}
             className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
@@ -90,28 +114,6 @@ function WhyRheuma() {
             <span className="material-symbols-outlined text-[20px] text-white">chevron_right</span>
           </button>
         </div>
-
-        {/* Carousel */}
-        <div
-          ref={scrollRef}
-          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {conditions.map((c, i) => (
-            <div key={c.name} className="group cursor-pointer snap-start shrink-0 w-[240px]">
-              <div className="relative w-[70px] h-[74px] mb-5">
-                <div className="absolute inset-0">{blobs[i % blobs.length]}</div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <img src={c.icon} alt={c.name} className="w-[40px] h-[40px]" />
-                </div>
-              </div>
-              <h3 style={{ fontFamily: "var(--font-base)", fontSize: "18px", fontWeight: 600, lineHeight: 1.4, letterSpacing: "0.4px", color: "#ffffff" }}>
-                {c.name}
-              </h3>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Bottom wave */}
       <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">

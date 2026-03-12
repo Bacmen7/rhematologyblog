@@ -2,8 +2,8 @@ function HealthGuideHero() {
   return (
     <section className="relative bg-background-light overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-8 items-center min-h-[340px] md:min-h-0">
-          <div className="pt-20 pb-16 md:pt-32 md:pb-28 relative z-10">
+        <div className="grid md:grid-cols-2 gap-4 items-center">
+          <div className="py-4 md:py-6 relative z-10">
             <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px" }}>
               Explore Health Guide<br />
               <span className="text-navy-muted">

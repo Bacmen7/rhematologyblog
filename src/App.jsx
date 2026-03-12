@@ -56,7 +56,7 @@ function App() {
             ZONE 2 — HEALTH GUIDE & CONDITIONS
         ═══════════════════════════════════════════════ */}
         <HealthGuideHero />
-        <QuickLinks />
+        {/* <QuickLinks /> */}
 
         <div className="bg-ghost">
           <RAArticles />
@@ -107,7 +107,7 @@ function App() {
 
         <CtaBanner />
 
-        <div className="bg-ghost">
+        <div className="pt-6 md:pt-10" style={{ backgroundColor: "#fdfdfe" }}>
           <Newsletter />
         </div>
 

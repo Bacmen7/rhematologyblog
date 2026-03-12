@@ -1,7 +1,7 @@
 const categories = [
-  { label: "Rheumatoid Arthritis" },
-  { label: "Psoriatic Arthritis" },
-  { label: "Biologics Guide" },
+  // { label: "Rheumatoid Arthritis" },
+  // { label: "Psoriatic Arthritis" },
+  // { label: "Biologics Guide" },
 ]
 
 function QuickLinks() {

@@ -9,6 +9,7 @@ import BlogDetail from "./pages/BlogDetail.jsx"
 import OurApproach from "./pages/OurApproach.jsx"
 import PricingInsurance from "./pages/PricingInsurance.jsx"
 import AboutUs from "./pages/AboutUs.jsx"
+import Blog from "./pages/Blog.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -27,6 +28,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/our-approach" element={<OurApproach />} />
         <Route path="/pricing" element={<PricingInsurance />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/article/:id" element={<BlogDetail />} />
       </Routes>
     </BrowserRouter>

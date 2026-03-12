@@ -1,70 +1,71 @@
 function CtaBanner() {
   return (
-    <section className="cta-wrapper relative w-full overflow-hidden md:py-[80px] py-0">
-      {/* Mobile solid navy background — hidden on desktop */}
-      <div
-        className="absolute inset-0 block md:hidden"
-        style={{ backgroundColor: "#142131", zIndex: 0 }}
-      />
-
-      {/* Desktop wavy background — hidden on mobile */}
-      <div className="absolute top-0 left-0 w-full h-full hidden md:block" style={{ zIndex: 1 }}>
-        <svg className="w-full h-full block" viewBox="0 0 1440 800" preserveAspectRatio="none">
-          <path d="M0,80 C 400,80 900,180 1440,380 L1440,800 L0,800 Z" fill="#142131" />
-        </svg>
-      </div>
-
-      <div
-        className="relative flex flex-col md:flex-row items-stretch max-w-[1280px] mx-auto px-0 md:px-10"
-        style={{ zIndex: 2 }}
+    <section className="w-full flex flex-col bg-white overflow-visible">
+      {/* Wave SVG */}
+      <svg
+        className="w-full h-[60px] sm:h-[90px] md:h-[120px] text-[#142131] block"
+        preserveAspectRatio="none"
+        viewBox="0 0 1440 120"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Left — Text */}
-        <div className="flex-[1.1] flex flex-col justify-center items-center md:items-start text-center md:text-left order-2 md:order-1 md:pr-[50px] mt-0 md:mt-[100px] mb-0 md:mb-10 px-6 md:px-0 pt-3 md:pt-0 pb-[80px] md:pb-0">
-          <h2
-            className="leading-[1.1] font-normal mb-9 md:mb-10 max-w-[320px] md:max-w-none mx-auto md:mx-0"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(44px, 5.5vw, 68px)",
-              letterSpacing: "-0.5px",
-              color: "#ffffff",
-            }}
-          >
-            Ready to get started?
-          </h2>
-          <div className="flex flex-col md:flex-row items-center gap-6 w-full md:w-auto">
-            <a
-              href="#"
-              className="inline-block rounded-full font-semibold text-[17px] md:text-[16px] transition-all hover:opacity-90 w-full md:w-auto max-w-[340px] text-center"
-              style={{ backgroundColor: "#b7efea", color: "#142131", padding: "18px 36px" }}
-            >
-              Schedule An Appointment
-            </a>
-            <a href="#" className="text-[17px]" style={{ color: "#ffffff" }}>
-              or{" "}
-              <span className="font-semibold underline underline-offset-[6px] decoration-2">
-                let&apos;s get in touch
-              </span>
-            </a>
-          </div>
-        </div>
+        <path
+          d="M902.287 110.844C616.272 102.591 308.233 0.726051 45.0151 80.1802C29.7923 84.7785 14.8114 90.0303 0 95.8629V120H1440V0C1273.37 78.0746 1092.39 116.337 902.287 110.844Z"
+          fill="currentColor"
+        />
+      </svg>
 
-        {/* Right — Image */}
-        <div className="flex-1 flex items-center order-1 md:order-2 mt-0 md:mt-0 relative">
-          <img
-            src="/images/hero-consult.jpg"
-            alt="Doctor consulting with patient"
-            className="w-full block md:rounded-[4px] rounded-none"
-            style={{
-              height: "550px",
-              objectFit: "cover",
-              objectPosition: "center 20%",
-            }}
-          />
-          {/* Mobile wave overlay on bottom of image — hidden on desktop */}
-          <div className="block md:hidden absolute bottom-[-1px] left-0 w-full" style={{ height: "100px", zIndex: 5 }}>
-            <svg className="w-full h-full block" viewBox="0 0 1440 200" preserveAspectRatio="none">
-              <path d="M0,150 C 400,150 800,0 1440,0 L1440,200 L0,200 Z" fill="#142131" />
-            </svg>
+      {/* Content Area */}
+      <div className="bg-[#142131] w-full overflow-visible">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-10 pb-12 md:pb-16 pt-6 sm:pt-10">
+          <div className="flex flex-col md:flex-row items-stretch gap-10 md:gap-16">
+            {/* Left — Text */}
+            <div className="flex-[1.1] flex flex-col justify-center py-4">
+              <h2
+                className="leading-[1.1] font-normal mb-9 md:mb-10"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(44px, 5.5vw, 68px)",
+                  letterSpacing: "-0.5px",
+                  color: "#ffffff",
+                }}
+              >
+                Ready to get started?
+              </h2>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                <a
+                  href="#"
+                  className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"
+                  style={{ backgroundColor: "#b7efea", color: "#142131", padding: "16px 32px" }}
+                >
+                  Schedule An Appointment
+                </a>
+                <div className="flex items-center gap-2 text-white">
+                  <span className="text-[15px] text-gray-100 opacity-90">or</span>
+                  <a
+                    href="#"
+                    className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#b7efea] transition-colors"
+                    style={{ color: "#ffffff" }}
+                  >
+                    let&apos;s get in touch
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Right — Image (overflow top into wave) */}
+            <div className="flex-1 relative hidden md:block" style={{ minHeight: "300px" }}>
+              <img
+                src="/images/hero-consult.jpg"
+                alt="Doctor consulting with patient"
+                className="w-full block rounded-[4px] absolute bottom-0"
+                style={{
+                  height: "520px",
+                  objectFit: "cover",
+                  objectPosition: "center 20%",
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>
