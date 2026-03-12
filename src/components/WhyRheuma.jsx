@@ -1,4 +1,3 @@
-import { useRef } from "react"
 
 const blobs = [
   <svg key="b1" width="70" height="74" viewBox="0 0 70 74" fill="none"><path fillRule="evenodd" clipRule="evenodd" d="M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z" fill="#E3EFFF" /></svg>,
@@ -44,18 +43,8 @@ const conditions = [
 ]
 
 function WhyRheuma() {
-  const scrollRef = useRef(null)
-
-  const scroll = (dir) => {
-    if (!scrollRef.current) return
-    const containerWidth = scrollRef.current.offsetWidth
-    const itemWidth = (containerWidth - 96) / 5 + 24
-    const amount = itemWidth * 5
-    scrollRef.current.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" })
-  }
-
   return (
-    <section className="custom-approach-section relative overflow-x-clip overflow-y-visible bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
+    <section className="custom-approach-section relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
@@ -72,48 +61,24 @@ function WhyRheuma() {
             </p>
           </div>
         </div>
-      </div>
 
-        {/* Carousel */}
-        <div
-          ref={scrollRef}
-          className="relative z-10 mx-auto max-w-7xl flex overflow-x-auto pb-4 snap-x snap-mandatory px-6 md:px-6"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none", gap: "32px" }}
-        >
+        {/* Conditions - mobile grid 3col, desktop flex row */}
+        <div className="grid grid-cols-3 gap-x-6 gap-y-10 md:flex md:gap-8">
           {conditions.map((c, i) => (
-            <div key={c.name} className="group cursor-pointer snap-start shrink-0 w-[38%] md:shrink md:flex-1 md:min-w-0">
-              <div className="relative w-[70px] h-[74px] mb-5">
+            <div key={c.name} className="group cursor-pointer md:flex-1 md:min-w-0">
+              <div className="relative w-[56px] h-[60px] md:w-[70px] md:h-[74px] mb-4 md:mb-5">
                 <div className="absolute inset-0">{blobs[i % blobs.length]}</div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <img src={c.icon} alt={c.name} className="w-[40px] h-[40px]" />
+                  <img src={c.icon} alt={c.name} className="w-[32px] h-[32px] md:w-[40px] md:h-[40px]" />
                 </div>
               </div>
-              <h3 style={{ fontFamily: "var(--font-base)", fontSize: "18px", fontWeight: 600, lineHeight: 1.4, letterSpacing: "0.4px", color: "#ffffff" }}>
+              <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, lineHeight: 1.4, letterSpacing: "0.4px", color: "#ffffff" }} className="text-[14px] md:text-[18px]">
                 {c.name}
               </h3>
             </div>
           ))}
         </div>
-
-        {/* Carousel arrows */}
-        <div className="relative z-10 mx-auto max-w-7xl px-6 flex justify-center md:justify-end gap-3 mt-8">
-          <button
-            onClick={() => scroll("left")}
-            className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-            type="button"
-            aria-label="Scroll left"
-          >
-            <span className="material-symbols-outlined text-[20px] text-white">chevron_left</span>
-          </button>
-          <button
-            onClick={() => scroll("right")}
-            className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:bg-white/10 transition-colors"
-            type="button"
-            aria-label="Scroll right"
-          >
-            <span className="material-symbols-outlined text-[20px] text-white">chevron_right</span>
-          </button>
-        </div>
+      </div>
 
       {/* Bottom wave */}
       <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
