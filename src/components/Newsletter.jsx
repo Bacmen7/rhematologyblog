@@ -48,19 +48,19 @@ function Newsletter() {
 
         {/* Form */}
         <form
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full max-w-[400px]"
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md"
           onSubmit={(e) => e.preventDefault()}
         >
           <input
-            className="w-full sm:flex-1 px-4 py-2.5 rounded-full border border-gray-200 bg-white text-navy-deep placeholder:text-gray-400 text-[13px] focus:outline-none focus:ring-2 focus:ring-primary/40"
+            className="w-full sm:w-2/3 px-6 py-3.5 md:py-4 rounded-full border border-[#dadfe8] bg-white text-navy-deep placeholder:text-[#a0a4ac] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#8ebfff]/30 focus:border-[#8ebfff] transition-all"
             placeholder="Email Address*"
             type="email"
             required
           />
           <button
             type="submit"
-            className="w-full sm:w-auto px-5 py-2.5 rounded-full text-[13px] font-semibold hover:opacity-90 transition-opacity flex items-center justify-center gap-2 whitespace-nowrap"
-            style={{ backgroundColor: "#b7efea", color: "#142131" }}
+            className="w-full sm:w-1/3 px-6 py-3.5 md:py-4 rounded-full text-sm md:text-base font-medium hover:opacity-90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+            style={{ backgroundColor: "#b1efec", color: "#182439" }}
           >
             Subscribe
             <svg
