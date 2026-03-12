@@ -1,9 +1,9 @@
 function StatsBar() {
   return (
     <section className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start justify-between gap-10 md:gap-[60px]">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-[60px]">
         {/* Left — Heading */}
-        <div className="flex-[1.5]">
+        <div className="flex-[1.5] text-center md:text-left">
           <h2
             className="leading-[1.1] font-normal mb-16 text-navy-deep"
             style={{ fontFamily: "var(--font-display)", fontSize: "48px" }}
@@ -13,13 +13,13 @@ function StatsBar() {
             rheumatic care
           </h2>
 
-          <div className="flex items-center gap-3 mt-8">
+          <div className="flex items-center gap-3 mt-8 justify-center md:justify-start">
             <div className="w-[36px] h-[36px] rounded-full bg-[#fdd3bc] flex items-center justify-center shrink-0">
               <svg viewBox="0 0 24 24" className="w-[14px]" fill="#192333">
                 <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" />
               </svg>
             </div>
-            <p className="text-[10px] leading-[1.4] text-navy-muted">
+            <p className="text-[10px] leading-[1.4] text-navy-muted text-left">
               Source: Results of a clinical trial conducted in partnership with a national health plan
             </p>
           </div>

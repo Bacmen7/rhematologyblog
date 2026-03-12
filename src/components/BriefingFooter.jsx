@@ -24,7 +24,6 @@ function BriefingFooter() {
               <Linkedin fill="currentColor" strokeWidth={0} size={20} />
             </a>
           </div>
-          <p className="text-xs text-[#515a6a] hidden lg:block">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
         </div>
 
         {/* Link Columns — 2-col on mobile, 4-col on desktop */}
@@ -78,18 +77,18 @@ function BriefingFooter() {
         </div>
 
         {/* Bottom Legal */}
-        <div className="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 text-xs text-[#515a6a]">
-          <p className="md:max-w-2xl leading-relaxed text-[11px]">
+        <div className="border-t border-gray-200 pt-8 text-[#515a6a]">
+          <p className="leading-relaxed text-[12px] mb-6">
             Rheuma delivers personalized, whole-person medical care to people living with rheumatic conditions. Testimonials reflect individual patient experiences and results may vary.
           </p>
-          <div className="flex flex-wrap gap-x-6 gap-y-2 lg:shrink-0 underline decoration-gray-300 underline-offset-2">
+          <div className="flex flex-wrap gap-x-5 gap-y-3 mb-6 mt-8 text-[12px] underline decoration-gray-300 underline-offset-4">
             <a href="#" className="hover:text-[#182439]">Privacy Policy</a>
             <a href="#" className="hover:text-[#182439]">Terms of Use</a>
             <a href="#" className="hover:text-[#182439]">Informed Consent</a>
             <a href="#" className="hover:text-[#182439]">Notice of Privacy Practices</a>
           </div>
+          <p className="text-[12px]">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
         </div>
-        <p className="text-xs text-[#515a6a] block lg:hidden mt-6">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
       </div>
     </footer>
   )
