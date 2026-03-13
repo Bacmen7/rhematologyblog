@@ -316,6 +316,7 @@ function DoctorProfile() {
                         { days: "Sat", time: "09:00 AM - 10:30 AM" },
                       ],
                       fee: "₹1190",
+                      bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
                     },
                     {
                       name: "Manipal Hospital - Yelahanka",
@@ -326,6 +327,7 @@ function DoctorProfile() {
                         { days: "Mon, Wed, Fri", time: "10:00 AM - 12:00 PM" },
                       ],
                       fee: "₹1200",
+                      bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
                     },
                     {
                       name: "Trilife Hospital - Kalyan Nagar",
@@ -336,6 +338,7 @@ function DoctorProfile() {
                         { days: "Tue, Thu, Sat", time: "10:00 AM - 02:00 PM" },
                       ],
                       fee: "₹1200",
+                      bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
                     },
                   ].map((loc, idx) => {
                     const isClinicOpen = openSection === `clinic-${idx}`
@@ -390,7 +393,7 @@ function DoctorProfile() {
 
                         <div className="border-t border-gray-100 px-4 sm:px-5 py-3 flex items-center justify-between bg-[#f8fafb]">
                           <span style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", color: "#182439" }}>{loc.fee}</span>
-                          <a href="#" className="text-xs sm:text-sm font-semibold text-white px-4 py-2 transition-colors hover:opacity-90" style={{ backgroundColor: "#182439", borderRadius: "25px" }}>
+                          <a href={loc.bookingUrl} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold text-white px-4 py-2 transition-colors hover:opacity-90" style={{ backgroundColor: "#182439", borderRadius: "25px" }}>
                             Book Appointment
                           </a>
                         </div>
