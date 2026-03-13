@@ -29,7 +29,7 @@ function Specialists() {
 
 function SpecialistCard({ doc }) {
   return (
-    <div className="group">
+    <Link to={`/specialist/${doc.id}`} className="group block cursor-pointer">
       <div className="rounded-2xl overflow-hidden mb-8 bg-[#f0cfc4]">
         <img
           src={doc.image}
@@ -43,15 +43,15 @@ function SpecialistCard({ doc }) {
       <p className="text-sm text-navy-muted mb-6">
         {doc.title}
       </p>
-      <Link to={`/specialist/${doc.id}`} className="inline-flex items-center gap-2 text-sm font-bold text-navy-deep group/link mt-6" style={{ fontFamily: "var(--font-base)" }}>
+      <span className="inline-flex items-center gap-2 text-sm font-bold text-navy-deep group/link mt-6" style={{ fontFamily: "var(--font-base)" }}>
         Read bio
-        <span className="w-7 h-7 rounded-full bg-primary/40 flex items-center justify-center group-hover/link:bg-primary/60 transition-colors">
+        <span className="w-7 h-7 rounded-full bg-primary/40 flex items-center justify-center group-hover:bg-primary/60 transition-colors">
           <svg className="w-3.5 h-3.5 text-navy-deep" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
           </svg>
         </span>
-      </Link>
-    </div>
+      </span>
+    </Link>
   )
 }
 
