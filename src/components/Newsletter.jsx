@@ -2,7 +2,7 @@ function Newsletter({ variant = "light" }) {
   const isDark = variant === "dark"
 
   return (
-    <section className="relative z-10 py-16 md:py-24">
+    <section className="relative z-10 pt-10 pb-16 md:pt-14 md:pb-24">
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
         {/* Eyebrow */}
         <span
