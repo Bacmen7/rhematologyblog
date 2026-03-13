@@ -1,9 +1,9 @@
 function HealthGuideHero() {
   return (
-    <section className="relative bg-background-light overflow-hidden">
+    <section className="relative bg-background-light overflow-hidden" style={{ marginTop: "-2px" }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-4 items-center">
-          <div className="py-4 md:py-6 relative z-10">
+          <div className="pt-8 pb-4 md:py-6 relative z-10">
             <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px" }}>
               Explore Health Guide<br />
               <span className="text-navy-muted">

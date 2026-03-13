@@ -107,17 +107,17 @@ function Testimonials() {
           {tripled.map((r, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] p-6 sm:p-8 flex flex-col justify-between"
+              className="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-[340px] p-5 sm:p-8 flex flex-col justify-between"
             >
               <div>
-                <svg className="w-8 h-8 sm:w-10 sm:h-10 mb-4 sm:mb-5 text-sky-soft" viewBox="0 0 40 40" fill="currentColor">
+                <svg className="w-7 h-7 sm:w-10 sm:h-10 mb-3 sm:mb-5 text-sky-soft" viewBox="0 0 40 40" fill="currentColor">
                   <path d="M10.4 28.8c-2.4 0-4.27-.73-5.6-2.2C3.47 25.13 2.8 23.2 2.8 20.8c0-2.93.87-5.6 2.6-8 1.73-2.4 4.07-4.33 7-5.8l1.6 2.4c-2.13 1.2-3.73 2.53-4.8 4-.93 1.47-1.4 2.93-1.4 4.4.27-.13.73-.2 1.4-.2 1.6 0 2.93.53 4 1.6 1.07 1.07 1.6 2.47 1.6 4.2 0 1.6-.6 3-1.8 4.2-1.2 1.07-2.73 1.6-4.6 1.6zm17.6 0c-2.4 0-4.27-.73-5.6-2.2-1.33-1.47-2-3.4-2-5.8 0-2.93.87-5.6 2.6-8 1.73-2.4 4.07-4.33 7-5.8l1.6 2.4c-2.13 1.2-3.73 2.53-4.8 4-.93 1.47-1.4 2.93-1.4 4.4.27-.13.73-.2 1.4-.2 1.6 0 2.93.53 4 1.6 1.07 1.07 1.6 2.47 1.6 4.2 0 1.6-.6 3-1.8 4.2-1.2 1.07-2.73 1.6-4.6 1.6z" />
                 </svg>
-                <p className="text-sm sm:text-[15px] leading-[1.7] font-medium text-navy-deep">
+                <p className="text-[13px] sm:text-[15px] leading-[1.7] font-medium text-navy-deep">
                   {r.quote}
                 </p>
               </div>
-              <p className="mt-5 sm:mt-6 text-xs uppercase tracking-[0.2em] font-semibold text-navy-muted">
+              <p className="mt-4 sm:mt-6 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-navy-muted">
                 — {r.name}
               </p>
             </div>

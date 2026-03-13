@@ -150,32 +150,18 @@ function DoctorProfile() {
                   ))}
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 sm:gap-8" style={{ marginTop: "32px" }}>
-                  <div>
-                    <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Specializations</h3>
-                    <ul className="space-y-2 sm:space-y-2.5">
-                      {["Rheumatologist", "Nephrologist"].map((spec, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-gray-600">
-                          <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#B1EFEC] mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{spec}</span>
-                        </li>
-                      ))}
-                    </ul>
+                <div style={{ marginTop: "32px" }}>
+                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Specializations</h3>
+                  <div className="flex flex-wrap gap-2" style={{ marginBottom: "24px" }}>
+                    {["Rheumatologist", "Nephrologist"].map((spec, i) => (
+                      <span key={i} className="text-xs sm:text-sm text-gray-600 bg-[#EEF2F9] px-3 py-1.5 rounded-full">{spec}</span>
+                    ))}
                   </div>
-                  <div>
-                    <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Field of Expertise</h3>
-                    <ul className="space-y-2 sm:space-y-2.5">
-                      {doctor.expertise.map((item, i) => (
-                        <li key={i} className="flex items-start gap-2 text-xs sm:text-sm text-gray-600">
-                          <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#B1EFEC] mt-0.5 shrink-0" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                          </svg>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Field of Expertise</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {doctor.expertise.map((item, i) => (
+                      <span key={i} className="text-xs sm:text-sm text-gray-600 bg-[#EEF2F9] px-3 py-1.5 rounded-full">{item}</span>
+                    ))}
                   </div>
                 </div>
               </section>

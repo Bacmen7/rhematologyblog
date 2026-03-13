@@ -1,6 +1,8 @@
 function CtaBanner() {
   return (
     <section className="w-full flex flex-col bg-white overflow-visible">
+      {/* Spacer */}
+      <div style={{ height: "80px", backgroundColor: "#ffffff" }} />
       {/* Wave SVG */}
       <svg
         className="w-full h-[24px] sm:h-[90px] md:h-[120px] text-[#142131] block"
@@ -18,14 +20,14 @@ function CtaBanner() {
       {/* Content Area */}
       <div className="bg-[#142131] w-full overflow-visible">
         <div className="max-w-7xl mx-auto px-6 pb-24 md:pb-32 pt-6 sm:pt-10">
-          <div className="flex flex-col md:flex-row items-stretch gap-10 md:gap-16">
+          <div className="flex flex-col-reverse md:flex-row items-stretch gap-10 md:gap-16">
             {/* Left — Text */}
             <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">
               <h2
-                className="leading-[1.1] font-normal !mb-14 md:!mb-14 text-center md:text-left"
+                className="leading-[1.1] font-normal !mb-10 md:!mb-14 text-center md:text-left"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(44px, 5.5vw, 68px)",
+                  fontSize: "clamp(36px, 5.5vw, 68px)",
                   letterSpacing: "-0.5px",
                   color: "#ffffff",
                 }}
@@ -53,14 +55,14 @@ function CtaBanner() {
               </div>
             </div>
 
-            {/* Right — Image (overflow top into wave) */}
-            <div className="flex-1 relative block" style={{ minHeight: "250px" }}>
+            {/* Right — Image (overflow into wave) */}
+            <div className="flex-1 relative min-h-[200px] md:min-h-[250px]">
               <img
                 src="/images/hero-consult.jpg"
                 alt="Doctor consulting with patient"
                 className="w-full block rounded-[4px] absolute bottom-0"
                 style={{
-                  height: "clamp(280px, 40vw, 520px)",
+                  height: "clamp(300px, 50vw, 520px)",
                   objectFit: "cover",
                   objectPosition: "center 20%",
                 }}

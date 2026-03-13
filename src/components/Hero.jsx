@@ -77,9 +77,9 @@ function Hero() {
           </button>
           <p className="text-sm text-navy-muted">
             See a provider{" "}
-            <span className="font-semibold text-navy-deep underline decoration-accent decoration-2 underline-offset-2">
+            <strong className="font-semibold" style={{ color: "#182439", background: "#feccbc", padding: "2px 6px", borderRadius: "3px" }}>
               as soon as tomorrow
-            </span>
+            </strong>
           </p>
         </div>
         <img

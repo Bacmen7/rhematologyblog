@@ -37,7 +37,7 @@ const conditions = [
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Small-Intestinal-Bacterial-Overgrowth.svg",
   },
   {
-    name: "Undiagnosed Symptoms",
+    name: "Undiagnosed",
     icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Undiagnosed-GI-Symptoms.svg",
   },
 ]
