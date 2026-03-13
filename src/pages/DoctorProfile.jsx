@@ -251,8 +251,8 @@ function DoctorProfile() {
         <PatientStories />
 
         {/* FAQs Section */}
-        <section className="bg-ghost">
-          <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+        <section style={{ backgroundColor: "#ffffff" }}>
+          <div className="max-w-7xl mx-auto px-6 pt-4 pb-16 md:pt-6 md:pb-24">
             <h2
               className="text-3xl md:text-4xl tracking-tight text-navy-deep"
               style={{ fontFamily: "var(--font-display)", marginBottom: "40px" }}
@@ -594,7 +594,7 @@ function PatientStories() {
 
   return (
     <section className="bg-ghost">
-      <div className="max-w-7xl mx-auto px-6 py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 py-10 md:py-14">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6" style={{ marginBottom: "40px" }}>
           <div>
