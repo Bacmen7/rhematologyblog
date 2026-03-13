@@ -50,6 +50,7 @@ function Header() {
     },
   ]
   const learnLinks = [
+    { label: "Health Guide" },
     { label: "Blog" },
     { label: "Clinical Guides" },
     { label: "Research and Outcomes" },
@@ -433,7 +434,7 @@ function Header() {
                 </p>
                 <div className="space-y-1">
                   {learnLinks.map((item) => {
-                    const linkRoutes = { "Blog": "/blog" }
+                    const linkRoutes = { "Blog": "/blog", "Health Guide": "/health-guide" }
                     const to = linkRoutes[item.label]
                     const inner = (
                       <>
@@ -475,19 +476,37 @@ function Header() {
               <div className="px-8 py-9 border-r border-border/40">
                 <p className="text-[11px] tracking-[0.2em] uppercase font-bold text-navy-muted/70 mb-5">Categories</p>
                 <div className="space-y-0.5">
-                  {categories.map((item) => (
-                    <a
-                      key={item}
-                      className="flex items-center justify-between py-2.5 text-[14.5px] font-medium text-navy-deep hover:text-sky transition-colors group"
-                      href="javascript:void(0)"
-                      onClick={closeLearn}
-                    >
-                      {item}
-                      <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                        <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
-                      </span>
-                    </a>
-                  ))}
+                  {categories.map((item) => {
+                    const categoryRoutes = { "Rheumatoid Arthritis": "/health-guide/arthritis" }
+                    const catTo = categoryRoutes[item]
+                    const catInner = (
+                      <>
+                        {item}
+                        <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
+                          <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                        </span>
+                      </>
+                    )
+                    return catTo ? (
+                      <Link
+                        key={item}
+                        to={catTo}
+                        className="flex items-center justify-between py-2.5 text-[14.5px] font-medium text-navy-deep hover:text-sky transition-colors group"
+                        onClick={closeLearn}
+                      >
+                        {catInner}
+                      </Link>
+                    ) : (
+                      <a
+                        key={item}
+                        className="flex items-center justify-between py-2.5 text-[14.5px] font-medium text-navy-deep hover:text-sky transition-colors group"
+                        href="javascript:void(0)"
+                        onClick={closeLearn}
+                      >
+                        {catInner}
+                      </a>
+                    )
+                  })}
                 </div>
               </div>
 
@@ -596,7 +615,7 @@ function Header() {
             {/* Learn Links */}
             <div className="space-y-1 mb-8">
               {learnLinks.map((item, index) => {
-                const mobileLinkRoutes = { "Blog": "/blog" }
+                const mobileLinkRoutes = { "Blog": "/blog", "Health Guide": "/health-guide" }
                 const to = mobileLinkRoutes[item.label]
                 const commonStyle = {
                   opacity: learnVisible ? 1 : 0,

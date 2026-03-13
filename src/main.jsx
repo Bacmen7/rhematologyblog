@@ -11,6 +11,8 @@ import PricingInsurance from "./pages/PricingInsurance.jsx"
 import AboutUs from "./pages/AboutUs.jsx"
 import Blog from "./pages/Blog.jsx"
 import DoctorProfile from "./pages/DoctorProfile.jsx"
+import HealthGuide from "./pages/HealthGuide.jsx"
+import ArthritisGuide from "./pages/ArthritisGuide.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -32,6 +34,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/blog" element={<Blog />} />
         <Route path="/article/:id" element={<BlogDetail />} />
         <Route path="/specialist/:id" element={<DoctorProfile />} />
+        <Route path="/health-guide" element={<HealthGuide />} />
+        <Route path="/health-guide/arthritis" element={<ArthritisGuide />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
