@@ -46,6 +46,7 @@ function WhyRheuma() {
   return (
     <section className="custom-approach-section relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
 
+
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-20">
@@ -63,16 +64,16 @@ function WhyRheuma() {
         </div>
 
         {/* Conditions - mobile grid 3col, desktop flex row */}
-        <div className="grid grid-cols-3 gap-x-6 gap-y-10 md:flex md:gap-8">
+        <div className="grid grid-cols-3 gap-x-4 gap-y-8 md:flex md:gap-8">
           {conditions.map((c, i) => (
-            <div key={c.name} className="group cursor-pointer md:flex-1 md:min-w-0">
-              <div className="relative w-[56px] h-[60px] md:w-[70px] md:h-[74px] mb-4 md:mb-5">
+            <div key={c.name} className="group cursor-pointer md:flex-1 md:min-w-0 flex flex-col items-center text-center md:items-start md:text-left">
+              <div className="relative w-[56px] h-[60px] md:w-[70px] md:h-[74px] mb-5 md:mb-5">
                 <div className="absolute inset-0">{blobs[i % blobs.length]}</div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img src={c.icon} alt={c.name} className="w-[32px] h-[32px] md:w-[40px] md:h-[40px]" />
                 </div>
               </div>
-              <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, lineHeight: 1.4, letterSpacing: "0.4px", color: "#ffffff" }} className="text-[14px] md:text-[18px]">
+              <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, lineHeight: 1.3, letterSpacing: "0.4px", color: "#ffffff" }} className="text-[12px] md:text-[18px]">
                 {c.name}
               </h3>
             </div>
@@ -80,8 +81,8 @@ function WhyRheuma() {
         </div>
       </div>
 
-      {/* Bottom wave */}
-      <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+      {/* Bottom wave — mobile only, blends into next section */}
+      <svg className="absolute bottom-0 left-0 w-full md:hidden" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
         <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
       </svg>
     </section>

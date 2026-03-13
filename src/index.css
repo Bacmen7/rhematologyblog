@@ -105,19 +105,3 @@ p {
   color: var(--color-navy-muted);
 }
 
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.testimonial-marquee {
-  animation: marquee-scroll 18s linear infinite;
-}
-
-.testimonial-marquee:hover {
-  animation-play-state: paused;
-}

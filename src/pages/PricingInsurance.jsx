@@ -20,7 +20,7 @@ function PricingInsurance() {
         {/* <EmployerSection /> */}
         <FaqSection />
         {/* <CtaSection /> */}
-        <div className="pt-6 md:pt-10" style={{ backgroundColor: "#fdfdfe" }}>
+        <div className="bg-white">
           <Newsletter />
         </div>
       </main>
@@ -34,13 +34,13 @@ function HeroSection() {
   return (
     <>
       {/* Desktop */}
-      <section className="custom-approach-section relative overflow-hidden hidden lg:block" style={{ background: "#d1ebfd" }}>
+      <section className="custom-approach-section relative overflow-hidden hidden lg:block" style={{ background: "#ffffff" }}>
         <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
           <div className="flex flex-col justify-center gap-6 py-16 pl-[max(8rem,calc((100%-80rem)/2+8rem))] pr-10">
             <h1 className="text-[4.375rem] font-light leading-[1.03] tracking-[-1.6px] text-navy-deep" style={{ fontFamily: "var(--font-display)" }}>
-              Know what you'll pay{" "}
+              Know what you'll pay before you{" "}
               <span className="relative inline-block">
-                before you walk in
+                walk in
                 <svg className="absolute -bottom-2 left-0 w-full h-3" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
                   <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="4" />
                 </svg>
@@ -70,11 +70,11 @@ function HeroSection() {
 
       {/* Mobile */}
       <section className="custom-approach-section lg:hidden overflow-hidden">
-        <div className="flex flex-col items-center text-center px-6 pt-14 pb-10" style={{ background: "#d1ebfd" }}>
+        <div className="flex flex-col items-center text-center px-6 pt-14 pb-10" style={{ background: "#ffffff" }}>
           <h1 className="text-[3.0625rem] font-light text-navy-deep leading-[1.06] tracking-[-1.4px] mb-5" style={{ fontFamily: "var(--font-display)" }}>
-            Know what you'll pay{" "}
+            Know what you'll pay before you{" "}
             <span className="relative inline-block">
-              before you walk in
+              walk in
               <svg className="absolute -bottom-1 left-0 w-full h-2.5" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
                 <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="4" />
               </svg>
@@ -220,12 +220,6 @@ function InsuranceSupportSection() {
         </div>
       </div>
 
-      {/* Bottom Wave */}
-      <div className="w-full leading-none -mb-1">
-        <svg viewBox="0 0 1440 32" className="w-full h-auto" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ transform: "rotate(180deg)" }}>
-          <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#F0F4FB" />
-        </svg>
-      </div>
     </section>
   )
 }
@@ -466,15 +460,11 @@ function InsuranceSection() {
   ]
 
   return (
-    <section className="py-24 md:py-36 bg-[#FDFDFE] relative z-10">
+    <section className="pt-10 pb-24 md:pt-14 md:pb-36 bg-[#FDFDFE] relative z-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Eyebrow + Heading */}
           <div>
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Accessible Healthcare</span>
-            </div>
             <h2
               className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-[#182439]"
               style={{ fontFamily: "var(--font-display)" }}
@@ -518,14 +508,9 @@ function ComparisonSection() {
         </svg>
       </div>
 
-      <div className="py-24 md:py-36">
+      <div className="pt-4 pb-12 md:pt-8 md:pb-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
-            <div className="mb-6 flex items-center justify-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Cost Comparison</span>
-              <span className="h-px w-8 bg-navy-deep/20" />
-            </div>
             <h2 className="text-4xl md:text-5xl text-[#182439] tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               What you'd pay{" "}
               <span className="relative inline-block">
@@ -598,10 +583,6 @@ function PaymentOptions() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-4">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Flexible Payment</span>
-            </div>
             <h2
               className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6 text-[#182439]"
               style={{ fontFamily: "var(--font-display)" }}
@@ -643,10 +624,6 @@ function EmployerSection() {
             />
           </div>
           <div className="flex flex-col justify-center gap-5 py-20 pl-16 pr-[max(4rem,calc((100%-80rem)/2+4rem))]">
-            <div className="flex items-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">For Employers</span>
-            </div>
             <h2
               className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-[#182439]"
               style={{ fontFamily: "var(--font-display)" }}
@@ -691,10 +668,6 @@ function EmployerSection() {
         <div className="flex flex-col" style={{ background: "#d1ebfd" }}>
           <img src="/images/hero-doctor.jpg" alt="Clinical team" className="w-full block h-[280px] object-cover" />
           <div className="px-6 py-12">
-            <div className="flex items-center gap-4 mb-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">For Employers</span>
-            </div>
             <h2 className="text-[2rem] leading-[1.1] tracking-tight text-[#182439] mb-4" style={{ fontFamily: "var(--font-display)" }}>
               Bring Rheuma to your team
             </h2>
@@ -776,6 +749,7 @@ function FaqSection() {
           </div>
         </div>
       </div>
+
     </section>
   )
 }

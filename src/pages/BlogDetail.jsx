@@ -36,8 +36,8 @@ function BlogDetail() {
       <Header />
       <div className="blog-detail-page bg-background-light min-h-screen">
 
-      <section className="bg-ghost border-b border-border">
-        <div className="max-w-7xl mx-auto px-6 py-8 md:py-14">
+      <section className="bg-ghost relative pb-14 md:pb-16">
+        <div className="max-w-7xl mx-auto px-6 pt-5 md:pt-10">
           <nav className="flex items-center flex-wrap gap-1.5 md:gap-2 text-[12px] md:text-[13px] text-navy-muted mb-6 md:mb-10" style={{ fontFamily: "var(--font-base)", fontWeight: 600 }}>
             <Link to="/" className="hover:text-navy-deep transition-colors">RHEUMA.</Link>
             <span>&gt;</span>
@@ -46,7 +46,7 @@ function BlogDetail() {
             <span className="text-navy-deep">{article.title.length > 40 ? article.title.slice(0, 40) + "..." : article.title}</span>
           </nav>
 
-          <div className="grid lg:grid-cols-[minmax(0,1fr)_450px] xl:grid-cols-[minmax(0,1fr)_480px] gap-6 md:gap-10 items-end">
+          <div className="grid lg:grid-cols-[minmax(0,1fr)_450px] xl:grid-cols-[minmax(0,1fr)_480px] gap-6 md:gap-10 items-center">
             <div>
               <h1 className="text-[28px] md:text-4xl lg:text-5xl leading-[1.15] md:leading-tight mb-4 md:mb-5" style={{ fontFamily: "var(--font-display)", letterSpacing: "-0.8px" }}>
                 {article.title}
@@ -65,8 +65,8 @@ function BlogDetail() {
               </div>
 
               {/* Reviewer card — shown below meta on mobile, beside title on desktop */}
-              <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 shadow-sm mt-6 lg:hidden">
-                <div className="grid grid-cols-[100px_1fr]">
+              <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 mt-6 lg:hidden">
+                <div className="grid grid-cols-[110px_1fr]">
                   <div className="h-full relative overflow-hidden bg-gradient-to-b from-slate-300 to-slate-500">
                     {reviewerImage && (
                       <img
@@ -77,13 +77,13 @@ function BlogDetail() {
                       />
                     )}
                   </div>
-                  <div className="p-3">
-                    <p className="text-[10px] font-semibold text-teal-soft mb-0.5">Reviewed By</p>
-                    <h3 className="text-[1.1rem] leading-tight tracking-tight mb-1.5 text-navy-deep">
+                  <div className="p-2.5">
+                    <p className="text-[8px] font-semibold text-teal-soft mb-0.5">Reviewed By</p>
+                    <h3 className="text-[0.8rem] leading-tight tracking-tight mb-0.5 text-navy-deep">
                       {article.reviewedBy.name}
                     </h3>
-                    <p className="text-[11px] leading-5 text-navy-deep/80 mb-2 line-clamp-3">{article.reviewedBy.bio}</p>
-                    <span className="text-[11px] font-semibold underline cursor-pointer">View bio</span>
+                    <p className="text-[9px] leading-[1.4] text-navy-deep/80 mb-1 line-clamp-2">{article.reviewedBy.bio}</p>
+                    <span className="text-[9px] font-semibold underline cursor-pointer">View bio</span>
                   </div>
                 </div>
               </div>
@@ -97,8 +97,8 @@ function BlogDetail() {
             </div>
 
             {/* Reviewer card — desktop only (beside title) */}
-            <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 shadow-sm hidden lg:block">
-              <div className="grid grid-cols-[115px_1fr]">
+            <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 hidden lg:block">
+              <div className="grid grid-cols-[130px_1fr]">
                 <div className="h-full relative overflow-hidden bg-gradient-to-b from-slate-300 to-slate-500">
                   {reviewerImage && (
                     <img
@@ -109,17 +109,24 @@ function BlogDetail() {
                     />
                   )}
                 </div>
-                <div className="p-3.5">
-                  <p className="text-[10px] font-semibold text-teal-soft mb-1">Reviewed By</p>
-                  <h3 className="text-[1.45rem] leading-tight tracking-tight mb-2 text-navy-deep">
+                <div className="p-3">
+                  <p className="text-[8px] font-semibold text-teal-soft mb-0.5">Reviewed By</p>
+                  <h3 className="text-[0.85rem] leading-tight tracking-tight mb-0.5 text-navy-deep">
                     {article.reviewedBy.name}
                   </h3>
-                  <p className="text-[12px] leading-6 text-navy-deep/80 mb-3 line-clamp-3">{article.reviewedBy.bio}</p>
-                  <span className="text-[12px] font-semibold underline cursor-pointer">View bio</span>
+                  <p className="text-[9px] leading-[1.4] text-navy-deep/80 mb-1 line-clamp-2">{article.reviewedBy.bio}</p>
+                  <span className="text-[9px] font-semibold underline cursor-pointer">View bio</span>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Curved Bottom SVG */}
+        <div style={{ position: "absolute", bottom: "-1px", left: 0, width: "100%", overflow: "hidden", lineHeight: 0 }}>
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ position: "relative", display: "block", width: "calc(100% + 1.3px)", height: "50px" }}>
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#f8fafd"></path>
+          </svg>
         </div>
       </section>
 
@@ -175,7 +182,7 @@ function BlogDetail() {
           </aside>
 
           <div>
-            <div className="bg-ghost border border-border rounded-xl p-5 md:p-7 mb-8 md:mb-10">
+            <div className="bg-ghost p-5 md:p-7 mb-10 md:mb-14">
               <h3 className="text-xl md:text-3xl leading-none tracking-tight mb-4 md:mb-6" style={{ fontFamily: "var(--font-display)" }}>Key takeaways</h3>
               <ul className="space-y-4">
                 {article.keyTakeaways.map((item, index) => (
@@ -187,7 +194,7 @@ function BlogDetail() {
               </ul>
             </div>
 
-            <div className="leading-relaxed text-navy-deep space-y-6 mb-10" style={{ fontFamily: "var(--font-base)", fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px" }}>
+            <div className="leading-relaxed text-navy-deep space-y-4 md:space-y-6 mb-8 md:mb-10" style={{ fontFamily: "var(--font-base)", fontSize: "16px", lineHeight: 1.7, letterSpacing: "0.1px" }}>
               <p>{article.excerpt}</p>
               <p>Read on as we share an in-depth timeline and practical guidance based on clinically reviewed evidence.</p>
             </div>
@@ -303,7 +310,7 @@ function BlogDetail() {
               <Link
                 key={item.id}
                 to={`/article/${item.id}`}
-                className="w-[260px] min-w-[260px] md:w-[300px] md:min-w-[300px] md:max-w-[300px] flex-shrink-0 flex flex-col article-card bg-[#fcfcfc] border border-gray-100 rounded-xl overflow-hidden"
+                className="w-[260px] min-w-[260px] md:w-[300px] md:min-w-[300px] md:max-w-[300px] flex-shrink-0 flex flex-col article-card bg-[#fcfcfc] border border-gray-100 overflow-hidden"
               >
                 <div className="h-56 overflow-hidden">
                   <img alt={item.title} className="w-full h-full object-cover transition-transform duration-300" src={item.image} />

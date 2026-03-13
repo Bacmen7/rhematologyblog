@@ -14,10 +14,7 @@ function InsurancePartners() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
           {/* Left — Text */}
           <div>
-            <p className="text-xs uppercase tracking-[0.25em] font-semibold text-navy-muted mb-4">
-              Accessible Rheumatic Healthcare
-            </p>
-            <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-6">
+            <h2 className="text-[2rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-6">
               In-network with most major{" "}
               <span className="relative inline-block">
                 insurance

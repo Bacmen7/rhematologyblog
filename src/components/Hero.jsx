@@ -48,7 +48,7 @@ function Hero() {
       {/* Mobile Layout */}
       <section className="custom-approach-section lg:hidden overflow-hidden">
         <div
-          className="flex flex-col items-center text-center px-6 pt-14 pb-10"
+          className="flex flex-col items-center text-center px-6 pt-14 pb-4"
           style={{
             background: "#d1ebfd",
             /* background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd", */
@@ -69,10 +69,10 @@ function Hero() {
             </span>{" "}
             Health
           </h1>
-          <p className="text-base text-navy-muted leading-relaxed mb-8 max-w-sm">
+          <p className="text-base text-navy-muted leading-relaxed max-w-sm" style={{ marginBottom: "48px" }}>
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.
           </p>
-          <button className="bg-primary hover:bg-primary-hover text-navy-deep px-8 py-3.5 rounded-full font-bold text-base transition-colors mb-5">
+          <button className="bg-primary hover:bg-primary-hover text-navy-deep px-8 py-3.5 rounded-full font-bold text-base transition-colors" style={{ marginBottom: "20px" }}>
             Get Started →
           </button>
           <p className="text-sm text-navy-muted">

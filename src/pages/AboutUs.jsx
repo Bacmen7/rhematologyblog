@@ -19,8 +19,12 @@ function AboutUs() {
         <FeaturedInSection />
         <PressSection />
         <CareersSection />
-        <CtaSection />
-        <div className="bg-ghost">
+        <div className="bg-white relative">
+          <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ transform: "translateY(-99%)" }}>
+            <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[32px] md:h-[40px]">
+              <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#ffffff" />
+            </svg>
+          </div>
           <Newsletter />
         </div>
       </main>
@@ -114,10 +118,10 @@ function PersonalStorySection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-10">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight" style={{ marginBottom: "56px" }}>
               Why redesigning rheumatology care is personal.
             </h2>
-            <div className="space-y-6 text-navy-muted text-lg leading-[1.8]">
+            <div className="text-navy-muted text-lg leading-[1.8] flex flex-col" style={{ gap: "32px" }}>
               <p>
                 In 2019, our co-founder Dr. Amara Osei was diagnosed with rheumatoid arthritis after waiting nine months for a specialist appointment. By the time she saw a rheumatologist, irreversible joint damage had already set in — damage that could have been prevented with earlier intervention.
               </p>
@@ -151,10 +155,6 @@ function MissionSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-5">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-primary" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Mission</span>
-            </div>
             <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
               Close the gap between{" "}
               diagnosis and relief
@@ -225,17 +225,12 @@ function CoreValuesSection() {
         <path d="M902.287 110.844C616.272 102.591 308.233 0.726051 45.0151 80.1802C29.7923 84.7785 14.8114 90.0303 0 95.8629V120H1440V0C1273.37 78.0746 1092.39 116.337 902.287 110.844Z" fill="#f8fafd" />
       </svg>
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <span className="h-px w-8 bg-navy-deep/20" />
-            <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Values</span>
-            <span className="h-px w-8 bg-navy-deep/20" />
-          </div>
-          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-4">
+          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-center" style={{ marginBottom: "16px" }}>
             What drives every decision we make
           </h2>
-          <p className="text-navy-muted text-lg max-w-2xl mx-auto">
+          <p className="text-navy-muted text-lg max-w-2xl mx-auto text-center" style={{ marginBottom: "48px" }}>
             These six values give us the courage to do the right thing for our patients, partners, and each other, every day.
           </p>
         </div>
@@ -274,10 +269,6 @@ function LeadershipTeamSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-8 mb-16">
           <div className="w-full md:w-1/3">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-primary" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Team</span>
-            </div>
             <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
               Leadership team
             </h2>
@@ -332,10 +323,6 @@ function MedicalAdvisorsSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col md:flex-row gap-8 mb-16">
           <div className="w-full md:w-1/3">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/20" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Advisors</span>
-            </div>
             <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
               Medical advisors
             </h2>
@@ -371,11 +358,6 @@ function PartnersSection() {
     <section className="border-y border-border/40">
       <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
         <div className="text-center mb-14">
-          <div className="mb-6 flex items-center justify-center gap-4">
-            <span className="h-px w-8 bg-navy-deep/20" />
-            <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Affiliations</span>
-            <span className="h-px w-8 bg-navy-deep/20" />
-          </div>
           <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
             Trusted by the institutions{" "}
             that matter
@@ -437,10 +419,6 @@ function PressSection() {
     <section className="py-24 md:py-36">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-16">
-          <div className="mb-6 flex items-center gap-4">
-            <span className="h-px w-8 bg-primary" />
-            <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">In the Press</span>
-          </div>
           <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
             What others are saying
           </h2>
@@ -487,15 +465,11 @@ function CareersSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-6">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-primary" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Careers</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight" style={{ marginBottom: "32px" }}>
               Help us build the future of{" "}
               rheumatology
             </h2>
-            <p className="text-navy-muted text-lg leading-[1.8] mb-8 max-w-lg">
+            <p className="text-navy-muted text-lg leading-[1.8] max-w-lg" style={{ marginBottom: "28px" }}>
               We're looking for rheumatologists, engineers, designers, and operators who believe healthcare can work better. Remote-first, competitive compensation, and the chance to build something patients actually need.
             </p>
             <div className="space-y-4 mb-10">
@@ -529,7 +503,7 @@ function CareersSection() {
           </div>
           <div className="lg:col-span-5 lg:col-start-8 hidden lg:block">
             <div
-              className="aspect-[16/10] overflow-hidden bg-slate-100 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 bg-cover bg-center"
+              className="aspect-[4/5] overflow-hidden bg-slate-100 grayscale hover:grayscale-0 transition-all duration-700 bg-cover bg-center"
               style={{ backgroundImage: "url('/images/hero-consult.jpg')" }}
             />
           </div>
@@ -539,39 +513,5 @@ function CareersSection() {
   )
 }
 
-/* ───────── 14. FINAL CTA ───────── */
-function CtaSection() {
-  return (
-    <section
-      className="custom-approach-section relative overflow-hidden py-28 md:py-40"
-      style={{
-        background: "radial-gradient(ellipse at 30% 50%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 70% 50%, #b1efec 0%, transparent 45%), #f8fafd",
-      }}
-    >
-      <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-          Interested in Rheuma?
-        </h2>
-        <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg mx-auto">
-          We're always looking for people who share our passion for redesigning autoimmune care — the way it should be.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to="/"
-            className="bg-navy-deep hover:bg-navy-deep/90 text-white px-10 py-4 rounded-full font-semibold text-[15px] transition-colors"
-          >
-            Get Started →
-          </Link>
-          <Link
-            to="/our-approach"
-            className="text-navy-deep font-semibold text-[15px] underline decoration-primary decoration-2 underline-offset-4 hover:decoration-navy-deep transition-colors"
-          >
-            See our approach
-          </Link>
-        </div>
-      </div>
-    </section>
-  )
-}
 
 export default AboutUs

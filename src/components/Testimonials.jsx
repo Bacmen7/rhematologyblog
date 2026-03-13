@@ -1,3 +1,5 @@
+import { useRef, useEffect, useCallback } from "react"
+
 const reviews = [
   {
     quote: "Every clinician I have dealt with has been terrific and the proof is in the treatment of my symptoms. My thanks to all!",
@@ -26,8 +28,58 @@ const reviews = [
 ]
 
 function Testimonials() {
-  // Duplicate reviews for seamless infinite loop
-  const doubledReviews = [...reviews, ...reviews]
+  const scrollRef = useRef(null)
+  const pausedRef = useRef(false)
+  const posRef = useRef(0)
+  const animRef = useRef(null)
+
+  // Triple the reviews for seamless loop
+  const tripled = [...reviews, ...reviews, ...reviews]
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+
+    const cardWidth = el.scrollWidth / 3
+    posRef.current = cardWidth
+    el.scrollLeft = cardWidth
+
+    let lastTime = performance.now()
+
+    const step = (timestamp) => {
+      const delta = timestamp - lastTime
+      lastTime = timestamp
+
+      if (!pausedRef.current && el) {
+        posRef.current += delta * 0.04
+        el.scrollLeft = posRef.current
+
+        if (posRef.current >= cardWidth * 2) {
+          posRef.current -= cardWidth
+          el.scrollLeft = posRef.current
+        }
+      }
+
+      animRef.current = requestAnimationFrame(step)
+    }
+
+    animRef.current = requestAnimationFrame(step)
+
+    return () => {
+      if (animRef.current) cancelAnimationFrame(animRef.current)
+    }
+  }, [])
+
+  const handleMouseEnter = useCallback(() => { pausedRef.current = true }, [])
+  const handleMouseLeave = useCallback(() => { pausedRef.current = false }, [])
+  const handleTouchStart = useCallback(() => { pausedRef.current = true }, [])
+  const handleTouchEnd = useCallback(() => { pausedRef.current = false }, [])
+
+  const handleScroll = useCallback(() => {
+    if (pausedRef.current && scrollRef.current) {
+      posRef.current = scrollRef.current.scrollLeft
+    }
+  }, [])
 
   return (
     <section className="py-20 md:py-28 bg-[#f8fafd] overflow-hidden">
@@ -40,11 +92,19 @@ function Testimonials() {
         </h2>
       </div>
 
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
-          className="flex gap-4 sm:gap-6 px-6 testimonial-marquee"
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex gap-4 sm:gap-6 px-6 overflow-x-auto hide-scrollbar"
         >
-          {doubledReviews.map((r, i) => (
+          {tripled.map((r, i) => (
             <div
               key={i}
               className="flex-shrink-0 w-[260px] sm:w-[300px] md:w-[340px] p-6 sm:p-8 flex flex-col justify-between"

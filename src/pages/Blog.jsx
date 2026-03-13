@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import Header from "../components/Header"
+import Newsletter from "../components/Newsletter"
 import BriefingFooter from "../components/BriefingFooter"
 
 const articles = [
@@ -216,55 +217,15 @@ function Blog() {
             </div>
           </section>
 
-          {/* Newsletter CTA */}
-          <section className="relative bg-[#182439] text-white pt-28 pb-36 mt-16 text-center">
-            {/* Top Wave */}
-            <div className="absolute top-[-31px] left-0 w-full overflow-hidden leading-none z-10">
+          {/* Newsletter */}
+          <div className="bg-navy-deep relative mt-16">
+            <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ transform: "translateY(-99%)" }}>
               <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[32px] md:h-[40px]">
-                <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#182439"></path>
+                <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#182439" />
               </svg>
             </div>
-
-            <div className="relative z-20 max-w-3xl mx-auto px-6 flex flex-col items-center">
-              <p className="tracking-[0.22em] mb-10" style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 600, fontSize: "13px", lineHeight: "20px", color: "rgba(255,255,255,0.45)" }}>From our rheumatology experts to your inbox</p>
-              <h2 className="font-serif-blog font-normal leading-[1.1] text-white max-w-[860px]" style={{ fontSize: "clamp(32px, 4vw, 52px)", letterSpacing: "-0.5px", marginBottom: "120px" }}>
-                Get{" "}
-                <span className="relative inline-block z-10">
-                  joint-friendly
-                  <svg className="absolute -bottom-1 left-0 w-full h-[6px] -z-10" preserveAspectRatio="none" viewBox="0 0 400 12" fill="none">
-                    <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="3" />
-                  </svg>
-                </span>{" "}
-                tips, news, and more&#8202;&#8212;&#8202;delivered weekly.
-              </h2>
-
-              <form className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full max-w-md" onSubmit={(e) => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="Email Address*"
-                  required
-                  className="w-full sm:w-2/3 px-6 py-3.5 md:py-4 rounded-full bg-white text-[#182439] placeholder-[#a0a4ac] text-sm md:text-base border border-[#dadfe8] focus:outline-none focus:ring-2 focus:ring-[#8ebfff]/30 focus:border-[#8ebfff] transition-all"
-                />
-                <button
-                  type="submit"
-                  className="w-full sm:w-1/3 px-6 py-3.5 md:py-4 rounded-full text-sm md:text-base font-medium hover:opacity-90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
-                  style={{ backgroundColor: "#b1efec", color: "#182439" }}
-                >
-                  Subscribe
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
-              </form>
-            </div>
-
-            {/* Bottom Wave */}
-            <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-10">
-              <svg viewBox="0 0 1440 16" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[16px] md:h-[24px]">
-                <path d="M428.1 14.2289C654.82 14.2289 823.319 0 1053.1 0C1196.21 0 1315.56 5.51969 1440 9.68339V16H0V3.1744C141.3 7.36788 270.666 14.2289 428.1 14.2289Z" fill="#1a2744"></path>
-              </svg>
-            </div>
-          </section>
+            <Newsletter variant="dark" />
+          </div>
         </div>
       </main>
       <BriefingFooter />

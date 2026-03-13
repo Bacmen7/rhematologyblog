@@ -1,4 +1,6 @@
-function Newsletter() {
+function Newsletter({ variant = "light" }) {
+  const isDark = variant === "dark"
+
   return (
     <section className="relative z-10 py-16 md:py-24">
       <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
@@ -11,7 +13,7 @@ function Newsletter() {
             fontWeight: 700,
             textTransform: "uppercase",
             letterSpacing: "0.22em",
-            color: "#5a6577",
+            color: isDark ? "rgba(255,255,255,0.40)" : "#5a6577",
           }}
         >
           From our rheumatology experts to your inbox
@@ -26,7 +28,7 @@ function Newsletter() {
             lineHeight: 1.1,
             letterSpacing: "-0.5px",
             fontWeight: 400,
-            color: "var(--color-navy-deep)",
+            color: isDark ? "#ffffff" : "var(--color-navy-deep)",
           }}
         >
           Get{" "}

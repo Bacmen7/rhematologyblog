@@ -40,7 +40,7 @@
 /* Article page — match home page font system */
 .blog-detail-page {
   font-family: var(--font-base);
-  letter-spacing: 0.6px;
+  letter-spacing: 0.1px;
   color: var(--color-navy-deep);
 }
 
@@ -58,45 +58,45 @@
 
 .blog-article-content h2 {
   font-family: var(--font-display);
-  margin: 2rem 0 1rem;
-  font-size: calc(2.625rem);
-  line-height: calc(1.14286);
+  margin: 1.8rem 0 0.8rem;
+  font-size: 2.625rem;
+  line-height: 1.14286;
   letter-spacing: -0.4px;
   font-weight: 400;
 }
 
 .blog-article-content p {
   font-family: var(--font-base);
-  margin: 0 0 1rem;
+  margin: 0 0 0.85rem;
   font-size: 1rem;
-  letter-spacing: 0.6px;
-  line-height: calc(1.75);
+  letter-spacing: 0.1px;
+  line-height: 1.75;
   color: var(--color-navy-deep);
 }
 
 .blog-article-content ul {
-  margin: 1rem 0 1.6rem;
+  margin: 0.8rem 0 1.4rem;
   padding-left: 1.6rem;
 }
 
 .blog-article-content li {
   font-family: var(--font-base);
   font-size: 1rem;
-  letter-spacing: 0.6px;
-  line-height: calc(1.75);
-  margin-bottom: 0.5rem;
+  letter-spacing: 0.1px;
+  line-height: 1.75;
+  margin-bottom: 0.4rem;
   color: var(--color-navy-deep);
 }
 
 .blog-article-content blockquote {
   font-family: var(--font-base);
-  margin: 1.4rem 0;
+  margin: 1.2rem 0;
   padding-left: 1rem;
   border-left: 3px solid var(--color-border);
   color: var(--color-navy-muted);
   font-size: 1rem;
-  letter-spacing: 0.6px;
-  line-height: calc(1.75);
+  letter-spacing: 0.1px;
+  line-height: 1.75;
 }
 
 .blog-article-content h3 {
@@ -112,7 +112,7 @@
   width: 100%;
   max-height: 340px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 0;
   margin: 1.5rem 0;
 }
 
