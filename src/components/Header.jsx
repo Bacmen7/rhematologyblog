@@ -764,7 +764,7 @@ function Header() {
             {partnershipCards.map((card, index) => (
               <article
                 key={card.title}
-                className="rounded-2xl bg-white p-4 shadow-[0_2px_16px_rgba(24,36,57,0.06)]"
+                className="flex flex-col rounded-2xl bg-white p-4 shadow-[0_2px_16px_rgba(24,36,57,0.06)]"
                 style={{
                   opacity: partnershipVisible ? 1 : 0,
                   transform: partnershipVisible ? "translateY(0)" : "translateY(20px)",
@@ -772,22 +772,24 @@ function Header() {
                 }}
               >
                 <div className="relative overflow-hidden rounded-xl">
-                  <img className="h-44 w-full object-cover" src={card.image} alt={card.alt} />
+                  <img className="block h-44 w-full object-cover" src={card.image} alt={card.alt} />
                   <span className="absolute top-3 left-3 rounded-full bg-white/90 backdrop-blur-sm px-3.5 py-1 text-[10px] font-bold tracking-[0.14em] uppercase text-navy-deep shadow-sm">
                     {card.audience}
                   </span>
                 </div>
-                <h3 className="mt-4 text-[19px] leading-[1.3] text-navy-deep">{card.title}</h3>
-                <a
-                  className="mt-3 inline-flex items-center gap-2 text-base font-semibold text-navy-deep"
-                  href="javascript:void(0)"
-                  onClick={closePartnership}
-                >
-                  Learn More
-                  <span className="w-8 h-8 rounded-full bg-primary/20 inline-flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
-                  </span>
-                </a>
+                <div className="pt-4">
+                  <h3 className="text-[19px] leading-[1.3] text-navy-deep">{card.title}</h3>
+                  <a
+                    className="mt-3 inline-flex items-center gap-2 text-base font-semibold text-navy-deep"
+                    href="javascript:void(0)"
+                    onClick={closePartnership}
+                  >
+                    Learn More
+                    <span className="w-8 h-8 rounded-full bg-primary/20 inline-flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </span>
+                  </a>
+                </div>
               </article>
             ))}
           </div>
