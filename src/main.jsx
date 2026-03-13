@@ -10,6 +10,7 @@ import OurApproach from "./pages/OurApproach.jsx"
 import PricingInsurance from "./pages/PricingInsurance.jsx"
 import AboutUs from "./pages/AboutUs.jsx"
 import Blog from "./pages/Blog.jsx"
+import DoctorProfile from "./pages/DoctorProfile.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -30,6 +31,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/article/:id" element={<BlogDetail />} />
+        <Route path="/specialist/:id" element={<DoctorProfile />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
