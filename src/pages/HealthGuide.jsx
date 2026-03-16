@@ -1,0 +1,409 @@
+import { useRef } from "react"
+import { Link } from "react-router-dom"
+import Header from "../components/Header"
+import Newsletter from "../components/Newsletter"
+import CtaBanner from "../components/CtaBanner"
+import BriefingFooter from "../components/BriefingFooter"
+
+/* ─────────────────────────────────────────────
+   DATA
+   ───────────────────────────────────────────── */
+
+const conditions = [
+  { name: "Rheumatoid Arthritis", slug: "arthritis", image: "/condition/Rheumatoid Arthritis (RA).png", description: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments." },
+  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.png", description: "Where skin meets joints — understanding the psoriasis-arthritis connection and targeted therapies." },
+  { name: "Osteoarthritis", slug: "osteoarthritis", image: "/condition/Osteoarthritis.png", description: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain." },
+  { name: "Lupus", slug: "lupus", image: "/condition/Lupus.png", description: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management." },
+  { name: "Gout", slug: "gout", image: "/condition/Gout.png", description: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies." },
+  { name: "Ankylosing Spondylitis", slug: "ankylosing-spondylitis", image: "/condition/Ankylosing Spondylitis (AS).png", description: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture." },
+  { name: "Fibromyalgia", slug: "fibromyalgia", image: "/condition/Fibromyalgia.png", description: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life." },
+  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.png", description: "Identifying whether spinal pain is mechanical or inflammatory — a critical distinction for treatment." },
+]
+
+const whatIsRheumatology = [
+  { title: "Autoimmune Conditions", desc: "Diseases where the immune system mistakenly attacks healthy tissue — including RA, lupus, vasculitis, and scleroderma.", stat: "80+", statLabel: "autoimmune conditions" },
+  { title: "Inflammatory Arthritis", desc: "Joint diseases driven by chronic inflammation rather than wear-and-tear — requiring disease-modifying treatments.", stat: "7", statLabel: "types of inflammatory arthritis" },
+  { title: "Connective Tissue Diseases", desc: "Conditions affecting collagen and connective tissue throughout the body, from skin to internal organs.", stat: "200+", statLabel: "related conditions" },
+]
+
+const diagnosticJourney = [
+  { step: "01", title: "Symptom Assessment", desc: "A thorough review of your symptoms, medical history, family history, and how your condition affects daily life. Morning stiffness duration, joint patterns, and systemic symptoms all provide critical diagnostic clues." },
+  { step: "02", title: "Physical Examination", desc: "Hands-on evaluation of joints for swelling, warmth, tenderness, and range of motion. Your rheumatologist examines specific joint patterns — symmetry, small vs large joints — which point to different conditions." },
+  { step: "03", title: "Laboratory Testing", desc: "Blood tests including RF (Rheumatoid Factor), Anti-CCP antibodies, ANA, ESR, and CRP. These inflammatory markers and autoantibodies help confirm diagnosis and guide treatment decisions." },
+  { step: "04", title: "Advanced Imaging", desc: "X-rays reveal joint damage, while ultrasound and MRI can detect early inflammation invisible to the naked eye. Imaging helps stage disease severity and track treatment response over time." },
+  { step: "05", title: "Treatment Plan", desc: "A personalized strategy combining medication (DMARDs, biologics, JAK inhibitors), physical therapy, lifestyle modifications, and regular monitoring to achieve remission or low disease activity." },
+]
+
+const treatmentApproaches = [
+  { category: "Medications", items: [
+    { name: "DMARDs", detail: "Methotrexate, hydroxychloroquine, sulfasalazine — the cornerstone of autoimmune treatment. They slow disease progression and prevent permanent joint damage." },
+    { name: "Biologics", detail: "TNF inhibitors, IL-6 blockers, B-cell depleting agents — precision therapies targeting specific immune pathways driving your inflammation." },
+    { name: "JAK Inhibitors", detail: "Oral small-molecule drugs (tofacitinib, baricitinib, upadacitinib) that block Janus kinase signaling inside immune cells." },
+    { name: "Corticosteroids", detail: "Powerful anti-inflammatory relief for acute flares. Used short-term as a bridge while disease-modifying drugs take effect." },
+  ]},
+  { category: "Non-Pharmacologic", items: [
+    { name: "Physical Therapy", detail: "Targeted exercise programs to maintain joint flexibility, strengthen supporting muscles, and improve functional capacity." },
+    { name: "Occupational Therapy", detail: "Joint protection techniques, assistive devices, and workplace ergonomic modifications to reduce daily strain on affected joints." },
+    { name: "Anti-Inflammatory Diet", detail: "Mediterranean-style eating patterns rich in omega-3s, antioxidants, and fiber. Reducing processed foods, refined sugars, and excess alcohol." },
+    { name: "Mind-Body Practices", detail: "Yoga, tai chi, meditation, and cognitive behavioral therapy for managing pain perception, stress, and the emotional toll of chronic illness." },
+  ]},
+]
+
+const warningSignals = [
+  { title: "Joint swelling lasting more than 6 weeks", desc: "Persistent swelling is a hallmark of inflammatory arthritis and requires evaluation — it won't resolve on its own." },
+  { title: "Morning stiffness exceeding 30 minutes", desc: "Inflammatory stiffness improves with movement. Mechanical stiffness (osteoarthritis) is brief. Duration matters for diagnosis." },
+  { title: "Symmetric joint involvement", desc: "Both hands, both knees, both feet affected simultaneously — this pattern strongly suggests an autoimmune process." },
+  { title: "Unexplained fatigue with joint pain", desc: "Systemic inflammation causes profound fatigue beyond normal tiredness. It's your body's immune system working overtime." },
+  { title: "Skin rashes with joint symptoms", desc: "Butterfly rash (lupus), scaly patches (psoriatic arthritis), or nodules — skin changes can be the first clue to systemic disease." },
+  { title: "Family history of autoimmune disease", desc: "Genetics play a significant role. If a first-degree relative has RA, lupus, or other autoimmune conditions, your risk is elevated." },
+]
+
+const featuredArticles = [
+  { id: "understanding-blood-work-rf-anti-ccp", title: "Understanding your Blood Work: RF and Anti-CCP", image: "/images/lab-test.jpg", readTime: "12 min read", category: "Diagnostics", author: "Dr. Sarah Miller", excerpt: "Learn what RF and Anti-CCP blood tests mean for your rheumatoid arthritis diagnosis and treatment plan." },
+  { id: "gentle-exercises-flaring-joints", title: "Gentle Exercises for Flaring Joints", image: "/images/exercise.jpg", readTime: "8 min read", category: "Lifestyle", author: "Dr. James Chen", excerpt: "Safe, low-impact exercises that can help maintain mobility and reduce pain during RA flares." },
+  { id: "anti-inflammatory-diet", title: "The Anti-Inflammatory Diet: Truths vs Myths", image: "/images/diet.jpg", readTime: "10 min read", category: "Diet & Nutrition", author: "Angela Myers", excerpt: "Separating fact from fiction when it comes to anti-inflammatory foods and their impact on symptoms." },
+]
+
+const faqs = [
+  { q: "What does a rheumatologist do?", a: "A rheumatologist is a board-certified internist with additional fellowship training in autoimmune and musculoskeletal diseases. We diagnose and treat over 200 conditions affecting joints, muscles, bones, and the immune system — from common conditions like osteoarthritis to complex systemic diseases like lupus and vasculitis." },
+  { q: "When should I see a rheumatologist vs. my primary care doctor?", a: "See a rheumatologist if you have joint swelling lasting more than 6 weeks, morning stiffness exceeding 30 minutes, an elevated inflammatory marker (ESR or CRP), a positive ANA or RF test, or symptoms that haven't responded to basic treatments. Early referral leads to better outcomes — the first 12 weeks after symptom onset is a critical treatment window." },
+  { q: "Are rheumatic diseases hereditary?", a: "Genetics contribute to risk, but they're not the whole story. Having the HLA-B27 gene increases ankylosing spondylitis risk, and family history of RA raises yours 3-5x. However, environmental triggers — infections, smoking, hormonal changes, stress — interact with genetic predisposition to activate disease. Most people with genetic risk factors never develop rheumatic disease." },
+  { q: "Can rheumatic conditions be cured?", a: "Most autoimmune rheumatic conditions cannot be cured, but they can be effectively controlled. Modern treatments achieve clinical remission in up to 50-60% of RA patients. 'Remission' means minimal to no symptoms, normal inflammatory markers, and no ongoing joint damage — essentially living as if you don't have the disease. Early, aggressive treatment gives the best chance of remission." },
+  { q: "What lifestyle changes actually help with inflammatory arthritis?", a: "Evidence supports: (1) regular low-impact exercise (swimming, cycling, yoga) — 150 min/week reduces inflammation and pain, (2) Mediterranean diet — shown to lower CRP by 20-30%, (3) adequate sleep (7-9 hours), (4) stress management, (5) smoking cessation — smoking doubles RA severity, and (6) maintaining healthy weight — every 5 lbs of excess weight increases knee osteoarthritis risk by 36%." },
+  { q: "How long does it take for treatment to work?", a: "DMARDs like methotrexate typically take 6-12 weeks to reach full effect. Biologics can work faster — some patients notice improvement within 2-4 weeks. Corticosteroids provide relief within hours to days but aren't long-term solutions. Your rheumatologist will monitor progress and adjust medications at 3-month intervals until you reach your treatment target." },
+]
+
+/* ─────────────────────────────────────────────
+   COMPONENT
+   ───────────────────────────────────────────── */
+
+function HealthGuide() {
+  const scrollRef = useRef(null)
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const amount = 320
+      scrollRef.current.scrollBy({ left: direction === "left" ? -amount : amount, behavior: "smooth" })
+    }
+  }
+
+  return (
+    <div className="landing-page bg-background-light text-navy-deep antialiased">
+      <Header />
+      <main>
+
+        {/* ═══════════ HERO (old style — matching HealthGuideHero) ═══════════ */}
+        <section className="relative bg-background-light overflow-hidden" style={{ marginTop: "-2px" }}>
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid md:grid-cols-2 gap-4 items-center">
+              <div className="pt-8 pb-4 md:py-6 relative z-10">
+                <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px" }}>
+                  Explore Health Guide<br />
+                  <span className="text-navy-muted">
+                    Reliable, rheumatology-focused medical information.
+                  </span>
+                </h1>
+                <p className="text-navy-muted text-base leading-relaxed mt-6 max-w-[520px]">
+                  Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
+                </p>
+                <div className="flex flex-wrap gap-4 mt-10">
+                  <a href="#conditions" className="inline-flex items-center gap-2 bg-navy-deep text-white rounded-full text-sm font-semibold px-8 py-4 hover:opacity-90 transition-opacity">
+                    Explore Conditions
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                  </a>
+                  <Link to="/blog" className="inline-flex items-center gap-2 rounded-full text-sm font-semibold px-8 py-4 border-2 border-navy-deep/15 text-navy-deep hover:bg-white/60 transition-colors">
+                    Browse Articles
+                  </Link>
+                </div>
+              </div>
+              <div className="hidden md:block">
+                <img
+                  alt="Medical professional consulting patient"
+                  className="w-full h-full object-cover object-center"
+                  src="/images/hero-consult.jpg"
+                />
+              </div>
+            </div>
+          </div>
+          {/* Mobile background image */}
+          <div className="absolute right-0 top-0 h-full w-full md:hidden opacity-20">
+            <img
+              alt=""
+              className="h-full w-full object-cover object-center"
+              src="/images/hero-consult.jpg"
+            />
+          </div>
+        </section>
+
+        {/* ═══════════ WHAT IS RHEUMATOLOGY (matching WhyRheuma dark section) ═══════════ */}
+        <section className="relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
+          <div className="relative z-10 max-w-7xl mx-auto px-6">
+            {/* Header — same 2-col layout as WhyRheuma */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-20">
+              <div>
+                <h2 className="max-w-[500px]" style={{ color: "#ffffff" }}>
+                  More than "just arthritis"
+                </h2>
+              </div>
+              <div className="flex items-end">
+                <p style={{ fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px", color: "#9a9faa" }}>
+                  Rheumatology encompasses over{" "}
+                  <strong className="font-semibold" style={{ color: "#1A355D", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>200 distinct conditions</strong>{" "}
+                  that affect the joints, muscles, bones, and immune system — many are systemic, involving the heart, lungs, kidneys, and skin.
+                </p>
+              </div>
+            </div>
+
+            {/* Stats — plain text, no cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+              {whatIsRheumatology.map((item) => (
+                <div key={item.title}>
+                  <p className="text-[48px] leading-none text-primary mb-1" style={{ fontFamily: "var(--font-display)" }}>{item.stat}</p>
+                  <p className="text-[11px] font-bold text-teal-soft uppercase tracking-[0.15em] mb-5">{item.statLabel}</p>
+                  <h3 className="!text-[20px] !font-semibold !leading-[1.4] mb-3" style={{ color: "#ffffff" }}>{item.title}</h3>
+                  <p className="!text-[15px] !leading-[1.7] font-normal text-[#8d9bb5]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom wave — same as WhyRheuma */}
+          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
+          </svg>
+        </section>
+
+        {/* ═══════════ CONDITIONS GRID (matching ConditionsGrid) ═══════════ */}
+        <section id="conditions" className="py-20 md:py-28 bg-ghost">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-14 max-w-2xl mx-auto">
+              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+                Explore by Condition
+              </h2>
+              <p className="text-navy-muted text-base leading-relaxed">
+                Each guide is written by a board-certified rheumatologist, covering symptoms, diagnosis, treatment options, and daily management strategies.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {conditions.map((c) => (
+                <Link
+                  key={c.name}
+                  to={c.slug === "arthritis" ? "/health-guide/Rheumatoid-Arthritis" : "#"}
+                  className="bg-white rounded-2xl py-8 px-5 flex flex-col items-center text-center gap-3 border border-[#e8ecf2] hover:border-primary transition-colors cursor-pointer"
+                >
+                  <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
+                    <img src={c.image} alt={c.name} className="max-w-full max-h-full object-contain" />
+                  </div>
+                  <p className="text-sm font-medium text-navy-deep leading-snug">{c.name}</p>
+                  <p className="text-xs text-navy-muted leading-relaxed hidden md:block">{c.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ WARNING SIGNS (matching ApproachSection pattern — dark section) ═══════════ */}
+        <section className="relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
+          <div className="relative z-10 max-w-7xl mx-auto px-6">
+            <h2 className="!mb-14 md:!mb-16 max-w-[800px]">
+              When should you{" "}
+              <span className="relative inline-block">
+                see a rheumatologist
+                <svg
+                  className="absolute -bottom-2 left-0 h-3 w-full"
+                  fill="none"
+                  preserveAspectRatio="none"
+                  viewBox="0 0 400 12"
+                >
+                  <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
+                </svg>
+              </span>
+              ?
+            </h2>
+
+            <p className="!text-[16px] !leading-[1.6] font-normal text-[#9a9faa] max-w-[680px]" style={{ marginBottom: "48px" }}>
+              Many rheumatic conditions are progressive — meaning <strong className="font-semibold text-white">early diagnosis can prevent irreversible damage</strong>. The first 12 weeks after symptom onset is often called the "window of opportunity" for treatment.
+            </p>
+
+            {/* Warning sign cards — 2-col grid like ApproachSection */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-[48px] gap-x-[80px]">
+              {warningSignals.map((item, i) => (
+                <div key={i} className="flex items-start gap-5">
+                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#9a9faa] mt-2.5" />
+                  <div className="flex-1">
+                    <h3 className="mb-2 !text-[18px] !font-semibold !leading-[1.4]">{item.title}</h3>
+                    <p className="!text-[15px] !leading-[1.65] font-normal text-[#9a9faa]">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-14">
+              <a href="#" className="inline-flex items-center gap-3 bg-[#1AA3B5] text-navy-deep rounded-full text-sm font-bold px-8 py-4 hover:opacity-90 transition-opacity">
+                Schedule a Consultation
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              </a>
+            </div>
+          </div>
+
+          {/* Bottom wave */}
+          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
+          </svg>
+        </section>
+
+        {/* ═══════════ DIAGNOSTIC JOURNEY ═══════════ */}
+        <section className="py-20 md:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-14 max-w-2xl mx-auto">
+              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+                What to Expect at a Rheumatology Visit
+              </h2>
+              <p className="text-navy-muted text-base leading-relaxed">
+                Understanding the diagnostic process reduces anxiety and helps you prepare. Here's how a typical rheumatology evaluation unfolds.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-y-[72px] gap-x-[100px]">
+              {diagnosticJourney.map((item) => (
+                <div key={item.step} className="flex items-start gap-6">
+                  <div className="relative flex h-[74px] w-[70px] shrink-0 items-center justify-center">
+                    <svg className="absolute inset-0 h-full w-full" viewBox="0 0 70 74" fill="none">
+                      <path fillRule="evenodd" clipRule="evenodd" d="M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z" fill="#e0f3f5" />
+                    </svg>
+                    <span className="relative z-10 text-[20px] font-bold text-navy-deep">{item.step}</span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4] text-navy-deep">{item.title}</h3>
+                    <p className="!text-[16px] !leading-[1.6] font-normal text-navy-muted">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ TREATMENT APPROACHES (ghost bg, 2-col grid) ═══════════ */}
+        <section className="py-20 md:py-28 bg-ghost">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="text-center mb-14 max-w-2xl mx-auto">
+              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+                How We Treat Rheumatic Conditions
+              </h2>
+              <p className="text-navy-muted text-base leading-relaxed">
+                Modern rheumatology combines advanced medications with lifestyle strategies. Treatment is always personalized — there is no one-size-fits-all approach.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
+              {treatmentApproaches.map((group) => (
+                <div key={group.category}>
+                  <h3 className="text-xl text-navy-deep mb-6" style={{ fontFamily: "var(--font-display)" }}>{group.category}</h3>
+                  <div className="divide-y divide-[#e8ecf2]">
+                    {group.items.map((item) => (
+                      <div key={item.name} className="py-5 first:pt-0 last:pb-0">
+                        <h4 className="text-[15px] font-semibold text-navy-deep mb-1">{item.name}</h4>
+                        <p className="text-sm text-navy-muted leading-relaxed">{item.detail}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ FEATURED ARTICLES (matching RAArticles carousel) ═══════════ */}
+        <section className="pt-8 pb-20 max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <h2 className="text-3xl text-navy-deep leading-[1.05] tracking-tight" style={{ fontFamily: "var(--font-display)" }}>Latest Articles</h2>
+            </div>
+            <div className="flex gap-2">
+              <button onClick={() => scroll("left")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </button>
+              <button onClick={() => scroll("right")} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <div ref={scrollRef} className="flex gap-6 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+            {featuredArticles.map((article) => (
+              <Link
+                key={article.id}
+                to={`/article/${article.id}`}
+                className="w-[340px] min-w-[340px] flex-shrink-0 flex flex-col group bg-[#fcfcfc] border border-gray-100"
+              >
+                <div className="h-56 overflow-hidden">
+                  <img alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={article.image} />
+                </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <div style={{ marginBottom: "12px" }}>
+                    <span className="inline-block bg-[#e0f3f5] text-[#5E5E5E] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                      {article.category}
+                    </span>
+                  </div>
+                  <h4 className="text-xl leading-snug line-clamp-2 text-navy-deep group-hover:text-blue-600 transition-colors" style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "8px" }}>{article.title}</h4>
+                  <p className="text-xs text-navy-muted" style={{ fontFamily: "var(--font-base)", marginBottom: "8px" }}>
+                    By <strong className="text-navy-deep font-semibold">{article.author}</strong>
+                  </p>
+                  <p className="text-sm text-navy-muted leading-relaxed line-clamp-2 flex-grow" style={{ fontFamily: "var(--font-base)", marginBottom: "16px" }}>
+                    {article.excerpt}
+                  </p>
+                  <div className="flex items-center gap-2 text-sm font-bold text-navy-deep mt-auto" style={{ fontFamily: "var(--font-base)" }}>
+                    Read More
+                    <span className="w-6 h-6 rounded-full bg-[#1AA3B5] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-[#1A355D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* ═══════════ FAQ (light ghost bg, centered) ═══════════ */}
+        <section className="py-20 md:py-28 bg-ghost">
+          <div className="max-w-[800px] mx-auto px-6">
+            <div className="text-center mb-14">
+              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+                Common Questions About Rheumatology
+              </h2>
+            </div>
+            <div className="flex flex-col gap-3">
+              {faqs.map((faq, i) => (
+                <details key={i} className="bg-white rounded-2xl border border-gray-100 overflow-hidden group">
+                  <summary className="flex items-center justify-between cursor-pointer p-5 md:p-6 list-none [&::-webkit-details-marker]:hidden">
+                    <span className="text-[15px] font-semibold text-navy-deep pr-4 leading-snug">{faq.q}</span>
+                    <span className="shrink-0 w-8 h-8 rounded-full bg-ghost flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="#1A355D" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                    </span>
+                  </summary>
+                  <div className="px-5 md:px-6 pb-5 md:pb-6 -mt-1">
+                    <p className="text-sm text-navy-muted leading-relaxed">{faq.a}</p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ CTA + NEWSLETTER ═══════════ */}
+        <CtaBanner />
+        <Newsletter />
+      </main>
+      <BriefingFooter />
+    </div>
+  )
+}
+
+export default HealthGuide
