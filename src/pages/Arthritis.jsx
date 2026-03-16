@@ -74,7 +74,7 @@ function Arthritis() {
         <section className="custom-approach-section relative overflow-hidden" style={{ backgroundColor: "#a0e2e4" }}>
           {/* Desktop */}
           <div className="hidden lg:block">
-            <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
+            <div className="max-w-7xl mx-auto px-6 py-8 md:py-10">
               <div className="flex items-center gap-16">
                 {/* Left — Text */}
                 <div className="flex-[1.2] flex flex-col gap-7">
@@ -170,7 +170,7 @@ function Arthritis() {
 
           {/* Mobile */}
           <div className="lg:hidden">
-            <div className="flex flex-col items-center text-center px-6 pt-14 pb-10">
+            <div className="flex flex-col items-center text-center px-6 pt-8 pb-6">
               <span
                 className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-6"
                 style={{ backgroundColor: "#0f616e", color: "#ffffff" }}
@@ -357,7 +357,7 @@ function Arthritis() {
               </p>
             </div>
 
-            <div className="border-2 border-navy-deep rounded-none p-6 md:p-8">
+            <div className="p-6 md:p-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
                 { icon: "schedule", label: "Morning Stiffness", color: "#1AA3B5", bg: "#e0f3f5" },
@@ -412,7 +412,7 @@ function Arthritis() {
 
               {/* Left — Joint Diagram (sticky) */}
               <div className="flex-1 mb-12 lg:mb-0 lg:sticky lg:top-[140px] self-start">
-                <div className="bg-ghost p-6 md:p-8 border-2 border-navy-deep" style={{ borderRadius: 0 }}>
+                <div className="bg-ghost p-6 md:p-8" style={{ borderRadius: 0 }}>
                   <h3
                     className="text-navy-deep text-center mb-1"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 400, lineHeight: 1.3 }}
@@ -608,7 +608,7 @@ function Arthritis() {
                 <div
                   key={i}
                   className="group relative overflow-hidden text-center flex flex-col items-center hover:-translate-y-1 transition-all duration-300"
-                  style={{ backgroundColor: "#faf7f2", borderRadius: 0, padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "2px solid #0f616e" }}
+                  style={{ backgroundColor: "#faf7f2", borderRadius: 0, padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "1px solid #e5e7eb" }}
                 >
 
                   {/* Icon */}
@@ -665,7 +665,7 @@ function Arthritis() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               {/* Card 1: Medicines */}
-              <div className="border-2 border-navy-deep overflow-hidden flex flex-col" style={{ borderRadius: 0 }}>
+              <div className="overflow-hidden flex flex-col border border-gray-200" style={{ borderRadius: 0 }}>
                 <div className="p-6 pb-5" style={{ background: "linear-gradient(135deg, rgba(26,163,181,.12) 0%, rgba(26,163,181,.04) 100%)", borderBottom: "1.5px solid rgba(26,163,181,.18)" }}>
                   <span className="inline-block text-[10px] font-bold uppercase tracking-[0.07em] px-2.5 py-1 rounded-full mb-2" style={{ color: "#0f616e", backgroundColor: "#e0f3f5" }}>First-Line Approach</span>
                   <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", fontWeight: 400, color: "#1A355D" }}>Medicines</h3>
@@ -708,7 +708,7 @@ function Arthritis() {
               </div>
 
               {/* Card 2: Surgery */}
-              <div className="border-2 border-navy-deep overflow-hidden flex flex-col" style={{ borderRadius: 0 }}>
+              <div className="overflow-hidden flex flex-col border border-gray-200" style={{ borderRadius: 0 }}>
                 <div className="p-6 pb-5" style={{ background: "linear-gradient(135deg, rgba(15,36,64,.07) 0%, rgba(15,36,64,.02) 100%)", borderBottom: "1.5px solid rgba(15,36,64,.1)" }}>
                   <span className="inline-block text-[10px] font-bold uppercase tracking-[0.07em] px-2.5 py-1 rounded-full mb-2" style={{ color: "#c45c3a", backgroundColor: "#fdf0eb" }}>When Medicines Are Not Enough</span>
                   <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", fontWeight: 400, color: "#1A355D" }}>Surgery</h3>
@@ -751,7 +751,7 @@ function Arthritis() {
               </div>
 
               {/* Card 3: Physiotherapy */}
-              <div className="border-2 border-navy-deep overflow-hidden flex flex-col" style={{ borderRadius: 0 }}>
+              <div className="overflow-hidden flex flex-col border border-gray-200" style={{ borderRadius: 0 }}>
                 <div className="p-6 pb-5" style={{ background: "linear-gradient(135deg, rgba(26,163,181,.1) 0%, rgba(212,235,248,.18) 100%)", borderBottom: "1.5px solid rgba(26,163,181,.15)" }}>
                   <span className="inline-block text-[10px] font-bold uppercase tracking-[0.07em] px-2.5 py-1 rounded-full mb-2" style={{ color: "#1a6e8a", backgroundColor: "#d4ebf8" }}>At Every Stage of Treatment</span>
                   <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", fontWeight: 400, color: "#1A355D" }}>Physiotherapy</h3>
@@ -826,13 +826,13 @@ function Arthritis() {
               </div>
               {/* Text side */}
               <div className="p-7 lg:p-8 flex flex-col gap-4" style={{ backgroundColor: "#0f616e" }}>
-                <h4 style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", color: "#fff", lineHeight: 1.3 }}>
+                <h4 style={{ fontFamily: "var(--font-base)", fontSize: "1.15rem", color: "#fff", lineHeight: 1.3, fontWeight: 700 }}>
                   What You Do Between Appointments Matters as Much as Medication
                 </h4>
-                <p className="text-[13px]" style={{ color: "rgba(255,255,255,.5)", lineHeight: 1.65 }}>
+                <p className="text-[13px]" style={{ fontFamily: "var(--font-base)", color: "rgba(255,255,255,.5)", lineHeight: 1.65 }}>
                   Clinical research consistently shows that patient self-management has outcomes on par with medication choice. These habits are part of your treatment plan — not optional extras.
                 </p>
-                <ul className="flex flex-col gap-1.5">
+                <ul className="flex flex-col gap-1.5" style={{ fontFamily: "var(--font-base)" }}>
                   {[
                     "Move every day — even 20 minutes of low-impact activity measurably reduces inflammatory markers",
                     "Keep a symptom diary — helps your rheumatologist spot patterns and adjust treatment accurately",
@@ -854,12 +854,14 @@ function Arthritis() {
             {/* 3 info cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
-                { emoji: "\uD83E\uDD57", title: "Diet & Nutrition", desc: "Mediterranean diet reduces CRP by up to 30% in clinical studies. Omega-3s from oily fish reduce synovial inflammation in RA. Avoid excess alcohol and ultra-processed food." },
-                { emoji: "\uD83D\uDE34", title: "Sleep & Fatigue", desc: "Inflammatory fatigue is driven by the same cytokines causing joint inflammation. Prioritise sleep hygiene. Effective disease control is the best treatment for inflammatory fatigue." },
-                { emoji: "\uD83E\uDDD8", title: "Mental Health", desc: "Chronic inflammatory pain is associated with a 2\u20133\u00D7 higher rate of depression and anxiety. Cognitive-behavioural therapy has strong clinical evidence in RA and fibromyalgia." },
+                { icon: "restaurant", iconColor: "#1AA3B5", iconBg: "#e0f3f5", title: "Diet & Nutrition", desc: "Mediterranean diet reduces CRP by up to 30% in clinical studies. Omega-3s from oily fish reduce synovial inflammation in RA. Avoid excess alcohol and ultra-processed food." },
+                { icon: "bedtime", iconColor: "#1A355D", iconBg: "#e8edf5", title: "Sleep & Fatigue", desc: "Inflammatory fatigue is driven by the same cytokines causing joint inflammation. Prioritise sleep hygiene. Effective disease control is the best treatment for inflammatory fatigue." },
+                { icon: "self_improvement", iconColor: "#6652a8", iconBg: "#ede8f5", title: "Mental Health", desc: "Chronic inflammatory pain is associated with a 2\u20133\u00D7 higher rate of depression and anxiety. Cognitive-behavioural therapy has strong clinical evidence in RA and fibromyalgia." },
               ].map((card, i) => (
-                <div key={i} className="p-6 border" style={{ borderRadius: "13px", borderColor: "#dde6ee" }}>
-                  <span className="text-[1.25rem] block mb-3">{card.emoji}</span>
+                <div key={i} className="bg-white p-6 border border-gray-100" style={{ borderRadius: 0 }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: card.iconBg }}>
+                    <span className="material-symbols-outlined text-[20px]" style={{ color: card.iconColor }}>{card.icon}</span>
+                  </div>
                   <h5 className="text-[15px] font-bold text-navy-deep mb-2">{card.title}</h5>
                   <p className="text-[13px] text-navy-muted leading-[1.65]">{card.desc}</p>
                 </div>
