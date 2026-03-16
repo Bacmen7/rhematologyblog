@@ -399,18 +399,26 @@ function KnowledgeHub() {
         {/* ═══════════ 2 · WHAT IS RHEUMATOLOGY ═══════════ */}
         <section className="bg-ghost py-14 md:py-20 px-6">
           <div className="max-w-7xl mx-auto">
-            <span className="text-[11px] font-bold tracking-[0.18em] uppercase block mb-3" style={{ color: "#1AA3B5" }}>
-              Understanding the Specialty
-            </span>
-            <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}>
-              What Is Rheumatology?
-            </h2>
-            <p className="text-[15px] text-navy-muted leading-[1.75] max-w-[640px]" style={{ marginBottom: "1rem" }}>
-              Rheumatology is a medical specialty focused on the diagnosis and treatment of autoimmune and inflammatory conditions affecting joints, muscles, bones, and connective tissues.
-            </p>
-            <p className="text-[15px] text-navy-muted leading-[1.75] max-w-[640px]" style={{ marginBottom: "2.5rem" }}>
-              The field encompasses over 200 conditions — from common diseases like rheumatoid arthritis and osteoarthritis to rare systemic conditions like vasculitis and scleroderma.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20" style={{ marginBottom: "3rem" }}>
+              <div>
+                <span className="text-[11px] font-bold tracking-[0.18em] uppercase block mb-3" style={{ color: "#1AA3B5" }}>
+                  Understanding the Specialty
+                </span>
+                <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px" }}>
+                  What Is Rheumatology?
+                </h2>
+              </div>
+              <div className="flex items-end">
+                <div>
+                  <p className="text-[15px] text-navy-muted leading-[1.75]" style={{ marginBottom: "1rem" }}>
+                    Rheumatology is a medical specialty focused on the diagnosis and treatment of autoimmune and inflammatory conditions affecting joints, muscles, bones, and connective tissues.
+                  </p>
+                  <p className="text-[15px] text-navy-muted leading-[1.75]">
+                    The field encompasses over 200 conditions — from common diseases like rheumatoid arthritis and osteoarthritis to rare systemic conditions like vasculitis and scleroderma.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             {/* Cover boxes grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -431,23 +439,23 @@ function KnowledgeHub() {
         {/* ═══════════ 3 · SYMPTOM CHECKER ═══════════ */}
         <section id="symptom-checker" className="bg-[#0f616e] py-20 md:py-28 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Left-aligned heading */}
-            <div className="mb-14 max-w-2xl">
+            {/* Center-aligned heading */}
+            <div className="mb-14 text-center max-w-2xl mx-auto">
               <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/50">
                 Symptom Assessment
               </span>
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(2rem,4vw,2.75rem)", lineHeight: 1.1, letterSpacing: "-0.5px", marginTop: "0.5rem", marginBottom: "1rem" }}>
                 When should you see a rheumatologist?
               </h2>
-              <p className="text-[16px] leading-[1.8]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p className="text-[16px] leading-[1.8] mx-auto max-w-[500px]" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Answer a few short questions — we&apos;ll help you understand whether a specialist consultation would be beneficial.
               </p>
             </div>
 
             {!showResult ? (
-              <div className="max-w-[640px]">
+              <div className="max-w-[640px] mx-auto text-center">
                 {/* Progress dots */}
-                <div className="flex gap-2 mb-10">
+                <div className="flex gap-2 mb-10 justify-center">
                   {symptomQuestions.map((_, i) => (
                     <button
                       key={i}
@@ -468,15 +476,15 @@ function KnowledgeHub() {
                 <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#1AA3B5]">
                   Question {checkerStep + 1} of 6
                 </span>
-                <h3 className="mt-3 mb-3" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,3vw,2rem)", fontWeight: 400, lineHeight: 1.2, color: "#fff" }}>
+                <h3 className="mt-3 mb-3 mx-auto max-w-[480px]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,3vw,2rem)", fontWeight: 400, lineHeight: 1.2, color: "#fff" }}>
                   {symptomQuestions[checkerStep].q}
                 </h3>
-                <p className="text-[15px] leading-[1.7] mb-10" style={{ color: "rgba(255,255,255,0.5)" }}>
+                <p className="text-[15px] leading-[1.7] mb-10 mx-auto max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>
                   {symptomQuestions[checkerStep].sub}
                 </p>
 
                 {/* Yes / No buttons */}
-                <div className="flex gap-4 mb-10">
+                <div className="flex gap-4 mb-10 justify-center">
                   <button
                     onClick={() => handleAnswer(true)}
                     className="py-4 px-10 rounded-full font-semibold text-[15px] cursor-pointer transition-all duration-200"
@@ -748,7 +756,7 @@ function KnowledgeHub() {
                     </span>
                   </div>
                   <div className="p-5 flex-1">
-                    <h4 className="text-white text-[15px] font-semibold mb-2 leading-snug">{card.title}</h4>
+                    <h4 className="text-[15px] font-semibold mb-2 leading-snug" style={{ color: "#a0e2e4" }}>{card.title}</h4>
                     <p className="text-[13px] text-white/80 leading-[1.65]">{card.desc}</p>
                   </div>
                   <div className="border-t border-white/[.08] px-5 py-3 flex justify-between items-center">
