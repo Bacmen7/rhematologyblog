@@ -71,7 +71,7 @@ function VideoLibrary() {
           <a
             href="#"
             className="inline-flex items-center gap-2 rounded-full font-semibold text-[14px] text-white transition-all hover:opacity-90 self-start md:self-auto"
-            style={{ backgroundColor: "#182439", padding: "13px 26px", fontFamily: "var(--font-base)" }}
+            style={{ backgroundColor: "#1aa3b5", padding: "13px 26px", fontFamily: "var(--font-base)" }}
           >
             View All Stories
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
@@ -133,7 +133,7 @@ function VideoLibrary() {
               key={i}
               onClick={() => setCurrentPage(i)}
               className={`w-2.5 h-2.5 rounded-full transition-colors cursor-pointer ${
-                i === currentPage ? "bg-[#182439]" : "bg-gray-200"
+                i === currentPage ? "bg-[#1A355D]" : "bg-gray-200"
               }`}
             />
           ))}

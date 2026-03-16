@@ -24,7 +24,7 @@ function InsurancePartners() {
                   preserveAspectRatio="none"
                   viewBox="0 0 400 12"
                 >
-                  <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="3" />
+                  <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="3" />
                 </svg>
               </span>
             </h2>

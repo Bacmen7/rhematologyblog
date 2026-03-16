@@ -45,7 +45,7 @@ const reviewsData = [
 
 function ReviewCard({ review }) {
   return (
-    <div className="bg-[#1e2f48] rounded-2xl p-7 flex flex-col text-left h-full">
+    <div className="bg-[#0d7a8a] rounded-2xl p-7 flex flex-col text-left h-full">
       {/* Review text */}
       <p className="text-[13.5px] text-white/80 leading-[1.75] mb-6 flex-grow" style={{ fontFamily: "var(--font-base)" }}>
         {review.text}
@@ -53,8 +53,8 @@ function ReviewCard({ review }) {
 
       {/* Name + condition */}
       <div className="mb-5">
-        <p className="text-[14px] text-[#b7efea] font-semibold" style={{ fontFamily: "var(--font-base)" }}>{review.name}</p>
-        <p className="text-[12px] text-white/40" style={{ fontFamily: "var(--font-base)" }}>{review.condition}</p>
+        <p className="text-[14px] text-[#FCB900] font-semibold" style={{ fontFamily: "var(--font-base)" }}>{review.name}</p>
+        <p className="text-[12px] text-white/60" style={{ fontFamily: "var(--font-base)" }}>{review.condition}</p>
       </div>
 
       {/* Divider */}
@@ -75,7 +75,7 @@ function ReviewCard({ review }) {
 
 function GoogleReviews() {
   return (
-    <section className="bg-[#182439] py-20 md:py-28 custom-approach-section relative">
+    <section className="bg-[#0f616e] py-20 md:py-28 custom-approach-section relative">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header — two columns */}
@@ -114,7 +114,7 @@ function GoogleReviews() {
         {/* View All button */}
         <div>
           <button
-            className="text-[14px] font-semibold text-[#b7efea] border border-[#b7efea]/30 rounded-full px-8 py-3 hover:bg-[#b7efea]/10 transition-colors cursor-pointer"
+            className="text-[14px] font-semibold text-[#0f616e] bg-[#a0e2e4] rounded-full px-8 py-3 hover:opacity-90 transition-colors cursor-pointer"
             style={{ fontFamily: "var(--font-base)" }}
           >
             View All
@@ -124,7 +124,7 @@ function GoogleReviews() {
       </div>
       {/* Bottom wave — same as ApproachSection */}
       <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
       </svg>
     </section>
   )

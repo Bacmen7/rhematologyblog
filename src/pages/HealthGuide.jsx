@@ -146,9 +146,9 @@ function HealthGuide() {
                 </h2>
               </div>
               <div className="flex items-end">
-                <p style={{ fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px", color: "#b0b5c0" }}>
+                <p style={{ fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px", color: "#9a9faa" }}>
                   Rheumatology encompasses over{" "}
-                  <strong className="font-semibold" style={{ color: "#182439", background: "#feccbc", padding: "2px 6px", borderRadius: "3px" }}>200 distinct conditions</strong>{" "}
+                  <strong className="font-semibold" style={{ color: "#1A355D", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>200 distinct conditions</strong>{" "}
                   that affect the joints, muscles, bones, and immune system — many are systemic, involving the heart, lungs, kidneys, and skin.
                 </p>
               </div>
@@ -169,7 +169,7 @@ function HealthGuide() {
 
           {/* Bottom wave — same as WhyRheuma */}
           <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
           </svg>
         </section>
 
@@ -189,7 +189,7 @@ function HealthGuide() {
               {conditions.map((c) => (
                 <Link
                   key={c.name}
-                  to={c.slug === "arthritis" ? "/health-guide/arthritis" : "#"}
+                  to={c.slug === "arthritis" ? "/health-guide/Rheumatoid-Arthritis" : "#"}
                   className="bg-white rounded-2xl py-8 px-5 flex flex-col items-center text-center gap-3 border border-[#e8ecf2] hover:border-primary transition-colors cursor-pointer"
                 >
                   <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
@@ -216,13 +216,13 @@ function HealthGuide() {
                   preserveAspectRatio="none"
                   viewBox="0 0 400 12"
                 >
-                  <path d="M2 10C80 4 200 2 398 6" stroke="#8da4d0" strokeLinecap="round" strokeWidth="4" />
+                  <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
                 </svg>
               </span>
               ?
             </h2>
 
-            <p className="!text-[16px] !leading-[1.6] font-normal text-[#b0b5c0] max-w-[680px]" style={{ marginBottom: "48px" }}>
+            <p className="!text-[16px] !leading-[1.6] font-normal text-[#9a9faa] max-w-[680px]" style={{ marginBottom: "48px" }}>
               Many rheumatic conditions are progressive — meaning <strong className="font-semibold text-white">early diagnosis can prevent irreversible damage</strong>. The first 12 weeks after symptom onset is often called the "window of opportunity" for treatment.
             </p>
 
@@ -230,17 +230,17 @@ function HealthGuide() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-[48px] gap-x-[80px]">
               {warningSignals.map((item, i) => (
                 <div key={i} className="flex items-start gap-5">
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#b0b5c0] mt-2.5" />
+                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#9a9faa] mt-2.5" />
                   <div className="flex-1">
                     <h3 className="mb-2 !text-[18px] !font-semibold !leading-[1.4]">{item.title}</h3>
-                    <p className="!text-[15px] !leading-[1.65] font-normal text-[#b0b5c0]">{item.desc}</p>
+                    <p className="!text-[15px] !leading-[1.65] font-normal text-[#9a9faa]">{item.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
 
             <div className="mt-14">
-              <a href="#" className="inline-flex items-center gap-3 bg-[#b7efea] text-navy-deep rounded-full text-sm font-bold px-8 py-4 hover:opacity-90 transition-opacity">
+              <a href="#" className="inline-flex items-center gap-3 bg-[#1AA3B5] text-navy-deep rounded-full text-sm font-bold px-8 py-4 hover:opacity-90 transition-opacity">
                 Schedule a Consultation
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
               </a>
@@ -249,7 +249,7 @@ function HealthGuide() {
 
           {/* Bottom wave */}
           <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
           </svg>
         </section>
 
@@ -270,7 +270,7 @@ function HealthGuide() {
                 <div key={item.step} className="flex items-start gap-6">
                   <div className="relative flex h-[74px] w-[70px] shrink-0 items-center justify-center">
                     <svg className="absolute inset-0 h-full w-full" viewBox="0 0 70 74" fill="none">
-                      <path fillRule="evenodd" clipRule="evenodd" d="M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z" fill="#e3efff" />
+                      <path fillRule="evenodd" clipRule="evenodd" d="M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z" fill="#e0f3f5" />
                     </svg>
                     <span className="relative z-10 text-[20px] font-bold text-navy-deep">{item.step}</span>
                   </div>
@@ -346,7 +346,7 @@ function HealthGuide() {
                 </div>
                 <div className="p-6 flex flex-col flex-grow">
                   <div style={{ marginBottom: "12px" }}>
-                    <span className="inline-block bg-[#e3efff] text-[#3b5b80] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                    <span className="inline-block bg-[#e0f3f5] text-[#5E5E5E] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
                       {article.category}
                     </span>
                   </div>
@@ -359,8 +359,8 @@ function HealthGuide() {
                   </p>
                   <div className="flex items-center gap-2 text-sm font-bold text-navy-deep mt-auto" style={{ fontFamily: "var(--font-base)" }}>
                     Read More
-                    <span className="w-6 h-6 rounded-full bg-[#aeeee7] flex items-center justify-center">
-                      <svg className="w-3 h-3 text-[#182439]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <span className="w-6 h-6 rounded-full bg-[#1AA3B5] flex items-center justify-center">
+                      <svg className="w-3 h-3 text-[#1A355D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                       </svg>
                     </span>
@@ -385,7 +385,7 @@ function HealthGuide() {
                   <summary className="flex items-center justify-between cursor-pointer p-5 md:p-6 list-none [&::-webkit-details-marker]:hidden">
                     <span className="text-[15px] font-semibold text-navy-deep pr-4 leading-snug">{faq.q}</span>
                     <span className="shrink-0 w-8 h-8 rounded-full bg-ghost flex items-center justify-center">
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="#182439" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="#1A355D" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>
                     </span>
                   </summary>
                   <div className="px-5 md:px-6 pb-5 md:pb-6 -mt-1">

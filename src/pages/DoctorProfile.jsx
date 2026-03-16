@@ -49,7 +49,7 @@ function DoctorProfile() {
       <Header />
       <main className="flex-1">
         {/* Header + Gallery + Tabs section */}
-        <div className="bg-[#182439]">
+        <div className="bg-[#0f616e]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-14 lg:pt-16">
 
           {/* Doctor Header */}
@@ -88,17 +88,17 @@ function DoctorProfile() {
           viewBox="0 0 1440 120"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          style={{ backgroundColor: "#f8fafd" }}
+          style={{ backgroundColor: "#F5F5F5" }}
         >
           <path
             d="M0 0H1440V60C1320 100 1140 120 960 110C780 100 600 60 420 50C240 40 120 70 0 90V0Z"
-            fill="#182439"
+            fill="#0f616e"
           />
         </svg>
         </div>
 
           {/* Image Gallery */}
-          <div className="bg-[#f8fafd]">
+          <div className="bg-[#F5F5F5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6" style={{ paddingTop: "24px", paddingBottom: "8px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-3">
             <div className="lg:col-span-7 relative h-[200px] sm:h-[280px] lg:h-[380px] bg-gray-100 overflow-hidden rounded-xl sm:rounded-2xl">
@@ -117,14 +117,14 @@ function DoctorProfile() {
           </div>
 
           {/* Tab Navigation */}
-          <div className="bg-[#f8fafd]">
+          <div className="bg-[#F5F5F5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6" style={{ paddingTop: "24px", paddingBottom: "8px", marginBottom: "16px" }}>
             <div className="flex gap-2 sm:gap-3 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
               {tabs.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => scrollToSection(tab.id)}
-                  className={`px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium whitespace-nowrap transition-colors cursor-pointer ${activeTab === tab.id ? "bg-[#182439] text-white" : "bg-[#EEF2F9] text-gray-500 hover:text-[#182439]"}`}
+                  className={`px-4 sm:px-5 py-2 sm:py-2.5 text-xs sm:text-sm font-medium whitespace-nowrap transition-colors cursor-pointer ${activeTab === tab.id ? "bg-[#0f616e] text-white" : "bg-[#EEF2F9] text-gray-500 hover:text-[#0f616e]"}`}
                   style={{ borderRadius: "25px" }}
                 >
                   {tab.label}
@@ -135,14 +135,14 @@ function DoctorProfile() {
           </div>
 
         {/* Main Content */}
-        <div className="bg-[#f8fafd]">
+        <div className="bg-[#F5F5F5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             <div className="lg:col-span-8">
 
               {/* Overview */}
               <section id="overview">
-                <h2 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "20px" }}>Overview</h2>
+                <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "20px" }}>Overview</h2>
                 <p className="text-xs sm:text-sm text-gray-500" style={{ marginBottom: "16px" }}>About</p>
                 <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-justify sm:text-left" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>
                   {doctor.overview.map((para, i) => (
@@ -151,13 +151,13 @@ function DoctorProfile() {
                 </div>
 
                 <div style={{ marginTop: "32px" }}>
-                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Specializations</h3>
+                  <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Specializations</h3>
                   <div className="flex flex-wrap gap-2" style={{ marginBottom: "24px" }}>
                     {["Rheumatologist", "Nephrologist"].map((spec, i) => (
                       <span key={i} className="text-xs sm:text-sm text-gray-600 bg-[#EEF2F9] px-3 py-1.5 rounded-full">{spec}</span>
                     ))}
                   </div>
-                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Field of Expertise</h3>
+                  <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Field of Expertise</h3>
                   <div className="flex flex-wrap gap-2">
                     {doctor.expertise.map((item, i) => (
                       <span key={i} className="text-xs sm:text-sm text-gray-600 bg-[#EEF2F9] px-3 py-1.5 rounded-full">{item}</span>
@@ -170,14 +170,14 @@ function DoctorProfile() {
 
               {/* Background / Experience */}
               <section id="background">
-                <h2 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "20px" }}>Experience & Qualifications</h2>
+                <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "20px" }}>Experience & Qualifications</h2>
 
                 <div style={{ marginBottom: "32px" }}>
-                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Education</h3>
+                  <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Education</h3>
                   <ul className="space-y-2.5 sm:space-y-3">
                     {doctor.education.map((item, i) => (
                       <li key={i} className="flex gap-2.5 sm:gap-3">
-                        <div className="w-1.5 h-1.5 bg-[#182439] rounded-full mt-1.5 sm:mt-2 shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-[#0f616e] rounded-full mt-1.5 sm:mt-2 shrink-0" />
                         <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
                       </li>
                     ))}
@@ -185,11 +185,11 @@ function DoctorProfile() {
                 </div>
 
                 <div style={{ marginBottom: "32px" }}>
-                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Awards & Achievements</h3>
+                  <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Awards & Achievements</h3>
                   <ul className="space-y-2">
                     {doctor.awards.map((item, i) => (
                       <li key={i} className="flex gap-2.5 sm:gap-3">
-                        <div className="w-1.5 h-1.5 bg-[#182439] rounded-full mt-1.5 sm:mt-2 shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-[#0f616e] rounded-full mt-1.5 sm:mt-2 shrink-0" />
                         <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
                       </li>
                     ))}
@@ -197,11 +197,11 @@ function DoctorProfile() {
                 </div>
 
                 <div style={{ marginBottom: "32px" }}>
-                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Talks & Publications</h3>
+                  <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Talks & Publications</h3>
                   <ul className="space-y-2">
                     {doctor.publications.map((item, i) => (
                       <li key={i} className="flex gap-2.5 sm:gap-3">
-                        <div className="w-1.5 h-1.5 bg-[#182439] rounded-full mt-1.5 sm:mt-2 shrink-0" />
+                        <div className="w-1.5 h-1.5 bg-[#0f616e] rounded-full mt-1.5 sm:mt-2 shrink-0" />
                         <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
                       </li>
                     ))}
@@ -209,7 +209,7 @@ function DoctorProfile() {
                 </div>
 
                 <div>
-                  <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Languages Spoken</h3>
+                  <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Languages Spoken</h3>
                   <div className="flex flex-wrap gap-2">
                     {doctor.languages.map((lang, i) => (
                       <span key={i} className="text-sm text-gray-600 bg-[#EEF2F9] px-3 py-1.5" style={{ borderRadius: "25px" }}>
@@ -225,7 +225,7 @@ function DoctorProfile() {
               {/* Patient Stories (inline like boss version) */}
               <section id="reviews">
                 <div className="flex items-center justify-between" style={{ marginBottom: "20px" }}>
-                  <h2 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px" }}>Patient Stories</h2>
+                  <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px" }}>Patient Stories</h2>
                 </div>
                 <p className="text-sm text-gray-500" style={{ marginBottom: "16px" }}>
                   Real experiences from verified patients ·{" "}
@@ -247,7 +247,7 @@ function DoctorProfile() {
                     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
                     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
                   </svg>
-                  <h2 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px" }}>Google Reviews</h2>
+                  <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px" }}>Google Reviews</h2>
                 </div>
                 <GoogleReviewsInline />
               </section>
@@ -256,7 +256,7 @@ function DoctorProfile() {
 
               {/* FAQs */}
               <section>
-                <h2 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(22px, 4vw, 34px)", lineHeight: "1.2", marginBottom: "24px" }}>
+                <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(22px, 4vw, 34px)", lineHeight: "1.2", marginBottom: "24px" }}>
                   Frequently Asked Questions
                 </h2>
                 <div className="space-y-3">
@@ -265,10 +265,10 @@ function DoctorProfile() {
                     return (
                       <div key={i} className="bg-white overflow-hidden transition-all" style={{ borderRadius: "12px" }}>
                         <button onClick={() => toggle(`faq-${i}`)} className="flex items-center justify-between w-full px-4 sm:px-5 py-3.5 sm:py-4 text-left gap-3">
-                          <h3 className="text-sm sm:text-base text-[#182439] leading-snug" style={{ fontFamily: "var(--font-base)", fontWeight: 500 }}>
+                          <h3 className="text-sm sm:text-base text-[#0f616e] leading-snug" style={{ fontFamily: "var(--font-base)", fontWeight: 500 }}>
                             {faq.question}
                           </h3>
-                          <span className="w-7 h-7 flex items-center justify-center shrink-0 transition-colors" style={{ borderRadius: "50%", backgroundColor: isOpen ? "#B1EFEC" : "#EEF2F9", color: "#182439", fontSize: "16px", fontWeight: 500 }}>
+                          <span className="w-7 h-7 flex items-center justify-center shrink-0 transition-colors" style={{ borderRadius: "50%", backgroundColor: isOpen ? "#1AA3B5" : "#EEF2F9", color: "#0f616e", fontSize: "16px", fontWeight: 500 }}>
                             {isOpen ? "−" : "+"}
                           </span>
                         </button>
@@ -287,7 +287,7 @@ function DoctorProfile() {
 
               {/* Clinic Locations */}
               <section id="clinic">
-                <h2 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "8px" }}>Clinic Locations</h2>
+                <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "8px" }}>Clinic Locations</h2>
                 <p className="text-gray-500 text-sm sm:text-base" style={{ marginBottom: "24px" }}>Dr. Raghavendra H currently consults at:</p>
                 <div className="space-y-4 sm:space-y-5">
                   {[
@@ -334,7 +334,7 @@ function DoctorProfile() {
                       <button onClick={() => toggle(`clinic-${idx}`)} className="w-full p-4 sm:p-5 text-left">
                         <div className="flex items-start justify-between gap-3">
                           <div>
-                            <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", color: "#182439", marginBottom: "2px" }}>{loc.name}</h3>
+                            <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", color: "#0f616e", marginBottom: "2px" }}>{loc.name}</h3>
                             <p className="text-gray-500" style={{ fontFamily: "var(--font-base)", fontSize: "13px" }}>{loc.area}</p>
                           </div>
                           <div className="flex items-center gap-2 shrink-0">
@@ -357,7 +357,7 @@ function DoctorProfile() {
                         <div className="px-4 sm:px-5 pb-4 sm:pb-5">
                           <p className="text-gray-500" style={{ fontFamily: "var(--font-base)", fontWeight: 300, fontSize: "13px", lineHeight: "20px", marginBottom: "12px" }}>{loc.address}</p>
 
-                          <a href={`https://www.google.com/maps/search/${encodeURIComponent(loc.name + ", Bangalore")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#182439] text-xs sm:text-sm font-medium hover:underline" style={{ marginBottom: "16px" }}>
+                          <a href={`https://www.google.com/maps/search/${encodeURIComponent(loc.name + ", Bangalore")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0f616e] text-xs sm:text-sm font-medium hover:underline" style={{ marginBottom: "16px" }}>
                             <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                               <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -369,7 +369,7 @@ function DoctorProfile() {
                             <div className="flex flex-col sm:flex-row sm:flex-wrap gap-y-2 sm:gap-x-6 sm:gap-y-1.5">
                               {loc.timings.map((t, i) => (
                                 <div key={i} className="flex items-center gap-2 text-xs sm:text-sm">
-                                  <span className="text-[#182439] font-medium" style={{ minWidth: "90px" }}>{t.days}</span>
+                                  <span className="text-[#0f616e] font-medium" style={{ minWidth: "90px" }}>{t.days}</span>
                                   <span className="text-gray-500">{t.time}</span>
                                 </div>
                               ))}
@@ -378,8 +378,8 @@ function DoctorProfile() {
                         </div>
 
                         <div className="border-t border-gray-100 px-4 sm:px-5 py-3 flex items-center justify-between bg-[#f8fafb]">
-                          <span style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", color: "#182439" }}>{loc.fee}</span>
-                          <a href={loc.bookingUrl} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold text-white px-4 py-2 transition-colors hover:opacity-90" style={{ backgroundColor: "#182439", borderRadius: "25px" }}>
+                          <span style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", color: "#0f616e" }}>{loc.fee}</span>
+                          <a href={loc.bookingUrl} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold text-white px-4 py-2 transition-colors hover:opacity-90" style={{ backgroundColor: "#0f616e", borderRadius: "25px" }}>
                             Book Appointment
                           </a>
                         </div>
@@ -403,22 +403,22 @@ function DoctorProfile() {
                   </div>
                   {/* Info */}
                   <div className="p-5 sm:p-6">
-                    <h3 className="text-[#182439]" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "24px", lineHeight: "1.2", marginBottom: "6px" }}>{doctor.name}</h3>
+                    <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "24px", lineHeight: "1.2", marginBottom: "6px" }}>{doctor.name}</h3>
                     <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "13px", color: "#5a6577", marginBottom: "16px" }}>Rheumatologist, Nephrologist</p>
 
                     <div className="space-y-3" style={{ marginBottom: "20px" }}>
                       <div className="flex items-center gap-2.5">
-                        <svg className="w-[16px] h-[16px] text-[#182439] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                        <svg className="w-[16px] h-[16px] text-[#0f616e] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#182439" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Experience</span></span>
+                        <span style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Experience</span></span>
                       </div>
                       <div className="flex items-center gap-2.5">
-                        <svg className="w-[16px] h-[16px] text-[#182439] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
+                        <svg className="w-[16px] h-[16px] text-[#0f616e] shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#182439" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
+                        <span style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
                       </div>
                       <div className="flex items-center gap-2.5">
                         <svg className="w-[16px] h-[16px] text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -428,7 +428,7 @@ function DoctorProfile() {
                       </div>
                     </div>
 
-                    <a href="#" className="block w-full py-2.5 bg-[#B1EFEC] text-[#182439] text-center hover:bg-[#9ae5e1] transition-colors" style={{ borderRadius: "8px", fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "13px" }}>Book Online</a>
+                    <a href="#" className="block w-full py-2.5 bg-[#1AA3B5] text-white text-center hover:bg-[#9ae5e1] transition-colors" style={{ borderRadius: "8px", fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "13px" }}>Book Online</a>
                   </div>
                 </div>
               </div>
@@ -441,17 +441,17 @@ function DoctorProfile() {
                       <img src="/docter.png" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h3 className="text-[#182439] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
+                      <h3 className="text-[#0f616e] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
                       <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "12px", color: "#5a6577", marginBottom: "8px" }}>Rheumatologist, Nephrologist</p>
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#182439" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Exp</span></span>
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#182439" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
+                        <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Exp</span></span>
+                        <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
                         <span style={{ fontFamily: "var(--font-base)", fontSize: "11px", fontWeight: 500, color: "#16a34a" }}>Verified</span>
                       </div>
                     </div>
                   </div>
                   <div className="px-4 pb-4">
-                    <a href="#" className="block w-full py-2.5 bg-[#B1EFEC] text-[#182439] text-center hover:bg-[#9ae5e1] transition-colors" style={{ borderRadius: "8px", fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "13px" }}>Book Online</a>
+                    <a href="#" className="block w-full py-2.5 bg-[#1AA3B5] text-white text-center hover:bg-[#9ae5e1] transition-colors" style={{ borderRadius: "8px", fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "13px" }}>Book Online</a>
                   </div>
                 </div>
               </div>
@@ -462,10 +462,10 @@ function DoctorProfile() {
       </main>
 
       {/* Book an Appointment CTA */}
-      <section className="w-full flex flex-col overflow-visible" style={{ backgroundColor: "#f8fafd" }}>
+      <section className="w-full flex flex-col overflow-visible" style={{ backgroundColor: "#F5F5F5" }}>
         {/* Wave SVG */}
         <svg
-          className="w-full h-[32px] sm:h-[90px] md:h-[120px] text-[#142131] block"
+          className="w-full h-[32px] sm:h-[90px] md:h-[120px] text-[#0f616e] block"
           preserveAspectRatio="none"
           viewBox="0 0 1440 120"
           fill="none"
@@ -478,7 +478,7 @@ function DoctorProfile() {
         </svg>
 
         {/* Content */}
-        <div className="bg-[#142131] w-full">
+        <div className="bg-[#0f616e] w-full">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 pb-12 sm:pb-16 md:pb-24 pt-4 sm:pt-10 text-center flex flex-col items-center">
             <h2
               className="mx-auto max-w-[860px]"
@@ -510,7 +510,7 @@ function DoctorProfile() {
               <a
                 href="#"
                 className="inline-block rounded-full font-semibold text-sm sm:text-[15px] transition-all hover:opacity-90 text-center w-full sm:w-auto"
-                style={{ backgroundColor: "#b7efea", color: "#142131", padding: "14px 28px" }}
+                style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "14px 28px" }}
               >
                 Schedule An Appointment
               </a>
@@ -518,7 +518,7 @@ function DoctorProfile() {
                 <span className="text-sm sm:text-[15px] text-gray-100 opacity-90">or</span>
                 <a
                   href="tel:+918001025555"
-                  className="text-sm sm:text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#b7efea] transition-colors text-white"
+                  className="text-sm sm:text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#1AA3B5] transition-colors text-white"
                 >
                   call 1800 102 5555
                 </a>
@@ -585,12 +585,12 @@ function PatientStoriesInline() {
         {displayed.map((r, idx) => (
           <div key={idx} className="bg-white p-4 sm:p-5" style={{ borderRadius: "16px" }}>
             <div className="flex items-center gap-2.5 sm:gap-3" style={{ marginBottom: "10px" }}>
-              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-sm shrink-0 bg-[#EEF2F9] text-[#182439]">{r.initial}</div>
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-semibold text-sm shrink-0 bg-[#EEF2F9] text-[#0f616e]">{r.initial}</div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-                  <h4 className="font-semibold text-[#182439] text-sm">{r.name}</h4>
+                  <h4 className="font-semibold text-[#0f616e] text-sm">{r.name}</h4>
                   {r.verified && (
-                    <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs bg-[#B1EFEC] text-[#182439] px-1.5 sm:px-2 py-0.5" style={{ borderRadius: "25px" }}>
+                    <span className="inline-flex items-center gap-1 text-[10px] sm:text-xs bg-[#1AA3B5] text-white px-1.5 sm:px-2 py-0.5" style={{ borderRadius: "25px" }}>
                       <svg className="w-2.5 h-2.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
@@ -619,13 +619,13 @@ function PatientStoriesInline() {
               <div className="inline-block text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full mb-3">Visited for: {r.visitedFor}</div>
             )}
             <p className="text-sm text-gray-600 leading-relaxed" style={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{r.text}</p>
-            <button onClick={() => setSelectedStory(r)} className="text-[#182439] text-sm font-medium hover:underline mt-2">Read more</button>
+            <button onClick={() => setSelectedStory(r)} className="text-[#0f616e] text-sm font-medium hover:underline mt-2">Read more</button>
           </div>
         ))}
       </div>
 
       {patientStories.length > 4 && (
-        <button onClick={() => setShowAll(!showAll)} className="mt-4 text-[#182439] text-sm font-medium hover:underline">
+        <button onClick={() => setShowAll(!showAll)} className="mt-4 text-[#0f616e] text-sm font-medium hover:underline">
           {showAll ? "Show less" : `Show all stories (${patientStories.length})`}
         </button>
       )}
@@ -636,7 +636,7 @@ function PatientStoriesInline() {
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
           <div className="relative bg-white max-w-lg w-full max-h-[90vh] sm:max-h-[85vh] overflow-y-auto p-5 sm:p-8 animate-[slideUp_0.3s_ease-out]" style={{ borderRadius: "20px" }} onClick={(e) => e.stopPropagation()}>
             <button onClick={() => setSelectedStory(null)} className="absolute top-4 right-4 w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
-              <svg className="w-4 h-4 text-[#182439]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+              <svg className="w-4 h-4 text-[#0f616e]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
@@ -644,9 +644,9 @@ function PatientStoriesInline() {
               <div className="w-10 h-10 rounded-full flex items-center justify-center font-semibold text-sm bg-gray-200 text-gray-600 shrink-0">{selectedStory.initial}</div>
               <div>
                 <div className="flex items-center gap-2">
-                  <h4 className="font-semibold text-[#182439] text-sm">{selectedStory.name}</h4>
+                  <h4 className="font-semibold text-[#0f616e] text-sm">{selectedStory.name}</h4>
                   {selectedStory.verified && (
-                    <span className="inline-flex items-center gap-1 text-xs bg-[#B1EFEC] text-[#182439] px-2 py-0.5" style={{ borderRadius: "25px" }}>Verified</span>
+                    <span className="inline-flex items-center gap-1 text-xs bg-[#1AA3B5] text-white px-2 py-0.5" style={{ borderRadius: "25px" }}>Verified</span>
                   )}
                 </div>
                 <div className="flex items-center gap-2 text-xs text-gray-400 mt-0.5">
@@ -701,7 +701,7 @@ function GoogleReviewsInline() {
             <div key={i} className="shrink-0 w-[340px] sm:w-[400px] bg-white p-4 sm:p-5 flex flex-col" style={{ borderRadius: "20px" }}>
               <div className="flex items-center gap-2.5" style={{ marginBottom: "10px" }}>
                 <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-xs font-semibold shrink-0">{review.name.charAt(0)}</div>
-                <p className="text-xs sm:text-sm font-semibold text-[#182439] truncate min-w-0">{review.name}</p>
+                <p className="text-xs sm:text-sm font-semibold text-[#0f616e] truncate min-w-0">{review.name}</p>
                 <div className="flex items-center gap-0.5 shrink-0">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <svg key={star} className={`w-2.5 h-2.5 ${star <= review.rating ? "text-yellow-500" : "text-gray-300"}`} fill="currentColor" viewBox="0 0 20 20">
@@ -721,12 +721,12 @@ function GoogleReviewsInline() {
         {/* Scroll arrows */}
         <div className="hidden sm:flex items-center gap-2 mt-3">
           <button onClick={() => scroll("left")} className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
-            <svg className="w-3.5 h-3.5 text-[#182439]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5 text-[#0f616e]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
             </svg>
           </button>
           <button onClick={() => scroll("right")} className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
-            <svg className="w-3.5 h-3.5 text-[#182439]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+            <svg className="w-3.5 h-3.5 text-[#0f616e]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           </button>
@@ -740,7 +740,7 @@ function AccordionSection({ title, isOpen, onToggle, children, small }) {
   return (
     <div className="border-b border-gray-200">
       <button onClick={onToggle} className="flex items-center justify-between w-full py-3 sm:py-4 text-left gap-3 sm:gap-4">
-        <h3 className={`${small ? "text-sm sm:text-base" : "text-base sm:text-lg md:text-xl"} text-[#182439] leading-snug`} style={{ fontFamily: small ? "var(--font-base)" : "var(--font-display)", fontWeight: small ? 600 : 400 }}>
+        <h3 className={`${small ? "text-sm sm:text-base" : "text-base sm:text-lg md:text-xl"} text-[#0f616e] leading-snug`} style={{ fontFamily: small ? "var(--font-base)" : "var(--font-display)", fontWeight: small ? 600 : 400 }}>
           {title}
         </h3>
         <span className="w-5 h-5 flex items-center justify-center text-gray-400 shrink-0 text-lg font-light transition-transform">

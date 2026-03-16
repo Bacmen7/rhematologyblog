@@ -5,7 +5,7 @@ function CtaBanner() {
       <div style={{ height: "80px", backgroundColor: "#ffffff" }} />
       {/* Wave SVG */}
       <svg
-        className="w-full h-[24px] sm:h-[90px] md:h-[120px] text-[#142131] block"
+        className="w-full h-[24px] sm:h-[90px] md:h-[120px] text-[#0f616e] block"
         preserveAspectRatio="none"
         viewBox="0 0 1440 120"
         fill="none"
@@ -18,7 +18,7 @@ function CtaBanner() {
       </svg>
 
       {/* Content Area */}
-      <div className="bg-[#142131] w-full overflow-visible">
+      <div className="bg-[#0f616e] w-full overflow-visible">
         <div className="max-w-7xl mx-auto px-6 pb-24 md:pb-32 pt-6 sm:pt-10">
           <div className="flex flex-col-reverse md:flex-row items-stretch gap-10 md:gap-16">
             {/* Left — Text */}
@@ -38,7 +38,7 @@ function CtaBanner() {
                 <a
                   href="#"
                   className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"
-                  style={{ backgroundColor: "#b7efea", color: "#142131", padding: "16px 32px" }}
+                  style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "16px 32px" }}
                 >
                   Schedule An Appointment
                 </a>
@@ -46,7 +46,7 @@ function CtaBanner() {
                   <span className="text-[15px] text-gray-100 opacity-90">or</span>
                   <a
                     href="#"
-                    className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#b7efea] transition-colors"
+                    className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#1AA3B5] transition-colors"
                     style={{ color: "#ffffff" }}
                   >
                     let&apos;s get in touch

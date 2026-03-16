@@ -82,7 +82,7 @@ function Testimonials() {
   }, [])
 
   return (
-    <section className="py-20 md:py-28 bg-[#f8fafd] overflow-hidden">
+    <section className="py-20 md:py-28 bg-[#F5F5F5] overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-10 md:mb-14 px-6">
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-navy-muted" style={{ marginBottom: "12px" }}>
           Trusted by 33K+ People

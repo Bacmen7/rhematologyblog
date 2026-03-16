@@ -41,7 +41,7 @@ function Newsletter({ variant = "light" }) {
               preserveAspectRatio="none"
               viewBox="0 0 400 12"
             >
-              <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="3" />
+              <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="3" />
             </svg>
           </span>{" "}
           tips, news, and more&#8202;&#8212;&#8202;delivered weekly.
@@ -53,7 +53,7 @@ function Newsletter({ variant = "light" }) {
           onSubmit={(e) => e.preventDefault()}
         >
           <input
-            className="w-full sm:w-2/3 px-6 py-3.5 md:py-4 rounded-full border border-[#dadfe8] bg-white text-navy-deep placeholder:text-[#a0a4ac] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#8ebfff]/30 focus:border-[#8ebfff] transition-all"
+            className="w-full sm:w-2/3 px-6 py-3.5 md:py-4 rounded-full border border-[#dadfe8] bg-white text-navy-deep placeholder:text-[#a0a4ac] text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#1AA3B5]/30 focus:border-[#1AA3B5] transition-all"
             placeholder="Email Address*"
             type="email"
             required
@@ -61,7 +61,7 @@ function Newsletter({ variant = "light" }) {
           <button
             type="submit"
             className="w-full sm:w-1/3 px-6 py-3.5 md:py-4 rounded-full text-sm md:text-base font-medium hover:opacity-90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
-            style={{ backgroundColor: "#b1efec", color: "#182439" }}
+            style={{ backgroundColor: "#1AA3B5", color: "#ffffff" }}
           >
             Subscribe
             <svg

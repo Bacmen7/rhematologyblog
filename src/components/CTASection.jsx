@@ -11,7 +11,7 @@ function CTASection() {
       >
         <path
           d="M0 0H1440V40C1200 120 900 80 600 100C300 120 100 60 0 80V0Z"
-          fill="#f8fafd"
+          fill="#F5F5F5"
         />
       </svg>
 
@@ -25,7 +25,7 @@ function CTASection() {
             <div className="flex flex-wrap items-center gap-5">
               <a
                 href="#"
-                className="inline-block bg-primary hover:bg-primary-hover text-navy-deep px-7 py-3.5 rounded-full font-semibold text-base transition-colors"
+                className="inline-block bg-primary hover:bg-primary-hover text-white px-7 py-3.5 rounded-full font-semibold text-base transition-colors"
               >
                 Schedule An Appointment
               </a>

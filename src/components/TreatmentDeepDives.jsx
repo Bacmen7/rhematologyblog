@@ -27,7 +27,7 @@ function TreatmentDeepDives() {
       <div className="relative z-10 max-w-[1120px] mx-auto">
         <div className="mb-16 md:mb-20">
           <h2 className="text-[36px] md:text-[48px] leading-[1.2] font-normal mb-4 text-white">Treatment Deep-dives</h2>
-          <p className="text-[#b0b5c0] max-w-3xl text-[18px] leading-[1.65]">
+          <p className="text-[#9a9faa] max-w-3xl text-[18px] leading-[1.65]">
             Detailed clinical pathways and prescribing information for the most critical therapies in modern rheumatology.
           </p>
         </div>

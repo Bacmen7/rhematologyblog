@@ -169,7 +169,7 @@ function Header() {
                   key={item}
                   to={to}
                   className="relative px-3.5 py-2 rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
-                  style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#182439" }}
+                  style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#1A355D" }}
                 >
                   {item}
                 </Link>
@@ -177,7 +177,7 @@ function Header() {
                 <a
                   key={item}
                   className="relative px-3.5 py-2 rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
-                  style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#182439" }}
+                  style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#1A355D" }}
                   href="javascript:void(0)"
                 >
                   {item}
@@ -190,7 +190,7 @@ function Header() {
                   ? "bg-navy-deep/[0.06]"
                   : "hover:bg-navy-deep/[0.04]"
               }`}
-              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: partnershipOpen ? "rgba(91,168,163,1)" : "#182439" }}
+              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: partnershipOpen ? "rgba(91,168,163,1)" : "#1A355D" }}
               onClick={() => {
                 setPartnershipOpen((prev) => !prev)
                 setMobileMenuOpen(false)
@@ -213,7 +213,7 @@ function Header() {
                   ? "bg-navy-deep/[0.06]"
                   : "hover:bg-navy-deep/[0.04]"
               }`}
-              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: learnOpen ? "rgba(91,168,163,1)" : "#182439" }}
+              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: learnOpen ? "rgba(91,168,163,1)" : "#1A355D" }}
               onClick={() => {
                 setLearnOpen((prev) => !prev)
                 setMobileMenuOpen(false)
@@ -439,13 +439,13 @@ function Header() {
                     const inner = (
                       <>
                         <span className="flex items-center gap-3.5 text-navy-deep font-semibold text-[15px]">
-                          <span className="w-8 h-8 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                            <span className="material-symbols-outlined text-[15px] text-[#182439]">bookmark</span>
+                          <span className="w-8 h-8 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                            <span className="material-symbols-outlined text-[15px] text-[#1A355D]">bookmark</span>
                           </span>
                           {item.label}
                         </span>
-                        <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                          <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                        <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                          <span className="material-symbols-outlined text-[15px] text-[#1A355D]">arrow_forward</span>
                         </span>
                       </>
                     )
@@ -477,13 +477,13 @@ function Header() {
                 <p className="text-[11px] tracking-[0.2em] uppercase font-bold text-navy-muted/70 mb-5">Categories</p>
                 <div className="space-y-0.5">
                   {categories.map((item) => {
-                    const categoryRoutes = { "Rheumatoid Arthritis": "/health-guide/arthritis" }
+                    const categoryRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis" }
                     const catTo = categoryRoutes[item]
                     const catInner = (
                       <>
                         {item}
-                        <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                          <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                        <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                          <span className="material-symbols-outlined text-[15px] text-[#1A355D]">arrow_forward</span>
                         </span>
                       </>
                     )
@@ -522,8 +522,8 @@ function Header() {
                       onClick={closeLearn}
                     >
                       {item}
-                      <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                        <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                      <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-[15px] text-[#1A355D]">arrow_forward</span>
                       </span>
                     </a>
                   ))}
@@ -625,13 +625,13 @@ function Header() {
                 const inner = (
                   <>
                     <span className="flex items-center gap-3.5 text-navy-deep font-semibold text-[15px]">
-                      <span className="w-8 h-8 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                        <span className="material-symbols-outlined text-[15px] text-[#182439]">bookmark</span>
+                      <span className="w-8 h-8 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-[15px] text-[#1A355D]">bookmark</span>
                       </span>
                       {item.label}
                     </span>
-                    <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center flex-shrink-0">
-                      <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                    <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                      <span className="material-symbols-outlined text-[15px] text-[#1A355D]">arrow_forward</span>
                     </span>
                   </>
                 )
@@ -715,7 +715,7 @@ function Header() {
                       src={card.image}
                       alt={card.alt}
                     />
-                    <span className="absolute top-3 left-3 rounded-full bg-[#aeeee7] px-4 py-1.5 text-[10px] font-bold tracking-[0.14em] uppercase text-[#182439]">
+                    <span className="absolute top-3 left-3 rounded-full bg-[#1AA3B5] px-4 py-1.5 text-[10px] font-bold tracking-[0.14em] uppercase text-[#1A355D]">
                       {card.audience}
                     </span>
                   </div>
@@ -726,8 +726,8 @@ function Header() {
                     onClick={closePartnership}
                   >
                     Learn More
-                    <span className="w-7 h-7 rounded-full bg-[#aeeee7] inline-flex items-center justify-center">
-                      <span className="material-symbols-outlined text-[15px] text-[#182439]">arrow_forward</span>
+                    <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center">
+                      <span className="material-symbols-outlined text-[15px] text-[#1A355D]">arrow_forward</span>
                     </span>
                   </a>
                 </article>

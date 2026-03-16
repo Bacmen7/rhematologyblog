@@ -5,8 +5,8 @@ function Hero() {
       <section
         className="custom-approach-section relative overflow-hidden hidden lg:block"
         style={{
-          background: "#d1ebfd",
-          /* background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd", */
+          background: "#e0f3f5",
+          /* background: "radial-gradient(ellipse at 20% 0%, #b3e0e6 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b3e0e6 0%, transparent 45%), #F5F5F5", */
         }}
       >
         <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
@@ -21,7 +21,7 @@ function Hero() {
                   preserveAspectRatio="none"
                   viewBox="0 0 400 12"
                 >
-                  <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="4" />
+                  <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
                 </svg>
               </span>{" "}
               Health
@@ -30,7 +30,7 @@ function Hero() {
               Empowering clinicians and patients with research-driven insights, clinical evidence, and personalized care protocols for complex autoimmune conditions.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <button className="bg-primary hover:bg-primary-hover text-navy-deep px-6 py-2.5 rounded-full font-semibold text-base transition-colors">
+              <button className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full font-semibold text-base transition-colors">
                 Get Started →
               </button>
             </div>
@@ -50,8 +50,8 @@ function Hero() {
         <div
           className="flex flex-col items-center text-center px-6 pt-14 pb-4"
           style={{
-            background: "#d1ebfd",
-            /* background: "radial-gradient(ellipse at 20% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #c7dfff 0%, transparent 45%), #f8fafd", */
+            background: "#e0f3f5",
+            /* background: "radial-gradient(ellipse at 20% 0%, #b3e0e6 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b3e0e6 0%, transparent 45%), #F5F5F5", */
           }}
         >
           <h1 className="text-[3.0625rem] font-light text-navy-deep leading-[1.06] tracking-[-1.4px] mb-5">
@@ -64,7 +64,7 @@ function Hero() {
                 preserveAspectRatio="none"
                 viewBox="0 0 400 12"
               >
-                <path d="M2 10C80 4 200 2 398 6" stroke="#8ebfff" strokeLinecap="round" strokeWidth="4" />
+                <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
               </svg>
             </span>{" "}
             Health
@@ -72,12 +72,12 @@ function Hero() {
           <p className="text-base text-navy-muted leading-relaxed max-w-sm" style={{ marginBottom: "48px" }}>
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.
           </p>
-          <button className="bg-primary hover:bg-primary-hover text-navy-deep px-8 py-3.5 rounded-full font-bold text-base transition-colors" style={{ marginBottom: "20px" }}>
+          <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-full font-bold text-base transition-colors" style={{ marginBottom: "20px" }}>
             Get Started →
           </button>
           <p className="text-sm text-navy-muted">
             See a provider{" "}
-            <strong className="font-semibold" style={{ color: "#182439", background: "#feccbc", padding: "2px 6px", borderRadius: "3px" }}>
+            <strong className="font-semibold" style={{ color: "#ffffff", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>
               as soon as tomorrow
             </strong>
           </p>

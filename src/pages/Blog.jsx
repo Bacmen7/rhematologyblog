@@ -107,16 +107,16 @@ function Blog() {
           .blog-page .font-serif-blog { font-family: 'Lora', serif; }
           .blog-hero-wave { position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; }
           .blog-hero-wave svg { position: relative; display: block; width: calc(100% + 1.3px); height: 50px; }
-          .filter-checkbox { accent-color: #182439; width: 16px; height: 16px; margin-right: 8px; cursor: pointer; }
+          .filter-checkbox { accent-color: #1A355D; width: 16px; height: 16px; margin-right: 8px; cursor: pointer; }
         `}} />
 
-        <div className="blog-page font-sans-blog text-[#182439] bg-white">
+        <div className="blog-page font-sans-blog text-[#1A355D] bg-white">
           {/* Hero Section */}
-          <section className="relative bg-[#f0f4fb] pt-16 pb-32 px-6">
+          <section className="relative bg-[#F5F5F5] pt-16 pb-32 px-6">
             <div className="max-w-7xl mx-auto relative z-10">
               <a href="#" className="text-[#515a6a] text-sm underline hover:no-underline mb-6 inline-block">Learn</a>
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-16">
-                <h1 className="font-serif-blog text-5xl md:text-6xl text-[#182439] md:w-1/2">
+                <h1 className="font-serif-blog text-5xl md:text-6xl text-[#1A355D] md:w-1/2">
                   Bloating & Gas
                 </h1>
                 <p className="text-[#515a6a] text-lg md:text-xl font-light md:w-1/2 md:pt-4">
@@ -149,19 +149,19 @@ function Blog() {
                 {/* Dropdown */}
                 <div className="absolute right-0 top-full mt-2 w-64 bg-white border border-gray-100 rounded-2xl shadow-xl p-6 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-30">
                   <ul className="space-y-4">
-                    <li className="flex items-center text-sm text-[#182439] cursor-pointer">
+                    <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-blog" className="filter-checkbox" />
                       <label htmlFor="filter-blog" className="cursor-pointer">Blog</label>
                     </li>
-                    <li className="flex items-center text-sm text-[#182439] cursor-pointer">
+                    <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-recipes" className="filter-checkbox" />
                       <label htmlFor="filter-recipes" className="cursor-pointer">Gut-Friendly Recipes</label>
                     </li>
-                    <li className="flex items-center text-sm text-[#182439] cursor-pointer">
+                    <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-patient" className="filter-checkbox" />
                       <label htmlFor="filter-patient" className="cursor-pointer">Patient Stories</label>
                     </li>
-                    <li className="flex items-center text-sm text-[#182439] cursor-pointer">
+                    <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-research" className="filter-checkbox" />
                       <label htmlFor="filter-research" className="cursor-pointer">Research & Outcomes</label>
                     </li>
@@ -183,24 +183,24 @@ function Blog() {
                   </div>
                   <div className="flex-grow flex flex-col">
                     <div className="mb-3">
-                      <span className="inline-block bg-[#e3efff] text-[#3b5b80] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                      <span className="inline-block bg-[#e0f3f5] text-[#5E5E5E] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
                         {article.category}
                       </span>
                     </div>
-                    <h3 className="font-serif-blog text-xl leading-snug mb-2 text-[#182439] group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-serif-blog text-xl leading-snug mb-2 text-[#1A355D] group-hover:text-blue-600 transition-colors">
                       {article.title}
                     </h3>
                     <p className="text-xs text-[#515a6a] mb-2">
-                      By <strong className="text-[#182439] font-semibold">{article.author}</strong>
+                      By <strong className="text-[#1A355D] font-semibold">{article.author}</strong>
                     </p>
                     {article.excerpt && (
                       <p className="text-sm text-[#515a6a] font-light mb-4 flex-grow leading-relaxed">
                         {article.excerpt}
                       </p>
                     )}
-                    <div className={`flex items-center gap-2 text-sm font-bold text-[#182439] ${article.excerpt ? 'mt-auto' : 'mt-auto'}`}>
+                    <div className={`flex items-center gap-2 text-sm font-bold text-[#1A355D] ${article.excerpt ? 'mt-auto' : 'mt-auto'}`}>
                       Read More
-                      <div className="w-6 h-6 rounded-full bg-[#aeeee7] flex items-center justify-center">
+                      <div className="w-6 h-6 rounded-full bg-[#1AA3B5] flex items-center justify-center">
                         <ArrowRight size={12} strokeWidth={3} />
                       </div>
                     </div>
@@ -211,7 +211,7 @@ function Blog() {
 
             {/* Pagination */}
             <div className="flex justify-center mt-20 mb-10">
-              <button className="w-10 h-10 rounded-full bg-[#e3efff] text-[#182439] flex items-center justify-center font-bold text-sm">
+              <button className="w-10 h-10 rounded-full bg-[#e0f3f5] text-[#1A355D] flex items-center justify-center font-bold text-sm">
                 1
               </button>
             </div>
@@ -221,7 +221,7 @@ function Blog() {
           <div className="bg-navy-deep relative mt-16">
             <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ transform: "translateY(-99%)" }}>
               <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[32px] md:h-[40px]">
-                <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#182439" />
+                <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#0f616e" />
               </svg>
             </div>
             <Newsletter variant="dark" />

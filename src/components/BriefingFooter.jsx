@@ -3,24 +3,24 @@ import { Facebook, Instagram, Twitter, Linkedin } from 'lucide-react'
 
 function BriefingFooter() {
   return (
-    <footer className="bg-[#f0f4fb] pt-16 pb-8 px-6" style={{ fontFamily: "var(--font-base)" }}>
+    <footer className="bg-[#F5F5F5] pt-16 pb-8 px-6" style={{ fontFamily: "var(--font-base)" }}>
       <div className="max-w-7xl mx-auto">
         {/* Logo & Social */}
         <div className="mb-12">
           <Link to="/" className="inline-block mb-8">
-            <span className="text-2xl font-extrabold tracking-tighter text-[#182439]">RHEUMA.</span>
+            <span className="text-2xl font-extrabold tracking-tighter text-[#1A355D]">RHEUMA.</span>
           </Link>
           <div className="flex gap-4 mb-8">
-            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#1AA3B5] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
               <Facebook fill="currentColor" strokeWidth={0} size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#1AA3B5] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
               <Instagram size={20} strokeWidth={2.5} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#1AA3B5] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
               <Twitter fill="currentColor" strokeWidth={0} size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-[#aeeee7] flex items-center justify-center text-[#182439] hover:opacity-80 transition-opacity">
+            <a href="#" className="w-10 h-10 rounded-full bg-[#1AA3B5] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
               <Linkedin fill="currentColor" strokeWidth={0} size={20} />
             </a>
           </div>
@@ -30,7 +30,7 @@ function BriefingFooter() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 mb-16">
           <div>
             <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Who We Serve</h4>
-            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+            <ul className="space-y-4 text-sm font-semibold text-[#1A355D]">
               <li><a href="#" className="hover:text-[#515a6a]">Individuals</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Employers</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Health Plans</a></li>
@@ -40,7 +40,7 @@ function BriefingFooter() {
 
           <div>
             <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>What We Treat</h4>
-            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+            <ul className="space-y-4 text-sm font-semibold text-[#1A355D]">
               <li><a href="#" className="hover:text-[#515a6a]">Rheumatoid Arthritis</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Lupus (SLE)</a></li>
@@ -52,7 +52,7 @@ function BriefingFooter() {
 
           <div>
             <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Resources</h4>
-            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+            <ul className="space-y-4 text-sm font-semibold text-[#1A355D]">
               <li><Link to="/blog" className="hover:text-[#515a6a]">Blog</Link></li>
               <li><a href="#" className="hover:text-[#515a6a]">Clinical Guides</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Research & Outcomes</a></li>
@@ -64,7 +64,7 @@ function BriefingFooter() {
 
           <div>
             <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Company</h4>
-            <ul className="space-y-4 text-sm font-semibold text-[#182439]">
+            <ul className="space-y-4 text-sm font-semibold text-[#1A355D]">
               <li><Link to="/about" className="hover:text-[#515a6a]">About Us</Link></li>
               <li><Link to="/our-approach" className="hover:text-[#515a6a]">Our Approach</Link></li>
               <li><a href="#" className="hover:text-[#515a6a]">Our Providers</a></li>
@@ -83,10 +83,10 @@ function BriefingFooter() {
               Rheuma delivers personalized, whole-person medical care to people living with rheumatic conditions. Testimonials reflect individual patient experiences and results may vary.
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-3 text-[12px] underline decoration-gray-300 underline-offset-4 md:text-right">
-              <a href="#" className="hover:text-[#182439]">Privacy Policy</a>
-              <a href="#" className="hover:text-[#182439]">Terms of Use</a>
-              <a href="#" className="hover:text-[#182439]">Informed Consent</a>
-              <a href="#" className="hover:text-[#182439]">Notice of Privacy Practices</a>
+              <a href="#" className="hover:text-[#1A355D]">Privacy Policy</a>
+              <a href="#" className="hover:text-[#1A355D]">Terms of Use</a>
+              <a href="#" className="hover:text-[#1A355D]">Informed Consent</a>
+              <a href="#" className="hover:text-[#1A355D]">Notice of Privacy Practices</a>
             </div>
           </div>
           <p className="text-[12px] mt-8">&copy; 2026 Rheuma, Inc. All rights reserved.</p>

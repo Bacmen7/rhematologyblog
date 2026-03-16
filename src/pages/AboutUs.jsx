@@ -39,7 +39,7 @@ function HeroSection() {
     <section
       className="custom-approach-section relative overflow-hidden"
       style={{
-        background: "radial-gradient(ellipse at 80% 0%, #c7dfff 0%, transparent 50%), radial-gradient(ellipse at 10% 100%, #b1efec 0%, transparent 45%), #f8fafd",
+        background: "radial-gradient(ellipse at 80% 0%, #b3e0e6 0%, transparent 50%), radial-gradient(ellipse at 10% 100%, #1AA3B5 0%, transparent 45%), #F5F5F5",
       }}
     >
       <div className="max-w-7xl mx-auto px-6">
@@ -77,7 +77,7 @@ function CeoQuoteSection() {
     <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden">
       {/* Top wave */}
       <svg className="absolute top-0 left-0 w-full" style={{ height: "40px", transform: "translateY(-99%)" }} preserveAspectRatio="none" viewBox="0 0 1440 32" fill="none">
-        <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#182439" />
+        <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#0f616e" />
       </svg>
 
       <div className="max-w-7xl mx-auto px-6 py-28 md:py-36 relative z-10">
@@ -105,7 +105,7 @@ function CeoQuoteSection() {
 
       {/* Bottom wave */}
       <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f8fafd" />
+        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
       </svg>
     </section>
   )
@@ -222,7 +222,7 @@ function CoreValuesSection() {
     <section className="relative overflow-hidden py-28 md:py-36">
       {/* Top wave */}
       <svg className="absolute top-0 left-0 w-full" style={{ height: "80px", transform: "translateY(-99%)" }} preserveAspectRatio="none" viewBox="0 0 1440 120" fill="none">
-        <path d="M902.287 110.844C616.272 102.591 308.233 0.726051 45.0151 80.1802C29.7923 84.7785 14.8114 90.0303 0 95.8629V120H1440V0C1273.37 78.0746 1092.39 116.337 902.287 110.844Z" fill="#f8fafd" />
+        <path d="M902.287 110.844C616.272 102.591 308.233 0.726051 45.0151 80.1802C29.7923 84.7785 14.8114 90.0303 0 95.8629V120H1440V0C1273.37 78.0746 1092.39 116.337 902.287 110.844Z" fill="#F5F5F5" />
       </svg>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -240,7 +240,7 @@ function CoreValuesSection() {
             <div key={idx} className="bg-white p-10 flex flex-col items-center text-center shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300">
               <div className="relative w-[70px] h-[74px] flex items-center justify-center mb-5">
                 <svg className="absolute top-0 left-0 w-full h-full z-0" viewBox="0 0 74 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d={val.path} fill="#e3efff" />
+                  <path fillRule="evenodd" clipRule="evenodd" d={val.path} fill="#e0f3f5" />
                 </svg>
                 <span className="material-symbols-outlined relative z-10 text-[28px] text-navy-deep/70">{val.icon}</span>
               </div>

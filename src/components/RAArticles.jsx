@@ -70,7 +70,7 @@ function RAArticles() {
             </div>
             <div className="p-6 flex flex-col flex-grow">
               <div style={{ marginBottom: "12px" }}>
-                <span className="inline-block bg-[#e3efff] text-[#3b5b80] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                <span className="inline-block bg-[#e0f3f5] text-[#5E5E5E] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
                   {article.category}
                 </span>
               </div>
@@ -83,8 +83,8 @@ function RAArticles() {
               </p>
               <div className="flex items-center gap-2 text-sm font-bold text-navy-deep mt-auto" style={{ fontFamily: "var(--font-base)" }}>
                 Read More
-                <span className="w-6 h-6 rounded-full bg-[#aeeee7] flex items-center justify-center">
-                  <svg className="w-3 h-3 text-[#182439]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <span className="w-6 h-6 rounded-full bg-[#1AA3B5] flex items-center justify-center">
+                  <svg className="w-3 h-3 text-[#1A355D]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
                   </svg>
                 </span>

@@ -80,7 +80,7 @@ function SuccessStories() {
           {/* Left arrow */}
           <button
             onClick={() => scroll("left")}
-            className="flex-shrink-0 w-8 h-8 rounded-full bg-[#182439] flex items-center justify-center cursor-pointer hidden md:flex"
+            className="flex-shrink-0 w-8 h-8 rounded-full bg-[#1A355D] flex items-center justify-center cursor-pointer hidden md:flex"
           >
             <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
@@ -125,7 +125,7 @@ function SuccessStories() {
           {/* Right arrow */}
           <button
             onClick={() => scroll("right")}
-            className="flex-shrink-0 w-8 h-8 rounded-full bg-[#182439] flex items-center justify-center cursor-pointer hidden md:flex"
+            className="flex-shrink-0 w-8 h-8 rounded-full bg-[#1A355D] flex items-center justify-center cursor-pointer hidden md:flex"
           >
             <svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
