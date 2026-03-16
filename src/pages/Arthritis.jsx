@@ -78,179 +78,126 @@ function Arthritis() {
   }, [])
 
   return (
-    <div className="landing-page bg-white text-navy-deep antialiased">
+    <div className="landing-page bg-background-light text-navy-deep antialiased" style={{ fontFamily: "var(--font-base)" }}>
       <Header />
       <main>
 
-        {/* ═══════════ HERO ═══════════ */}
-        <section className="custom-approach-section relative overflow-hidden" style={{ backgroundColor: "#e0f3f5" }}>
+        {/* ═══════════ HERO (Oshi-style dark) ═══════════ */}
+        <section className="relative" style={{ backgroundColor: "#0f616e" }}>
+
           {/* Desktop */}
           <div className="hidden lg:block">
-            <div className="max-w-7xl mx-auto px-6 py-8 md:py-10">
-              <div className="flex items-center gap-16">
+            <div className="max-w-7xl mx-auto px-6" style={{ paddingTop: "3rem", paddingBottom: "2rem" }}>
+              <div className="grid grid-cols-[1fr_420px] gap-10 items-center">
                 {/* Left — Text */}
-                <div className="flex-[1.2] flex flex-col gap-7">
+                <div>
                   <span
-                    className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full self-start"
-                    style={{ backgroundColor: "#0f616e", color: "#ffffff" }}
+                    className="inline-block"
+                    style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#7eb8c4", marginBottom: "24px", display: "block" }}
                   >
-                    Condition Overview
+                    Complete Patient Guide
                   </span>
                   <h1
-                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 5.5vw, 4.5rem)", fontWeight: 400, lineHeight: 1.04, letterSpacing: "-1.5px", color: "#0f616e" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4.5vw, 3.5rem)", fontWeight: 400, lineHeight: 1.08, color: "#ffffff", marginBottom: "20px" }}
                   >
                     Understanding{" "}
-                    <span className="relative inline-block">
-                      Arthritis
-                      <svg className="absolute -bottom-2 left-0 w-full h-3" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
-                        <path d="M2 10C80 4 200 2 398 6" stroke="#fa885a" strokeLinecap="round" strokeWidth="4" />
-                      </svg>
-                    </span>
+                    <span style={{ color: "#a0e2e4" }}>Arthritis</span>
                   </h1>
-                  <p className="text-[18px] font-light leading-relaxed max-w-lg" style={{ color: "#1A355D", opacity: 0.75 }}>
-                    Over 100 types of arthritis exist — each requiring a different approach. Rheuma&apos;s board-certified rheumatologists identify your specific condition and build a care plan that works.
-                  </p>
-                  <p className="text-[13px] leading-[1.6]" style={{ color: "#1A355D", opacity: 0.65 }}>
-                    <span className="font-bold underline underline-offset-2" style={{ opacity: 1, color: "#0f616e" }}>Clinically reviewed</span> against <span className="font-semibold" style={{ opacity: 1 }}>ACR &amp; EULAR Guidelines 2024&ndash;2026</span> &middot; Last updated <span className="font-semibold" style={{ opacity: 1 }}>March 2026</span> &middot; <span className="font-semibold" style={{ opacity: 1, color: "#1AA3B5" }}>15 min read</span>
-                  </p>
-                  {/* <div className="flex flex-wrap items-center gap-4 pt-3">
-                    <a
-                      href="#"
-                      className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90"
-                      style={{ backgroundColor: "#0f616e", color: "#ffffff", padding: "14px 32px" }}
-                    >
-                      Book an Appointment
-                    </a>
-                    <a
-                      href="#types"
-                      className="inline-flex items-center gap-2 text-[15px] font-semibold transition-colors border-2 border-navy-deep rounded-full px-6 py-3 hover:bg-navy-deep hover:text-white"
-                      style={{ color: "#0f616e" }}
-                    >
-                      Explore types
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                      </svg>
-                    </a>
-                  </div> */}
+
+                  {/* Avatars */}
+                  <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
+                    <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                    <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#dce7f7]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                  </div>
+
+                  {/* Byline */}
+                  <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "2px" }}>
+                    <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "#ffffff" }}>
+                      Written by <strong className="font-bold underline underline-offset-2 decoration-1">Steph Coelho, CPT</strong>
+                    </span>
+                    <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.5)" }}>
+                      Medically reviewed by <strong className="font-bold underline underline-offset-2 decoration-1" style={{ color: "#ffffff" }}>Gabriella McCarty DNP, MSN, NP-C</strong>
+                    </span>
+                    <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.45)" }}>
+                      Published: January 05, 2026
+                    </span>
+                  </div>
                 </div>
 
-                {/* Right — Doctor Profile Card */}
-                <div className="flex-1 flex justify-end">
-                  <div className="bg-white shadow-[0_8px_40px_rgba(15,97,110,0.12)] overflow-hidden" style={{ borderRadius: 0, maxWidth: "380px", width: "100%" }}>
-                    {/* Doctor Image */}
-                    <div className="relative" style={{ backgroundColor: "#e0f3f5" }}>
-                      <img
-                        src="/images/dr-elena.jpg"
-                        alt="Dr. Priya Menon"
-                        className="w-full h-[280px] object-cover object-top"
-                      />
-                    </div>
-                    {/* Doctor Info */}
-                    <div className="p-6">
-                      <div className="flex items-center gap-2 mb-3">
-                        <span className="material-symbols-outlined text-[16px]" style={{ color: "#1AA3B5" }}>edit_note</span>
-                        <span className="text-[11px] font-bold uppercase tracking-[0.15em]" style={{ color: "#1AA3B5" }}>Written &amp; Reviewed By</span>
-                      </div>
-                      <h3
-                        className="text-navy-deep mb-1"
-                        style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 400, lineHeight: 1.2 }}
-                      >
-                        Dr. Priya Menon
-                      </h3>
-                      <p className="text-[14px] font-semibold text-navy-deep mb-2">Senior Consultant Rheumatologist</p>
-                      <p className="text-[13px] text-navy-muted mb-6">MD &middot; DM Rheumatology (AIIMS)</p>
-                      <div className="mb-6" style={{ borderTop: "1px solid #e8ecf2" }} />
-                      <Link
-                        to="/specialist/1"
-                        className="inline-flex items-center gap-2 text-[13px] font-semibold transition-colors hover:opacity-80 border-2 rounded-full px-4 py-2"
-                        style={{ color: "#0f616e", borderColor: "#0f616e" }}
-                      >
-                        View Full Profile
-                        <span className="w-6 h-6 rounded-full flex items-center justify-center" style={{ backgroundColor: "#a0e2e4" }}>
-                          <svg className="w-3 h-3" style={{ color: "#0f616e" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                          </svg>
-                        </span>
-                      </Link>
-                    </div>
+                {/* Right — Image */}
+                <div className="relative">
+                  <div className="overflow-hidden" style={{ borderRadius: 0 }}>
+                    <img
+                      src="/images/dr-elena.jpg"
+                      alt="Arthritis patient guide"
+                      className="w-full h-[260px] object-cover object-top"
+                    />
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
           {/* Mobile */}
           <div className="lg:hidden">
-            <div className="flex flex-col items-center text-center px-6 pt-14 pb-4">
-
-              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full" style={{ backgroundColor: "#0f616e", color: "#fff", marginBottom: "24px" }}>
-                Condition Overview
+            {/* Text content */}
+            <div className="flex flex-col px-6 pt-14 pb-0">
+              <span
+                className="inline-block self-start"
+                style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#7eb8c4", marginBottom: "28px" }}
+              >
+                Complete Patient Guide
               </span>
-
-              <h1 className="text-[3.0625rem] font-light leading-[1.06] tracking-[-1.4px] mb-5" style={{ fontFamily: "var(--font-display)", color: "#0f616e" }}>
-                Understanding{" "}
-                <span className="relative inline-block">
-                  Arthritis
-                  <svg className="absolute -bottom-1 left-0 w-full h-2.5" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
-                    <path d="M2 10C80 4 200 2 398 6" stroke="#fa885a" strokeLinecap="round" strokeWidth="4" />
-                  </svg>
-                </span>
+              <h1
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.1rem, 9vw, 2.75rem)", fontWeight: 400, lineHeight: 1.08, color: "#ffffff", marginBottom: "16px" }}
+              >
+                Understanding <span style={{ color: "#a0e2e4" }}>Arthritis</span>
               </h1>
 
-              <p className="text-base text-navy-muted leading-relaxed max-w-sm" style={{ marginBottom: "20px" }}>
-                Rheuma&apos;s rheumatologists identify your specific condition and build a care plan that works.
-              </p>
-
-              <p className="text-sm text-navy-muted max-w-sm" style={{ marginBottom: "40px" }}>
-                <span className="font-bold underline underline-offset-2" style={{ color: "#0f616e" }}>Clinically reviewed</span> against <span className="font-semibold">ACR &amp; EULAR Guidelines 2024&ndash;2026</span> &middot; Updated <span className="font-semibold">Mar 2026</span> &middot; <span className="font-semibold" style={{ color: "#1AA3B5" }}>15 min read</span>
-              </p>
-
-              {/* Doctor Card — vertical, matching desktop style */}
-              <div className="bg-white shadow-[0_8px_30px_rgba(15,97,110,0.1)] overflow-hidden w-full max-w-[320px]" style={{ borderRadius: 0 }}>
-                <div style={{ backgroundColor: "#e0f3f5" }}>
-                  <img src="/images/dr-elena.jpg" alt="Dr. Priya Menon" className="w-full h-[200px] object-cover object-top" />
-                </div>
-                <div className="p-5 text-left">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="material-symbols-outlined text-[14px]" style={{ color: "#1AA3B5" }}>edit_note</span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.15em]" style={{ color: "#1AA3B5" }}>Written &amp; Reviewed By</span>
-                  </div>
-                  <h3 className="text-navy-deep mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 400, lineHeight: 1.2 }}>
-                    Dr. Priya Menon
-                  </h3>
-                  <p className="text-[13px] font-semibold text-navy-deep mb-1">Senior Consultant Rheumatologist</p>
-                  <p className="text-[12px] text-navy-muted mb-4">MD &middot; DM Rheumatology (AIIMS)</p>
-                  <div className="mb-4" style={{ borderTop: "1px solid #e8ecf2" }} />
-                  <Link
-                    to="/specialist/1"
-                    className="inline-flex items-center gap-2 text-[12px] font-semibold border-2 rounded-full px-4 py-2"
-                    style={{ color: "#0f616e", borderColor: "#0f616e" }}
-                  >
-                    View Full Profile
-                    <span className="w-5 h-5 rounded-full flex items-center justify-center" style={{ backgroundColor: "#a0e2e4" }}>
-                      <svg className="w-2.5 h-2.5" style={{ color: "#0f616e" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
-                    </span>
-                  </Link>
-                </div>
+              {/* Avatars */}
+              <div className="flex -space-x-2" style={{ marginBottom: "12px" }}>
+                <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#dce7f7]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
               </div>
 
+              {/* Byline */}
+              <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "1px", marginBottom: "28px" }}>
+                <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "#ffffff" }}>
+                  Written by <strong className="font-bold underline underline-offset-2 decoration-1">Steph Coelho, CPT</strong>
+                </span>
+                <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.5)" }}>
+                  Medically reviewed by <strong className="font-bold underline underline-offset-2 decoration-1" style={{ color: "#ffffff" }}>Gabriella McCarty DNP, MSN, NP-C</strong>
+                </span>
+                <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.45)" }}>
+                  Published: January 05, 2026
+                </span>
+              </div>
+            </div>
+
+            {/* Image with side padding like reference */}
+            <div className="px-6" style={{ marginTop: "0" }}>
+              <div style={{ backgroundColor: "#e0f3f5", borderRadius: "0" }}>
+                <img src="/images/dr-elena.jpg" alt="Arthritis guide" className="w-full object-cover object-top" style={{ height: "300px" }} />
+              </div>
             </div>
           </div>
+
+          {/* Bottom wave — blends into ghost section below */}
+          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
+          </svg>
         </section>
 
         {/* ═══════════ SCALE OF THE PROBLEM ═══════════ */}
-        <section className="relative py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
-          {/* Top wave */}
+        <section className="relative py-16 md:py-24 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.25rem", color: "#ffffff" }}
+              className="text-navy-deep"
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.25rem" }}
             >
               Arthritis — The Scale of the Problem
             </h2>
-            <p className="text-[15px] leading-[1.85] max-w-2xl" style={{ marginBottom: "2.5rem", color: "rgba(255,255,255,0.6)" }}>
+            <p className="text-[15px] leading-[1.85] max-w-2xl text-navy-muted" style={{ marginBottom: "2.5rem" }}>
               Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
             </p>
 
@@ -261,22 +208,22 @@ function Arthritis() {
                 { value: "180M", label: "patients in India", desc: "Estimated adults affected — exceeding the combined burden of diabetes and all cancers. Average diagnosis delay: 6 years." },
                 { value: "40%", label: "work disability in 10 yrs", desc: "Of RA patients experience significant work disability within 10 years without early, targeted therapy. Early treatment changes this outcome dramatically." },
               ].map((stat, i) => (
-                <div key={i} className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
+                <div key={i} className="min-w-[260px] sm:min-w-0 snap-start bg-white p-5 md:p-7 border border-gray-100" style={{ borderRadius: 0 }}>
                   <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
                     {stat.value}
                   </p>
-                  <p className="text-[14px] font-semibold mb-3" style={{ color: "rgba(255,255,255,0.9)" }}>{stat.label}</p>
-                  <p className="text-[13px] leading-[1.7]" style={{ color: "rgba(255,255,255,0.5)" }}>{stat.desc}</p>
+                  <p className="text-[14px] font-semibold text-navy-deep mb-3">{stat.label}</p>
+                  <p className="text-[13px] leading-[1.7] text-navy-muted">{stat.desc}</p>
                 </div>
               ))}
 
               {/* Card 4 — gender bar */}
-              <div className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
+              <div className="min-w-[260px] sm:min-w-0 snap-start bg-white p-5 md:p-7 border border-gray-100" style={{ borderRadius: 0 }}>
                 <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
                   3&times;
                 </p>
-                <p className="text-[14px] font-semibold mb-3" style={{ color: "rgba(255,255,255,0.9)" }}>more common in women</p>
-                <p className="text-[13px] leading-[1.7]" style={{ color: "rgba(255,255,255,0.5)" }}>RA disproportionately affects women. Conversely, AS (Ankylosing Spondylitis) is 2–3&times; more prevalent in men, typically under 35 years old.</p>
+                <p className="text-[14px] font-semibold text-navy-deep mb-3">more common in women</p>
+                <p className="text-[13px] leading-[1.7] text-navy-muted">RA disproportionately affects women. Conversely, AS (Ankylosing Spondylitis) is 2–3&times; more prevalent in men, typically under 35 years old.</p>
               </div>
             </div>
           </div>
@@ -1125,104 +1072,67 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ ARTICLES ON ARTHRITIS ═══════════ */}
-        <section className="py-12 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            {/* Header row */}
-            <div className="flex items-end justify-between mb-10">
-              <div>
-                <h2
-                  className="text-navy-deep mb-3"
-                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}
-                >
-                  Articles on Arthritis
-                </h2>
+        <section className="bg-white py-20 md:py-28 px-6">
+          <div className="max-w-7xl mx-auto">
+            <div className="mb-14 max-w-2xl">
+              <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: "#1AA3B5" }}>
+                Latest Research
+              </span>
+              <h2 className="text-navy-deep mt-2" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+                Articles on Arthritis
+              </h2>
+            </div>
+
+            {/* Grid: 1.6fr 1fr */}
+            <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-5 items-start">
+              {/* Featured card */}
+              <div className="rounded-2xl border border-[#dde6ee] overflow-hidden">
+                <div className="relative h-[320px] overflow-hidden">
+                  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="" className="w-full h-full object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,97,110,.8)] to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-1.5">
+                      <span className="w-3 h-0.5 bg-[#1AA3B5] rounded-full" />
+                      Research
+                    </span>
+                  </div>
+                </div>
+                <div className="p-5 pb-6">
+                  <h3 className="text-navy-deep mb-2.5 leading-tight" style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 400 }}>Treat-to-Target in RA: Does Achieving Remission Actually Prevent Long-Term Joint Damage?</h3>
+                  <div className="flex items-center gap-2.5 text-xs text-navy-muted mb-4">
+                    <span>Dr. Priya Menon</span>
+                    <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
+                    <span>10 min read</span>
+                    <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
+                    <span>March 2026</span>
+                  </div>
+                  <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#0f616e" }}>
+                    Read Article
+                  </button>
+                </div>
               </div>
-              <Link to="/blog" className="hidden md:inline-flex items-center gap-1.5 text-[14px] font-semibold hover:gap-2.5 transition-all" style={{ color: "#1AA3B5" }}>
-                View all articles &rarr;
-              </Link>
-            </div>
 
-            {/* Article cards — horizontal scroll carousel */}
-            <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
-              {[
-                {
-                  img: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=400&q=85",
-                  cat: "Featured",
-                  catColor: "#0f616e",
-                  title: "Why the First 3 Months After Diagnosis Are the Most Important",
-                  desc: "The window of opportunity is real — patients treated early have dramatically better outcomes at 10 years.",
-                  meta: "Dr. P. Menon · 10 min · Feb 2026",
-                },
-                {
-                  img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=400&q=80",
-                  cat: "Medications",
-                  catColor: "#e05a5a",
-                  title: "Starting Methotrexate — What Every Patient Must Know",
-                  desc: "Everything you need to know before starting this cornerstone DMARD therapy for rheumatoid arthritis.",
-                  meta: "8 min · Patient Guide",
-                },
-                {
-                  img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
-                  cat: "Patient Guide",
-                  catColor: "#1AA3B5",
-                  title: "RA vs Osteoarthritis — How to Tell the Difference",
-                  desc: "Understanding the key differences between inflammatory and degenerative arthritis for accurate diagnosis.",
-                  meta: "6 min · Diagnosis",
-                },
-                {
-                  img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80",
-                  cat: "Physiotherapy",
-                  catColor: "#6652a8",
-                  title: "Best Exercises for Ankylosing Spondylitis",
-                  desc: "Safe, effective exercises to maintain spinal mobility and reduce stiffness in AS patients.",
-                  meta: "7 min · Exercise Guide",
-                },
-                {
-                  img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80",
-                  cat: "Lifestyle",
-                  catColor: "#e8993e",
-                  title: "Diet & Inflammation — What to Eat With Arthritis",
-                  desc: "Evidence-based nutrition strategies to reduce inflammatory markers and support joint health.",
-                  meta: "5 min · Nutrition Guide",
-                },
-              ].map((article, i) => (
-                <Link
-                  key={i}
-                  to="/blog"
-                  className="group min-w-[280px] sm:min-w-[300px] snap-start flex flex-col overflow-hidden bg-white border border-gray-200 rounded-lg hover:shadow-[0_8px_24px_rgba(15,36,64,.1)] hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  <div className="h-[160px] overflow-hidden relative">
-                    <img
-                      src={article.img}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                    />
-                    <span
-                      className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full"
-                      style={{ backgroundColor: "#fff", color: article.catColor }}
-                    >
-                      {article.cat}
-                    </span>
+              {/* List cards */}
+              <div className="flex flex-col gap-3">
+                {[
+                  { img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400", cat: "Medications", title: "Starting Methotrexate — What Every Patient Must Know", time: "8 min read" },
+                  { img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400", cat: "Patient Guide", title: "RA vs Osteoarthritis — How to Tell the Difference", time: "6 min read" },
+                  { img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
+                  { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400", cat: "Lifestyle", title: "Diet & Inflammation — What to Eat With Arthritis", time: "5 min read" },
+                ].map((art, i) => (
+                  <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#dde6ee] bg-white cursor-pointer items-center hover:border-primary transition-colors">
+                    <img src={art.img} alt="" className="w-[72px] h-[72px] rounded-[10px] object-cover shrink-0" />
+                    <div>
+                      <span className="flex items-center gap-1 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-0.5">
+                        <span className="w-2 h-0.5 bg-[#1AA3B5] rounded-full" />
+                        {art.cat}
+                      </span>
+                      <h4 className="text-navy-deep mb-0.5 leading-tight" style={{ fontFamily: "var(--font-display)", fontSize: "0.9rem", fontWeight: 400 }}>{art.title}</h4>
+                      <span className="text-[11px] text-navy-muted">{art.time}</span>
+                    </div>
                   </div>
-                  <div className="p-4 flex flex-col flex-1">
-                    <h4 className="text-[15px] font-bold text-navy-deep group-hover:text-primary transition-colors leading-snug mb-2 line-clamp-2">
-                      {article.title}
-                    </h4>
-                    <p className="text-[12px] text-navy-muted leading-[1.6] mb-3 line-clamp-2 flex-1">{article.desc}</p>
-                    <span className="text-[11px] text-gray-400 pt-3" style={{ borderTop: "1px solid #edf0f5" }}>
-                      {article.meta}
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-
-            {/* View all */}
-            <div className="mt-6 text-center">
-              <Link to="/blog" className="inline-flex items-center gap-2 text-navy-deep font-bold text-sm group">
-                View all articles
-                <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
-              </Link>
+                ))}
+              </div>
             </div>
           </div>
         </section>
