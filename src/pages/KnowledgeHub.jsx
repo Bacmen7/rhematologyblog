@@ -397,7 +397,7 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 2 · WHAT IS RHEUMATOLOGY ═══════════ */}
-        <section className="bg-ghost py-14 md:py-20 px-6">
+        <section className="bg-ghost py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20" style={{ marginBottom: "3rem" }}>
               <div>
@@ -437,76 +437,60 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 3 · SYMPTOM CHECKER ═══════════ */}
-        <section id="symptom-checker" className="bg-[#0f616e] py-20 md:py-28 px-6">
+        <section id="symptom-checker" className="bg-[#0f616e] py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Center-aligned heading */}
-            <div className="mb-14 text-center max-w-2xl mx-auto">
-              <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/50">
-                Symptom Assessment
-              </span>
-              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(2rem,4vw,2.75rem)", lineHeight: 1.1, letterSpacing: "-0.5px", marginTop: "0.5rem", marginBottom: "1rem" }}>
-                When should you see a rheumatologist?
-              </h2>
-              <p className="text-[16px] leading-[1.8] mx-auto max-w-[500px]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Answer a few short questions — we&apos;ll help you understand whether a specialist consultation would be beneficial.
-              </p>
-            </div>
 
             {!showResult ? (
-              <div className="max-w-[640px] mx-auto text-center">
-                {/* Progress dots */}
-                <div className="flex gap-2 mb-10 justify-center">
-                  {symptomQuestions.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => { if (i < checkerStep) setCheckerStep(i) }}
-                      className="border-none p-0 transition-all duration-300"
-                      style={{
-                        width: i === checkerStep ? 24 : 8,
-                        height: 8,
-                        borderRadius: i === checkerStep ? 4 : "50%",
-                        background: i < checkerStep ? "#1AA3B5" : i === checkerStep ? "#fff" : "rgba(255,255,255,.15)",
-                        cursor: i < checkerStep ? "pointer" : "default",
-                      }}
-                    />
-                  ))}
-                </div>
-
-                {/* Question */}
-                <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#1AA3B5]">
-                  Question {checkerStep + 1} of 6
-                </span>
-                <h3 className="mt-3 mb-3 mx-auto max-w-[480px]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,3vw,2rem)", fontWeight: 400, lineHeight: 1.2, color: "#fff" }}>
-                  {symptomQuestions[checkerStep].q}
-                </h3>
-                <p className="text-[15px] leading-[1.7] mb-10 mx-auto max-w-[420px]" style={{ color: "rgba(255,255,255,0.5)" }}>
-                  {symptomQuestions[checkerStep].sub}
-                </p>
-
-                {/* Yes / No buttons */}
-                <div className="flex gap-4 mb-10 justify-center">
-                  <button
-                    onClick={() => handleAnswer(true)}
-                    className="py-4 px-10 rounded-full font-semibold text-[15px] cursor-pointer transition-all duration-200"
-                    style={{ backgroundColor: "#1AA3B5", color: "#fff" }}
-                  >
-                    Yes
-                  </button>
-                  <button
-                    onClick={() => handleAnswer(false)}
-                    className="py-4 px-10 rounded-full font-semibold text-[15px] cursor-pointer transition-all duration-200 border-2"
-                    style={{ background: "transparent", borderColor: "rgba(255,255,255,.2)", color: "rgba(255,255,255,.7)" }}
-                  >
-                    No
-                  </button>
-                </div>
-
-                {/* Progress bar */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
+                {/* Left — heading */}
                 <div>
-                  <div className="flex justify-between text-[12px] mb-2 font-semibold" style={{ color: "rgba(255,255,255,0.4)" }}>
-                    <span>Progress</span>
-                    <span>{checkerStep} / 6</span>
+                  <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/50 block" style={{ marginBottom: "0.75rem" }}>
+                    Symptom Assessment
+                  </span>
+                  <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
+                    When should you see a rheumatologist?
+                  </h2>
+                  <p className="text-[15px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.55)" }}>
+                    Answer a few short questions — we&apos;ll help you understand whether a specialist consultation would be beneficial.
+                  </p>
+                </div>
+
+                {/* Right — question card */}
+                <div>
+                  <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#1AA3B5] block" style={{ marginBottom: "0.75rem" }}>
+                    Question {checkerStep + 1} of 6
+                  </span>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem,2.5vw,1.6rem)", fontWeight: 400, lineHeight: 1.25, color: "#fff", marginBottom: "0.5rem" }}>
+                    {symptomQuestions[checkerStep].q}
+                  </h3>
+                  <p className="text-[14px] leading-[1.65]" style={{ color: "rgba(255,255,255,0.45)", marginBottom: "2rem" }}>
+                    {symptomQuestions[checkerStep].sub}
+                  </p>
+
+                  {/* Yes / No buttons */}
+                  <div className="flex gap-3" style={{ marginBottom: "1.5rem" }}>
+                    <button
+                      onClick={() => handleAnswer(true)}
+                      className="py-2.5 px-8 rounded-full font-semibold text-[13px] cursor-pointer transition-all duration-200"
+                      style={{ backgroundColor: "#1AA3B5", color: "#fff", border: "none" }}
+                    >
+                      Yes
+                    </button>
+                    <button
+                      onClick={() => handleAnswer(false)}
+                      className="py-2.5 px-8 rounded-full font-semibold text-[13px] cursor-pointer transition-all duration-200"
+                      style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,.2)", color: "rgba(255,255,255,.7)" }}
+                    >
+                      No
+                    </button>
                   </div>
+
+                  {/* Progress bar */}
+                  <div>
+                    <div className="flex justify-between text-[11px] font-semibold" style={{ color: "rgba(255,255,255,0.35)", marginBottom: "0.5rem" }}>
+                      <span>Progress</span>
+                      <span>{checkerStep} / 6</span>
+                    </div>
                   <div className="h-1 rounded-full overflow-hidden" style={{ backgroundColor: "rgba(255,255,255,0.1)" }}>
                     <div
                       className="h-full bg-[#1AA3B5] rounded-full transition-all duration-500"
@@ -514,10 +498,11 @@ function KnowledgeHub() {
                     />
                   </div>
                 </div>
+                </div>
               </div>
             ) : (
               /* ── Results ── */
-              <div className="bg-white/[.06] rounded-2xl p-6 md:p-10 border border-white/[.08]">
+              <div className="max-w-[600px] mx-auto bg-white/[.06] rounded-2xl p-6 md:p-10 border border-white/[.08]">
                 {(() => {
                   const risk = getRiskLevel()
                   return (
@@ -562,9 +547,9 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 4 · CONDITIONS ═══════════ */}
-        <section id="conditions" className="bg-white py-20 md:py-28 px-6">
+        <section id="conditions" className="bg-white py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-14 max-w-2xl">
+            <div className="mb-8 max-w-2xl">
               <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: "#1AA3B5" }}>
                 Condition Library
               </span>
@@ -730,10 +715,10 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 5 · TREATMENT OPTIONS ═══════════ */}
-        <section className="bg-[#0f616e] py-20 md:py-28 px-6">
+        <section className="bg-[#0f616e] py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
             {/* Left-aligned heading like other sections */}
-            <div className="mb-14 max-w-2xl">
+            <div className="mb-8 max-w-2xl">
               <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-5" style={{ backgroundColor: "rgba(26,163,181,.15)", color: "#1AA3B5" }}>
                 Treatment Guide
               </span>
@@ -773,9 +758,9 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 6 · RESEARCH ARTICLES ═══════════ */}
-        <section className="bg-white py-20 md:py-28 px-6">
+        <section className="bg-white py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="mb-14 max-w-2xl">
+            <div className="mb-8 max-w-2xl">
               <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: "#1AA3B5" }}>
                 Latest Research
               </span>
@@ -835,50 +820,56 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 7 · NEWSLETTER ═══════════ */}
-        <section className="bg-[#0f616e] py-20 md:py-28 px-6">
+        <section className="bg-white py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/50 block" style={{ marginBottom: "1rem" }}>
-                  Newsletter
-                </span>
-                <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#fff", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
-                  Monthly clinical updates, delivered
-                </h2>
-                <p className="text-[15px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.55)" }}>
-                  New patient guides, research summaries, and expert insights — once a month. No spam.
-                </p>
-              </div>
-              <div>
-                <form
-                  onSubmit={(e) => { e.preventDefault(); setEmail(""); }}
-                  className="flex flex-col sm:flex-row gap-3"
-                  style={{ marginBottom: "0.75rem" }}
-                >
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Your email address"
-                    required
-                    className="flex-1 bg-transparent border-none outline-none text-white text-[14px] py-4 px-6"
-                    style={{ backgroundColor: "rgba(255,255,255,.08)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: "50px" }}
-                  />
-                  <button
-                    type="submit"
-                    className="shrink-0 font-bold text-[14px] px-8 py-4 rounded-full cursor-pointer transition-all hover:brightness-110"
-                    style={{ backgroundColor: "#1AA3B5", color: "#fff", border: "none" }}
+            <div className="bg-[#0f616e] rounded-2xl p-8 md:p-12 relative overflow-hidden">
+              {/* Decorative circles */}
+              <div className="absolute -right-[80px] -top-[80px] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(26,163,181,.15) 0%, transparent 65%)" }} />
+              <div className="absolute -left-[40px] -bottom-[40px] w-[200px] h-[200px] rounded-full" style={{ background: "radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 65%)" }} />
+
+              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: "rgba(255,255,255,.4)", marginBottom: "1rem", display: "block" }}>
+                    Newsletter
+                  </span>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,3vw,2rem)", color: "#fff", lineHeight: 1.2, marginBottom: "0.75rem" }}>
+                    Monthly clinical updates, delivered
+                  </h3>
+                  <p className="text-[14px]" style={{ color: "rgba(255,255,255,.5)", lineHeight: 1.7 }}>
+                    New patient guides, research summaries, and expert insights — once a month. No spam.
+                  </p>
+                </div>
+                <div>
+                  <form
+                    onSubmit={(e) => { e.preventDefault(); setEmail(""); }}
+                    className="flex flex-col sm:flex-row gap-3"
+                    style={{ marginBottom: "0.75rem" }}
                   >
-                    Subscribe &rarr;
-                  </button>
-                </form>
-                <div className="flex items-center gap-4 ml-6">
-                  {["Clinically reviewed", "No spam", "Unsubscribe any time"].map((item, i) => (
-                    <span key={i} className="flex items-center gap-1.5 text-[11px]" style={{ color: "rgba(255,255,255,.3)" }}>
-                      <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,.25)" }} />
-                      {item}
-                    </span>
-                  ))}
+                    <input
+                      type="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="Your email address"
+                      required
+                      className="flex-1 bg-transparent border-none outline-none text-white text-[14px] py-4 px-6"
+                      style={{ backgroundColor: "rgba(255,255,255,.08)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: "50px" }}
+                    />
+                    <button
+                      type="submit"
+                      className="shrink-0 font-bold text-[14px] px-8 py-4 rounded-full cursor-pointer transition-all hover:brightness-110"
+                      style={{ backgroundColor: "#1AA3B5", color: "#fff", border: "none" }}
+                    >
+                      Subscribe &rarr;
+                    </button>
+                  </form>
+                  <div className="flex items-center gap-4 ml-6">
+                    {["Clinically reviewed", "No spam", "Unsubscribe any time"].map((item, i) => (
+                      <span key={i} className="flex items-center gap-1.5 text-[11px]" style={{ color: "rgba(255,255,255,.3)" }}>
+                        <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,.25)" }} />
+                        {item}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
