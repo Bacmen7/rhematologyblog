@@ -37,7 +37,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/specialist/:id" element={<DoctorProfile />} />
         <Route path="/health-guide" element={<HealthGuide />} />
         <Route path="/health-guide/Rheumatoid-Arthritis" element={<ArthritisGuide />} />
-        <Route path="/health-guide/Arthritis" element={<Arthritis />} />
+        <Route path="/arthritis" element={<Arthritis />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
