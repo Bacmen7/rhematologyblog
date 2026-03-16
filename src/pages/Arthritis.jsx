@@ -182,60 +182,54 @@ function Arthritis() {
 
           {/* Mobile */}
           <div className="lg:hidden">
-            <div className="flex flex-col items-center text-center px-5 pt-6 pb-5">
-              <span
-                className="inline-block text-[9px] font-bold uppercase tracking-[0.18em] py-1 px-3 rounded-full mb-4"
-                style={{ backgroundColor: "#0f616e", color: "#ffffff" }}
-              >
+            <div className="flex flex-col items-center text-center px-6 pt-14 pb-4">
+
+              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full" style={{ backgroundColor: "#0f616e", color: "#fff", marginBottom: "24px" }}>
                 Condition Overview
               </span>
-              <h1
-                className="mb-3"
-                style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.8px", color: "#0f616e" }}
-              >
+
+              <h1 className="text-[3.0625rem] font-light leading-[1.06] tracking-[-1.4px] mb-5" style={{ fontFamily: "var(--font-display)", color: "#0f616e" }}>
                 Understanding{" "}
                 <span className="relative inline-block">
                   Arthritis
-                  <svg className="absolute -bottom-1 left-0 w-full h-2" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
+                  <svg className="absolute -bottom-1 left-0 w-full h-2.5" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
                     <path d="M2 10C80 4 200 2 398 6" stroke="#fa885a" strokeLinecap="round" strokeWidth="4" />
                   </svg>
                 </span>
               </h1>
-              <p className="text-[14px] leading-relaxed mb-3 max-w-[300px]" style={{ color: "#1A355D", opacity: 0.75 }}>
+
+              <p className="text-base text-navy-muted leading-relaxed max-w-sm" style={{ marginBottom: "20px" }}>
                 Rheuma&apos;s rheumatologists identify your specific condition and build a care plan that works.
               </p>
-              <p className="text-[11px] leading-[1.5] mb-5 max-w-[300px]" style={{ color: "#1A355D", opacity: 0.6 }}>
-                <span className="font-bold underline underline-offset-2" style={{ opacity: 1, color: "#0f616e" }}>Clinically reviewed</span> against <span className="font-semibold" style={{ opacity: 1 }}>ACR &amp; EULAR Guidelines 2024&ndash;2026</span> &middot; Last updated <span className="font-semibold" style={{ opacity: 1 }}>March 2026</span> &middot; <span className="font-semibold" style={{ opacity: 1, color: "#1AA3B5" }}>15 min read</span>
+
+              <p className="text-sm text-navy-muted max-w-sm" style={{ marginBottom: "40px" }}>
+                <span className="font-bold underline underline-offset-2" style={{ color: "#0f616e" }}>Clinically reviewed</span> against <span className="font-semibold">ACR &amp; EULAR Guidelines 2024&ndash;2026</span> &middot; Updated <span className="font-semibold">Mar 2026</span> &middot; <span className="font-semibold" style={{ color: "#1AA3B5" }}>15 min read</span>
               </p>
 
-              {/* Doctor Profile Card — Mobile */}
-              <div className="bg-white shadow-[0_8px_30px_rgba(15,97,110,0.1)] overflow-hidden w-full max-w-[300px]" style={{ borderRadius: 0 }}>
+              {/* Doctor Card — vertical, matching desktop style */}
+              <div className="bg-white shadow-[0_8px_30px_rgba(15,97,110,0.1)] overflow-hidden w-full max-w-[320px]" style={{ borderRadius: 0 }}>
                 <div style={{ backgroundColor: "#e0f3f5" }}>
-                  <img
-                    src="/images/dr-elena.jpg"
-                    alt="Dr. Priya Menon"
-                    className="w-full h-[180px] object-cover object-top"
-                  />
+                  <img src="/images/dr-elena.jpg" alt="Dr. Priya Menon" className="w-full h-[200px] object-cover object-top" />
                 </div>
-                <div className="p-4 text-left">
-                  <div className="flex items-center gap-1.5 mb-1.5">
-                    <span className="material-symbols-outlined text-[13px]" style={{ color: "#1AA3B5" }}>edit_note</span>
-                    <span className="text-[9px] font-bold uppercase tracking-[0.15em]" style={{ color: "#1AA3B5" }}>Written &amp; Reviewed By</span>
+                <div className="p-5 text-left">
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="material-symbols-outlined text-[14px]" style={{ color: "#1AA3B5" }}>edit_note</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.15em]" style={{ color: "#1AA3B5" }}>Written &amp; Reviewed By</span>
                   </div>
-                  <h3 className="text-navy-deep text-[1.1rem] mb-0.5" style={{ fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.2 }}>
+                  <h3 className="text-navy-deep mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 400, lineHeight: 1.2 }}>
                     Dr. Priya Menon
                   </h3>
-                  <p className="text-[12px] font-semibold text-navy-deep mb-0">Senior Consultant Rheumatologist</p>
-                  <p className="text-[11px] text-navy-muted mb-3">MD &middot; DM Rheumatology (AIIMS)</p>
-                  <div className="mb-3" style={{ borderTop: "1px solid #e8ecf2" }} />
+                  <p className="text-[13px] font-semibold text-navy-deep mb-1">Senior Consultant Rheumatologist</p>
+                  <p className="text-[12px] text-navy-muted mb-4">MD &middot; DM Rheumatology (AIIMS)</p>
+                  <div className="mb-4" style={{ borderTop: "1px solid #e8ecf2" }} />
                   <Link
                     to="/specialist/1"
-                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold border-2 rounded-full px-3 py-1.5"
+                    className="inline-flex items-center gap-2 text-[12px] font-semibold border-2 rounded-full px-4 py-2"
                     style={{ color: "#0f616e", borderColor: "#0f616e" }}
                   >
                     View Full Profile
-                    <span className="w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#a0e2e4" }}>
-                      <svg className="w-2 h-2" style={{ color: "#0f616e" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <span className="w-5 h-5 rounded-full flex items-center justify-center" style={{ backgroundColor: "#a0e2e4" }}>
+                      <svg className="w-2.5 h-2.5" style={{ color: "#0f616e" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
                     </span>
