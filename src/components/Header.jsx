@@ -16,8 +16,8 @@ function Header() {
 
   const [scrolled, setScrolled] = useState(false)
 
-  const desktopNav = ["Our Approach", "Pricing & Insurance", "About Us"]
-  const mobileQuickLinks = ["Our Approach", "Pricing & Insurance", "Partnerships", "Learn", "About Us"]
+  const desktopNav = ["Arthritis", "Our Approach", "Pricing & Insurance", "About Us"]
+  const mobileQuickLinks = ["Arthritis", "Our Approach", "Pricing & Insurance", "Partnerships", "Learn", "About Us"]
   const categories = [
     "Rheumatoid Arthritis",
     "Psoriatic Arthritis",
@@ -162,7 +162,7 @@ function Header() {
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {desktopNav.map((item) => {
-              const routes = { "Our Approach": "/our-approach", "Pricing & Insurance": "/pricing", "About Us": "/about" }
+              const routes = { "Arthritis": "/arthritis", "Our Approach": "/our-approach", "Pricing & Insurance": "/pricing", "About Us": "/about" }
               const to = routes[item]
               return to ? (
                 <Link
@@ -321,7 +321,7 @@ function Header() {
           {/* Centered Nav Links */}
           <nav className="flex-1 flex flex-col items-center justify-center gap-2 -mt-6 px-8">
             {mobileQuickLinks.map((item, index) => {
-              const hasSubmenu = item === "Partnerships" || item === "Learn" || item === "Our Approach" || item === "About Us"
+              const hasSubmenu = item === "Partnerships" || item === "Learn" || item === "Our Approach" || item === "About Us" || item === "Arthritis"
               const staggerDelay = mobileMenuVisible ? `${index * 60 + 80}ms` : "0ms"
 
               const linkStyle = {
@@ -361,10 +361,10 @@ function Header() {
                   {item}
                   <span className="material-symbols-outlined text-[18px] text-navy-muted/50">chevron_right</span>
                 </button>
-              ) : item === "Our Approach" || item === "Pricing & Insurance" || item === "About Us" ? (
+              ) : item === "Arthritis" || item === "Our Approach" || item === "Pricing & Insurance" || item === "About Us" ? (
                 <Link
                   key={item}
-                  to={{ "Our Approach": "/our-approach", "Pricing & Insurance": "/pricing", "About Us": "/about" }[item]}
+                  to={{ "Arthritis": "/arthritis", "Our Approach": "/our-approach", "Pricing & Insurance": "/pricing", "About Us": "/about" }[item]}
                   className={baseClass}
                   style={linkStyle}
                   onClick={closeMobileMenu}

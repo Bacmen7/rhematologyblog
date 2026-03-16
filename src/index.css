@@ -83,6 +83,10 @@ p {
   margin: 0;
 }
 
+/* Hide scrollbar for carousel */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
 @layer base {
   h1 {
     font-size: calc(3.5rem);

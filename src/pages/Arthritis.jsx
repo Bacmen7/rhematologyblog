@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
@@ -59,6 +59,18 @@ const faqs = [
    ───────────────────────────────────────────── */
 
 function Arthritis() {
+  const [diagnosisActive, setDiagnosisActive] = useState(0)
+  const diagnosisRef = useRef(null)
+
+  const handleDiagnosisScroll = useCallback(() => {
+    const el = diagnosisRef.current
+    if (!el) return
+    const scrollLeft = el.scrollLeft
+    const cardWidth = el.firstChild?.offsetWidth || 1
+    const gap = 20
+    const index = Math.round(scrollLeft / (cardWidth + gap))
+    setDiagnosisActive(Math.min(index, 2))
+  }, [])
 
   useEffect(() => {
     document.title = "Arthritis Care | RheumaInsights"
@@ -71,7 +83,7 @@ function Arthritis() {
       <main>
 
         {/* ═══════════ HERO ═══════════ */}
-        <section className="custom-approach-section relative overflow-hidden" style={{ backgroundColor: "#a0e2e4" }}>
+        <section className="custom-approach-section relative overflow-hidden" style={{ backgroundColor: "#e0f3f5" }}>
           {/* Desktop */}
           <div className="hidden lg:block">
             <div className="max-w-7xl mx-auto px-6 py-8 md:py-10">
@@ -170,67 +182,60 @@ function Arthritis() {
 
           {/* Mobile */}
           <div className="lg:hidden">
-            <div className="flex flex-col items-center text-center px-6 pt-8 pb-6">
+            <div className="flex flex-col items-center text-center px-5 pt-6 pb-5">
               <span
-                className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-6"
+                className="inline-block text-[9px] font-bold uppercase tracking-[0.18em] py-1 px-3 rounded-full mb-4"
                 style={{ backgroundColor: "#0f616e", color: "#ffffff" }}
               >
                 Condition Overview
               </span>
               <h1
-                className="mb-5"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 8vw, 3.5rem)", fontWeight: 400, lineHeight: 1.06, letterSpacing: "-1.2px", color: "#0f616e" }}
+                className="mb-3"
+                style={{ fontFamily: "var(--font-display)", fontSize: "2rem", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.8px", color: "#0f616e" }}
               >
                 Understanding{" "}
                 <span className="relative inline-block">
                   Arthritis
-                  <svg className="absolute -bottom-1 left-0 w-full h-2.5" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
+                  <svg className="absolute -bottom-1 left-0 w-full h-2" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
                     <path d="M2 10C80 4 200 2 398 6" stroke="#fa885a" strokeLinecap="round" strokeWidth="4" />
                   </svg>
                 </span>
               </h1>
-              <p className="text-base leading-relaxed mb-6 max-w-sm" style={{ color: "#1A355D", opacity: 0.75 }}>
+              <p className="text-[14px] leading-relaxed mb-3 max-w-[300px]" style={{ color: "#1A355D", opacity: 0.75 }}>
                 Rheuma&apos;s rheumatologists identify your specific condition and build a care plan that works.
               </p>
-              <p className="text-[12px] leading-[1.6] mb-8" style={{ color: "#1A355D", opacity: 0.65 }}>
+              <p className="text-[11px] leading-[1.5] mb-5 max-w-[300px]" style={{ color: "#1A355D", opacity: 0.6 }}>
                 <span className="font-bold underline underline-offset-2" style={{ opacity: 1, color: "#0f616e" }}>Clinically reviewed</span> against <span className="font-semibold" style={{ opacity: 1 }}>ACR &amp; EULAR Guidelines 2024&ndash;2026</span> &middot; Last updated <span className="font-semibold" style={{ opacity: 1 }}>March 2026</span> &middot; <span className="font-semibold" style={{ opacity: 1, color: "#1AA3B5" }}>15 min read</span>
               </p>
-              {/* <a
-                href="#"
-                className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 mb-10"
-                style={{ backgroundColor: "#0f616e", color: "#ffffff", padding: "14px 32px" }}
-              >
-                Book an Appointment
-              </a> */}
 
               {/* Doctor Profile Card — Mobile */}
-              <div className="bg-white shadow-[0_8px_30px_rgba(15,97,110,0.1)] overflow-hidden w-full max-w-[340px]" style={{ borderRadius: 0 }}>
+              <div className="bg-white shadow-[0_8px_30px_rgba(15,97,110,0.1)] overflow-hidden w-full max-w-[300px]" style={{ borderRadius: 0 }}>
                 <div style={{ backgroundColor: "#e0f3f5" }}>
                   <img
                     src="/images/dr-elena.jpg"
                     alt="Dr. Priya Menon"
-                    className="w-full h-[220px] object-cover object-top"
+                    className="w-full h-[180px] object-cover object-top"
                   />
                 </div>
-                <div className="p-5 text-left">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="material-symbols-outlined text-[14px]" style={{ color: "#1AA3B5" }}>edit_note</span>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.15em]" style={{ color: "#1AA3B5" }}>Written &amp; Reviewed By</span>
+                <div className="p-4 text-left">
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <span className="material-symbols-outlined text-[13px]" style={{ color: "#1AA3B5" }}>edit_note</span>
+                    <span className="text-[9px] font-bold uppercase tracking-[0.15em]" style={{ color: "#1AA3B5" }}>Written &amp; Reviewed By</span>
                   </div>
-                  <h3 className="text-navy-deep text-[1.25rem] mb-1" style={{ fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.2 }}>
+                  <h3 className="text-navy-deep text-[1.1rem] mb-0.5" style={{ fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.2 }}>
                     Dr. Priya Menon
                   </h3>
-                  <p className="text-[13px] font-semibold text-navy-deep mb-0.5">Senior Consultant Rheumatologist</p>
-                  <p className="text-[12px] text-navy-muted mb-4">MD &middot; DM Rheumatology (AIIMS)</p>
-                  <div className="mb-4" style={{ borderTop: "1px solid #e8ecf2" }} />
+                  <p className="text-[12px] font-semibold text-navy-deep mb-0">Senior Consultant Rheumatologist</p>
+                  <p className="text-[11px] text-navy-muted mb-3">MD &middot; DM Rheumatology (AIIMS)</p>
+                  <div className="mb-3" style={{ borderTop: "1px solid #e8ecf2" }} />
                   <Link
                     to="/specialist/1"
-                    className="inline-flex items-center gap-2 text-[12px] font-semibold border-2 rounded-full px-3.5 py-1.5"
+                    className="inline-flex items-center gap-1.5 text-[11px] font-semibold border-2 rounded-full px-3 py-1.5"
                     style={{ color: "#0f616e", borderColor: "#0f616e" }}
                   >
                     View Full Profile
-                    <span className="w-5 h-5 rounded-full flex items-center justify-center" style={{ backgroundColor: "#a0e2e4" }}>
-                      <svg className="w-2.5 h-2.5" style={{ color: "#0f616e" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <span className="w-4 h-4 rounded-full flex items-center justify-center" style={{ backgroundColor: "#a0e2e4" }}>
+                      <svg className="w-2 h-2" style={{ color: "#0f616e" }} fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                       </svg>
                     </span>
@@ -243,25 +248,26 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ SCALE OF THE PROBLEM ═══════════ */}
-        <section className="relative py-16 md:py-24" style={{ backgroundColor: "#0f616e" }}>
+        <section className="relative py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
           {/* Top wave */}
           <div className="max-w-7xl mx-auto px-6">
             <h2
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "2rem", color: "#ffffff" }}
+              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.25rem", color: "#ffffff" }}
             >
               Arthritis — The Scale of the Problem
             </h2>
-            <p className="text-[16px] leading-[1.85] max-w-2xl" style={{ marginBottom: "5rem", color: "rgba(255,255,255,0.6)" }}>
+            <p className="text-[15px] leading-[1.85] max-w-2xl" style={{ marginBottom: "2.5rem", color: "rgba(255,255,255,0.6)" }}>
               Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {/* Horizontal scroll on mobile */}
+            <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
               {[
                 { value: "1%", label: "of the global population", desc: "has Rheumatoid Arthritis alone. Over 100 types of arthritis exist; combined, they are the leading cause of disability worldwide." },
                 { value: "180M", label: "patients in India", desc: "Estimated adults affected — exceeding the combined burden of diabetes and all cancers. Average diagnosis delay: 6 years." },
                 { value: "40%", label: "work disability in 10 yrs", desc: "Of RA patients experience significant work disability within 10 years without early, targeted therapy. Early treatment changes this outcome dramatically." },
               ].map((stat, i) => (
-                <div key={i} className="p-6 md:p-7" style={{ borderRadius: 0, backgroundColor: "rgba(255,255,255,0.08)" }}>
+                <div key={i} className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
                   <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
                     {stat.value}
                   </p>
@@ -271,7 +277,7 @@ function Arthritis() {
               ))}
 
               {/* Card 4 — gender bar */}
-              <div className="p-6 md:p-7" style={{ borderRadius: 0, backgroundColor: "rgba(255,255,255,0.08)" }}>
+              <div className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
                 <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
                   3&times;
                 </p>
@@ -287,10 +293,10 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ MAJOR TYPES OF ARTHRITIS ═══════════ */}
-        <section id="types" className="py-20 md:py-28 bg-white">
+        <section id="types" className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading — left aligned */}
-            <div className="mb-14 max-w-2xl">
+            <div className="mb-8 md:mb-14 max-w-2xl">
               <h2
                 className="text-navy-deep"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}
@@ -303,7 +309,7 @@ function Arthritis() {
             </div>
 
             {/* 4 square cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-5">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
               {[
                 { img: "/condition/Rheumatoid Arthritis (RA).png", label: "Rheumatoid Arthritis", abbr: "RA", link: "/health-guide/Rheumatoid-Arthritis" },
                 { img: "/condition/Osteoarthritis.png", label: "Osteoarthritis", abbr: "OA", link: "/health-guide" },
@@ -340,12 +346,12 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ SYMPTOMS OF ARTHRITIS ═══════════ */}
-        <section className="py-20 md:py-28 bg-ghost">
+        <section className="py-12 md:py-20 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-14 max-w-2xl">
+            <div className="mb-8 md:mb-14 max-w-2xl">
               <h2
                 className="text-navy-deep"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}
               >
                 Symptoms of Arthritis
               </h2>
@@ -354,8 +360,8 @@ function Arthritis() {
               </p>
             </div>
 
-            <div className="p-6 md:p-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="p-0 md:p-4">
+              <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 sm:overflow-visible sm:pb-0">
               {[
                 { icon: "schedule", label: "Morning Stiffness", color: "#1AA3B5", bg: "#e0f3f5" },
                 { icon: "favorite", label: "Joint Pain & Tenderness", color: "#e05a5a", bg: "#fde8e8" },
@@ -368,7 +374,7 @@ function Arthritis() {
               ].map((symptom, i) => (
                 <button
                   key={i}
-                  className="group flex items-center gap-3.5 bg-white p-4 md:p-5 border border-gray-100 hover:shadow-[0_4px_16px_rgba(24,36,57,0.07)] hover:-translate-y-0.5 transition-all duration-200 text-left"
+                  className="group min-w-[75vw] sm:min-w-0 snap-start flex items-center gap-3.5 bg-white p-4 md:p-5 border border-gray-100 hover:shadow-[0_4px_16px_rgba(24,36,57,0.07)] hover:-translate-y-0.5 transition-all duration-200 text-left"
                   style={{ borderRadius: "12px" }}
                 >
                   <div
@@ -389,10 +395,10 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ PATHOLOGY — HOW ARTHRITIS DEVELOPS ═══════════ */}
-        <section className="relative py-20 md:py-28" style={{ backgroundColor: "#0f616e" }}>
+        <section className="relative py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading */}
-            <div className="mb-14 max-w-2xl">
+            <div className="mb-8 md:mb-14 max-w-2xl">
               <h2
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem", color: "#ffffff" }}
               >
@@ -561,7 +567,7 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ DIAGNOSIS — TESTS AND WHAT THEY MEAN ═══════════ */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-14 max-w-2xl">
               <h2
@@ -575,7 +581,7 @@ function Arthritis() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+            <div ref={diagnosisRef} onScroll={handleDiagnosisScroll} className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-3 md:gap-7 md:overflow-visible md:pb-0">
               {[
                 {
                   icon: "bloodtype",
@@ -607,7 +613,7 @@ function Arthritis() {
               ].map((card, i) => (
                 <div
                   key={i}
-                  className="group relative overflow-hidden text-center flex flex-col items-center hover:-translate-y-1 transition-all duration-300"
+                  className="group relative overflow-hidden text-center flex flex-col items-center hover:-translate-y-1 transition-all duration-300 min-w-[85vw] sm:min-w-[320px] md:min-w-0 snap-start"
                   style={{ backgroundColor: "#faf7f2", borderRadius: 0, padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "1px solid #e5e7eb" }}
                 >
 
@@ -648,11 +654,25 @@ function Arthritis() {
                 </div>
               ))}
             </div>
+            {/* Carousel dots — mobile only */}
+            <div className="flex justify-center gap-2 mt-4 md:hidden">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="rounded-full transition-all duration-300"
+                  style={{
+                    width: diagnosisActive === i ? "20px" : "8px",
+                    height: "8px",
+                    backgroundColor: diagnosisActive === i ? "#1AA3B5" : "#d1d5db",
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ═══════════ 06 — TREATMENT OPTIONS ═══════════ */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-14 max-w-2xl">
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}>
@@ -800,16 +820,19 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ 07 — LIVING WELL WITH ARTHRITIS ═══════════ */}
-        <section className="py-20 md:py-28 bg-ghost">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-14 max-w-2xl">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}>
+        <section className="py-12 md:py-20 bg-ghost">
+          <div className="max-w-7xl mx-auto px-0 md:px-6">
+            <div className="mb-8 md:mb-14 max-w-2xl px-5 md:px-0">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Living Well With Arthritis
               </h2>
             </div>
 
             {/* Photo + text row */}
-            <div className="lg:grid lg:grid-cols-[400px_1fr] overflow-hidden mb-8" style={{ borderRadius: "20px", border: "1.5px solid #dde6ee" }}>
+            <div className="lg:grid lg:grid-cols-[400px_1fr] overflow-hidden mb-8" style={{ borderRadius: "0", border: "none" }}
+              id="living-well-card"
+            >
+              <style>{`@media(min-width:1024px){#living-well-card{border-radius:20px !important;border:1.5px solid #dde6ee !important;}}`}</style>
               {/* Photo side */}
               <div className="relative h-[260px] lg:h-auto overflow-hidden">
                 <img
@@ -866,7 +889,7 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ 08 — RHEUMACARE ═══════════ */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-14 max-w-2xl">
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}>
@@ -950,7 +973,7 @@ function Arthritis() {
         </section> */}
 
         {/* ═══════════ TREATMENT APPROACH (COMMENTED) ═══════════ */}
-        {/* <section className="py-20 md:py-28 bg-white">
+        {/* <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-16">
               <h2
@@ -1054,7 +1077,7 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ SUPPORTING YOUR JOURNEY ═══════════ */}
-        <section className="py-20 md:py-28 bg-ghost">
+        <section className="py-12 md:py-20 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center max-w-2xl mx-auto mb-14">
               <h2
@@ -1108,7 +1131,7 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ ARTICLES ON ARTHRITIS ═══════════ */}
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             {/* Header row */}
             <div className="flex items-end justify-between mb-10">
@@ -1125,98 +1148,83 @@ function Arthritis() {
               </Link>
             </div>
 
-            {/* Grid: featured left + list right */}
-            <div className="lg:grid lg:grid-cols-[1.4fr_1fr] gap-5 items-stretch">
-
-              {/* Featured article — left */}
-              <Link
-                to="/blog"
-                className="group block overflow-hidden border border-gray-200 rounded-lg hover:shadow-[0_10px_30px_rgba(15,36,64,.1)] hover:-translate-y-0.5 transition-all duration-300"
-              >
-                <div className="h-[250px] overflow-hidden relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=800&q=85"
-                    alt="Rheumatologist examining patient hands"
-                    className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
-                  />
-                  <div className="absolute bottom-0 left-0 right-0 h-[55%]" style={{ background: "linear-gradient(to top, rgba(15,36,64,.45), transparent)" }} />
-                </div>
-                <div className="p-6 md:p-7">
-                  <h3 className="text-lg font-bold text-navy-deep group-hover:text-primary transition-colors mb-4 leading-snug">
-                    Why the First 3 Months After Diagnosis Are the Most Important of Your Life
-                  </h3>
-                  <p className="text-gray-500 text-sm leading-relaxed mb-6 line-clamp-3">
-                    The window of opportunity is real — patients treated early have dramatically better outcomes at 10 years. Here is why acting fast matters and what should happen in those crucial first weeks.
-                  </p>
-                  <div className="flex flex-wrap items-center gap-5 pt-5 text-xs text-navy-muted" style={{ borderTop: "1px solid #edf0f5" }}>
-                    <span>Dr. P. Menon MD DM</span>
-                    <span>10 min</span>
-                    <span>Feb 2026</span>
+            {/* Article cards — horizontal scroll carousel */}
+            <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide">
+              {[
+                {
+                  img: "https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?auto=format&fit=crop&w=400&q=85",
+                  cat: "Featured",
+                  catColor: "#0f616e",
+                  title: "Why the First 3 Months After Diagnosis Are the Most Important",
+                  desc: "The window of opportunity is real — patients treated early have dramatically better outcomes at 10 years.",
+                  meta: "Dr. P. Menon · 10 min · Feb 2026",
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=400&q=80",
+                  cat: "Medications",
+                  catColor: "#e05a5a",
+                  title: "Starting Methotrexate — What Every Patient Must Know",
+                  desc: "Everything you need to know before starting this cornerstone DMARD therapy for rheumatoid arthritis.",
+                  meta: "8 min · Patient Guide",
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=400&q=80",
+                  cat: "Patient Guide",
+                  catColor: "#1AA3B5",
+                  title: "RA vs Osteoarthritis — How to Tell the Difference",
+                  desc: "Understanding the key differences between inflammatory and degenerative arthritis for accurate diagnosis.",
+                  meta: "6 min · Diagnosis",
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80",
+                  cat: "Physiotherapy",
+                  catColor: "#6652a8",
+                  title: "Best Exercises for Ankylosing Spondylitis",
+                  desc: "Safe, effective exercises to maintain spinal mobility and reduce stiffness in AS patients.",
+                  meta: "7 min · Exercise Guide",
+                },
+                {
+                  img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=400&q=80",
+                  cat: "Lifestyle",
+                  catColor: "#e8993e",
+                  title: "Diet & Inflammation — What to Eat With Arthritis",
+                  desc: "Evidence-based nutrition strategies to reduce inflammatory markers and support joint health.",
+                  meta: "5 min · Nutrition Guide",
+                },
+              ].map((article, i) => (
+                <Link
+                  key={i}
+                  to="/blog"
+                  className="group min-w-[280px] sm:min-w-[300px] snap-start flex flex-col overflow-hidden bg-white border border-gray-200 rounded-lg hover:shadow-[0_8px_24px_rgba(15,36,64,.1)] hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  <div className="h-[160px] overflow-hidden relative">
+                    <img
+                      src={article.img}
+                      alt={article.title}
+                      className="w-full h-full object-cover group-hover:scale-[1.04] transition-transform duration-500"
+                    />
+                    <span
+                      className="absolute top-3 left-3 text-[9px] font-bold uppercase tracking-[0.1em] px-2.5 py-1 rounded-full"
+                      style={{ backgroundColor: "#fff", color: article.catColor }}
+                    >
+                      {article.cat}
+                    </span>
                   </div>
-                </div>
-              </Link>
-
-              {/* Article list — right */}
-              <div className="flex flex-col justify-between gap-4 mt-6 lg:mt-0">
-                {[
-                  {
-                    img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?auto=format&fit=crop&w=200&q=80",
-                    cat: "Medications",
-                    catColor: "#e05a5a",
-                    title: "Starting Methotrexate — What Every Patient Must Know",
-                    meta: "8 min · Patient Guide",
-                  },
-                  {
-                    img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=200&q=80",
-                    cat: "Patient Guide",
-                    catColor: "#1AA3B5",
-                    title: "RA vs Osteoarthritis — How to Tell the Difference",
-                    meta: "6 min · Diagnosis",
-                  },
-                  {
-                    img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=200&q=80",
-                    cat: "Physiotherapy",
-                    catColor: "#6652a8",
-                    title: "Best Exercises for Ankylosing Spondylitis",
-                    meta: "7 min · Exercise Guide",
-                  },
-                  {
-                    img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=200&q=80",
-                    cat: "Lifestyle",
-                    catColor: "#e8993e",
-                    title: "Diet & Inflammation — What to Eat With Arthritis",
-                    meta: "5 min · Nutrition Guide",
-                  },
-                ].map((article, i) => (
-                  <Link
-                    key={i}
-                    to="/blog"
-                    className="group flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-primary hover:shadow-[0_4px_16px_rgba(15,36,64,.07)] transition-all duration-200"
-                  >
-                    <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-slate-100">
-                      <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.06em] block mb-1" style={{ color: article.catColor }}>{article.cat}</span>
-                      <h4 className="text-[14px] font-bold text-navy-deep group-hover:text-primary transition-colors leading-snug mb-1 line-clamp-2">
-                        {article.title}
-                      </h4>
-                      <span className="text-[11px] text-gray-400">
-                        {article.meta}
-                      </span>
-                    </div>
-                    <div className="w-9 h-9 rounded-full bg-ghost border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all">
-                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                      </svg>
-                    </div>
-                  </Link>
-                ))}
-              </div>
+                  <div className="p-4 flex flex-col flex-1">
+                    <h4 className="text-[15px] font-bold text-navy-deep group-hover:text-primary transition-colors leading-snug mb-2 line-clamp-2">
+                      {article.title}
+                    </h4>
+                    <p className="text-[12px] text-navy-muted leading-[1.6] mb-3 line-clamp-2 flex-1">{article.desc}</p>
+                    <span className="text-[11px] text-gray-400 pt-3" style={{ borderTop: "1px solid #edf0f5" }}>
+                      {article.meta}
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
 
-            {/* Mobile view all */}
-            <div className="mt-8 text-center md:hidden">
+            {/* View all */}
+            <div className="mt-6 text-center">
               <Link to="/blog" className="inline-flex items-center gap-2 text-navy-deep font-bold text-sm group">
                 View all articles
                 <span className="material-symbols-outlined text-[18px] transition-transform group-hover:translate-x-1">arrow_forward</span>
@@ -1226,12 +1234,14 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ NEWSLETTER BANNER ═══════════ */}
-        <section className="py-16 md:py-20 bg-ghost">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-10 md:py-20 bg-ghost">
+          <div className="max-w-7xl mx-auto px-0 md:px-6">
             <div
               className="relative overflow-hidden"
-              style={{ backgroundColor: "#0f616e", borderRadius: "20px", padding: "3rem 2.5rem" }}
+              style={{ backgroundColor: "#0f616e", borderRadius: "0", padding: "2rem 1.5rem" }}
+              id="newsletter-mobile-fix"
             >
+              <style>{`@media(min-width:768px){#newsletter-mobile-fix{border-radius:20px !important;padding:3rem 2.5rem !important;}}`}</style>
               {/* Decorative circle */}
               <div className="absolute -right-[80px] -top-[80px] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(26,163,181,.15) 0%, transparent 65%)" }} />
               <div className="absolute -left-[40px] -bottom-[40px] w-[200px] h-[200px] rounded-full" style={{ background: "radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 65%)" }} />
@@ -1281,7 +1291,7 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ FAQ (COMMENTED) ═══════════
-        <section className="py-20 md:py-28 bg-white">
+        <section className="py-12 md:py-20 bg-white">
           <div className="max-w-[800px] mx-auto px-6">
             <div className="text-center mb-14">
               <h2
