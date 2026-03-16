@@ -24,7 +24,7 @@ function CtaBanner() {
             {/* Left — Text */}
             <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">
               <h2
-                className="leading-[1.1] font-normal !mb-10 md:!mb-14 text-center md:text-left"
+                className="leading-[1.1] font-normal !mb-5 md:!mb-6 text-center md:text-left"
                 style={{
                   fontFamily: "var(--font-display)",
                   fontSize: "clamp(36px, 5.5vw, 68px)",
@@ -34,7 +34,7 @@ function CtaBanner() {
               >
                 Ready to get started?
               </h2>
-              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4">
                 <a
                   href="#"
                   className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"

@@ -659,6 +659,63 @@ function Header() {
               })}
             </div>
 
+            {/* Categories — mobile (same style as Learn Links above) */}
+            <p
+              className="text-[11px] tracking-[0.2em] uppercase font-bold text-navy-muted/70 mb-4"
+              style={{
+                opacity: learnVisible ? 1 : 0,
+                transform: learnVisible ? "translateY(0)" : "translateY(12px)",
+                transition: "opacity 0.35s ease 350ms, transform 0.35s ease 350ms",
+              }}
+            >
+              Conditions
+            </p>
+            <div className="space-y-1 mb-8">
+              {categories.map((item, index) => {
+                const catRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis" }
+                const catTo = catRoutes[item]
+                const catStyle = {
+                  opacity: learnVisible ? 1 : 0,
+                  transform: learnVisible ? "translateY(0)" : "translateY(12px)",
+                  transition: `opacity 0.35s ease ${380 + index * 40}ms, transform 0.35s ease ${380 + index * 40}ms`,
+                }
+                const catInner = (
+                  <>
+                    <span className="flex items-center gap-3.5 text-navy-deep font-semibold text-[15px]">
+                      <span className="w-8 h-8 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                        <span className="material-symbols-outlined text-[15px] text-[#0f616e]">rheumatology</span>
+                      </span>
+                      {item}
+                    </span>
+                    <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
+                      <span className="material-symbols-outlined text-[15px] text-[#0f616e]">arrow_forward</span>
+                    </span>
+                  </>
+                )
+                return catTo ? (
+                  <Link
+                    key={item}
+                    to={catTo}
+                    className="flex items-center justify-between py-4 border-b border-gray-100"
+                    onClick={closeLearn}
+                    style={catStyle}
+                  >
+                    {catInner}
+                  </Link>
+                ) : (
+                  <a
+                    key={item}
+                    className="flex items-center justify-between py-4 border-b border-gray-100"
+                    href="javascript:void(0)"
+                    onClick={closeLearn}
+                    style={catStyle}
+                  >
+                    {catInner}
+                  </a>
+                )
+              })}
+            </div>
+
             {/* Newsletter CTA */}
             <div
               className="rounded-2xl bg-[#dce7f7] p-4 flex items-center gap-3.5"

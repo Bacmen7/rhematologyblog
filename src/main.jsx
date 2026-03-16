@@ -13,6 +13,7 @@ import Blog from "./pages/Blog.jsx"
 import DoctorProfile from "./pages/DoctorProfile.jsx"
 import HealthGuide from "./pages/HealthGuide.jsx"
 import ArthritisGuide from "./pages/ArthritisGuide.jsx"
+import Arthritis from "./pages/Arthritis.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -36,6 +37,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/specialist/:id" element={<DoctorProfile />} />
         <Route path="/health-guide" element={<HealthGuide />} />
         <Route path="/health-guide/Rheumatoid-Arthritis" element={<ArthritisGuide />} />
+        <Route path="/health-guide/Arthritis" element={<Arthritis />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
