@@ -227,10 +227,10 @@ function Arthritis() {
               </div>
             </div>
           </div>
-          {/* Bottom wave */}
-          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          {/* Bottom wave — commented out */}
+          {/* <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
             <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
-          </svg>
+          </svg> */}
         </section>
 
         {/* ═══════════ MAJOR TYPES OF ARTHRITIS ═══════════ */}
