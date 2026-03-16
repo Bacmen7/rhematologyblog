@@ -87,11 +87,9 @@ function Arthritis() {
                   <h1
                     style={{ fontFamily: "var(--font-display)", fontSize: "clamp(3rem, 5.5vw, 4.5rem)", fontWeight: 400, lineHeight: 1.04, letterSpacing: "-1.5px", color: "#0f616e" }}
                   >
-                    Arthritis doesn&apos;t
-                    <br />
-                    have to define{" "}
+                    Understanding{" "}
                     <span className="relative inline-block">
-                      your life
+                      Arthritis
                       <svg className="absolute -bottom-2 left-0 w-full h-3" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
                         <path d="M2 10C80 4 200 2 398 6" stroke="#fa885a" strokeLinecap="round" strokeWidth="4" />
                       </svg>
@@ -183,9 +181,9 @@ function Arthritis() {
                 className="mb-5"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 8vw, 3.5rem)", fontWeight: 400, lineHeight: 1.06, letterSpacing: "-1.2px", color: "#0f616e" }}
               >
-                Arthritis doesn&apos;t have to define{" "}
+                Understanding{" "}
                 <span className="relative inline-block">
-                  your life
+                  Arthritis
                   <svg className="absolute -bottom-1 left-0 w-full h-2.5" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
                     <path d="M2 10C80 4 200 2 398 6" stroke="#fa885a" strokeLinecap="round" strokeWidth="4" />
                   </svg>
@@ -1136,7 +1134,7 @@ function Arthritis() {
               {/* Featured article — left */}
               <Link
                 to="/blog"
-                className="group block overflow-hidden border border-gray-200 rounded-2xl hover:shadow-[0_10px_30px_rgba(15,36,64,.1)] hover:-translate-y-0.5 transition-all duration-300"
+                className="group block overflow-hidden border border-gray-200 rounded-lg hover:shadow-[0_10px_30px_rgba(15,36,64,.1)] hover:-translate-y-0.5 transition-all duration-300"
               >
                 <div className="h-[250px] overflow-hidden relative">
                   <img
@@ -1154,18 +1152,9 @@ function Arthritis() {
                     The window of opportunity is real — patients treated early have dramatically better outcomes at 10 years. Here is why acting fast matters and what should happen in those crucial first weeks.
                   </p>
                   <div className="flex flex-wrap items-center gap-5 pt-5 text-xs text-navy-muted" style={{ borderTop: "1px solid #edf0f5" }}>
-                    <span className="inline-flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-[14px] text-primary">person</span>
-                      Dr. P. Menon MD DM
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-[14px] text-primary">schedule</span>
-                      10 min
-                    </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <span className="material-symbols-outlined text-[14px] text-primary">calendar_month</span>
-                      Feb 2026
-                    </span>
+                    <span>Dr. P. Menon MD DM</span>
+                    <span>10 min</span>
+                    <span>Feb 2026</span>
                   </div>
                 </div>
               </Link>
@@ -1205,9 +1194,9 @@ function Arthritis() {
                   <Link
                     key={i}
                     to="/blog"
-                    className="group flex items-center gap-4 p-4 bg-white rounded-2xl border border-gray-200 hover:border-primary hover:shadow-[0_4px_16px_rgba(15,36,64,.07)] transition-all duration-200"
+                    className="group flex items-center gap-4 p-4 bg-white rounded-lg border border-gray-200 hover:border-primary hover:shadow-[0_4px_16px_rgba(15,36,64,.07)] transition-all duration-200"
                   >
-                    <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0 bg-slate-100">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 bg-slate-100">
                       <img src={article.img} alt={article.title} className="w-full h-full object-cover" />
                     </div>
                     <div className="flex-1 min-w-0">
@@ -1215,8 +1204,7 @@ function Arthritis() {
                       <h4 className="text-[14px] font-bold text-navy-deep group-hover:text-primary transition-colors leading-snug mb-1 line-clamp-2">
                         {article.title}
                       </h4>
-                      <span className="text-[11px] text-gray-400 flex items-center gap-1.5">
-                        <span className="material-symbols-outlined text-[12px]">schedule</span>
+                      <span className="text-[11px] text-gray-400">
                         {article.meta}
                       </span>
                     </div>
