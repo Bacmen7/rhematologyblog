@@ -159,9 +159,9 @@ function HealthGuide() {
               {whatIsRheumatology.map((item) => (
                 <div key={item.title}>
                   <p className="text-[48px] leading-none text-primary mb-1" style={{ fontFamily: "var(--font-display)" }}>{item.stat}</p>
-                  <p className="text-[11px] font-bold text-teal-soft uppercase tracking-[0.15em] mb-5">{item.statLabel}</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.15em] mb-5" style={{ color: "rgba(255,255,255,0.7)" }}>{item.statLabel}</p>
                   <h3 className="!text-[20px] !font-semibold !leading-[1.4] mb-3" style={{ color: "#ffffff" }}>{item.title}</h3>
-                  <p className="!text-[15px] !leading-[1.7] font-normal text-[#8d9bb5]">{item.desc}</p>
+                  <p className="!text-[15px] !leading-[1.7] font-normal" style={{ color: "rgba(255,255,255,0.75)" }}>{item.desc}</p>
                 </div>
               ))}
             </div>
