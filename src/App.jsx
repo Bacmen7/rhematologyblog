@@ -27,6 +27,9 @@ import Newsletter from "./components/Newsletter"
 import CtaBanner from "./components/CtaBanner"
 import BriefingFooter from "./components/BriefingFooter"
 import PrivacyBanner from "./components/PrivacyBanner"
+import GoogleReviews from "./components/GoogleReviews"
+import SuccessStories from "./components/SuccessStories"
+import VideoLibrary from "./components/VideoLibrary"
 
 function App() {
   return (
@@ -76,6 +79,12 @@ function App() {
         </div>
 
         <Testimonials />
+
+        <GoogleReviews />
+
+        <SuccessStories />
+
+        <VideoLibrary />
 
         {/* ═══════════════════════════════════════════════
             ZONE 4 — EXECUTIVE BRIEFING & RESEARCH
