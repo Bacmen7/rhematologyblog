@@ -2,6 +2,7 @@ import { useEffect, useState, useRef, useCallback } from "react"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
+import CtaBanner from "../components/CtaBanner"
 import BriefingFooter from "../components/BriefingFooter"
 
 /* ─────────────────────────────────────────────
@@ -249,8 +250,8 @@ function Arthritis() {
               </p>
             </div>
 
-            {/* 4 square cards */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-5">
+            {/* 4 square cards — carousel on mobile */}
+            <div className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
               {[
                 { img: "/condition/Rheumatoid Arthritis (RA).png", label: "Rheumatoid Arthritis", abbr: "RA", link: "/health-guide/Rheumatoid-Arthritis" },
                 { img: "/condition/Osteoarthritis.png", label: "Osteoarthritis", abbr: "OA", link: "/health-guide" },
@@ -260,7 +261,7 @@ function Arthritis() {
                 <Link
                   key={i}
                   to={type.link}
-                  className="group overflow-hidden hover:border-2 hover:border-[#1AA3B5] transition-all duration-300"
+                  className="group min-w-[45vw] sm:min-w-0 snap-start overflow-hidden hover:border-2 hover:border-[#1AA3B5] transition-all duration-300"
                   style={{ borderRadius: 0 }}
                 >
                   <div className="aspect-[4/3] overflow-hidden bg-white flex items-center justify-center p-3">
@@ -459,7 +460,7 @@ function Arthritis() {
               </div>
 
               {/* Right — 3 Steps */}
-              <div className="flex-1 flex flex-col gap-8">
+              <div className="flex-1 flex flex-col gap-6">
                 {[
                   {
                     num: 1,
@@ -477,23 +478,20 @@ function Arthritis() {
                     desc: "Untreated RA doubles cardiovascular risk and causes lung involvement in 10\u201320% of patients. In AS, spinal fusion produces the classic \u201Cbamboo spine\u201D. Early treatment prevents all of this.",
                   },
                 ].map((step) => (
-                  <div key={step.num} className="flex gap-5">
+                  <div key={step.num} className="flex gap-4">
                     <div className="shrink-0">
                       <div
-                        className="w-11 h-11 rounded-full flex items-center justify-center text-[15px] font-bold"
+                        className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-bold"
                         style={{ backgroundColor: "rgba(26,163,181,0.2)", color: "#1AA3B5", border: "2px solid #1AA3B5" }}
                       >
                         {step.num}
                       </div>
                     </div>
                     <div>
-                      <h3
-                        className="mb-2"
-                        style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 400, lineHeight: 1.25, color: "#ffffff" }}
-                      >
+                      <h3 style={{ fontFamily: "var(--font-base)", fontSize: "1rem", fontWeight: 600, lineHeight: 1.3, color: "#ffffff", marginBottom: "0.35rem" }}>
                         {step.title}
                       </h3>
-                      <p className="text-[14.5px] leading-[1.8]" style={{ color: "rgba(255,255,255,0.55)" }}>{step.desc}</p>
+                      <p className="text-[13.5px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.5)" }}>{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -1137,62 +1135,13 @@ function Arthritis() {
           </div>
         </section>
 
-        {/* ═══════════ NEWSLETTER BANNER ═══════════ */}
-        <section className="py-10 md:py-20 bg-ghost">
-          <div className="max-w-7xl mx-auto px-0 md:px-6">
-            <div
-              className="relative overflow-hidden"
-              style={{ backgroundColor: "#0f616e", borderRadius: "0", padding: "2rem 1.5rem" }}
-              id="newsletter-mobile-fix"
-            >
-              <style>{`@media(min-width:768px){#newsletter-mobile-fix{border-radius:20px !important;padding:3rem 2.5rem !important;}}`}</style>
-              {/* Decorative circle */}
-              <div className="absolute -right-[80px] -top-[80px] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(26,163,181,.15) 0%, transparent 65%)" }} />
-              <div className="absolute -left-[40px] -bottom-[40px] w-[200px] h-[200px] rounded-full" style={{ background: "radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 65%)" }} />
+        {/* ═══════════ CTA BANNER ═══════════ */}
+        <CtaBanner />
 
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-                <div>
-                  <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em] mb-4" style={{ color: "rgba(255,255,255,.4)" }}>
-                    <span className="material-symbols-outlined text-[16px]">mail</span>
-                    Newsletter
-                  </span>
-                  <h3
-                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", color: "#fff", lineHeight: 1.2, marginBottom: "0.75rem" }}
-                  >
-                    Monthly arthritis updates, delivered
-                  </h3>
-                  <p className="text-[14px] max-w-md" style={{ color: "rgba(255,255,255,.5)", lineHeight: 1.7 }}>
-                    New patient guides, clinical research, and treatment updates — once a month. No spam.
-                  </p>
-                </div>
-                <div>
-                  <div className="flex flex-col sm:flex-row gap-3 mb-3">
-                    <input
-                      type="email"
-                      placeholder="Your email address"
-                      className="flex-1 bg-transparent border-none outline-none px-6 py-4 text-[14px]"
-                      style={{ color: "#fff", backgroundColor: "rgba(255,255,255,.08)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: "50px" }}
-                    />
-                    <button
-                      className="shrink-0 font-bold text-[14px] px-8 py-4 rounded-full transition-all hover:brightness-110"
-                      style={{ backgroundColor: "#1AA3B5", color: "#fff" }}
-                    >
-                      Subscribe &#8594;
-                    </button>
-                  </div>
-                  <div className="flex items-center gap-4 ml-6">
-                    {["Clinically reviewed", "No spam", "Unsubscribe any time"].map((item, i) => (
-                      <span key={i} className="flex items-center gap-1.5 text-[11px]" style={{ color: "rgba(255,255,255,.3)" }}>
-                        <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,.25)" }} />
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ═══════════ NEWSLETTER ═══════════ */}
+        <div className="bg-white -mt-10 md:-mt-16">
+          <Newsletter />
+        </div>
 
         {/* ═══════════ FAQ (COMMENTED) ═══════════
         <section className="py-12 md:py-20 bg-white">

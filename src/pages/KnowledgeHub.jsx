@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
+import Newsletter from "../components/Newsletter"
+import CtaBanner from "../components/CtaBanner"
 import BriefingFooter from "../components/BriefingFooter"
 
 /* ─────────────────────────────────────────────
@@ -820,61 +822,11 @@ function KnowledgeHub() {
 
 
         {/* ═══════════ 7 · NEWSLETTER ═══════════ */}
-        <section className="bg-white py-12 md:py-16 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="bg-[#0f616e] rounded-2xl p-8 md:p-12 relative overflow-hidden">
-              {/* Decorative circles */}
-              <div className="absolute -right-[80px] -top-[80px] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(26,163,181,.15) 0%, transparent 65%)" }} />
-              <div className="absolute -left-[40px] -bottom-[40px] w-[200px] h-[200px] rounded-full" style={{ background: "radial-gradient(circle, rgba(255,255,255,.04) 0%, transparent 65%)" }} />
+        {/* ═══════════ CTA BANNER ═══════════ */}
+        <CtaBanner />
 
-              <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.1em]" style={{ color: "rgba(255,255,255,.4)", marginBottom: "1rem", display: "block" }}>
-                    Newsletter
-                  </span>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem,3vw,2rem)", color: "#fff", lineHeight: 1.2, marginBottom: "0.75rem" }}>
-                    Monthly clinical updates, delivered
-                  </h3>
-                  <p className="text-[14px]" style={{ color: "rgba(255,255,255,.5)", lineHeight: 1.7 }}>
-                    New patient guides, research summaries, and expert insights — once a month. No spam.
-                  </p>
-                </div>
-                <div>
-                  <form
-                    onSubmit={(e) => { e.preventDefault(); setEmail(""); }}
-                    className="flex flex-col sm:flex-row gap-3"
-                    style={{ marginBottom: "0.75rem" }}
-                  >
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Your email address"
-                      required
-                      className="flex-1 bg-transparent border-none outline-none text-white text-[14px] py-4 px-6"
-                      style={{ backgroundColor: "rgba(255,255,255,.08)", border: "1.5px solid rgba(255,255,255,.12)", borderRadius: "50px" }}
-                    />
-                    <button
-                      type="submit"
-                      className="shrink-0 font-bold text-[14px] px-8 py-4 rounded-full cursor-pointer transition-all hover:brightness-110"
-                      style={{ backgroundColor: "#1AA3B5", color: "#fff", border: "none" }}
-                    >
-                      Subscribe &rarr;
-                    </button>
-                  </form>
-                  <div className="flex items-center gap-4 ml-6">
-                    {["Clinically reviewed", "No spam", "Unsubscribe any time"].map((item, i) => (
-                      <span key={i} className="flex items-center gap-1.5 text-[11px]" style={{ color: "rgba(255,255,255,.3)" }}>
-                        <span className="w-1 h-1 rounded-full" style={{ backgroundColor: "rgba(255,255,255,.25)" }} />
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* ═══════════ NEWSLETTER ═══════════ */}
+        <Newsletter />
 
       </main>
       <BriefingFooter />
