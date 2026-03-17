@@ -9,7 +9,7 @@ function Hero() {
           /* background: "radial-gradient(ellipse at 20% 0%, #b3e0e6 0%, transparent 50%), radial-gradient(ellipse at 80% 100%, #b3e0e6 0%, transparent 45%), #F5F5F5", */
         }}
       >
-        <div className="grid grid-cols-2 items-stretch min-h-[76vh]">
+        <div className="grid grid-cols-2 items-stretch min-h-[85vh]">
           <div className="flex flex-col justify-center gap-6 py-16 pl-[max(8rem,calc((100%-80rem)/2+8rem))] pr-10">
             <h1 className="text-[4.375rem] font-light leading-[1.03] tracking-[-1.6px] text-navy-deep">
               Advanced Care for{" "}
