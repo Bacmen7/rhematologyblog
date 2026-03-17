@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
 import CtaBanner from "../components/CtaBanner"
-import GoogleReviews from "../components/GoogleReviews"
+import MeetDoctors from "../components/MeetDoctors"
 import BriefingFooter from "../components/BriefingFooter"
 
 /* ─────────────────────────────────────────────
@@ -31,7 +31,7 @@ const treatmentApproach = [
     step: "02",
     title: "Personalized Treatment Plan",
     desc: "Targeted therapy based on your arthritis type, disease activity, and life goals. From DMARDs and biologics to lifestyle interventions.",
-    color: "#fa885a",
+    color: "#fa885b",
   },
   {
     step: "03",
@@ -43,7 +43,7 @@ const treatmentApproach = [
     step: "04",
     title: "Ongoing Monitoring & Support",
     desc: "Regular check-ins, flare management protocols, and treatment adjustments to keep you in remission or low disease activity.",
-    color: "#fa885a",
+    color: "#fa885b",
   },
 ]
 
@@ -63,6 +63,21 @@ const faqs = [
 function Arthritis() {
   const [diagnosisActive, setDiagnosisActive] = useState(0)
   const diagnosisRef = useRef(null)
+  const [typesActive, setTypesActive] = useState(0)
+  const typesRef = useRef(null)
+  const [showAllSymptoms, setShowAllSymptoms] = useState(false)
+  const [treatActive, setTreatActive] = useState(0)
+  const treatRef = useRef(null)
+
+  const handleTreatScroll = useCallback(() => {
+    const el = treatRef.current
+    if (!el) return
+    const scrollLeft = el.scrollLeft
+    const cardWidth = el.firstChild?.offsetWidth || 1
+    const gap = 20
+    const index = Math.round(scrollLeft / (cardWidth + gap))
+    setTreatActive(Math.min(index, 2))
+  }, [])
 
   const handleDiagnosisScroll = useCallback(() => {
     const el = diagnosisRef.current
@@ -72,6 +87,16 @@ function Arthritis() {
     const gap = 20
     const index = Math.round(scrollLeft / (cardWidth + gap))
     setDiagnosisActive(Math.min(index, 2))
+  }, [])
+
+  const handleTypesScroll = useCallback(() => {
+    const el = typesRef.current
+    if (!el) return
+    const scrollLeft = el.scrollLeft
+    const cardWidth = el.firstChild?.offsetWidth || 1
+    const gap = 16
+    const index = Math.round(scrollLeft / (cardWidth + gap))
+    setTypesActive(Math.min(index, 3))
   }, [])
 
   useEffect(() => {
@@ -95,7 +120,7 @@ function Arthritis() {
                 <div>
                   <span
                     className="inline-block"
-                    style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#7eb8c4", marginBottom: "24px", display: "block" }}
+                    style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "24px", display: "block" }}
                   >
                     Complete Patient Guide
                   </span>
@@ -109,7 +134,7 @@ function Arthritis() {
                   {/* Avatars */}
                   <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
                     <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
-                    <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#dce7f7]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                    <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
                   </div>
 
                   {/* Byline */}
@@ -146,7 +171,7 @@ function Arthritis() {
             <div className="flex flex-col px-6 pt-14 pb-0">
               <span
                 className="inline-block self-start"
-                style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#7eb8c4", marginBottom: "28px" }}
+                style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "28px" }}
               >
                 Complete Patient Guide
               </span>
@@ -159,7 +184,7 @@ function Arthritis() {
               {/* Avatars */}
               <div className="flex -space-x-2" style={{ marginBottom: "12px" }}>
                 <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
-                <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#dce7f7]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
               </div>
 
               {/* Byline */}
@@ -190,12 +215,42 @@ function Arthritis() {
           </svg>
         </section>
 
+        {/* ═══════════ ARTHRITIS OVERVIEW ═══════════ */}
+        <section className="py-12 md:py-16 px-6 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 items-center bg-white p-8 md:p-10" style={{ borderRadius: "16px", border: "1px solid #e8ecf2" }}>
+              {/* Left — Text */}
+              <div>
+                <div className="flex items-center gap-3" style={{ marginBottom: "1.5rem" }}>
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#e0f3f5" }}>
+                    <span className="material-symbols-outlined text-[20px]" style={{ color: "#1AA3B5" }}>rheumatology</span>
+                  </div>
+                  <span className="text-[11px] font-bold uppercase tracking-[0.18em]" style={{ color: "#0f616e" }}>Arthritis Overview</span>
+                </div>
+                <p className="text-[20px] md:text-[24px] leading-[1.5]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#0f616e", marginBottom: "1.25rem" }}>
+                  Arthritis is not a single disease &mdash; it is an umbrella term for over 100 conditions causing joint pain, inflammation, and structural damage.
+                </p>
+                <p className="text-[16px] leading-[1.75]" style={{ color: "#5e5e5e", marginBottom: "1.25rem" }}>
+                  In people with inflammatory arthritis, the immune system mistakenly attacks the joints, causing chronic pain, swelling, and progressive damage if left untreated.
+                </p>
+                <p className="text-[16px] leading-[1.75]" style={{ color: "#5e5e5e" }}>
+                  Read on to learn about arthritis types, symptoms, causes, risk factors, and treatment options &mdash; and how early specialist care can change outcomes.
+                </p>
+              </div>
+              {/* Right — Image */}
+              <div className="hidden lg:block">
+                <img src="/images/arthisites.jpg" alt="Arthritis overview" className="w-full h-[300px] object-cover" style={{ borderRadius: "12px" }} />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ═══════════ SCALE OF THE PROBLEM ═══════════ */}
         <section className="relative py-16 md:py-24 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16" style={{ marginBottom: "2.5rem" }}>
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
-                Arthritis — The Scale of the Problem
+                Arthritis &ndash; The Scale of the Problem
               </h2>
               <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
                 Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
@@ -209,7 +264,7 @@ function Arthritis() {
                 { value: "180M", label: "patients in India", desc: "Estimated adults affected — exceeding the combined burden of diabetes and all cancers. Average diagnosis delay: 6 years." },
                 { value: "40%", label: "work disability in 10 yrs", desc: "Of RA patients experience significant work disability within 10 years without early, targeted therapy. Early treatment changes this outcome dramatically." },
               ].map((stat, i) => (
-                <div key={i} className="min-w-[260px] sm:min-w-0 snap-start bg-white p-5 md:p-7 border border-gray-100" style={{ borderRadius: 0 }}>
+                <div key={i} className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
                   <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
                     {stat.value}
                   </p>
@@ -219,7 +274,7 @@ function Arthritis() {
               ))}
 
               {/* Card 4 — gender bar */}
-              <div className="min-w-[260px] sm:min-w-0 snap-start bg-white p-5 md:p-7 border border-gray-100" style={{ borderRadius: 0 }}>
+              <div className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
                 <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
                   3&times;
                 </p>
@@ -248,7 +303,7 @@ function Arthritis() {
             </div>
 
             {/* 4 square cards — carousel on mobile */}
-            <div className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
+            <div ref={typesRef} onScroll={handleTypesScroll} className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
               {[
                 { img: "/condition/Rheumatoid Arthritis (RA).png", label: "Rheumatoid Arthritis", abbr: "RA", link: "/health-guide/Rheumatoid-Arthritis" },
                 { img: "/condition/Osteoarthritis.png", label: "Osteoarthritis", abbr: "OA", link: "/health-guide" },
@@ -273,7 +328,7 @@ function Arthritis() {
                     </h3>
                     <span
                       className="inline-block text-[11px] font-bold uppercase tracking-[0.12em] px-3 py-1"
-                      style={{ backgroundColor: "#f0f0f0", color: "#1A355D" }}
+                      style={{ backgroundColor: "#f0f0f0", color: "#0f616e" }}
                     >
                       {type.abbr}
                     </span>
@@ -281,64 +336,82 @@ function Arthritis() {
                 </Link>
               ))}
             </div>
+            {/* Carousel dots — mobile only */}
+            <div className="flex justify-center gap-2 mt-4 sm:hidden">
+              {[0, 1, 2, 3].map((i) => (
+                <span
+                  key={i}
+                  className="rounded-full transition-all duration-300"
+                  style={{
+                    width: typesActive === i ? "20px" : "8px",
+                    height: "8px",
+                    backgroundColor: typesActive === i ? "#1AA3B5" : "#e8ecf2",
+                  }}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
         {/* ═══════════ SYMPTOMS OF ARTHRITIS ═══════════ */}
-        <section className="py-12 md:py-20 bg-ghost">
+        <section className="py-12 md:py-20" style={{ backgroundColor: "#f5f5f5" }}>
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10">
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Symptoms of Arthritis
               </h2>
-              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
-                Arthritis symptoms vary by type but share common patterns. Select any symptom to learn more with clinical illustrations.
+              <p className="text-[15px] leading-[1.85] md:pt-2" style={{ color: "#5e5e5e" }}>
+                Arthritis symptoms vary by type but share common patterns. Early recognition of these symptoms can lead to faster diagnosis and better outcomes.
               </p>
             </div>
 
-            <div className="p-0 md:p-4">
-              <div className="flex gap-3 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 sm:overflow-visible sm:pb-0">
-              {[
-                { icon: "schedule", label: "Morning Stiffness", color: "#1AA3B5", bg: "#e0f3f5" },
-                { icon: "favorite", label: "Joint Pain & Tenderness", color: "#e05a5a", bg: "#fde8e8" },
-                { icon: "location_on", label: "Joint Swelling", color: "#e8993e", bg: "#fef3e2" },
-                { icon: "bolt", label: "Fatigue", color: "#1A355D", bg: "#e8edf5" },
-                { icon: "do_not_disturb_on", label: "Reduced Range of Motion", color: "#1AA3B5", bg: "#e0f3f5" },
-                { icon: "thermostat", label: "Warmth & Redness", color: "#e05a5a", bg: "#fde8e8" },
-                { icon: "monitoring", label: "Deformity & Loss of Function", color: "#1A355D", bg: "#e8edf5" },
-                { icon: "emergency", label: "Systemic Symptoms", color: "#e05a5a", bg: "#fde8e8" },
-              ].map((symptom, i) => (
-                <button
-                  key={i}
-                  className="group min-w-[75vw] sm:min-w-0 snap-start flex items-center gap-3.5 bg-white p-4 md:p-5 border border-[#dde6ee] hover:border-[#1AA3B5] hover:-translate-y-0.5 transition-all duration-200 text-left"
-                  style={{ borderRadius: 0 }}
-                >
-                  {/* <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                    style={{ backgroundColor: symptom.bg }}
+            {(() => {
+              const allSymptoms = [
+                { label: "Morning Stiffness", desc: "Stiffness lasting more than 30 minutes after waking" },
+                { label: "Joint Pain", desc: "Persistent aching or sharp pain in one or more joints" },
+                { label: "Joint Swelling", desc: "Visible puffiness or swelling around joint areas" },
+                { label: "Fatigue", desc: "Persistent tiredness that doesn't improve with rest" },
+                { label: "Reduced Mobility", desc: "Difficulty moving joints through full range of motion" },
+                { label: "Warmth & Redness", desc: "Heat or redness around affected joints" },
+                { label: "Joint Deformity", desc: "Visible changes in joint shape over time" },
+                { label: "Systemic Symptoms", desc: "Fever, weight loss, or organ involvement" },
+              ]
+              return (
+                <>
+                  <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    {allSymptoms.map((symptom, i) => (
+                      <div
+                        key={i}
+                        className={`bg-white p-5 hover:-translate-y-0.5 transition-all duration-200 ${!showAllSymptoms && i >= 4 ? "hidden sm:block" : ""}`}
+                        style={{ borderRadius: 0 }}
+                      >
+                        <h4 className="text-[14px] font-semibold text-navy-deep mb-1">{symptom.label}</h4>
+                        <p className="text-[12px] leading-[1.6]" style={{ color: "#5e5e5e" }}>{symptom.desc}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => setShowAllSymptoms(!showAllSymptoms)}
+                    className="mt-4 text-[13px] font-semibold cursor-pointer sm:hidden"
+                    style={{ color: "#1AA3B5", background: "none", border: "none", padding: 0 }}
                   >
-                    <span className="material-symbols-outlined text-[20px]" style={{ color: symptom.color }}>{symptom.icon}</span>
-                  </div> */}
-                  <span className="text-[14px] font-semibold text-navy-deep leading-snug flex-1">{symptom.label}</span>
-                  <svg className="w-3.5 h-3.5 text-navy-muted/40 shrink-0 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </button>
-              ))}
-              </div>
-            </div>
+                    {showAllSymptoms ? "See less ↑" : "See more ↓"}
+                  </button>
+                </>
+              )
+            })()}
           </div>
         </section>
 
         {/* ═══════════ PATHOLOGY — HOW ARTHRITIS DEVELOPS ═══════════ */}
-        <section className="relative py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="relative overflow-hidden" style={{ backgroundColor: "#a0e2e4", paddingTop: "3rem", paddingBottom: "3rem" }}>
+          <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Heading */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#ffffff" }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#0f616e" }}>
                 Pathology — How Arthritis Develops
               </h2>
-              <p className="text-[15px] leading-[1.85] md:pt-2" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p className="text-[15px] leading-[1.85] md:pt-2" style={{ color: "#0f616e", opacity: 0.7 }}>
                 Understanding the biological sequence shows patients exactly why early treatment prevents permanent damage — and why waiting is never safe in inflammatory arthritis.
               </p>
             </div>
@@ -348,142 +421,37 @@ function Arthritis() {
 
               {/* Left — Joint Diagram (sticky) */}
               <div className="flex-1 mb-12 lg:mb-0 lg:sticky lg:top-[140px] self-start">
-                <div className="bg-white p-6 md:p-8" style={{ borderRadius: 0 }}>
-                  <h3
-                    className="text-navy-deep text-center mb-1"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.25rem", fontWeight: 400, lineHeight: 1.3 }}
-                  >
-                    Healthy Joint vs Inflamed Joint
-                  </h3>
-                  <p className="text-[13px] text-navy-muted text-center mb-6">
-                    Normal synovial joint compared with an RA-affected joint
-                  </p>
-
-                  {/* SVG Diagram */}
-                  <svg viewBox="0 0 460 260" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }}>
-                    <defs>
-                      <radialGradient id="bone1" cx="50%" cy="30%" r="70%"><stop offset="0%" stopColor="#f5f0e8" /><stop offset="100%" stopColor="#d4c8b0" /></radialGradient>
-                      <radialGradient id="bone2" cx="50%" cy="70%" r="70%"><stop offset="0%" stopColor="#f5f0e8" /><stop offset="100%" stopColor="#d4c8b0" /></radialGradient>
-                      <radialGradient id="cart-h" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#a8d8c8" /><stop offset="100%" stopColor="#7fc5b0" /></radialGradient>
-                      <radialGradient id="cart-i" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="#e8a09e" /><stop offset="100%" stopColor="#d97070" /></radialGradient>
-                      <radialGradient id="fluid-h" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="rgba(74,184,162,.25)" /><stop offset="100%" stopColor="rgba(74,184,162,.1)" /></radialGradient>
-                      <radialGradient id="fluid-i" cx="50%" cy="50%" r="50%"><stop offset="0%" stopColor="rgba(217,79,79,.22)" /><stop offset="100%" stopColor="rgba(217,79,79,.08)" /></radialGradient>
-                    </defs>
-
-                    {/* HEALTHY JOINT */}
-                    <text x="115" y="22" textAnchor="middle" fontFamily="var(--font-base)" fontSize="11" fontWeight="700" fill="#2e7d6a">HEALTHY JOINT</text>
-                    <ellipse cx="115" cy="80" rx="52" ry="30" fill="url(#bone1)" stroke="#c8bfa0" strokeWidth="1.2" />
-                    <text x="115" y="84" textAnchor="middle" fontFamily="var(--font-base)" fontSize="8" fill="#7a6e52">Bone</text>
-                    <rect x="72" y="108" width="86" height="12" rx="6" fill="url(#cart-h)" stroke="#5daa8f" strokeWidth="1" />
-                    <text x="115" y="118" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#2e7d6a">Healthy Cartilage</text>
-                    <ellipse cx="115" cy="138" rx="44" ry="14" fill="url(#fluid-h)" stroke="#4ab8a2" strokeWidth="1" strokeDasharray="3,2" />
-                    <text x="115" y="142" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7" fill="#2e7d6a">Synovial Fluid</text>
-                    <path d="M71 124 Q 71 148 71 152 Q 93 158 115 158 Q 137 158 159 152 Q 159 148 159 124" fill="none" stroke="#4ab8a2" strokeWidth="1.5" strokeDasharray="4,2" />
-                    <rect x="72" y="158" width="86" height="12" rx="6" fill="url(#cart-h)" stroke="#5daa8f" strokeWidth="1" />
-                    <ellipse cx="115" cy="200" rx="52" ry="28" fill="url(#bone2)" stroke="#c8bfa0" strokeWidth="1.2" />
-                    <text x="115" y="204" textAnchor="middle" fontFamily="var(--font-base)" fontSize="8" fill="#7a6e52">Bone</text>
-
-                    {/* Healthy annotations */}
-                    <line x1="159" y1="113" x2="185" y2="100" stroke="#2e7d6a" strokeWidth=".8" strokeDasharray="2,2" />
-                    <text x="187" y="98" fontFamily="var(--font-base)" fontSize="7.5" fill="#2e7d6a">Smooth cartilage intact</text>
-                    <line x1="159" y1="138" x2="185" y2="135" stroke="#4ab8a2" strokeWidth=".8" strokeDasharray="2,2" />
-                    <text x="187" y="133" fontFamily="var(--font-base)" fontSize="7.5" fill="#2e7d6a">Clear synovial fluid</text>
-                    <line x1="159" y1="124" x2="185" y2="158" stroke="#4ab8a2" strokeWidth=".8" strokeDasharray="2,2" />
-                    <text x="187" y="156" fontFamily="var(--font-base)" fontSize="7.5" fill="#2e7d6a">Thin synovial membrane</text>
-
-                    {/* Divider */}
-                    <line x1="230" y1="30" x2="230" y2="240" stroke="#dde6ee" strokeWidth="1.5" strokeDasharray="5,4" />
-
-                    {/* INFLAMED JOINT */}
-                    <text x="345" y="22" textAnchor="middle" fontFamily="var(--font-base)" fontSize="11" fontWeight="700" fill="#c45c3a">INFLAMED JOINT (RA)</text>
-                    <ellipse cx="345" cy="80" rx="52" ry="30" fill="url(#bone1)" stroke="#c8bfa0" strokeWidth="1.2" />
-                    <ellipse cx="298" cy="98" rx="7" ry="5" fill="#f5f0e8" stroke="#d4c8b0" strokeWidth="1" />
-                    <ellipse cx="392" cy="98" rx="6" ry="4" fill="#f5f0e8" stroke="#d4c8b0" strokeWidth="1" />
-                    <text x="345" y="84" textAnchor="middle" fontFamily="var(--font-base)" fontSize="8" fill="#7a6e52">Bone</text>
-                    <path d="M302 110 Q315 106 328 112 Q339 107 352 111 Q365 106 378 110 Q388 107 392 110 L392 118 L302 118 Z" fill="url(#cart-i)" stroke="#c05050" strokeWidth=".8" />
-                    <text x="345" y="116" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a">Damaged Cartilage</text>
-                    <path d="M301 118 Q 290 128 285 148 Q 295 168 345 172 Q 395 168 405 148 Q 400 128 389 118" fill="rgba(217,79,79,.1)" stroke="#d97070" strokeWidth="2" />
-                    <text x="260" y="148" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a" textAnchor="middle">Pannus</text>
-                    <text x="260" y="158" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a" textAnchor="middle">(inflamed</text>
-                    <text x="260" y="168" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a" textAnchor="middle">membrane)</text>
-                    <ellipse cx="345" cy="145" rx="44" ry="14" fill="url(#fluid-i)" stroke="#d97070" strokeWidth="1" />
-                    <text x="345" y="149" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7" fill="#c45c3a">Inflamed Fluid (cytokines)</text>
-                    <path d="M302 170 Q315 174 328 169 Q341 174 355 170 Q368 174 380 170 Q387 173 392 170 L392 180 L302 180 Z" fill="url(#cart-i)" stroke="#c05050" strokeWidth=".8" />
-                    <ellipse cx="345" cy="210" rx="52" ry="28" fill="url(#bone2)" stroke="#c8bfa0" strokeWidth="1.2" />
-                    <ellipse cx="298" cy="192" rx="7" ry="4" fill="#f5f0e8" stroke="#d4c8b0" strokeWidth="1" />
-                    <text x="345" y="214" textAnchor="middle" fontFamily="var(--font-base)" fontSize="8" fill="#7a6e52">Bone</text>
-
-                    {/* Inflammatory dots */}
-                    <circle cx="325" cy="138" r="2.5" fill="#d97070" opacity=".7" />
-                    <circle cx="340" cy="133" r="2" fill="#d97070" opacity=".6" />
-                    <circle cx="358" cy="140" r="2.5" fill="#d97070" opacity=".7" />
-                    <circle cx="348" cy="155" r="2" fill="#d97070" opacity=".5" />
-                    <circle cx="332" cy="152" r="2" fill="#d97070" opacity=".6" />
-
-                    {/* Inflamed annotations */}
-                    <line x1="405" y1="115" x2="418" y2="100" stroke="#c45c3a" strokeWidth=".8" strokeDasharray="2,2" />
-                    <text x="420" y="98" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a">Bone erosions</text>
-                    <line x1="389" y1="143" x2="418" y2="133" stroke="#d97070" strokeWidth=".8" strokeDasharray="2,2" />
-                    <text x="420" y="131" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a">TNF-&#945; &#183; IL-6</text>
-                    <text x="420" y="141" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a">cytokines</text>
-                    <line x1="405" y1="170" x2="418" y2="162" stroke="#c45c3a" strokeWidth=".8" strokeDasharray="2,2" />
-                    <text x="420" y="160" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a">Cartilage loss</text>
-
-                    {/* Bottom labels */}
-                    <text x="115" y="240" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#2e7d6a">&#10003; Normal joint space preserved</text>
-                    <text x="345" y="240" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#c45c3a">&#10005; Joint space narrowed — irreversible without Tx</text>
-                  </svg>
-
-                  {/* Legend */}
-                  <div className="flex flex-wrap items-center justify-center gap-5 mt-6 pt-5" style={{ borderTop: "1px solid #e8ecf2" }}>
-                    {[
-                      { color: "#4ab8a2", label: "Healthy cartilage" },
-                      { color: "#d97070", label: "Inflamed tissue" },
-                      { color: "#d4c8b0", label: "Bone erosion" },
-                      { color: "#c47a1a", label: "Cytokines (TNF / IL-6)" },
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-1.5">
-                        <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: item.color }} />
-                        <span className="text-[11px] text-navy-muted">{item.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <img src="/images/joints.jpg" alt="Healthy Joint vs Inflamed Joint" className="w-full object-cover" style={{ borderRadius: 0 }} />
               </div>
 
               {/* Right — 3 Steps */}
-              <div className="flex-1 flex flex-col gap-6">
+              <div className="flex-1 flex flex-col gap-4">
                 {[
                   {
-                    num: 1,
+                    num: "01",
                     title: "Immune Trigger",
                     desc: "In RA, Anti-CCP antibodies form silently — up to 10 years before symptoms appear. In AS, the HLA-B27 gene initiates a low-grade spinal inflammatory cascade.",
                   },
                   {
-                    num: 2,
+                    num: "02",
                     title: "Synovitis & Joint Destruction",
                     desc: "Inflammatory cells release TNF-\u03B1 and IL-6, thickening the synovial lining into destructive pannus tissue. Cartilage and bone erosion begins within 3\u20136 months and is irreversible once established.",
                   },
                   {
-                    num: 3,
+                    num: "03",
                     title: "Systemic & Structural Consequences",
                     desc: "Untreated RA doubles cardiovascular risk and causes lung involvement in 10\u201320% of patients. In AS, spinal fusion produces the classic \u201Cbamboo spine\u201D. Early treatment prevents all of this.",
                   },
                 ].map((step) => (
-                  <div key={step.num} className="flex gap-4">
-                    <div className="shrink-0">
-                      <div
-                        className="w-9 h-9 rounded-full flex items-center justify-center text-[13px] font-bold"
-                        style={{ backgroundColor: "rgba(26,163,181,0.2)", color: "#1AA3B5", border: "2px solid #1AA3B5" }}
-                      >
-                        {step.num}
-                      </div>
-                    </div>
+                  <div key={step.num} className="p-5 flex gap-5" style={{ borderRadius: 0 }}>
+                    <span className="text-[28px] font-bold leading-none shrink-0" style={{ fontFamily: "var(--font-display)", color: "#0f616e", opacity: 0.3 }}>
+                      {step.num}
+                    </span>
                     <div>
-                      <h3 style={{ fontFamily: "var(--font-base)", fontSize: "1rem", fontWeight: 600, lineHeight: 1.3, color: "#ffffff", marginBottom: "0.35rem" }}>
+                      <h3 style={{ fontFamily: "var(--font-base)", fontSize: "15px", fontWeight: 600, lineHeight: 1.3, color: "#0f616e", marginBottom: "6px" }}>
                         {step.title}
                       </h3>
-                      <p className="text-[13.5px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.5)" }}>{step.desc}</p>
+                      <p className="text-[13px] leading-[1.7]" style={{ color: "#0f616e", opacity: 0.6 }}>{step.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -491,11 +459,11 @@ function Arthritis() {
 
             </div>
           </div>
-          {/* Bottom wave */}
-          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
-          </svg>
         </section>
+        {/* Wave between sections */}
+        <svg className="block w-full -mt-px" style={{ height: "80px", backgroundColor: "#a0e2e4" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
+        </svg>
 
         {/* ═══════════ DIAGNOSIS — TESTS AND WHAT THEY MEAN ═══════════ */}
         <section className="py-12 md:py-20 bg-white">
@@ -513,12 +481,12 @@ function Arthritis() {
               {[
                 {
                   icon: "bloodtype",
-                  iconColor: "#e05a5a",
-                  iconBg: "linear-gradient(135deg, #fde8e8 0%, #f9d4d4 100%)",
+                  iconColor: "#fd956a",
+                  iconBg: "linear-gradient(135deg, #fff3ec 0%, #f9d4d4 100%)",
                   title: "Blood Tests",
                   desc: "Detect inflammation markers and autoantibodies. Must be interpreted in full clinical context — not in isolation.",
                   tags: ["RF", "Anti-CCP", "CRP", "ESR", "ANA", "HLA-B27", "Uric Acid", "FBC"],
-                  accent: "#e05a5a",
+                  accent: "#fd956a",
                 },
                 {
                   icon: "image_search",
@@ -531,12 +499,12 @@ function Arthritis() {
                 },
                 {
                   icon: "science",
-                  iconColor: "#1A355D",
-                  iconBg: "linear-gradient(135deg, #e8edf5 0%, #d4ddef 100%)",
+                  iconColor: "#0f616e",
+                  iconBg: "linear-gradient(135deg, #f5f5f5 0%, #d4ddef 100%)",
                   title: "Joint Fluid Analysis",
                   desc: "Arthrocentesis is gold standard for gout — crystals are directly visible. Also essential to rule out septic arthritis, a medical emergency.",
                   tags: ["Crystal analysis", "WBC count", "Culture & sensitivity"],
-                  accent: "#1A355D",
+                  accent: "#0f616e",
                 },
               ].map((card, i) => (
                 <div
@@ -573,7 +541,7 @@ function Arthritis() {
                       <span
                         key={j}
                         className="text-[11.5px] font-semibold px-3.5 py-1.5 hover:shadow-sm transition-shadow cursor-default"
-                        style={{ backgroundColor: "#ffffff", color: "#1A355D", borderRadius: "20px", border: "1px solid #e8e0d4", letterSpacing: "0.01em" }}
+                        style={{ backgroundColor: "#ffffff", color: "#0f616e", borderRadius: "20px", border: "1px solid #e8e0d4", letterSpacing: "0.01em" }}
                       >
                         {tag}
                       </span>
@@ -600,149 +568,97 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ 06 — TREATMENT OPTIONS ═══════════ */}
-        <section className="py-12 md:py-20 bg-white">
+        <section className="py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10 md:mb-14">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#ffffff" }}>
                 Treatment Options
               </h2>
-              <p className="text-[15px] leading-[1.8] text-navy-muted md:pt-2">
+              <p className="text-[15px] leading-[1.8] md:pt-2" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Arthritis is managed through two primary treatment pathways — medication therapy and surgery. Most patients are managed with medicines alone; surgery is reserved for advanced cases.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Card 1: Medicines */}
-              <div className="overflow-hidden flex flex-col border border-gray-200" style={{ borderRadius: 0 }}>
-                <div className="p-6 pb-5" style={{ background: "linear-gradient(135deg, rgba(26,163,181,.12) 0%, rgba(26,163,181,.04) 100%)", borderBottom: "1.5px solid rgba(26,163,181,.18)" }}>
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.07em] px-2.5 py-1 rounded-full mb-2" style={{ color: "#0f616e", backgroundColor: "#e0f3f5" }}>First-Line Approach</span>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", fontWeight: 400, color: "#1A355D" }}>Medicines</h3>
-                  <p className="text-[13px] text-navy-muted mt-1">From symptom relief to disease-modifying and biologic therapy</p>
-                </div>
-                {/* SVG illustration */}
-                <div className="p-5" style={{ backgroundColor: "#eef6fc", borderBottom: "1px solid #dde6ee" }}>
-                  <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }}>
-                    <ellipse cx="90" cy="85" rx="72" ry="60" fill="rgba(26,163,181,.06)" />
-                    <ellipse cx="250" cy="75" rx="60" ry="50" fill="rgba(250,136,90,.05)" />
-                    <rect x="18" y="65" width="80" height="36" rx="18" fill="none" stroke="#1AA3B5" strokeWidth="2.2" />
-                    <line x1="58" y1="65" x2="58" y2="101" stroke="#1AA3B5" strokeWidth="2" strokeDasharray="3,2" />
-                    <rect x="18" y="65" width="40" height="36" rx="18" fill="rgba(26,163,181,.14)" />
-                    <text x="58" y="89" textAnchor="middle" fontFamily="var(--font-base)" fontSize="8" fontWeight="700" fill="#0f616e">TABLET</text>
-                    <rect x="118" y="45" width="104" height="40" rx="20" fill="none" stroke="#fa885a" strokeWidth="2.2" />
-                    <rect x="118" y="45" width="52" height="40" rx="20" fill="rgba(250,136,90,.16)" />
-                    <text x="170" y="70" textAnchor="middle" fontFamily="var(--font-base)" fontSize="8" fontWeight="700" fill="#c45c3a">CAPSULE</text>
-                    <text x="58" y="118" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080">NSAIDs · DMARDs</text>
-                    <text x="170" y="100" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080">Steroids · Gout agents</text>
-                    <text x="268" y="120" textAnchor="middle" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080">Biologics · JAK inhibitors</text>
-                  </svg>
-                </div>
-                <div className="p-5 flex flex-col gap-2.5 flex-1">
-                  {[
-                    { color: "#1AA3B5", text: "NSAIDs" },
-                    { color: "#1AA3B5", text: "DMARDs — Methotrexate, Hydroxychloroquine, Sulfasalazine" },
-                    { color: "#fa885a", text: "Corticosteroids" },
-                    { color: "#6652a8", text: "Biologics — Adalimumab, Etanercept, Tocilizumab, Secukinumab" },
-                    { color: "#e05a5a", text: "JAK Inhibitors — Upadacitinib, Baricitinib, Tofacitinib" },
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5 text-[13px] text-navy-deep">
-                      <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
-                      {item.text}
-                    </div>
-                  ))}
-                </div>
-                <div className="mx-5 mb-5 p-3 text-[12px] text-navy-muted" style={{ backgroundColor: "rgba(26,163,181,.07)", border: "1px solid rgba(26,163,181,.2)", borderRadius: "9px" }}>
-                  &#9888;&#65039; Never change medication without guidance from your rheumatologist.
-                </div>
-              </div>
-
-              {/* Card 2: Surgery */}
-              <div className="overflow-hidden flex flex-col border border-gray-200" style={{ borderRadius: 0 }}>
-                <div className="p-6 pb-5" style={{ background: "linear-gradient(135deg, rgba(15,36,64,.07) 0%, rgba(15,36,64,.02) 100%)", borderBottom: "1.5px solid rgba(15,36,64,.1)" }}>
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.07em] px-2.5 py-1 rounded-full mb-2" style={{ color: "#c45c3a", backgroundColor: "#fdf0eb" }}>When Medicines Are Not Enough</span>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", fontWeight: 400, color: "#1A355D" }}>Surgery</h3>
-                  <p className="text-[13px] text-navy-muted mt-1">Joint replacement or spinal procedures for irreversible structural damage</p>
-                </div>
-                <div className="p-5" style={{ backgroundColor: "#eef6fc", borderBottom: "1px solid #dde6ee" }}>
-                  <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }}>
-                    <ellipse cx="170" cy="85" rx="110" ry="70" fill="rgba(15,36,64,.04)" />
-                    <ellipse cx="170" cy="42" rx="28" ry="36" fill="#e8e2d9" stroke="#ccc5bb" strokeWidth="1.5" />
-                    <ellipse cx="170" cy="42" rx="14" ry="26" fill="#f2ede6" />
-                    <path d="M138 78 Q170 86 202 78 L205 90 Q170 100 135 90 Z" fill="#1AA3B5" opacity=".85" />
-                    <rect x="160" y="90" width="20" height="28" rx="4" fill="#1AA3B5" opacity=".75" />
-                    <rect x="156" y="116" width="28" height="8" rx="4" fill="#0f8a7a" />
-                    <ellipse cx="170" cy="138" rx="26" ry="30" fill="#e8e2d9" stroke="#ccc5bb" strokeWidth="1.5" />
-                    <text x="215" y="82" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080">Femoral component</text>
-                    <text x="215" y="118" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080">Tibial tray</text>
-                    <text x="88" y="96" textAnchor="end" fontFamily="var(--font-base)" fontSize="7.5" fill="#1AA3B5">Prosthesis</text>
-                  </svg>
-                </div>
-                <div className="p-5 flex flex-col gap-2.5 flex-1">
-                  {[
-                    "Total Knee Replacement",
-                    "Total Hip Replacement",
-                    "Synovectomy",
-                    "Arthroscopy",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5 text-[13px] text-navy-deep">
-                      <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#1A355D" }} />
-                      {item}
-                    </div>
-                  ))}
-                  <div className="flex items-center gap-2.5 text-[13px] text-navy-deep">
-                    <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#c45c3a" }} />
-                    Spinal Fusion — end-stage Ankylosing Spondylitis
+            <div ref={treatRef} onScroll={handleTreatScroll} className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0">
+              {[
+                {
+                  icon: "medication",
+                  badge: "First-Line",
+                  title: "Medicines",
+                  desc: "From symptom relief to disease-modifying and biologic therapy.",
+                  items: ["NSAIDs", "DMARDs — Methotrexate, Hydroxychloroquine", "Corticosteroids", "Biologics — TNF inhibitors, IL-6, IL-17", "JAK Inhibitors — Upadacitinib, Baricitinib"],
+                  note: "Never change medication without guidance from your rheumatologist.",
+                  color: "#1AA3B5",
+                },
+                {
+                  icon: "surgical",
+                  badge: "When Needed",
+                  title: "Surgery",
+                  desc: "Joint replacement or spinal procedures for irreversible structural damage.",
+                  items: ["Total Knee Replacement", "Total Hip Replacement", "Synovectomy", "Arthroscopy", "Spinal Fusion — end-stage AS"],
+                  note: "Reserved as a last resort — only after all medical options are exhausted.",
+                  color: "#fd956a",
+                },
+                {
+                  icon: "fitness_center",
+                  badge: "Every Stage",
+                  title: "Physiotherapy",
+                  desc: "Grade A evidence across all arthritis types — recommended at every stage.",
+                  items: ["Joint Mobilisation Exercises", "Muscle Strengthening", "Hydrotherapy", "Gait & Balance Training", "Post-Surgical Rehabilitation"],
+                  note: "Recommended alongside medications and post-surgery.",
+                  color: "#1AA3B5",
+                },
+              ].map((card, i) => (
+                <div key={i} className="min-w-[90vw] sm:min-w-[340px] lg:min-w-0 snap-start bg-white p-8 flex flex-col shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300" style={{ borderRadius: 0 }}>
+                  {/* Icon */}
+                  <div className="relative w-[70px] h-[74px] flex items-center justify-center" style={{ marginBottom: "1.25rem" }}>
+                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 70 74" fill="none">
+                      <path d="M35 0C54 0 70 16 70 37C70 58 54 74 35 74C16 74 0 58 0 37C0 16 16 0 35 0Z" fill="#e0f3f5" />
+                    </svg>
+                    <span className="material-symbols-outlined relative z-10 text-[28px]" style={{ color: card.color }}>{card.icon}</span>
                   </div>
-                </div>
-                <div className="mx-5 mb-5 p-3 text-[12px] text-navy-muted" style={{ backgroundColor: "rgba(217,79,79,.05)", border: "1px solid rgba(217,79,79,.2)", borderRadius: "9px" }}>
-                  &#128309; Reserved as a last resort — only after all medical options are exhausted.
-                </div>
-              </div>
 
-              {/* Card 3: Physiotherapy */}
-              <div className="overflow-hidden flex flex-col border border-gray-200" style={{ borderRadius: 0 }}>
-                <div className="p-6 pb-5" style={{ background: "linear-gradient(135deg, rgba(26,163,181,.1) 0%, rgba(212,235,248,.18) 100%)", borderBottom: "1.5px solid rgba(26,163,181,.15)" }}>
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.07em] px-2.5 py-1 rounded-full mb-2" style={{ color: "#1a6e8a", backgroundColor: "#d4ebf8" }}>At Every Stage of Treatment</span>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.55rem", fontWeight: 400, color: "#1A355D" }}>Physiotherapy</h3>
-                  <p className="text-[13px] text-navy-muted mt-1">Grade A evidence across all arthritis types — recommended at every stage</p>
-                </div>
-                <div className="p-5" style={{ backgroundColor: "#eef6fc", borderBottom: "1px solid #dde6ee" }}>
-                  <svg viewBox="0 0 340 160" xmlns="http://www.w3.org/2000/svg" style={{ width: "100%", display: "block" }}>
-                    <ellipse cx="170" cy="85" rx="120" ry="68" fill="rgba(26,163,181,.05)" />
-                    <circle cx="170" cy="22" r="16" fill="#e8e2d9" stroke="#ccc5bb" strokeWidth="1.5" />
-                    <path d="M150 45 Q157 40 170 38 Q183 40 190 45 L194 90 Q183 97 170 97 Q157 97 146 90 Z" fill="#d4ebf8" stroke="#1AA3B5" strokeWidth="1.5" />
-                    <path d="M150 52 Q132 40 120 28" stroke="#1A355D" strokeWidth="4" strokeLinecap="round" fill="none" />
-                    <circle cx="120" cy="28" r="5" fill="#1AA3B5" />
-                    <path d="M190 52 Q206 58 218 55" stroke="#1A355D" strokeWidth="4" strokeLinecap="round" fill="none" />
-                    <circle cx="218" cy="55" r="5" fill="#1AA3B5" />
-                    <path d="M158 97 Q150 122 143 136" stroke="#1A355D" strokeWidth="4" strokeLinecap="round" fill="none" />
-                    <path d="M182 97 Q187 122 189 142" stroke="#1A355D" strokeWidth="4" strokeLinecap="round" fill="none" />
-                    <text x="88" y="26" fontFamily="var(--font-base)" fontSize="7.5" fill="#1AA3B5" textAnchor="middle">Range of Motion</text>
-                    <text x="242" y="50" fontFamily="var(--font-base)" fontSize="7.5" fill="#1AA3B5">Strength Training</text>
-                    <text x="133" y="152" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080" textAnchor="middle">Joint Mobility</text>
-                    <text x="198" y="155" fontFamily="var(--font-base)" fontSize="7.5" fill="#5a7080" textAnchor="middle">Gait &amp; Balance</text>
-                  </svg>
-                </div>
-                <div className="p-5 flex flex-col gap-2.5 flex-1">
-                  {[
-                    "Joint Mobilisation Exercises",
-                    "Muscle Strengthening",
-                    "Hydrotherapy",
-                    "Gait & Balance Training",
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-2.5 text-[13px] text-navy-deep">
-                      <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#1AA3B5" }} />
-                      {item}
-                    </div>
-                  ))}
-                  <div className="flex items-center gap-2.5 text-[13px] text-navy-deep">
-                    <span className="w-2 h-2 rounded-full shrink-0" style={{ backgroundColor: "#1a6e8a" }} />
-                    Post-Surgical Rehabilitation
+                  {/* Badge */}
+                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-full self-start" style={{ backgroundColor: "#e0f3f5", color: "#0f616e", marginBottom: "0.75rem" }}>
+                    {card.badge}
+                  </span>
+
+                  {/* Title */}
+                  <h3 className="text-xl font-semibold tracking-tight" style={{ color: "#0f616e", marginBottom: "0.5rem" }}>{card.title}</h3>
+
+                  {/* Desc */}
+                  <p className="text-sm text-navy-muted leading-relaxed" style={{ marginBottom: "1.5rem" }}>{card.desc}</p>
+
+                  {/* Items */}
+                  <div className="flex flex-col gap-2.5 flex-1" style={{ marginBottom: "1.5rem" }}>
+                    {card.items.map((item, j) => (
+                      <div key={j} className="flex items-start gap-2.5 text-[13px]" style={{ color: "#0f616e" }}>
+                        <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]" style={{ backgroundColor: card.color }} />
+                        {item}
+                      </div>
+                    ))}
                   </div>
+
+                  {/* Note */}
+                  <p className="text-[12px] leading-[1.6] pt-4" style={{ color: "#5e5e5e", borderTop: "1px solid #e8ecf2" }}>
+                    {card.note}
+                  </p>
                 </div>
-                <div className="mx-5 mb-5 p-3 text-[12px] text-navy-muted" style={{ backgroundColor: "rgba(212,235,248,.4)", border: "1px solid rgba(26,163,181,.2)", borderRadius: "9px" }}>
-                  &#127939; Recommended alongside medications and post-surgery — not a standalone option.
-                </div>
-              </div>
+              ))}
+            </div>
+            {/* Dots — mobile only */}
+            <div className="flex justify-center gap-2 mt-4 lg:hidden">
+              {[0, 1, 2].map((i) => (
+                <span
+                  key={i}
+                  className="rounded-full transition-all duration-300"
+                  style={{
+                    width: treatActive === i ? "20px" : "8px",
+                    height: "8px",
+                    backgroundColor: treatActive === i ? "#1AA3B5" : "rgba(255,255,255,0.2)",
+                  }}
+                />
+              ))}
             </div>
           </div>
         </section>
@@ -760,7 +676,7 @@ function Arthritis() {
             <div className="lg:grid lg:grid-cols-[400px_1fr] overflow-hidden mb-8" style={{ borderRadius: "0", border: "none" }}
               id="living-well-card"
             >
-              <style>{`@media(min-width:1024px){#living-well-card{border-radius:20px !important;border:1.5px solid #dde6ee !important;}}`}</style>
+              <style>{`@media(min-width:1024px){#living-well-card{border-radius:20px !important;border:1.5px solid #e8ecf2 !important;}}`}</style>
               {/* Photo side */}
               <div className="relative h-[260px] lg:h-auto overflow-hidden">
                 <img
@@ -801,8 +717,8 @@ function Arthritis() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
                 { icon: "restaurant", iconColor: "#1AA3B5", iconBg: "#e0f3f5", title: "Diet & Nutrition", desc: "Mediterranean diet reduces CRP by up to 30% in clinical studies. Omega-3s from oily fish reduce synovial inflammation in RA. Avoid excess alcohol and ultra-processed food." },
-                { icon: "bedtime", iconColor: "#1A355D", iconBg: "#e8edf5", title: "Sleep & Fatigue", desc: "Inflammatory fatigue is driven by the same cytokines causing joint inflammation. Prioritise sleep hygiene. Effective disease control is the best treatment for inflammatory fatigue." },
-                { icon: "self_improvement", iconColor: "#6652a8", iconBg: "#ede8f5", title: "Mental Health", desc: "Chronic inflammatory pain is associated with a 2\u20133\u00D7 higher rate of depression and anxiety. Cognitive-behavioural therapy has strong clinical evidence in RA and fibromyalgia." },
+                { icon: "bedtime", iconColor: "#0f616e", iconBg: "#f5f5f5", title: "Sleep & Fatigue", desc: "Inflammatory fatigue is driven by the same cytokines causing joint inflammation. Prioritise sleep hygiene. Effective disease control is the best treatment for inflammatory fatigue." },
+                { icon: "self_improvement", iconColor: "#fdcf2e", iconBg: "#e0f3f5", title: "Mental Health", desc: "Chronic inflammatory pain is associated with a 2\u20133\u00D7 higher rate of depression and anxiety. Cognitive-behavioural therapy has strong clinical evidence in RA and fibromyalgia." },
               ].map((card, i) => (
                 <div key={i} className="bg-white p-6 border border-gray-100" style={{ borderRadius: 0 }}>
                   <div className="w-10 h-10 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: card.iconBg }}>
@@ -816,8 +732,8 @@ function Arthritis() {
           </div>
         </section>
 
-        {/* ═══════════ 08 — GOOGLE REVIEWS ═══════════ */}
-        <GoogleReviews />
+        {/* ═══════════ 08 — MEET OUR DOCTORS ═══════════ */}
+        <MeetDoctors />
 
 
         {/* ═══════════ WARNING SIGNS (COMMENTED) ═══════════ */}
@@ -825,7 +741,7 @@ function Arthritis() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="lg:flex lg:gap-16 lg:items-center">
               <div className="flex-1 mb-12 lg:mb-0">
-                <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-6" style={{ backgroundColor: "#fa885a", color: "#1A355D" }}>
+                <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-6" style={{ backgroundColor: "#fa885b", color: "#0f616e" }}>
                   Early Detection
                 </span>
                 <h2
@@ -956,10 +872,10 @@ function Arthritis() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </div>
-                <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-4 self-start" style={{ backgroundColor: "#1A355D", color: "#ffffff" }}>
+                <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-4 self-start" style={{ backgroundColor: "#0f616e", color: "#ffffff" }}>
                   Health Guide
                 </span>
-                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.75rem", fontWeight: 400, lineHeight: 1.15, color: "#1A355D", marginBottom: "0.75rem" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.75rem", fontWeight: 400, lineHeight: 1.15, color: "#0f616e", marginBottom: "0.75rem" }}>
                   Explore All Conditions
                 </h3>
                 <p className="text-[14px] leading-[1.7] text-navy-muted">
@@ -1039,7 +955,7 @@ function Arthritis() {
             {/* Grid: 1.6fr 1fr */}
             <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-5 items-start">
               {/* Featured card */}
-              <div className="rounded-2xl border border-[#dde6ee] overflow-hidden">
+              <div className="rounded-2xl border border-[#e8ecf2] overflow-hidden">
                 <div className="relative h-[320px] overflow-hidden">
                   <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,97,110,.8)] to-transparent" />
@@ -1054,9 +970,9 @@ function Arthritis() {
                   <h3 className="text-navy-deep mb-2.5 leading-tight" style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 400 }}>Treat-to-Target in RA: Does Achieving Remission Actually Prevent Long-Term Joint Damage?</h3>
                   <div className="flex items-center gap-2.5 text-xs text-navy-muted mb-4">
                     <span>Dr. Priya Menon</span>
-                    <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
+                    <span className="w-[3px] h-[3px] rounded-full bg-[#e8ecf2]" />
                     <span>10 min read</span>
-                    <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
+                    <span className="w-[3px] h-[3px] rounded-full bg-[#e8ecf2]" />
                     <span>March 2026</span>
                   </div>
                   <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#0f616e" }}>
@@ -1073,7 +989,7 @@ function Arthritis() {
                   { img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
                   { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400", cat: "Lifestyle", title: "Diet & Inflammation — What to Eat With Arthritis", time: "5 min read" },
                 ].map((art, i) => (
-                  <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#dde6ee] bg-white cursor-pointer items-center hover:border-primary transition-colors">
+                  <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#e8ecf2] bg-white cursor-pointer items-center hover:border-primary transition-colors">
                     <img src={art.img} alt="" className="w-[72px] h-[72px] rounded-[10px] object-cover shrink-0" />
                     <div>
                       <span className="flex items-center gap-1 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-0.5">
@@ -1115,7 +1031,7 @@ function Arthritis() {
                   <summary className="flex items-center justify-between cursor-pointer p-5 md:p-6 list-none [&::-webkit-details-marker]:hidden">
                     <span className="text-[15px] font-semibold text-navy-deep pr-4 leading-snug">{faq.q}</span>
                     <span className="shrink-0 w-8 h-8 rounded-full bg-white flex items-center justify-center">
-                      <svg className="w-3.5 h-3.5 transition-transform group-open:rotate-45" fill="none" stroke="#1A355D" strokeWidth={2.5} viewBox="0 0 24 24">
+                      <svg className="w-3.5 h-3.5 transition-transform group-open:rotate-45" fill="none" stroke="#0f616e" strokeWidth={2.5} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                       </svg>
                     </span>
