@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
 import CtaBanner from "../components/CtaBanner"
+import GoogleReviews from "../components/GoogleReviews"
 import BriefingFooter from "../components/BriefingFooter"
 
 /* ─────────────────────────────────────────────
@@ -89,7 +90,7 @@ function Arthritis() {
           {/* Desktop */}
           <div className="hidden lg:block">
             <div className="max-w-7xl mx-auto px-6" style={{ paddingTop: "3rem", paddingBottom: "2rem" }}>
-              <div className="grid grid-cols-[1fr_420px] gap-10 items-center">
+              <div className="grid grid-cols-[1fr_520px] gap-10 items-center">
                 {/* Left — Text */}
                 <div>
                   <span
@@ -129,9 +130,9 @@ function Arthritis() {
                 <div className="relative">
                   <div className="overflow-hidden" style={{ borderRadius: 0 }}>
                     <img
-                      src="/images/dr-elena.jpg"
+                      src="/images/arthisites.jpg"
                       alt="Arthritis patient guide"
-                      className="w-full h-[260px] object-cover object-top"
+                      className="w-full h-[360px] object-cover object-center"
                     />
                   </div>
                 </div>
@@ -176,9 +177,9 @@ function Arthritis() {
             </div>
 
             {/* Image with side padding like reference */}
-            <div className="px-6" style={{ marginTop: "0" }}>
+            <div className="px-6" style={{ marginTop: "0", marginBottom: "80px" }}>
               <div style={{ backgroundColor: "#e0f3f5", borderRadius: "0" }}>
-                <img src="/images/dr-elena.jpg" alt="Arthritis guide" className="w-full object-cover object-top" style={{ height: "300px" }} />
+                <img src="/images/arthisites.jpg" alt="Arthritis guide" className="w-full object-cover object-center" style={{ height: "auto" }} />
               </div>
             </div>
           </div>
@@ -192,15 +193,14 @@ function Arthritis() {
         {/* ═══════════ SCALE OF THE PROBLEM ═══════════ */}
         <section className="relative py-16 md:py-24 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <h2
-              className="text-navy-deep"
-              style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.25rem" }}
-            >
-              Arthritis — The Scale of the Problem
-            </h2>
-            <p className="text-[15px] leading-[1.85] max-w-2xl text-navy-muted" style={{ marginBottom: "2.5rem" }}>
-              Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
-            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16" style={{ marginBottom: "2.5rem" }}>
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+                Arthritis — The Scale of the Problem
+              </h2>
+              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
+                Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
+              </p>
+            </div>
 
             {/* Horizontal scroll on mobile */}
             <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
@@ -238,15 +238,12 @@ function Arthritis() {
         <section id="types" className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading — left aligned */}
-            <div className="mb-8 md:mb-14 max-w-2xl">
-              <h2
-                className="text-navy-deep"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}
-              >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Major Types of Arthritis
               </h2>
-              <p className="text-[15.5px] leading-[1.85] text-navy-muted">
-                While over 100 forms of arthritis exist, these four types account for the vast majority of rheumatology presentations. Each has a distinct mechanism, patient profile, and treatment pathway. Select any type to expand the detail.
+              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
+                While over 100 forms of arthritis exist, these four types account for the vast majority of rheumatology presentations. Each has a distinct mechanism, patient profile, and treatment pathway.
               </p>
             </div>
 
@@ -290,14 +287,11 @@ function Arthritis() {
         {/* ═══════════ SYMPTOMS OF ARTHRITIS ═══════════ */}
         <section className="py-12 md:py-20 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-8 md:mb-14 max-w-2xl">
-              <h2
-                className="text-navy-deep"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}
-              >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Symptoms of Arthritis
               </h2>
-              <p className="text-[15.5px] leading-[1.85] text-navy-muted">
+              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
                 Arthritis symptoms vary by type but share common patterns. Select any symptom to learn more with clinical illustrations.
               </p>
             </div>
@@ -316,15 +310,15 @@ function Arthritis() {
               ].map((symptom, i) => (
                 <button
                   key={i}
-                  className="group min-w-[75vw] sm:min-w-0 snap-start flex items-center gap-3.5 bg-white p-4 md:p-5 border border-gray-100 hover:shadow-[0_4px_16px_rgba(24,36,57,0.07)] hover:-translate-y-0.5 transition-all duration-200 text-left"
-                  style={{ borderRadius: "12px" }}
+                  className="group min-w-[75vw] sm:min-w-0 snap-start flex items-center gap-3.5 bg-white p-4 md:p-5 border border-[#dde6ee] hover:border-[#1AA3B5] hover:-translate-y-0.5 transition-all duration-200 text-left"
+                  style={{ borderRadius: 0 }}
                 >
-                  <div
+                  {/* <div
                     className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                     style={{ backgroundColor: symptom.bg }}
                   >
                     <span className="material-symbols-outlined text-[20px]" style={{ color: symptom.color }}>{symptom.icon}</span>
-                  </div>
+                  </div> */}
                   <span className="text-[14px] font-semibold text-navy-deep leading-snug flex-1">{symptom.label}</span>
                   <svg className="w-3.5 h-3.5 text-navy-muted/40 shrink-0 group-hover:text-primary transition-colors" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -340,13 +334,11 @@ function Arthritis() {
         <section className="relative py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading */}
-            <div className="mb-8 md:mb-14 max-w-2xl">
-              <h2
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem", color: "#ffffff" }}
-              >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#ffffff" }}>
                 Pathology — How Arthritis Develops
               </h2>
-              <p className="text-[15.5px] leading-[1.85]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p className="text-[15px] leading-[1.85] md:pt-2" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Understanding the biological sequence shows patients exactly why early treatment prevents permanent damage — and why waiting is never safe in inflammatory arthritis.
               </p>
             </div>
@@ -508,15 +500,12 @@ function Arthritis() {
         {/* ═══════════ DIAGNOSIS — TESTS AND WHAT THEY MEAN ═══════════ */}
         <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-14 max-w-2xl">
-              <h2
-                className="text-navy-deep"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}
-              >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10 md:mb-14">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Diagnosis — Tests and What They Mean
               </h2>
-              <p className="text-[15.5px] leading-[1.85] text-navy-muted">
-                No single test diagnoses arthritis. Diagnosis is clinical — combining history, physical examination, blood tests, and imaging. Understanding what each test looks for helps patients have better conversations with their rheumatologist.
+              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
+                No single test diagnoses arthritis. Diagnosis is clinical — combining history, physical examination, blood tests, and imaging.
               </p>
             </div>
 
@@ -613,12 +602,12 @@ function Arthritis() {
         {/* ═══════════ 06 — TREATMENT OPTIONS ═══════════ */}
         <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-14 max-w-2xl">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10 md:mb-14">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Treatment Options
               </h2>
-              <p className="text-[15px] leading-[1.8] text-navy-muted">
-                Arthritis is managed through two primary treatment pathways — medication therapy to control inflammation and slow disease progression, and surgery when structural joint damage is irreversible. Most patients are managed with medicines alone; surgery is reserved for advanced cases.
+              <p className="text-[15px] leading-[1.8] text-navy-muted md:pt-2">
+                Arthritis is managed through two primary treatment pathways — medication therapy and surgery. Most patients are managed with medicines alone; surgery is reserved for advanced cases.
               </p>
             </div>
 
@@ -827,42 +816,8 @@ function Arthritis() {
           </div>
         </section>
 
-        {/* ═══════════ 08 — RHEUMACARE ═══════════ */}
-        <section className="py-12 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-14 max-w-2xl">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1.5rem" }}>
-                The Role of{" "}
-                <span className="relative inline-block" style={{ color: "#1AA3B5" }}>
-                  RheumaCare
-                  <svg className="absolute -bottom-1 left-0 w-full h-[6px]" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
-                    <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="3" />
-                  </svg>
-                </span>
-              </h2>
-              <p className="text-[15px] leading-[1.8] text-navy-muted">
-                RheumaCare is designed to bridge the gap between clinical appointments and everyday life — giving patients, caregivers, and clinicians the tools, knowledge, and support they need at every stage of the arthritis journey.
-              </p>
-            </div>
-
-            {/* Impact stats row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 mb-10 overflow-hidden relative" style={{ backgroundColor: "#0f616e", borderRadius: "18px", padding: "2.2rem 2.5rem" }}>
-              <div className="absolute -right-[60px] -bottom-[60px] w-[300px] h-[300px] rounded-full" style={{ background: "radial-gradient(circle, rgba(26,163,181,.1) 0%, transparent 65%)" }} />
-              {[
-                { num: "6 yrs", label: "Average diagnosis delay in India", sub: "RheumaCare helps patients identify symptoms earlier and connect with specialists faster" },
-                { num: "60%", label: "Reduction in joint damage", sub: "When inflammatory arthritis is treated within 3 months of symptom onset" },
-                { num: "40%", label: "Work disability in 10 years", sub: "RheumaCare\u2019s treat-to-target tools and monitoring support help avoid this outcome" },
-              ].map((stat, i) => (
-                <div key={i} className="p-4 md:p-5">
-                  <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 3vw, 2.4rem)", fontWeight: 400, color: "#1AA3B5", lineHeight: 1, marginBottom: "0.3rem" }}>{stat.num}</p>
-                  <p className="text-[14px] font-semibold mb-1" style={{ color: "rgba(255,255,255,.9)" }}>{stat.label}</p>
-                  <p className="text-[12px]" style={{ color: "rgba(255,255,255,.4)", lineHeight: 1.55 }}>{stat.sub}</p>
-                </div>
-              ))}
-            </div>
-
-          </div>
-        </section>
+        {/* ═══════════ 08 — GOOGLE REVIEWS ═══════════ */}
+        <GoogleReviews />
 
 
         {/* ═══════════ WARNING SIGNS (COMMENTED) ═══════════ */}
@@ -1023,10 +978,10 @@ function Arthritis() {
                 className="text-navy-deep"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1rem" }}
               >
-                Supporting your arthritis journey at every step
+                The Role of RheumaCare
               </h2>
               <p className="text-[15px] leading-[1.75] text-navy-muted">
-                From first symptoms to sustained remission — RheumaCare connects patients and clinicians with the tools, specialists, and community they need.
+                RheumaCare is designed to bridge the gap between clinical appointments and everyday life — giving patients, caregivers, and clinicians the tools, knowledge, and support they need at every stage of the arthritis journey.
               </p>
               <a
                 href="#"
