@@ -19,7 +19,7 @@ function MeetDoctors() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ marginBottom: "2rem" }}>
           <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
-            Meet Our<br />Rheumatology Specialists
+            Meet Our Rheumatology Specialists
           </h2>
           {/* Arrows — desktop */}
           <div className="hidden md:flex gap-3">

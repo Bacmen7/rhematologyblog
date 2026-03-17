@@ -382,8 +382,8 @@ function Arthritis() {
                     {allSymptoms.map((symptom, i) => (
                       <div
                         key={i}
-                        className={`bg-white p-5 hover:-translate-y-0.5 transition-all duration-200 ${!showAllSymptoms && i >= 4 ? "hidden sm:block" : ""}`}
-                        style={{ borderRadius: 0 }}
+                        className={`p-5 hover:-translate-y-0.5 transition-all duration-200 ${!showAllSymptoms && i >= 4 ? "hidden sm:block" : ""}`}
+                        style={{ borderRadius: "12px", backgroundColor: i % 2 === 0 ? "#e0f3f5" : "#fff3ec" }}
                       >
                         <h4 className="text-[14px] font-semibold text-navy-deep mb-1">{symptom.label}</h4>
                         <p className="text-[12px] leading-[1.6]" style={{ color: "#5e5e5e" }}>{symptom.desc}</p>
@@ -510,16 +510,8 @@ function Arthritis() {
                 <div
                   key={i}
                   className="group relative overflow-hidden text-center flex flex-col items-center hover:-translate-y-1 transition-all duration-300 min-w-[85vw] sm:min-w-[320px] md:min-w-0 snap-start"
-                  style={{ backgroundColor: "#faf7f2", borderRadius: 0, padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "1px solid #e5e7eb" }}
+                  style={{ backgroundColor: i === 0 ? "#e0f3f5" : i === 1 ? "#f5f5f5" : "#fff3ec", borderRadius: "16px", padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "none" }}
                 >
-
-                  {/* Icon */}
-                  <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300"
-                    style={{ background: card.iconBg }}
-                  >
-                    <span className="material-symbols-outlined text-[28px]" style={{ color: card.iconColor }}>{card.icon}</span>
-                  </div>
 
                   {/* Title */}
                   <h3
@@ -579,7 +571,7 @@ function Arthritis() {
               </p>
             </div>
 
-            <div ref={treatRef} onScroll={handleTreatScroll} className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0">
+            <div ref={treatRef} onScroll={handleTreatScroll} className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide pl-0 pr-6 lg:pr-0 lg:grid lg:grid-cols-3 lg:gap-6 lg:overflow-visible lg:pb-0">
               {[
                 {
                   icon: "medication",
@@ -609,7 +601,7 @@ function Arthritis() {
                   color: "#1AA3B5",
                 },
               ].map((card, i) => (
-                <div key={i} className="min-w-[90vw] sm:min-w-[340px] lg:min-w-0 snap-start bg-white p-8 flex flex-col shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300" style={{ borderRadius: 0 }}>
+                <div key={i} className="w-[75vw] min-w-[75vw] sm:min-w-[280px] sm:w-auto lg:min-w-0 lg:w-auto snap-start p-6 flex flex-col shrink-0 transition-shadow duration-300" style={{ borderRadius: "16px", backgroundColor: i === 0 ? "#e0f3f5" : i === 1 ? "#fff3ec" : "#e0f3f5" }}>
                   {/* Badge */}
                   <span className="inline-block text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-full self-start" style={{ backgroundColor: "#e0f3f5", color: "#0f616e", marginBottom: "0.75rem" }}>
                     {card.badge}
@@ -712,7 +704,7 @@ function Arthritis() {
                 { icon: "bedtime", iconColor: "#0f616e", iconBg: "#f5f5f5", title: "Sleep & Fatigue", desc: "Inflammatory fatigue is driven by the same cytokines causing joint inflammation. Prioritise sleep hygiene. Effective disease control is the best treatment for inflammatory fatigue." },
                 { icon: "self_improvement", iconColor: "#fdcf2e", iconBg: "#e0f3f5", title: "Mental Health", desc: "Chronic inflammatory pain is associated with a 2\u20133\u00D7 higher rate of depression and anxiety. Cognitive-behavioural therapy has strong clinical evidence in RA and fibromyalgia." },
               ].map((card, i) => (
-                <div key={i} className="bg-white p-6 border border-gray-100" style={{ borderRadius: 0 }}>
+                <div key={i} className="bg-white p-6 border border-gray-100" style={{ borderRadius: "12px" }}>
                   <div className="w-10 h-10 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: card.iconBg }}>
                     <span className="material-symbols-outlined text-[20px]" style={{ color: card.iconColor }}>{card.icon}</span>
                   </div>
