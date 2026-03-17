@@ -520,8 +520,8 @@ function KnowledgeHub() {
                 <div key={i} className="bg-white border border-gray-100 p-5 flex gap-3 items-start" style={{ borderRadius: 0 }}>
                   <div className="w-2 h-2 rounded-full bg-[#1AA3B5] shrink-0 mt-1.5" />
                   <div>
-                    <div className="text-[14px] font-semibold text-navy-deep mb-1">{box.title}</div>
-                    <div className="text-[13px] text-navy-muted leading-[1.6]">{box.desc}</div>
+                    <div className="text-[14px] text-navy-deep mb-1" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>{box.title}</div>
+                    <div className="text-[13px] text-navy-muted leading-[1.6]" style={{ fontFamily: "var(--font-base)" }}>{box.desc}</div>
                   </div>
                 </div>
               ))}

@@ -13,7 +13,7 @@ function HealthGuideHero() {
             <img
               alt="Medical professional consulting patient"
               className="w-full h-full object-cover object-center"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgemhiRFnqIgC8d1wK55uDD3cOA_P4wWsNQm-ccLOnoc8lySLnhUC__lokJmAgel4QhX5UXHXn4lAMdllZr02aSrzUUQRBpnrYolm6Ej86seFvSkvf1T40YMo5MIsv7zg0oWjLl6G0K4CTt2rOs9Ef8ptPnDqDg9sWp44piibfzWiklVIGxn3COjchb4l86ZlmDKLrR9MMKATq-jT8OBvbikuqftz0iBkOLDWJlefczCq3lXgLDCDXDJ16Tmo3IeZR49LaHkE8eqea"
+              src="/images/mango.jpg"
             />
           </div>
         </div>
@@ -23,7 +23,7 @@ function HealthGuideHero() {
         <img
           alt=""
           className="h-full w-full object-cover object-center"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgemhiRFnqIgC8d1wK55uDD3cOA_P4wWsNQm-ccLOnoc8lySLnhUC__lokJmAgel4QhX5UXHXn4lAMdllZr02aSrzUUQRBpnrYolm6Ej86seFvSkvf1T40YMo5MIsv7zg0oWjLl6G0K4CTt2rOs9Ef8ptPnDqDg9sWp44piibfzWiklVIGxn3COjchb4l86ZlmDKLrR9MMKATq-jT8OBvbikuqftz0iBkOLDWJlefczCq3lXgLDCDXDJ16Tmo3IeZR49LaHkE8eqea"
+          src="/images/mango.jpg"
         />
       </div>
     </section>
