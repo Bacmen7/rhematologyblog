@@ -11,51 +11,6 @@ import BriefingFooter from "../components/BriefingFooter"
    ───────────────────────────────────────────── */
 
 
-const warningSignsEarly = [
-  "Persistent joint pain or stiffness lasting more than 2 weeks",
-  "Morning stiffness that takes over 30 minutes to improve",
-  "Swelling in one or more joints without a clear injury",
-  "Fatigue that doesn't improve with rest",
-  "Joint symptoms that come and go in flares",
-  "A family history of autoimmune or rheumatic disease",
-]
-
-const treatmentApproach = [
-  {
-    step: "01",
-    title: "Rapid Diagnosis",
-    desc: "Board-certified rheumatologists using advanced labs and imaging to identify your specific type of arthritis — often within the first 1–2 visits.",
-    color: "#1AA3B5",
-  },
-  {
-    step: "02",
-    title: "Personalized Treatment Plan",
-    desc: "Targeted therapy based on your arthritis type, disease activity, and life goals. From DMARDs and biologics to lifestyle interventions.",
-    color: "#fa885b",
-  },
-  {
-    step: "03",
-    title: "Multidisciplinary Care Team",
-    desc: "Rheumatologist, physical therapist, dietitian, and mental health support — all coordinated under one care plan.",
-    color: "#1AA3B5",
-  },
-  {
-    step: "04",
-    title: "Ongoing Monitoring & Support",
-    desc: "Regular check-ins, flare management protocols, and treatment adjustments to keep you in remission or low disease activity.",
-    color: "#fa885b",
-  },
-]
-
-
-const faqs = [
-  { q: "What types of arthritis does Rheuma treat?", a: "Rheuma specializes in autoimmune and inflammatory forms of arthritis including rheumatoid arthritis (RA), psoriatic arthritis (PsA), ankylosing spondylitis, gout, lupus arthritis, and other systemic rheumatic conditions. We work alongside your primary care provider for osteoarthritis management as well." },
-  { q: "How do I know if my joint pain is arthritis?", a: "Joint pain lasting more than 2 weeks, morning stiffness over 30 minutes, swelling without injury, and symmetric joint involvement are key indicators. Blood tests (RF, Anti-CCP, ESR, CRP) and imaging can confirm the diagnosis. Early evaluation is critical — the sooner treatment begins, the better the outcomes." },
-  { q: "What is the difference between inflammatory and degenerative arthritis?", a: "Inflammatory arthritis (like RA, PsA) is caused by the immune system attacking joint tissues, causing swelling and damage. Degenerative arthritis (osteoarthritis) results from cartilage wearing down over time. Inflammatory types require immune-modulating medications, while OA is typically managed with pain relief, physical therapy, and sometimes surgery." },
-  { q: "Can arthritis be reversed or cured?", a: "While there is no cure for most forms of arthritis, early and aggressive treatment of inflammatory arthritis can achieve clinical remission — meaning minimal symptoms and no ongoing joint damage. Modern biologics and JAK inhibitors have transformed outcomes. The key is starting treatment during the 'window of opportunity' in the first 12 weeks." },
-  { q: "How quickly can I see a rheumatologist through Rheuma?", a: "Most patients are seen within 72 hours of signing up. We offer virtual and in-person appointments, including evenings and weekends. No more 4–6 month waitlists — early access to a specialist is one of the biggest advantages of the Rheuma model." },
-]
-
 /* ─────────────────────────────────────────────
    COMPONENT
    ───────────────────────────────────────────── */
@@ -383,7 +338,7 @@ function Arthritis() {
                       <div
                         key={i}
                         className={`p-5 hover:-translate-y-0.5 transition-all duration-200 ${!showAllSymptoms && i >= 4 ? "hidden sm:block" : ""}`}
-                        style={{ borderRadius: "12px", backgroundColor: i % 2 === 0 ? "#e0f3f5" : "#fff3ec" }}
+                        style={{ borderRadius: "12px", backgroundColor: "#e0f3f5" }}
                       >
                         <h4 className="text-[14px] font-semibold text-navy-deep mb-1">{symptom.label}</h4>
                         <p className="text-[12px] leading-[1.6]" style={{ color: "#5e5e5e" }}>{symptom.desc}</p>
@@ -886,7 +841,7 @@ function Arthritis() {
               <a
                 href="#"
                 className="inline-block rounded-full font-semibold text-[14px] mt-7 transition-all hover:opacity-90"
-                style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "0.7rem 2rem" }}
+                style={{ backgroundColor: "#fd956a", color: "#ffffff", padding: "0.7rem 2rem" }}
               >
                 Book a Consultation &#8594;
               </a>
@@ -959,7 +914,7 @@ function Arthritis() {
                     <span className="w-[3px] h-[3px] rounded-full bg-[#e8ecf2]" />
                     <span>March 2026</span>
                   </div>
-                  <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#0f616e" }}>
+                  <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#fd956a" }}>
                     Read Article
                   </button>
                 </div>
