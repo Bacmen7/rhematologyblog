@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
@@ -244,6 +244,96 @@ const conditionData = {
       { img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400", cat: "Treatment", title: "Hydroxychloroquine: The Lupus Essential", time: "5 min" },
     ],
   },
+  reactive: {
+    name: "Reactive Arthritis",
+    typeLabel: "Inflammatory",
+    overview: "Reactive arthritis develops after an infection — typically gastrointestinal or genitourinary. It causes joint inflammation, eye inflammation, and urinary symptoms. Most cases resolve within 6–12 months but some become chronic.",
+    keyPoints: ["Triggered by infections (Chlamydia, Salmonella, Shigella)", "Classic triad: arthritis, urethritis, conjunctivitis", "Asymmetric joint involvement, often lower limbs", "ESR/CRP elevated, HLA-B27 positive in many cases"],
+    treatment: ["NSAIDs for joint inflammation", "Antibiotics if active infection", "DMARDs for chronic cases", "Physiotherapy"],
+    when: "Joint swelling after a gastrointestinal or genitourinary infection, especially with eye redness or urinary symptoms.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+  },
+  sjogrens: {
+    name: "Sjögren's Syndrome",
+    typeLabel: "Autoimmune",
+    overview: "Sjögren's syndrome is a chronic autoimmune condition primarily affecting the moisture-producing glands, causing dry eyes and dry mouth. It can also affect joints, lungs, kidneys, and nerves.",
+    keyPoints: ["Dry eyes and dry mouth are cardinal symptoms", "ANA, SSA/SSB antibodies are key diagnostic markers", "Can occur alone (primary) or with other autoimmune conditions", "Increased risk of lymphoma"],
+    treatment: ["Artificial tears and saliva substitutes", "Hydroxychloroquine for systemic features", "Pilocarpine for severe dryness", "Regular dental care essential"],
+    when: "Persistent dry eyes/mouth with joint pain, fatigue, or positive ANA.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+  },
+  jia: {
+    name: "Juvenile Idiopathic Arthritis",
+    typeLabel: "Paediatric",
+    overview: "JIA is the most common chronic arthritis in children under 16. It encompasses several subtypes with different patterns of joint involvement and systemic features. Early treatment prevents growth problems and joint damage.",
+    keyPoints: ["Persistent joint swelling in children lasting >6 weeks", "Multiple subtypes: oligoarticular, polyarticular, systemic", "ANA and ESR help classify subtypes", "Eye screening essential — risk of uveitis"],
+    treatment: ["NSAIDs for mild disease", "Methotrexate for polyarticular JIA", "Biologics (TNF inhibitors, IL-6 blockers)", "Regular ophthalmology screening"],
+    when: "Any child with persistent joint swelling, limping, or stiffness lasting more than 6 weeks.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+  },
+  pmr: {
+    name: "Polymyalgia Rheumatica",
+    typeLabel: "Inflammatory",
+    overview: "PMR causes severe stiffness and pain in the shoulders and hips, typically in adults over 50. It is closely associated with giant cell arteritis. ESR and CRP are markedly elevated.",
+    keyPoints: ["Bilateral shoulder and hip stiffness and pain", "Age >50, rapid onset over days to weeks", "ESR/CRP dramatically elevated", "Dramatic response to low-dose prednisolone is diagnostic"],
+    treatment: ["Low-dose prednisolone (15–20mg) — first-line", "Slow steroid taper over 12–18 months", "Methotrexate as steroid-sparing agent", "Monitor for giant cell arteritis symptoms"],
+    when: "Sudden bilateral shoulder/hip stiffness in someone over 50 with raised inflammatory markers.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+  },
+  osteoporosis: {
+    name: "Osteoporosis",
+    typeLabel: "Metabolic Bone",
+    overview: "Osteoporosis is a condition of reduced bone density and increased fracture risk. It is often silent until a fracture occurs. DEXA scanning measures bone density and guides treatment.",
+    keyPoints: ["Silent disease — often diagnosed after fracture", "DEXA scan is the gold standard for diagnosis", "Risk factors: age, female sex, steroid use, family history", "Vertebral and hip fractures cause significant morbidity"],
+    treatment: ["Calcium and vitamin D supplementation", "Bisphosphonates (alendronate, zoledronic acid)", "Denosumab for high-risk patients", "Weight-bearing exercise"],
+    when: "Fragility fracture, long-term steroid use, or DEXA T-score ≤ -2.5.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Guide", title: "Understanding Bone Density Tests", time: "5 min" }],
+  },
+  scleroderma: {
+    name: "Systemic Sclerosis",
+    typeLabel: "Autoimmune",
+    overview: "Systemic sclerosis (scleroderma) causes hardening and tightening of the skin and connective tissues. It can affect blood vessels, internal organs, and the digestive tract. Raynaud's phenomenon is often the first symptom.",
+    keyPoints: ["Skin tightening is the hallmark feature", "Raynaud's phenomenon in >90% of patients", "ANA and Scl-70 antibodies aid diagnosis", "Interstitial lung disease is a major complication"],
+    treatment: ["Calcium channel blockers for Raynaud's", "Mycophenolate for skin and lung involvement", "Nintedanib for progressive lung fibrosis", "Regular pulmonary function monitoring"],
+    when: "Skin tightening, Raynaud's phenomenon with digital ulcers, or unexplained shortness of breath.",
+    articles: [{ img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400", cat: "Clinical", title: "Scleroderma: Early Recognition", time: "6 min" }],
+  },
+  septic: {
+    name: "Septic Arthritis",
+    typeLabel: "Infectious",
+    overview: "Septic arthritis is a medical emergency — a joint infection that can destroy cartilage within days if untreated. It requires urgent joint aspiration and intravenous antibiotics.",
+    keyPoints: ["Hot, swollen, extremely painful single joint", "Fever + joint swelling = emergency until proven otherwise", "Joint aspiration with culture is diagnostic gold standard", "Staphylococcus aureus is the most common cause"],
+    treatment: ["Urgent joint aspiration", "IV antibiotics — empiric then targeted", "Surgical washout if no improvement", "Close monitoring of joint function"],
+    when: "Any hot, swollen, extremely painful joint with fever — seek emergency care immediately.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Emergency", title: "Septic Arthritis: Act Fast", time: "4 min" }],
+  },
+  cppd: {
+    name: "Crystal Arthropathies (CPPD)",
+    typeLabel: "Crystal-Induced",
+    overview: "Calcium pyrophosphate deposition disease (CPPD) causes acute joint inflammation similar to gout but due to calcium crystals. It commonly affects the knee and wrist, particularly in elderly patients.",
+    keyPoints: ["Acute joint inflammation mimicking gout", "X-ray shows chondrocalcinosis (cartilage calcification)", "Crystal analysis confirms diagnosis", "Common in elderly, associated with osteoarthritis"],
+    treatment: ["NSAIDs or colchicine for acute attacks", "Joint aspiration with corticosteroid injection", "Low-dose colchicine for prophylaxis", "No urate-lowering therapy needed (unlike gout)"],
+    when: "Acute joint swelling in an elderly patient, especially knee or wrist, with X-ray showing calcification.",
+    articles: [{ img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400", cat: "Diagnosis", title: "CPPD vs Gout: Key Differences", time: "5 min" }],
+  },
+  mctd: {
+    name: "Mixed Connective Tissue Disease",
+    typeLabel: "Autoimmune",
+    overview: "MCTD is an overlap syndrome with features of lupus, scleroderma, and polymyositis. Anti-U1 RNP antibody is the hallmark. Raynaud's, swollen fingers, and joint pain are common early features.",
+    keyPoints: ["Overlap features of lupus, scleroderma, myositis", "Anti-U1 RNP antibody is the diagnostic marker", "Raynaud's and puffy fingers are early signs", "Pulmonary hypertension is a serious complication"],
+    treatment: ["NSAIDs for mild joint symptoms", "Corticosteroids for flares", "Hydroxychloroquine for skin and joints", "Immunosuppressants for organ involvement"],
+    when: "Joint pain with Raynaud's, swollen fingers, and features of multiple autoimmune conditions.",
+    articles: [{ img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400", cat: "Clinical", title: "Recognising MCTD", time: "6 min" }],
+  },
+  raynauds: {
+    name: "Raynaud's Phenomenon",
+    typeLabel: "Vascular",
+    overview: "Raynaud's causes episodes of reduced blood flow to fingers and toes in response to cold or stress, causing colour changes (white → blue → red). It can be primary (benign) or secondary to autoimmune disease.",
+    keyPoints: ["Finger colour change in cold: white → blue → red", "Primary Raynaud's is common and benign", "Secondary Raynaud's associated with scleroderma, lupus, MCTD", "Nailfold capillaroscopy helps distinguish primary from secondary"],
+    treatment: ["Keep hands warm — prevention is key", "Calcium channel blockers (nifedipine)", "Avoid vasoconstrictors (smoking, certain medications)", "Investigate for underlying autoimmune cause"],
+    when: "Finger colour changes with cold exposure, especially if associated with digital ulcers or other autoimmune symptoms.",
+    articles: [{ img: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400", cat: "Guide", title: "Raynaud's: When to Worry", time: "5 min" }],
+  },
 }
 
 const treatmentCards = [
@@ -283,7 +373,7 @@ const treatmentCards = [
     footer: "Targeted relief for specific joints",
   },
   {
-    img: "https://images.unsplash.com/photo-1551190822-a9ce113ac100?w=600",
+    img: "/images/joints.jpg",
     badge: "Surgery",
     title: "Surgery",
     desc: "TKR, THR, synovectomy, arthroscopy, spinal fusion",
@@ -374,8 +464,22 @@ function KnowledgeHub() {
   /* Condition panel state */
   const [activeCondition, setActiveCondition] = useState(null)
 
+  /* Show more conditions */
+  const [showAllConditions, setShowAllConditions] = useState(false)
+
   /* Newsletter state */
   const [email, setEmail] = useState("")
+
+  /* Treatment carousel */
+  const [treatDot, setTreatDot] = useState(0)
+  const treatCarouselRef = useRef(null)
+  const handleTreatCarousel = useCallback(() => {
+    const el = treatCarouselRef.current
+    if (!el) return
+    const cardW = el.firstChild?.offsetWidth || 1
+    const idx = Math.round(el.scrollLeft / (cardW + 16))
+    setTreatDot(Math.min(idx, 7))
+  }, [])
 
   return (
     <div className="text-navy-deep bg-white" style={{ fontFamily: "var(--font-base)" }}>
@@ -391,7 +495,7 @@ function KnowledgeHub() {
             <h1 className="text-navy-deep max-w-[640px]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 400, lineHeight: 1.15, marginBottom: "1rem" }}>
               Rheuma <span className="text-[#1AA3B5]">Knowledge Hub</span>
             </h1>
-            <p className="text-[15px] text-navy-muted leading-[1.75] max-w-[500px]" style={{ margin: 0 }}>
+            <p className="text-[15px] text-navy-muted leading-[1.75]" style={{ margin: 0 }}>
               Your comprehensive resource for understanding rheumatic conditions, treatment options, and the latest research — written and reviewed by board-certified rheumatologists.
             </p>
           </div>
@@ -401,25 +505,13 @@ function KnowledgeHub() {
         {/* ═══════════ 2 · WHAT IS RHEUMATOLOGY ═══════════ */}
         <section className="bg-ghost py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20" style={{ marginBottom: "3rem" }}>
-              <div>
-                <span className="text-[11px] font-bold tracking-[0.18em] uppercase block mb-3" style={{ color: "#1AA3B5" }}>
-                  Understanding the Specialty
-                </span>
-                <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px" }}>
-                  What Is Rheumatology?
-                </h2>
-              </div>
-              <div className="flex items-end">
-                <div>
-                  <p className="text-[15px] text-navy-muted leading-[1.75]" style={{ marginBottom: "1rem" }}>
-                    Rheumatology is a medical specialty focused on the diagnosis and treatment of autoimmune and inflammatory conditions affecting joints, muscles, bones, and connective tissues.
-                  </p>
-                  <p className="text-[15px] text-navy-muted leading-[1.75]">
-                    The field encompasses over 200 conditions — from common diseases like rheumatoid arthritis and osteoarthritis to rare systemic conditions like vasculitis and scleroderma.
-                  </p>
-                </div>
-              </div>
+            <div style={{ marginBottom: "3rem" }}>
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1.25rem" }}>
+                What Is Rheumatology?
+              </h2>
+              <p className="text-[15px] text-navy-muted leading-[1.75]">
+                Rheumatology is a medical specialty focused on the diagnosis and treatment of autoimmune and inflammatory conditions affecting joints, muscles, bones, and connective tissues. The field encompasses over 200 conditions — from common diseases like rheumatoid arthritis and osteoarthritis to rare systemic conditions like vasculitis and scleroderma.
+              </p>
             </div>
 
             {/* Cover boxes grid */}
@@ -438,6 +530,11 @@ function KnowledgeHub() {
         </section>
 
 
+        {/* Wave: ghost → dark */}
+        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#0f616e" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#f8f9fb" />
+        </svg>
+
         {/* ═══════════ 3 · SYMPTOM CHECKER ═══════════ */}
         <section id="symptom-checker" className="bg-[#0f616e] py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
@@ -446,9 +543,6 @@ function KnowledgeHub() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
                 {/* Left — heading */}
                 <div>
-                  <span className="text-[11px] font-bold tracking-[0.18em] uppercase text-white/50 block" style={{ marginBottom: "0.75rem" }}>
-                    Symptom Assessment
-                  </span>
                   <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                     When should you see a rheumatologist?
                   </h2>
@@ -547,14 +641,15 @@ function KnowledgeHub() {
           </div>
         </section>
 
+        {/* Wave: dark → white */}
+        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#ffffff" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#0f616e" />
+        </svg>
 
         {/* ═══════════ 4 · CONDITIONS ═══════════ */}
         <section id="conditions" className="bg-white py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-8 max-w-2xl">
-              <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: "#1AA3B5" }}>
-                Condition Library
-              </span>
               <h2 className="text-navy-deep mt-2" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Conditions We Treat
               </h2>
@@ -598,21 +693,31 @@ function KnowledgeHub() {
               Other Conditions
             </div>
 
-            {/* Small tiles — 4 column */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-[#dde6ee] rounded-lg overflow-hidden mb-8">
+            {/* Small tiles */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[#dde6ee] rounded-lg overflow-hidden mb-4">
               {[
                 { key: "gout", ...conditionData.gout },
                 { key: "ctd", ...conditionData.ctd },
                 { key: "fibro", ...conditionData.fibro },
                 { key: "vasculitis", ...conditionData.vasculitis },
                 { key: "lupus", ...conditionData.lupus },
-              ].map((c) => (
+                { key: "reactive", ...conditionData.reactive },
+                { key: "sjogrens", ...conditionData.sjogrens },
+                { key: "jia", ...conditionData.jia },
+                { key: "pmr", ...conditionData.pmr },
+                { key: "scleroderma", ...conditionData.scleroderma },
+                { key: "osteoporosis", ...conditionData.osteoporosis },
+                { key: "septic", ...conditionData.septic },
+                { key: "cppd", ...conditionData.cppd },
+                { key: "mctd", ...conditionData.mctd },
+                { key: "raynauds", ...conditionData.raynauds },
+              ].map((c, idx) => (
                 <button
                   key={c.key}
                   onClick={() => setActiveCondition(activeCondition === c.key ? null : c.key)}
                   className={`flex gap-3 items-center p-5 border-none cursor-pointer text-left transition-colors ${
                     activeCondition === c.key ? "bg-white" : "bg-[#e0f3f5] hover:bg-[#d4ebf8]"
-                  }`}
+                  } ${!showAllConditions && idx >= 5 ? "hidden sm:flex" : ""}`}
                   style={{ fontFamily: "var(--font-base)" }}
                 >
                   <BookIcon size={22} color="#0f616e" />
@@ -625,6 +730,14 @@ function KnowledgeHub() {
                 </button>
               ))}
             </div>
+
+            <button
+              onClick={() => setShowAllConditions(!showAllConditions)}
+              className="text-[13px] font-semibold cursor-pointer sm:hidden mb-6"
+              style={{ color: "#1AA3B5", background: "none", border: "none", padding: 0 }}
+            >
+              {showAllConditions ? "See less ↑" : "See more ↓"}
+            </button>
 
             {/* Detail panel */}
             {activeCondition && conditionData[activeCondition] && (() => {
@@ -716,14 +829,16 @@ function KnowledgeHub() {
         </section>
 
 
+        {/* Wave: white → dark */}
+        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#0f616e" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#ffffff" />
+        </svg>
+
         {/* ═══════════ 5 · TREATMENT OPTIONS ═══════════ */}
         <section className="bg-[#0f616e] py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
             {/* Left-aligned heading like other sections */}
-            <div className="mb-8 max-w-2xl">
-              <span className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-5" style={{ backgroundColor: "rgba(26,163,181,.15)", color: "#1AA3B5" }}>
-                Treatment Guide
-              </span>
+            <div className="mb-8">
               <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(2rem,4vw,2.75rem)", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Treatment Options
               </h2>
@@ -732,40 +847,50 @@ function KnowledgeHub() {
               </p>
             </div>
 
-            {/* 4-col grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {treatmentCards.map((card, i) => (
-                <div key={i} className="bg-white/[.08] border border-white/[.1] overflow-hidden flex flex-col hover:-translate-y-1 transition-transform duration-300" style={{ borderRadius: 0 }}>
+            {/* 4-col grid — carousel on mobile */}
+            <div ref={treatCarouselRef} onScroll={handleTreatCarousel} className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
+              {treatmentCards.map((card, i) => {
+                const colors = ["#e0f3f5", "#fff3ec", "#f5f5f5", "#e0f3f5", "#fff3ec", "#e0f3f5", "#f5f5f5", "#fff3ec"]
+                return (
+                <div key={i} className="w-[65vw] min-w-[65vw] sm:w-auto sm:min-w-0 snap-start overflow-hidden flex flex-col shrink-0 hover:-translate-y-1 transition-transform duration-300" style={{ borderRadius: "12px", backgroundColor: colors[i % colors.length] }}>
                   <div className="relative h-[150px] overflow-hidden">
                     <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-[0.06em] px-3 py-1 rounded-full bg-white/90 text-[#0f616e]">
+                    <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-[0.06em] px-3 py-1 rounded-full" style={{ backgroundColor: "#0f616e", color: "#fff" }}>
                       {card.badge}
                     </span>
                   </div>
-                  <div className="p-5 flex-1">
-                    <h4 className="text-[15px] font-semibold mb-2 leading-snug" style={{ color: "#a0e2e4" }}>{card.title}</h4>
-                    <p className="text-[13px] text-white/80 leading-[1.65]">{card.desc}</p>
+                  <div className="p-5">
+                    <h4 className="text-[15px] font-semibold mb-2 leading-snug" style={{ color: "#0f616e" }}>{card.title}</h4>
+                    <p className="text-[13px] leading-[1.65]" style={{ color: "#5e5e5e" }}>{card.desc}</p>
                   </div>
-                  <div className="border-t border-white/[.08] px-5 py-3 flex justify-between items-center">
-                    <span className="text-[11px] text-white/60">{card.footer}</span>
-                    <span className="w-7 h-7 rounded-full bg-white/[.08] flex items-center justify-center text-white/50 shrink-0">
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
+                  <div className="px-5 py-3 flex justify-between items-center" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
+                    <span className="text-[11px]" style={{ color: "#5e5e5e" }}>{card.footer}</span>
+                    <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#0f616e" }}>
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
                     </span>
                   </div>
                 </div>
+                )
+              })}
+            </div>
+            {/* Dots — mobile only */}
+            <div className="flex justify-center gap-2 mt-4 sm:hidden">
+              {[0,1,2,3,4,5,6,7].map((i) => (
+                <span key={i} className="rounded-full transition-all duration-300" style={{ width: treatDot === i ? "20px" : "6px", height: "6px", backgroundColor: treatDot === i ? "#1AA3B5" : "rgba(255,255,255,0.2)" }} />
               ))}
             </div>
           </div>
         </section>
 
+        {/* Wave: dark → white */}
+        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#ffffff" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#0f616e" />
+        </svg>
 
         {/* ═══════════ 6 · RESEARCH ARTICLES ═══════════ */}
         <section className="bg-white py-12 md:py-16 px-6">
           <div className="max-w-7xl mx-auto">
             <div className="mb-8 max-w-2xl">
-              <span className="text-[11px] font-bold tracking-[0.18em] uppercase" style={{ color: "#1AA3B5" }}>
-                Latest Research
-              </span>
               <h2 className="text-navy-deep mt-2" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Research &amp; Articles
               </h2>
@@ -794,7 +919,7 @@ function KnowledgeHub() {
                     <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
                     <span>{featuredArticle.date}</span>
                   </div>
-                  <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#0f616e" }}>
+                  <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#e86531" }}>
                     Read Article
                   </button>
                 </div>

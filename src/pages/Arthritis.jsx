@@ -545,6 +545,7 @@ function Arthritis() {
                   items: ["Total Knee Replacement", "Total Hip Replacement", "Synovectomy", "Arthroscopy", "Spinal Fusion — end-stage AS"],
                   note: "Reserved as a last resort — only after all medical options are exhausted.",
                   color: "#fd956a",
+                  img: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=600&q=80",
                 },
                 {
                   icon: "fitness_center",
@@ -557,6 +558,12 @@ function Arthritis() {
                 },
               ].map((card, i) => (
                 <div key={i} className="w-[75vw] min-w-[75vw] sm:min-w-[280px] sm:w-auto lg:min-w-0 lg:w-auto snap-start p-6 flex flex-col shrink-0 transition-shadow duration-300" style={{ borderRadius: "16px", backgroundColor: i === 0 ? "#e0f3f5" : i === 1 ? "#fff3ec" : "#e0f3f5" }}>
+                  {/* Image */}
+                  {card.img && (
+                    <div className="overflow-hidden mb-4" style={{ borderRadius: "10px", marginLeft: "-1.5rem", marginRight: "-1.5rem", marginTop: "-1.5rem" }}>
+                      <img src={card.img} alt={card.title} className="w-full h-[160px] object-cover" />
+                    </div>
+                  )}
                   {/* Badge */}
                   <span className="inline-block text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-full self-start" style={{ backgroundColor: "#e0f3f5", color: "#0f616e", marginBottom: "0.75rem" }}>
                     {card.badge}
