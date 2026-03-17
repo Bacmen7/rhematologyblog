@@ -30,7 +30,7 @@ function Hero() {
               Empowering clinicians and patients with research-driven insights, clinical evidence, and personalized care protocols for complex autoimmune conditions.
             </p>
             <div className="flex flex-wrap gap-3 pt-2">
-              <button className="bg-primary hover:bg-primary-hover text-white px-6 py-2.5 rounded-full font-semibold text-base transition-colors">
+              <button className="text-white px-6 py-2.5 rounded-full font-semibold text-base transition-colors hover:opacity-90" style={{ backgroundColor: "#e86531" }}>
                 Get Started →
               </button>
             </div>
@@ -72,7 +72,7 @@ function Hero() {
           <p className="text-base text-navy-muted leading-relaxed max-w-sm" style={{ marginBottom: "48px" }}>
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.
           </p>
-          <button className="bg-primary hover:bg-primary-hover text-white px-8 py-3.5 rounded-full font-bold text-base transition-colors" style={{ marginBottom: "20px" }}>
+          <button className="text-white px-8 py-3.5 rounded-full font-bold text-base transition-colors hover:opacity-90" style={{ backgroundColor: "#e86531" }} style={{ marginBottom: "20px" }}>
             Get Started →
           </button>
           <p className="text-sm text-navy-muted">

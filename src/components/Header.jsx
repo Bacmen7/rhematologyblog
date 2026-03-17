@@ -240,7 +240,7 @@ function Header() {
           </button>
 
           {/* Subscribe CTA */}
-          <button className="hidden md:inline-flex items-center gap-2 bg-navy-deep hover:bg-navy-deep/90 text-white pl-5 pr-4 py-2.5 rounded-full font-bold text-[13px] tracking-wide transition-all duration-300 hover:shadow-[0_4px_16px_rgba(24,36,57,0.25)] group">
+          <button className="hidden md:inline-flex items-center gap-2 text-white pl-5 pr-4 py-2.5 rounded-full font-bold text-[13px] tracking-wide transition-all duration-300 hover:opacity-90 group" style={{ backgroundColor: "#e86531" }}>
             Subscribe
             <span className="w-5 h-5 rounded-full bg-white/20 inline-flex items-center justify-center group-hover:bg-white/30 transition-colors">
               <span className="material-symbols-outlined text-[14px]">arrow_forward</span>

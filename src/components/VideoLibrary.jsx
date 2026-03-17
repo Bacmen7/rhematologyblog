@@ -71,7 +71,7 @@ function VideoLibrary() {
           <a
             href="#"
             className="inline-flex items-center gap-2 rounded-full font-semibold text-[14px] text-white transition-all hover:opacity-90 self-start md:self-auto"
-            style={{ backgroundColor: "#1aa3b5", padding: "13px 26px", fontFamily: "var(--font-base)" }}
+            style={{ backgroundColor: "#e86531", padding: "13px 26px", fontFamily: "var(--font-base)" }}
           >
             View All Stories
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">

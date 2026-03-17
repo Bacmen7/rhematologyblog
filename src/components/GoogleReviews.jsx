@@ -130,8 +130,8 @@ function GoogleReviews() {
         {/* View All button */}
         <div>
           <button
-            className="text-[14px] font-semibold text-[#0f616e] bg-[#a0e2e4] rounded-full px-8 py-3 hover:opacity-90 transition-colors cursor-pointer"
-            style={{ fontFamily: "var(--font-base)" }}
+            className="text-[14px] font-semibold text-white rounded-full px-8 py-3 hover:opacity-90 transition-colors cursor-pointer"
+            style={{ backgroundColor: "#e86531", fontFamily: "var(--font-base)" }}
           >
             View All
           </button>

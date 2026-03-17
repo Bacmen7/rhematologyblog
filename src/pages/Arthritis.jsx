@@ -205,7 +205,7 @@ function Arthritis() {
           <div className="max-w-7xl mx-auto px-6">
             <div style={{ marginBottom: "2.5rem" }}>
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
-                Arthritis &ndash; The Scale of the Problem
+                Arthritis - The Scale of the Problem
               </h2>
               <p className="text-[15px] leading-[1.85] text-navy-muted">
                 Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
@@ -220,20 +220,20 @@ function Arthritis() {
                 { value: "40%", label: "work disability in 10 yrs", desc: "Of RA patients experience significant work disability within 10 years without early, targeted therapy. Early treatment changes this outcome dramatically." },
               ].map((stat, i) => (
                 <div key={i} className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
-                  <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
+                  <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5", marginBottom: "0.5rem" }}>
                     {stat.value}
                   </p>
-                  <p className="text-[14px] font-semibold text-navy-deep mb-3">{stat.label}</p>
+                  <p className="text-[14px] font-semibold text-navy-deep" style={{ marginBottom: "0.75rem" }}>{stat.label}</p>
                   <p className="text-[13px] leading-[1.7] text-navy-muted">{stat.desc}</p>
                 </div>
               ))}
 
               {/* Card 4 — gender bar */}
               <div className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
-                <p className="mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5" }}>
+                <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5", marginBottom: "0.5rem" }}>
                   3&times;
                 </p>
-                <p className="text-[14px] font-semibold text-navy-deep mb-3">more common in women</p>
+                <p className="text-[14px] font-semibold text-navy-deep" style={{ marginBottom: "0.75rem" }}>more common in women</p>
                 <p className="text-[13px] leading-[1.7] text-navy-muted">RA disproportionately affects women. Conversely, AS (Ankylosing Spondylitis) is 2–3&times; more prevalent in men, typically under 35 years old.</p>
               </div>
             </div>
@@ -364,7 +364,7 @@ function Arthritis() {
             {/* Heading */}
             <div className="mb-8 md:mb-14">
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#0f616e", marginBottom: "1rem" }}>
-                Pathology — How Arthritis Develops
+                Pathology - How Arthritis Develops
               </h2>
               <p className="text-[15px] leading-[1.85]" style={{ color: "#0f616e", opacity: 0.7 }}>
                 Understanding the biological sequence shows patients exactly why early treatment prevents permanent damage — and why waiting is never safe in inflammatory arthritis.
@@ -425,7 +425,7 @@ function Arthritis() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-10 md:mb-14">
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
-                Diagnosis — Tests and What They Mean
+                Diagnosis - Tests and What They Mean
               </h2>
               <p className="text-[15px] leading-[1.85] text-navy-muted">
                 No single test diagnoses arthritis. Diagnosis is clinical — combining history, physical examination, blood tests, and imaging.
