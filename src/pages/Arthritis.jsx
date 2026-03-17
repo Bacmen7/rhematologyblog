@@ -293,11 +293,11 @@ function Arthritis() {
         <section id="types" className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             {/* Heading — left aligned */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+            <div className="mb-8 md:mb-14">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Major Types of Arthritis
               </h2>
-              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
+              <p className="text-[15px] leading-[1.85] text-navy-muted">
                 While over 100 forms of arthritis exist, these four types account for the vast majority of rheumatology presentations. Each has a distinct mechanism, patient profile, and treatment pathway.
               </p>
             </div>
@@ -407,11 +407,11 @@ function Arthritis() {
         <section className="relative overflow-hidden" style={{ backgroundColor: "#a0e2e4", paddingTop: "3rem", paddingBottom: "3rem" }}>
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Heading */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-8 md:mb-14">
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#0f616e" }}>
+            <div className="mb-8 md:mb-14">
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#0f616e", marginBottom: "1rem" }}>
                 Pathology — How Arthritis Develops
               </h2>
-              <p className="text-[15px] leading-[1.85] md:pt-2" style={{ color: "#0f616e", opacity: 0.7 }}>
+              <p className="text-[15px] leading-[1.85]" style={{ color: "#0f616e", opacity: 0.7 }}>
                 Understanding the biological sequence shows patients exactly why early treatment prevents permanent damage — and why waiting is never safe in inflammatory arthritis.
               </p>
             </div>
@@ -468,11 +468,11 @@ function Arthritis() {
         {/* ═══════════ DIAGNOSIS — TESTS AND WHAT THEY MEAN ═══════════ */}
         <section className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10 md:mb-14">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+            <div className="mb-10 md:mb-14">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Diagnosis — Tests and What They Mean
               </h2>
-              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
+              <p className="text-[15px] leading-[1.85] text-navy-muted">
                 No single test diagnoses arthritis. Diagnosis is clinical — combining history, physical examination, blood tests, and imaging.
               </p>
             </div>
@@ -570,11 +570,11 @@ function Arthritis() {
         {/* ═══════════ 06 — TREATMENT OPTIONS ═══════════ */}
         <section className="py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10 md:mb-14">
-              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#ffffff" }}>
+            <div className="mb-10 md:mb-14">
+              <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#ffffff", marginBottom: "1rem" }}>
                 Treatment Options
               </h2>
-              <p className="text-[15px] leading-[1.8] md:pt-2" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p className="text-[15px] leading-[1.8]" style={{ color: "rgba(255,255,255,0.6)" }}>
                 Arthritis is managed through two primary treatment pathways — medication therapy and surgery. Most patients are managed with medicines alone; surgery is reserved for advanced cases.
               </p>
             </div>
