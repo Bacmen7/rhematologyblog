@@ -248,11 +248,11 @@ function Arthritis() {
         {/* ═══════════ SCALE OF THE PROBLEM ═══════════ */}
         <section className="relative py-16 md:py-24 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16" style={{ marginBottom: "2.5rem" }}>
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+            <div style={{ marginBottom: "2.5rem" }}>
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Arthritis &ndash; The Scale of the Problem
               </h2>
-              <p className="text-[15px] leading-[1.85] text-navy-muted md:pt-2">
+              <p className="text-[15px] leading-[1.85] text-navy-muted">
                 Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
               </p>
             </div>
@@ -356,11 +356,11 @@ function Arthritis() {
         {/* ═══════════ SYMPTOMS OF ARTHRITIS ═══════════ */}
         <section className="py-12 md:py-20" style={{ backgroundColor: "#f5f5f5" }}>
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-16 mb-10">
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+            <div className="mb-10">
+              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Symptoms of Arthritis
               </h2>
-              <p className="text-[15px] leading-[1.85] md:pt-2" style={{ color: "#5e5e5e" }}>
+              <p className="text-[15px] leading-[1.85]" style={{ color: "#5e5e5e" }}>
                 Arthritis symptoms vary by type but share common patterns. Early recognition of these symptoms can lead to faster diagnosis and better outcomes.
               </p>
             </div>
@@ -610,14 +610,6 @@ function Arthritis() {
                 },
               ].map((card, i) => (
                 <div key={i} className="min-w-[90vw] sm:min-w-[340px] lg:min-w-0 snap-start bg-white p-8 flex flex-col shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300" style={{ borderRadius: 0 }}>
-                  {/* Icon */}
-                  <div className="relative w-[70px] h-[74px] flex items-center justify-center" style={{ marginBottom: "1.25rem" }}>
-                    <svg className="absolute inset-0 w-full h-full" viewBox="0 0 70 74" fill="none">
-                      <path d="M35 0C54 0 70 16 70 37C70 58 54 74 35 74C16 74 0 58 0 37C0 16 16 0 35 0Z" fill="#e0f3f5" />
-                    </svg>
-                    <span className="material-symbols-outlined relative z-10 text-[28px]" style={{ color: card.color }}>{card.icon}</span>
-                  </div>
-
                   {/* Badge */}
                   <span className="inline-block text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-full self-start" style={{ backgroundColor: "#e0f3f5", color: "#0f616e", marginBottom: "0.75rem" }}>
                     {card.badge}
