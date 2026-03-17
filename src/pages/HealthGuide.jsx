@@ -97,12 +97,12 @@ function HealthGuide() {
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-4 items-center">
               <div className="pt-8 pb-4 md:py-6 relative z-10">
-                <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px" }}>
-                  Explore Health Guide<br />
-                  <span className="text-navy-muted">
-                    Reliable, rheumatology-focused medical information.
-                  </span>
+                <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px", marginBottom: "0.75rem" }}>
+                  Explore Health Guide
                 </h1>
+                <p className="text-xl md:text-2xl text-navy-muted leading-relaxed">
+                  Reliable, rheumatology-focused medical information.
+                </p>
                 <p className="text-navy-muted text-base leading-relaxed mt-6 max-w-[520px]">
                   Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
                 </p>

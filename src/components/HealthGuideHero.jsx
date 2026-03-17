@@ -6,9 +6,7 @@ function HealthGuideHero() {
           <div className="pt-8 pb-4 md:py-6 relative z-10">
             <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px" }}>
               Explore Health Guide<br />
-              <span className="text-navy-muted">
-                Reliable, rheumatology-focused medical information.
-              </span>
+              <span className="text-navy-muted">Reliable, rheumatology-focused medical<br />information.</span>
             </h1>
           </div>
           <div className="hidden md:block">

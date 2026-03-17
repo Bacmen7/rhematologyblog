@@ -65,7 +65,7 @@ function VideoLibrary() {
               className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
-              Hear From Our<br />Expert Rheumatologists
+              Hear From Our Expert Rheumatologists
             </h2>
           </div>
           <a

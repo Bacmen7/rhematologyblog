@@ -8,12 +8,11 @@ function Specialists() {
     <section className="py-16 md:py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-6">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-12">
           <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep">
-            Meet Our<br />
-            <span className="text-navy-muted/40">Specialist</span>
+            Meet Our <span className="text-navy-muted/40">Specialist</span>
           </h2>
-          <p className="max-w-xs text-sm text-navy-muted pb-2">
+          <p className="text-sm text-navy-muted leading-relaxed max-w-md">
             Our board-certified expert represents the global frontier of autoimmune research and clinical care.
           </p>
         </div>

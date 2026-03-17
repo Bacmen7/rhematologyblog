@@ -91,22 +91,21 @@ function GoogleReviews() {
               className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight mb-6"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff" }}
             >
-              What Are<br />Patients Saying?
+              What Are Patients Saying?
             </h2>
             {/* Google Rating */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3" style={{ marginTop: "1.5rem" }}>
               <GoogleGIcon />
               <div>
                 <div className="flex items-center gap-1.5">
-                  <span className="text-white text-[16px] font-bold">5.0</span>
+                  <span className="text-white text-[22px] font-bold leading-none">5.0</span>
                   <div className="flex space-x-0.5">
                     {[...Array(5)].map((_, i) => (
                       <StarIcon key={i} className="w-4 h-4" />
                     ))}
                   </div>
-                  <span className="text-white/40 text-[13px]">202 reviews</span>
                 </div>
-                <span className="text-white/50 text-[12px] block mt-0.5">Google Rating</span>
+                <span className="text-white/40 text-[12px] block" style={{ marginTop: "0.25rem" }}>202 reviews &middot; Google Rating</span>
               </div>
             </div>
           </div>
