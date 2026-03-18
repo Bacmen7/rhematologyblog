@@ -366,14 +366,16 @@ function DoctorProfile() {
                           </a>
 
                           <div className="border-t border-gray-100" style={{ paddingTop: "12px" }}>
-                            <div className="flex flex-col sm:flex-row sm:flex-wrap gap-y-2 sm:gap-x-6 sm:gap-y-1.5">
-                              {loc.timings.map((t, i) => (
-                                <div key={i} className="flex items-center gap-2 text-xs sm:text-sm">
-                                  <span className="text-[#0f616e] font-medium" style={{ minWidth: "90px" }}>{t.days}</span>
-                                  <span className="text-gray-500">{t.time}</span>
-                                </div>
-                              ))}
-                            </div>
+                            <table className="text-xs sm:text-sm" style={{ borderCollapse: "separate", borderSpacing: "0 6px" }}>
+                              <tbody>
+                                {loc.timings.map((t, i) => (
+                                  <tr key={i}>
+                                    <td className="text-[#0f616e] font-medium pr-6 whitespace-nowrap">{t.days}</td>
+                                    <td className="text-gray-500 whitespace-nowrap">{t.time}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
                           </div>
                         </div>
 

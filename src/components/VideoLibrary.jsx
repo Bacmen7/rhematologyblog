@@ -56,8 +56,8 @@ function VideoLibrary() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
           <div>
             <p
-              className="text-[11px] font-bold tracking-[0.22em] uppercase text-gray-400" style={{ marginBottom: "0.5rem" }}
-              style={{ fontFamily: "var(--font-base)" }}
+              className="text-[11px] font-bold tracking-[0.22em] uppercase text-gray-400"
+              style={{ fontFamily: "var(--font-base)", marginBottom: "0.5rem" }}
             >
               Rheumatology Video Library
             </p>
