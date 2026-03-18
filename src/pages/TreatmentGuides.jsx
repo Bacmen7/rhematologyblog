@@ -188,36 +188,45 @@ function TreatmentGuides() {
       <Header />
 
       {/* ═══ SECTION 1 — HERO ═══ */}
-      <section className="bg-background-light py-12 md:py-16">
-        <div className="max-w-7xl mx-auto px-6" style={{ textAlign: "center" }}>
-          <h1
-            className="leading-[1.1] tracking-tight"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(36px, 5.5vw, 68px)",
-              fontWeight: 400,
-              letterSpacing: "-0.5px",
-              lineHeight: 1,
-              color: "#0f616e",
-              marginBottom: "1rem",
-              maxWidth: "700px",
-              marginLeft: "auto",
-              marginRight: "auto",
-            }}
-          >
-            It's finally time to understand{" "}
-your treatment
-          </h1>
-          <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, marginBottom: "2.4rem", textAlign: "center", maxWidth: "520px", marginLeft: "auto", marginRight: "auto" }}>
-            Rheumatic conditions are highly treatable. Here is everything you need to know — diagnosis, medications, injections, and surgery — explained simply.
-          </p>
-          <a
-            href="#diagnosis"
-            className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90"
-            style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "16px 32px" }}
-          >
-            Explore treatment options
-          </a>
+      <section className="bg-background-light overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ minHeight: "75vh" }}>
+            {/* Left — Content */}
+            <div style={{ paddingTop: "3rem", paddingBottom: "3rem", paddingRight: "2rem" }}>
+              <h1
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(36px, 5vw, 62px)",
+                  fontWeight: 400,
+                  letterSpacing: "-0.5px",
+                  lineHeight: 1.05,
+                  color: "#0f616e",
+                  marginBottom: "1.25rem",
+                }}
+              >
+                It's finally time to understand your treatment
+              </h1>
+              <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, marginBottom: "2rem", maxWidth: "480px" }}>
+                Rheumatic conditions are highly treatable. Here is everything you need to know — diagnosis, medications, injections, and surgery — explained simply.
+              </p>
+              <a
+                href="#diagnosis"
+                className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90"
+                style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "16px 32px" }}
+              >
+                Explore treatment options
+              </a>
+            </div>
+            {/* Right — Image */}
+            <div className="hidden lg:block relative h-full">
+              <img
+                src="/images/hero-consult.jpg"
+                alt="Doctor consulting with patient"
+                className="w-full h-full object-cover object-center"
+                style={{ minHeight: "75vh" }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
