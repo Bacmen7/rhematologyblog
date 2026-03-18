@@ -184,7 +184,7 @@ function TreatmentGuides() {
   }
 
   return (
-    <div className="bg-background-light text-navy-deep antialiased overflow-x-hidden">
+    <div className="bg-background-light text-navy-deep antialiased" style={{ overflowX: "clip" }}>
       <Header />
 
       {/* ═══ SECTION 1 — HERO ═══ */}
