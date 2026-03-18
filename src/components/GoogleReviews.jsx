@@ -78,24 +78,28 @@ function GoogleReviews() {
     <section className="bg-[#0f616e] py-20 md:py-28 custom-approach-section relative">
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Header — two columns */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
-          <div>
-            <p
-              className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/50 mb-4"
-              style={{ fontFamily: "var(--font-base)" }}
-            >
-              Testimonials
-            </p>
-            <h2
-              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
-              style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff" }}
-            >
-              What Are Patients Saying?
-            </h2>
-          </div>
+        {/* Header */}
+        <div style={{ marginBottom: "3rem" }}>
+          <p
+            className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/50"
+            style={{ fontFamily: "var(--font-base)", marginBottom: "1rem" }}
+          >
+            Testimonials
+          </p>
+          <h2
+            className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", marginBottom: "1.25rem" }}
+          >
+            What Are Patients Saying?
+          </h2>
+          <p
+            className="text-sm text-white/60 leading-relaxed"
+            style={{ fontFamily: "var(--font-base)", marginBottom: "1.5rem" }}
+          >
+            With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
+          </p>
           {/* Google Rating */}
-          <div className="flex items-center gap-3 md:pt-8 flex-shrink-0">
+          <div className="flex items-center gap-3">
             <GoogleGIcon />
             <div>
               <div className="flex items-center gap-1.5">
@@ -110,12 +114,6 @@ function GoogleReviews() {
             </div>
           </div>
         </div>
-        <p
-          className="text-sm text-white/60 leading-relaxed"
-          style={{ fontFamily: "var(--font-base)", marginBottom: "3rem" }}
-        >
-          With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
-        </p>
 
         {/* Cards — carousel on mobile, grid on desktop */}
         <div className="flex gap-5 overflow-x-auto hide-scrollbar lg:grid lg:grid-cols-4 lg:overflow-visible mb-12">

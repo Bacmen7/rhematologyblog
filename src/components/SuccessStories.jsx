@@ -51,23 +51,21 @@ function SuccessStories() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-14">
-          <div>
-            <p
-              className="text-[11px] font-bold tracking-[0.22em] uppercase text-gray-400 mb-4"
-              style={{ fontFamily: "var(--font-base)" }}
-            >
-              Success Stories
-            </p>
-            <h2
-              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
-              style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
-            >
-              Our Patient Stories
-            </h2>
-          </div>
+        <div style={{ marginBottom: "3rem" }}>
           <p
-            className="text-sm text-gray-500 max-w-md leading-relaxed md:pt-8"
+            className="text-[11px] font-bold tracking-[0.22em] uppercase text-gray-400"
+            style={{ fontFamily: "var(--font-base)", marginBottom: "0.5rem" }}
+          >
+            Success Stories
+          </p>
+          <h2
+            className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "0.75rem" }}
+          >
+            Our Patient Stories
+          </h2>
+          <p
+            className="text-sm text-gray-500 leading-relaxed"
             style={{ fontFamily: "var(--font-base)" }}
           >
             Over 2,000 patients treated with consistent improvement in quality of life.
