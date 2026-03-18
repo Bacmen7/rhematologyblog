@@ -197,6 +197,7 @@ function TreatmentGuides() {
               fontSize: "clamp(36px, 5.5vw, 68px)",
               fontWeight: 400,
               letterSpacing: "-0.5px",
+              lineHeight: 1,
               color: "#0f616e",
               marginBottom: "1rem",
               maxWidth: "700px",
@@ -221,10 +222,10 @@ your treatment
       </section>
 
       {/* ═══ SECTION 2 — DIAGNOSIS ═══ */}
-      <section id="diagnosis" className="bg-white" style={{ paddingTop: "2rem", paddingBottom: "2rem" }}>
+      <section id="diagnosis" className="bg-white" style={{ paddingTop: "5rem", paddingBottom: "2rem" }}>
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div style={{ marginBottom: "1.5rem", textAlign: "center" }}>
+          <div style={{ marginBottom: "3.5rem", textAlign: "center" }}>
             <p
               style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.5rem" }}
             >
@@ -330,7 +331,7 @@ your treatment
       <section id="treatment" className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div style={{ marginBottom: "2rem", textAlign: "center" }}>
+          <div style={{ marginBottom: "3.5rem", textAlign: "center" }}>
             <p
               style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.5rem" }}
             >
@@ -342,8 +343,8 @@ your treatment
             >
               Personalised treatment
             </h2>
-            <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, textAlign: "center", maxWidth: "520px", marginLeft: "auto", marginRight: "auto" }}>
-              Treatment is tailored to your condition and how active the disease is. There are three main approaches — most patients need a combination.
+            <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, marginBottom: "2rem" }}>
+              Treatment is tailored to your condition and how active the disease is.<br />There are three main approaches — most patients need a combination.
             </p>
           </div>
 
@@ -397,14 +398,14 @@ your treatment
       {/* ═══ SECTION 4 — GETTING STARTED ═══ */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-start gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] items-start gap-10 lg:gap-16">
             {/* Left — journey card */}
             <div
               className="bg-[#fcfcfc] overflow-hidden border border-gray-100"
               style={{ borderRadius: "10px" }}
             >
-              <div className="h-52 overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80" alt="Patient meeting with doctor" className="w-full h-full object-cover" />
+              <div className="h-56 overflow-hidden">
+                <img src="/images/hero-consult.jpg" alt="Doctor consulting with patient" className="w-full h-full object-cover object-top" />
               </div>
               <div className="p-6">
                 <h3
