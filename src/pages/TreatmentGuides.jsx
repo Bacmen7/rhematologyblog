@@ -220,7 +220,7 @@ function TreatmentGuides() {
             {/* Right — Image */}
             <div className="hidden lg:block relative h-full">
               <img
-                src="/images/hero-consult.jpg"
+                src="/images/h3.png"
                 alt="Doctor consulting with patient"
                 className="w-full h-full object-cover object-center"
                 style={{ minHeight: "75vh" }}
@@ -414,7 +414,7 @@ function TreatmentGuides() {
               style={{ borderRadius: "10px" }}
             >
               <div className="h-56 overflow-hidden">
-                <img src="/images/hero-consult.jpg" alt="Doctor consulting with patient" className="w-full h-full object-cover object-top" />
+                <img src="/images/hand.png" alt="Treatment journey" className="w-full h-full object-cover object-top" />
               </div>
               <div className="p-6">
                 <h3
