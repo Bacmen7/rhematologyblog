@@ -79,7 +79,7 @@ function GoogleReviews() {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header — two columns */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-6">
           <div>
             <p
               className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/50 mb-4"
@@ -88,34 +88,34 @@ function GoogleReviews() {
               Testimonials
             </p>
             <h2
-              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight mb-6"
+              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff" }}
             >
               What Are Patients Saying?
             </h2>
-            {/* Google Rating */}
-            <div className="flex items-center gap-3" style={{ marginTop: "1.5rem" }}>
-              <GoogleGIcon />
-              <div>
-                <div className="flex items-center gap-1.5">
-                  <span className="text-white text-[22px] font-bold leading-none">5.0</span>
-                  <div className="flex space-x-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <StarIcon key={i} className="w-4 h-4" />
-                    ))}
-                  </div>
+          </div>
+          {/* Google Rating */}
+          <div className="flex items-center gap-3 md:pt-8 flex-shrink-0">
+            <GoogleGIcon />
+            <div>
+              <div className="flex items-center gap-1.5">
+                <span className="text-white text-[22px] font-bold leading-none">5.0</span>
+                <div className="flex space-x-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <StarIcon key={i} className="w-4 h-4" />
+                  ))}
                 </div>
-                <span className="text-white/40 text-[12px] block" style={{ marginTop: "0.25rem" }}>202 reviews &middot; Google Rating</span>
               </div>
+              <span className="text-white/40 text-[12px] block" style={{ marginTop: "0.25rem" }}>202 reviews &middot; Google Rating</span>
             </div>
           </div>
-          <p
-            className="text-sm text-white/60 max-w-md leading-relaxed md:pt-8"
-            style={{ fontFamily: "var(--font-base)" }}
-          >
-            With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
-          </p>
         </div>
+        <p
+          className="text-sm text-white/60 leading-relaxed"
+          style={{ fontFamily: "var(--font-base)", marginBottom: "3rem" }}
+        >
+          With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
+        </p>
 
         {/* Cards — carousel on mobile, grid on desktop */}
         <div className="flex gap-5 overflow-x-auto hide-scrollbar lg:grid lg:grid-cols-4 lg:overflow-visible mb-12">

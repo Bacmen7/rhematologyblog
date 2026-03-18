@@ -72,7 +72,7 @@ function Hero() {
           <p className="text-base text-navy-muted leading-relaxed max-w-sm" style={{ marginBottom: "48px" }}>
             Find lasting relief with expert care from a team of specialists. Virtual visits within days, not weeks. And in-network with insurance.
           </p>
-          <button className="text-white px-8 py-3.5 rounded-full font-bold text-base transition-colors hover:opacity-90" style={{ backgroundColor: "#e86531" }} style={{ marginBottom: "20px" }}>
+          <button className="text-white px-8 py-3.5 rounded-full font-bold text-base transition-colors hover:opacity-90" style={{ backgroundColor: "#e86531", marginBottom: "20px" }}>
             Get Started →
           </button>
           <p className="text-sm text-navy-muted">
