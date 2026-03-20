@@ -82,7 +82,7 @@ function Testimonials() {
   }, [])
 
   return (
-    <section className="py-20 md:py-28 bg-[#F5F5F5] overflow-hidden">
+    <section className="py-20 md:py-28 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto text-center mb-10 md:mb-14 px-6">
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-navy-muted" style={{ marginBottom: "12px" }}>
           Trusted by 33K+ People
@@ -107,7 +107,7 @@ function Testimonials() {
           {tripled.map((r, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-[340px] p-5 sm:p-8 flex flex-col justify-between"
+              className="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-[340px] p-5 sm:p-8 flex flex-col justify-between bg-[#f5f5f5] rounded-2xl"
             >
               <div>
                 <svg className="w-7 h-7 sm:w-10 sm:h-10 mb-3 sm:mb-5 text-sky-soft" viewBox="0 0 40 40" fill="currentColor">

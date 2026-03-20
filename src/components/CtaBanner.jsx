@@ -38,15 +38,15 @@ function CtaBanner() {
                 <a
                   href="#"
                   className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"
-                  style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "16px 32px" }}
+                  style={{ backgroundColor: "#ffffff", color: "#0f616e", padding: "16px 32px" }}
                 >
                   Schedule An Appointment
                 </a>
                 <div className="flex items-center gap-2 text-white">
-                  <span className="text-[15px] text-gray-100 opacity-90">or</span>
+                  <span className="text-[15px] text-white/60 opacity-90">or</span>
                   <a
                     href="#"
-                    className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#1AA3B5] transition-colors"
+                    className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#a0e2e4] transition-colors"
                     style={{ color: "#ffffff" }}
                   >
                     let&apos;s get in touch

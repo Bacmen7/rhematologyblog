@@ -61,11 +61,11 @@ function App() {
         <HealthGuideHero />
         {/* <QuickLinks /> */}
 
-        <div className="bg-ghost">
+        <div className="bg-white">
           <RAArticles />
         </div>
 
-        <div className="bg-white">
+        <div className="bg-ghost">
           <PsAArticles />
         </div>
 
@@ -74,27 +74,21 @@ function App() {
         ═══════════════════════════════════════════════ */}
         <ApproachSection />
 
-        <div className="bg-white">
-          <Specialists />
-        </div>
+        <Specialists />
 
         <Testimonials />
 
         <GoogleReviews />
 
-        <SuccessStories />
+        <div className="bg-white">
+          <SuccessStories />
+        </div>
 
         <VideoLibrary />
 
         {/* ═══════════════════════════════════════════════
             ZONE 4 — EXECUTIVE BRIEFING & RESEARCH
         ═══════════════════════════════════════════════ */}
-        <div className="bg-ghost">
-          {/* <BriefingHero /> */}
-          {/* <FocusJAK /> */}
-          {/* <FocusDiagnostic /> */}
-        </div>
-
         <div className="bg-white">
           <ResearchUpdates />
         </div>
@@ -116,7 +110,7 @@ function App() {
 
         <CtaBanner />
 
-        <div className="pt-6 md:pt-10" style={{ backgroundColor: "#fdfdfe" }}>
+        <div className="pt-6 md:pt-10 bg-white">
           <Newsletter />
         </div>
 

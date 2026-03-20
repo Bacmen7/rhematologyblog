@@ -33,7 +33,7 @@ function SpecialistCard({ doc }) {
         <img
           src={doc.image}
           alt={doc.name}
-          className="w-full aspect-[3/4] object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-700"
+          className="w-full aspect-[3/4] object-cover object-top transition-all duration-700"
         />
       </div>
       <h3 className="text-[1.5rem] md:text-[1.75rem] leading-[1.2] tracking-[-0.5px] text-navy-deep mb-3">

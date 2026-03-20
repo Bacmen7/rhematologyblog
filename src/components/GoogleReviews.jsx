@@ -45,20 +45,20 @@ const reviewsData = [
 
 function ReviewCard({ review }) {
   return (
-    <div className="bg-[#0d7a8a] rounded-2xl p-7 flex flex-col text-left h-full">
+    <div className="bg-white rounded-2xl p-7 flex flex-col text-left h-full shadow-sm">
       {/* Review text */}
-      <p className="text-[13.5px] text-white/80 leading-[1.75] mb-6 flex-grow" style={{ fontFamily: "var(--font-base)" }}>
+      <p className="text-[13.5px] text-[#5e5e5e] leading-[1.75] mb-6 flex-grow" style={{ fontFamily: "var(--font-base)" }}>
         {review.text}
       </p>
 
       {/* Name + condition */}
       <div className="mb-5">
-        <p className="text-[14px] text-[#FCB900] font-semibold" style={{ fontFamily: "var(--font-base)" }}>{review.name}</p>
-        <p className="text-[12px] text-white/60" style={{ fontFamily: "var(--font-base)" }}>{review.condition}</p>
+        <p className="text-[14px] text-[#0f616e] font-semibold" style={{ fontFamily: "var(--font-base)" }}>{review.name}</p>
+        <p className="text-[12px] text-[#5e5e5e]" style={{ fontFamily: "var(--font-base)" }}>{review.condition}</p>
       </div>
 
       {/* Divider */}
-      <div className="w-full h-px bg-white/10 mb-4" />
+      <div className="w-full h-px bg-gray-200 mb-4" />
 
       {/* Stars + Google icon */}
       <div className="flex items-center justify-between">
@@ -75,25 +75,25 @@ function ReviewCard({ review }) {
 
 function GoogleReviews() {
   return (
-    <section className="bg-[#0f616e] py-20 md:py-28 custom-approach-section relative">
+    <section className="bg-[#a0e2e4] py-20 md:py-28 custom-approach-section relative">
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
         <div style={{ marginBottom: "3rem" }}>
           <p
-            className="text-[11px] font-bold tracking-[0.22em] uppercase text-white/50"
+            className="text-[11px] font-bold tracking-[0.22em] uppercase text-[#5e5e5e]"
             style={{ fontFamily: "var(--font-base)", marginBottom: "1rem" }}
           >
             Testimonials
           </p>
           <h2
             className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
-            style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", marginBottom: "1.25rem" }}
+            style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#0f616e", marginBottom: "1.25rem" }}
           >
             What Are Patients Saying?
           </h2>
           <p
-            className="text-sm text-white/60 leading-relaxed"
+            className="text-sm text-[#5e5e5e] leading-relaxed"
             style={{ fontFamily: "var(--font-base)", marginBottom: "1.5rem" }}
           >
             With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
@@ -103,14 +103,14 @@ function GoogleReviews() {
             <GoogleGIcon />
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-white text-[22px] font-bold leading-none">5.0</span>
+                <span className="text-[#0f616e] text-[22px] font-bold leading-none">5.0</span>
                 <div className="flex space-x-0.5">
                   {[...Array(5)].map((_, i) => (
                     <StarIcon key={i} className="w-4 h-4" />
                   ))}
                 </div>
               </div>
-              <span className="text-white/40 text-[12px] block" style={{ marginTop: "0.25rem" }}>202 reviews &middot; Google Rating</span>
+              <span className="text-[#5e5e5e] text-[12px] block" style={{ marginTop: "0.25rem" }}>202 reviews &middot; Google Rating</span>
             </div>
           </div>
         </div>
@@ -128,6 +128,7 @@ function GoogleReviews() {
         <div>
           <button
             className="text-[14px] font-semibold text-white rounded-full px-8 py-3 hover:opacity-90 transition-colors cursor-pointer"
+
             style={{ backgroundColor: "#e86531", fontFamily: "var(--font-base)" }}
           >
             View All
@@ -137,7 +138,8 @@ function GoogleReviews() {
       </div>
       {/* Bottom wave — same as ApproachSection */}
       <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
+        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
+
       </svg>
     </section>
   )

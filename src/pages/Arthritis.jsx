@@ -359,7 +359,7 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ PATHOLOGY — HOW ARTHRITIS DEVELOPS ═══════════ */}
-        <section className="relative overflow-hidden" style={{ backgroundColor: "#a0e2e4", paddingTop: "3rem", paddingBottom: "3rem" }}>
+        <section className="relative overflow-hidden" style={{ backgroundColor: "#ffffff", paddingTop: "3rem", paddingBottom: "3rem" }}>
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Heading */}
             <div className="mb-8 md:mb-14">
@@ -416,12 +416,12 @@ function Arthritis() {
           </div>
         </section>
         {/* Wave between sections */}
-        <svg className="block w-full -mt-px" style={{ height: "80px", backgroundColor: "#a0e2e4" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-          <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
+        <svg className="block w-full -mt-px" style={{ height: "80px", backgroundColor: "#ffffff" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f5f5f5" />
         </svg>
 
         {/* ═══════════ DIAGNOSIS — TESTS AND WHAT THEY MEAN ═══════════ */}
-        <section className="py-12 md:py-20 bg-white">
+        <section className="py-12 md:py-20 pb-20 md:pb-28 bg-[#f5f5f5]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-10 md:mb-14">
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
@@ -465,7 +465,7 @@ function Arthritis() {
                 <div
                   key={i}
                   className="group relative overflow-hidden text-center flex flex-col items-center hover:-translate-y-1 transition-all duration-300 min-w-[85vw] sm:min-w-[320px] md:min-w-0 snap-start"
-                  style={{ backgroundColor: i === 0 ? "#e0f3f5" : i === 1 ? "#f5f5f5" : "#fff3ec", borderRadius: "16px", padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "none" }}
+                  style={{ backgroundColor: i === 0 ? "#e0f3f5" : i === 1 ? "#ffffff" : "#fff3ec", borderRadius: "16px", padding: "2.25rem 1.75rem 2rem", boxShadow: "none", border: "none" }}
                 >
 
                   {/* Title */}
@@ -515,7 +515,11 @@ function Arthritis() {
         </section>
 
         {/* ═══════════ 06 — TREATMENT OPTIONS ═══════════ */}
-        <section className="py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
+        <section className="relative mt-[60px] py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
+          {/* Top wave */}
+          <svg className="absolute -top-[60px] left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#0f616e" />
+          </svg>
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-10 md:mb-14">
               <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", color: "#ffffff", marginBottom: "1rem" }}>
@@ -565,18 +569,18 @@ function Arthritis() {
                     </div>
                   )}
                   {/* Badge */}
-                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-full self-start" style={{ backgroundColor: "#e0f3f5", color: "#0f616e", marginBottom: "0.75rem" }}>
+                  <span className="inline-block text-[10px] font-bold uppercase tracking-[0.1em] px-3 py-1 rounded-full self-start" style={{ fontFamily: "var(--font-base)", backgroundColor: "#e0f3f5", color: "#0f616e", marginBottom: "0.75rem" }}>
                     {card.badge}
                   </span>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold tracking-tight" style={{ color: "#0f616e", marginBottom: "0.5rem" }}>{card.title}</h3>
+                  <h3 className="text-xl font-semibold tracking-tight" style={{ fontFamily: "var(--font-display)", color: "#0f616e", marginBottom: "0.5rem" }}>{card.title}</h3>
 
                   {/* Desc */}
-                  <p className="text-sm text-navy-muted leading-relaxed" style={{ marginBottom: "1.5rem" }}>{card.desc}</p>
+                  <p className="text-sm text-navy-muted leading-relaxed" style={{ fontFamily: "var(--font-base)", marginBottom: "1.5rem" }}>{card.desc}</p>
 
                   {/* Items */}
-                  <div className="flex flex-col gap-2.5 flex-1" style={{ marginBottom: "1.5rem" }}>
+                  <div className="flex flex-col gap-2.5 flex-1" style={{ fontFamily: "var(--font-base)", marginBottom: "1.5rem" }}>
                     {card.items.map((item, j) => (
                       <div key={j} className="flex items-start gap-2.5 text-[13px]" style={{ color: "#0f616e" }}>
                         <span className="w-1.5 h-1.5 rounded-full shrink-0 mt-[7px]" style={{ backgroundColor: card.color }} />
@@ -586,7 +590,7 @@ function Arthritis() {
                   </div>
 
                   {/* Note */}
-                  <p className="text-[12px] leading-[1.6] pt-4" style={{ color: "#5e5e5e", borderTop: "1px solid #e8ecf2" }}>
+                  <p className="text-[12px] leading-[1.6] pt-4" style={{ fontFamily: "var(--font-base)", color: "#5e5e5e", borderTop: "1px solid #e8ecf2" }}>
                     {card.note}
                   </p>
                 </div>
@@ -607,6 +611,10 @@ function Arthritis() {
               ))}
             </div>
           </div>
+          {/* Bottom wave */}
+          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
+          </svg>
         </section>
 
         {/* ═══════════ 07 — LIVING WELL WITH ARTHRITIS ═══════════ */}
