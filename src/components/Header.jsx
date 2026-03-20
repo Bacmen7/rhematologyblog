@@ -477,7 +477,7 @@ function Header() {
                 <p className="text-[11px] tracking-[0.2em] uppercase font-bold text-navy-muted/70 mb-5">Categories</p>
                 <div className="space-y-0.5">
                   {categories.map((item) => {
-                    const categoryRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis" }
+                    const categoryRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis", "Gout": "/gout" }
                     const catTo = categoryRoutes[item]
                     const catInner = (
                       <>
@@ -672,7 +672,7 @@ function Header() {
             </p>
             <div className="space-y-1 mb-8">
               {categories.map((item, index) => {
-                const catRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis" }
+                const catRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis", "Gout": "/gout" }
                 const catTo = catRoutes[item]
                 const catStyle = {
                   opacity: learnVisible ? 1 : 0,

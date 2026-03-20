@@ -260,7 +260,7 @@ function TreatmentGuides() {
             }}
           >
             {/* Left — dark */}
-            <div className="flex flex-col justify-center" style={{ backgroundColor: "#0f616e", padding: "3rem" }}>
+            <div className="flex flex-col justify-center" style={{ backgroundColor: "#0f616e", padding: "clamp(1.5rem, 4vw, 3rem)" }}>
               <h3
                 className="text-white text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "0.75rem", color: "#ffffff" }}
@@ -280,7 +280,7 @@ function TreatmentGuides() {
             </div>
 
             {/* Right — steps */}
-            <div className="bg-white" style={{ padding: "2.5rem" }}>
+            <div className="bg-white" style={{ padding: "clamp(1.25rem, 4vw, 2.5rem)" }}>
               <h3
                 style={{
                   fontFamily: "var(--font-display)",
@@ -323,7 +323,7 @@ function TreatmentGuides() {
                     <img src={step.img} alt={step.title} className="flex-shrink-0" style={{ width: "50px", height: "50px", borderRadius: "8px", objectFit: "cover", backgroundColor: "#F5F5F5" }} />
                     <div style={{ flex: 1 }}>
                       <h4 className="text-sm font-semibold text-navy-deep" style={{ fontFamily: "var(--font-base)", marginBottom: "2px" }}>{step.title}</h4>
-                      <p className="text-xs text-navy-muted" style={{ fontFamily: "var(--font-base)", lineHeight: 1.45 }}>{step.desc}</p>
+                      <p className="text-xs text-navy-muted line-clamp-2" style={{ fontFamily: "var(--font-base)", lineHeight: 1.45 }}>{step.desc}</p>
                     </div>
                     <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -539,13 +539,12 @@ function TreatmentGuides() {
 
       {/* ═══ CTA BANNER ═══ */}
       <section className="pb-20 md:pb-28 bg-background-light">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-0 md:px-6">
           <div
-            className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center"
+            className="grid grid-cols-1 lg:grid-cols-[1fr_auto] items-center rounded-none md:rounded-[10px]"
             style={{
               backgroundColor: "#0f616e",
-              borderRadius: "10px",
-              padding: "4rem 4.5rem",
+              padding: "clamp(1.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 4.5rem)",
               gap: "3rem",
             }}
           >

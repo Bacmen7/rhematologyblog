@@ -16,6 +16,7 @@ import ArthritisGuide from "./pages/ArthritisGuide.jsx"
 import Arthritis from "./pages/Arthritis.jsx"
 import KnowledgeHub from "./pages/KnowledgeHub.jsx"
 import TreatmentGuides from "./pages/TreatmentGuides.jsx"
+import Gout from "./pages/Gout.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -42,6 +43,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/arthritis" element={<Arthritis />} />
         <Route path="/knowledge-hub" element={<KnowledgeHub />} />
         <Route path="/treatment-guides" element={<TreatmentGuides />} />
+        <Route path="/gout" element={<Gout />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,
