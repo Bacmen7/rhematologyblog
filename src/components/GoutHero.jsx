@@ -12,7 +12,7 @@ function GoutHero() {
     <header>
       {/* Top Section */}
       <div style={{ backgroundColor: "#0f616e" }} className="text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-[8%] pt-6 pb-12 flex flex-col items-start">
+        <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] pt-6 pb-12 flex flex-col items-start">
           {/* Breadcrumb */}
           <Link
             to="/health-guide"
@@ -53,7 +53,7 @@ function GoutHero() {
 
       {/* Navigation Tabs */}
       <div style={{ backgroundColor: "#0a4f5a" }} className="border-t border-white/20">
-        <div className="max-w-7xl mx-auto px-6 md:px-[8%] py-6 flex justify-start gap-5 overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] py-6 flex justify-start gap-5 overflow-x-auto">
           {navTabs.map((tab) => (
             <a
               key={tab.label}
