@@ -12,11 +12,11 @@ function GoutHero() {
     <header>
       {/* Top Section */}
       <div style={{ backgroundColor: "#0f616e" }} className="text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-[8%] pt-10 pb-9 flex flex-col items-start">
+        <div className="max-w-7xl mx-auto px-6 md:px-[8%] pt-14 pb-10 flex flex-col items-start">
           {/* Breadcrumb */}
           <Link
             to="/health-guide"
-            className="inline-flex items-center text-white text-sm font-medium mb-7 hover:opacity-80 transition-opacity hover:underline"
+            className="inline-flex items-center text-white text-sm font-medium mb-8 hover:opacity-80 transition-opacity hover:underline"
           >
             <svg className="w-2.5 h-2.5 mr-2 fill-current" viewBox="0 0 16 16">
               <path
@@ -29,7 +29,7 @@ function GoutHero() {
 
           {/* Title */}
           <h1
-            className="mb-6"
+            className="mb-5"
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(40px, 5vw, 52px)",
@@ -53,7 +53,7 @@ function GoutHero() {
 
       {/* Navigation Tabs */}
       <div style={{ backgroundColor: "#0a4f5a" }} className="border-t border-white/20">
-        <div className="max-w-7xl mx-auto px-6 md:px-[8%] py-6 flex justify-start gap-3 overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-[8%] py-5 flex justify-start gap-4 overflow-x-auto">
           {navTabs.map((tab) => (
             <a
               key={tab.label}

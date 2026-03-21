@@ -168,13 +168,6 @@ function Gout() {
               {/* ── Left: Article Content ── */}
               <div className="flex-1 min-w-0">
 
-                {/* Main Image */}
-                <img
-                  src="https://onemg.gumlet.io/a_ignore,w_450,h_260,c_fit,q_auto,f_auto/jfrhubstxxb3rpoedcjb.jpg"
-                  alt="Gout — inflamed joint illustration"
-                  className="w-full max-w-[450px] rounded-2xl mb-8 block"
-                />
-
                 {/* Author line */}
                 <div className="flex items-center gap-3 mb-10">
                   <img src="/raghav.png" alt="Dr. Raghavendra H" className="w-10 h-10 rounded-full object-cover object-top bg-[#f0cfc4]" />
@@ -335,6 +328,45 @@ function Gout() {
                     ))}
                   </ul>
                 </div>
+
+                {/* ── KEY FACTORS (mid-blog divider section) ── */}
+                <hr style={{ border: "none", borderTop: "1px solid #1AA3B5", marginTop: "3rem", marginBottom: "0" }} />
+                <div style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }}>
+                  <h2
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(2rem, 4vw, 2.75rem)",
+                      fontWeight: 400,
+                      lineHeight: 1.15,
+                      letterSpacing: "-0.5px",
+                      color: "#0f616e",
+                      marginBottom: "2rem",
+                    }}
+                  >
+                    Key Factors to Consider When Managing Gout
+                  </h2>
+                  <p className="text-[16px] leading-[1.8]" style={{ color: "#5e5e5e", marginBottom: "1.75rem" }}>
+                    Effective gout management involves understanding a few critical factors, such as:
+                  </p>
+                  <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem", marginBottom: "2rem" }}>
+                    {[
+                      "Accurate diagnosis through joint fluid analysis and imaging",
+                      "Identifying and addressing underlying causes of elevated uric acid",
+                      "Personalised medication plans — from flare management to long-term urate-lowering therapy",
+                      "Dietary and lifestyle modifications tailored to your metabolic profile",
+                      "Regular monitoring of uric acid levels, kidney function, and cardiovascular risk",
+                      "Coordination with specialists for comorbid conditions like diabetes and hypertension",
+                    ].map((item, i) => (
+                      <li key={i} style={{ color: "#182439", fontSize: "16px", lineHeight: 1.8, marginBottom: "0.25rem", fontWeight: 500 }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-[16px] leading-[1.8]" style={{ color: "#5e5e5e" }}>
+                    At RheumaInsights, our rheumatologists specialise in comprehensive gout care. With evidence-based protocols, personalised treatment plans, and a patient-first approach, we help you achieve lasting uric acid control and prevent irreversible joint damage.
+                  </p>
+                </div>
+                <hr style={{ border: "none", borderTop: "1px solid #1AA3B5", marginBottom: "2.5rem" }} />
 
                 {/* ── TREATMENT ── */}
                 <div id="treatment" data-toc-section style={{ marginTop: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
