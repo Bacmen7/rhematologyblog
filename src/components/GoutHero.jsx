@@ -12,11 +12,11 @@ function GoutHero() {
     <header>
       {/* Top Section */}
       <div style={{ backgroundColor: "#0f616e" }} className="text-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-[8%] pt-14 pb-10 flex flex-col items-start">
+        <div className="max-w-7xl mx-auto px-6 md:px-[8%] pt-6 pb-12 flex flex-col items-start">
           {/* Breadcrumb */}
           <Link
             to="/health-guide"
-            className="inline-flex items-center text-white text-sm font-medium mb-8 hover:opacity-80 transition-opacity hover:underline"
+            className="inline-flex items-center text-white text-sm font-medium mb-10 hover:opacity-80 transition-opacity hover:underline"
           >
             <svg className="w-2.5 h-2.5 mr-2 fill-current" viewBox="0 0 16 16">
               <path
@@ -29,10 +29,10 @@ function GoutHero() {
 
           {/* Title */}
           <h1
-            className="mb-5"
+            className="mb-4"
             style={{
               fontFamily: "var(--font-display)",
-              fontSize: "clamp(40px, 5vw, 52px)",
+              fontSize: "clamp(48px, 6vw, 64px)",
               fontWeight: 400,
               letterSpacing: "-0.5px",
             }}
@@ -53,12 +53,12 @@ function GoutHero() {
 
       {/* Navigation Tabs */}
       <div style={{ backgroundColor: "#0a4f5a" }} className="border-t border-white/20">
-        <div className="max-w-7xl mx-auto px-6 md:px-[8%] py-5 flex justify-start gap-4 overflow-x-auto">
+        <div className="max-w-7xl mx-auto px-6 md:px-[8%] py-6 flex justify-start gap-5 overflow-x-auto">
           {navTabs.map((tab) => (
             <a
               key={tab.label}
               href="#"
-              className={`inline-block rounded-full px-5 py-2 text-sm font-medium leading-tight text-left whitespace-nowrap transition-colors ${
+              className={`inline-block rounded-full px-5 py-2.5 text-[13px] font-medium leading-tight text-left whitespace-nowrap transition-colors ${
                 tab.active
                   ? "bg-white text-navy-deep"
                   : "bg-white/[0.12] text-white hover:bg-white/20"
