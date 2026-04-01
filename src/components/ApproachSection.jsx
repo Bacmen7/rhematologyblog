@@ -1,3 +1,8 @@
+import heartHandIcon from "../assets/icons/heart-hand.svg"
+import qualityCareIcon from "../assets/icons/quality-care.svg"
+import chatBubbleIcon from "../assets/icons/chat-bubble.svg"
+import seenHeardIcon from "../assets/icons/seen-heard.svg"
+
 function ApproachSection() {
   return (
     <section className="custom-approach-section relative overflow-hidden bg-[#1aa3b5] pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
@@ -22,8 +27,11 @@ function ApproachSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-y-[72px] gap-x-[100px]">
           {/* Card 1 - Comprehensive Rheumatology Care */}
           <div className="flex items-start gap-6">
-            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <span className="material-symbols-outlined" style={{ fontSize: "26px", color: "#ffffff" }}>cardiology</span>
+            <div className="relative flex h-[74px] w-[70px] shrink-0 items-center justify-center">
+              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 70 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z" fill="rgba(255,255,255,0.2)" />
+              </svg>
+              <img src={heartHandIcon} alt="" className="relative z-10 h-[44px] w-[44px]" />
             </div>
             <div className="flex-1">
               <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Comprehensive Rheumatology Care</h3>
@@ -35,8 +43,11 @@ function ApproachSection() {
 
           {/* Card 2 - Evidence-Based Treatments */}
           <div className="flex items-start gap-6">
-            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <span className="material-symbols-outlined" style={{ fontSize: "26px", color: "#ffffff" }}>biotech</span>
+            <div className="relative flex h-[74px] w-[72px] shrink-0 items-center justify-center">
+              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 72 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M55.1256 5.62319C69.5284 18.4233 75.3527 39.7894 70.0964 55.9976C65.1006 71.3957 49.3485 76.6043 33.3275 72.8197C18.4814 69.3135 4.89883 56.0577 0.773067 39.6249C-2.87611 25.0844 7.0102 15.5753 17.3399 9.11354C28.7557 1.97144 42.7234 -5.39849 55.1256 5.62319Z" fill="rgba(255,255,255,0.2)" />
+              </svg>
+              <img src={qualityCareIcon} alt="" className="relative z-10 h-[48px] w-[48px]" />
             </div>
             <div className="flex-1">
               <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Evidence-Based Treatments</h3>
@@ -48,8 +59,11 @@ function ApproachSection() {
 
           {/* Card 3 - Early Diagnosis & Accurate Evaluation */}
           <div className="flex items-start gap-6">
-            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <span className="material-symbols-outlined" style={{ fontSize: "26px", color: "#ffffff" }}>diagnosis</span>
+            <div className="relative flex h-[74px] w-[68px] shrink-0 items-center justify-center">
+              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 68 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M61.2722 61.651C48.113 74.675 28.0401 77.5078 13.8247 69.6181C0.313371 62.1241 -2.78863 44.9948 2.32593 28.9416C7.06625 14.0642 20.5554 1.95861 35.9545 0.146643C49.5794 -1.45508 57.2138 10.23 62.0234 21.9179C67.3404 34.8367 72.6018 50.4362 61.2694 61.6482L61.2722 61.651Z" fill="rgba(255,255,255,0.2)" />
+              </svg>
+              <img src={chatBubbleIcon} alt="" className="relative z-10 h-[44px] w-[44px]" />
             </div>
             <div className="flex-1">
               <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Early Diagnosis &amp; Accurate Evaluation</h3>
@@ -61,8 +75,11 @@ function ApproachSection() {
 
           {/* Card 4 - Patient-Centered Care */}
           <div className="flex items-start gap-6">
-            <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "rgba(255,255,255,0.2)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-              <span className="material-symbols-outlined" style={{ fontSize: "26px", color: "#ffffff" }}>volunteer_activism</span>
+            <div className="relative flex h-[74px] w-[72px] shrink-0 items-center justify-center">
+              <svg className="absolute inset-0 h-full w-full" viewBox="0 0 72 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fillRule="evenodd" clipRule="evenodd" d="M6.18816 64.3795C-3.39958 48.4772 -1.49202 26.3721 9.46198 11.9611C19.8727 -1.73098 37.2185 -2.93384 51.6141 4.63228C64.9551 11.6447 73.574 27.7867 71.7584 44.7011C70.1524 59.6658 57.0392 66.4641 44.5771 70.2053C30.8047 74.3397 14.4416 78.0716 6.18816 64.3795Z" fill="rgba(255,255,255,0.2)" />
+              </svg>
+              <img src={seenHeardIcon} alt="" className="relative z-10 h-[48px] w-[48px]" />
             </div>
             <div className="flex-1">
               <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Patient-Centered Care</h3>
