@@ -180,7 +180,7 @@ function ArthritisGuide() {
                 <div id="what-is-ra" style={{ marginBottom: "3.5rem", marginTop: "2.5rem" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     What is Rheumatoid Arthritis?
                   </h2>
@@ -199,7 +199,7 @@ function ArthritisGuide() {
                 <div id="symptoms" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     What are the symptoms of Rheumatoid Arthritis?
                   </h2>
@@ -224,7 +224,7 @@ function ArthritisGuide() {
                 <div id="stages" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     Management of Rheumatoid Arthritis
                   </h2>
@@ -245,7 +245,7 @@ function ArthritisGuide() {
                 <div id="causes" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     What are the causes of Rheumatoid Arthritis?
                   </h2>
@@ -276,7 +276,7 @@ function ArthritisGuide() {
                 <div id="diagnosis" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     How does a doctor diagnose Rheumatoid Arthritis?
                   </h2>
@@ -328,7 +328,7 @@ function ArthritisGuide() {
                 <div id="treatment" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     What are the treatment options available for Rheumatoid Arthritis?
                   </h2>
@@ -380,7 +380,7 @@ function ArthritisGuide() {
                 <div id="managing-ra" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
                     Managing Rheumatoid Arthritis on a Day-to-Day Basis
                   </h2>
