@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react"
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
+import { Calendar } from "lucide-react"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
 import BriefingFooter from "../components/BriefingFooter"
@@ -7,17 +8,6 @@ import BriefingFooter from "../components/BriefingFooter"
 /* ─────────────────────────────────────────────
    DATA
    ───────────────────────────────────────────── */
-
-const tocSections = [
-  { id: "what-is-ra", label: "What is RA?" },
-  { id: "symptoms", label: "Symptoms" },
-  { id: "stages", label: "Stages of RA" },
-  { id: "causes", label: "Causes & Risk Factors" },
-  { id: "diagnosis", label: "Diagnosis" },
-  { id: "treatment", label: "Treatment" },
-  { id: "managing-ra", label: "Managing RA" },
-  { id: "faq", label: "FAQs" },
-]
 
 const symptoms = [
   "Warmth, pain, and swollen joints",
@@ -70,10 +60,10 @@ const nonMedApproaches = [
 
 const faqs = [
   { q: "Is Rheumatoid arthritis curable?", a: "Rheumatoid arthritis is not completely curable, but it can be effectively controlled. With early diagnosis and the right treatment, many people can reduce symptoms, prevent joint damage, and live a normal, active life." },
-  { q: "What is the difference between RA and normal arthritis?", a: "RA is the attack of the body's own immune system. It is an autoimmune condition that affects both sides. Osteoarthritis is also called normal arthritis, which affects only one side. It is caused by excessive wear." },
-  { q: "Does RA only affect elderly people?", a: "No, rheumatoid arthritis does not affect only elderly people. It can occur at any age, but it is most commonly seen in people between 30 and 60 years. It is also more common in women than in men." },
-  { q: "Can I take Ayurvedic medicine with my RA treatment?", a: "Yes, some Ayurvedic treatments may be used alongside standard RA medications, but only under medical guidance. Always consult your rheumatologist before starting any Ayurvedic medicine, as some combinations may cause interactions." },
-  { q: "How much does RA treatment cost in India?", a: "RA treatment costs in India vary widely, from around \u20B9500\u2013\u20B92,000 per consultation to \u20B910,000\u2013\u20B930,000 or more for advanced therapies. Many government schemes and insurance plans may help reduce the cost \u2014 talk to your doctor about available options." },
+  { q: "What is the difference between Rheumatoid arthritis and normal arthritis?", a: "Rheumatoid arthritis is the attack of the body's own immune system. It is an autoimmune condition that affects both sides. Osteoarthritis is also called normal arthritis, which affects only one side. It is caused by excessive wear." },
+  { q: "Does Rheumatoid arthritis only affect elderly people?", a: "No, Rheumatoid arthritis does not affect only elderly people. It can occur at any age, but it is most commonly seen in people between 30 and 60 years. It is also more common in women than in men." },
+  { q: "Can I take Ayurvedic medicine with my Rheumatoid arthritis treatment?", a: "Yes, some Ayurvedic treatments may be used alongside standard Rheumatoid arthritis medications, but only under medical guidance. Always consult your rheumatologist before starting any Ayurvedic medicine, as some combinations may cause interactions." },
+  { q: "How much does Rheumatoid arthritis treatment cost in India?", a: "Rheumatoid arthritis treatment costs in India vary widely, from around \u20B9500-\u20B92,000 per consultation to \u20B910,000-\u20B930,000 or more for advanced therapies.\nMany government schemes and insurance plans may help reduce the cost - talk to your doctor about available options." },
 ]
 
 /* ─────────────────────────────────────────────
@@ -81,28 +71,9 @@ const faqs = [
    ───────────────────────────────────────────── */
 
 function ArthritisGuide() {
-  const [activeSection, setActiveSection] = useState("")
-
   useEffect(() => {
     document.title = "Understanding Rheumatoid Arthritis | RheumaInsights"
     return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
-  }, [])
-
-  /* ── Scroll-spy for TOC highlight ── */
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id)
-          }
-        }
-      },
-      { rootMargin: "-80px 0px -60% 0px", threshold: 0 }
-    )
-    const sections = document.querySelectorAll("[data-toc-section]")
-    sections.forEach((s) => observer.observe(s))
-    return () => observer.disconnect()
   }, [])
 
 
@@ -119,79 +90,59 @@ function ArthritisGuide() {
       <Header />
       <main>
 
-        {/* ═══════════ DARK HERO + WAVE + TOC OVERLAP ═══════════ */}
-        <div className="custom-approach-section relative">
-          <div className="bg-navy-deep">
-            <div className="max-w-7xl mx-auto px-6 pt-10 pb-16 md:pt-14 md:pb-20">
-              <div className="max-w-[620px]">
-                <span
-                  className="inline-block text-[10px] font-bold uppercase tracking-[0.18em] py-1.5 px-4 rounded-full mb-5"
-                  style={{ backgroundColor: "#1AA3B5", color: "#1A355D" }}
-                >
-                  Complete Patient Guide
-                </span>
-                <h1
-                  className="mb-6"
-                  style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.75rem, 5.5vw, 4.25rem)", fontWeight: 400, lineHeight: 1.06, letterSpacing: "-1.2px", color: "#ffffff" }}
-                >
-                  Understanding{" "}
-                  <span style={{ color: "#a0e2e4" }}>Rheumatoid Arthritis</span>
-                </h1>
-                <Link
-                  to="/health-guide"
-                  className="inline-flex items-center gap-2.5 text-[15px] font-semibold text-white/80 hover:text-white transition-colors"
-                >
-                  All Conditions
-                  <span className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
-                    <svg className="w-3.5 h-3.5 text-navy-deep" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
+        {/* ═══════════ HERO (Gout-style) ═══════════ */}
+        <header>
+          {/* Top Section */}
+          <div style={{ backgroundColor: "#0f616e" }} className="text-white">
+            <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] pt-20 pb-12 flex flex-col items-start">
+              {/* Title */}
+              <h1
+                className="mb-4"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(48px, 6vw, 64px)",
+                  fontWeight: 400,
+                  letterSpacing: "-0.5px",
+                }}
+              >
+                Understanding Rheumatoid Arthritis
+              </h1>
+
+              {/* Appointment Link */}
+              <a
+                href="#"
+                className="inline-flex items-center text-white text-[15px] font-semibold hover:opacity-80 transition-opacity hover:underline"
+              >
+                <Calendar className="w-[22px] h-[22px] mr-3" strokeWidth={1.5} />
+                Request an Appointment
+              </a>
             </div>
           </div>
-          <svg
-            className="w-full block"
-            style={{ height: "clamp(40px, 6vw, 90px)", marginTop: "-1px" }}
-            preserveAspectRatio="none"
-            viewBox="0 0 1440 120"
-            fill="none"
-          >
-            <path d="M0 0H1440V40C1200 110 960 120 720 80C480 40 240 0 0 60V0Z" fill="#0f616e" />
-          </svg>
 
-          {/* TOC Card — absolute, overlaps from hero across wave into white */}
-          <aside
-            className="hidden lg:block absolute z-10"
-            style={{ width: "340px", right: "max(24px, calc((100% - 1280px) / 2 + 24px))", top: "60px" }}
-          >
-            <div className="bg-[#edf2fc] py-6 px-7 shadow-[0_4px_24px_rgba(24,36,57,0.07)]" style={{ borderRadius: 0 }}>
-              <h3
-                className="text-navy-deep mb-4"
-                style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 400, lineHeight: 1.2 }}
-              >
-                Table of Contents
-              </h3>
-              <nav className="flex flex-col">
-                {tocSections.map((s) => (
-                  <button
-                    key={s.id}
-                    onClick={() => scrollToSection(s.id)}
-                    className="text-left py-2.5 border-b border-navy-deep/8 last:border-0"
-                  >
-                    <span
-                      className={`text-[14.5px] ${activeSection === s.id ? "text-navy-deep font-semibold" : "text-navy-deep/70 hover:text-navy-deep"}`}
-                      style={{ textDecoration: "underline", textDecorationColor: "currentColor", textUnderlineOffset: "4px", textDecorationThickness: "1px" }}
-                    >
-                      {s.label}
-                    </span>
-                  </button>
-                ))}
-              </nav>
+          {/* Navigation Tabs */}
+          <div style={{ backgroundColor: "#0a4f5a" }} className="border-t border-white/20">
+            <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] py-6 flex justify-start gap-5 overflow-x-auto">
+              {[
+                { label: "Symptoms &\nCauses", id: "symptoms" },
+                { label: "Diagnosis &\nTreatment", id: "diagnosis" },
+                { label: "Stages &\nManagement", id: "stages" },
+              ].map((tab, i) => (
+                <button
+                  key={tab.id}
+                  onClick={() => scrollToSection(tab.id)}
+                  className={`inline-block rounded-full px-5 py-2.5 text-[13px] font-medium leading-tight text-left whitespace-nowrap transition-colors cursor-pointer ${
+                    i === 0
+                      ? "bg-white text-navy-deep"
+                      : "bg-white/[0.12] text-white hover:bg-white/20"
+                  }`}
+                  style={{ whiteSpace: "pre-line" }}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
-          </aside>
-        </div>
+          </div>
+        </header>
 
         {/* ═══════════ ARTICLE BODY + CTA SIDEBAR ═══════════ */}
         <section className="bg-white">
@@ -222,11 +173,7 @@ function ArthritisGuide() {
                   Have you ever experienced weakness or tiredness in your joints that makes it difficult to perform daily tasks? Do you often normalise these symptoms and ignore them? If you have experienced anything similar, this guide covers everything you need to know.
                 </p>
                 <p className="text-[16px] leading-[1.8] text-navy-muted" style={{ marginBottom: "1.25rem" }}>
-                  Rheumatoid Arthritis is a{" "}
-                  <strong className="font-semibold" style={{ color: "#1A355D", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>
-                    long-term health condition
-                  </strong>{" "}
-                  in which the body&apos;s immune system fights against itself. As a result, you often experience pain, swelling, and, when left untreated, long-lasting damage. The exact cause is unknown.
+                  Rheumatoid Arthritis is a long-term health condition in which the body&apos;s immune system fights against itself. As a result, you often experience pain, swelling, and, when left untreated, long-lasting damage. The exact cause is unknown.
                 </p>
                 <p className="text-[16px] leading-[1.8] text-navy-muted mb-5">
                   Rheumatoid arthritis is becoming increasingly common in India. It especially affects women between 40 and 60 years old. Many people think of it as regular joint pain and avoid a rheumatologist consultation, which can lead to serious health issues.
@@ -236,10 +183,10 @@ function ArthritisGuide() {
                 </p>
 
                 {/* ── WHAT IS RA ── */}
-                <div id="what-is-ra" data-toc-section style={{ marginBottom: "3.5rem", marginTop: "2.5rem" }}>
+                <div id="what-is-ra" style={{ marginBottom: "3.5rem", marginTop: "2.5rem" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
                     What is Rheumatoid Arthritis?
                   </h2>
@@ -255,10 +202,10 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── SYMPTOMS ── */}
-                <div id="symptoms" data-toc-section style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="symptoms" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
                     What are the symptoms of Rheumatoid Arthritis?
                   </h2>
@@ -274,16 +221,16 @@ function ArthritisGuide() {
                   </ul>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-5">
                     Rheumatoid arthritis symptoms don&apos;t stay the same all the time &mdash; they can come and go. Periods when symptoms get worse are called{" "}
-                    <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>flares</strong>, while times when you feel better are known as{" "}
-                    <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>remission</strong>. Early diagnosis plays an important role in preventing permanent joint damage.
+                    <strong className="font-bold">flares</strong>, while times when you feel better are known as{" "}
+                    <strong className="font-bold">remission</strong>. Early diagnosis plays an important role in preventing permanent joint damage.
                   </p>
                 </div>
 
                 {/* ── STAGES ── */}
-                <div id="stages" data-toc-section style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="stages" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
                     Stages of Rheumatoid Arthritis
                   </h2>
@@ -323,16 +270,16 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── CAUSES & RISK FACTORS ── */}
-                <div id="causes" data-toc-section style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="causes" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
                     What are the causes of Rheumatoid Arthritis?
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-5">
                     The exact cause of Rheumatoid arthritis is unknown. Researchers think it&apos;s caused by a combination of{" "}
-                    <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>genetics, hormones, and environmental factors</strong>.
+                    <strong className="font-bold">genetics, hormones, and environmental factors</strong>.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-8">
                     Your immune system normally protects your body from infections. In rheumatoid arthritis, it gets confused and starts attacking your own joints instead. Certain factors, like smoking or infections, may trigger this response.
@@ -340,7 +287,7 @@ function ArthritisGuide() {
 
                   <h3
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 400, lineHeight: 1.25, marginBottom: "1.25rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, color: "#e8763a", marginTop: "2rem", marginBottom: "1rem" }}
                   >
                     Risk Factors of Rheumatoid Arthritis
                   </h3>
@@ -354,10 +301,10 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── DIAGNOSIS ── */}
-                <div id="diagnosis" data-toc-section style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="diagnosis" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
                     How does a doctor diagnose Rheumatoid Arthritis?
                   </h2>
@@ -375,7 +322,7 @@ function ArthritisGuide() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Blood Tests */}
                     <div style={{ backgroundColor: "#f5f5f5", borderRadius: "12px", padding: "1.5rem" }}>
-                      <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, color: "#0f616e", marginBottom: "0.75rem" }}>
+                      <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, marginBottom: "1rem" }}>
                         Main blood tests include
                       </h3>
                       <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "0.75rem" }}>
@@ -390,7 +337,7 @@ function ArthritisGuide() {
 
                     {/* Imaging */}
                     <div style={{ backgroundColor: "#f5f5f5", borderRadius: "12px", padding: "1.5rem" }}>
-                      <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, color: "#0f616e", marginBottom: "0.75rem" }}>
+                      <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, marginBottom: "1rem" }}>
                         Imaging test
                       </h3>
                       <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "0.75rem" }}>
@@ -406,18 +353,12 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── TREATMENT ── */}
-                <div id="treatment" data-toc-section style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="treatment" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
-                    What are the treatment options available for{" "}
-                    <span className="relative inline-block">
-                      Rheumatoid Arthritis?
-                      <svg className="absolute -bottom-1 left-0 w-full h-[5px]" fill="none" preserveAspectRatio="none" viewBox="0 0 400 12">
-                        <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="3" />
-                      </svg>
-                    </span>
+                    What are the treatment options available for Rheumatoid Arthritis?
                   </h2>
 
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.5rem" }}>
@@ -428,7 +369,7 @@ function ArthritisGuide() {
                   </p>
 
                   {/* Medications */}
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.375rem, 2.5vw, 1.75rem)", fontWeight: 700, lineHeight: 1.25, color: "#0f616e", marginBottom: "1rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.375rem, 2.5vw, 1.75rem)", fontWeight: 700, lineHeight: 1.25, marginBottom: "1rem" }}>
                     Common medications used in Rheumatoid Arthritis
                   </h3>
                   <ul className="space-y-2" style={{ listStyleType: "decimal", paddingLeft: "1.5rem", marginBottom: "2.5rem" }}>
@@ -440,7 +381,7 @@ function ArthritisGuide() {
                   </ul>
 
                   {/* Non-Medication */}
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.375rem, 2.5vw, 1.75rem)", fontWeight: 700, lineHeight: 1.25, color: "#0f616e", marginBottom: "1rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.375rem, 2.5vw, 1.75rem)", fontWeight: 700, lineHeight: 1.25, marginBottom: "1rem" }}>
                     Non-Medication Approaches
                   </h3>
                   <ul className="space-y-2" style={{ listStyleType: "disc", paddingLeft: "1.5rem", marginBottom: "2.5rem" }}>
@@ -452,7 +393,7 @@ function ArthritisGuide() {
                   </ul>
 
                   {/* Surgery */}
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.375rem, 2.5vw, 1.75rem)", fontWeight: 700, lineHeight: 1.25, color: "#0f616e", marginBottom: "1rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.375rem, 2.5vw, 1.75rem)", fontWeight: 700, lineHeight: 1.25, marginBottom: "1rem" }}>
                     Surgery
                   </h3>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1rem" }}>
@@ -464,10 +405,10 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── MANAGING RA ── */}
-                <div id="managing-ra" data-toc-section style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="managing-ra" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 400, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
                   >
                     Managing Rheumatoid Arthritis on a Day-to-Day Basis
                   </h2>
@@ -476,7 +417,7 @@ function ArthritisGuide() {
                   </p>
 
                   {/* Diet */}
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 400, lineHeight: 1.25, color: "#0f616e", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, color: "#e8763a", marginTop: "2rem", marginBottom: "1rem" }}>
                     Importance of Diet and Nutrition
                   </h3>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-4">
@@ -487,7 +428,7 @@ function ArthritisGuide() {
                   </p>
 
                   {/* Ayurvedic */}
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 400, lineHeight: 1.25, color: "#0f616e", marginTop: "2.5rem", marginBottom: "0.75rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, color: "#e8763a", marginTop: "2rem", marginBottom: "1rem" }}>
                     Ayurvedic evidence in Rheumatoid Arthritis
                   </h3>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
@@ -496,10 +437,10 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── EARLY RESPONSE ── */}
-                <div style={{ marginBottom: "3.5rem", paddingTop: "1.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h3
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, letterSpacing: "-0.2px", marginBottom: "1.25rem", textTransform: "uppercase" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, letterSpacing: "-0.2px", marginBottom: "1rem", textTransform: "uppercase" }}
                   >
                     Early Response is the Key
                   </h3>
@@ -547,7 +488,7 @@ function ArthritisGuide() {
         </section>
 
         {/* ═══════════ FAQ ═══════════ */}
-        <section id="faq" data-toc-section className="py-16 md:py-20 bg-ghost">
+        <section id="faq" className="py-16 md:py-20 bg-ghost">
           <div className="max-w-[800px] mx-auto px-6">
             <div className="text-center mb-14">
               <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4" style={{ fontFamily: "var(--font-display)" }}>
@@ -564,7 +505,11 @@ function ArthritisGuide() {
                     </span>
                   </summary>
                   <div className="px-5 md:px-6 pb-5 md:pb-6 -mt-1">
-                    <p className="text-sm text-navy-muted leading-relaxed">{faq.a}</p>
+                    <div className="text-sm text-navy-muted leading-relaxed flex flex-col gap-3">
+                      {faq.a.split("\n").map((line, j) => (
+                        <p key={j}>{line}</p>
+                      ))}
+                    </div>
                   </div>
                 </details>
               ))}
