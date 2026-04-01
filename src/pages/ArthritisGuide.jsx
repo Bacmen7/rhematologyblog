@@ -16,12 +16,6 @@ const symptoms = [
   "Low-grade fever, weakness, and feeling tired",
 ]
 
-const stages = [
-  { stage: "Stage 1", area: "The surrounding layer of the joint gets affected. No damage to bone.", symptoms: "Puffiness, tenderness and morning stiffness of the joint" },
-  { stage: "Stage 2", area: "Damage increases and extends to the structure inside called cartilage.", symptoms: "Joint stiffness increases, and as a result, movements will be restricted." },
-  { stage: "Stage 3", area: "Bone affected. Visible changes in X-ray.", symptoms: "Pain intensifies within the joints, and notable joint changes happen." },
-  { stage: "Stage 4", area: "Irreversible bone damage", symptoms: "Severe restricted movements." },
-]
 
 const riskFactors = [
   { factor: "Familial Genetic History", detail: "You have a higher chance of getting affected if Rheumatoid arthritis is present within your close relatives (15% chance)." },
@@ -125,7 +119,7 @@ function ArthritisGuide() {
               {[
                 { label: "Symptoms &\nCauses", id: "symptoms" },
                 { label: "Diagnosis &\nTreatment", id: "diagnosis" },
-                { label: "Stages &\nManagement", id: "stages" },
+                { label: "Management", id: "managing-ra" },
               ].map((tab, i) => (
                 <button
                   key={tab.id}
@@ -186,7 +180,7 @@ function ArthritisGuide() {
                 <div id="what-is-ra" style={{ marginBottom: "3.5rem", marginTop: "2.5rem" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
                     What is Rheumatoid Arthritis?
                   </h2>
@@ -205,7 +199,7 @@ function ArthritisGuide() {
                 <div id="symptoms" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
                     What are the symptoms of Rheumatoid Arthritis?
                   </h2>
@@ -226,45 +220,23 @@ function ArthritisGuide() {
                   </p>
                 </div>
 
-                {/* ── STAGES ── */}
+                {/* ── MANAGEMENT ── */}
                 <div id="stages" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
-                    Stages of Rheumatoid Arthritis
+                    Management of Rheumatoid Arthritis
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.5rem" }}>
-                    Rheumatoid arthritis progresses from mild to severe stages:
+                    Early and consistent management is key to controlling rheumatoid arthritis and preventing long-term joint damage. A combination of medical treatment and lifestyle changes can help most patients lead active lives.
                   </p>
-
-                  {/* Stages table */}
-                  <div className="overflow-x-auto mb-6">
-                    <table className="w-full text-left border-collapse" style={{ minWidth: "540px" }}>
-                      <thead>
-                        <tr style={{ backgroundColor: "#0f616e" }}>
-                          <th className="px-4 py-3 text-[13px] font-bold text-white uppercase tracking-wide" style={{ width: "100px" }}>Stage</th>
-                          <th className="px-4 py-3 text-[13px] font-bold text-white uppercase tracking-wide">Area Affected</th>
-                          <th className="px-4 py-3 text-[13px] font-bold text-white uppercase tracking-wide">Symptoms</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {stages.map((row, i) => (
-                          <tr key={i} style={{ backgroundColor: i % 2 === 0 ? "#f5f5f5" : "#ffffff", borderBottom: "1px solid #e8ecf2" }}>
-                            <td className="px-4 py-4 text-[14px] font-semibold text-navy-deep align-top">{row.stage}</td>
-                            <td className="px-4 py-4 text-[14px] leading-[1.6] text-navy-muted align-top">{row.area}</td>
-                            <td className="px-4 py-4 text-[14px] leading-[1.6] text-navy-muted align-top">{row.symptoms}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
 
                   {/* Note */}
                   <div className="flex items-start gap-3 p-4" style={{ backgroundColor: "#fff3ec", borderRadius: "10px" }}>
                     <span className="material-symbols-outlined text-[20px] shrink-0 mt-0.5" style={{ color: "#fd956a" }}>info</span>
                     <p className="text-[14px] leading-[1.65] text-navy-deep">
-                      <strong className="font-semibold">Note:</strong> Not everyone progresses through all the stages. Early treatment can stop progression.
+                      <strong className="font-semibold">Note:</strong> Early treatment can stop disease progression. Not everyone progresses to severe stages.
                     </p>
                   </div>
                 </div>
@@ -273,7 +245,7 @@ function ArthritisGuide() {
                 <div id="causes" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
                     What are the causes of Rheumatoid Arthritis?
                   </h2>
@@ -304,7 +276,7 @@ function ArthritisGuide() {
                 <div id="diagnosis" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
                     How does a doctor diagnose Rheumatoid Arthritis?
                   </h2>
@@ -356,7 +328,7 @@ function ArthritisGuide() {
                 <div id="treatment" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
                     What are the treatment options available for Rheumatoid Arthritis?
                   </h2>
@@ -408,7 +380,7 @@ function ArthritisGuide() {
                 <div id="managing-ra" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", marginBottom: "1.5rem" }}
+                    style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#e8763a", marginBottom: "1.5rem" }}
                   >
                     Managing Rheumatoid Arthritis on a Day-to-Day Basis
                   </h2>
