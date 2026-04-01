@@ -429,11 +429,44 @@ function ArthritisGuide() {
 
               </div>
 
-              {/* ── Right: CTA Sidebar (TOC is in hero above) ── */}
+              {/* ── Right: TOC + CTA Sidebar ── */}
               <div className="hidden lg:block w-[280px] shrink-0">
                 <div className="sticky top-[88px]">
-                  {/* Spacer so CTA appears below where TOC card ends */}
-                  <div style={{ height: "160px" }} />
+
+                  {/* Table of Contents */}
+                  <div className="bg-[#edf2fc] py-5 px-6 mb-6 shadow-[0_4px_24px_rgba(24,36,57,0.07)]" style={{ borderRadius: 0 }}>
+                    <h3
+                      className="text-navy-deep mb-3"
+                      style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 400, lineHeight: 1.2 }}
+                    >
+                      Table of Contents
+                    </h3>
+                    <nav className="flex flex-col">
+                      {[
+                        { id: "what-is-ra", label: "What is RA?" },
+                        { id: "symptoms", label: "Symptoms" },
+                        { id: "stages", label: "Stages of RA" },
+                        { id: "causes", label: "Causes & Risk Factors" },
+                        { id: "diagnosis", label: "Diagnosis" },
+                        { id: "treatment", label: "Treatment" },
+                        { id: "managing-ra", label: "Managing RA" },
+                        { id: "faq", label: "FAQs" },
+                      ].map((s) => (
+                        <button
+                          key={s.id}
+                          onClick={() => scrollToSection(s.id)}
+                          className="text-left py-2 border-b border-navy-deep/8 last:border-0"
+                        >
+                          <span
+                            className="text-[13.5px] text-navy-deep/70 hover:text-navy-deep"
+                            style={{ textDecoration: "underline", textDecorationColor: "currentColor", textUnderlineOffset: "4px", textDecorationThickness: "1px" }}
+                          >
+                            {s.label}
+                          </span>
+                        </button>
+                      ))}
+                    </nav>
+                  </div>
 
                   <div className="bg-white p-6 border border-border/50" style={{ borderRadius: 0 }}>
                     <div style={{ width: "44px", height: "44px", borderRadius: "50%", backgroundColor: "#e0f3f5", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "20px" }}>
