@@ -49,18 +49,16 @@ function WhyRheuma() {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6">
         {/* Header */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-20">
-          <div>
-            <h2 className="max-w-[500px]" style={{ color: "#0f616e" }}>
-              Expert care for all rheumatic symptoms and conditions
-            </h2>
-          </div>
-          <div className="flex items-end">
-            <p style={{ fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px", color: "#2a5a5e" }}>
-              From joint pain to complex autoimmune disorders, we diagnose and treat{" "}
-              <strong className="font-semibold" style={{ color: "#0f616e", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>hundreds of rheumatic conditions</strong>.
-            </p>
-          </div>
+        <div className="mb-16 md:mb-20">
+          <h2 style={{ color: "#0f616e", marginBottom: "20px" }}>
+            Expert care for all rheumatic
+            <br />
+            symptoms and conditions
+          </h2>
+          <p style={{ fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px", color: "#2a5a5e" }}>
+            From joint pain to complex autoimmune disorders, we diagnose and treat{" "}
+            <strong className="font-semibold" style={{ color: "#0f616e", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>hundreds of rheumatic conditions</strong>.
+          </p>
         </div>
 
         {/* Conditions - mobile grid 3col, desktop flex row */}
