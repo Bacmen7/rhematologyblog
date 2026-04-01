@@ -13,6 +13,7 @@ import CTASection from "./components/CTASection"
 import StatsBar from "./components/StatsBar"
 import InsurancePartners from "./components/InsurancePartners"
 import ConditionsGrid from "./components/ConditionsGrid"
+import PatientControl from "./components/PatientControl"
 import WhyRheuma from "./components/WhyRheuma"
 
 import BriefingHero from "./components/BriefingHero"
@@ -41,6 +42,7 @@ function App() {
         ═══════════════════════════════════════════════ */}
         <Hero />
         <StatsBar />
+        <PatientControl />
 
         {/* <InsurancePartners /> */}
         {/* <ConditionsGrid /> */}

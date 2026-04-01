@@ -27,20 +27,22 @@ function CtaBanner() {
                 className="leading-[1.1] font-normal !mb-5 md:!mb-6 text-center md:text-left"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(36px, 5.5vw, 68px)",
+                  fontSize: "clamp(32px, 4.5vw, 52px)",
                   letterSpacing: "-0.5px",
                   color: "#ffffff",
                 }}
               >
-                Ready to get started?
+                Take the First Step Toward Relief from Arthritis
               </h2>
+              <p style={{ fontSize: "16px", lineHeight: 1.65, color: "rgba(255,255,255,0.7)", marginBottom: "28px", textAlign: "center" }} className="md:!text-left">
+                Early diagnosis and treatment can prevent long-term joint damage. Consult a rheumatology specialist and start a personalized treatment plan today.
+              </p>
               <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4">
                 <a
-                  href="#"
-                  className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"
-                  style={{ backgroundColor: "#ffffff", color: "#0f616e", padding: "16px 32px" }}
+                  href="/book-appointment"
+                  className="inline-block bg-primary hover:bg-primary-hover text-white px-7 py-3.5 rounded-full font-semibold text-base transition-colors"
                 >
-                  Schedule An Appointment
+                  Schedule Specialist Appointment
                 </a>
                 <div className="flex items-center gap-2 text-white">
                   <span className="text-[15px] text-white/60 opacity-90">or</span>
