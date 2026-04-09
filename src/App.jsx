@@ -29,6 +29,8 @@ import CtaBanner from "./components/CtaBanner"
 import BriefingFooter from "./components/BriefingFooter"
 import PrivacyBanner from "./components/PrivacyBanner"
 import GoogleReviews from "./components/GoogleReviews"
+import SpecializedCare from "./components/SpecializedCare"
+import SymptomQuiz from "./components/SymptomQuiz"
 import SuccessStories from "./components/SuccessStories"
 import VideoLibrary from "./components/VideoLibrary"
 
@@ -42,12 +44,16 @@ function App() {
         ═══════════════════════════════════════════════ */}
         <Hero />
         <StatsBar />
-        <PatientControl />
+        {/* <PatientControl /> */}
 
         {/* <InsurancePartners /> */}
         {/* <ConditionsGrid /> */}
 
         <WhyRheuma />
+
+        <SpecializedCare />
+
+        <SymptomQuiz />
 
         {/* <div className="bg-white">
           <CategoryFilters />
@@ -63,13 +69,13 @@ function App() {
         <HealthGuideHero />
         {/* <QuickLinks /> */}
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <RAArticles />
         </div>
 
         <div className="bg-ghost">
           <PsAArticles />
-        </div>
+        </div> */}
 
         {/* ═══════════════════════════════════════════════
             ZONE 3 — CLINICAL EXPERTISE & SPECIALISTS
@@ -91,16 +97,16 @@ function App() {
         {/* ═══════════════════════════════════════════════
             ZONE 4 — EXECUTIVE BRIEFING & RESEARCH
         ═══════════════════════════════════════════════ */}
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <ResearchUpdates />
-        </div>
+        </div> */}
 
         {/* ═══════════════════════════════════════════════
             ZONE 5 — ENGAGE & CONVERT
         ═══════════════════════════════════════════════ */}
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <ExploreTopics />
-        </div>
+        </div> */}
 
         {/* <div className="bg-ghost">
           <FAQ />

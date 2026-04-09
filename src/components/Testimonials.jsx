@@ -3,27 +3,27 @@ import { useRef, useEffect, useCallback } from "react"
 const reviews = [
   {
     quote: "Every clinician I have dealt with has been terrific and the proof is in the treatment of my symptoms. My thanks to all!",
-    name: "Christopher S",
+    name: "Ramesh K.",
   },
   {
     quote: "The program has been very helpful for my digestive issues; in a fairly short amount of time I have experienced so much relief. The providers I have been working with are all amazing!",
-    name: "Tracy B",
+    name: "Deepa M.",
   },
   {
     quote: "Very informative and helpful. This helped me get a better understanding of gut / brain health for sure. I'm excited for the next appt",
-    name: "Stevie P",
+    name: "Vikram S.",
   },
   {
     quote: "The entire team is respectful and listens to what you are saying. Doesn't push medication but looks for alternate changes to behavior when applicable.",
-    name: "Marie S",
+    name: "Sunita R.",
   },
   {
     quote: "My dietician has been so helpful in walking me through the FODMAP diet and helping me keep track of foods based on my symptoms.",
-    name: "Angela R",
+    name: "Kavita P.",
   },
   {
     quote: "I feel like I finally have a team that understands what I'm going through. The care has been compassionate and thorough from day one.",
-    name: "David M",
+    name: "Arvind D.",
   },
 ]
 

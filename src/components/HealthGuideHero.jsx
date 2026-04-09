@@ -1,6 +1,6 @@
 function HealthGuideHero() {
   return (
-    <section className="relative bg-background-light overflow-hidden" style={{ marginTop: "-2px" }}>
+    <section className="relative bg-white overflow-hidden" style={{ marginTop: "-2px" }}>
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-4 items-center">
           <div className="pt-8 pb-4 md:py-6 relative z-10">

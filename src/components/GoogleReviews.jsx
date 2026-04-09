@@ -19,26 +19,26 @@ const GoogleGIcon = () => (
 const reviewsData = [
   {
     id: 1,
-    name: "Margaret L.",
-    condition: "Rheumatoid Arthritis",
+    name: "Priya S.",
+    condition: "",
     text: "After two years of bouncing between doctors, I finally got a clear RA diagnosis here. Dr. Miller walked me through every blood test result and didn't rush me once. My morning stiffness has gone from 3 hours to about 20 minutes. Big thanks to the whole team — now just waiting patiently to see the full results! Over all experience is very good.",
   },
   {
     id: 2,
-    name: "Robert K.",
-    condition: "Rheumatoid Arthritis",
+    name: "Rajesh M.",
+    condition: "",
     text: "Its been 8 months I took the treatment, the methotrexate was excellent! My joints feel noticeably better, and much more flexible. The process was smooth and the result exceeded my expectations. I noticed improvement after just one session. Highly recommend this treatment.",
   },
   {
     id: 3,
-    name: "Patricia Chen",
-    condition: "Rheumatoid Arthritis",
+    name: "Anita K.",
+    condition: "",
     text: "Got my RA treatment done at the clinic, and the overall experience was excellent. Dr. Chen is an extremely experienced rheumatologist in the field. He is also very soft-spoken, which made the process even more comfortable. I would also like to appreciate the entire clinic staff.",
   },
   {
     id: 4,
-    name: "James W.",
-    condition: "Rheumatoid Arthritis",
+    name: "Suresh P.",
+    condition: "",
     text: "I reside in Boston for the past 30 years and began to notice my joint stiffness, which was a source of concern for me. Fortunately, my relative, who had successfully undergone treatment with Dr. Miller, encouraged me to seek a consultation with her. That single visit truly transformed my life.",
   },
 ]
@@ -51,10 +51,9 @@ function ReviewCard({ review }) {
         {review.text}
       </p>
 
-      {/* Name + condition */}
+      {/* Name */}
       <div className="mb-5">
         <p className="text-[14px] text-[#0f616e] font-semibold" style={{ fontFamily: "var(--font-base)" }}>{review.name}</p>
-        <p className="text-[12px] text-[#5e5e5e]" style={{ fontFamily: "var(--font-base)" }}>{review.condition}</p>
       </div>
 
       {/* Divider */}

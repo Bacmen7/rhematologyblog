@@ -21,7 +21,7 @@ function StatsBar() {
         {/* Stat 1 */}
         <div className="flex-1 text-center md:text-left">
           <p
-            className="leading-none mb-3 text-navy-deep font-light"
+            className="leading-none mb-3 text-navy-deep font-bold"
             style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
           >
             90%+
@@ -35,7 +35,7 @@ function StatsBar() {
         {/* Stat 2 */}
         <div className="flex-1 text-center md:text-left">
           <p
-            className="leading-none mb-3 text-navy-deep font-light"
+            className="leading-none mb-3 text-navy-deep font-bold"
             style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
           >
             86%
@@ -47,19 +47,6 @@ function StatsBar() {
         </div>
       </div>
 
-      {/* Source — Full Width */}
-      <div style={{ maxWidth: "80rem", margin: "4px auto 0", padding: "0 24px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "12px", borderTop: "1px solid rgba(0,0,0,0.08)", paddingTop: "12px" }}>
-          <div className="w-[32px] h-[32px] rounded-full bg-[#fdd3bc] flex items-center justify-center shrink-0">
-            <svg viewBox="0 0 24 24" className="w-[12px]" fill="#192333">
-              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z" />
-            </svg>
-          </div>
-          <p className="text-[11px] leading-[1.4] text-navy-muted">
-            Source: Outcomes based on clinical studies in rheumatoid arthritis and autoimmune disease management.
-          </p>
-        </div>
-      </div>
     </section>
   )
 }

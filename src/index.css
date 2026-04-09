@@ -47,6 +47,10 @@
   --font-display: "loretta", Georgia, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   color: var(--color-navy-deep);
   background: var(--color-background-light);

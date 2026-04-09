@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { ArrowUpRight, ArrowRight } from "lucide-react"
 
 function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,7 +17,6 @@ function Header() {
     { label: "Patient Education", to: "/health-guide" },
     { label: "Doctors", to: "/doctors" },
     { label: "Locations", to: "/locations" },
-    { label: "Book Appointment", to: "/book-appointment" },
   ]
 
   const mobileQuickLinks = [
@@ -77,7 +77,7 @@ function Header() {
       })
     } else {
       setWhatWeCoverVisible(false)
-      const timer = setTimeout(() => setWhatWeCoverMounted(false), 350)
+      const timer = setTimeout(() => setWhatWeCoverMounted(false), 900)
       return () => clearTimeout(timer)
     }
   }, [whatWeCoverOpen])
@@ -126,15 +126,16 @@ function Header() {
           : "bg-white/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
-        {/* ===== Left: Logo + Nav ===== */}
-        <div className="flex items-center gap-10 lg:gap-14">
-          {/* Logo */}
+      <div className="px-6 lg:px-10 h-[72px] flex items-center justify-between">
+        {/* ===== Left: Logo ===== */}
+        <div className="flex items-center">
           <Link to="/" className="text-2xl font-extrabold tracking-tighter text-navy-deep">
-            RHEUMA.
+            RheumaCare.
           </Link>
+        </div>
 
-          {/* Desktop Nav */}
+        {/* ===== Center: Nav ===== */}
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <nav className="hidden md:flex items-center gap-1">
             {/* What We Cover - Dropdown */}
             <button
@@ -144,7 +145,7 @@ function Header() {
                   ? "bg-navy-deep/[0.06]"
                   : "hover:bg-navy-deep/[0.04]"
               }`}
-              style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: whatWeCoverOpen ? "rgba(91,168,163,1)" : "#1A355D" }}
+              style={{ fontFamily: "var(--font-base)", fontSize: "15px", fontWeight: 400, lineHeight: "16px", color: whatWeCoverOpen ? "rgba(91,168,163,1)" : "#0f616e" }}
               onClick={() => {
                 setWhatWeCoverOpen((prev) => !prev)
                 setMobileMenuOpen(false)
@@ -166,7 +167,7 @@ function Header() {
                 key={item.label}
                 to={item.to}
                 className="relative px-3.5 py-2 rounded-lg hover:bg-navy-deep/[0.04] transition-all duration-200"
-                style={{ fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 600, lineHeight: "16px", color: "#1A355D" }}
+                style={{ fontFamily: "var(--font-base)", fontSize: "15px", fontWeight: 400, lineHeight: "16px", color: "#0f616e" }}
               >
                 {item.label}
               </Link>
@@ -189,7 +190,7 @@ function Header() {
           >
             Book Consultation
             <span className="w-5 h-5 rounded-full bg-white/20 inline-flex items-center justify-center group-hover:bg-white/30 transition-colors">
-              <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+              <ArrowRight size={14} />
             </span>
           </Link>
 
@@ -250,7 +251,7 @@ function Header() {
           {/* Top Bar */}
           <div className="flex items-center justify-between px-5 pt-5">
             <Link to="/" className="text-xl font-extrabold tracking-tighter text-navy-deep" onClick={closeMobileMenu}>
-              RHEUMA.
+              RheumaCare.
             </Link>
             <button
               className="w-10 h-10 rounded-xl bg-navy-deep text-white flex items-center justify-center hover:bg-navy-deep/90 transition-colors"
@@ -330,101 +331,102 @@ function Header() {
       )}
 
       {/* ===== What We Cover - Desktop Dropdown ===== */}
+      {/* ===== What We Cover - Full Page Slide Down (Desktop) ===== */}
       {whatWeCoverMounted && (
         <div
-          className={`hidden md:block fixed inset-x-0 top-[72px] bottom-0 z-40 transition-all duration-300 ease-out ${
-            whatWeCoverVisible ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-          }`}
-          onClick={closeWhatWeCover}
+          className="hidden md:block fixed inset-x-0 top-[72px] z-40"
+          style={{
+            maxHeight: whatWeCoverVisible ? "85vh" : "0",
+            overflow: "hidden",
+            transition: "max-height 800ms cubic-bezier(0.25, 0.1, 0.25, 1)",
+          }}
         >
-          <div className={`absolute inset-0 transition-colors duration-300 ${whatWeCoverVisible ? "bg-black/10" : "bg-black/0"}`} />
-          <div
-            className={`absolute left-1/2 -translate-x-1/2 top-3 w-[min(900px,calc(100%-24px))] rounded-3xl overflow-hidden bg-white shadow-[0_20px_60px_rgba(24,36,57,0.18)] transition-all duration-300 ease-out ${
-              whatWeCoverVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 -translate-y-4 scale-[0.97]"
-            }`}
-            onClick={(event) => event.stopPropagation()}
-            onMouseLeave={closeWhatWeCover}
-          >
-            <div className="grid md:grid-cols-2">
-              {/* Left Panel - Conditions */}
-              <div className="bg-gradient-to-b from-[#f6f9ff] to-white px-10 py-9 border-r border-border/40">
-                <div className="flex items-center gap-2.5 mb-6">
-                  <span className="w-9 h-9 rounded-xl bg-[#1AA3B5]/10 inline-flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[20px] text-[#1AA3B5]">rheumatology</span>
-                  </span>
-                  <h3 className="text-[13px] tracking-[0.15em] uppercase font-bold text-navy-muted/70">Conditions</h3>
-                </div>
-                <div className="space-y-0.5">
-                  {conditions.map((item) => {
-                    const conditionRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis", "Gout": "/gout" }
-                    const to = conditionRoutes[item]
-                    const inner = (
-                      <>
-                        <span className="text-navy-deep font-medium text-[14.5px]">{item}</span>
-                        <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                          <span className="material-symbols-outlined text-[15px] text-[#1A355D]">arrow_forward</span>
-                        </span>
-                      </>
-                    )
-                    return to ? (
-                      <Link
-                        key={item}
-                        to={to}
-                        className="flex items-center justify-between py-2.5 px-2 rounded-xl hover:bg-[#f0f5ff] transition-all duration-200 group"
-                        onClick={closeWhatWeCover}
-                      >
-                        {inner}
-                      </Link>
-                    ) : (
-                      <a
-                        key={item}
-                        className="flex items-center justify-between py-2.5 px-2 rounded-xl hover:bg-[#f0f5ff] transition-all duration-200 group cursor-pointer"
-                        onClick={closeWhatWeCover}
-                      >
-                        {inner}
-                      </a>
-                    )
-                  })}
-                </div>
-              </div>
+          <div className="bg-[#f0f5f5] border-t border-gray-200">
+            <div className="max-w-[1400px] mx-auto px-10 py-12">
+              <div className="flex gap-16">
 
-              {/* Right Panel - Treatments */}
-              <div className="px-10 py-9">
-                <div className="flex items-center gap-2.5 mb-6">
-                  <span className="w-9 h-9 rounded-xl bg-[#e86531]/10 inline-flex items-center justify-center">
-                    <span className="material-symbols-outlined text-[20px] text-[#e86531]">medical_services</span>
-                  </span>
-                  <h3 className="text-[13px] tracking-[0.15em] uppercase font-bold text-navy-muted/70">Treatments</h3>
-                </div>
-                <div className="space-y-0.5">
-                  {treatments.map((item) => (
-                    <a
-                      key={item}
-                      className="flex items-center justify-between py-2.5 px-2 rounded-xl hover:bg-[#fff5f0] transition-all duration-200 group cursor-pointer"
-                      onClick={closeWhatWeCover}
-                    >
-                      <span className="text-navy-deep font-medium text-[14.5px]">{item}</span>
-                      <span className="w-7 h-7 rounded-full bg-[#e86531]/15 inline-flex items-center justify-center flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span className="material-symbols-outlined text-[15px] text-[#e86531]">arrow_forward</span>
-                      </span>
-                    </a>
-                  ))}
-                </div>
-
-                {/* CTA inside dropdown */}
-                <div className="mt-8 rounded-2xl bg-gradient-to-r from-[#1AA3B5]/10 to-[#e86531]/10 p-5">
-                  <p className="text-[14px] font-semibold text-navy-deep mb-2">Not sure where to start?</p>
-                  <p className="text-[13px] text-navy-muted mb-3">Our specialists can help identify your condition and the right treatment plan.</p>
+                {/* Left — Doctor Images + CTA */}
+                <div
+                  className="flex-shrink-0 w-[280px]"
+                  style={{
+                    opacity: whatWeCoverVisible ? 1 : 0,
+                    transform: whatWeCoverVisible ? "translateX(0)" : "translateX(40px)",
+                    transition: "opacity 700ms ease-out 400ms, transform 700ms ease-out 400ms",
+                  }}
+                >
+                  <div className="grid grid-cols-2 gap-3 mb-8">
+                    <img src="/images/specialist-1.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
+                    <img src="/images/specialist-2.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
+                    <img src="/images/specialist-3.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
+                    <img src="/images/dr-sarah-miller.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
+                  </div>
                   <Link
                     to="/book-appointment"
-                    className="inline-flex items-center gap-2 text-[13px] font-bold text-white px-5 py-2.5 rounded-full transition-all hover:opacity-90"
-                    style={{ backgroundColor: "#e86531" }}
+                    className="inline-flex items-center gap-2 border-2 border-[#0f616e] text-[#0f616e] px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#0f616e] hover:text-white transition-all"
                     onClick={closeWhatWeCover}
                   >
-                    Book Consultation
-                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                    Consult a specialist
+                    <ArrowUpRight size={16} />
                   </Link>
                 </div>
+
+                {/* Right — Conditions + Treatments Grid */}
+                <div
+                  className="flex-1"
+                  style={{
+                    opacity: whatWeCoverVisible ? 1 : 0,
+                    transform: whatWeCoverVisible ? "translateX(0)" : "translateX(60px)",
+                    transition: "opacity 700ms ease-out 400ms, transform 700ms ease-out 400ms",
+                  }}
+                >
+                  <div className="grid grid-cols-4 gap-x-12 gap-y-8">
+                    {conditions.map((item) => {
+                      const conditionRoutes = { "Rheumatoid Arthritis": "/health-guide/Rheumatoid-Arthritis", "Gout": "/gout" }
+                      const to = conditionRoutes[item]
+                      return (
+                        <div key={item}>
+                          {to ? (
+                            <Link
+                              to={to}
+                              className="flex items-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline"
+                              onClick={closeWhatWeCover}
+                            >
+                              {item}
+                              <ArrowUpRight size={14} />
+                            </Link>
+                          ) : (
+                            <a
+                              className="flex items-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline cursor-pointer"
+                              onClick={closeWhatWeCover}
+                            >
+                              {item}
+                              <ArrowUpRight size={14} />
+                            </a>
+                          )}
+                        </div>
+                      )
+                    })}
+                  </div>
+
+                  {/* Treatments below */}
+                  <div className="mt-12 pt-10 border-t border-gray-200">
+                    <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#0f616e", marginBottom: "40px" }}>Treatment Options</h3>
+                    <div className="grid grid-cols-4 gap-x-12 gap-y-8">
+                      {treatments.map((item) => (
+                        <div key={item}>
+                          <a
+                            className="flex items-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline cursor-pointer"
+                            onClick={closeWhatWeCover}
+                          >
+                            {item}
+                            <ArrowUpRight size={14} />
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -525,7 +527,7 @@ function Header() {
                       {item}
                     </span>
                     <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
-                      <span className="material-symbols-outlined text-[15px] text-[#0f616e]">arrow_forward</span>
+                      <ArrowRight size={15} className="text-[#0f616e]" />
                     </span>
                   </>
                 )
@@ -584,7 +586,7 @@ function Header() {
                       {item}
                     </span>
                     <span className="w-7 h-7 rounded-full bg-[#e86531]/15 inline-flex items-center justify-center flex-shrink-0">
-                      <span className="material-symbols-outlined text-[15px] text-[#e86531]">arrow_forward</span>
+                      <ArrowRight size={15} className="text-[#e86531]" />
                     </span>
                   </a>
                 )
@@ -609,7 +611,7 @@ function Header() {
                 onClick={closeWhatWeCover}
               >
                 Book Consultation
-                <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                <ArrowRight size={14} />
               </Link>
             </div>
           </div>

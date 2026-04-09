@@ -5,20 +5,20 @@ function Specialists() {
   const doc = specialists[0]
 
   return (
-    <section className="py-16 md:py-24 overflow-hidden">
+    <section className="py-16 md:py-24 pb-24 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="mb-12">
-          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-navy-deep mb-3">
-            Meet Our <span className="text-navy-muted/40">Specialist</span>
+        <div className="mb-12 text-center">
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "-0.8px", color: "#0f616e", marginBottom: "12px" }} className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            Meet Our <span style={{ color: "#1AA3B5" }}>Specialist</span>
           </h2>
-          <p className="text-sm text-navy-muted leading-relaxed">
+          <p style={{ fontSize: "15px", color: "#5E5E5E", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>
             Our board-certified expert represents the global frontier of autoimmune research and clinical care.
           </p>
         </div>
 
         {/* Single Doctor Card */}
-        <div className="max-w-[320px]">
+        <div className="max-w-[320px] mx-auto">
           <SpecialistCard doc={doc} />
         </div>
       </div>

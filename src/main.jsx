@@ -2,6 +2,8 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { useEffect } from "react"
+import Lenis from "lenis"
+import "lenis/dist/lenis.css"
 import "./index.css"
 import "./App.css"
 import App from "./App.jsx"
@@ -18,10 +20,23 @@ import KnowledgeHub from "./pages/KnowledgeHub.jsx"
 import TreatmentGuides from "./pages/TreatmentGuides.jsx"
 import Gout from "./pages/Gout.jsx"
 
+// Lenis smooth scroll — global
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+})
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
+    lenis.scrollTo(0, { immediate: true })
   }, [pathname])
   return null
 }
