@@ -119,8 +119,8 @@ function SpecializedCare() {
 
         {/* Header */}
         <div className="text-center" style={{ marginBottom: "3rem" }}>
-          <h2 style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)", fontWeight: 400, color: "#0f616e", letterSpacing: "-0.8px", fontFamily: "var(--font-display)" }}>
-            Know your <span style={{ color: "#1AA3B5" }}>condition</span>
+          <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "#0f616e", letterSpacing: "-0.8px", fontFamily: "var(--font-display)" }}>
+            Know your <span style={{ color: "#1AA3B5", fontWeight: 600 }}>condition</span>
           </h2>
         </div>
 
