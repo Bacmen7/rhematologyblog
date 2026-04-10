@@ -1,45 +1,136 @@
+import { useRef, useEffect, useCallback } from "react"
+
 const conditions = [
   {
     name: "Rheumatoid Arthritis",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Acid-Reflux-GERD.svg",
+    image: "/rheumatic/RheumatoidArthritis.png",
   },
   {
     name: "Psoriatic Arthritis",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Irritable-Bowel-Syndrome.svg",
+    image: "/rheumatic/Psoriatic_Arthritis.jpg",
   },
   {
     name: "Lupus",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Bloating.svg",
+    image: "/rheumatic/Lupus.png",
   },
   {
     name: "Joint Pain",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Abdominal-Pain.svg",
+    image: "/rheumatic/joint_pain.png",
   },
   {
     name: "Gout",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Crohns-Disease.svg",
+    image: "/rheumatic/Gout.png",
   },
   {
     name: "Spondylitis",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Ulcerative-Colitis.svg",
+    image: "/rheumatic/Spondylitis.png",
   },
   {
     name: "Vasculitis",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Small-Intestinal-Bacterial-Overgrowth.svg",
+    image: "/rheumatic/Vasculitis.png",
   },
   {
     name: "Undiagnosed",
-    icon: "https://oshihealth.com/wp-content/uploads/2024/11/Icon-Undiagnosed-GI-Symptoms.svg",
+    image: "/rheumatic/Undiagoned.png",
   },
 ]
 
 function WhyRheuma() {
-  return (
-    <section className="custom-approach-section" style={{ backgroundColor: "#e8f4f8", padding: "5rem 0 6rem" }}>
-      <div className="max-w-7xl mx-auto px-6">
+  const scrollRef = useRef(null)
+  const isScrolling = useRef(false)
 
-        {/* Header */}
-        <div className="text-center" style={{ marginBottom: "20px" }}>
+  // 3 sets: [...conditions, ...conditions, ...conditions]
+  // Start in the middle set so we can scroll both directions
+  const tripled = [...conditions, ...conditions, ...conditions]
+
+  // On mount, jump to the middle set (no animation)
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    // Wait for render
+    requestAnimationFrame(() => {
+      const oneSetWidth = el.scrollWidth / 3
+      el.scrollLeft = oneSetWidth
+    })
+  }, [])
+
+  // When scroll settles, silently jump back to middle set if we've gone too far
+  const handleScroll = useCallback(() => {
+    if (isScrolling.current) return
+    const el = scrollRef.current
+    if (!el) return
+    const oneSetWidth = el.scrollWidth / 3
+    if (el.scrollLeft < oneSetWidth * 0.15) {
+      el.style.scrollBehavior = "auto"
+      el.scrollLeft += oneSetWidth
+      el.style.scrollBehavior = "smooth"
+    } else if (el.scrollLeft > oneSetWidth * 1.85) {
+      el.style.scrollBehavior = "auto"
+      el.scrollLeft -= oneSetWidth
+      el.style.scrollBehavior = "smooth"
+    }
+  }, [])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    let timeout
+    const onScroll = () => {
+      clearTimeout(timeout)
+      timeout = setTimeout(handleScroll, 100)
+    }
+    el.addEventListener("scroll", onScroll)
+    return () => { el.removeEventListener("scroll", onScroll); clearTimeout(timeout) }
+  }, [handleScroll])
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      isScrolling.current = true
+      scrollRef.current.scrollBy({ left: direction === "left" ? -400 : 400, behavior: "smooth" })
+      setTimeout(() => { isScrolling.current = false }, 500)
+    }
+  }
+
+  return (
+    <section className="custom-approach-section" style={{ backgroundColor: "#e8f4f8", overflow: "hidden" }}>
+
+      {/* ── Mobile Layout ── */}
+      <div className="block md:hidden">
+        <div className="px-5 pt-12 pb-8">
+          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "1.85rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "20px" }}>
+            Decode the Signs of Rheumatic Conditions
+          </h2>
+          <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "24px" }}>
+            Rheumatology addresses conditions that affect joints, bones, muscles and the immune system. If you are experiencing persistent joint pain, swelling, stiffness or fatigue, it is advisable to consult a rheumatologist.
+          </p>
+          <a
+            href="#symptom-quiz"
+            className="inline-flex items-center gap-2 rounded-full font-semibold"
+            style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "12px 28px", fontSize: "15px" }}
+          >
+            Check symptom
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
+          </a>
+        </div>
+
+        <div className="flex gap-3 overflow-x-auto px-5 pb-10" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
+          {conditions.map((c) => (
+            <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "140px" }}>
+              <div className="w-full overflow-hidden rounded-xl" style={{ height: "160px" }}>
+                <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
+              </div>
+              <p style={{ fontSize: "13px", fontWeight: 600, color: "#0f616e", fontFamily: "var(--font-base)", marginTop: "10px", textAlign: "center", lineHeight: 1.3 }}>
+                {c.name}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Desktop Layout ── */}
+      <div className="hidden md:block" style={{ paddingTop: "5rem", paddingBottom: "4rem" }}>
+        {/* Header — centered */}
+        <div className="max-w-7xl mx-auto px-6 text-center" style={{ marginBottom: "3.5rem" }}>
           <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
             Expert care for all rheumatic
             <br />
@@ -51,31 +142,50 @@ function WhyRheuma() {
           </p>
         </div>
 
-        {/* Cards Grid — 4 columns like reference */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5" style={{ marginTop: "3rem" }}>
-          {conditions.map((c) => (
-            <div
-              key={c.name}
-              className="group flex flex-col items-center justify-center text-center cursor-pointer"
-              style={{ backgroundColor: "#ffffff", borderRadius: "0.5rem", padding: "2.5rem 1.5rem", minHeight: "200px" }}
-            >
-              <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: "#dbeef5", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
-                <img src={c.icon} alt={c.name} style={{ width: "28px", height: "28px" }} />
-              </div>
-              <p style={{ fontSize: "15px", fontWeight: 600, color: "#0f616e", fontFamily: "var(--font-base)", lineHeight: 1.3, marginBottom: "12px" }}>
-                {c.name}
-              </p>
-              <span className="inline-flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ fontSize: "13px", fontWeight: 700, color: "#1AA3B5", fontFamily: "var(--font-base)" }}>
-                Read more
-                <span style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "#1AA3B5", display: "inline-flex", alignItems: "center", justifyContent: "center" }}>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
-                </span>
-              </span>
-            </div>
-          ))}
-        </div>
+        {/* Image carousel — full width with arrows */}
+        <div className="relative">
+          {/* Left arrow — white border circle, white arrow */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors"
+            style={{ border: "2px solid #ffffff", backgroundColor: "transparent" }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="#ffffff" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
 
+          {/* Right arrow — white border circle, white arrow */}
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors"
+            style={{ border: "2px solid #ffffff", backgroundColor: "transparent" }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="#ffffff" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {/* Scrollable track */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto px-12"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}
+          >
+            {tripled.map((c, i) => (
+              <div key={`${c.name}-${i}`} className="flex-shrink-0 flex flex-col items-start cursor-pointer group" style={{ width: "272px", padding: "0 clamp(14px, 1.111vw, 16px)" }}>
+                <div className="w-full overflow-hidden" style={{ height: "340px", borderRadius: "20px" }}>
+                  <img src={c.image} alt={c.name} className="w-full h-full object-contain" />
+                </div>
+                <p style={{ fontSize: "16px", fontWeight: 600, color: "#182439", fontFamily: "var(--font-base)", marginTop: "16px", lineHeight: 1.3 }}>
+                  {c.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
+
     </section>
   )
 }

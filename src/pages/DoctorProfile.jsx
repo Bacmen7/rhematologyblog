@@ -50,10 +50,10 @@ function DoctorProfile() {
       <main className="flex-1">
         {/* Header + Gallery + Tabs section */}
         <div className="bg-[#0f616e]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-14 lg:pt-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-16">
 
           {/* Doctor Header */}
-          <div style={{ marginBottom: "24px", marginTop: "16px" }} className="sm:mt-6">
+          <div style={{ marginBottom: "24px", marginTop: "16px", paddingBottom: "16px" }} className="sm:mt-6">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
               <div>
                 <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(42px, 5vw, 70px)", lineHeight: "72px", color: "#ffffff", marginBottom: "6px" }}>
@@ -97,8 +97,8 @@ function DoctorProfile() {
         </svg>
         </div>
 
-          {/* Image Gallery */}
-          <div className="bg-[#F5F5F5]">
+          {/* Image Gallery — commented out */}
+          {/* <div className="bg-[#F5F5F5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6" style={{ paddingTop: "24px", paddingBottom: "8px" }}>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-3">
             <div className="lg:col-span-7 relative h-[200px] sm:h-[280px] lg:h-[380px] bg-gray-100 overflow-hidden rounded-xl sm:rounded-2xl">
@@ -114,7 +114,7 @@ function DoctorProfile() {
             </div>
           </div>
           </div>
-          </div>
+          </div> */}
 
           {/* Tab Navigation */}
           <div className="bg-[#F5F5F5]">
@@ -326,70 +326,52 @@ function DoctorProfile() {
                       fee: "₹1200",
                       bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
                     },
-                  ].map((loc, idx) => {
-                    const isClinicOpen = openSection === `clinic-${idx}`
-                    return (
-                    <div key={idx} className="border border-gray-200 bg-white overflow-hidden" style={{ borderRadius: "16px" }}>
-                      {/* Clickable header */}
-                      <button onClick={() => toggle(`clinic-${idx}`)} className="w-full p-4 sm:p-5 text-left">
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", color: "#0f616e", marginBottom: "2px" }}>{loc.name}</h3>
-                            <p className="text-gray-500" style={{ fontFamily: "var(--font-base)", fontSize: "13px" }}>{loc.area}</p>
+                  ].map((loc, idx) => (
+                    <div key={idx} className="bg-white overflow-hidden" style={{ borderRadius: "16px", border: "1px solid #eaeef3" }}>
+                      <div className="flex flex-col sm:flex-row">
+                        {/* Left — Info */}
+                        <div className="flex-1" style={{ padding: "24px 28px" }}>
+                          <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "17px", lineHeight: 1.3, color: "#0f616e", marginBottom: "4px" }}>{loc.name}</h3>
+                          <p style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#8a94a6", marginBottom: "12px" }}>{loc.area}</p>
+                          <div className="flex flex-col gap-1">
+                            {loc.timings.map((t, i) => (
+                              <div key={i} className="flex items-center gap-2">
+                                <svg className="w-3.5 h-3.5 text-[#1AA3B5] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                                  <circle cx="12" cy="12" r="10" />
+                                  <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                                <span style={{ fontFamily: "var(--font-base)", fontSize: "13px" }}>
+                                  <span style={{ fontWeight: 600, color: "#0f616e" }}>{t.days}</span>
+                                  <span style={{ color: "#8a94a6", marginLeft: "6px" }}>{t.time}</span>
+                                </span>
+                              </div>
+                            ))}
                           </div>
-                          <div className="flex items-center gap-2 shrink-0">
-                            <div className="flex items-center gap-1 bg-green-50 px-2 py-1" style={{ borderRadius: "8px" }}>
-                              <svg className="w-3 h-3 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                              </svg>
-                              <span className="text-green-700 text-xs font-semibold">{loc.rating}</span>
+                        </div>
+                        {/* Right — Embedded Map */}
+                        <a
+                          href={`https://www.google.com/maps/search/${encodeURIComponent(loc.name + ", Bangalore")}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block shrink-0 relative group"
+                          style={{ width: "180px", minHeight: "140px" }}
+                        >
+                          <iframe
+                            title={loc.name}
+                            src={`https://maps.google.com/maps?q=${encodeURIComponent(loc.name + ", Bangalore")}&output=embed&z=14`}
+                            className="w-full h-full absolute inset-0 pointer-events-none"
+                            style={{ border: 0 }}
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-transparent group-hover:bg-black/5 transition-colors flex items-center justify-center">
+                            <div className="w-9 h-9 rounded-full bg-white/90 flex items-center justify-center shadow-md">
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
                             </div>
-                            <svg className={`w-4 h-4 text-gray-400 transition-transform ${isClinicOpen ? "rotate-180" : ""}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                            </svg>
                           </div>
-                        </div>
-                      </button>
-
-                      {/* Collapsible content */}
-                      {isClinicOpen && (
-                        <>
-                        <div className="px-4 sm:px-5 pb-4 sm:pb-5">
-                          <p className="text-gray-500" style={{ fontFamily: "var(--font-base)", fontWeight: 300, fontSize: "13px", lineHeight: "20px", marginBottom: "12px" }}>{loc.address}</p>
-
-                          <a href={`https://www.google.com/maps/search/${encodeURIComponent(loc.name + ", Bangalore")}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#0f616e] text-xs sm:text-sm font-medium hover:underline" style={{ marginBottom: "16px" }}>
-                            <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                            </svg>
-                            Get Directions
-                          </a>
-
-                          <div className="border-t border-gray-100" style={{ paddingTop: "12px" }}>
-                            <table className="text-xs sm:text-sm" style={{ borderCollapse: "separate", borderSpacing: "0 6px" }}>
-                              <tbody>
-                                {loc.timings.map((t, i) => (
-                                  <tr key={i}>
-                                    <td className="text-[#0f616e] font-medium pr-6 whitespace-nowrap">{t.days}</td>
-                                    <td className="text-gray-500 whitespace-nowrap">{t.time}</td>
-                                  </tr>
-                                ))}
-                              </tbody>
-                            </table>
-                          </div>
-                        </div>
-
-                        <div className="border-t border-gray-100 px-4 sm:px-5 py-3 flex items-center justify-between bg-[#f8fafb]">
-                          <span style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", color: "#0f616e" }}>{loc.fee}</span>
-                          <a href={loc.bookingUrl} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm font-semibold text-white px-4 py-2 transition-colors hover:opacity-90" style={{ backgroundColor: "#0f616e", borderRadius: "25px" }}>
-                            Book Appointment
-                          </a>
-                        </div>
-                        </>
-                      )}
+                        </a>
+                      </div>
                     </div>
-                    )
-                  })}
+                  ))}
                 </div>
               </section>
             </div>

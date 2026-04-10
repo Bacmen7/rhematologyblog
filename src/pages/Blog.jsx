@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
@@ -7,92 +6,99 @@ import BriefingFooter from "../components/BriefingFooter"
 const articles = [
   {
     id: 1,
-    image: "https://oshihealth.com/wp-content/uploads/2026/02/Oshi_February_Why-do-my-farts-smell-so-bad_Graphic-1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "Why do my farts smell so bad? Quick fixes that help",
-    author: "Angela Myers"
+    image: "/images/pain-relief.jpg",
+    category: "Early Symptoms",
+    title: "Why does joint pain feel worse in the morning but improve during the day?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Explains the inflammatory cycle in rheumatoid arthritis and why movement reduces stiffness. Strong early-symptom awareness topic."
   },
   {
     id: 2,
-    image: "https://oshihealth.com/wp-content/uploads/2026/01/BOFU-Oshis-approach-to-GLP-1-side-effects-3-1-1024x635.jpg",
-    category: "Bloating & Gas",
-    title: "How Oshi can help with GLP-1 side effects",
-    author: "Steph Coelho, CPT"
+    image: "/images/hero-consult.jpg",
+    category: "Autoimmune Awareness",
+    title: "Can unexplained fatigue be an early sign of an autoimmune disease?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Targets patients who don’t yet recognize RA - bridges fatigue to autoimmune awareness."
   },
   {
     id: 3,
-    image: "https://oshihealth.com/wp-content/uploads/2025/09/BOFU-Oshis-approach-to-SIBO-opt1-1024x635.jpg",
-    category: "Bloating & Gas",
-    title: "Small intestinal bacterial overgrowth (SIBO): How Oshi treats this complex condition",
-    author: "Steph Coelho, CPT"
+    image: "/images/joints.jpg",
+    category: "Symptom Pattern",
+    title: "Why do both hands or both knees hurt at the same time?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Focuses on symmetrical joint pain - a key differentiator of rheumatoid arthritis."
   },
   {
     id: 4,
-    image: "https://oshihealth.com/wp-content/uploads/2025/08/Oshi_August_Stomach-and-back-pain_Graphic-1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "5 reasons women experience stomach and back pain together—and how to fix it",
-    author: "Jennifer Chesak, MSJ"
+    image: "/images/symptom-checker.jpg",
+    category: "Self-Assessment",
+    title: "Is your joint pain temporary or something more serious like rheumatoid arthritis?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Helps users self-assess whether their symptoms are normal or need medical attention."
   },
   {
     id: 5,
-    image: "https://oshihealth.com/wp-content/uploads/2025/08/Oshi_August_Gastritis-diet_Graphic-1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "Gastritis diet: What to eat and what to avoid",
-    author: "Angela Myers",
-    excerpt: "A gastritis diet can help soothe stomach pain and inflammation. Here are foods to eat, what to avoid, and how to manage flare-ups."
+    image: "/images/exercise.jpg",
+    category: "Daily Life",
+    title: "Why does joint stiffness increase after rest or inactivity?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Explains the concept of inactivity stiffness in RA - very relatable for patients."
   },
   {
     id: 6,
-    image: "https://oshihealth.com/wp-content/uploads/2025/06/Oshi_June_Leaky-gut_Graphic-1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "Leaky gut: What's real, what's not, and what you need to know",
-    author: "Jennifer Chesak, MSJ"
+    image: "/images/ultrasound.jpg",
+    category: "Silent Symptoms",
+    title: "Can joint swelling happen without severe pain? What it could mean",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Covers silent or mild RA symptoms that patients often ignore."
   },
   {
     id: 7,
-    image: "https://oshihealth.com/wp-content/uploads/2025/04/Oshi_April_How-to-relieve-lower-upper-stomach-pain_Graphic-1-1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "How to relieve lower & upper stomach pain: The ultimate guide",
-    author: "Angela Myers"
+    image: "/images/hero-doctor1a.jpg",
+    category: "Women & Autoimmunity",
+    title: "Why do autoimmune diseases like rheumatoid arthritis affect women more?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Addresses a highly searched but under-explained topic in simple language."
   },
   {
     id: 8,
-    image: "https://oshihealth.com/wp-content/uploads/2025/01/2025-Oshi_Sulfur-Burps_1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "What are sulfur burps? Common causes and how to get rid of them",
-    author: "Angela Myers"
+    image: "/images/arthisites.jpg",
+    category: "Warning Signs",
+    title: "Is recurring joint pain a warning sign you should not ignore?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Focuses on flare-ups and recurring symptoms - strong for early diagnosis intent."
   },
   {
     id: 9,
-    image: "https://oshihealth.com/wp-content/uploads/2025/01/2025-Oshi_SIBO-DIET_1-1024x635.png",
-    category: "Bloating & Gas",
-    title: "SIBO Diet: What it is, how to get started, and how it can help you heal",
-    author: "Angela Myers",
-    excerpt: "While the right nutritional approach to manage SIBO symptoms differs from person to person, there is a process to discover what foods to..."
+    image: "/images/patient-mark.jpg",
+    category: "Diagnosis Journey",
+    title: "Why do some people delay rheumatoid arthritis diagnosis for years?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Behavior + awareness topic builds trust and connects emotionally with patients."
   },
   {
     id: 10,
-    image: "https://oshihealth.com/wp-content/uploads/2024/09/Oshi-Health_GI-Dietian_feature-image-RD2-1024x577.jpg",
-    category: "Bloating & Gas",
-    title: "What is a GI registered dietitian? Everything you need to know about working with one",
-    author: "Jennifer Chesak, MSJ",
-    excerpt: "If you have a chronic GI condition—such as bloating, abdominal pain, constipation, diarrhea, acid reflux, or something else—working with a..."
+    image: "/images/diet.jpg",
+    category: "Lifestyle & Flares",
+    title: "Can stress or lifestyle habits trigger autoimmune flare-ups?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Links modern lifestyle with autoimmune activity - highly engaging topic."
   },
   {
     id: 11,
-    image: "https://oshihealth.com/wp-content/uploads/2024/08/Oshi_Heathyish_Low-Fodmap_Feature-Image-Grid-1024x577.jpg",
-    category: "Bloating & Gas",
-    title: "The ultimate low FODMAP foods list: what to eat and what to avoid",
-    author: "Angela Myers",
-    excerpt: "Licensed registered dietitians weigh in on the the low FODMAP diet — and reveal the most surprising items on the low FODMAP foods list."
+    image: "/images/ra-treatment.jpg",
+    category: "Disease Progression",
+    title: "What happens if joint pain is left untreated for too long?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Educates about disease progression and long-term joint damage."
   },
   {
     id: 12,
-    image: "https://oshihealth.com/wp-content/uploads/2022/07/GettyImages-601798055_994x560.jpeg",
-    category: "Bloating & Gas",
-    title: "Understanding and managing IBD bloating: What you need to know",
-    author: "Steph Coelho, CPT",
-    excerpt: "Bloating can be a common, painful symptom of inflammatory bowel disease. Here are 7 tips to consider to reduce bloating."
+    image: "/images/specialist-2.jpg",
+    category: "When To See A Specialist",
+    title: "How do you know if your joint pain needs a rheumatologist?",
+    author: "Merlin Rheumatology Team",
+    excerpt: "Strong conversion-focused topic - directly leads to doctor consultation."
   }
 ];
 
@@ -112,15 +118,15 @@ function Blog() {
 
         <div className="blog-page font-sans-blog text-[#1A355D] bg-white">
           {/* Hero Section */}
-          <section className="relative bg-[#F5F5F5] pt-16 pb-32 px-6">
+          <section className="relative bg-[#F5F5F5] pt-20 pb-36 px-6 md:pt-24 md:pb-40">
             <div className="max-w-7xl mx-auto relative z-10">
               <a href="#" className="text-[#515a6a] text-sm underline hover:no-underline mb-6 inline-block">Learn</a>
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-8 md:gap-16">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 md:gap-20">
                 <h1 className="font-serif-blog text-5xl md:text-6xl text-[#1A355D] md:w-1/2">
-                  Bloating & Gas
+                  Rheumatoid Arthritis Blog
                 </h1>
-                <p className="text-[#515a6a] text-lg md:text-xl font-light md:w-1/2 md:pt-4">
-                  Discover tips and tools for coping with these common and often painful GI symptoms that can disrupt daily living.
+                <p className="text-[#515a6a] text-lg md:text-xl font-light leading-8 md:w-1/2 md:pt-5">
+                  Explore patient-friendly articles on early symptoms, diagnosis clues, flare triggers, and when joint pain may need a rheumatologist.
                 </p>
               </div>
             </div>
@@ -134,12 +140,12 @@ function Blog() {
           </section>
 
           {/* Main Content Area */}
-          <section className="py-12 px-6 max-w-7xl mx-auto relative z-10">
+          <section className="px-6 pb-16 pt-14 md:pb-20 md:pt-16 max-w-7xl mx-auto relative z-10">
 
             {/* Filter Bar */}
-            <div className="flex justify-end mb-12 relative -mt-24 md:-mt-20 z-20">
+            <div className="flex justify-end mb-14 md:mb-16 relative -mt-28 md:-mt-24 z-20">
               <div className="relative group">
-                <button className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full py-3 px-6 flex items-center gap-4 text-sm font-semibold text-[#515a6a]">
+                <button className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full py-3.5 px-6 flex items-center gap-4 text-sm font-semibold text-[#515a6a]">
                   Content Type
                   <div className="bg-gray-100 rounded-full p-1">
                     <ChevronDown size={14} strokeWidth={3} />
@@ -155,15 +161,15 @@ function Blog() {
                     </li>
                     <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-recipes" className="filter-checkbox" />
-                      <label htmlFor="filter-recipes" className="cursor-pointer">Gut-Friendly Recipes</label>
+                      <label htmlFor="filter-recipes" className="cursor-pointer">Symptom Awareness</label>
                     </li>
                     <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-patient" className="filter-checkbox" />
-                      <label htmlFor="filter-patient" className="cursor-pointer">Patient Stories</label>
+                      <label htmlFor="filter-patient" className="cursor-pointer">Diagnosis Support</label>
                     </li>
                     <li className="flex items-center text-sm text-[#1A355D] cursor-pointer">
                       <input type="checkbox" id="filter-research" className="filter-checkbox" />
-                      <label htmlFor="filter-research" className="cursor-pointer">Research & Outcomes</label>
+                      <label htmlFor="filter-research" className="cursor-pointer">Lifestyle & Flares</label>
                     </li>
                   </ul>
                 </div>
@@ -171,34 +177,34 @@ function Blog() {
             </div>
 
             {/* Article Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-14 md:gap-y-16">
               {articles.map((article) => (
                 <a key={article.id} href="#" className="group block flex flex-col h-full">
-                  <div className="aspect-[16/10] overflow-hidden bg-gray-100 mb-5 rounded-sm shrink-0 relative">
+                  <div className="aspect-[16/10] overflow-hidden bg-gray-100 mb-6 rounded-sm shrink-0 relative">
                     <img
                       src={article.image}
                       alt={article.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="flex-grow flex flex-col">
-                    <div className="mb-3">
+                  <div className="flex-grow flex flex-col px-1">
+                    <div className="mb-4">
                       <span className="inline-block bg-[#e0f3f5] text-[#5E5E5E] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
                         {article.category}
                       </span>
                     </div>
-                    <h3 className="font-serif-blog text-xl leading-snug mb-2 text-[#1A355D] group-hover:text-blue-600 transition-colors">
+                    <h3 className="font-serif-blog text-xl leading-snug mb-3 text-[#1A355D] group-hover:text-blue-600 transition-colors min-h-[5.5rem]">
                       {article.title}
                     </h3>
-                    <p className="text-xs text-[#515a6a] mb-2">
+                    <p className="text-xs text-[#515a6a] mb-3">
                       By <strong className="text-[#1A355D] font-semibold">{article.author}</strong>
                     </p>
                     {article.excerpt && (
-                      <p className="text-sm text-[#515a6a] font-light mb-4 flex-grow leading-relaxed">
+                      <p className="text-sm text-[#515a6a] font-light mb-6 flex-grow leading-7">
                         {article.excerpt}
                       </p>
                     )}
-                    <div className={`flex items-center gap-2 text-sm font-bold text-[#1A355D] ${article.excerpt ? 'mt-auto' : 'mt-auto'}`}>
+                    <div className={`flex items-center gap-2 text-sm font-bold text-[#1A355D] pt-1 ${article.excerpt ? 'mt-auto' : 'mt-auto'}`}>
                       Read More
                       <div className="w-6 h-6 rounded-full bg-[#1AA3B5] flex items-center justify-center">
                         <ArrowRight size={12} strokeWidth={3} />

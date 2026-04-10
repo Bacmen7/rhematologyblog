@@ -44,7 +44,7 @@ function Hero() {
 
   return (
     <section className="custom-approach-section" style={{ padding: "0.5rem 1rem 2rem" }}>
-      <div className="w-full bg-[#0f616e] rounded-[1.5rem] md:rounded-[2rem] relative overflow-hidden flex flex-col shadow-none min-h-[60vh] md:min-h-[calc(100vh-7rem)] lg:min-h-[620px]">
+      <div className="w-full bg-[#0f616e] rounded-[1.5rem] md:rounded-[2rem] relative overflow-hidden flex flex-col shadow-none min-h-[75vh] md:min-h-[calc(100vh-7rem)] lg:min-h-[620px]">
 
         {/* Abstract Background Patterns */}
         <div className="absolute top-0 right-0 opacity-15 pointer-events-none">
