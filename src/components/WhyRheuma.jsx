@@ -96,30 +96,23 @@ function WhyRheuma() {
 
       {/* ── Mobile Layout ── */}
       <div className="block md:hidden">
-        <div className="px-5 pt-12 pb-8">
-          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "1.85rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "20px" }}>
-            Decode the Signs of Rheumatic Conditions
+        <div className="px-5 pt-12 pb-8 text-center">
+          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "1.85rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "16px" }}>
+            Expert care for all rheumatic symptoms and conditions
           </h2>
-          <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "24px" }}>
-            Rheumatology addresses conditions that affect joints, bones, muscles and the immune system. If you are experiencing persistent joint pain, swelling, stiffness or fatigue, it is advisable to consult a rheumatologist.
+          <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
+            From joint pain to complex autoimmune disorders, we diagnose and treat{" "}
+            <strong style={{ color: "#ffffff", background: "#1AA3B5", padding: "2px 8px", borderRadius: "4px", fontWeight: 600 }}>rheumatic and autoimmune conditions</strong>.
           </p>
-          <a
-            href="#symptom-quiz"
-            className="inline-flex items-center gap-2 rounded-full font-semibold"
-            style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "12px 28px", fontSize: "15px" }}
-          >
-            Check symptom
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7" /><path d="M7 7h10v10" /></svg>
-          </a>
         </div>
 
-        <div className="flex gap-3 overflow-x-auto px-5 pb-10" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
+        <div className="flex gap-3 overflow-x-auto px-4 pb-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
           {conditions.map((c) => (
-            <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "140px" }}>
-              <div className="w-full overflow-hidden rounded-xl" style={{ height: "160px" }}>
+            <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "155px" }}>
+              <div className="w-full overflow-hidden" style={{ height: "210px", borderRadius: "14px" }}>
                 <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
               </div>
-              <p style={{ fontSize: "13px", fontWeight: 600, color: "#0f616e", fontFamily: "var(--font-base)", marginTop: "10px", textAlign: "center", lineHeight: 1.3 }}>
+              <p style={{ fontSize: "12px", fontWeight: 700, color: "#0f616e", fontFamily: "var(--font-base)", marginTop: "8px", textAlign: "center", lineHeight: 1.3 }}>
                 {c.name}
               </p>
             </div>
