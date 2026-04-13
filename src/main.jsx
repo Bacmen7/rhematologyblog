@@ -20,7 +20,7 @@ import KnowledgeHub from "./pages/KnowledgeHub.jsx"
 import TreatmentGuides from "./pages/TreatmentGuides.jsx"
 import Gout from "./pages/Gout.jsx"
 
-// Lenis smooth scroll — global
+// Lenis smooth scroll -global
 const lenis = new Lenis({
   duration: 1.2,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

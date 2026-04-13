@@ -21,7 +21,7 @@ const reviewsData = [
     id: 1,
     name: "Priya S.",
     condition: "",
-    text: "After two years of bouncing between doctors, I finally got a clear RA diagnosis here. Dr. Miller walked me through every blood test result and didn't rush me once. My morning stiffness has gone from 3 hours to about 20 minutes. Big thanks to the whole team — now just waiting patiently to see the full results! Over all experience is very good.",
+    text: "After two years of bouncing between doctors, I finally got a clear RA diagnosis here. Dr. Miller walked me through every blood test result and didn't rush me once. My morning stiffness has gone from 3 hours to about 20 minutes. Big thanks to the whole team -now just waiting patiently to see the full results! Over all experience is very good.",
   },
   {
     id: 2,
@@ -75,6 +75,11 @@ function ReviewCard({ review }) {
 function GoogleReviews() {
   return (
     <section className="bg-[#a0e2e4] py-20 md:py-28 custom-approach-section relative">
+      {/* Top wave */}
+      <svg className="absolute -top-[33px] left-0 w-full block" style={{ height: "34px" }} preserveAspectRatio="none" viewBox="0 0 1440 40" fill="none">
+        <path d="M0 40H1440V18C1200 38 960 38 720 18C480 -2 240 -2 0 18V40Z" fill="#a0e2e4" />
+      </svg>
+
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Header */}
@@ -114,7 +119,7 @@ function GoogleReviews() {
           </div>
         </div>
 
-        {/* Cards — carousel on mobile, grid on desktop */}
+        {/* Cards -carousel on mobile, grid on desktop */}
         <div className="flex gap-5 overflow-x-auto hide-scrollbar lg:grid lg:grid-cols-4 lg:overflow-visible mb-12">
           {reviewsData.map((review) => (
             <div key={review.id} className="w-[280px] min-w-[280px] sm:w-[300px] sm:min-w-[300px] lg:w-auto lg:min-w-0 flex-shrink-0 lg:flex-shrink">
@@ -135,11 +140,6 @@ function GoogleReviews() {
         </div>
 
       </div>
-      {/* Bottom wave — same as ApproachSection */}
-      <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
-
-      </svg>
     </section>
   )
 }

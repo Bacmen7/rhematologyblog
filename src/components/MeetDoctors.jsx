@@ -21,7 +21,7 @@ function MeetDoctors() {
           <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
             Meet Our Rheumatology Specialists
           </h2>
-          {/* Arrows — desktop */}
+          {/* Arrows -desktop */}
           <div className="hidden md:flex gap-3">
             <button
               onClick={() => setStart(Math.max(0, start - 1))}

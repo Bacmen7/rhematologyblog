@@ -55,17 +55,17 @@ function SymptomQuiz() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-          {/* Left — Text */}
+          {/* Left -Text */}
           <div className="lg:w-[40%]">
             <h2 style={{ color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
               When should you see a rheumatologist?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>
-              Answer a few short questions — we'll help you understand whether a specialist consultation would be beneficial.
+              Answer a few short questions - we'll help you understand whether a specialist consultation would be beneficial.
             </p>
           </div>
 
-          {/* Right — Quiz Card */}
+          {/* Right - Quiz Card */}
           <div className="lg:w-[60%] w-full">
             <div style={{ minHeight: "280px" }}>
 

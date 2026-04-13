@@ -71,7 +71,7 @@ function Arthritis() {
           <div className="hidden lg:block">
             <div className="max-w-7xl mx-auto px-6" style={{ paddingTop: "3rem", paddingBottom: "2rem" }}>
               <div className="grid grid-cols-[1fr_520px] gap-10 items-center">
-                {/* Left — Text */}
+                {/* Left -Text */}
                 <div>
                   <span
                     className="inline-block"
@@ -106,7 +106,7 @@ function Arthritis() {
                   </div>
                 </div>
 
-                {/* Right — Image */}
+                {/* Right -Image */}
                 <div className="relative">
                   <div className="overflow-hidden" style={{ borderRadius: 0 }}>
                     <img
@@ -164,7 +164,7 @@ function Arthritis() {
             </div>
           </div>
 
-          {/* Bottom wave — blends into ghost section below */}
+          {/* Bottom wave -blends into ghost section below */}
           <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
             <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
           </svg>
@@ -174,7 +174,7 @@ function Arthritis() {
         <section className="py-12 md:py-16 px-6 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-8 items-center bg-white p-8 md:p-10" style={{ borderRadius: "16px", border: "1px solid #e8ecf2" }}>
-              {/* Left — Text */}
+              {/* Left -Text */}
               <div>
                 <div className="flex items-center gap-3" style={{ marginBottom: "1.5rem" }}>
                   <div className="w-10 h-10 rounded-full flex items-center justify-center" style={{ backgroundColor: "#e0f3f5" }}>
@@ -192,7 +192,7 @@ function Arthritis() {
                   Read on to learn about arthritis types, symptoms, causes, risk factors, and treatment options &mdash; and how early specialist care can change outcomes.
                 </p>
               </div>
-              {/* Right — Image */}
+              {/* Right -Image */}
               <div className="hidden lg:block">
                 <img src="/images/arthisites.jpg" alt="Arthritis overview" className="w-full h-[300px] object-cover" style={{ borderRadius: "12px" }} />
               </div>
@@ -208,7 +208,7 @@ function Arthritis() {
                 Arthritis - The Scale of the Problem
               </h2>
               <p className="text-[15px] leading-[1.85] text-navy-muted">
-                Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed — especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
+                Arthritis is among the most prevalent chronic conditions globally, yet underdiagnosed -especially in India. The gender split matters: several inflammatory forms disproportionately affect women, while AS predominantly targets young men.
               </p>
             </div>
 
@@ -216,7 +216,7 @@ function Arthritis() {
             <div className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
               {[
                 { value: "1%", label: "of the global population", desc: "has Rheumatoid Arthritis alone. Over 100 types of arthritis exist; combined, they are the leading cause of disability worldwide." },
-                { value: "180M", label: "patients in India", desc: "Estimated adults affected — exceeding the combined burden of diabetes and all cancers. Average diagnosis delay: 6 years." },
+                { value: "180M", label: "patients in India", desc: "Estimated adults affected -exceeding the combined burden of diabetes and all cancers. Average diagnosis delay: 6 years." },
                 { value: "40%", label: "work disability in 10 yrs", desc: "Of RA patients experience significant work disability within 10 years without early, targeted therapy. Early treatment changes this outcome dramatically." },
               ].map((stat, i) => (
                 <div key={i} className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
@@ -228,7 +228,7 @@ function Arthritis() {
                 </div>
               ))}
 
-              {/* Card 4 — gender bar */}
+              {/* Card 4 -gender bar */}
               <div className="min-w-[260px] sm:min-w-0 snap-start p-5 md:p-7" style={{ borderRadius: 0 }}>
                 <p style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4vw, 3.25rem)", fontWeight: 400, lineHeight: 1, color: "#1AA3B5", marginBottom: "0.5rem" }}>
                   3&times;
@@ -238,7 +238,7 @@ function Arthritis() {
               </div>
             </div>
           </div>
-          {/* Bottom wave — commented out */}
+          {/* Bottom wave -commented out */}
           {/* <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
             <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#ffffff" />
           </svg> */}
@@ -247,7 +247,7 @@ function Arthritis() {
         {/* ═══════════ MAJOR TYPES OF ARTHRITIS ═══════════ */}
         <section id="types" className="py-12 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            {/* Heading — left aligned */}
+            {/* Heading -left aligned */}
             <div className="mb-8 md:mb-14">
               <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                 Major Types of Arthritis
@@ -257,7 +257,7 @@ function Arthritis() {
               </p>
             </div>
 
-            {/* 4 square cards — carousel on mobile */}
+            {/* 4 square cards -carousel on mobile */}
             <div ref={typesRef} onScroll={handleTypesScroll} className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
               {[
                 { img: "/condition/Rheumatoid Arthritis (RA).png", label: "Rheumatoid Arthritis", abbr: "RA", link: "/health-guide/Rheumatoid-Arthritis" },
@@ -291,7 +291,7 @@ function Arthritis() {
                 </Link>
               ))}
             </div>
-            {/* Carousel dots — mobile only */}
+            {/* Carousel dots -mobile only */}
             <div className="flex justify-center gap-2 mt-4 sm:hidden">
               {[0, 1, 2, 3].map((i) => (
                 <span
@@ -358,7 +358,7 @@ function Arthritis() {
           </div>
         </section>
 
-        {/* ═══════════ PATHOLOGY — HOW ARTHRITIS DEVELOPS ═══════════ */}
+        {/* ═══════════ PATHOLOGY -HOW ARTHRITIS DEVELOPS ═══════════ */}
         <section className="relative overflow-hidden" style={{ backgroundColor: "#ffffff", paddingTop: "3rem", paddingBottom: "3rem" }}>
           <div className="max-w-7xl mx-auto px-6 relative z-10">
             {/* Heading */}
@@ -367,25 +367,25 @@ function Arthritis() {
                 Pathology - How Arthritis Develops
               </h2>
               <p className="text-[15px] leading-[1.85]" style={{ color: "#0f616e", opacity: 0.7 }}>
-                Understanding the biological sequence shows patients exactly why early treatment prevents permanent damage — and why waiting is never safe in inflammatory arthritis.
+                Understanding the biological sequence shows patients exactly why early treatment prevents permanent damage -and why waiting is never safe in inflammatory arthritis.
               </p>
             </div>
 
             {/* Content: Diagram left + Steps right */}
             <div className="lg:flex lg:gap-12 xl:gap-16 items-start">
 
-              {/* Left — Joint Diagram (sticky) */}
+              {/* Left -Joint Diagram (sticky) */}
               <div className="flex-1 mb-12 lg:mb-0 lg:sticky lg:top-[140px] self-start">
                 <img src="/images/joints.jpg" alt="Healthy Joint vs Inflamed Joint" className="w-full object-cover" style={{ borderRadius: 0 }} />
               </div>
 
-              {/* Right — 3 Steps */}
+              {/* Right -3 Steps */}
               <div className="flex-1 flex flex-col gap-4">
                 {[
                   {
                     num: "01",
                     title: "Immune Trigger",
-                    desc: "In RA, Anti-CCP antibodies form silently — up to 10 years before symptoms appear. In AS, the HLA-B27 gene initiates a low-grade spinal inflammatory cascade.",
+                    desc: "In RA, Anti-CCP antibodies form silently -up to 10 years before symptoms appear. In AS, the HLA-B27 gene initiates a low-grade spinal inflammatory cascade.",
                   },
                   {
                     num: "02",
@@ -420,7 +420,7 @@ function Arthritis() {
           <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#f5f5f5" />
         </svg>
 
-        {/* ═══════════ DIAGNOSIS — TESTS AND WHAT THEY MEAN ═══════════ */}
+        {/* ═══════════ DIAGNOSIS -TESTS AND WHAT THEY MEAN ═══════════ */}
         <section className="py-12 md:py-20 pb-20 md:pb-28 bg-[#f5f5f5]">
           <div className="max-w-7xl mx-auto px-6">
             <div className="mb-10 md:mb-14">
@@ -428,7 +428,7 @@ function Arthritis() {
                 Diagnosis - Tests and What They Mean
               </h2>
               <p className="text-[15px] leading-[1.85] text-navy-muted">
-                No single test diagnoses arthritis. Diagnosis is clinical — combining history, physical examination, blood tests, and imaging.
+                No single test diagnoses arthritis. Diagnosis is clinical -combining history, physical examination, blood tests, and imaging.
               </p>
             </div>
 
@@ -439,7 +439,7 @@ function Arthritis() {
                   iconColor: "#fd956a",
                   iconBg: "linear-gradient(135deg, #fff3ec 0%, #f9d4d4 100%)",
                   title: "Blood Tests",
-                  desc: "Detect inflammation markers and autoantibodies. Must be interpreted in full clinical context — not in isolation.",
+                  desc: "Detect inflammation markers and autoantibodies. Must be interpreted in full clinical context -not in isolation.",
                   tags: ["RF", "Anti-CCP", "CRP", "ESR", "ANA", "HLA-B27", "Uric Acid", "FBC"],
                   accent: "#fd956a",
                 },
@@ -457,7 +457,7 @@ function Arthritis() {
                   iconColor: "#0f616e",
                   iconBg: "linear-gradient(135deg, #f5f5f5 0%, #d4ddef 100%)",
                   title: "Joint Fluid Analysis",
-                  desc: "Arthrocentesis is gold standard for gout — crystals are directly visible. Also essential to rule out septic arthritis, a medical emergency.",
+                  desc: "Arthrocentesis is gold standard for gout -crystals are directly visible. Also essential to rule out septic arthritis, a medical emergency.",
                   tags: ["Crystal analysis", "WBC count", "Culture & sensitivity"],
                   accent: "#0f616e",
                 },
@@ -497,7 +497,7 @@ function Arthritis() {
                 </div>
               ))}
             </div>
-            {/* Carousel dots — mobile only */}
+            {/* Carousel dots -mobile only */}
             <div className="flex justify-center gap-2 mt-4 md:hidden">
               {[0, 1, 2].map((i) => (
                 <span
@@ -514,7 +514,7 @@ function Arthritis() {
           </div>
         </section>
 
-        {/* ═══════════ 06 — TREATMENT OPTIONS ═══════════ */}
+        {/* ═══════════ 06 -TREATMENT OPTIONS ═══════════ */}
         <section className="relative mt-[60px] py-12 md:py-20" style={{ backgroundColor: "#0f616e" }}>
           {/* Top wave */}
           <svg className="absolute -top-[60px] left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
@@ -526,7 +526,7 @@ function Arthritis() {
                 Treatment Options
               </h2>
               <p className="text-[15px] leading-[1.8]" style={{ color: "rgba(255,255,255,0.6)" }}>
-                Arthritis is managed through two primary treatment pathways — medication therapy and surgery. Most patients are managed with medicines alone; surgery is reserved for advanced cases.
+                Arthritis is managed through two primary treatment pathways -medication therapy and surgery. Most patients are managed with medicines alone; surgery is reserved for advanced cases.
               </p>
             </div>
 
@@ -537,7 +537,7 @@ function Arthritis() {
                   badge: "First-Line",
                   title: "Medicines",
                   desc: "From symptom relief to disease-modifying and biologic therapy.",
-                  items: ["NSAIDs", "DMARDs — Methotrexate, Hydroxychloroquine", "Corticosteroids", "Biologics — TNF inhibitors, IL-6, IL-17", "JAK Inhibitors — Upadacitinib, Baricitinib"],
+                  items: ["NSAIDs", "DMARDs -Methotrexate, Hydroxychloroquine", "Corticosteroids", "Biologics -TNF inhibitors, IL-6, IL-17", "JAK Inhibitors -Upadacitinib, Baricitinib"],
                   note: "Never change medication without guidance from your rheumatologist.",
                   color: "#1AA3B5",
                 },
@@ -546,8 +546,8 @@ function Arthritis() {
                   badge: "When Needed",
                   title: "Surgery",
                   desc: "Joint replacement or spinal procedures for irreversible structural damage.",
-                  items: ["Total Knee Replacement", "Total Hip Replacement", "Synovectomy", "Arthroscopy", "Spinal Fusion — end-stage AS"],
-                  note: "Reserved as a last resort — only after all medical options are exhausted.",
+                  items: ["Total Knee Replacement", "Total Hip Replacement", "Synovectomy", "Arthroscopy", "Spinal Fusion -end-stage AS"],
+                  note: "Reserved as a last resort -only after all medical options are exhausted.",
                   color: "#fd956a",
                   img: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=600&q=80",
                 },
@@ -555,7 +555,7 @@ function Arthritis() {
                   icon: "fitness_center",
                   badge: "Every Stage",
                   title: "Physiotherapy",
-                  desc: "Grade A evidence across all arthritis types — recommended at every stage.",
+                  desc: "Grade A evidence across all arthritis types -recommended at every stage.",
                   items: ["Joint Mobilisation Exercises", "Muscle Strengthening", "Hydrotherapy", "Gait & Balance Training", "Post-Surgical Rehabilitation"],
                   note: "Recommended alongside medications and post-surgery.",
                   color: "#1AA3B5",
@@ -596,7 +596,7 @@ function Arthritis() {
                 </div>
               ))}
             </div>
-            {/* Dots — mobile only */}
+            {/* Dots -mobile only */}
             <div className="flex justify-center gap-2 mt-4 lg:hidden">
               {[0, 1, 2].map((i) => (
                 <span
@@ -617,7 +617,7 @@ function Arthritis() {
           </svg>
         </section>
 
-        {/* ═══════════ 07 — LIVING WELL WITH ARTHRITIS ═══════════ */}
+        {/* ═══════════ 07 -LIVING WELL WITH ARTHRITIS ═══════════ */}
         <section className="py-12 md:py-20 bg-ghost">
           <div className="max-w-7xl mx-auto px-0 md:px-6">
             <div className="mb-8 md:mb-14 max-w-2xl px-5 md:px-0">
@@ -646,17 +646,17 @@ function Arthritis() {
                   What You Do Between Appointments Matters as Much as Medication
                 </h4>
                 <p className="text-[13px]" style={{ fontFamily: "var(--font-base)", color: "rgba(255,255,255,.5)", lineHeight: 1.65 }}>
-                  Clinical research consistently shows that patient self-management has outcomes on par with medication choice. These habits are part of your treatment plan — not optional extras.
+                  Clinical research consistently shows that patient self-management has outcomes on par with medication choice. These habits are part of your treatment plan -not optional extras.
                 </p>
                 <ul className="flex flex-col gap-1.5" style={{ fontFamily: "var(--font-base)" }}>
                   {[
-                    "Move every day — even 20 minutes of low-impact activity measurably reduces inflammatory markers",
-                    "Keep a symptom diary — helps your rheumatologist spot patterns and adjust treatment accurately",
-                    "Never skip medication doses — inconsistency leads to flares and faster disease progression",
+                    "Move every day -even 20 minutes of low-impact activity measurably reduces inflammatory markers",
+                    "Keep a symptom diary -helps your rheumatologist spot patterns and adjust treatment accurately",
+                    "Never skip medication doses -inconsistency leads to flares and faster disease progression",
                     "Know your blood test schedule and never miss monitoring appointments",
-                    "Disclose all supplements and herbal remedies — many interact with DMARDs",
-                    "Build a support network — isolation directly worsens pain perception and mental health",
-                    "Discuss fatigue explicitly with your team — it is measurable and treatable",
+                    "Disclose all supplements and herbal remedies -many interact with DMARDs",
+                    "Build a support network -isolation directly worsens pain perception and mental health",
+                    "Discuss fatigue explicitly with your team -it is measurable and treatable",
                   ].map((item, i) => (
                     <li key={i} className="flex gap-2 text-[13px] items-start" style={{ color: "rgba(255,255,255,.72)" }}>
                       <span className="shrink-0 font-bold" style={{ color: "#1AA3B5" }}>&#10003;</span>
@@ -686,7 +686,7 @@ function Arthritis() {
           </div>
         </section>
 
-        {/* ═══════════ 08 — MEET OUR DOCTORS ═══════════ */}
+        {/* ═══════════ 08 -MEET OUR DOCTORS ═══════════ */}
         <MeetDoctors />
 
 
@@ -811,7 +811,7 @@ function Arthritis() {
                   Rheumatoid Arthritis: Complete Guide
                 </h3>
                 <p className="text-[14px] leading-[1.7]" style={{ color: "rgba(255,255,255,0.65)" }}>
-                  Symptoms, causes, risk factors, diagnosis, and the latest treatment options — all reviewed by our rheumatology team.
+                  Symptoms, causes, risk factors, diagnosis, and the latest treatment options -all reviewed by our rheumatology team.
                 </p>
               </Link>
 
@@ -851,7 +851,7 @@ function Arthritis() {
                 The Role of RheumaCare
               </h2>
               <p className="text-[15px] leading-[1.75] text-navy-muted">
-                RheumaCare is designed to bridge the gap between clinical appointments and everyday life — giving patients, caregivers, and clinicians the tools, knowledge, and support they need at every stage of the arthritis journey.
+                RheumaCare is designed to bridge the gap between clinical appointments and everyday life -giving patients, caregivers, and clinicians the tools, knowledge, and support they need at every stage of the arthritis journey.
               </p>
               <a
                 href="#"
@@ -864,9 +864,9 @@ function Arthritis() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {[
-                { icon: "call", title: "Specialist Consultation", desc: "Direct access to experienced rheumatologists — in-person or teleconsult, cutting the average 6-year diagnosis delay.", link: "Book now" },
-                { icon: "monitoring", title: "Symptom & Flare Monitoring", desc: "Log pain, stiffness, and medication adherence between appointments — giving your care team data for precise treat-to-target decisions.", link: "Start tracking" },
-                { icon: "group", title: "Patient Community", desc: "A moderated peer network for people living with arthritis — shared experience, coping strategies, and support between appointments.", link: "Join now" },
+                { icon: "call", title: "Specialist Consultation", desc: "Direct access to experienced rheumatologists -in-person or teleconsult, cutting the average 6-year diagnosis delay.", link: "Book now" },
+                { icon: "monitoring", title: "Symptom & Flare Monitoring", desc: "Log pain, stiffness, and medication adherence between appointments -giving your care team data for precise treat-to-target decisions.", link: "Start tracking" },
+                { icon: "group", title: "Patient Community", desc: "A moderated peer network for people living with arthritis -shared experience, coping strategies, and support between appointments.", link: "Join now" },
               ].map((card, i) => (
                 <div
                   key={i}
@@ -938,10 +938,10 @@ function Arthritis() {
               {/* List cards */}
               <div className="flex flex-col gap-3">
                 {[
-                  { img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400", cat: "Medications", title: "Starting Methotrexate — What Every Patient Must Know", time: "8 min read" },
-                  { img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400", cat: "Patient Guide", title: "RA vs Osteoarthritis — How to Tell the Difference", time: "6 min read" },
+                  { img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400", cat: "Medications", title: "Starting Methotrexate -What Every Patient Must Know", time: "8 min read" },
+                  { img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400", cat: "Patient Guide", title: "RA vs Osteoarthritis -How to Tell the Difference", time: "6 min read" },
                   { img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
-                  { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400", cat: "Lifestyle", title: "Diet & Inflammation — What to Eat With Arthritis", time: "5 min read" },
+                  { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400", cat: "Lifestyle", title: "Diet & Inflammation -What to Eat With Arthritis", time: "5 min read" },
                 ].map((art, i) => (
                   <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#e8ecf2] bg-white cursor-pointer items-center hover:border-primary transition-colors">
                     <img src={art.img} alt="" className="w-[72px] h-[72px] rounded-[10px] object-cover shrink-0" />

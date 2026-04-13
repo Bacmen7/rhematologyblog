@@ -2,7 +2,7 @@ function StatsBar() {
   return (
     <section className="py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-[60px]">
-        {/* Left — Heading */}
+        {/* Left -Heading */}
         <div className="flex-[1.5] text-center md:text-left">
           <h2
             className="leading-[1.1] font-normal mb-5 text-navy-deep"

@@ -12,7 +12,7 @@ function InsurancePartners() {
     <section className="py-20 md:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
-          {/* Left — Text */}
+          {/* Left -Text */}
           <div>
             <h2 className="text-[2rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-6">
               In-network with most major{" "}
@@ -33,7 +33,7 @@ function InsurancePartners() {
             </button>
           </div>
 
-          {/* Right — Logo Grid */}
+          {/* Right -Logo Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
             {insurers.map((ins) => (
               <div

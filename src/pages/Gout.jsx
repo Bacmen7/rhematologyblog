@@ -23,33 +23,33 @@ const tocSections = [
 ]
 
 const symptoms = [
-  "Sudden, intense joint pain — often striking the big toe first, but also ankles, knees, wrists, fingers, and elbows",
+  "Sudden, intense joint pain -often striking the big toe first, but also ankles, knees, wrists, fingers, and elbows",
   "Swelling, warmth, and redness around the affected joint that can appear within hours",
-  "Extreme tenderness — even the weight of a bedsheet can feel unbearable during a flare",
+  "Extreme tenderness -even the weight of a bedsheet can feel unbearable during a flare",
   "Limited range of motion in the affected joint as the attack progresses",
   "A burning or throbbing sensation that typically peaks within 12–24 hours of onset",
-  "Formation of tophi — firm, whitish lumps of urate crystals under the skin near joints, ears, or tendons in chronic cases",
+  "Formation of tophi -firm, whitish lumps of urate crystals under the skin near joints, ears, or tendons in chronic cases",
   "Peeling or itchy skin around the joint as the flare subsides",
 ]
 
 const causes = [
-  { title: "Purine metabolism", desc: "Your body produces uric acid when it breaks down purines — natural compounds found in your cells and in certain foods. Normally, uric acid dissolves in the blood, passes through the kidneys, and leaves the body in urine. When this system falls out of balance, urate crystals can form and deposit in your joints." },
-  { title: "Overproduction of uric acid (hyperuricemia)", desc: "Conditions like chronic hemolytic anemia, thalassemia, psoriasis, and certain cancers accelerate cell turnover, flooding the body with purines. A diet heavy in red meat, organ meats, shellfish, and alcohol — particularly beer — adds to the purine load." },
+  { title: "Purine metabolism", desc: "Your body produces uric acid when it breaks down purines -natural compounds found in your cells and in certain foods. Normally, uric acid dissolves in the blood, passes through the kidneys, and leaves the body in urine. When this system falls out of balance, urate crystals can form and deposit in your joints." },
+  { title: "Overproduction of uric acid (hyperuricemia)", desc: "Conditions like chronic hemolytic anemia, thalassemia, psoriasis, and certain cancers accelerate cell turnover, flooding the body with purines. A diet heavy in red meat, organ meats, shellfish, and alcohol -particularly beer -adds to the purine load." },
   { title: "Decreased excretion of uric acid", desc: "The kidneys handle about two-thirds of uric acid removal. Chronic kidney disease, dehydration, hypertension, hypothyroidism, and certain medications (thiazide diuretics, low-dose aspirin, cyclosporine) can all slow renal urate excretion, allowing levels to climb." },
 ]
 
 const riskFactors = [
   { factor: "Sex & age", detail: "Men are 3–4 times more likely to develop gout than premenopausal women, because estrogen helps the kidneys excrete uric acid. After menopause, women's risk rises significantly. Most first attacks occur between ages 40 and 60." },
-  { factor: "Diet", detail: "Regular consumption of purine-rich foods (red meat, organ meats, shellfish) and sugar-sweetened beverages raises uric acid levels. Beer and spirits carry a particularly strong association — beer contains its own purines and also impairs urate excretion." },
+  { factor: "Diet", detail: "Regular consumption of purine-rich foods (red meat, organ meats, shellfish) and sugar-sweetened beverages raises uric acid levels. Beer and spirits carry a particularly strong association -beer contains its own purines and also impairs urate excretion." },
   { factor: "Obesity", detail: "Excess body weight increases uric acid production and reduces renal excretion. Visceral fat is especially problematic because it drives systemic inflammation that compounds the effect of crystal deposition." },
   { factor: "Medical conditions", detail: "Hypertension, diabetes, metabolic syndrome, chronic kidney disease, and heart disease are all independently associated with elevated uric acid. These conditions often cluster together, creating a cycle that worsens gout risk." },
   { factor: "Medications", detail: "Thiazide diuretics (commonly prescribed for blood pressure), low-dose aspirin, cyclosporine, and some anti-rejection drugs can elevate uric acid by impairing kidney excretion." },
-  { factor: "Family history", detail: "Gout has a strong genetic component. If a close relative has gout, your risk increases substantially — certain gene variants affect how efficiently your kidneys handle urate." },
+  { factor: "Family history", detail: "Gout has a strong genetic component. If a close relative has gout, your risk increases substantially -certain gene variants affect how efficiently your kidneys handle urate." },
 ]
 
 const diagnosisSteps = [
-  "Joint fluid analysis (arthrocentesis) — the gold standard. A needle draws fluid from the inflamed joint to check for monosodium urate crystals under polarized light microscopy.",
-  "Blood tests for serum uric acid levels, though levels can be normal during an acute attack — so this test alone isn't definitive.",
+  "Joint fluid analysis (arthrocentesis) -the gold standard. A needle draws fluid from the inflamed joint to check for monosodium urate crystals under polarized light microscopy.",
+  "Blood tests for serum uric acid levels, though levels can be normal during an acute attack -so this test alone isn't definitive.",
   "Inflammatory markers: ESR (erythrocyte sedimentation rate) and CRP (C-reactive protein) to assess the degree of inflammation.",
   "Imaging: Ultrasound can detect the \"double contour\" sign of urate deposits on cartilage. Dual-energy CT (DECT) can identify urate crystal deposits throughout the body, even between attacks.",
   "X-rays to evaluate chronic joint damage in patients with recurrent or long-standing gout.",
@@ -62,21 +62,21 @@ const treatmentSteps = [
     title: "Managing the acute flare",
     desc: "The first priority is bringing a gout attack under control as quickly as possible. Treatment is most effective when started within 24 hours of symptom onset.",
     details: [
-      "NSAIDs (naproxen, indomethacin, celecoxib) — first-line for most patients",
-      "Colchicine — highly effective when taken early, especially within 12 hours of flare onset",
-      "Corticosteroids (prednisone, methylprednisolone) — used when NSAIDs are contraindicated or for patients with kidney concerns",
-      "IL-1 inhibitors (anakinra, canakinumab) — for refractory flares that don't respond to standard therapy",
+      "NSAIDs (naproxen, indomethacin, celecoxib) -first-line for most patients",
+      "Colchicine -highly effective when taken early, especially within 12 hours of flare onset",
+      "Corticosteroids (prednisone, methylprednisolone) -used when NSAIDs are contraindicated or for patients with kidney concerns",
+      "IL-1 inhibitors (anakinra, canakinumab) -for refractory flares that don't respond to standard therapy",
       "Rest, ice, and elevation of the affected joint during the attack",
     ],
   },
   {
     number: 2,
     title: "Lowering uric acid for long-term control",
-    desc: "Once the acute flare resolves, the goal shifts to preventing future attacks by bringing serum uric acid below 6 mg/dL — the level at which existing crystals begin to dissolve.",
+    desc: "Once the acute flare resolves, the goal shifts to preventing future attacks by bringing serum uric acid below 6 mg/dL -the level at which existing crystals begin to dissolve.",
     details: [
-      "Xanthine oxidase inhibitors (allopurinol, febuxostat) — reduce uric acid production and are the cornerstone of long-term therapy",
-      "Uricosuric agents (probenecid, lesinurad) — help the kidneys excrete more uric acid",
-      "Pegloticase — an IV infusion for severe, treatment-resistant gout that converts uric acid to a form the body can easily eliminate",
+      "Xanthine oxidase inhibitors (allopurinol, febuxostat) -reduce uric acid production and are the cornerstone of long-term therapy",
+      "Uricosuric agents (probenecid, lesinurad) -help the kidneys excrete more uric acid",
+      "Pegloticase -an IV infusion for severe, treatment-resistant gout that converts uric acid to a form the body can easily eliminate",
       "Low-dose colchicine or NSAID prophylaxis during the first 3–6 months of urate-lowering therapy to prevent rebound flares",
     ],
   },
@@ -86,20 +86,20 @@ const treatmentSteps = [
     desc: "Diet and lifestyle changes work alongside medication to keep uric acid in check. These adjustments can meaningfully reduce flare frequency and improve your overall metabolic health.",
     details: [
       "Limit purine-rich foods: red meat, organ meats, shellfish, and anchovies",
-      "Reduce or eliminate alcohol — especially beer and spirits",
+      "Reduce or eliminate alcohol -especially beer and spirits",
       "Stay well-hydrated (aim for 2–3 liters of water per day)",
-      "Increase consumption of low-fat dairy, cherries, and vitamin C-rich foods — all associated with lower uric acid",
+      "Increase consumption of low-fat dairy, cherries, and vitamin C-rich foods -all associated with lower uric acid",
       "Achieve and maintain a healthy weight through gradual loss (crash dieting can trigger flares)",
     ],
   },
   {
     number: 4,
     title: "Ongoing monitoring & whole-person care",
-    desc: "Gout doesn't exist in isolation. Our providers monitor the full picture — including the cardiovascular, kidney, and metabolic conditions that often accompany it.",
+    desc: "Gout doesn't exist in isolation. Our providers monitor the full picture -including the cardiovascular, kidney, and metabolic conditions that often accompany it.",
     details: [
       "Regular serum uric acid monitoring (target: below 6 mg/dL, or below 5 mg/dL for tophaceous gout)",
       "Kidney function tests and blood pressure monitoring",
-      "Cardiovascular risk assessment — gout independently raises heart attack and stroke risk",
+      "Cardiovascular risk assessment -gout independently raises heart attack and stroke risk",
       "Joint imaging to track crystal burden and confirm dissolution over time",
       "Mental health support for the anxiety and frustration that chronic pain conditions can cause",
     ],
@@ -107,7 +107,7 @@ const treatmentSteps = [
 ]
 
 const complications = [
-  { title: "Recurrent flares", desc: "Without urate-lowering therapy, most patients experience repeated attacks — and the interval between flares tends to shorten over time. What starts as one flare a year can become monthly episodes." },
+  { title: "Recurrent flares", desc: "Without urate-lowering therapy, most patients experience repeated attacks -and the interval between flares tends to shorten over time. What starts as one flare a year can become monthly episodes." },
   { title: "Tophaceous gout", desc: "Years of elevated uric acid can lead to visible deposits of urate crystals (tophi) in joints, cartilage, tendons, and soft tissue. Tophi are painless initially but can erode bone and permanently damage joints if left untreated." },
   { title: "Joint destruction", desc: "Chronic crystal deposition causes ongoing low-grade inflammation that gradually erodes cartilage and bone, leading to permanent joint deformity and disability." },
   { title: "Kidney stones & kidney disease", desc: "Uric acid stones account for 5–10% of all kidney stones. Chronically elevated uric acid can also contribute to progressive kidney damage through crystal deposition in the renal tubules." },
@@ -191,13 +191,13 @@ function Gout() {
                     <strong className="font-semibold" style={{ color: "#1A355D", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>
                       inflammatory arthritis
                     </strong>{" "}
-                    that develops when uric acid builds up in your blood and forms sharp, needle-like crystals in a joint. If you&apos;ve ever been jolted awake at 2 a.m. by a throbbing, red-hot big toe that hurts too much to touch — you already know how intense a gout flare can be.
+                    that develops when uric acid builds up in your blood and forms sharp, needle-like crystals in a joint. If you&apos;ve ever been jolted awake at 2 a.m. by a throbbing, red-hot big toe that hurts too much to touch -you already know how intense a gout flare can be.
                   </p>
                   <p className="text-[16px] leading-[1.8] text-navy-muted mb-5">
-                    The good news is that gout is one of the best-understood and most treatable forms of arthritis. Unlike conditions where the underlying cause remains unclear, we know exactly what drives gout: excess uric acid. That means we have a clear target — and with the right combination of medication, lifestyle adjustments, and ongoing monitoring, most patients can eliminate flares entirely and prevent long-term joint damage.
+                    The good news is that gout is one of the best-understood and most treatable forms of arthritis. Unlike conditions where the underlying cause remains unclear, we know exactly what drives gout: excess uric acid. That means we have a clear target -and with the right combination of medication, lifestyle adjustments, and ongoing monitoring, most patients can eliminate flares entirely and prevent long-term joint damage.
                   </p>
                   <p className="text-[16px] leading-[1.8] text-navy-muted mb-14">
-                    At RheumaInsights, we take a comprehensive approach to gout — one that goes beyond treating individual flares. We work with you to lower your uric acid to a safe level, address the metabolic conditions that often accompany gout, and build a plan that fits your life. Read on for everything you need to know about gout symptoms, causes, diagnosis, and the treatments that make a real difference.
+                    At RheumaInsights, we take a comprehensive approach to gout -one that goes beyond treating individual flares. We work with you to lower your uric acid to a safe level, address the metabolic conditions that often accompany gout, and build a plan that fits your life. Read on for everything you need to know about gout symptoms, causes, diagnosis, and the treatments that make a real difference.
                   </p>
                 </div>
 
@@ -248,7 +248,7 @@ function Gout() {
                     Gout symptoms
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
-                    A gout flare typically comes on fast — often overnight — and reaches peak intensity within{" "}
+                    A gout flare typically comes on fast -often overnight -and reaches peak intensity within{" "}
                     <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>12 to 24 hours</strong>.
                     The big toe is the most common site (a condition called podagra), but gout can strike any joint. Here&apos;s what to watch for:
                   </p>
@@ -260,7 +260,7 @@ function Gout() {
                     ))}
                   </ul>
                   <p className="text-[17px] leading-[1.8] text-navy-deep">
-                    Between flares, you may feel completely fine — but that doesn&apos;t mean the disease is inactive. Urate crystals can continue to accumulate silently, and without treatment, flares tend to become{" "}
+                    Between flares, you may feel completely fine -but that doesn&apos;t mean the disease is inactive. Urate crystals can continue to accumulate silently, and without treatment, flares tend to become{" "}
                     <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>more frequent and severe</strong> over time.
                   </p>
                 </div>
@@ -276,7 +276,7 @@ function Gout() {
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
                     Gout is caused by{" "}
                     <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>hyperuricemia</strong>{" "}
-                    — a sustained elevation of uric acid in the blood above the saturation point (~6.8 mg/dL), at which urate crystals begin to form and deposit in joints and surrounding tissue.
+                    -a sustained elevation of uric acid in the blood above the saturation point (~6.8 mg/dL), at which urate crystals begin to form and deposit in joints and surrounding tissue.
                   </p>
                   <ul className="space-y-5 mb-8" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
                     {causes.map((c, i) => (
@@ -296,9 +296,9 @@ function Gout() {
                     Gout risk factors
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
-                    Not everyone with high uric acid develops gout — but several factors can{" "}
+                    Not everyone with high uric acid develops gout -but several factors can{" "}
                     <strong className="font-bold" style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}>significantly raise your odds</strong>.
-                    Some are modifiable, others aren&apos;t — knowing which is which helps you take the right steps.
+                    Some are modifiable, others aren&apos;t -knowing which is which helps you take the right steps.
                   </p>
                   <ul className="space-y-5 mb-8" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
                     {riskFactors.map((r, i) => (
@@ -318,7 +318,7 @@ function Gout() {
                     Gout diagnosis
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
-                    A proper diagnosis matters because gout treatment is very specific — and several other conditions can look almost identical. Here&apos;s how your rheumatologist will confirm it:
+                    A proper diagnosis matters because gout treatment is very specific -and several other conditions can look almost identical. Here&apos;s how your rheumatologist will confirm it:
                   </p>
                   <ul className="space-y-5 mb-8" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
                     {diagnosisSteps.map((step, i) => (
@@ -352,7 +352,7 @@ function Gout() {
                     {[
                       "Accurate diagnosis through joint fluid analysis and imaging",
                       "Identifying and addressing underlying causes of elevated uric acid",
-                      "Personalised medication plans — from flare management to long-term urate-lowering therapy",
+                      "Personalised medication plans -from flare management to long-term urate-lowering therapy",
                       "Dietary and lifestyle modifications tailored to your metabolic profile",
                       "Regular monitoring of uric acid levels, kidney function, and cardiovascular risk",
                       "Coordination with specialists for comorbid conditions like diabetes and hypertension",
@@ -381,7 +381,7 @@ function Gout() {
                   </h2>
 
                   <p style={{ fontSize: "17px", lineHeight: 1.8, color: "#182439", marginBottom: "2.5rem" }}>
-                    We take a step-by-step approach to gout — first stopping the pain, then preventing it from coming back. Here&apos;s how our providers work together:
+                    We take a step-by-step approach to gout -first stopping the pain, then preventing it from coming back. Here&apos;s how our providers work together:
                   </p>
 
                   {/* Care Team Card */}
@@ -443,11 +443,11 @@ function Gout() {
                     While medication is the backbone of gout management, these daily habits make a meaningful difference in keeping flares at bay:
                   </p>
                   <ul className="space-y-5 mb-8" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
-                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Hydrate aggressively.</strong> Aim for 2–3 liters of water daily. Dehydration concentrates uric acid and is one of the most common — and preventable — flare triggers.</li>
-                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Rethink your plate.</strong> Prioritize low-fat dairy, whole grains, vegetables, and cherries. Limit red meat, organ meats, shellfish, and sugary beverages. You don&apos;t need a restrictive diet — small, consistent swaps add up.</li>
-                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Limit alcohol — especially beer.</strong> Beer raises uric acid both by increasing production and decreasing excretion. Wine in moderation appears to carry less risk, but during active disease, cutting alcohol entirely is safest.</li>
-                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Manage your weight gradually.</strong> Losing even 5–10% of body weight can lower uric acid meaningfully. But avoid crash diets or fasting — rapid weight loss can paradoxically trigger a flare.</li>
-                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">During a flare:</strong> Rest the joint, apply ice for 20 minutes at a time, elevate the limb, and take prescribed medication immediately. Don&apos;t wait to see if the pain passes — early treatment shortens attacks dramatically.</li>
+                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Hydrate aggressively.</strong> Aim for 2–3 liters of water daily. Dehydration concentrates uric acid and is one of the most common -and preventable -flare triggers.</li>
+                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Rethink your plate.</strong> Prioritize low-fat dairy, whole grains, vegetables, and cherries. Limit red meat, organ meats, shellfish, and sugary beverages. You don&apos;t need a restrictive diet -small, consistent swaps add up.</li>
+                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Limit alcohol -especially beer.</strong> Beer raises uric acid both by increasing production and decreasing excretion. Wine in moderation appears to carry less risk, but during active disease, cutting alcohol entirely is safest.</li>
+                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Manage your weight gradually.</strong> Losing even 5–10% of body weight can lower uric acid meaningfully. But avoid crash diets or fasting -rapid weight loss can paradoxically trigger a flare.</li>
+                    <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">During a flare:</strong> Rest the joint, apply ice for 20 minutes at a time, elevate the limb, and take prescribed medication immediately. Don&apos;t wait to see if the pain passes -early treatment shortens attacks dramatically.</li>
                     <li className="text-[17px] leading-[1.75] text-navy-deep pl-1"><strong className="font-bold">Cherry juice and vitamin C.</strong> Multiple studies show that tart cherry juice (or cherry extract) and vitamin C supplements (500 mg/day) can modestly lower uric acid levels and reduce flare risk when used alongside standard therapy.</li>
                   </ul>
                 </div>
@@ -461,7 +461,7 @@ function Gout() {
                     Gout complications
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
-                    Left untreated, gout isn&apos;t just painful — it can cause lasting damage to your joints and broader health. Here&apos;s what chronic, uncontrolled gout can lead to:
+                    Left untreated, gout isn&apos;t just painful -it can cause lasting damage to your joints and broader health. Here&apos;s what chronic, uncontrolled gout can lead to:
                   </p>
                   <ul className="space-y-5 mb-8" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
                     {complications.map((c, i) => (
@@ -523,7 +523,7 @@ function Gout() {
                       You don&apos;t have to live with gout flares
                     </h4>
                     <p style={{ fontSize: "13px", lineHeight: 1.6, color: "#3b5b80", marginBottom: "20px" }}>
-                      Get started on your path to flare-free living in 3 minutes or less — and get seen by a rheumatologist within days.
+                      Get started on your path to flare-free living in 3 minutes or less -and get seen by a rheumatologist within days.
                     </p>
                     <a
                       href="#"

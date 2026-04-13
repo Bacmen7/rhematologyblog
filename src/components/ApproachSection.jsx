@@ -5,7 +5,7 @@ import seenHeardIcon from "../assets/icons/seen-heard.svg"
 
 function ApproachSection() {
   return (
-    <section className="custom-approach-section relative overflow-hidden bg-[#1aa3b5] pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
+    <section className="custom-approach-section relative overflow-hidden bg-[#0f616e] pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <h2 className="!mb-14 md:!mb-16 max-w-[800px]" style={{ color: "#ffffff" }}>

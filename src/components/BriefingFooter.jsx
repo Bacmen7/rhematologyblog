@@ -26,7 +26,7 @@ function BriefingFooter() {
           </div>
         </div>
 
-        {/* Link Columns — 2-col on mobile, 4-col on desktop */}
+        {/* Link Columns -2-col on mobile, 4-col on desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-10 gap-y-12 mb-16">
           <div>
             <h4 className="bg-blue-100 text-blue-900 text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block" style={{ marginBottom: "28px", fontFamily: "usual, Arial, Helvetica, sans-serif", fontWeight: 700, fontSize: "10px", lineHeight: "15px" }}>Who We Serve</h4>

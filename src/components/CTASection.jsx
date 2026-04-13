@@ -1,7 +1,7 @@
 function CTASection() {
   return (
     <section className="relative overflow-hidden">
-      {/* Top wave — white to navy */}
+      {/* Top wave -white to navy */}
       <svg
         className="absolute top-0 left-0 w-full"
         style={{ height: "120px" }}
@@ -17,7 +17,7 @@ function CTASection() {
 
       <div className="bg-navy-deep pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Left — Text + CTA */}
+          {/* Left -Text + CTA */}
           <div>
             <h2 className="text-[2.5rem] md:text-[3.5rem] leading-[1.08] tracking-[-1.2px] text-white mb-8">
               Ready to get started?
@@ -38,7 +38,7 @@ function CTASection() {
             </div>
           </div>
 
-          {/* Right — Image */}
+          {/* Right -Image */}
           <div className="hidden md:block rounded-2xl overflow-hidden">
             <img
               className="w-full h-[360px] object-cover object-center"

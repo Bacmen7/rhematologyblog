@@ -290,7 +290,7 @@ function ArthritisGuide() {
                     There is no single test that confirms Rheumatoid Arthritis. Rheumatologists recommend blood and imaging tests to reach a final diagnosis.
                   </p>
 
-                  {/* Blood tests + Imaging — two columns */}
+                  {/* Blood tests + Imaging -two columns */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {/* Blood Tests */}
                     <div style={{ backgroundColor: "#f5f5f5", borderRadius: "12px", padding: "1.5rem" }}>

@@ -118,7 +118,7 @@ function Testimonials() {
                 </p>
               </div>
               <p className="mt-4 sm:mt-6 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-navy-muted">
-                — {r.name}
+                - {r.name}
               </p>
             </div>
           ))}

@@ -65,7 +65,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Global heading font — outside @layer so it always wins */
+/* Global heading font -outside @layer so it always wins */
 h1,
 h2,
 h3,

@@ -11,24 +11,24 @@ import BriefingFooter from "../components/BriefingFooter"
 
 const conditions = [
   { name: "Rheumatoid Arthritis", slug: "arthritis", image: "/condition/Rheumatoid Arthritis (RA).png", description: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments." },
-  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.png", description: "Where skin meets joints — understanding the psoriasis-arthritis connection and targeted therapies." },
+  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.png", description: "Where skin meets joints -understanding the psoriasis-arthritis connection and targeted therapies." },
   { name: "Osteoarthritis", slug: "osteoarthritis", image: "/condition/Osteoarthritis.png", description: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain." },
   { name: "Lupus", slug: "lupus", image: "/condition/Lupus.png", description: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management." },
   { name: "Gout", slug: "gout", image: "/condition/Gout.png", description: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies." },
   { name: "Ankylosing Spondylitis", slug: "ankylosing-spondylitis", image: "/condition/Ankylosing Spondylitis (AS).png", description: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture." },
   { name: "Fibromyalgia", slug: "fibromyalgia", image: "/condition/Fibromyalgia.png", description: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life." },
-  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.png", description: "Identifying whether spinal pain is mechanical or inflammatory — a critical distinction for treatment." },
+  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.png", description: "Identifying whether spinal pain is mechanical or inflammatory -a critical distinction for treatment." },
 ]
 
 const whatIsRheumatology = [
-  { title: "Autoimmune Conditions", desc: "Diseases where the immune system mistakenly attacks healthy tissue — including RA, lupus, vasculitis, and scleroderma.", stat: "80+", statLabel: "autoimmune conditions" },
-  { title: "Inflammatory Arthritis", desc: "Joint diseases driven by chronic inflammation rather than wear-and-tear — requiring disease-modifying treatments.", stat: "7", statLabel: "types of inflammatory arthritis" },
+  { title: "Autoimmune Conditions", desc: "Diseases where the immune system mistakenly attacks healthy tissue -including RA, lupus, vasculitis, and scleroderma.", stat: "80+", statLabel: "autoimmune conditions" },
+  { title: "Inflammatory Arthritis", desc: "Joint diseases driven by chronic inflammation rather than wear-and-tear -requiring disease-modifying treatments.", stat: "7", statLabel: "types of inflammatory arthritis" },
   { title: "Connective Tissue Diseases", desc: "Conditions affecting collagen and connective tissue throughout the body, from skin to internal organs.", stat: "200+", statLabel: "related conditions" },
 ]
 
 const diagnosticJourney = [
   { step: "01", title: "Symptom Assessment", desc: "A thorough review of your symptoms, medical history, family history, and how your condition affects daily life. Morning stiffness duration, joint patterns, and systemic symptoms all provide critical diagnostic clues." },
-  { step: "02", title: "Physical Examination", desc: "Hands-on evaluation of joints for swelling, warmth, tenderness, and range of motion. Your rheumatologist examines specific joint patterns — symmetry, small vs large joints — which point to different conditions." },
+  { step: "02", title: "Physical Examination", desc: "Hands-on evaluation of joints for swelling, warmth, tenderness, and range of motion. Your rheumatologist examines specific joint patterns -symmetry, small vs large joints -which point to different conditions." },
   { step: "03", title: "Laboratory Testing", desc: "Blood tests including RF (Rheumatoid Factor), Anti-CCP antibodies, ANA, ESR, and CRP. These inflammatory markers and autoantibodies help confirm diagnosis and guide treatment decisions." },
   { step: "04", title: "Advanced Imaging", desc: "X-rays reveal joint damage, while ultrasound and MRI can detect early inflammation invisible to the naked eye. Imaging helps stage disease severity and track treatment response over time." },
   { step: "05", title: "Treatment Plan", desc: "A personalized strategy combining medication (DMARDs, biologics, JAK inhibitors), physical therapy, lifestyle modifications, and regular monitoring to achieve remission or low disease activity." },
@@ -36,8 +36,8 @@ const diagnosticJourney = [
 
 const treatmentApproaches = [
   { category: "Medications", items: [
-    { name: "DMARDs", detail: "Methotrexate, hydroxychloroquine, sulfasalazine — the cornerstone of autoimmune treatment. They slow disease progression and prevent permanent joint damage." },
-    { name: "Biologics", detail: "TNF inhibitors, IL-6 blockers, B-cell depleting agents — precision therapies targeting specific immune pathways driving your inflammation." },
+    { name: "DMARDs", detail: "Methotrexate, hydroxychloroquine, sulfasalazine -the cornerstone of autoimmune treatment. They slow disease progression and prevent permanent joint damage." },
+    { name: "Biologics", detail: "TNF inhibitors, IL-6 blockers, B-cell depleting agents -precision therapies targeting specific immune pathways driving your inflammation." },
     { name: "JAK Inhibitors", detail: "Oral small-molecule drugs (tofacitinib, baricitinib, upadacitinib) that block Janus kinase signaling inside immune cells." },
     { name: "Corticosteroids", detail: "Powerful anti-inflammatory relief for acute flares. Used short-term as a bridge while disease-modifying drugs take effect." },
   ]},
@@ -50,11 +50,11 @@ const treatmentApproaches = [
 ]
 
 const warningSignals = [
-  { title: "Joint swelling lasting more than 6 weeks", desc: "Persistent swelling is a hallmark of inflammatory arthritis and requires evaluation — it won't resolve on its own." },
+  { title: "Joint swelling lasting more than 6 weeks", desc: "Persistent swelling is a hallmark of inflammatory arthritis and requires evaluation -it won't resolve on its own." },
   { title: "Morning stiffness exceeding 30 minutes", desc: "Inflammatory stiffness improves with movement. Mechanical stiffness (osteoarthritis) is brief. Duration matters for diagnosis." },
-  { title: "Symmetric joint involvement", desc: "Both hands, both knees, both feet affected simultaneously — this pattern strongly suggests an autoimmune process." },
+  { title: "Symmetric joint involvement", desc: "Both hands, both knees, both feet affected simultaneously -this pattern strongly suggests an autoimmune process." },
   { title: "Unexplained fatigue with joint pain", desc: "Systemic inflammation causes profound fatigue beyond normal tiredness. It's your body's immune system working overtime." },
-  { title: "Skin rashes with joint symptoms", desc: "Butterfly rash (lupus), scaly patches (psoriatic arthritis), or nodules — skin changes can be the first clue to systemic disease." },
+  { title: "Skin rashes with joint symptoms", desc: "Butterfly rash (lupus), scaly patches (psoriatic arthritis), or nodules -skin changes can be the first clue to systemic disease." },
   { title: "Family history of autoimmune disease", desc: "Genetics play a significant role. If a first-degree relative has RA, lupus, or other autoimmune conditions, your risk is elevated." },
 ]
 
@@ -65,12 +65,12 @@ const featuredArticles = [
 ]
 
 const faqs = [
-  { q: "What does a rheumatologist do?", a: "A rheumatologist is a board-certified internist with additional fellowship training in autoimmune and musculoskeletal diseases. We diagnose and treat over 200 conditions affecting joints, muscles, bones, and the immune system — from common conditions like osteoarthritis to complex systemic diseases like lupus and vasculitis." },
-  { q: "When should I see a rheumatologist vs. my primary care doctor?", a: "See a rheumatologist if you have joint swelling lasting more than 6 weeks, morning stiffness exceeding 30 minutes, an elevated inflammatory marker (ESR or CRP), a positive ANA or RF test, or symptoms that haven't responded to basic treatments. Early referral leads to better outcomes — the first 12 weeks after symptom onset is a critical treatment window." },
-  { q: "Are rheumatic diseases hereditary?", a: "Genetics contribute to risk, but they're not the whole story. Having the HLA-B27 gene increases ankylosing spondylitis risk, and family history of RA raises yours 3-5x. However, environmental triggers — infections, smoking, hormonal changes, stress — interact with genetic predisposition to activate disease. Most people with genetic risk factors never develop rheumatic disease." },
-  { q: "Can rheumatic conditions be cured?", a: "Most autoimmune rheumatic conditions cannot be cured, but they can be effectively controlled. Modern treatments achieve clinical remission in up to 50-60% of RA patients. 'Remission' means minimal to no symptoms, normal inflammatory markers, and no ongoing joint damage — essentially living as if you don't have the disease. Early, aggressive treatment gives the best chance of remission." },
-  { q: "What lifestyle changes actually help with inflammatory arthritis?", a: "Evidence supports: (1) regular low-impact exercise (swimming, cycling, yoga) — 150 min/week reduces inflammation and pain, (2) Mediterranean diet — shown to lower CRP by 20-30%, (3) adequate sleep (7-9 hours), (4) stress management, (5) smoking cessation — smoking doubles RA severity, and (6) maintaining healthy weight — every 5 lbs of excess weight increases knee osteoarthritis risk by 36%." },
-  { q: "How long does it take for treatment to work?", a: "DMARDs like methotrexate typically take 6-12 weeks to reach full effect. Biologics can work faster — some patients notice improvement within 2-4 weeks. Corticosteroids provide relief within hours to days but aren't long-term solutions. Your rheumatologist will monitor progress and adjust medications at 3-month intervals until you reach your treatment target." },
+  { q: "What does a rheumatologist do?", a: "A rheumatologist is a board-certified internist with additional fellowship training in autoimmune and musculoskeletal diseases. We diagnose and treat over 200 conditions affecting joints, muscles, bones, and the immune system -from common conditions like osteoarthritis to complex systemic diseases like lupus and vasculitis." },
+  { q: "When should I see a rheumatologist vs. my primary care doctor?", a: "See a rheumatologist if you have joint swelling lasting more than 6 weeks, morning stiffness exceeding 30 minutes, an elevated inflammatory marker (ESR or CRP), a positive ANA or RF test, or symptoms that haven't responded to basic treatments. Early referral leads to better outcomes -the first 12 weeks after symptom onset is a critical treatment window." },
+  { q: "Are rheumatic diseases hereditary?", a: "Genetics contribute to risk, but they're not the whole story. Having the HLA-B27 gene increases ankylosing spondylitis risk, and family history of RA raises yours 3-5x. However, environmental triggers -infections, smoking, hormonal changes, stress -interact with genetic predisposition to activate disease. Most people with genetic risk factors never develop rheumatic disease." },
+  { q: "Can rheumatic conditions be cured?", a: "Most autoimmune rheumatic conditions cannot be cured, but they can be effectively controlled. Modern treatments achieve clinical remission in up to 50-60% of RA patients. 'Remission' means minimal to no symptoms, normal inflammatory markers, and no ongoing joint damage -essentially living as if you don't have the disease. Early, aggressive treatment gives the best chance of remission." },
+  { q: "What lifestyle changes actually help with inflammatory arthritis?", a: "Evidence supports: (1) regular low-impact exercise (swimming, cycling, yoga) -150 min/week reduces inflammation and pain, (2) Mediterranean diet -shown to lower CRP by 20-30%, (3) adequate sleep (7-9 hours), (4) stress management, (5) smoking cessation -smoking doubles RA severity, and (6) maintaining healthy weight -every 5 lbs of excess weight increases knee osteoarthritis risk by 36%." },
+  { q: "How long does it take for treatment to work?", a: "DMARDs like methotrexate typically take 6-12 weeks to reach full effect. Biologics can work faster -some patients notice improvement within 2-4 weeks. Corticosteroids provide relief within hours to days but aren't long-term solutions. Your rheumatologist will monitor progress and adjust medications at 3-month intervals until you reach your treatment target." },
 ]
 
 /* ─────────────────────────────────────────────
@@ -92,7 +92,7 @@ function HealthGuide() {
       <Header />
       <main>
 
-        {/* ═══════════ HERO (old style — matching HealthGuideHero) ═══════════ */}
+        {/* ═══════════ HERO (old style -matching HealthGuideHero) ═══════════ */}
         <section className="relative bg-background-light overflow-hidden" style={{ marginTop: "-2px" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-4 items-center">
@@ -138,7 +138,7 @@ function HealthGuide() {
         {/* ═══════════ WHAT IS RHEUMATOLOGY (matching WhyRheuma dark section) ═══════════ */}
         <section className="relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
           <div className="relative z-10 max-w-7xl mx-auto px-6">
-            {/* Header — same 2-col layout as WhyRheuma */}
+            {/* Header -same 2-col layout as WhyRheuma */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-20">
               <div>
                 <h2 className="max-w-[500px]" style={{ color: "#ffffff" }}>
@@ -149,12 +149,12 @@ function HealthGuide() {
                 <p style={{ fontSize: "18px", lineHeight: 1.67, letterSpacing: "0.4px", color: "#9a9faa" }}>
                   Rheumatology encompasses over{" "}
                   <strong className="font-semibold" style={{ color: "#1A355D", background: "#fa885a", padding: "2px 6px", borderRadius: "3px" }}>200 distinct conditions</strong>{" "}
-                  that affect the joints, muscles, bones, and immune system — many are systemic, involving the heart, lungs, kidneys, and skin.
+                  that affect the joints, muscles, bones, and immune system -many are systemic, involving the heart, lungs, kidneys, and skin.
                 </p>
               </div>
             </div>
 
-            {/* Stats — plain text, no cards */}
+            {/* Stats -plain text, no cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
               {whatIsRheumatology.map((item) => (
                 <div key={item.title}>
@@ -167,7 +167,7 @@ function HealthGuide() {
             </div>
           </div>
 
-          {/* Bottom wave — same as WhyRheuma */}
+          {/* Bottom wave -same as WhyRheuma */}
           <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
             <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
           </svg>
@@ -203,7 +203,7 @@ function HealthGuide() {
           </div>
         </section>
 
-        {/* ═══════════ WARNING SIGNS (matching ApproachSection pattern — dark section) ═══════════ */}
+        {/* ═══════════ WARNING SIGNS (matching ApproachSection pattern -dark section) ═══════════ */}
         <section className="relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <h2 className="!mb-14 md:!mb-16 max-w-[800px]">
@@ -223,10 +223,10 @@ function HealthGuide() {
             </h2>
 
             <p className="!text-[16px] !leading-[1.6] font-normal text-[#9a9faa] max-w-[680px]" style={{ marginBottom: "48px" }}>
-              Many rheumatic conditions are progressive — meaning <strong className="font-semibold text-white">early diagnosis can prevent irreversible damage</strong>. The first 12 weeks after symptom onset is often called the "window of opportunity" for treatment.
+              Many rheumatic conditions are progressive -meaning <strong className="font-semibold text-white">early diagnosis can prevent irreversible damage</strong>. The first 12 weeks after symptom onset is often called the "window of opportunity" for treatment.
             </p>
 
-            {/* Warning sign cards — 2-col grid like ApproachSection */}
+            {/* Warning sign cards -2-col grid like ApproachSection */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-[48px] gap-x-[80px]">
               {warningSignals.map((item, i) => (
                 <div key={i} className="flex items-start gap-5">
@@ -292,7 +292,7 @@ function HealthGuide() {
                 How We Treat Rheumatic Conditions
               </h2>
               <p className="text-navy-muted text-base leading-relaxed">
-                Modern rheumatology combines advanced medications with lifestyle strategies. Treatment is always personalized — there is no one-size-fits-all approach.
+                Modern rheumatology combines advanced medications with lifestyle strategies. Treatment is always personalized -there is no one-size-fits-all approach.
               </p>
             </div>
 

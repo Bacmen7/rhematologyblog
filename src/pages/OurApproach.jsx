@@ -389,7 +389,7 @@ function TestimonialsSection() {
           </blockquote>
           <div className="flex items-center justify-between pt-4">
             <div>
-              <p className="font-bold text-xs tracking-wide">— Maria G., rheumatoid arthritis, 8 months with Rheuma</p>
+              <p className="font-bold text-xs tracking-wide">-Maria G., rheumatoid arthritis, 8 months with Rheuma</p>
             </div>
             <div className="flex gap-1 text-[#fa885a]">
               {[...Array(5)].map((_, i) => (
@@ -416,9 +416,9 @@ function TestimonialsSection() {
 /* ───────── VIDEOS ───────── */
 function VideosSection() {
   const videos = [
-    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Oshi_Johanna_Still-9-2-1024x513.png', quote: '"I got my life back." — Maria', alt: 'Maria' },
-    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Group-4-1024x572.png', quote: '"They actually listened." — David', alt: 'David' },
-    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Group-1288-1024x576.png', quote: '"Keep going. It gets better." — Sarah', alt: 'Sarah' }
+    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Oshi_Johanna_Still-9-2-1024x513.png', quote: '"I got my life back." -Maria', alt: 'Maria' },
+    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Group-4-1024x572.png', quote: '"They actually listened." -David', alt: 'David' },
+    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Group-1288-1024x576.png', quote: '"Keep going. It gets better." -Sarah', alt: 'Sarah' }
   ]
 
   return (

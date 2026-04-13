@@ -345,7 +345,7 @@ function Header() {
             <div className="max-w-[1400px] mx-auto px-10 py-12">
               <div className="flex gap-16">
 
-                {/* Left — Doctor Images + CTA */}
+                {/* Left -Doctor Images + CTA */}
                 <div
                   className="flex-shrink-0 w-[280px]"
                   style={{
@@ -370,7 +370,7 @@ function Header() {
                   </Link>
                 </div>
 
-                {/* Right — Conditions + Treatments Grid */}
+                {/* Right -Conditions + Treatments Grid */}
                 <div
                   className="flex-1"
                   style={{

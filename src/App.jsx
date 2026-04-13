@@ -40,7 +40,7 @@ function App() {
       <Header />
       <main>
         {/* ═══════════════════════════════════════════════
-            ZONE 1 — INTRO & DISCOVERY
+            ZONE 1 -INTRO & DISCOVERY
         ═══════════════════════════════════════════════ */}
         <Hero />
         <StatsBar />
@@ -64,7 +64,7 @@ function App() {
         </div> */}
 
         {/* ═══════════════════════════════════════════════
-            ZONE 2 — HEALTH GUIDE & CONDITIONS
+            ZONE 2 -HEALTH GUIDE & CONDITIONS
         ═══════════════════════════════════════════════ */}
         <HealthGuideHero />
         {/* <QuickLinks /> */}
@@ -78,7 +78,7 @@ function App() {
         </div> */}
 
         {/* ═══════════════════════════════════════════════
-            ZONE 3 — CLINICAL EXPERTISE & SPECIALISTS
+            ZONE 3 -CLINICAL EXPERTISE & SPECIALISTS
         ═══════════════════════════════════════════════ */}
         <ApproachSection />
 
@@ -95,14 +95,14 @@ function App() {
         <VideoLibrary />
 
         {/* ═══════════════════════════════════════════════
-            ZONE 4 — EXECUTIVE BRIEFING & RESEARCH
+            ZONE 4 -EXECUTIVE BRIEFING & RESEARCH
         ═══════════════════════════════════════════════ */}
         {/* <div className="bg-white">
           <ResearchUpdates />
         </div> */}
 
         {/* ═══════════════════════════════════════════════
-            ZONE 5 — ENGAGE & CONVERT
+            ZONE 5 -ENGAGE & CONVERT
         ═══════════════════════════════════════════════ */}
         {/* <div className="bg-white">
           <ExploreTopics />

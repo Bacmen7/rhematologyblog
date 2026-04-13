@@ -12,40 +12,40 @@ const diagnosisSteps = [
   {
     title: "Symptom review",
     desc: "Which joints, how long, morning stiffness, family history",
-    img: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=120&q=80",
+    img: "/treatmnetguide/joint.png",
   },
   {
     title: "Physical examination",
     desc: "Joint count, swelling, tenderness, range of motion",
-    img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=120&q=80",
+    img: "/treatmnetguide/knee.png",
   },
   {
     title: "Blood tests",
-    desc: "RF, Anti-CCP, CRP, ESR, ANA — inflammation and antibody markers",
-    img: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=120&q=80",
+    desc: "RF, Anti-CCP, CRP, ESR, ANA -inflammation and antibody markers",
+    img: "/treatmnetguide/blood_test.png",
   },
   {
     title: "Imaging",
-    desc: "X-ray, MRI, or ultrasound — to see joint damage and inflammation",
-    img: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=120&q=80",
+    desc: "X-ray, MRI, or ultrasound -to see joint damage and inflammation",
+    img: "/treatmnetguide/xray.png",
   },
 ]
 
 const treatmentCards = [
   {
     title: "Medications",
-    desc: "Pain relief, disease-modifying drugs, biologic therapies, and JAK inhibitors — the foundation of treatment for most rheumatic conditions.",
-    img: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=80",
+    desc: "Pain relief, disease-modifying drugs, biologic therapies, and JAK inhibitors -the foundation of treatment for most rheumatic conditions.",
+    img: "/treatmnetguide/blog1.png",
   },
   {
     title: "Injections & Procedures",
-    desc: "Corticosteroid injections, hyaluronic acid, and joint aspiration — fast, localised relief delivered directly to the affected joint.",
-    img: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=700&q=80",
+    desc: "Corticosteroid injections, hyaluronic acid, and joint aspiration -fast, localised relief delivered directly to the affected joint.",
+    img: "/treatmnetguide/blog2.png",
   },
   {
     title: "Surgery",
-    desc: "Joint replacement, synovectomy, and spinal surgery — considered only when all other treatments have not provided enough relief.",
-    img: "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=700&q=80",
+    desc: "Joint replacement, synovectomy, and spinal surgery -considered only when all other treatments have not provided enough relief.",
+    img: "/treatmnetguide/blog3.png",
   },
 ]
 
@@ -57,9 +57,9 @@ const journeySteps = [
   },
   {
     title: "2. Starting your first medication",
-    content: "Most patients start Methotrexate — a weekly tablet or injection. It takes 6–12 weeks to work. Folic acid and a stomach tablet are prescribed alongside it.",
+    content: "Most patients start Methotrexate -a weekly tablet or injection. It takes 6–12 weeks to work. Folic acid and a stomach tablet are prescribed alongside it.",
     list: [
-      "Take once a week — always the same day",
+      "Take once a week -always the same day",
       "Regular blood tests every 3 months",
       "Do not stop without speaking to your rheumatologist",
     ],
@@ -70,7 +70,7 @@ const journeySteps = [
     list: null,
   },
   {
-    title: "4. If tablets are not enough — biologics",
+    title: "4. If tablets are not enough -biologics",
     content: "If conventional tablets have not worked after an adequate trial, biologic therapy is considered. These are injected medicines given fortnightly or monthly that target specific proteins driving the inflammation.",
     list: null,
   },
@@ -85,8 +85,8 @@ const conditionRows = [
   { name: "Rheumatoid Arthritis", tag: "Autoimmune", tagColor: "#0f616e", tagBg: "#e0f3f5", first: "Methotrexate", next: "Biologic therapy or JAK inhibitor" },
   { name: "Osteoarthritis", tag: "Degenerative", tagColor: "#b45309", tagBg: "#fef3c7", first: "Physiotherapy + pain relief", next: "Joint injection, then joint replacement" },
   { name: "Ankylosing Spondylitis", tag: "Spinal", tagColor: "#9b1c1c", tagBg: "#fee2e2", first: "NSAIDs (continuous) + physiotherapy", next: "Secukinumab (biologic)" },
-  { name: "Psoriatic Arthritis", tag: "Psoriatic", tagColor: "#5b21b6", tagBg: "#ede9fe", first: "Methotrexate", next: "IL-17 biologic — treats skin and joints" },
-  { name: "Gout", tag: "Crystal", tagColor: "#0f616e", tagBg: "#e0f3f5", first: "Colchicine (attack) + diet change", next: "Allopurinol — long-term uric acid control" },
+  { name: "Psoriatic Arthritis", tag: "Psoriatic", tagColor: "#5b21b6", tagBg: "#ede9fe", first: "Methotrexate", next: "IL-17 biologic -treats skin and joints" },
+  { name: "Gout", tag: "Crystal", tagColor: "#0f616e", tagBg: "#e0f3f5", first: "Colchicine (attack) + diet change", next: "Allopurinol -long-term uric acid control" },
   { name: "Lupus (SLE)", tag: "Autoimmune", tagColor: "#5b21b6", tagBg: "#ede9fe", first: "Hydroxychloroquine", next: "Steroids, immunosuppressives, biologics" },
 ]
 
@@ -187,11 +187,11 @@ function TreatmentGuides() {
     <div className="bg-background-light text-navy-deep antialiased" style={{ overflowX: "clip" }}>
       <Header />
 
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 -HERO ═══ */}
       <section className="bg-background-light overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ minHeight: "75vh" }}>
-            {/* Left — Content */}
+            {/* Left -Content */}
             <div style={{ paddingTop: "3rem", paddingBottom: "3rem", paddingRight: "2rem" }}>
               <h1
                 style={{
@@ -207,7 +207,7 @@ function TreatmentGuides() {
                 It's finally time to understand your treatment
               </h1>
               <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, marginBottom: "2rem", maxWidth: "480px" }}>
-                Rheumatic conditions are highly treatable. Here is everything you need to know — diagnosis, medications, injections, and surgery — explained simply.
+                Rheumatic conditions are highly treatable. Here is everything you need to know - diagnosis, medications, injections, and surgery - explained simply.
               </p>
               <a
                 href="#diagnosis"
@@ -217,7 +217,7 @@ function TreatmentGuides() {
                 Explore treatment options
               </a>
             </div>
-            {/* Right — Image */}
+            {/* Right -Image */}
             <div className="hidden lg:block relative h-full">
               <img
                 src="/images/h3.png"
@@ -230,7 +230,7 @@ function TreatmentGuides() {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — DIAGNOSIS ═══ */}
+      {/* ═══ SECTION 2 -DIAGNOSIS ═══ */}
       <section id="diagnosis" className="bg-white" style={{ paddingTop: "5rem", paddingBottom: "2rem" }}>
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
@@ -259,7 +259,7 @@ function TreatmentGuides() {
               borderRadius: "10px",
             }}
           >
-            {/* Left — dark */}
+            {/* Left -dark */}
             <div className="flex flex-col justify-center" style={{ backgroundColor: "#0f616e", padding: "clamp(1.5rem, 4vw, 3rem)" }}>
               <h3
                 className="text-white text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
@@ -268,7 +268,7 @@ function TreatmentGuides() {
                 Getting the <span style={{ color: "#1AA3B5" }}>right diagnosis</span>
               </h3>
               <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--font-base)", color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>
-                There is no single test for most rheumatic conditions. Diagnosis is built from your symptoms, an examination, blood tests, and imaging — together they tell the full story.
+                There is no single test for most rheumatic conditions. Diagnosis is built from your symptoms, an examination, blood tests, and imaging -together they tell the full story.
               </p>
               <a
                 href="#"
@@ -279,13 +279,14 @@ function TreatmentGuides() {
               </a>
             </div>
 
-            {/* Right — steps */}
+            {/* Right -steps */}
             <div className="bg-white" style={{ padding: "clamp(1.25rem, 4vw, 2.5rem)" }}>
               <h3
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "22px",
+                  fontSize: "clamp(26px, 3vw, 34px)",
                   fontWeight: 400,
+                  lineHeight: 1.15,
                   color: "#0f616e",
                   marginBottom: "1.2rem",
                   paddingBottom: "0.75rem",
@@ -336,7 +337,7 @@ function TreatmentGuides() {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — TREATMENT OPTIONS ═══ */}
+      {/* ═══ SECTION 3 -TREATMENT OPTIONS ═══ */}
       <section id="treatment" className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
@@ -353,11 +354,11 @@ function TreatmentGuides() {
               Personalised treatment
             </h2>
             <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, marginBottom: "2rem" }}>
-              Treatment is tailored to your condition and how active the disease is.<br />There are three main approaches — most patients need a combination.
+              Treatment is tailored to your condition and how active the disease is.<br />There are three main approaches -most patients need a combination.
             </p>
           </div>
 
-          {/* Cards — carousel on mobile, grid on desktop (same pattern as SuccessStories) */}
+          {/* Cards -carousel on mobile, grid on desktop (same pattern as SuccessStories) */}
           <div
             ref={cardScrollRef}
             className="flex gap-6 overflow-x-auto hide-scrollbar pb-4 lg:grid lg:grid-cols-3 lg:overflow-visible"
@@ -404,17 +405,17 @@ function TreatmentGuides() {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — GETTING STARTED ═══ */}
+      {/* ═══ SECTION 4 -GETTING STARTED ═══ */}
       <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.4fr] items-start gap-10 lg:gap-16">
-            {/* Left — journey card */}
+            {/* Left -journey card */}
             <div
               className="bg-[#fcfcfc] overflow-hidden border border-gray-100"
               style={{ borderRadius: "10px" }}
             >
               <div className="h-56 overflow-hidden">
-                <img src="/images/hand.png" alt="Treatment journey" className="w-full h-full object-cover object-top" />
+                <img src="/treatmnetguide/v1.png" alt="Treatment journey" className="w-full h-full object-cover object-top" />
               </div>
               <div className="p-6">
                 <h3
@@ -434,7 +435,7 @@ function TreatmentGuides() {
                     paddingLeft: "0.9rem",
                   }}
                 >
-                  "Understanding each step gave me confidence — I reached remission within a year."
+                  "Understanding each step gave me confidence -I reached remission within a year."
                 </blockquote>
                 <p className="text-sm text-navy-muted leading-relaxed" style={{ fontFamily: "var(--font-base)" }}>
                   Most people with inflammatory arthritis reach low disease activity or remission within 12–18 months of starting treatment.
@@ -442,7 +443,7 @@ function TreatmentGuides() {
               </div>
             </div>
 
-            {/* Right — title + accordion */}
+            {/* Right -title + accordion */}
             <div>
               <h2
                 className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
@@ -456,16 +457,11 @@ function TreatmentGuides() {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — TREATMENT BY CONDITION ═══ */}
+      {/* ═══ SECTION 5 -TREATMENT BY CONDITION ═══ */}
       <section id="by-condition" className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
           <div style={{ marginBottom: "3rem", textAlign: "center" }}>
-            <p
-              style={{ fontFamily: "var(--font-base)", fontSize: "10px", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#9ca3af", marginBottom: "0.5rem" }}
-            >
-              Quick Reference
-            </p>
             <h2
               className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "0.75rem" }}
@@ -473,7 +469,7 @@ function TreatmentGuides() {
               Treatment by condition
             </h2>
             <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, textAlign: "center", maxWidth: "520px", marginLeft: "auto", marginRight: "auto" }}>
-              Find your condition and see what is typically recommended first — and what comes next.
+              Find your condition and see what is typically recommended first -and what comes next.
             </p>
           </div>
 

@@ -81,7 +81,7 @@ function HeroSection() {
             </span>
           </h1>
           <p className="text-base text-navy-muted leading-relaxed mb-8 max-w-sm">
-            In-network with most major insurers. Your exact costs upfront — no surprise bills, no confusing codes.
+            In-network with most major insurers. Your exact costs upfront -no surprise bills, no confusing codes.
           </p>
           <Link
             to="/"
@@ -193,7 +193,7 @@ function InsuranceSupportSection() {
                 Insurance support
               </h2>
               <p className="text-navy-muted text-lg leading-relaxed max-w-lg">
-                Let us take the guesswork out of paying for medical care. Our care coordinators are here to answer your questions and help you navigate your insurance coverage — so you can focus on getting better.
+                Let us take the guesswork out of paying for medical care. Our care coordinators are here to answer your questions and help you navigate your insurance coverage -so you can focus on getting better.
               </p>
               <div>
                 <Link
@@ -362,7 +362,7 @@ function PlansSection() {
         </div>
 
         <p className="mt-10 text-[#a0a4ac] text-[12px] text-center font-light">
-          All plans include HIPAA-compliant platform access. Prices shown are self-pay rates — most patients pay less with insurance.
+          All plans include HIPAA-compliant platform access. Prices shown are self-pay rates -most patients pay less with insurance.
         </p>
       </div>
     </section>
@@ -405,7 +405,7 @@ function WhatsIncluded() {
               {
                 icon: "schedule",
                 title: "No surprise bills",
-                text: "You'll know exactly what you owe before every visit. We send a clear cost breakdown upfront — no coded invoices three months later.",
+                text: "You'll know exactly what you owe before every visit. We send a clear cost breakdown upfront -no coded invoices three months later.",
               },
               {
                 icon: "medication",
@@ -415,7 +415,7 @@ function WhatsIncluded() {
               {
                 icon: "support_agent",
                 title: "Insurance advocacy",
-                text: "Prior authorizations, appeals, formulary exceptions — we handle the paperwork so you can focus on getting better.",
+                text: "Prior authorizations, appeals, formulary exceptions -we handle the paperwork so you can focus on getting better.",
               },
               {
                 icon: "account_balance_wallet",
@@ -476,7 +476,7 @@ function InsuranceSection() {
                   <path d="M2 10C80 4 200 2 398 6" stroke="#b3e0e6" strokeLinecap="round" strokeWidth="4" />
                 </svg>
               </span>
-              — and more coming soon
+              -and more coming soon
             </h2>
           </div>
 
@@ -570,7 +570,7 @@ function ComparisonSection() {
 /* ───────── 7. PAYMENT OPTIONS ───────── */
 function PaymentOptions() {
   const options = [
-    { icon: "credit_card", title: "Insurance billing", desc: "We bill your insurance directly. You only pay your copay or coinsurance — we verify benefits before your first visit." },
+    { icon: "credit_card", title: "Insurance billing", desc: "We bill your insurance directly. You only pay your copay or coinsurance -we verify benefits before your first visit." },
     { icon: "savings", title: "HSA & FSA accepted", desc: "All Rheuma services qualify as eligible medical expenses. Use your pre-tax health savings to cover visits and treatments." },
     { icon: "calendar_month", title: "Monthly payment plans", desc: "Spread costs across manageable monthly payments at zero interest. No credit check, no penalties for early payoff." },
     { icon: "volunteer_activism", title: "Financial assistance", desc: "Income-based sliding scale available for qualifying patients. We also help connect you with manufacturer copay assistance programs." },
@@ -710,7 +710,7 @@ function FaqSection() {
   const faqs = [
     {
       q: "What's included with Rheuma?",
-      a: "Rheuma gives you access to a full care team — rheumatologist, dietitian, physiotherapist, and behavioral health specialist — all working together on your case. Your membership includes virtual visits, secure messaging, lab coordination, and prescription management.",
+      a: "Rheuma gives you access to a full care team -rheumatologist, dietitian, physiotherapist, and behavioral health specialist -all working together on your case. Your membership includes virtual visits, secure messaging, lab coordination, and prescription management.",
     },
     {
       q: "Am I able to use my HSA or FSA?",
@@ -773,7 +773,7 @@ function CtaSection() {
           </span>
         </h2>
         <p className="text-[17px] text-[#5E5E5E] leading-relaxed mb-10 max-w-lg mx-auto font-light">
-          Enter your insurance details and we'll tell you exactly what's covered — before you commit to anything.
+          Enter your insurance details and we'll tell you exactly what's covered -before you commit to anything.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link

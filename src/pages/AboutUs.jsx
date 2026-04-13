@@ -93,7 +93,7 @@ function CeoQuoteSection() {
           </div>
           <div className="w-full md:w-7/12">
             <blockquote className="text-3xl md:text-[2.5rem] lg:text-[2.8rem] leading-[1.25] font-normal mb-8" style={{ fontFamily: "var(--font-base)" }}>
-              "From the beginning, our vision has been to scale access to care that millions of Americans need — bringing center-of-excellence quality rheumatology care to them, wherever they are."
+              "From the beginning, our vision has been to scale access to care that millions of Americans need -bringing center-of-excellence quality rheumatology care to them, wherever they are."
             </blockquote>
             <cite className="not-italic flex items-center gap-3 font-semibold text-[15px]">
               <span className="w-6 h-[1px] bg-primary block" />
@@ -123,10 +123,10 @@ function PersonalStorySection() {
             </h2>
             <div className="text-navy-muted text-lg leading-[1.8] flex flex-col" style={{ gap: "32px" }}>
               <p>
-                In 2019, our co-founder Dr. Amara Osei was diagnosed with rheumatoid arthritis after waiting nine months for a specialist appointment. By the time she saw a rheumatologist, irreversible joint damage had already set in — damage that could have been prevented with earlier intervention.
+                In 2019, our co-founder Dr. Amara Osei was diagnosed with rheumatoid arthritis after waiting nine months for a specialist appointment. By the time she saw a rheumatologist, irreversible joint damage had already set in -damage that could have been prevented with earlier intervention.
               </p>
               <p>
-                As she unpacked what had happened and why she hadn't gotten the care she needed in those critical early months, her passion for solving systemic problems in rheumatology was ignited. This passion and accountability to patients shaped Rheuma's path to reinvent the autoimmune patient experience, and democratize access to proven multi-disciplinary care — something that had eluded her own journey.
+                As she unpacked what had happened and why she hadn't gotten the care she needed in those critical early months, her passion for solving systemic problems in rheumatology was ignited. This passion and accountability to patients shaped Rheuma's path to reinvent the autoimmune patient experience, and democratize access to proven multi-disciplinary care -something that had eluded her own journey.
               </p>
               <p>
                 Since 2021, Rheuma has been the industry leader in virtual-first rheumatology, gaining national recognition for evidence-based care through proven outcomes. But we measure success with every patient who tells us we've changed their life.
@@ -165,7 +165,7 @@ function MissionSection() {
               Over 54 million Americans live with an autoimmune condition. Most wait months for specialist care, see their doctor for seven minutes, and leave with more questions than answers.
             </p>
             <p className="text-navy-muted text-lg leading-[1.8] mb-8">
-              Rheuma exists to fix that. We combine virtual-first access, multi-specialist care teams, and technology that actually works — so patients can get from first symptom to effective treatment in weeks, not years.
+              Rheuma exists to fix that. We combine virtual-first access, multi-specialist care teams, and technology that actually works -so patients can get from first symptom to effective treatment in weeks, not years.
             </p>
             <p className="text-navy-deep text-lg leading-[1.8] font-semibold">
               Our goal is simple: no one should lose joint function, mobility, or quality of life because the system was too slow to help them.
@@ -427,7 +427,7 @@ function PressSection() {
         <div className="grid md:grid-cols-3 gap-px bg-border/30">
           {[
             {
-              quote: "Rheuma is doing for rheumatology what One Medical did for primary care — making the experience of seeing a specialist feel human again.",
+              quote: "Rheuma is doing for rheumatology what One Medical did for primary care -making the experience of seeing a specialist feel human again.",
               source: "STAT News",
               year: "2024",
             },

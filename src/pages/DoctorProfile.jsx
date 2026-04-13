@@ -9,6 +9,7 @@ function DoctorProfile() {
   const doctor = specialists.find((s) => s.id === Number(id))
   const [activeTab, setActiveTab] = useState("overview")
   const [openSection, setOpenSection] = useState(null)
+  const [activeGalleryImage, setActiveGalleryImage] = useState(0)
 
   if (!doctor) {
     return (
@@ -43,6 +44,19 @@ function DoctorProfile() {
     { id: "reviews", label: "Reviews" },
     { id: "clinic", label: "Clinic" },
   ]
+
+  const galleryImages = [
+    { src: "/d3.png", alt: "Dr. Raghavendra with patient" },
+    { src: "/d2.png", alt: "Doctor Portrait" },
+    { src: "/d1.png", alt: "Dr. Raghavendra H" },
+  ]
+
+  const changeGalleryImage = (direction) => {
+    setActiveGalleryImage((current) => {
+      if (direction === "next") return (current + 1) % galleryImages.length
+      return (current - 1 + galleryImages.length) % galleryImages.length
+    })
+  }
 
   return (
     <div className="landing-page min-h-screen flex flex-col">
@@ -83,7 +97,7 @@ function DoctorProfile() {
         </div>
         {/* Wavy bottom edge */}
         <svg
-          className="w-full h-[30px] sm:h-[60px] md:h-[80px] block"
+          className="w-full h-[18px] sm:h-[36px] md:h-[48px] block"
           preserveAspectRatio="none"
           viewBox="0 0 1440 120"
           fill="none"
@@ -91,30 +105,91 @@ function DoctorProfile() {
           style={{ backgroundColor: "#F5F5F5" }}
         >
           <path
-            d="M0 0H1440V60C1320 100 1140 120 960 110C780 100 600 60 420 50C240 40 120 70 0 90V0Z"
+            d="M0 0H1440V38C1280 58 1120 68 960 62C780 56 620 34 430 30C250 26 120 42 0 54V0Z"
             fill="#0f616e"
           />
         </svg>
         </div>
 
-          {/* Image Gallery — commented out */}
-          {/* <div className="bg-[#F5F5F5]">
+          {/* Image Gallery */}
+          <div className="bg-[#F5F5F5]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6" style={{ paddingTop: "24px", paddingBottom: "8px" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-2 sm:gap-3">
-            <div className="lg:col-span-7 relative h-[200px] sm:h-[280px] lg:h-[380px] bg-gray-100 overflow-hidden rounded-xl sm:rounded-2xl">
-              <img src="/d3.png" alt="Dr. Raghavendra with patient" className="w-full h-full object-cover" />
+          <div className="relative overflow-hidden bg-gray-100 rounded-xl sm:rounded-2xl h-[220px] sm:h-[320px] lg:h-[430px]">
+            <div
+              className="flex h-full transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${activeGalleryImage * 100}%)` }}
+            >
+              {galleryImages.map((image) => (
+                <div key={image.src} className="relative h-full w-full shrink-0">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="h-full w-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                </div>
+              ))}
             </div>
-            <div className="lg:col-span-5 grid grid-cols-2 lg:grid-cols-1 gap-2 sm:gap-3 h-[120px] sm:h-[180px] lg:h-[380px]">
-              <div className="relative bg-gray-100 overflow-hidden h-full lg:h-[185px] rounded-xl sm:rounded-2xl">
-                <img src="/d2.png" alt="Doctor Portrait" className="w-full h-full object-cover object-center" />
-              </div>
-              <div className="relative bg-gray-100 overflow-hidden h-full lg:h-[185px] rounded-xl sm:rounded-2xl">
-                <img src="/d1.png" alt="Dr. Raghavendra H" className="w-full h-full object-cover object-center" />
+
+            <button
+              type="button"
+              onClick={() => changeGalleryImage("prev")}
+              aria-label="Previous image"
+              className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 bg-white/90 text-[#0f616e] shadow-md flex items-center justify-center hover:bg-white transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => changeGalleryImage("next")}
+              aria-label="Next image"
+              className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 w-9 h-9 sm:w-10 sm:h-10 bg-white/90 text-[#0f616e] shadow-md flex items-center justify-center hover:bg-white transition-colors"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <div className="absolute left-0 right-0 bottom-4 flex items-center justify-center gap-2 lg:hidden">
+              {galleryImages.map((image, index) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={() => setActiveGalleryImage(index)}
+                  aria-label={`Show image ${index + 1}`}
+                  className={`h-2 transition-all ${index === activeGalleryImage ? "w-7 bg-white" : "w-2 bg-white/60 hover:bg-white/80"}`}
+                  style={{ borderRadius: "9999px" }}
+                />
+              ))}
+            </div>
+
+            <div className="absolute right-4 bottom-4 hidden sm:flex items-center gap-2 bg-black/45 text-white px-3 py-1.5" style={{ borderRadius: "9999px", fontFamily: "var(--font-base)", fontSize: "12px", fontWeight: 600 }}>
+              <span>{activeGalleryImage + 1}</span>
+              <span style={{ color: "rgba(255,255,255,0.7)" }}>/</span>
+              <span>{galleryImages.length}</span>
+            </div>
+
+            <div className="absolute inset-x-4 sm:inset-x-6 bottom-7 pointer-events-none">
+              <div className="hidden lg:flex gap-2 justify-start">
+                {galleryImages.map((image, index) => (
+                  <button
+                    key={image.src}
+                    type="button"
+                    onClick={() => setActiveGalleryImage(index)}
+                    className={`pointer-events-auto h-16 w-24 overflow-hidden border-2 bg-white transition-all ${index === activeGalleryImage ? "border-white opacity-100" : "border-white/60 opacity-70 hover:opacity-100"}`}
+                    style={{ borderRadius: "8px" }}
+                  >
+                    <img src={image.src} alt="" className="w-full h-full object-cover" />
+                  </button>
+                ))}
               </div>
             </div>
           </div>
           </div>
-          </div> */}
+          </div>
 
           {/* Mobile doctor summary card */}
           <div className="bg-[#F5F5F5] lg:hidden">
@@ -354,7 +429,7 @@ function DoctorProfile() {
                   ].map((loc, idx) => (
                     <div key={idx} className="bg-white overflow-hidden" style={{ borderRadius: "16px", border: "1px solid #eaeef3" }}>
                       <div className="flex flex-col sm:flex-row">
-                        {/* Left — Info */}
+                        {/* Left -Info */}
                         <div className="flex-1 min-w-0 p-4 sm:p-6 lg:px-7">
                           <h3 className="text-base sm:text-[17px]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, lineHeight: 1.3, color: "#0f616e", marginBottom: "4px" }}>{loc.name}</h3>
                           <p style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#8a94a6", marginBottom: "12px" }}>{loc.area}</p>
@@ -373,7 +448,7 @@ function DoctorProfile() {
                             ))}
                           </div>
                         </div>
-                        {/* Right — Embedded Map */}
+                        {/* Right -Embedded Map */}
                         <a
                           href={`https://www.google.com/maps/search/${encodeURIComponent(loc.name + ", Bangalore")}`}
                           target="_blank"

@@ -64,7 +64,7 @@ function BlogDetail() {
                 <span>Updated: <strong>{article.date}</strong></span>
               </div>
 
-              {/* Reviewer card — shown below meta on mobile, beside title on desktop */}
+              {/* Reviewer card -shown below meta on mobile, beside title on desktop */}
               <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 mt-6 lg:hidden">
                 <div className="grid grid-cols-[110px_1fr]">
                   <div className="h-full relative overflow-hidden bg-gradient-to-b from-slate-300 to-slate-500">
@@ -96,7 +96,7 @@ function BlogDetail() {
               </Link>
             </div>
 
-            {/* Reviewer card — desktop only (beside title) */}
+            {/* Reviewer card -desktop only (beside title) */}
             <div className="relative rounded-2xl overflow-hidden bg-white/70 backdrop-blur-xl border border-white/80 hidden lg:block">
               <div className="grid grid-cols-[130px_1fr]">
                 <div className="h-full relative overflow-hidden bg-gradient-to-b from-slate-300 to-slate-500">
@@ -130,7 +130,7 @@ function BlogDetail() {
         </div>
       </section>
 
-      {/* Mobile TOC — sticky collapsible bar */}
+      {/* Mobile TOC -sticky collapsible bar */}
       <div className="lg:hidden sticky top-0 z-20 bg-white border-b border-border shadow-sm">
         <div className="max-w-[1100px] mx-auto px-5">
           <button

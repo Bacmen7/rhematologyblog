@@ -226,7 +226,7 @@ function SpecializedCare() {
                       <ArrowUpRight size={18} style={{ color: "#1AA3B5" }} />
                     </a>
 
-                    {/* Video & Article — desktop only */}
+                    {/* Video & Article -desktop only */}
                     <div className="hidden md:flex flex-col sm:flex-row justify-start gap-6 w-full max-w-xl">
                       <a href={disease.videoLink} className="group block w-full sm:w-[48%]">
                         <div className="relative w-full aspect-[16/10] mb-4 overflow-hidden rounded-2xl bg-gray-100">

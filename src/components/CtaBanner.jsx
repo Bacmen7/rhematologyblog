@@ -21,7 +21,7 @@ function CtaBanner() {
       <div className="bg-[#0f616e] w-full overflow-visible">
         <div className="max-w-7xl mx-auto px-6 pb-24 md:pb-32 pt-6 sm:pt-10">
           <div className="flex flex-col-reverse md:flex-row items-stretch gap-10 md:gap-16">
-            {/* Left — Text */}
+            {/* Left -Text */}
             <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">
               <h2
                 className="leading-[1.1] font-normal !mb-5 md:!mb-6 text-center md:text-left"
@@ -57,7 +57,7 @@ function CtaBanner() {
               </div>
             </div>
 
-            {/* Right — Image (overflow into wave) */}
+            {/* Right -Image (overflow into wave) */}
             <div className="flex-1 relative min-h-[200px] md:min-h-[250px]">
               <img
                 src="/images/hero-consult.jpg"
