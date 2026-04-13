@@ -31,7 +31,6 @@ const diagnosticJourney = [
   { step: "02", title: "Physical Examination", desc: "Hands-on evaluation of joints for swelling, warmth, tenderness, and range of motion. Your rheumatologist examines specific joint patterns -symmetry, small vs large joints -which point to different conditions." },
   { step: "03", title: "Laboratory Testing", desc: "Blood tests including RF (Rheumatoid Factor), Anti-CCP antibodies, ANA, ESR, and CRP. These inflammatory markers and autoantibodies help confirm diagnosis and guide treatment decisions." },
   { step: "04", title: "Advanced Imaging", desc: "X-rays reveal joint damage, while ultrasound and MRI can detect early inflammation invisible to the naked eye. Imaging helps stage disease severity and track treatment response over time." },
-  { step: "05", title: "Treatment Plan", desc: "A personalized strategy combining medication (DMARDs, biologics, JAK inhibitors), physical therapy, lifestyle modifications, and regular monitoring to achieve remission or low disease activity." },
 ]
 
 const treatmentApproaches = [
@@ -50,12 +49,10 @@ const treatmentApproaches = [
 ]
 
 const warningSignals = [
-  { title: "Joint swelling lasting more than 6 weeks", desc: "Persistent swelling is a hallmark of inflammatory arthritis and requires evaluation -it won't resolve on its own." },
-  { title: "Morning stiffness exceeding 30 minutes", desc: "Inflammatory stiffness improves with movement. Mechanical stiffness (osteoarthritis) is brief. Duration matters for diagnosis." },
-  { title: "Symmetric joint involvement", desc: "Both hands, both knees, both feet affected simultaneously -this pattern strongly suggests an autoimmune process." },
-  { title: "Unexplained fatigue with joint pain", desc: "Systemic inflammation causes profound fatigue beyond normal tiredness. It's your body's immune system working overtime." },
-  { title: "Skin rashes with joint symptoms", desc: "Butterfly rash (lupus), scaly patches (psoriatic arthritis), or nodules -skin changes can be the first clue to systemic disease." },
-  { title: "Family history of autoimmune disease", desc: "Genetics play a significant role. If a first-degree relative has RA, lupus, or other autoimmune conditions, your risk is elevated." },
+  { title: "Joint pain or swelling that lasts more than a few weeks", desc: "" },
+  { title: "Morning stiffness that takes more than 30 minutes to ease", desc: "" },
+  { title: "Unexplained fatigue along with joint or muscle pain", desc: "" },
+  { title: "Joints that feel warm or look red", desc: "" },
 ]
 
 const featuredArticles = [
@@ -93,25 +90,42 @@ function HealthGuide() {
       <main>
 
         {/* ═══════════ HERO (old style -matching HealthGuideHero) ═══════════ */}
-        <section className="relative bg-background-light overflow-hidden" style={{ marginTop: "-2px" }}>
+        <section className="relative overflow-hidden" style={{ marginTop: "-2px", backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-2 gap-4 items-center">
               <div className="pt-8 pb-4 md:py-6 relative z-10">
-                <h1 className="text-4xl md:text-5xl text-navy-deep leading-tight" style={{ letterSpacing: "-0.8px", marginBottom: "0.75rem" }}>
+                <h1
+                  className="leading-tight"
+                  style={{ letterSpacing: "-1px", marginBottom: "0.9rem", color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(3rem, 6vw, 5.2rem)", lineHeight: 1.04 }}
+                >
                   Explore Health Guide
                 </h1>
-                <p className="text-xl md:text-2xl text-navy-muted leading-relaxed">
+                <p
+                  className="text-xl md:text-2xl leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.78)", fontFamily: "var(--font-base)", fontWeight: 500 }}
+                >
                   Reliable, rheumatology-focused medical information.
                 </p>
-                <p className="text-navy-muted text-base leading-relaxed mt-6 max-w-[520px]">
+                <p
+                  className="text-base leading-relaxed mt-6 max-w-[520px]"
+                  style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-base)" }}
+                >
                   Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-10">
-                  <a href="#conditions" className="inline-flex items-center gap-2 bg-navy-deep text-white rounded-full text-sm font-semibold px-8 py-4 hover:opacity-90 transition-opacity">
+                  <a
+                    href="#conditions"
+                    className="inline-flex items-center gap-2 rounded-full text-sm font-semibold px-8 py-4 hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#e86531", color: "#ffffff", fontFamily: "var(--font-base)" }}
+                  >
                     Explore Conditions
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                   </a>
-                  <Link to="/blog" className="inline-flex items-center gap-2 rounded-full text-sm font-semibold px-8 py-4 border-2 border-navy-deep/15 text-navy-deep hover:bg-white/60 transition-colors">
+                  <Link
+                    to="/blog"
+                    className="inline-flex items-center gap-2 rounded-full text-sm font-semibold px-8 py-4 border-2 hover:bg-white/10 transition-colors"
+                    style={{ borderColor: "rgba(255,255,255,0.22)", color: "#ffffff", fontFamily: "var(--font-base)" }}
+                  >
                     Browse Articles
                   </Link>
                 </div>
@@ -135,10 +149,9 @@ function HealthGuide() {
           </div>
         </section>
 
-        {/* ═══════════ WHAT IS RHEUMATOLOGY (matching WhyRheuma dark section) ═══════════ */}
+        {/* ═══════════ WHAT IS RHEUMATOLOGY (matching WhyRheuma dark section) ═══════════
         <section className="relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
           <div className="relative z-10 max-w-7xl mx-auto px-6">
-            {/* Header -same 2-col layout as WhyRheuma */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-20 mb-16 md:mb-20">
               <div>
                 <h2 className="max-w-[500px]" style={{ color: "#ffffff" }}>
@@ -154,7 +167,6 @@ function HealthGuide() {
               </div>
             </div>
 
-            {/* Stats -plain text, no cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
               {whatIsRheumatology.map((item) => (
                 <div key={item.title}>
@@ -167,11 +179,11 @@ function HealthGuide() {
             </div>
           </div>
 
-          {/* Bottom wave -same as WhyRheuma */}
           <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
             <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
           </svg>
         </section>
+        */}
 
         {/* ═══════════ CONDITIONS GRID (matching ConditionsGrid) ═══════════ */}
         <section id="conditions" className="py-20 md:py-28 bg-ghost">
@@ -206,44 +218,57 @@ function HealthGuide() {
         {/* ═══════════ WARNING SIGNS (matching ApproachSection pattern -dark section) ═══════════ */}
         <section className="relative bg-navy-deep pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white overflow-hidden">
           <div className="relative z-10 max-w-7xl mx-auto px-6">
-            <h2 className="!mb-14 md:!mb-16 max-w-[800px]">
-              When should you{" "}
-              <span className="relative inline-block">
-                see a rheumatologist
-                <svg
-                  className="absolute -bottom-2 left-0 h-3 w-full"
-                  fill="none"
-                  preserveAspectRatio="none"
-                  viewBox="0 0 400 12"
-                >
-                  <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
-                </svg>
-              </span>
-              ?
-            </h2>
+            <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-start lg:items-stretch">
+              <div>
+                <h2 className="max-w-[800px]" style={{ marginBottom: "22px" }}>
+                  When should you{" "}
+                  <span className="relative inline-block">
+                    see a rheumatologist
+                    <svg
+                      className="absolute -bottom-2 left-0 h-3 w-full"
+                      fill="none"
+                      preserveAspectRatio="none"
+                      viewBox="0 0 400 12"
+                    >
+                      <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
+                    </svg>
+                  </span>
+                  ?
+                </h2>
 
-            <p className="!text-[16px] !leading-[1.6] font-normal text-[#9a9faa] max-w-[680px]" style={{ marginBottom: "48px" }}>
-              Many rheumatic conditions are progressive -meaning <strong className="font-semibold text-white">early diagnosis can prevent irreversible damage</strong>. The first 12 weeks after symptom onset is often called the "window of opportunity" for treatment.
-            </p>
+                <p className="!text-[16px] !leading-[1.6] font-normal text-[#9a9faa] max-w-[680px]" style={{ marginBottom: "26px" }}>
+                  You should consider a visit if you notice any of the following:
+                </p>
 
-            {/* Warning sign cards -2-col grid like ApproachSection */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-10 md:gap-y-[48px] gap-x-[80px]">
-              {warningSignals.map((item, i) => (
-                <div key={i} className="flex items-start gap-5">
-                  <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#9a9faa] mt-2.5" />
-                  <div className="flex-1">
-                    <h3 className="mb-2 !text-[18px] !font-semibold !leading-[1.4]">{item.title}</h3>
-                    <p className="!text-[15px] !leading-[1.65] font-normal text-[#9a9faa]">{item.desc}</p>
-                  </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-10 max-w-5xl">
+                  {warningSignals.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <span className="shrink-0 w-2 h-2 rounded-full mt-2" style={{ backgroundColor: "#1AA3B5" }} />
+                      <div className="flex-1">
+                        <h3 className="!text-[17px] !font-semibold !leading-[1.45] text-white">{item.title}</h3>
+                        {item.desc ? <p className="!text-[15px] !leading-[1.65] font-normal text-[#9a9faa]">{item.desc}</p> : null}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
 
-            <div className="mt-14">
-              <a href="#" className="inline-flex items-center gap-3 bg-[#1AA3B5] text-navy-deep rounded-full text-sm font-bold px-8 py-4 hover:opacity-90 transition-opacity">
-                Schedule a Consultation
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
-              </a>
+                <div className="mt-8">
+                  <a href="#" className="inline-flex items-center gap-3 bg-[#1AA3B5] text-navy-deep rounded-full text-sm font-bold px-8 py-4 hover:opacity-90 transition-opacity">
+                    Schedule a Consultation
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              <div className="h-full">
+                <div className="overflow-hidden h-full" style={{ minHeight: "100%" }}>
+                  <img
+                    src="/images/hero-consult.jpg"
+                    alt="Doctor consulting patient"
+                    className="w-full h-[320px] md:h-[380px] lg:h-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
@@ -257,7 +282,7 @@ function HealthGuide() {
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="text-center mb-14 max-w-2xl mx-auto">
-              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4 font-bold">
                 What to Expect at a Rheumatology Visit
               </h2>
               <p className="text-navy-muted text-base leading-relaxed">
@@ -287,24 +312,40 @@ function HealthGuide() {
         {/* ═══════════ TREATMENT APPROACHES (ghost bg, 2-col grid) ═══════════ */}
         <section className="py-20 md:py-28 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+            <div className="max-w-3xl mb-12">
+              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-8">
                 How We Treat Rheumatic Conditions
               </h2>
-              <p className="text-navy-muted text-base leading-relaxed">
-                Modern rheumatology combines advanced medications with lifestyle strategies. Treatment is always personalized -there is no one-size-fits-all approach.
+              <p className="text-navy-muted text-base leading-[1.8] max-w-2xl" style={{ marginTop: "18px" }}>
+                Modern rheumatology combines advanced medications with lifestyle strategies. Treatment is always personalized and based on your diagnosis, symptoms, and daily needs.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-10 md:gap-16">
-              {treatmentApproaches.map((group) => (
-                <div key={group.category}>
-                  <h3 className="text-xl text-navy-deep mb-6" style={{ fontFamily: "var(--font-display)" }}>{group.category}</h3>
-                  <div className="divide-y divide-[#e8ecf2]">
-                    {group.items.map((item) => (
-                      <div key={item.name} className="py-5 first:pt-0 last:pb-0">
-                        <h4 className="text-[15px] font-semibold text-navy-deep mb-1">{item.name}</h4>
-                        <p className="text-sm text-navy-muted leading-relaxed">{item.detail}</p>
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-10">
+              {treatmentApproaches.map((group, groupIndex) => (
+                <div
+                  key={group.category}
+                  className="bg-white"
+                  style={{ borderRadius: "18px", border: "1px solid #e3edf1" }}
+                >
+                  <div
+                    className="px-6 py-5 border-b"
+                    style={{ borderColor: "#e3edf1", backgroundColor: groupIndex === 0 ? "#eef8fb" : "#fff6f1" }}
+                  >
+                    <h3 className="text-[1.35rem] text-navy-deep" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>
+                      {group.category}
+                    </h3>
+                  </div>
+
+                  <div className="px-6 py-3">
+                    {group.items.map((item, index) => (
+                      <div
+                        key={item.name}
+                        className={`${index !== group.items.length - 1 ? "border-b" : ""} py-4`}
+                        style={{ borderColor: "#edf2f5" }}
+                      >
+                        <h4 className="text-[15px] font-semibold text-navy-deep mb-1.5">{item.name}</h4>
+                        <p className="text-sm text-navy-muted leading-[1.75]">{item.detail}</p>
                       </div>
                     ))}
                   </div>

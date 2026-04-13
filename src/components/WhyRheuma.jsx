@@ -122,7 +122,7 @@ function WhyRheuma() {
 
       {/* ── Desktop Layout ── */}
       <div className="hidden md:block" style={{ paddingTop: "5rem", paddingBottom: "4rem" }}>
-        {/* Header — centered */}
+        {/* Header -centered */}
         <div className="max-w-7xl mx-auto px-6 text-center" style={{ marginBottom: "3.5rem" }}>
           <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
             Expert care for all rheumatic
@@ -135,9 +135,9 @@ function WhyRheuma() {
           </p>
         </div>
 
-        {/* Image carousel — full width with arrows */}
+        {/* Image carousel -full width with arrows */}
         <div className="relative">
-          {/* Left arrow — white border circle, white arrow */}
+          {/* Left arrow -white border circle, white arrow */}
           <button
             onClick={() => scroll("left")}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors"
@@ -148,7 +148,7 @@ function WhyRheuma() {
             </svg>
           </button>
 
-          {/* Right arrow — white border circle, white arrow */}
+          {/* Right arrow -white border circle, white arrow */}
           <button
             onClick={() => scroll("right")}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors"

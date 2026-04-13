@@ -61,11 +61,11 @@ function SymptomQuiz() {
               When should you see a rheumatologist?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>
-              Answer a few short questions - we'll help you understand whether a specialist consultation would be beneficial.
+              Answer a few short questions -we'll help you understand whether a specialist consultation would be beneficial.
             </p>
           </div>
 
-          {/* Right - Quiz Card */}
+          {/* Right -Quiz Card */}
           <div className="lg:w-[60%] w-full">
             <div style={{ minHeight: "280px" }}>
 

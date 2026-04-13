@@ -80,7 +80,7 @@ function VideoLibrary() {
           </a>
         </div>
 
-        {/* Video cards — carousel on mobile, 3-col grid on desktop */}
+        {/* Video cards -carousel on mobile, 3-col grid on desktop */}
         <div className="flex gap-6 overflow-x-auto hide-scrollbar md:grid md:grid-cols-3 md:overflow-visible mb-10">
           {visibleVideos.map((video, i) => (
             <div

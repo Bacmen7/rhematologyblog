@@ -20,19 +20,19 @@ const PlayButton = () => (
 const videos = [
   {
     id: "niyfFNDQjok",
-    title: "Living with Rheumatoid Arthritis - A Patient's Journey to Remission",
+    title: "Living with Rheumatoid Arthritis -A Patient's Journey to Remission",
   },
   {
     id: "niyfFNDQjok",
-    title: "How Early RA Diagnosis Changed My Life - Patient Success Story",
+    title: "How Early RA Diagnosis Changed My Life -Patient Success Story",
   },
   {
     id: "niyfFNDQjok",
-    title: "Managing RA with Biologics - Real Patient Experience & Results",
+    title: "Managing RA with Biologics -Real Patient Experience & Results",
   },
   {
     id: "niyfFNDQjok",
-    title: "From Chronic Pain to Active Life - RA Treatment Success at Our Clinic",
+    title: "From Chronic Pain to Active Life -RA Treatment Success at Our Clinic",
   },
 ]
 
