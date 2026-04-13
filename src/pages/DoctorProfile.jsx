@@ -116,9 +116,34 @@ function DoctorProfile() {
           </div>
           </div> */}
 
+          {/* Mobile doctor summary card */}
+          <div className="bg-[#F5F5F5] lg:hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-2 pb-3">
+            <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
+              <div className="flex items-center gap-4 p-4">
+                <div className="w-20 h-20 shrink-0 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
+                  <img src="/docter.png" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <h3 className="text-[#0f616e] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
+                  <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "12px", color: "#5a6577", marginBottom: "8px" }}>Rheumatologist, Nephrologist</p>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Experience</span></span>
+                    <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
+                    <span style={{ fontFamily: "var(--font-base)", fontSize: "11px", fontWeight: 500, color: "#16a34a" }}>Verified Profile</span>
+                  </div>
+                </div>
+              </div>
+              <div className="px-4 pb-4">
+                <a href="#" className="block w-full py-2.5 bg-[#1AA3B5] text-white text-center hover:bg-[#9ae5e1] transition-colors" style={{ borderRadius: "8px", fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "13px" }}>Book Online</a>
+              </div>
+            </div>
+          </div>
+          </div>
+
           {/* Tab Navigation */}
           <div className="bg-[#F5F5F5]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" style={{ paddingTop: "24px", paddingBottom: "8px", marginBottom: "16px" }}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-3 sm:pt-6 pb-2 mb-4">
             <div className="flex gap-2 sm:gap-3 overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
               {tabs.map((tab) => (
                 <button
@@ -330,19 +355,19 @@ function DoctorProfile() {
                     <div key={idx} className="bg-white overflow-hidden" style={{ borderRadius: "16px", border: "1px solid #eaeef3" }}>
                       <div className="flex flex-col sm:flex-row">
                         {/* Left — Info */}
-                        <div className="flex-1" style={{ padding: "24px 28px" }}>
-                          <h3 style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "17px", lineHeight: 1.3, color: "#0f616e", marginBottom: "4px" }}>{loc.name}</h3>
+                        <div className="flex-1 min-w-0 p-4 sm:p-6 lg:px-7">
+                          <h3 className="text-base sm:text-[17px]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, lineHeight: 1.3, color: "#0f616e", marginBottom: "4px" }}>{loc.name}</h3>
                           <p style={{ fontFamily: "var(--font-base)", fontSize: "13px", color: "#8a94a6", marginBottom: "12px" }}>{loc.area}</p>
-                          <div className="flex flex-col gap-1">
+                          <div className="flex flex-col gap-2 sm:gap-1.5">
                             {loc.timings.map((t, i) => (
-                              <div key={i} className="flex items-center gap-2">
-                                <svg className="w-3.5 h-3.5 text-[#1AA3B5] shrink-0" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                              <div key={i} className="flex items-start gap-2.5">
+                                <svg className="w-3.5 h-3.5 text-[#1AA3B5] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                                   <circle cx="12" cy="12" r="10" />
                                   <polyline points="12 6 12 12 16 14" />
                                 </svg>
-                                <span style={{ fontFamily: "var(--font-base)", fontSize: "13px" }}>
+                                <span className="flex min-w-0 flex-col sm:flex-row sm:items-baseline sm:gap-1.5" style={{ fontFamily: "var(--font-base)", fontSize: "13px", lineHeight: 1.45 }}>
                                   <span style={{ fontWeight: 600, color: "#0f616e" }}>{t.days}</span>
-                                  <span style={{ color: "#8a94a6", marginLeft: "6px" }}>{t.time}</span>
+                                  <span className="whitespace-normal sm:whitespace-nowrap" style={{ color: "#8a94a6" }}>{t.time}</span>
                                 </span>
                               </div>
                             ))}
@@ -353,8 +378,7 @@ function DoctorProfile() {
                           href={`https://www.google.com/maps/search/${encodeURIComponent(loc.name + ", Bangalore")}`}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block shrink-0 relative group"
-                          style={{ width: "180px", minHeight: "140px" }}
+                          className="block shrink-0 relative group w-full sm:w-[180px] h-40 sm:h-auto min-h-[150px] sm:min-h-[140px]"
                         >
                           <iframe
                             title={loc.name}
@@ -417,28 +441,6 @@ function DoctorProfile() {
                 </div>
               </div>
 
-              {/* Mobile sidebar - simplified card */}
-              <div className="lg:hidden">
-                <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
-                  <div className="flex items-center gap-4 p-4">
-                    <div className="w-20 h-20 shrink-0 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
-                      <img src="/docter.png" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-[#0f616e] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
-                      <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "12px", color: "#5a6577", marginBottom: "8px" }}>Rheumatologist, Nephrologist</p>
-                      <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Exp</span></span>
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
-                        <span style={{ fontFamily: "var(--font-base)", fontSize: "11px", fontWeight: 500, color: "#16a34a" }}>Verified</span>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="px-4 pb-4">
-                    <a href="#" className="block w-full py-2.5 bg-[#1AA3B5] text-white text-center hover:bg-[#9ae5e1] transition-colors" style={{ borderRadius: "8px", fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "13px" }}>Book Online</a>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

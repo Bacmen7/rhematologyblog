@@ -473,6 +473,7 @@ function KnowledgeHub() {
   /* Treatment carousel */
   const [treatDot, setTreatDot] = useState(0)
   const treatCarouselRef = useRef(null)
+  const articleScrollRef = useRef(null)
   const handleTreatCarousel = useCallback(() => {
     const el = treatCarouselRef.current
     if (!el) return
@@ -487,44 +488,83 @@ function KnowledgeHub() {
       <main>
 
         {/* ═══════════ 1 · HERO ═══════════ */}
-        <section className="bg-[#e0f3f5] pt-10 pb-10 px-6 md:px-12">
-          <div className="max-w-7xl mx-auto">
-            <span className="inline-block bg-[rgba(26,163,181,.12)] border border-[rgba(26,163,181,.3)] text-[#1AA3B5] text-[0.72rem] font-bold uppercase tracking-[0.07em] rounded-full px-4 py-1" style={{ marginBottom: "1.5rem" }}>
-              Evidence-Based Resources
-            </span>
-            <h1 className="text-navy-deep max-w-[640px]" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,3rem)", fontWeight: 400, lineHeight: 1.15, marginBottom: "1rem" }}>
-              Rheuma <span className="text-[#1AA3B5]">Knowledge Hub</span>
-            </h1>
-            <p className="text-[15px] text-navy-muted leading-[1.75]" style={{ margin: 0 }}>
-              Your comprehensive resource for understanding rheumatic conditions, treatment options, and the latest research — written and reviewed by board-certified rheumatologists.
-            </p>
+        <section style={{ backgroundColor: "#e8f4f8", padding: "clamp(48px, 6vw, 80px) 0" }}>
+          <div style={{ width: "90vw", maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+              {/* Left — Text */}
+              <div>
+                <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4.2rem)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-1.4px", color: "#0f616e", marginBottom: "1.25rem" }}>
+                  Rheuma <span style={{ color: "#1AA3B5" }}>Knowledge Hub</span>
+                </h1>
+                <p style={{ fontSize: "18px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", margin: 0 }}>
+                  Your comprehensive resource for understanding rheumatic conditions, treatment options, and the latest research — written and reviewed by board-certified rheumatologists.
+                </p>
+              </div>
+              {/* Right — Image */}
+              <div className="hidden lg:block">
+                <img src="/images/hero-doctor1.jpg" alt="Knowledge Hub" className="w-full object-cover" style={{ borderRadius: "20px", height: "360px" }} />
+              </div>
+            </div>
           </div>
         </section>
 
 
         {/* ═══════════ 2 · WHAT IS RHEUMATOLOGY ═══════════ */}
-        <section className="bg-ghost py-12 md:py-16 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div style={{ marginBottom: "3rem" }}>
-              <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1.25rem" }}>
+        <section style={{ backgroundColor: "#ffffff", padding: "clamp(64px, 8vw, 120px) 0" }}>
+          <div style={{ width: "90vw", maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+
+            {/* Top: Heading + Description — left aligned */}
+            <div className="text-left" style={{ marginBottom: "clamp(48px, 5vw, 80px)" }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1, letterSpacing: "-1px", color: "#0f616e", marginBottom: "24px" }}>
                 What Is Rheumatology?
               </h2>
-              <p className="text-[15px] text-navy-muted leading-[1.75]">
-                Rheumatology is a medical specialty focused on the diagnosis and treatment of autoimmune and inflammatory conditions affecting joints, muscles, bones, and connective tissues. The field encompasses over 200 conditions — from common diseases like rheumatoid arthritis and osteoarthritis to rare systemic conditions like vasculitis and scleroderma.
+              <p style={{ fontSize: "18px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "20px" }}>
+                Rheumatology is a branch of medicine that focuses on conditions affecting your joints, muscles, and bones. These include everyday problems like joint, bone or muscle pain and stiffness. It also comprises conditions where the body's immune system mistakenly attacks its own tissues.
+              </p>
+              <p style={{ fontSize: "18px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
+                A doctor who specialises in this field is called a rheumatologist. They are trained to diagnose, treat, and manage conditions such as Rheumatoid Arthritis, Gout, Lupus, Osteoporosis, and Ankylosing Spondylitis, among others.
               </p>
             </div>
 
-            {/* Cover boxes grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {coverBoxes.map((box, i) => (
-                <div key={i} className="bg-white border border-gray-100 p-5 flex gap-3 items-start" style={{ borderRadius: 0 }}>
-                  <div className="w-2 h-2 rounded-full bg-[#1AA3B5] shrink-0 mt-1.5" />
-                  <div>
-                    <div className="text-[14px] text-navy-deep mb-1" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>{box.title}</div>
-                    <div className="text-[13px] text-navy-muted leading-[1.6]" style={{ fontFamily: "var(--font-base)" }}>{box.desc}</div>
-                  </div>
+            {/* Bottom: Two info cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-2" style={{ gap: "clamp(16px, 2vw, 32px)" }}>
+
+              {/* Card 1 — When Should You See */}
+              <div style={{ backgroundColor: "#e8f4f8", borderRadius: "16px", padding: "clamp(32px, 3vw, 48px)", transition: "box-shadow 0.3s ease" }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0px 36px 60px 0px rgba(0,0,0,0.06)"} onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)", color: "#0f616e", lineHeight: 1.2, marginBottom: "20px" }}>
+                  When Should You See a Rheumatologist?
+                </h3>
+                <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "24px" }}>
+                  You should consider a visit if you notice any of the following:
+                </p>
+                <div className="flex flex-col" style={{ gap: "20px" }}>
+                  {[
+                    "Joint pain or swelling that lasts more than a few weeks",
+                    "Morning stiffness that takes more than 30 minutes to ease",
+                    "Unexplained fatigue along with joint or muscle pain",
+                    "Joints that feel warm or look red",
+                  ].map((item, i) => (
+                    <div key={i} className="flex items-start gap-4">
+                      <div className="shrink-0 mt-1" style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#1AA3B5" }} />
+                      <p style={{ fontSize: "16px", lineHeight: 1.6, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>{item}</p>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
+
+              {/* Card 2 — Why Early Care Matters */}
+              <div style={{ backgroundColor: "#e8f4f8", borderRadius: "16px", padding: "clamp(32px, 3vw, 48px)", transition: "box-shadow 0.3s ease" }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0px 36px 60px 0px rgba(0,0,0,0.06)"} onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)", color: "#0f616e", lineHeight: 1.2, marginBottom: "20px" }}>
+                  Why Early Care Matters
+                </h3>
+                <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "24px" }}>
+                  Many joint and immune conditions get worse over time if left untreated. Seeing a specialist early can prevent permanent joint damage, help you stay active, and improve your quality of life significantly.
+                </p>
+                <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
+                  The good news is that with the right diagnosis and treatment plan, most patients are able to manage their condition well and continue living a normal, fulfilling life.
+                </p>
+              </div>
+
             </div>
           </div>
         </section>
@@ -543,10 +583,10 @@ function KnowledgeHub() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-center">
                 {/* Left — heading */}
                 <div>
-                  <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(1.75rem,3.5vw,2.5rem)", lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
+                  <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
                     When should you see a rheumatologist?
                   </h2>
-                  <p className="text-[15px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.55)" }}>
+                  <p className="text-[16px] leading-[1.75]" style={{ color: "rgba(255,255,255,0.55)" }}>
                     Answer a few short questions — we&apos;ll help you understand whether a specialist consultation would be beneficial.
                   </p>
                 </div>
@@ -556,7 +596,7 @@ function KnowledgeHub() {
                   <span className="text-[12px] font-bold uppercase tracking-[0.1em] text-[#1AA3B5] block" style={{ marginBottom: "0.75rem" }}>
                     Question {checkerStep + 1} of 6
                   </span>
-                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.25rem,2.5vw,1.6rem)", fontWeight: 400, lineHeight: 1.25, color: "#fff", marginBottom: "0.5rem" }}>
+                  <h3 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.5rem, 3vw, 2rem)", fontWeight: 400, lineHeight: 1.25, color: "#fff", marginBottom: "0.5rem" }}>
                     {symptomQuestions[checkerStep].q}
                   </h3>
                   <p className="text-[14px] leading-[1.65]" style={{ color: "rgba(255,255,255,0.45)", marginBottom: "2rem" }}>
@@ -567,14 +607,14 @@ function KnowledgeHub() {
                   <div className="flex gap-3" style={{ marginBottom: "1.5rem" }}>
                     <button
                       onClick={() => handleAnswer(true)}
-                      className="py-2.5 px-8 rounded-full font-semibold text-[13px] cursor-pointer transition-all duration-200"
+                      className="py-2.5 px-8 rounded-full font-semibold text-[14px] cursor-pointer transition-all duration-200"
                       style={{ backgroundColor: "#1AA3B5", color: "#fff", border: "none" }}
                     >
                       Yes
                     </button>
                     <button
                       onClick={() => handleAnswer(false)}
-                      className="py-2.5 px-8 rounded-full font-semibold text-[13px] cursor-pointer transition-all duration-200"
+                      className="py-2.5 px-8 rounded-full font-semibold text-[14px] cursor-pointer transition-all duration-200"
                       style={{ background: "transparent", border: "1.5px solid rgba(255,255,255,.2)", color: "rgba(255,255,255,.7)" }}
                     >
                       No
@@ -641,16 +681,16 @@ function KnowledgeHub() {
           </div>
         </section>
 
-        {/* Wave: dark → white */}
-        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#ffffff" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+        {/* Wave: dark → white — commented out */}
+        {/* <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#ffffff" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
           <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#0f616e" />
-        </svg>
+        </svg> */}
 
         {/* ═══════════ 4 · CONDITIONS ═══════════ */}
-        <section id="conditions" className="bg-white py-12 md:py-16 px-6">
+        <section id="conditions" className="py-12 md:py-16 px-6" style={{ backgroundColor: "#e8f4f8" }}>
           <div className="max-w-7xl mx-auto">
             <div className="mb-8 max-w-2xl">
-              <h2 className="text-navy-deep mt-2" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+              <h2 className="text-navy-deep mt-2" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
                 Conditions We Treat
               </h2>
             </div>
@@ -733,214 +773,80 @@ function KnowledgeHub() {
 
             <button
               onClick={() => setShowAllConditions(!showAllConditions)}
-              className="text-[13px] font-semibold cursor-pointer sm:hidden mb-6"
+              className="text-[14px] font-semibold cursor-pointer sm:hidden mb-6"
               style={{ color: "#1AA3B5", background: "none", border: "none", padding: 0 }}
             >
               {showAllConditions ? "See less ↑" : "See more ↓"}
             </button>
 
-            {/* Detail panel */}
-            {activeCondition && conditionData[activeCondition] && (() => {
-              const c = conditionData[activeCondition]
-              return (
-                <div className="bg-white border border-[#dde6ee] rounded-2xl overflow-hidden mt-2">
-                  <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px]">
-                    {/* Main content */}
-                    <div className="p-6 md:p-10">
-                      <div className="flex justify-between items-start mb-6">
-                        <div>
-                          <h3 className="text-navy-deep mb-1" style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 400 }}>{c.name}</h3>
-                          <span className="text-[11px] font-bold uppercase text-[#1AA3B5] tracking-[0.08em]">{c.typeLabel}</span>
-                        </div>
-                        <button
-                          onClick={() => setActiveCondition(null)}
-                          className="w-8 h-8 rounded-full border border-[#dde6ee] bg-white cursor-pointer flex items-center justify-center text-navy-muted hover:border-primary transition-colors"
-                        >
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6L6 18M6 6l12 12" /></svg>
-                        </button>
-                      </div>
-
-                      {/* Overview */}
-                      <div className="mb-6">
-                        <h4 className="text-[11px] font-bold uppercase text-[#1AA3B5] tracking-[0.08em] mb-2">Overview</h4>
-                        <p className="text-[16px] text-navy-muted leading-[1.75]">{c.overview}</p>
-                      </div>
-
-                      {/* Key Points */}
-                      <div className="mb-6">
-                        <h4 className="text-[11px] font-bold uppercase text-[#1AA3B5] tracking-[0.08em] mb-2">Key Points</h4>
-                        <ul className="list-none p-0 m-0 space-y-1.5">
-                          {c.keyPoints.map((pt, i) => (
-                            <li key={i} className="flex gap-2 items-start text-sm text-navy-muted leading-relaxed">
-                              <span className="w-1.5 h-1.5 rounded-full bg-[#1AA3B5] shrink-0 mt-[7px]" />
-                              {pt}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* Treatment */}
-                      <div className="mb-6">
-                        <h4 className="text-[11px] font-bold uppercase text-[#1AA3B5] tracking-[0.08em] mb-2">Treatment Options</h4>
-                        <ul className="list-none p-0 m-0 space-y-1.5">
-                          {c.treatment.map((t, i) => (
-                            <li key={i} className="flex gap-2 items-start text-sm text-navy-muted leading-relaxed">
-                              <span className="w-1.5 h-1.5 rounded-full bg-navy-deep shrink-0 mt-[7px]" style={{ background: "#0f616e" }} />
-                              {t}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-
-                      {/* When to see */}
-                      <div className="bg-[rgba(26,163,181,.06)] border border-[rgba(26,163,181,.18)] rounded-xl p-4">
-                        <h4 className="text-[11px] font-bold uppercase text-[#1AA3B5] tracking-[0.08em] mb-1.5">When to See a Specialist</h4>
-                        <p className="text-sm text-navy-muted leading-relaxed">{c.when}</p>
-                      </div>
-                    </div>
-
-                    {/* Sidebar */}
-                    <div className="bg-[#e0f3f5] p-7">
-                      <h4 className="text-[11px] font-bold uppercase text-[#1AA3B5] tracking-[0.08em] mb-4">Related Articles</h4>
-                      {c.articles.map((art, i) => (
-                        <div key={i} className="flex gap-3 p-3 bg-white rounded-[10px] mb-2.5 border border-[#dde6ee] items-center">
-                          <img src={art.img} alt="" className="w-14 h-14 rounded-lg object-cover shrink-0" />
-                          <div>
-                            <span className="text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em]">{art.cat}</span>
-                            <div className="text-sm font-semibold text-navy-deep leading-tight" style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}>{art.title}</div>
-                            <span className="text-[11px] text-navy-muted">{art.time}</span>
-                          </div>
-                        </div>
-                      ))}
-
-                      <Link
-                        to="/doctor"
-                        className="block w-full text-center py-3 rounded-full bg-navy-deep text-white font-semibold text-sm no-underline mt-4 hover:opacity-90 transition-opacity"
-                        style={{ background: "#0f616e" }}
-                      >
-                        Book Consultation
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              )
-            })()}
+            {/* Detail panel — removed */}
           </div>
         </section>
 
 
-        {/* Wave: white → dark */}
-        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#0f616e" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-          <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#ffffff" />
-        </svg>
+        {/* Treatment Options section removed */}
 
-        {/* ═══════════ 5 · TREATMENT OPTIONS ═══════════ */}
-        <section className="bg-[#0f616e] py-12 md:py-16 px-6">
+        {/* ═══════════ 6 · RESEARCH ARTICLES ═══════════ */}
+        <section className="bg-white pt-20 pb-20 px-6">
           <div className="max-w-7xl mx-auto">
-            {/* Left-aligned heading like other sections */}
-            <div className="mb-8">
-              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "#ffffff", fontSize: "clamp(2rem,4vw,2.75rem)", lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "1rem" }}>
+            <div className="mb-4">
+              <h2 className="text-3xl text-navy-deep leading-[1.05] tracking-tight" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, marginBottom: "0.75rem" }}>
                 Treatment Options
               </h2>
-              <p className="text-[16px] leading-[1.8]" style={{ color: "rgba(255,255,255,0.6)" }}>
+              <p className="text-[16px] text-navy-muted leading-[1.75]">
                 Modern rheumatology offers a wide range of evidence-based treatments. Here&apos;s an overview of your options.
               </p>
             </div>
-
-            {/* 4-col grid — carousel on mobile */}
-            <div ref={treatCarouselRef} onScroll={handleTreatCarousel} className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
-              {treatmentCards.map((card, i) => {
-                const colors = ["#e0f3f5", "#fff3ec", "#f5f5f5", "#e0f3f5", "#fff3ec", "#e0f3f5", "#f5f5f5", "#fff3ec"]
-                return (
-                <div key={i} className="w-[65vw] min-w-[65vw] sm:w-auto sm:min-w-0 snap-start overflow-hidden flex flex-col shrink-0 hover:-translate-y-1 transition-transform duration-300" style={{ borderRadius: "12px", backgroundColor: colors[i % colors.length] }}>
-                  <div className="relative h-[150px] overflow-hidden">
-                    <img src={card.img} alt={card.title} className="w-full h-full object-cover" />
-                    <span className="absolute top-3 left-3 text-[10px] font-bold uppercase tracking-[0.06em] px-3 py-1 rounded-full" style={{ backgroundColor: "#0f616e", color: "#fff" }}>
-                      {card.badge}
-                    </span>
-                  </div>
-                  <div className="p-5">
-                    <h4 className="text-[15px] font-semibold mb-2 leading-snug" style={{ color: "#0f616e" }}>{card.title}</h4>
-                    <p className="text-[13px] leading-[1.65]" style={{ color: "#5e5e5e" }}>{card.desc}</p>
-                  </div>
-                  <div className="px-5 py-3 flex justify-between items-center" style={{ borderTop: "1px solid rgba(0,0,0,0.06)" }}>
-                    <span className="text-[11px]" style={{ color: "#5e5e5e" }}>{card.footer}</span>
-                    <span className="w-7 h-7 rounded-full flex items-center justify-center shrink-0" style={{ backgroundColor: "#0f616e" }}>
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
-                    </span>
-                  </div>
-                </div>
-                )
-              })}
-            </div>
-            {/* Dots — mobile only */}
-            <div className="flex justify-center gap-2 mt-4 sm:hidden">
-              {[0,1,2,3,4,5,6,7].map((i) => (
-                <span key={i} className="rounded-full transition-all duration-300" style={{ width: treatDot === i ? "20px" : "6px", height: "6px", backgroundColor: treatDot === i ? "#1AA3B5" : "rgba(255,255,255,0.2)" }} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Wave: dark → white */}
-        <svg className="block w-full -mt-px" style={{ height: "60px", backgroundColor: "#ffffff" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-          <path d="M0 0H1440V30C1200 62 960 62 720 30C480 -2 240 -2 0 30V0Z" fill="#0f616e" />
-        </svg>
-
-        {/* ═══════════ 6 · RESEARCH ARTICLES ═══════════ */}
-        <section className="bg-white py-12 md:py-16 px-6">
-          <div className="max-w-7xl mx-auto">
-            <div className="mb-8 max-w-2xl">
-              <h2 className="text-navy-deep mt-2" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem,4vw,2.75rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
-                Research &amp; Articles
-              </h2>
-            </div>
-
-            {/* Grid: 1.6fr 1fr */}
-            <div className="grid grid-cols-1 lg:grid-cols-[1.6fr_1fr] gap-5 items-start">
-              {/* Featured card */}
-              <div className="rounded-2xl border border-[#dde6ee] overflow-hidden">
-                <div className="relative h-[320px] overflow-hidden">
-                  <img src={featuredArticle.img} alt="" className="w-full h-full object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,97,110,.8)] to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-1.5">
-                      <span className="w-3 h-0.5 bg-[#1AA3B5] rounded-full" />
-                      {featuredArticle.cat}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-5 pb-6">
-                  <h3 className="text-navy-deep mb-2.5 leading-tight" style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 400 }}>{featuredArticle.title}</h3>
-                  <div className="flex items-center gap-2.5 text-xs text-navy-muted mb-4">
-                    <span>{featuredArticle.author}</span>
-                    <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
-                    <span>{featuredArticle.time}</span>
-                    <span className="w-[3px] h-[3px] rounded-full bg-[#dde6ee]" />
-                    <span>{featuredArticle.date}</span>
-                  </div>
-                  <button className="py-2.5 px-6 rounded-full text-white font-semibold text-sm cursor-pointer border-none hover:opacity-90 transition-opacity" style={{ background: "#e86531" }}>
-                    Read Article
-                  </button>
-                </div>
+            <div className="flex items-end justify-between mb-8">
+              <div className="flex gap-2">
+                <button onClick={() => { articleScrollRef.current?.scrollBy({ left: -340, behavior: "smooth" }) }} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 cursor-pointer">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </button>
+                <button onClick={() => { articleScrollRef.current?.scrollBy({ left: 340, behavior: "smooth" }) }} className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 cursor-pointer">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </button>
               </div>
-
-              {/* List cards */}
-              <div className="flex flex-col gap-3">
-                {articleList.map((art, i) => (
-                  <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#dde6ee] bg-white cursor-pointer items-center hover:border-primary transition-colors">
-                    <img src={art.img} alt="" className="w-[72px] h-[72px] rounded-[10px] object-cover shrink-0" />
-                    <div>
-                      <span className="flex items-center gap-1 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-0.5">
-                        <span className="w-2 h-0.5 bg-[#1AA3B5] rounded-full" />
-                        {art.cat}
+            </div>
+            <div ref={articleScrollRef} className="flex gap-6 overflow-x-auto hide-scrollbar pb-4 -mx-4 px-4 sm:mx-0 sm:px-0">
+              {[featuredArticle, ...articleList].map((article, i) => (
+                <div
+                  key={i}
+                  className="w-[340px] min-w-[340px] flex-shrink-0 flex flex-col group bg-[#fcfcfc] border border-gray-100"
+                >
+                  <div className="h-56 overflow-hidden">
+                    <img alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={article.img} />
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div style={{ marginBottom: "12px" }}>
+                      <span className="inline-block bg-[#e0f3f5] text-[#5E5E5E] text-[10px] font-bold uppercase tracking-wider py-1.5 px-3 rounded-full">
+                        {article.cat}
                       </span>
-                      <h4 className="text-navy-deep mb-0.5 leading-tight" style={{ fontFamily: "var(--font-display)", fontSize: "0.9rem", fontWeight: 400 }}>{art.title}</h4>
-                      <span className="text-[11px] text-navy-muted">{art.time}</span>
+                    </div>
+                    <h4 className="text-xl leading-snug line-clamp-2 text-navy-deep group-hover:text-[#1AA3B5] transition-colors" style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "8px" }}>{article.title}</h4>
+                    {article.author && (
+                      <p className="text-xs text-navy-muted" style={{ fontFamily: "var(--font-base)", marginBottom: "8px" }}>
+                        By <strong className="text-navy-deep font-semibold">{article.author}</strong>
+                      </p>
+                    )}
+                    <p className="text-sm text-navy-muted leading-relaxed flex-grow" style={{ fontFamily: "var(--font-base)", marginBottom: "16px" }}>
+                      {article.time}
+                    </p>
+                    <div className="flex items-center gap-2 text-sm font-bold text-navy-deep mt-auto" style={{ fontFamily: "var(--font-base)" }}>
+                      Read More
+                      <span className="w-6 h-6 rounded-full bg-[#1AA3B5] flex items-center justify-center">
+                        <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path d="M7 17L17 7" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+                          <path d="M7 7h10v10" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" />
+                        </svg>
+                      </span>
                     </div>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
