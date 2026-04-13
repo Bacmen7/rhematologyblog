@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom"
-import { useState, useRef } from "react"
+import { useState } from "react"
 import Header from "../components/Header"
 import BriefingFooter from "../components/BriefingFooter"
 import specialists from "../data/specialists"
@@ -67,16 +67,16 @@ function DoctorProfile() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-16">
 
           {/* Doctor Header */}
-          <div style={{ marginBottom: "24px", marginTop: "16px", paddingBottom: "16px" }} className="sm:mt-6">
+          <div style={{ marginBottom: "40px", marginTop: "20px", paddingBottom: "32px" }} className="sm:mt-6">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
               <div>
-                <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(42px, 5vw, 70px)", lineHeight: "72px", color: "#ffffff", marginBottom: "6px" }}>
+                <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(42px, 5vw, 70px)", lineHeight: "1.1", color: "#ffffff", marginBottom: "12px" }}>
                   {doctor.name}
                 </h1>
-                <p style={{ fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "clamp(14px, 2.5vw, 20px)", lineHeight: "1.4", marginBottom: "12px", color: "rgba(255,255,255,0.7)" }}>
+                <p style={{ fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "clamp(14px, 2.5vw, 20px)", lineHeight: "1.65", marginBottom: "18px", color: "rgba(255,255,255,0.7)", maxWidth: "900px" }}>
                   MBBS, MD - General Medicine, DM - Clinical Immunology and Rheumatology
                 </p>
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "clamp(12px, 1.5vw, 14px)", lineHeight: "1.4", marginBottom: "8px", color: "rgba(255,255,255,0.85)" }}>
+                <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "clamp(12px, 1.5vw, 14px)", lineHeight: "1.7", marginBottom: "12px", color: "rgba(255,255,255,0.85)" }}>
                   <span>Rheumatologist, Nephrologist</span>
                   <span style={{ color: "rgba(255,255,255,0.3)" }}>|</span>
                   <span>14 Years Exp <span style={{ fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>(6 yrs specialist)</span></span>
@@ -338,22 +338,6 @@ function DoctorProfile() {
 
               <hr className="border-gray-200 my-8 sm:my-10" />
 
-              {/* Google Reviews */}
-              <section>
-                <div className="flex items-center gap-3" style={{ marginBottom: "20px" }}>
-                  <svg className="w-5 h-5" viewBox="0 0 24 24">
-                    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" />
-                    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-                    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-                  </svg>
-                  <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px" }}>Google Reviews</h2>
-                </div>
-                <GoogleReviewsInline />
-              </section>
-
-              <hr className="border-gray-200 my-8 sm:my-10" />
-
               {/* FAQs */}
               <section>
                 <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(22px, 4vw, 34px)", lineHeight: "1.2", marginBottom: "24px" }}>
@@ -604,24 +588,6 @@ const faqs = [
   { question: "What should I bring to my first appointment with Dr. Raghavendra H?", answer: "For your initial appointment with Dr. Raghavendra H, please bring any relevant medical records, including previous imaging scans, laboratory results, and medication lists. It's important to provide a detailed medical history and any pertinent information about your condition. If you have insurance, please bring your insurance card and any necessary referral documents. This will help facilitate a comprehensive evaluation and discussion during your appointment." },
 ]
 
-const googleReviews = [
-  { name: "Roohina Parveen", rating: 5, time: "a month ago", text: "I am truly grateful to you, Dr. Raghvendra. Your patience, understanding, and dedication as a rheumatologist have brought me comfort and confidence during every step of my treatment. Thank you for always going above and beyond." },
-  { name: "Cecilia Mary", rating: 5, time: "9 months ago", text: "Dr. Raghavendra good doctor who has diagnosed the disease and gives good medications. We are so happy in his service and he is so dedicated to his work.. he is so humble and saw the patient so patiently heard what all the problems and sorted out with good medications.." },
-  { name: "Moksha Mahesh", rating: 5, time: "10 months ago", text: "Very knowledgeable and caring doctor. He explained my condition in detail and made sure I understood every aspect of the treatment plan. Highly recommended for anyone with autoimmune issues." },
-  { name: "Thirumurugan B", rating: 5, time: "9 months ago", text: "Dr. Raghavendra is an excellent rheumatologist. He took time to listen to all my concerns and prescribed the right treatment. My joint pain has reduced significantly after following his advice." },
-  { name: "imran rocker", rating: 4, time: "a year ago", text: "Good experience overall. The doctor is very thorough in his examination and gives proper attention to each patient. Would have appreciated a shorter wait time though." },
-  { name: "Sunitha Rao", rating: 5, time: "6 months ago", text: "I was suffering from severe rheumatoid arthritis for years. Dr. Raghavendra changed my medication plan and within 3 months I could see a huge improvement. He is a blessing for patients like me." },
-  { name: "Arjun Krishnamurthy", rating: 5, time: "4 months ago", text: "One of the best rheumatologists in Bengaluru. Very patient, listens carefully, and explains things in simple language. My mother's SLE condition is now well managed under his care." },
-  { name: "Fatima Begum", rating: 5, time: "3 months ago", text: "Dr. Raghavendra diagnosed my psoriatic arthritis when other doctors couldn't figure out what was wrong. He is extremely knowledgeable and genuinely cares about his patients' wellbeing." },
-  { name: "Rajesh Kumar", rating: 5, time: "5 months ago", text: "Very impressed with the level of care. He doesn't rush through appointments and makes sure all your doubts are cleared. The treatment he prescribed has been very effective for my condition." },
-  { name: "Priya Nair", rating: 4, time: "7 months ago", text: "Good doctor with deep knowledge in rheumatology. He was very detailed in explaining my vasculitis condition and the treatment options available. Feeling much better now." },
-  { name: "Venkatesh Murthy", rating: 5, time: "2 months ago", text: "Excellent doctor. He identified the root cause of my joint problems quickly and started the right treatment immediately. Very professional and approachable. Highly recommend!" },
-  { name: "Deepa Srinivasan", rating: 5, time: "8 months ago", text: "I traveled from Chennai specifically to consult Dr. Raghavendra for my mother's rheumatoid arthritis. Worth every bit of the journey. His expertise and compassion are unmatched." },
-  { name: "Naveen Gowda", rating: 5, time: "11 months ago", text: "Dr. Raghavendra is a gem of a doctor. He treated my ankylosing spondylitis with great care. His follow-up calls to check on my progress show how dedicated he is." },
-  { name: "Amrita Sharma", rating: 5, time: "a month ago", text: "Best rheumatologist I've consulted. He is thorough, empathetic, and very skilled. My lupus flare-ups have reduced dramatically since I started treatment with him." },
-  { name: "Harish Reddy", rating: 4, time: "a year ago", text: "Consulted for my gout problem. Dr. Raghavendra provided a clear treatment plan and dietary advice. Very satisfied with the results so far." },
-]
-
 const patientStories = [
   { name: "Ramakrishna Kakumani", initial: "R", verified: true, time: "8 months ago", visitedFor: null, tags: ["Doctor friendliness", "Treatment satisfaction", "Value for money"], text: "My mother-in-law had been undergoing treatment for joint pains at KIMS Ongole for over two years, but unfortunately, there was no improvement. The doctor used to prescribe heavy medications every month, and eventually, her condition worsened.\n\nWe then came across Dr. Raghavendra H, Rheumatologist (TriLife) through the web. He is very friendly, approachable, and, most importantly, his treatment is highly effective. He focuses on identifying the root cause of the problem and prescribes only minimal medication.\n\nAlthough we are based in Andhra, we travel to Bangalore every three months to consult Dr. Raghavendra H sir. Her symptoms are now under control, and we are very happy with the treatment she is receiving." },
   { name: "T V Joy", initial: "T", verified: true, time: "3 years ago", visitedFor: null, tags: [], text: "First thing I want to say is that Dr. Raghavendra is always approachable, which is not the case with many others. He is the second Doctor I visited for the Arthritis problem of my wife and I am completely satisfied with his way of treatment and interaction with us. Most importantly he is never in a hurry and spend lot of time to comfort the patient." },
@@ -730,69 +696,6 @@ function PatientStoriesInline() {
           </div>
         </div>
       )}
-    </>
-  )
-}
-
-function GoogleReviewsInline() {
-  const scrollRef = useRef(null)
-  const scroll = (dir) => {
-    const container = scrollRef.current
-    if (!container) return
-    container.scrollBy({ left: dir === "left" ? -340 : 340, behavior: "smooth" })
-  }
-  const avgRating = (googleReviews.reduce((sum, r) => sum + r.rating, 0) / googleReviews.length).toFixed(1)
-
-  return (
-    <>
-      <div className="flex items-center gap-2" style={{ marginBottom: "16px" }}>
-        <div className="flex items-center gap-0.5">
-          {[1, 2, 3, 4, 5].map((star) => (
-            <svg key={star} className={`w-3.5 h-3.5 ${star <= Math.round(parseFloat(avgRating)) ? "text-yellow-500" : "text-gray-300"}`} fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-          ))}
-        </div>
-        <span className="text-sm text-gray-500">{avgRating} out of 5 · {googleReviews.length} reviews</span>
-      </div>
-
-      <div className="relative">
-        <div ref={scrollRef} className="flex gap-3 overflow-x-auto pb-3 -mx-4 px-4 sm:mx-0 sm:px-0" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
-          {googleReviews.map((review, i) => (
-            <div key={i} className="shrink-0 w-[340px] sm:w-[400px] bg-white p-4 sm:p-5 flex flex-col" style={{ borderRadius: "20px" }}>
-              <div className="flex items-center gap-2.5" style={{ marginBottom: "10px" }}>
-                <div className="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 text-xs font-semibold shrink-0">{review.name.charAt(0)}</div>
-                <p className="text-xs sm:text-sm font-semibold text-[#0f616e] truncate min-w-0">{review.name}</p>
-                <div className="flex items-center gap-0.5 shrink-0">
-                  {[1, 2, 3, 4, 5].map((star) => (
-                    <svg key={star} className={`w-2.5 h-2.5 ${star <= review.rating ? "text-yellow-500" : "text-gray-300"}`} fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <span className="text-[10px] sm:text-xs text-gray-400 whitespace-nowrap shrink-0 ml-auto">{review.time}</span>
-              </div>
-              <p className="text-xs sm:text-sm text-gray-600 leading-relaxed flex-1" style={{ display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
-                "{review.text}"
-              </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Scroll arrows */}
-        <div className="hidden sm:flex items-center gap-2 mt-3">
-          <button onClick={() => scroll("left")} className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
-            <svg className="w-3.5 h-3.5 text-[#0f616e]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-            </svg>
-          </button>
-          <button onClick={() => scroll("right")} className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors">
-            <svg className="w-3.5 h-3.5 text-[#0f616e]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-            </svg>
-          </button>
-        </div>
-      </div>
     </>
   )
 }

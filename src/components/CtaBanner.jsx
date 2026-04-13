@@ -48,8 +48,8 @@ function CtaBanner() {
                   <span className="text-[15px] text-white/60 opacity-90">or</span>
                   <a
                     href="#"
-                    className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#a0e2e4] transition-colors"
-                    style={{ color: "#ffffff" }}
+                    className="inline-flex items-center rounded-full text-[15px] font-semibold transition-colors hover:opacity-90"
+                    style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "12px 22px" }}
                   >
                     let&apos;s get in touch
                   </a>
