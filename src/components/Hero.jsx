@@ -100,7 +100,7 @@ function Hero() {
             <Link
               to="/book-appointment"
               className="inline-flex mt-4 md:mt-8 items-center gap-2 rounded-full font-semibold shadow-sm z-20"
-              style={{ backgroundColor: "#fa885a", color: "#ffffff", padding: "14px 40px", fontSize: "18px" }}
+              style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "14px 40px", fontSize: "18px" }}
             >
               Appointment
               <ArrowUpRight size={20} strokeWidth={2.5} />
