@@ -26,9 +26,9 @@ function StatsBar() {
           >
             90%+
           </p>
-          <p className="text-[15px] leading-[1.6] font-light tracking-[0.3px] text-navy-muted">
+          <p className="max-w-[260px] text-[15px] leading-[1.6] font-light tracking-[0.3px] text-navy-muted mx-auto md:mx-0">
             of patients find relief in{" "}
-            <strong className="font-semibold text-navy-deep">10 weeks or less</strong>
+            <strong className="font-semibold tracking-[0.1px] text-navy-deep">10 weeks or less</strong>
           </p>
         </div>
 
@@ -40,9 +40,9 @@ function StatsBar() {
           >
             86%
           </p>
-          <p className="text-[15px] leading-[1.6] font-light tracking-[0.3px] text-navy-muted">
+          <p className="max-w-[260px] text-[15px] leading-[1.6] font-light tracking-[0.3px] text-navy-muted mx-auto md:mx-0">
             of undiagnosed patients get a{" "}
-            <strong className="font-semibold text-navy-deep">clear diagnosis within 3 months</strong>
+            <strong className="font-semibold tracking-[0.1px] text-navy-deep">clear diagnosis within 3 months</strong>
           </p>
         </div>
       </div>
