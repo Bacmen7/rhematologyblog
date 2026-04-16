@@ -27,31 +27,54 @@ function CtaBanner() {
                 className="leading-[1.1] font-normal !mb-5 md:!mb-6 text-center md:text-left"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(32px, 4.5vw, 52px)",
+                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                  fontWeight: 400,
+                  lineHeight: 1.12,
                   letterSpacing: "-0.5px",
                   color: "#ffffff",
                 }}
               >
                 Take the First Step Toward Relief from Arthritis
               </h2>
-              <p style={{ fontSize: "16px", lineHeight: 1.65, color: "rgba(255,255,255,0.7)", marginBottom: "28px", textAlign: "center" }} className="md:!text-left">
+              <p
+                style={{
+                  fontSize: "16px",
+                  lineHeight: 1.75,
+                  color: "rgba(255,255,255,0.55)",
+                  marginBottom: "28px",
+                  textAlign: "center",
+                  fontFamily: "var(--font-base)",
+                }}
+                className="md:!text-left"
+              >
                 Early diagnosis and treatment can prevent long-term joint damage. Consult a rheumatology specialist and start a personalized treatment plan today.
               </p>
               <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4">
                 <a
                   href="/book-appointment"
-                  className="inline-block bg-primary hover:bg-primary-hover text-white px-7 py-3.5 rounded-full font-semibold text-base transition-colors"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-2.5 rounded-full border border-transparent bg-primary px-8 py-4 text-[14px] font-semibold text-white no-underline transition-all duration-200 hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f616e] active:scale-[0.99]"
+                  style={{ fontFamily: "var(--font-base)" }}
                 >
                   Schedule Specialist Appointment
+                  <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                    </svg>
+                  </span>
                 </a>
                 <div className="flex items-center gap-2 text-white">
                   <span className="text-[15px] text-white/60 opacity-90">or</span>
                   <a
                     href="#"
-                    className="inline-flex items-center rounded-full text-[15px] font-semibold transition-colors hover:opacity-90"
-                    style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "12px 22px" }}
+                    className="inline-flex min-h-[56px] items-center gap-2.5 rounded-full border border-transparent px-8 py-4 text-[14px] font-semibold text-white no-underline transition-all duration-200 hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f616e] active:scale-[0.99]"
+                    style={{ backgroundColor: "#e86531", fontFamily: "var(--font-base)" }}
                   >
                     let&apos;s get in touch
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                      </svg>
+                    </span>
                   </a>
                 </div>
               </div>

@@ -63,13 +63,13 @@ function DoctorProfile() {
       <Header />
       <main className="flex-1">
         {/* Header + Gallery + Tabs section */}
-        <div className="bg-[#0f616e]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-16">
+        <div className="bg-[#0f616e] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
 
           {/* Doctor Header */}
-          <div style={{ marginBottom: "40px", marginTop: "20px", paddingBottom: "32px" }} className="sm:mt-6">
-            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-              <div>
+          <div style={{ marginBottom: "40px", marginTop: "20px", paddingBottom: "20px" }} className="sm:mt-6">
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
+              <div className="flex-1 max-w-[900px]">
                 <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(42px, 5vw, 70px)", lineHeight: "1.1", color: "#ffffff", marginBottom: "12px" }}>
                   {doctor.name}
                 </h1>
@@ -91,30 +91,21 @@ function DoctorProfile() {
                 </div>
               </div>
 
+              <div className="hidden lg:block w-full max-w-[320px] shrink-0">
+                <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
+                  <div className="relative w-full" style={{ height: "420px", background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
+                    <img src={doctor.image || "/docter.png"} alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
 
-        </div>
-        {/* Wavy bottom edge */}
-        <svg
-          className="w-full h-[18px] sm:h-[36px] md:h-[48px] block"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ backgroundColor: "#F5F5F5" }}
-        >
-          <path
-            d="M0 0H1440V38C1280 58 1120 68 960 62C780 56 620 34 430 30C250 26 120 42 0 54V0Z"
-            fill="#0f616e"
-          />
-        </svg>
-        </div>
-
-          {/* Image Gallery */}
-          <div className="bg-[#F5F5F5]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6" style={{ paddingTop: "24px", paddingBottom: "8px" }}>
-          <div className="relative overflow-hidden bg-gray-100 rounded-xl sm:rounded-2xl h-[220px] sm:h-[320px] lg:h-[430px]">
+          {/* Image Gallery
+          <div className="pb-6 sm:pb-8 md:pb-10">
+          <div className="max-w-7xl mx-auto" style={{ paddingTop: "8px" }}>
+          <div className="relative overflow-hidden bg-gray-100 rounded-xl sm:rounded-2xl h-[220px] sm:h-[320px] lg:h-[430px] border border-white/10 shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
             <div
               className="flex h-full transition-transform duration-500 ease-out"
               style={{ transform: `translateX(-${activeGalleryImage * 100}%)` }}
@@ -190,6 +181,24 @@ function DoctorProfile() {
           </div>
           </div>
           </div>
+          */}
+
+        </div>
+        {/* Wavy bottom edge */}
+        <svg
+          className="w-full h-[42px] sm:h-[72px] md:h-[108px] block"
+          preserveAspectRatio="none"
+          viewBox="0 0 1440 120"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ backgroundColor: "#F5F5F5" }}
+        >
+          <path
+            d="M0 0H1440V22C1298 54 1160 79 1016 83C842 88 716 50 542 34C328 15 165 43 0 90V0Z"
+            fill="#0f616e"
+          />
+        </svg>
+        </div>
 
           {/* Mobile doctor summary card */}
           <div className="bg-[#F5F5F5] lg:hidden">

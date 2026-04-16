@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { ArrowUpRight } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 const slides = [
   {
     id: 0,
     heading: (
       <>
-        Struggling with Pain in Your <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>Joints</span>, <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>Bones</span>, or <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>Muscles</span>?
+        Struggling with Pain in Your <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>Joints</span>, <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>Bones</span>, or <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>Muscles</span>?
       </>
     ),
     image: "/images/hero-slide-1.png",
@@ -16,7 +16,7 @@ const slides = [
     id: 1,
     heading: (
       <>
-        Your path to <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>pain-free</span> living starts <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>here</span>
+        Your path to <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>pain-free</span> living starts <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>here</span>
       </>
     ),
     image: "/images/hero-slide-2.png",
@@ -25,7 +25,7 @@ const slides = [
     id: 2,
     heading: (
       <>
-        Advanced care for <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>autoimmune</span> conditions
+        Advanced care for <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>autoimmune</span> conditions
       </>
     ),
     image: "/images/hero-slide-3.png",
@@ -99,11 +99,13 @@ function Hero() {
             {/* Appointment Button */}
             <Link
               to="/book-appointment"
-              className="inline-flex mt-4 md:mt-8 items-center gap-2 rounded-full font-semibold shadow-sm z-20"
-              style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "14px 40px", fontSize: "18px" }}
+              className="inline-flex mt-4 md:mt-8 items-center gap-2.5 text-white pl-7 pr-5 py-3.5 rounded-full font-bold text-[15px] tracking-wide transition-all duration-300 hover:opacity-90 group shadow-sm z-20"
+              style={{ backgroundColor: "#e86531" }}
             >
               Appointment
-              <ArrowUpRight size={20} strokeWidth={2.5} />
+              <span className="w-6 h-6 rounded-full bg-white/20 inline-flex items-center justify-center group-hover:bg-white/30 transition-colors">
+                <ArrowRight size={16} />
+              </span>
             </Link>
           </div>
 

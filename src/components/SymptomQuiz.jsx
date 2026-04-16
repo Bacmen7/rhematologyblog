@@ -85,7 +85,7 @@ function SymptomQuiz() {
                   <div className="flex gap-3" style={{ marginBottom: "28px" }}>
                     <button
                       onClick={() => handleAnswer("yes")}
-                      style={{ backgroundColor: "#e8fa6d", color: "#0f616e", padding: "10px 32px", borderRadius: "9999px", fontSize: "14px", fontWeight: 600, fontFamily: "var(--font-base)", border: "none", cursor: "pointer" }}
+                      style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "10px 32px", borderRadius: "9999px", fontSize: "14px", fontWeight: 600, fontFamily: "var(--font-base)", border: "none", cursor: "pointer" }}
                     >
                       Yes
                     </button>

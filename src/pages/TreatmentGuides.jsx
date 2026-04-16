@@ -176,10 +176,17 @@ function ArrowButton({ direction, onClick }) {
 
 function TreatmentGuides() {
   const cardScrollRef = useRef(null)
+  const diagnosisScrollRef = useRef(null)
 
   const scrollCards = (direction) => {
     if (cardScrollRef.current) {
       cardScrollRef.current.scrollBy({ left: direction === "left" ? -320 : 320, behavior: "smooth" })
+    }
+  }
+
+  const scrollDiagnosis = (direction) => {
+    if (diagnosisScrollRef.current) {
+      diagnosisScrollRef.current.scrollBy({ left: direction === "left" ? -260 : 260, behavior: "smooth" })
     }
   }
 
@@ -196,25 +203,42 @@ function TreatmentGuides() {
               <h1
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(36px, 5vw, 62px)",
+                  fontSize: "clamp(40px, 5vw, 62px)",
                   fontWeight: 400,
                   letterSpacing: "-0.5px",
-                  lineHeight: 1.05,
+                  lineHeight: 1.08,
                   color: "#0f616e",
                   marginBottom: "1.25rem",
                 }}
               >
                 It's finally time to understand your treatment
               </h1>
-              <p style={{ fontFamily: "var(--font-base)", fontSize: "1rem", color: "#5E5E5E", lineHeight: 1.75, marginBottom: "2rem", maxWidth: "480px" }}>
+              <p
+                style={{
+                  fontFamily: "var(--font-base)",
+                  fontSize: "clamp(15px, 2vw, 20px)",
+                  color: "#5E5E5E",
+                  lineHeight: 1.6,
+                  marginBottom: "2rem",
+                  maxWidth: "480px",
+                }}
+              >
                 Rheumatic conditions are highly treatable. Here is everything you need to know - diagnosis, medications, injections, and surgery - explained simply.
               </p>
               <a
                 href="#diagnosis"
-                className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90"
-                style={{ backgroundColor: "#e86531", color: "#ffffff", padding: "16px 32px" }}
+                className="inline-flex mt-4 md:mt-8 items-center gap-2.5 rounded-full pl-7 pr-5 py-3.5 text-[15px] font-bold tracking-wide text-white transition-all duration-300 hover:opacity-90"
+                style={{
+                  backgroundColor: "#e86531",
+                  fontFamily: "var(--font-base)",
+                }}
               >
                 Explore treatment options
+                <span className="w-6 h-6 rounded-full bg-white/20 inline-flex items-center justify-center transition-colors">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </span>
               </a>
             </div>
             {/* Right -Image */}
@@ -241,8 +265,15 @@ function TreatmentGuides() {
               Step One
             </p>
             <h2
-              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
-              style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "0.75rem" }}
+              className="leading-[1.1] tracking-tight"
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                fontWeight: 400,
+                letterSpacing: "-0.5px",
+                lineHeight: 1.12,
+                marginBottom: "0.75rem",
+              }}
             >
               How is it diagnosed?
             </h2>
@@ -257,25 +288,47 @@ function TreatmentGuides() {
             className="grid grid-cols-1 lg:grid-cols-2 overflow-hidden"
             style={{
               borderRadius: "10px",
+              border: "1px solid #e5e7eb",
             }}
           >
             {/* Left -dark */}
             <div className="flex flex-col justify-center" style={{ backgroundColor: "#0f616e", padding: "clamp(1.5rem, 4vw, 3rem)" }}>
               <h3
-                className="text-white text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
-                style={{ fontFamily: "var(--font-display)", fontWeight: 400, marginBottom: "0.75rem", color: "#ffffff" }}
+                className="leading-[1.1] tracking-tight text-white"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+                  fontWeight: 400,
+                  lineHeight: 1.12,
+                  letterSpacing: "-0.5px",
+                  marginBottom: "0.75rem",
+                  color: "#ffffff",
+                }}
               >
                 Getting the <span style={{ color: "#1AA3B5" }}>right diagnosis</span>
               </h3>
-              <p className="text-sm leading-relaxed" style={{ fontFamily: "var(--font-base)", color: "rgba(255,255,255,0.6)", marginBottom: "1.5rem" }}>
+              <p
+                style={{
+                  fontSize: "16px",
+                  lineHeight: 1.75,
+                  color: "rgba(255,255,255,0.55)",
+                  marginBottom: "28px",
+                  fontFamily: "var(--font-base)",
+                }}
+              >
                 There is no single test for most rheumatic conditions. Diagnosis is built from your symptoms, an examination, blood tests, and imaging -together they tell the full story.
               </p>
               <a
                 href="#"
-                className="inline-block self-start rounded-full font-semibold text-sm text-white transition-all hover:opacity-90"
-                style={{ backgroundColor: "#1AA3B5", padding: "12px 24px", textDecoration: "none" }}
+                className="inline-flex mt-2 self-start items-center gap-2.5 rounded-full pl-7 pr-5 py-3.5 text-[15px] font-bold tracking-wide text-white no-underline transition-all duration-300 hover:opacity-90"
+                style={{ backgroundColor: "#e86531", fontFamily: "var(--font-base)" }}
               >
                 Book your first appointment
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
+                  </svg>
+                </span>
               </a>
             </div>
 
@@ -284,9 +337,10 @@ function TreatmentGuides() {
               <h3
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(26px, 3vw, 34px)",
+                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
                   fontWeight: 400,
-                  lineHeight: 1.15,
+                  lineHeight: 1.12,
+                  letterSpacing: "-0.5px",
                   color: "#0f616e",
                   marginBottom: "1.2rem",
                   paddingBottom: "0.75rem",
@@ -295,42 +349,52 @@ function TreatmentGuides() {
               >
                 What happens at your appointment
               </h3>
-              <div className="flex flex-col" style={{ gap: "0.5rem" }}>
+              <div className="flex items-center justify-between gap-3 mb-5">
+                <p className="text-navy-muted" style={{ fontFamily: "var(--font-base)", fontSize: "16px", lineHeight: 1.75 }}>
+                  Swipe through the four steps your rheumatologist uses to diagnose your condition.
+                </p>
+                <div className="hidden sm:flex items-center gap-2 flex-shrink-0">
+                  <ArrowButton direction="left" onClick={() => scrollDiagnosis("left")} />
+                  <ArrowButton direction="right" onClick={() => scrollDiagnosis("right")} />
+                </div>
+              </div>
+              <div
+                ref={diagnosisScrollRef}
+                className="flex gap-4 overflow-x-auto hide-scrollbar pb-2 scroll-smooth"
+              >
                 {diagnosisSteps.map((step, i) => (
                   <a
                     key={i}
                     href="#"
-                    className="flex items-center group"
-                    style={{
-                      gap: "1rem",
-                      padding: "12px",
-                      border: "1.5px solid #e0e0e0",
-                      borderRadius: "12px",
-                      textDecoration: "none",
-                      transition: "all 0.2s",
-                      backgroundColor: "#fff",
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.borderColor = "#0f616e"
-                      e.currentTarget.style.backgroundColor = "#f0f7f8"
-                      e.currentTarget.style.transform = "translateX(4px)"
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.borderColor = "#e0e0e0"
-                      e.currentTarget.style.backgroundColor = "#fff"
-                      e.currentTarget.style.transform = "translateX(0)"
-                    }}
+                    className="group w-[210px] min-w-[210px] sm:w-[230px] sm:min-w-[230px] flex-shrink-0 overflow-hidden rounded-[16px] border border-[#e5e7eb] bg-white text-left no-underline transition-all duration-200 hover:-translate-y-1 hover:border-[#0f616e]"
                   >
-                    <img src={step.img} alt={step.title} className="flex-shrink-0" style={{ width: "50px", height: "50px", borderRadius: "8px", objectFit: "cover", backgroundColor: "#F5F5F5" }} />
-                    <div style={{ flex: 1 }}>
-                      <h4 className="text-sm font-semibold text-navy-deep" style={{ fontFamily: "var(--font-base)", marginBottom: "2px" }}>{step.title}</h4>
-                      <p className="text-xs text-navy-muted line-clamp-2" style={{ fontFamily: "var(--font-base)", lineHeight: 1.45 }}>{step.desc}</p>
+                    <div className="h-[165px] overflow-hidden bg-[#f5f5f5]">
+                      <img
+                        src={step.img}
+                        alt={step.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                      />
                     </div>
-                    <svg className="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
+                    <div className="p-3">
+                      <h4
+                        className="text-navy-deep"
+                        style={{ fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 600, lineHeight: 1.4, marginBottom: "6px" }}
+                      >
+                        {step.title}
+                      </h4>
+                      <p
+                        className="text-navy-muted"
+                        style={{ fontFamily: "var(--font-base)", fontSize: "13px", lineHeight: 1.55 }}
+                      >
+                        {step.desc}
+                      </p>
+                    </div>
                   </a>
                 ))}
+              </div>
+              <div className="sm:hidden flex items-center justify-center gap-2 mt-4">
+                <ArrowButton direction="left" onClick={() => scrollDiagnosis("left")} />
+                <ArrowButton direction="right" onClick={() => scrollDiagnosis("right")} />
               </div>
             </div>
           </div>

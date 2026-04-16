@@ -5,38 +5,44 @@ import Newsletter from "../components/Newsletter"
 import CtaBanner from "../components/CtaBanner"
 import BriefingFooter from "../components/BriefingFooter"
 
+const getPreviewText = (text) => {
+  const words = text.split(" ")
+  if (words.length <= 8) return text
+  return `${words.slice(0, 8).join(" ")}...`
+}
+
 /* ─────────────────────────────────────────────
    DATA
    ───────────────────────────────────────────── */
 
 const conditions = [
   { name: "Rheumatoid Arthritis", slug: "arthritis", image: "/condition/Rheumatoid Arthritis (RA).png", description: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments." },
-  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.png", description: "Where skin meets joints -understanding the psoriasis-arthritis connection and targeted therapies." },
+  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.png", description: "Where skin meets joints. Understanding the psoriasis-arthritis connection and targeted therapies." },
   { name: "Osteoarthritis", slug: "osteoarthritis", image: "/condition/Osteoarthritis.png", description: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain." },
   { name: "Lupus", slug: "lupus", image: "/condition/Lupus.png", description: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management." },
   { name: "Gout", slug: "gout", image: "/condition/Gout.png", description: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies." },
   { name: "Ankylosing Spondylitis", slug: "ankylosing-spondylitis", image: "/condition/Ankylosing Spondylitis (AS).png", description: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture." },
   { name: "Fibromyalgia", slug: "fibromyalgia", image: "/condition/Fibromyalgia.png", description: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life." },
-  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.png", description: "Identifying whether spinal pain is mechanical or inflammatory -a critical distinction for treatment." },
+  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.png", description: "Identifying whether spinal pain is mechanical or inflammatory is a critical distinction for treatment." },
 ]
 
 const whatIsRheumatology = [
-  { title: "Autoimmune Conditions", desc: "Diseases where the immune system mistakenly attacks healthy tissue -including RA, lupus, vasculitis, and scleroderma.", stat: "80+", statLabel: "autoimmune conditions" },
-  { title: "Inflammatory Arthritis", desc: "Joint diseases driven by chronic inflammation rather than wear-and-tear -requiring disease-modifying treatments.", stat: "7", statLabel: "types of inflammatory arthritis" },
+  { title: "Autoimmune Conditions", desc: "Diseases where the immune system mistakenly attacks healthy tissue, including RA, lupus, vasculitis, and scleroderma.", stat: "80+", statLabel: "autoimmune conditions" },
+  { title: "Inflammatory Arthritis", desc: "Joint diseases driven by chronic inflammation rather than wear-and-tear, requiring disease-modifying treatments.", stat: "7", statLabel: "types of inflammatory arthritis" },
   { title: "Connective Tissue Diseases", desc: "Conditions affecting collagen and connective tissue throughout the body, from skin to internal organs.", stat: "200+", statLabel: "related conditions" },
 ]
 
 const diagnosticJourney = [
   { step: "01", title: "Symptom Assessment", desc: "A thorough review of your symptoms, medical history, family history, and how your condition affects daily life. Morning stiffness duration, joint patterns, and systemic symptoms all provide critical diagnostic clues." },
-  { step: "02", title: "Physical Examination", desc: "Hands-on evaluation of joints for swelling, warmth, tenderness, and range of motion. Your rheumatologist examines specific joint patterns -symmetry, small vs large joints -which point to different conditions." },
+  { step: "02", title: "Physical Examination", desc: "Hands-on evaluation of joints for swelling, warmth, tenderness, and range of motion. Your rheumatologist examines specific joint patterns, such as symmetry and small-vs-large joint involvement, which point to different conditions." },
   { step: "03", title: "Laboratory Testing", desc: "Blood tests including RF (Rheumatoid Factor), Anti-CCP antibodies, ANA, ESR, and CRP. These inflammatory markers and autoantibodies help confirm diagnosis and guide treatment decisions." },
   { step: "04", title: "Advanced Imaging", desc: "X-rays reveal joint damage, while ultrasound and MRI can detect early inflammation invisible to the naked eye. Imaging helps stage disease severity and track treatment response over time." },
 ]
 
 const treatmentApproaches = [
   { category: "Medications", items: [
-    { name: "DMARDs", detail: "Methotrexate, hydroxychloroquine, sulfasalazine -the cornerstone of autoimmune treatment. They slow disease progression and prevent permanent joint damage." },
-    { name: "Biologics", detail: "TNF inhibitors, IL-6 blockers, B-cell depleting agents -precision therapies targeting specific immune pathways driving your inflammation." },
+    { name: "DMARDs", detail: "Methotrexate, hydroxychloroquine, and sulfasalazine are the cornerstone of autoimmune treatment. They slow disease progression and prevent permanent joint damage." },
+    { name: "Biologics", detail: "TNF inhibitors, IL-6 blockers, and B-cell-depleting agents are precision therapies targeting specific immune pathways driving your inflammation." },
     { name: "JAK Inhibitors", detail: "Oral small-molecule drugs (tofacitinib, baricitinib, upadacitinib) that block Janus kinase signaling inside immune cells." },
     { name: "Corticosteroids", detail: "Powerful anti-inflammatory relief for acute flares. Used short-term as a bridge while disease-modifying drugs take effect." },
   ]},
@@ -62,9 +68,9 @@ const featuredArticles = [
 ]
 
 const faqs = [
-  { q: "What does a rheumatologist do?", a: "A rheumatologist is a board-certified internist with additional fellowship training in autoimmune and musculoskeletal diseases. We diagnose and treat over 200 conditions affecting joints, muscles, bones, and the immune system -from common conditions like osteoarthritis to complex systemic diseases like lupus and vasculitis." },
-  { q: "When should I see a rheumatologist vs. my primary care doctor?", a: "See a rheumatologist if you have joint swelling lasting more than 6 weeks, morning stiffness exceeding 30 minutes, an elevated inflammatory marker (ESR or CRP), a positive ANA or RF test, or symptoms that haven't responded to basic treatments. Early referral leads to better outcomes -the first 12 weeks after symptom onset is a critical treatment window." },
-  { q: "Are rheumatic diseases hereditary?", a: "Genetics contribute to risk, but they're not the whole story. Having the HLA-B27 gene increases ankylosing spondylitis risk, and family history of RA raises yours 3-5x. However, environmental triggers -infections, smoking, hormonal changes, stress -interact with genetic predisposition to activate disease. Most people with genetic risk factors never develop rheumatic disease." },
+  { q: "What does a rheumatologist do?", a: "A rheumatologist is a board-certified internist with additional fellowship training in autoimmune and musculoskeletal diseases. We diagnose and treat over 200 conditions affecting joints, muscles, bones, and the immune system, from common conditions like osteoarthritis to complex systemic diseases like lupus and vasculitis." },
+  { q: "When should I see a rheumatologist vs. my primary care doctor?", a: "See a rheumatologist if you have joint swelling lasting more than 6 weeks, morning stiffness exceeding 30 minutes, an elevated inflammatory marker (ESR or CRP), a positive ANA or RF test, or symptoms that haven't responded to basic treatments. Early referral leads to better outcomes, and the first 12 weeks after symptom onset is a critical treatment window." },
+  { q: "Are rheumatic diseases hereditary?", a: "Genetics contribute to risk, but they're not the whole story. Having the HLA-B27 gene increases ankylosing spondylitis risk, and family history of RA raises yours 3-5x. However, environmental triggers such as infections, smoking, hormonal changes, and stress interact with genetic predisposition to activate disease. Most people with genetic risk factors never develop rheumatic disease." },
   { q: "Can rheumatic conditions be cured?", a: "Most autoimmune rheumatic conditions cannot be cured, but they can be effectively controlled. Modern treatments achieve clinical remission in up to 50-60% of RA patients. 'Remission' means minimal to no symptoms, normal inflammatory markers, and no ongoing joint damage -essentially living as if you don't have the disease. Early, aggressive treatment gives the best chance of remission." },
   { q: "What lifestyle changes actually help with inflammatory arthritis?", a: "Evidence supports: (1) regular low-impact exercise (swimming, cycling, yoga) -150 min/week reduces inflammation and pain, (2) Mediterranean diet -shown to lower CRP by 20-30%, (3) adequate sleep (7-9 hours), (4) stress management, (5) smoking cessation -smoking doubles RA severity, and (6) maintaining healthy weight -every 5 lbs of excess weight increases knee osteoarthritis risk by 36%." },
   { q: "How long does it take for treatment to work?", a: "DMARDs like methotrexate typically take 6-12 weeks to reach full effect. Biologics can work faster -some patients notice improvement within 2-4 weeks. Corticosteroids provide relief within hours to days but aren't long-term solutions. Your rheumatologist will monitor progress and adjust medications at 3-month intervals until you reach your treatment target." },
@@ -92,48 +98,62 @@ function HealthGuide() {
         {/* ═══════════ HERO (old style -matching HealthGuideHero) ═══════════ */}
         <section className="relative overflow-hidden" style={{ marginTop: "-2px", backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-4 items-center">
-              <div className="pt-8 pb-4 md:py-6 relative z-10">
+            <div className="grid md:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.98fr)] gap-6 md:gap-10 items-stretch">
+              <div className="relative z-10 flex flex-col justify-center pt-8 pb-6 md:py-8 lg:py-9">
                 <h1
                   className="leading-tight"
-                  style={{ letterSpacing: "-1px", marginBottom: "0.9rem", color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(3rem, 6vw, 5.2rem)", lineHeight: 1.04 }}
+                  style={{ letterSpacing: "-1px", marginBottom: "1rem", color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(3.1rem, 6vw, 5.35rem)", lineHeight: 1.04 }}
                 >
-                  Explore Health Guide
+                  Explore{" "}
+                  <span className="relative inline-block">
+                    Health Guide
+                    <svg
+                      className="absolute -bottom-2 left-0 h-3 w-full"
+                      fill="none"
+                      preserveAspectRatio="none"
+                      viewBox="0 0 400 12"
+                    >
+                      <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
+                    </svg>
+                  </span>
                 </h1>
                 <p
-                  className="text-xl md:text-2xl leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.78)", fontFamily: "var(--font-base)", fontWeight: 500 }}
+                  className="text-[1.1rem] md:text-[1.45rem] leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.82)", fontFamily: "var(--font-base)", fontWeight: 500, marginBottom: "0.25rem" }}
                 >
                   Reliable, rheumatology-focused medical information.
                 </p>
                 <p
-                  className="text-base leading-relaxed mt-6 max-w-[520px]"
-                  style={{ color: "rgba(255,255,255,0.7)", fontFamily: "var(--font-base)" }}
+                  className="text-base leading-relaxed mt-6 max-w-[560px]"
+                  style={{ color: "rgba(255,255,255,0.72)", fontFamily: "var(--font-base)", lineHeight: 1.75 }}
                 >
                   Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
                 </p>
                 <div className="flex flex-wrap gap-4 mt-10">
                   <a
                     href="#conditions"
-                    className="inline-flex items-center gap-2 rounded-full text-sm font-semibold px-8 py-4 hover:opacity-90 transition-opacity"
+                    className="inline-flex items-center gap-2.5 rounded-full pl-7 pr-7 py-3.5 text-[15px] font-bold hover:opacity-90 transition-opacity"
                     style={{ backgroundColor: "#e86531", color: "#ffffff", fontFamily: "var(--font-base)" }}
                   >
                     Explore Conditions
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                    </span>
                   </a>
                   <Link
                     to="/blog"
-                    className="inline-flex items-center gap-2 rounded-full text-sm font-semibold px-8 py-4 border-2 hover:bg-white/10 transition-colors"
+                    className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-bold border-2 hover:bg-white/10 transition-colors"
                     style={{ borderColor: "rgba(255,255,255,0.22)", color: "#ffffff", fontFamily: "var(--font-base)" }}
                   >
                     Browse Articles
                   </Link>
                 </div>
               </div>
-              <div className="hidden md:block">
+              <div className="hidden md:block self-stretch">
                 <img
                   alt="Medical professional consulting patient"
-                  className="w-full h-full object-cover object-center"
+                  className="block w-full h-full object-cover object-center"
+                  style={{ minHeight: "100%" }}
                   src="/images/hero-consult.jpg"
                 />
               </div>
@@ -188,27 +208,49 @@ function HealthGuide() {
         {/* ═══════════ CONDITIONS GRID (matching ConditionsGrid) ═══════════ */}
         <section id="conditions" className="py-20 md:py-28 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+            <div className="text-center mt-4 md:mt-6 mb-14 md:mb-16 max-w-3xl mx-auto flex flex-col items-center">
+              <h2
+                className="text-navy-deep mb-4 text-center"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.08, letterSpacing: "-1px" }}
+              >
                 Explore by Condition
               </h2>
-              <p className="text-navy-muted text-base leading-relaxed">
+              <p
+                className="text-navy-muted max-w-[680px] mx-auto text-center"
+                style={{ fontFamily: "var(--font-base)", fontSize: "16px", lineHeight: 1.75 }}
+              >
                 Each guide is written by a board-certified rheumatologist, covering symptoms, diagnosis, treatment options, and daily management strategies.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
               {conditions.map((c) => (
                 <Link
                   key={c.name}
                   to={c.slug === "arthritis" ? "/health-guide/Rheumatoid-Arthritis" : "#"}
-                  className="bg-white rounded-2xl py-8 px-5 flex flex-col items-center text-center gap-3 border border-[#e8ecf2] hover:border-primary transition-colors cursor-pointer"
+                  className="bg-white rounded-[24px] py-7 px-5 md:px-6 flex flex-col items-center text-center gap-3 border border-[#e8ecf2] hover:border-primary transition-colors cursor-pointer min-h-[290px] md:min-h-[305px]"
                 >
                   <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
                     <img src={c.image} alt={c.name} className="max-w-full max-h-full object-contain" />
                   </div>
-                  <p className="text-sm font-medium text-navy-deep leading-snug">{c.name}</p>
-                  <p className="text-xs text-navy-muted leading-relaxed hidden md:block">{c.description}</p>
+                  <h3 className="text-sm font-medium text-navy-deep leading-snug">
+                    {c.name}
+                  </h3>
+                  <p
+                    className="text-navy-muted max-w-[240px] mx-auto line-clamp-2"
+                    style={{ fontFamily: "var(--font-base)", fontSize: "14px", lineHeight: 1.72 }}
+                  >
+                    {getPreviewText(c.description)}
+                  </p>
+                  <span
+                    className="mt-1 inline-flex items-center gap-2 text-navy-deep"
+                    style={{ fontFamily: "var(--font-base)", fontSize: "13px", fontWeight: 600 }}
+                  >
+                    Read more
+                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
+                    </svg>
+                  </span>
                 </Link>
               ))}
             </div>
@@ -220,7 +262,18 @@ function HealthGuide() {
           <div className="relative z-10 max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 lg:gap-14 items-start lg:items-stretch">
               <div>
-                <h2 className="max-w-[800px]" style={{ marginBottom: "22px" }}>
+                <h2
+                  className="max-w-[800px]"
+                  style={{
+                    marginBottom: "22px",
+                    fontFamily: "var(--font-display)",
+                    fontSize: "clamp(2rem, 4vw, 3rem)",
+                    fontWeight: 400,
+                    lineHeight: 1.08,
+                    letterSpacing: "-0.8px",
+                    color: "#ffffff",
+                  }}
+                >
                   When should you{" "}
                   <span className="relative inline-block">
                     see a rheumatologist
@@ -236,26 +289,41 @@ function HealthGuide() {
                   ?
                 </h2>
 
-                <p className="!text-[16px] !leading-[1.6] font-normal text-[#9a9faa] max-w-[680px]" style={{ marginBottom: "26px" }}>
+                <p
+                  className="max-w-[680px]"
+                  style={{
+                    marginBottom: "28px",
+                    fontFamily: "var(--font-base)",
+                    fontSize: "16px",
+                    lineHeight: 1.75,
+                    color: "rgba(255,255,255,0.68)",
+                  }}
+                >
                   You should consider a visit if you notice any of the following:
                 </p>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-10 max-w-5xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-10 max-w-5xl">
                   {warningSignals.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <span className="shrink-0 w-2 h-2 rounded-full mt-2" style={{ backgroundColor: "#1AA3B5" }} />
                       <div className="flex-1">
-                        <h3 className="!text-[17px] !font-semibold !leading-[1.45] text-white">{item.title}</h3>
-                        {item.desc ? <p className="!text-[15px] !leading-[1.65] font-normal text-[#9a9faa]">{item.desc}</p> : null}
+                        <h3 style={{ fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 600, lineHeight: 1.6, color: "#ffffff" }}>{item.title}</h3>
+                        {item.desc ? <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.7, color: "rgba(255,255,255,0.62)" }}>{item.desc}</p> : null}
                       </div>
                     </div>
                   ))}
                 </div>
 
                 <div className="mt-8">
-                  <a href="#" className="inline-flex items-center gap-3 bg-[#1AA3B5] text-navy-deep rounded-full text-sm font-bold px-8 py-4 hover:opacity-90 transition-opacity">
+                  <a
+                    href="#"
+                    className="inline-flex items-center gap-2.5 rounded-full pl-7 pr-5 py-3.5 text-[15px] font-bold hover:opacity-90 transition-opacity"
+                    style={{ backgroundColor: "#e86531", color: "#ffffff", fontFamily: "var(--font-base)" }}
+                  >
                     Schedule a Consultation
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                    </span>
                   </a>
                 </div>
               </div>
@@ -281,27 +349,48 @@ function HealthGuide() {
         {/* ═══════════ DIAGNOSTIC JOURNEY ═══════════ */}
         <section className="py-20 md:py-28 bg-white">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-14 max-w-2xl mx-auto">
-              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4 font-bold">
+            <div className="text-center mb-12 md:mb-14 max-w-3xl mx-auto">
+              <h2
+                className="text-navy-deep mb-4"
+                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.15rem, 4vw, 3rem)", fontWeight: 400, lineHeight: 1.08, letterSpacing: "-1.1px" }}
+              >
                 What to Expect at a Rheumatology Visit
               </h2>
-              <p className="text-navy-muted text-base leading-relaxed">
+              <p
+                className="text-navy-muted max-w-[700px] mx-auto"
+                style={{ fontFamily: "var(--font-base)", fontSize: "16px", lineHeight: 1.75 }}
+              >
                 Understanding the diagnostic process reduces anxiety and helps you prepare. Here's how a typical rheumatology evaluation unfolds.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 md:gap-y-[72px] gap-x-[100px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 md:gap-y-16 gap-x-10 lg:gap-x-16">
               {diagnosticJourney.map((item) => (
-                <div key={item.step} className="flex items-start gap-6">
-                  <div className="relative flex h-[74px] w-[70px] shrink-0 items-center justify-center">
+                <div key={item.step} className="flex items-start gap-5 md:gap-6">
+                  <div className="relative flex h-[70px] w-[66px] md:h-[74px] md:w-[70px] shrink-0 items-center justify-center">
                     <svg className="absolute inset-0 h-full w-full" viewBox="0 0 70 74" fill="none">
                       <path fillRule="evenodd" clipRule="evenodd" d="M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z" fill="#e0f3f5" />
                     </svg>
-                    <span className="relative z-10 text-[20px] font-bold text-navy-deep">{item.step}</span>
+                    <span
+                      className="relative z-10 text-navy-deep"
+                      style={{ fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, lineHeight: 1 }}
+                    >
+                      {item.step}
+                    </span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4] text-navy-deep">{item.title}</h3>
-                    <p className="!text-[16px] !leading-[1.6] font-normal text-navy-muted">{item.desc}</p>
+                    <h3
+                      className="text-navy-deep"
+                      style={{ fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 600, lineHeight: 1.6, marginBottom: "0.85rem" }}
+                    >
+                      {item.title}
+                    </h3>
+                    <p
+                      className="text-navy-muted"
+                      style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.7 }}
+                    >
+                      {item.desc}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -312,11 +401,14 @@ function HealthGuide() {
         {/* ═══════════ TREATMENT APPROACHES (ghost bg, 2-col grid) ═══════════ */}
         <section className="py-20 md:py-28 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-8">
+            <div className="max-w-3xl mx-auto mb-12 flex flex-col items-center justify-center text-center">
+              <h2
+                className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep"
+                style={{ marginBottom: "1.5rem" }}
+              >
                 How We Treat Rheumatic Conditions
               </h2>
-              <p className="text-navy-muted text-base leading-[1.8] max-w-2xl" style={{ marginTop: "18px" }}>
+              <p className="text-navy-muted text-base leading-[1.8] max-w-2xl mx-auto">
                 Modern rheumatology combines advanced medications with lifestyle strategies. Treatment is always personalized and based on your diagnosis, symptoms, and daily needs.
               </p>
             </div>
@@ -415,8 +507,11 @@ function HealthGuide() {
         {/* ═══════════ FAQ (light ghost bg, centered) ═══════════ */}
         <section className="py-20 md:py-28 bg-ghost">
           <div className="max-w-[800px] mx-auto px-6">
-            <div className="text-center mb-14">
-              <h2 className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep mb-4">
+            <div className="max-w-3xl mx-auto mb-12 flex flex-col items-center justify-center text-center">
+              <h2
+                className="text-[2.5rem] md:text-[3rem] leading-[1.08] tracking-[-1.2px] text-navy-deep"
+                style={{ marginBottom: "1.5rem" }}
+              >
                 Common Questions About Rheumatology
               </h2>
             </div>

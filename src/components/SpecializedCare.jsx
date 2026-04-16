@@ -114,7 +114,7 @@ function SpecializedCare() {
   }
 
   return (
-    <section className="custom-approach-section" style={{ backgroundColor: "#f0f5f5", padding: "3rem 0 5rem" }}>
+    <section className="custom-approach-section" style={{ backgroundColor: "#f0f5f5", padding: "3rem 0 5rem", fontFamily: "var(--font-base)" }}>
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-0">
 
         {/* Header */}
@@ -240,7 +240,7 @@ function SpecializedCare() {
                             <Play size={12} fill="#0f616e" className="ml-0.5" />
                           </div>
                         </div>
-                        <h5 style={{ fontSize: "14px", fontWeight: 500, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>{disease.videoTitle}</h5>
+                        <h5 style={{ fontSize: "14px", fontWeight: 500, color: "#5E5E5E", fontFamily: "var(--font-base)", lineHeight: 1.5 }}>{disease.videoTitle}</h5>
                       </a>
 
                       {disease.articleThumb && (
@@ -256,7 +256,7 @@ function SpecializedCare() {
                               <FileText size={14} className="text-[#1AA3B5]" />
                             </div>
                           </div>
-                          <h5 style={{ fontSize: "14px", fontWeight: 500, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>{disease.articleTitle}</h5>
+                          <h5 style={{ fontSize: "14px", fontWeight: 500, color: "#5E5E5E", fontFamily: "var(--font-base)", lineHeight: 1.5 }}>{disease.articleTitle}</h5>
                         </a>
                       )}
                     </div>

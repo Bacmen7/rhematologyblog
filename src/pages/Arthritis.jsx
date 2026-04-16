@@ -191,6 +191,7 @@ function Arthritis() {
                 <p className="text-[16px] leading-[1.75]" style={{ color: "#5e5e5e" }}>
                   Read on to learn about arthritis types, symptoms, causes, risk factors, and treatment options &mdash; and how early specialist care can change outcomes.
                 </p>
+
               </div>
               {/* Right -Image */}
               <div className="hidden lg:block">

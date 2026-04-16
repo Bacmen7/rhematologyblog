@@ -108,7 +108,7 @@ function WhyRheuma() {
 
         <div className="flex gap-3 overflow-x-auto px-4 pb-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
           {conditions.map((c) => (
-            <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "155px" }}>
+              <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "155px" }}>
               <div className="w-full overflow-hidden" style={{ height: "210px", borderRadius: "14px" }}>
                 <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
               </div>
@@ -166,11 +166,11 @@ function WhyRheuma() {
             style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}
           >
             {tripled.map((c, i) => (
-              <div key={`${c.name}-${i}`} className="flex-shrink-0 flex flex-col items-start cursor-pointer group" style={{ width: "272px", padding: "0 clamp(14px, 1.111vw, 16px)" }}>
+              <div key={`${c.name}-${i}`} className="flex-shrink-0 flex flex-col items-center cursor-pointer group" style={{ width: "272px", padding: "0 clamp(14px, 1.111vw, 16px)" }}>
                 <div className="w-full overflow-hidden" style={{ height: "340px", borderRadius: "20px" }}>
                   <img src={c.image} alt={c.name} className="w-full h-full object-contain" />
                 </div>
-                <p style={{ fontSize: "16px", fontWeight: 600, color: "#182439", fontFamily: "var(--font-base)", marginTop: "16px", lineHeight: 1.3 }}>
+                <p className="w-full text-center" style={{ fontSize: "16px", fontWeight: 600, color: "#182439", fontFamily: "var(--font-base)", marginTop: "16px", lineHeight: 1.3, paddingInline: "6px" }}>
                   {c.name}
                 </p>
               </div>

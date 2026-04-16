@@ -503,6 +503,19 @@ function KnowledgeHub() {
             </div>
           </div>
         </section>
+        <div style={{ position: "relative", marginTop: "-1px", lineHeight: 0 }}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1200 120"
+            preserveAspectRatio="none"
+            style={{ display: "block", width: "100%", height: "56px" }}
+          >
+            <path
+              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+              fill="#ffffff"
+            />
+          </svg>
+        </div>
 
 
         {/* ═══════════ 2 · WHAT IS RHEUMATOLOGY ═══════════ */}
@@ -511,13 +524,13 @@ function KnowledgeHub() {
 
             {/* Top: Heading + Description -left aligned */}
             <div className="text-left" style={{ marginBottom: "clamp(48px, 5vw, 80px)" }}>
-              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1, letterSpacing: "-1px", color: "#0f616e", marginBottom: "24px" }}>
+              <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.85rem, 3.6vw, 2.9rem)", lineHeight: 1.12, letterSpacing: "-0.6px", color: "#0f616e", marginBottom: "20px" }}>
                 What Is Rheumatology?
               </h2>
-              <p style={{ fontSize: "18px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "20px" }}>
+              <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "18px" }}>
                 Rheumatology is a branch of medicine that focuses on conditions affecting your joints, muscles, and bones. These include everyday problems like joint, bone or muscle pain and stiffness. It also comprises conditions where the body's immune system mistakenly attacks its own tissues.
               </p>
-              <p style={{ fontSize: "18px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
+              <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
                 A doctor who specialises in this field is called a rheumatologist. They are trained to diagnose, treat, and manage conditions such as Rheumatoid Arthritis, Gout, Lupus, Osteoporosis, and Ankylosing Spondylitis, among others.
               </p>
             </div>
@@ -527,10 +540,10 @@ function KnowledgeHub() {
 
               {/* Card 1 -When Should You See */}
               <div style={{ backgroundColor: "#e8f4f8", borderRadius: "16px", padding: "clamp(32px, 3vw, 48px)", transition: "box-shadow 0.3s ease" }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0px 36px 60px 0px rgba(0,0,0,0.06)"} onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)", color: "#0f616e", lineHeight: 1.2, marginBottom: "20px" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.2rem, 2.1vw, 1.55rem)", color: "#0f616e", lineHeight: 1.22, marginBottom: "18px" }}>
                   When Should You See a Rheumatologist?
                 </h3>
-                <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "24px" }}>
+                <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "22px" }}>
                   You should consider a visit if you notice any of the following:
                 </p>
                 <div className="flex flex-col" style={{ gap: "20px" }}>
@@ -542,7 +555,7 @@ function KnowledgeHub() {
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-4">
                       <div className="shrink-0 mt-1" style={{ width: "8px", height: "8px", borderRadius: "50%", backgroundColor: "#1AA3B5" }} />
-                      <p style={{ fontSize: "16px", lineHeight: 1.6, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>{item}</p>
+                      <p style={{ fontSize: "15px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>{item}</p>
                     </div>
                   ))}
                 </div>
@@ -550,13 +563,13 @@ function KnowledgeHub() {
 
               {/* Card 2 -Why Early Care Matters */}
               <div style={{ backgroundColor: "#e8f4f8", borderRadius: "16px", padding: "clamp(32px, 3vw, 48px)", transition: "box-shadow 0.3s ease" }} onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0px 36px 60px 0px rgba(0,0,0,0.06)"} onMouseLeave={(e) => e.currentTarget.style.boxShadow = "none"}>
-                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.3rem, 2.5vw, 1.75rem)", color: "#0f616e", lineHeight: 1.2, marginBottom: "20px" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.2rem, 2.1vw, 1.55rem)", color: "#0f616e", lineHeight: 1.22, marginBottom: "18px" }}>
                   Why Early Care Matters
                 </h3>
-                <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "24px" }}>
+                <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)", marginBottom: "22px" }}>
                   Many joint and immune conditions get worse over time if left untreated. Seeing a specialist early can prevent permanent joint damage, help you stay active, and improve your quality of life significantly.
                 </p>
-                <p style={{ fontSize: "16px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
+                <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
                   The good news is that with the right diagnosis and treatment plan, most patients are able to manage their condition well and continue living a normal, fulfilling life.
                 </p>
               </div>
@@ -707,17 +720,17 @@ function KnowledgeHub() {
                 <button
                   key={c.key}
                   onClick={() => setActiveCondition(activeCondition === c.key ? null : c.key)}
-                  className={`flex gap-5 items-center p-6 border-none cursor-pointer text-left transition-colors ${
+                  className={`flex min-h-[124px] gap-6 items-center px-7 py-7 md:min-h-[138px] md:px-8 md:py-8 border-none cursor-pointer text-left transition-colors ${
                     activeCondition === c.key ? "bg-white" : "bg-[#e0f3f5] hover:bg-[#d4ebf8]"
                   }`}
                   style={{ fontFamily: "var(--font-base)" }}
                 >
-                  <BookIcon size={28} color="#0f616e" />
+                  <BookIcon size={30} color="#0f616e" />
                   <div className="flex-1">
-                    <div className="text-lg font-bold text-navy-deep mb-0.5">{c.name}</div>
-                    <div className="text-xs text-navy-muted">{c.typeLabel}</div>
+                    <div className="text-[1.15rem] font-bold leading-snug text-navy-deep mb-1">{c.name}</div>
+                    <div className="text-[13px] text-navy-muted">{c.typeLabel}</div>
                   </div>
-                  <div className="w-9 h-9 rounded-full bg-navy-deep text-white flex items-center justify-center shrink-0" style={{ background: "#0f616e" }}>
+                  <div className="w-10 h-10 rounded-full bg-navy-deep text-white flex items-center justify-center shrink-0" style={{ background: "#0f616e" }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
                   </div>
                 </button>

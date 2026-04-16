@@ -1,7 +1,7 @@
 function StatsBar() {
   return (
     <section className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center md:items-start justify-between gap-10 md:gap-[60px]">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] items-start gap-10 md:gap-[60px]">
         {/* Left -Heading */}
         <div className="flex-[1.5] text-center md:text-left">
           <h2
@@ -19,10 +19,10 @@ function StatsBar() {
         </div>
 
         {/* Stat 1 */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="text-center md:text-left self-start pt-1">
           <p
-            className="leading-none mb-3 text-navy-deep font-bold"
-            style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
+            className="leading-none mb-3 text-navy-deep font-semibold"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(48px, 6vw, 84px)", fontWeight: 500 }}
           >
             90%+
           </p>
@@ -33,10 +33,10 @@ function StatsBar() {
         </div>
 
         {/* Stat 2 */}
-        <div className="flex-1 text-center md:text-left">
+        <div className="text-center md:text-left self-start pt-1">
           <p
-            className="leading-none mb-3 text-navy-deep font-bold"
-            style={{ fontSize: "clamp(40px, 5vw, 72px)" }}
+            className="leading-none mb-3 text-navy-deep font-semibold"
+            style={{ fontFamily: "var(--font-display)", fontSize: "clamp(48px, 6vw, 84px)", fontWeight: 500 }}
           >
             86%
           </p>
