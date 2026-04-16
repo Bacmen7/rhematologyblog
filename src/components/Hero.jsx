@@ -7,7 +7,7 @@ const slides = [
     id: 0,
     heading: (
       <>
-        Struggling with Pain in Your <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>Joints</span>, <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>Bones</span>, or <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>Muscles</span>?
+        Struggling with Pain in Your <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>Joints</span>, <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>Bones</span>, or <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>Muscles</span>?
       </>
     ),
     image: "/images/hero-slide-1.png",
@@ -16,7 +16,7 @@ const slides = [
     id: 1,
     heading: (
       <>
-        Your path to <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>pain-free</span> living starts <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>here</span>
+        Your path to <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>pain-free</span> living starts <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>here</span>
       </>
     ),
     image: "/images/hero-slide-2.png",
@@ -25,7 +25,7 @@ const slides = [
     id: 2,
     heading: (
       <>
-        Advanced care for <span style={{ fontWeight: 700, fontFamily: "var(--font-display)", fontSize: "0.85em" }}>autoimmune</span> conditions
+        Advanced care for <span style={{ fontWeight: 700, fontFamily: "var(--font-base)", fontSize: "0.85em" }}>autoimmune</span> conditions
       </>
     ),
     image: "/images/hero-slide-3.png",
