@@ -101,7 +101,7 @@ function WhyRheuma() {
             Expert care for all rheumatic symptoms and conditions
           </h2>
           <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
-            From joint pain to complex autoimmune disorders, we diagnose and treat{" "}
+            From osteoarthritis to complex autoimmune disorders, we diagnose and treat{" "}
             <strong style={{ color: "#ffffff", background: "#1AA3B5", padding: "2px 8px", borderRadius: "4px", fontWeight: 600 }}>rheumatic and autoimmune conditions</strong>.
           </p>
         </div>
@@ -130,7 +130,7 @@ function WhyRheuma() {
             symptoms and conditions
           </h2>
           <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", maxWidth: "600px", margin: "0 auto" }}>
-            From joint pain to complex autoimmune disorders, we diagnose and treat{" "}
+            From osteoarthritis to complex autoimmune disorders, we diagnose and treat{" "}
             <strong style={{ color: "#ffffff", background: "#1AA3B5", padding: "2px 8px", borderRadius: "4px", fontWeight: 600 }}>rheumatic and autoimmune conditions</strong>.
           </p>
         </div>

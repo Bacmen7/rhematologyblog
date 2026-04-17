@@ -53,7 +53,7 @@ function CtaBanner() {
                 <a
                   href="/book-appointment"
                   className="inline-flex min-h-[56px] items-center justify-center gap-2.5 rounded-full border border-transparent bg-primary px-8 py-4 text-[15px] font-semibold text-white no-underline transition-all duration-200 hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f616e] active:scale-[0.99]"
-                  style={{ fontFamily: "var(--font-base)" }}
+                  style={{ fontFamily: "var(--font-base)", backgroundColor: "#e86531" }}
                 >
                   Schedule Specialist Appointment
                   <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">

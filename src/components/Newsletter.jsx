@@ -61,7 +61,7 @@ function Newsletter({ variant = "light" }) {
           <button
             type="submit"
             className="w-full sm:w-1/3 px-6 py-3.5 md:py-4 rounded-full text-sm md:text-base font-medium hover:opacity-90 transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
-            style={{ backgroundColor: "#1AA3B5", color: "#ffffff" }}
+            style={{ backgroundColor: "#e86531", color: "#ffffff" }}
           >
             Subscribe
             <svg
