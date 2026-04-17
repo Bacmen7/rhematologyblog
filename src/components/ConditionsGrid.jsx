@@ -42,7 +42,7 @@ function ConditionsGrid() {
             Expert care for all rheumatic symptoms and conditions
           </h2>
           <p className="text-navy-muted text-base leading-relaxed">
-            From joint pain to complex autoimmune disorders, we diagnose and treat hundreds of rheumatic conditions.
+            From osteoarthritis to complex autoimmune disorders, we diagnose and treat hundreds of rheumatic conditions.
           </p>
         </div>
 

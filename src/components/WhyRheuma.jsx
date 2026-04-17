@@ -14,7 +14,7 @@ const conditions = [
     image: "/rheumatic/Lupus.png",
   },
   {
-    name: "Joint Pain",
+    name: "Osteoarthritis",
     image: "/rheumatic/joint_pain.png",
   },
   {
