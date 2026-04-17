@@ -1,25 +1,28 @@
 function StatsBar() {
   return (
     <section className="py-16 md:py-24">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] items-start gap-10 md:gap-[60px]">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] items-start gap-12 md:gap-[60px]">
         {/* Left -Heading */}
         <div className="flex-[1.5] text-center md:text-left">
           <h2
-            className="leading-[1.1] font-normal mb-5 text-navy-deep"
-            style={{ fontFamily: "var(--font-display)", fontSize: "48px" }}
+            className="leading-[1.1] font-normal mb-5 text-navy-deep text-[3rem] sm:text-[3.25rem]"
+            style={{ fontFamily: "var(--font-display)" }}
           >
             Clinically Proven
             <br />
             Rheumatology Care
           </h2>
-          <p className="text-[15px] leading-[1.7] text-navy-muted max-w-md" style={{ marginTop: "40px", marginBottom: "32px" }}>
+          <p
+            className="text-[15px] leading-[1.7] text-navy-muted max-w-md mx-auto md:mx-0"
+            style={{ marginTop: "40px", marginBottom: "32px" }}
+          >
             Our approach focuses on early diagnosis, personalized treatment plans, and modern therapies to control inflammation, prevent joint damage, and improve long-term quality of life.
           </p>
 
         </div>
 
         {/* Stat 1 */}
-        <div className="text-center md:text-left self-start pt-1">
+        <div className="self-start pt-1 flex flex-col items-center text-center md:items-start md:text-left">
           <p
             className="leading-none mb-3 text-navy-deep font-semibold"
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(48px, 6vw, 84px)", fontWeight: 500 }}
@@ -33,7 +36,7 @@ function StatsBar() {
         </div>
 
         {/* Stat 2 */}
-        <div className="text-center md:text-left self-start pt-1">
+        <div className="self-start pt-1 flex flex-col items-center text-center md:items-start md:text-left">
           <p
             className="leading-none mb-3 text-navy-deep font-semibold"
             style={{ fontFamily: "var(--font-display)", fontSize: "clamp(48px, 6vw, 84px)", fontWeight: 500 }}

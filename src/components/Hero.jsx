@@ -120,16 +120,26 @@ function Hero() {
         {/* Right Edge: Image Section */}
         <div className="absolute bottom-0 -right-4 sm:-right-2 md:right-4 lg:right-8 w-[240px] h-[280px] sm:w-[300px] sm:h-[350px] md:w-[380px] md:h-[450px] lg:w-[400px] lg:h-[480px] z-10 overflow-hidden pointer-events-none">
           {slides.map((slide, index) => (
-            <img
+            <div
               key={`img-${slide.id}`}
-              src={slide.image}
-              alt={`Slide ${index + 1}`}
               className={`absolute bottom-0 right-0 w-full h-full object-contain object-bottom transition-all duration-[800ms] ease-out ${
                 index === currentSlide
                   ? "opacity-100 translate-x-0"
                   : "opacity-0 translate-x-12 pointer-events-none"
               }`}
-            />
+            >
+              <img
+                src="/images/Ring.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute left-1/2 top-[13%] h-[152%] w-[176%] -translate-x-1/2 object-contain opacity-90"
+              />
+              <img
+                src={slide.image}
+                alt={`Slide ${index + 1}`}
+                className="absolute bottom-0 right-0 z-10 w-full h-full object-contain object-bottom"
+              />
+            </div>
           ))}
         </div>
 

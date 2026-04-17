@@ -1,8 +1,7 @@
 import { useEffect } from "react"
-import { Link } from "react-router-dom"
-import { Calendar } from "lucide-react"
 import Header from "../components/Header"
 import Newsletter from "../components/Newsletter"
+import GoutNewsletter from "../components/GoutNewsletter"
 import BriefingFooter from "../components/BriefingFooter"
 
 /* ─────────────────────────────────────────────
@@ -10,19 +9,19 @@ import BriefingFooter from "../components/BriefingFooter"
    ───────────────────────────────────────────── */
 
 const symptoms = [
-  "Warmth, pain, and swollen joints",
-  "Morning stiffness that lasts for more than one hour",
-  "Swelling and tenderness in small joints, such as the wrists and toes",
-  "Low-grade fever, weakness, and feeling tired",
+  "Joint pain, swelling, and warmth, especially in the hands, wrists, and feet",
+  "Morning stiffness that lasts longer than 30 to 60 minutes",
+  "The same joints on both sides of the body getting affected together",
+  "Tiredness, weakness, or low-grade fever along with joint symptoms",
 ]
 
 
 const riskFactors = [
-  { factor: "Familial Genetic History", detail: "You have a higher chance of getting affected if Rheumatoid arthritis is present within your close relatives (15% chance)." },
-  { factor: "Sex", detail: "Women are affected 3 times more than men." },
+  { factor: "Family History", detail: "Your risk is higher if rheumatoid arthritis or other autoimmune diseases run in your family." },
+  { factor: "Sex", detail: "Women are affected more often than men." },
   { factor: "Smoking", detail: "Smoking doubles the risk of RA." },
-  { factor: "Obesity", detail: "You have a higher chance of Rheumatoid arthritis being affected if you are obese." },
-  { factor: "Post-infections", detail: "Infections such as Chikungunya can increase the risk." },
+  { factor: "Obesity", detail: "Excess body weight can increase inflammation and may raise the risk of RA." },
+  { factor: "Post-infections", detail: "Some infections may trigger joint symptoms in people who are already vulnerable." },
 ]
 
 const diagnosisBloodTests = [
@@ -38,18 +37,18 @@ const diagnosisImaging = [
 ]
 
 const medications = [
-  { title: "NSAIDs and Corticosteroids", desc: "They are used to relieve short-term symptoms. But neither of them stops disease progression." },
-  { title: "DMARDs", desc: "They alter our body's immune response. Methotrexate is the most common and widely used in India. Hydroxychloroquine, Sulfasalazine, and Leflunomide are the alternative drugs used." },
-  { title: "Biologic DMARDs", desc: "When traditional DMARDs fail, their modified forms are used. It includes drugs like TNF inhibitors, IL-6 inhibitors, and Rituximab." },
-  { title: "JAK Inhibitors", desc: "They can be used if the biologic DMARDs were found not to work in patients." },
+  { title: "NSAIDs and Corticosteroids", desc: "These help with pain, stiffness, and swelling in the short term, but they do not stop long-term joint damage." },
+  { title: "DMARDs", desc: "These are the main medicines used to control RA. Methotrexate is the most common, while hydroxychloroquine, sulfasalazine, and leflunomide are also used." },
+  { title: "Biologic DMARDs", desc: "These are advanced medicines used when regular DMARDs are not enough. Examples include TNF inhibitors, IL-6 inhibitors, and rituximab." },
+  { title: "JAK Inhibitors", desc: "These are targeted tablets that may be used when other advanced treatments are not working well enough." },
 ]
 
 const nonMedApproaches = [
-  { title: "Physiotherapy", desc: "Helps to improve the movements of the joints" },
-  { title: "Occupational Therapy", desc: "Helps to protect joints during daily activities" },
-  { title: "Personalised Yoga", desc: "Chance of improvement from fatigue and pain" },
-  { title: "Smoking Cessation", desc: "In smoker patients, to achieve a positive response" },
-  { title: "Heat and Cold Therapy", desc: "Can provide relief from stiffness and acute swelling" },
+  { title: "Physiotherapy", desc: "Helps improve movement, flexibility, and muscle support around painful joints." },
+  { title: "Occupational Therapy", desc: "Teaches joint-protection techniques for work, home, and daily tasks." },
+  { title: "Personalised Yoga", desc: "May help some people with stiffness, fatigue, and general wellbeing." },
+  { title: "Smoking Cessation", desc: "Stopping smoking improves treatment response and lowers ongoing inflammation." },
+  { title: "Heat and Cold Therapy", desc: "Can reduce stiffness, soothe pain, and calm sudden swelling." },
 ]
 
 const faqs = [
@@ -86,10 +85,15 @@ function ArthritisGuide() {
 
         {/* ═══════════ HERO (Gout-style) ═══════════ */}
         <header>
-          {/* Top Section */}
           <div style={{ backgroundColor: "#0f616e" }} className="text-white">
             <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] pt-20 pb-12 flex flex-col items-start">
-              {/* Title */}
+              <span
+                className="inline-block"
+                style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "24px" }}
+              >
+                Complete Patient Guide
+              </span>
+
               <h1
                 className="mb-4"
                 style={{
@@ -102,18 +106,25 @@ function ArthritisGuide() {
                 Understanding Rheumatoid Arthritis
               </h1>
 
-              {/* Appointment Link */}
-              <a
-                href="#"
-                className="inline-flex items-center text-white text-[15px] font-semibold hover:opacity-80 transition-opacity hover:underline"
-              >
-                <Calendar className="w-[22px] h-[22px] mr-3" strokeWidth={1.5} />
-                Request an Appointment
-              </a>
+              <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
+                <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+              </div>
+
+              <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "2px" }}>
+                <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "#ffffff" }}>
+                  Written by <strong className="font-bold underline underline-offset-2 decoration-1">Dr. Raghavendra H</strong>
+                </span>
+                <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.5)" }}>
+                  Medically reviewed by <strong className="font-bold underline underline-offset-2 decoration-1" style={{ color: "#ffffff" }}>Dr. Raghavendra H</strong>
+                </span>
+                <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.45)" }}>
+                  Published: March 2026
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Navigation Tabs */}
           <div style={{ backgroundColor: "#0a4f5a" }} className="border-t border-white/20">
             <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] py-6 flex justify-start gap-5 overflow-x-auto">
               {[
@@ -164,16 +175,16 @@ function ArthritisGuide() {
 
                 {/* Intro */}
                 <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.5rem" }}>
-                  Have you ever experienced weakness or tiredness in your joints that makes it difficult to perform daily tasks? Do you often normalise these symptoms and ignore them? If you have experienced anything similar, this guide covers everything you need to know.
+                  Rheumatoid arthritis can start quietly with joint pain, swelling, stiffness, and unusual tiredness. Many people ignore these early symptoms and assume it is just overuse, ageing, or temporary pain.
                 </p>
                 <p className="text-[16px] leading-[1.8] text-navy-muted" style={{ marginBottom: "1.25rem" }}>
-                  Rheumatoid Arthritis is a long-term health condition in which the body&apos;s immune system fights against itself. As a result, you often experience pain, swelling, and, when left untreated, long-lasting damage. The exact cause is unknown.
+                  Rheumatoid arthritis is a long-term autoimmune condition. That means the immune system attacks healthy joints by mistake, causing inflammation, pain, swelling, and joint damage if treatment is delayed.
                 </p>
                 <p className="text-[16px] leading-[1.8] text-navy-muted mb-5">
-                  Rheumatoid arthritis is becoming increasingly common in India. It especially affects women between 40 and 60 years old. Many people think of it as regular joint pain and avoid a rheumatologist consultation, which can lead to serious health issues.
+                  It is more common in women, but it can affect adults of any age. The earlier RA is recognised, the better the chance of controlling symptoms and protecting the joints.
                 </p>
                 <p className="text-[16px] leading-[1.8] text-navy-muted mb-10">
-                  With early diagnosis and proper treatment, RA can be controlled effectively. This guide will help you understand all about Rheumatoid arthritis (RA), its various causes, how it presents, how doctors diagnose cases, and the available treatment options.
+                  This guide explains what rheumatoid arthritis is, its common symptoms, likely causes, how doctors diagnose it, and which treatment options are usually recommended.
                 </p>
 
                 {/* ── WHAT IS RA ── */}
@@ -185,18 +196,18 @@ function ArthritisGuide() {
                     What is Rheumatoid Arthritis?
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.25rem" }}>
-                    Joints are where two bones meet, such as your knuckles, knees, or wrists. Inside each joint is a thin lining called the synovium. The synovium produces fluid that helps your joints move smoothly and stay healthy.
+                    Rheumatoid arthritis, or RA, is an autoimmune disease that mainly affects the joints. It causes the lining of the joints to become inflamed, which leads to pain, swelling, and stiffness.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.25rem" }}>
-                    In rheumatoid arthritis (RA), your body becomes confused and starts attacking its own joints rather than protecting them. This is called an autoimmune condition. It often affects joints on both sides of your body, like both hands or both feet at the same time. Rheumatoid arthritis can also affect other parts of your body, like your skin, eyes, lungs, heart, and blood vessels.
+                    RA often affects the same joints on both sides of the body, such as both wrists, both hands, or both feet. In some people, it can also affect the eyes, lungs, skin, heart, or blood vessels.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep">
-                    Rheumatoid arthritis is different from osteoarthritis, which happens due to wear and tear as people age. Osteoarthritis often affects just one side of the body and does not cause tiredness like RA does.
+                    RA is different from osteoarthritis. Osteoarthritis is mostly a wear-and-tear condition, while RA is driven by the immune system and often causes tiredness and prolonged morning stiffness as well.
                   </p>
                 </div>
 
                 {/* ── SYMPTOMS ── */}
-                <div id="symptoms" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="symptoms" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
@@ -221,7 +232,7 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── MANAGEMENT ── */}
-                <div id="stages" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="stages" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
@@ -229,20 +240,20 @@ function ArthritisGuide() {
                     Management of Rheumatoid Arthritis
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.5rem" }}>
-                    Early and consistent management is key to controlling rheumatoid arthritis and preventing long-term joint damage. A combination of medical treatment and lifestyle changes can help most patients lead active lives.
+                    Good RA care starts early and stays consistent. The goal is to control inflammation quickly, reduce pain, and prevent permanent damage to the joints.
                   </p>
 
                   {/* Note */}
                   <div className="flex items-start gap-3 p-4" style={{ backgroundColor: "#fff3ec", borderRadius: "10px" }}>
                     <span className="material-symbols-outlined text-[20px] shrink-0 mt-0.5" style={{ color: "#fd956a" }}>info</span>
                     <p className="text-[14px] leading-[1.65] text-navy-deep">
-                      <strong className="font-semibold">Note:</strong> Early treatment can stop disease progression. Not everyone progresses to severe stages.
+                      <strong className="font-semibold">Note:</strong> Early treatment gives the best chance of avoiding long-term joint damage and disability.
                     </p>
                   </div>
                 </div>
 
                 {/* ── CAUSES & RISK FACTORS ── */}
-                <div id="causes" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="causes" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
@@ -250,11 +261,11 @@ function ArthritisGuide() {
                     What are the causes of Rheumatoid Arthritis?
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-5">
-                    The exact cause of Rheumatoid arthritis is unknown. Researchers think it&apos;s caused by a combination of{" "}
-                    <strong className="font-bold">genetics, hormones, and environmental factors</strong>.
+                    Doctors do not know one single cause of rheumatoid arthritis. It is thought to happen because of a mix of{" "}
+                    <strong className="font-bold">genetics, immune system changes, hormones, and environmental triggers</strong>.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-8">
-                    Your immune system normally protects your body from infections. In rheumatoid arthritis, it gets confused and starts attacking your own joints instead. Certain factors, like smoking or infections, may trigger this response.
+                    Your immune system normally protects you from infection. In RA, it starts attacking your own joints instead. Smoking, infections, and other triggers may increase the chance of this happening.
                   </p>
 
                   <h3
@@ -273,7 +284,7 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── DIAGNOSIS ── */}
-                <div id="diagnosis" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="diagnosis" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
@@ -281,13 +292,13 @@ function ArthritisGuide() {
                     How does a doctor diagnose Rheumatoid Arthritis?
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.25rem" }}>
-                    Your doctor may refer you to a rheumatologist for the diagnosis of Rheumatoid arthritis. The diagnosis is based on several factors. Your doctor performs a complete physical examination, multiple blood tests, and X-rays to diagnose.
+                    Rheumatoid arthritis is usually diagnosed by a rheumatologist. Diagnosis is based on your symptoms, joint examination, blood tests, and imaging.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.25rem" }}>
-                    A detailed history about pain, swelling, the duration it will last, and any other medical history will be taken. The doctor will check your joint movement, colour changes, and for any palpable firm swellings.
+                    Your doctor will ask when the pain started, which joints are affected, how long morning stiffness lasts, and whether symptoms are getting worse. They will also check for swelling, tenderness, warmth, and reduced movement in the joints.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "2.5rem" }}>
-                    There is no single test that confirms Rheumatoid Arthritis. Rheumatologists recommend blood and imaging tests to reach a final diagnosis.
+                    There is no single test that confirms RA on its own. Doctors combine the clinical picture with blood reports and scans to reach the diagnosis.
                   </p>
 
                   {/* Blood tests + Imaging -two columns */}
@@ -298,7 +309,7 @@ function ArthritisGuide() {
                         Main blood tests include
                       </h3>
                       <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "0.75rem" }}>
-                        Rheumatologists usually recommend blood tests such as &ndash;
+                        Common blood tests used while assessing RA include:
                       </p>
                       <ul className="space-y-2" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
                         {diagnosisBloodTests.map((test, i) => (
@@ -313,7 +324,7 @@ function ArthritisGuide() {
                         Imaging test
                       </h3>
                       <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "0.75rem" }}>
-                        The various imaging techniques help to understand the disease progression (how bad the disease has progressed).
+                        Imaging helps doctors look for joint inflammation, early damage, and disease progression.
                       </p>
                       <ul className="space-y-2" style={{ listStyleType: "disc", paddingLeft: "1.5rem" }}>
                         {diagnosisImaging.map((test, i) => (
@@ -325,19 +336,63 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── TREATMENT ── */}
-                <div id="treatment" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <hr style={{ border: "none", borderTop: "1px solid #dadfe8", marginTop: "3rem", marginBottom: "0" }} />
+                <div style={{ paddingTop: "3rem", paddingBottom: "2.5rem" }}>
+                  <h2
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(2rem, 4vw, 2.75rem)",
+                      fontWeight: 400,
+                      lineHeight: 1.15,
+                      letterSpacing: "-0.5px",
+                      color: "#0f616e",
+                      marginBottom: "2rem",
+                    }}
+                  >
+                    Key factors to consider when managing RA
+                  </h2>
+                  <p className="text-[16px] leading-[1.8]" style={{ color: "#5e5e5e", marginBottom: "1.75rem" }}>
+                    Effective rheumatoid arthritis care works best when a few important pieces come together:
+                  </p>
+                  <ul style={{ listStyleType: "disc", paddingLeft: "1.5rem", marginBottom: "2rem" }}>
+                    {[
+                      "Early diagnosis before joint damage becomes permanent",
+                      "Regular monitoring of symptoms, swelling, and inflammatory markers",
+                      "A treatment plan built around disease control, not just short-term pain relief",
+                      "Consistent use of medicines along with physiotherapy and daily joint protection",
+                      "Lifestyle support, including smoking cessation, weight management, and balanced nutrition",
+                      "Follow-up with a rheumatologist so treatment can be adjusted quickly when needed",
+                    ].map((item, i) => (
+                      <li key={i} style={{ color: "#182439", fontSize: "16px", lineHeight: 1.8, marginBottom: "0.25rem", fontWeight: 500 }}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="text-[16px] leading-[1.8]" style={{ color: "#5e5e5e" }}>
+                    At RheumaCare, our goal is to help patients move toward lower inflammation, fewer flares, better daily function, and long-term joint protection through evidence-based care.
+                  </p>
+                </div>
+                <hr style={{ border: "none", borderTop: "1px solid #dadfe8", marginBottom: "2.5rem" }} />
+
+                <div id="treatment" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
                   >
-                    What are the treatment options available for Rheumatoid Arthritis?
+                    What are the treatment options available for{" "}
+                    <span
+                      style={{ textDecoration: "underline", textDecorationColor: "#1AA3B5", textUnderlineOffset: "3px", textDecorationThickness: "2px" }}
+                    >
+                      Rheumatoid Arthritis
+                    </span>
+                    ?
                   </h2>
 
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "1.5rem" }}>
-                    The main aim of treatment is to reduce the symptoms. Once treatment begins, you will be evaluated every 3&ndash;6 months to monitor the disease&apos;s progression. If it does not improve, your doctor will increase the medication dosage or implement other methodologies.
+                    The aim of treatment is not only to reduce pain and swelling, but also to stop inflammation from damaging the joints. Most patients need regular follow-up so treatment can be adjusted if symptoms are still active.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "2.5rem" }}>
-                    Rheumatologists usually begin the treatment with medications and other non-medicated options. If the disease progression is not improved, surgery would be the last option.
+                    Treatment usually includes medicines along with exercise, therapy, and lifestyle changes. Surgery is considered only in advanced cases when joints are badly damaged or function is severely limited.
                   </p>
 
                   {/* Medications */}
@@ -377,7 +432,7 @@ function ArthritisGuide() {
                 </div>
 
                 {/* ── MANAGING RA ── */}
-                <div id="managing-ra" style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="managing-ra" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}
@@ -385,7 +440,7 @@ function ArthritisGuide() {
                     Managing Rheumatoid Arthritis on a Day-to-Day Basis
                   </h2>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-10">
-                    With appropriate treatment and supportive therapy, many people are leading an active life despite the disease having a lifelong predilection.
+                    Many people with RA live active and productive lives when treatment is started early and followed regularly. Daily self-care also plays an important role.
                   </p>
 
                   {/* Diet */}
@@ -393,10 +448,10 @@ function ArthritisGuide() {
                     Importance of Diet and Nutrition
                   </h3>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-4">
-                    The diet plays an important role in our daily lives. In Rheumatoid arthritis, it plays a major role in keeping our body healthy, without any nutrient restrictions. Several anti-inflammatory foods, such as turmeric, ginger, black pepper, amla, flax seeds, spinach, and fenugreek, should be incorporated into daily meals.
+                    There is no single RA diet, but balanced nutrition matters. A diet rich in fruits, vegetables, protein, whole grains, and anti-inflammatory foods may support overall health and energy.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-4">
-                    Vegetarian options such as dal, paneer, curd, and soya should be incorporated to meet protein requirements.
+                    If you are vegetarian, foods like dal, curd, paneer, and soya can help meet protein needs. Weight control and avoiding smoking are also important parts of long-term RA care.
                   </p>
 
                   {/* Ayurvedic */}
@@ -404,12 +459,12 @@ function ArthritisGuide() {
                     Ayurvedic evidence in Rheumatoid Arthritis
                   </h3>
                   <p className="text-[17px] leading-[1.8] text-navy-deep mb-6">
-                    Several ayurvedic products have been studied for their efficacy. Ashwagandha, Shallaki/Boswellia, Turmeric/Curcumin, and Panchakarma are indicated by Ayurveda. These products can be used as an adjunct therapy along with the use of DMARDs. Possible drug interactions were also noticed. Hence, it is safe to proceed with a Rheumatologist&apos;s opinion.
+                    Some people explore Ayurveda or supplements alongside standard treatment. These should never replace DMARDs, and they should only be used after checking with your rheumatologist because interactions and side effects are possible.
                   </p>
                 </div>
 
                 {/* ── EARLY RESPONSE ── */}
-                <div style={{ marginBottom: "3rem", paddingTop: "2rem", borderTop: "1px solid #dadfe8" }}>
+                <div style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
                   <h3
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.375rem", fontWeight: 700, lineHeight: 1.25, letterSpacing: "-0.2px", marginBottom: "1rem", textTransform: "uppercase" }}
@@ -417,24 +472,28 @@ function ArthritisGuide() {
                     Early Response is the Key
                   </h3>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginBottom: "2rem" }}>
-                    When symptoms like joint stiffness on either side, generalised severe fatigue, and abnormal joint pain occur, it is always better to consult a rheumatologist.
+                    If you notice persistent joint stiffness, swelling on both sides of the body, or unusual fatigue, it is better to see a rheumatologist sooner rather than later.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep" style={{ marginTop: "2rem", marginBottom: "2rem" }}>
-                    The initial three-month duration is the window during which the damage is processed. If we take the initiative to treat early, we can make a difference for the rest of our lives.
+                    The first few months after symptoms begin are especially important. Early treatment can make a major difference to long-term joint health, pain control, and quality of life.
                   </p>
                   <p className="text-[17px] leading-[1.8] text-navy-deep font-semibold" style={{ marginTop: "2rem" }}>
-                    If you are experiencing persistent joint pain, stiffness, or swelling, don&apos;t ignore it. Early evaluation by a rheumatologist can make a significant difference in preventing long-term damage.
+                    If you are living with ongoing joint pain, stiffness, or swelling, do not ignore it. Early evaluation can help prevent long-term damage.
                   </p>
                 </div>
+
+                <GoutNewsletter />
+
+                <hr className="border-none border-t border-[#dcdcdc] mt-12" />
 
               </div>
 
               {/* ── Right: TOC + CTA Sidebar ── */}
-              <div className="hidden lg:block w-[280px] shrink-0">
+              <div className="hidden lg:block w-[320px] shrink-0">
                 <div className="sticky top-[88px]">
 
                   {/* Table of Contents */}
-                  <div className="bg-[#edf2fc] py-5 px-6 mb-6 shadow-[0_4px_24px_rgba(24,36,57,0.07)]" style={{ borderRadius: 0 }}>
+                  <div className="bg-[#edf2fc] py-5 px-6 mb-6" style={{ borderRadius: 0 }}>
                     <h3
                       className="text-navy-deep mb-3"
                       style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 400, lineHeight: 1.2 }}
@@ -445,7 +504,7 @@ function ArthritisGuide() {
                       {[
                         { id: "what-is-ra", label: "What is RA?" },
                         { id: "symptoms", label: "Symptoms" },
-                        { id: "stages", label: "Stages of RA" },
+                        { id: "stages", label: "Management" },
                         { id: "causes", label: "Causes & Risk Factors" },
                         { id: "diagnosis", label: "Diagnosis" },
                         { id: "treatment", label: "Treatment" },
@@ -541,7 +600,7 @@ function ArthritisGuide() {
               <div className="flex flex-col-reverse md:flex-row items-stretch gap-10 md:gap-16">
                 <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">
                   <h2
-                    className="leading-[1.1] font-normal mb-10 md:mb-14 text-center md:text-left"
+                    className="leading-[1.1] font-normal mb-12 md:mb-16 text-center md:text-left"
                     style={{
                       fontFamily: "var(--font-display)",
                       fontSize: "clamp(36px, 5.5vw, 68px)",
@@ -551,7 +610,7 @@ function ArthritisGuide() {
                   >
                     Ready to get started?
                   </h2>
-                  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-6">
+                  <div className="flex flex-col sm:flex-row items-center sm:items-center gap-7 md:gap-6">
                     <a
                       href="#"
                       className="inline-block rounded-full font-semibold text-[15px] transition-all hover:opacity-90 text-center"
@@ -563,8 +622,8 @@ function ArthritisGuide() {
                       <span className="text-[15px] text-gray-100 opacity-90">or</span>
                       <a
                         href="#"
-                        className="text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-primary transition-colors"
-                        style={{ color: "#ffffff" }}
+                        className="text-[15px] font-semibold underline underline-offset-[6px] hover:opacity-80 transition-opacity"
+                        style={{ color: "#ffffff", textDecorationThickness: "2px" }}
                       >
                         let&apos;s get in touch
                       </a>

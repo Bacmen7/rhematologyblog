@@ -64,111 +64,47 @@ function Arthritis() {
       <Header />
       <main>
 
-        {/* ═══════════ HERO (Oshi-style dark) ═══════════ */}
-        <section className="relative" style={{ backgroundColor: "#0f616e" }}>
-
-          {/* Desktop */}
-          <div className="hidden lg:block">
-            <div className="max-w-7xl mx-auto px-6" style={{ paddingTop: "3rem", paddingBottom: "2rem" }}>
-              <div className="grid grid-cols-[1fr_520px] gap-10 items-center">
-                {/* Left -Text */}
-                <div>
-                  <span
-                    className="inline-block"
-                    style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "24px", display: "block" }}
-                  >
-                    Complete Patient Guide
-                  </span>
-                  <h1
-                    style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 4.5vw, 3.5rem)", fontWeight: 400, lineHeight: 1.08, color: "#ffffff", marginBottom: "20px" }}
-                  >
-                    Understanding{" "}
-                    <span style={{ color: "#a0e2e4" }}>Arthritis</span>
-                  </h1>
-
-                  {/* Avatars */}
-                  <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
-                    <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
-                    <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
-                  </div>
-
-                  {/* Byline */}
-                  <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "2px" }}>
-                    <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "#ffffff" }}>
-                      Written by <strong className="font-bold underline underline-offset-2 decoration-1">Steph Coelho, CPT</strong>
-                    </span>
-                    <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.5)" }}>
-                      Medically reviewed by <strong className="font-bold underline underline-offset-2 decoration-1" style={{ color: "#ffffff" }}>Gabriella McCarty DNP, MSN, NP-C</strong>
-                    </span>
-                    <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.45)" }}>
-                      Published: January 05, 2026
-                    </span>
-                  </div>
-                </div>
-
-                {/* Right -Image */}
-                <div className="relative">
-                  <div className="overflow-hidden" style={{ borderRadius: 0 }}>
-                    <img
-                      src="/images/arthisites.jpg"
-                      alt="Arthritis patient guide"
-                      className="w-full h-[360px] object-cover object-center"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile */}
-          <div className="lg:hidden">
-            {/* Text content */}
-            <div className="flex flex-col px-6 pt-14 pb-0">
+        {/* ═══════════ HERO (matching RA guide) ═══════════ */}
+        <header>
+          <div style={{ backgroundColor: "#0f616e" }} className="text-white">
+            <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] pt-20 pb-12 flex flex-col items-start">
               <span
-                className="inline-block self-start"
-                style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "28px" }}
+                className="inline-block"
+                style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "24px" }}
               >
                 Complete Patient Guide
               </span>
               <h1
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.1rem, 9vw, 2.75rem)", fontWeight: 400, lineHeight: 1.08, color: "#ffffff", marginBottom: "16px" }}
+                className="mb-4"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(48px, 6vw, 64px)",
+                  fontWeight: 400,
+                  letterSpacing: "-0.5px",
+                }}
               >
-                Understanding <span style={{ color: "#a0e2e4" }}>Arthritis</span>
+                Understanding Arthritis
               </h1>
 
-              {/* Avatars */}
-              <div className="flex -space-x-2" style={{ marginBottom: "12px" }}>
+              <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
                 <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
                 <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
               </div>
 
-              {/* Byline */}
-              <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "1px", marginBottom: "28px" }}>
+              <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "2px" }}>
                 <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "#ffffff" }}>
-                  Written by <strong className="font-bold underline underline-offset-2 decoration-1">Steph Coelho, CPT</strong>
+                  Written by <strong className="font-bold underline underline-offset-2 decoration-1">Dr. Raghavendra H</strong>
                 </span>
                 <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.5)" }}>
-                  Medically reviewed by <strong className="font-bold underline underline-offset-2 decoration-1" style={{ color: "#ffffff" }}>Gabriella McCarty DNP, MSN, NP-C</strong>
+                  Medically reviewed by <strong className="font-bold underline underline-offset-2 decoration-1" style={{ color: "#ffffff" }}>Dr. Raghavendra H</strong>
                 </span>
                 <span style={{ fontSize: "13px", lineHeight: "20px", fontWeight: 400, color: "rgba(255,255,255,.45)" }}>
-                  Published: January 05, 2026
+                  Published: March 2026
                 </span>
-              </div>
-            </div>
-
-            {/* Image with side padding like reference */}
-            <div className="px-6" style={{ marginTop: "0", marginBottom: "80px" }}>
-              <div style={{ backgroundColor: "#e0f3f5", borderRadius: "0" }}>
-                <img src="/images/arthisites.jpg" alt="Arthritis guide" className="w-full object-cover object-center" style={{ height: "auto" }} />
               </div>
             </div>
           </div>
-
-          {/* Bottom wave -blends into ghost section below */}
-          <svg className="absolute -bottom-px left-0 w-full block" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-            <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
-          </svg>
-        </section>
+        </header>
 
         {/* ═══════════ ARTHRITIS OVERVIEW ═══════════ */}
         <section className="py-12 md:py-16 px-6 bg-white">

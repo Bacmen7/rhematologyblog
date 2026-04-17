@@ -52,7 +52,7 @@ function CtaBanner() {
               <div className="flex flex-col sm:flex-row items-center sm:items-center gap-4">
                 <a
                   href="/book-appointment"
-                  className="inline-flex min-h-[56px] items-center justify-center gap-2.5 rounded-full border border-transparent bg-primary px-8 py-4 text-[14px] font-semibold text-white no-underline transition-all duration-200 hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f616e] active:scale-[0.99]"
+                  className="inline-flex min-h-[56px] items-center justify-center gap-2.5 rounded-full border border-transparent bg-primary px-8 py-4 text-[15px] font-semibold text-white no-underline transition-all duration-200 hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f616e] active:scale-[0.99]"
                   style={{ fontFamily: "var(--font-base)" }}
                 >
                   Schedule Specialist Appointment
@@ -66,15 +66,10 @@ function CtaBanner() {
                   <span className="text-[15px] text-white/60 opacity-90">or</span>
                   <a
                     href="#"
-                    className="inline-flex min-h-[56px] items-center gap-2.5 rounded-full border border-transparent px-8 py-4 text-[14px] font-semibold text-white no-underline transition-all duration-200 hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f616e] active:scale-[0.99]"
-                    style={{ backgroundColor: "#e86531", fontFamily: "var(--font-base)" }}
+                    className="text-[15px] font-semibold text-white underline underline-offset-[6px] transition-opacity hover:opacity-80 focus:outline-none"
+                    style={{ fontFamily: "var(--font-base)", textDecorationThickness: "2px" }}
                   >
                     let&apos;s get in touch
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                      </svg>
-                    </span>
                   </a>
                 </div>
               </div>

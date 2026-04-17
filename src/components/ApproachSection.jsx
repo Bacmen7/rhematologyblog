@@ -8,7 +8,10 @@ function ApproachSection() {
     <section className="custom-approach-section relative overflow-hidden bg-[#0f616e] pt-[100px] pb-[130px] md:pt-[120px] md:pb-[150px] text-white">
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <h2 className="!mb-14 md:!mb-16 max-w-[800px]" style={{ color: "#ffffff" }}>
+        <h2
+          className="!mb-12 md:!mb-16 max-w-[800px] text-4xl md:text-5xl leading-tight"
+          style={{ color: "#ffffff", fontFamily: "var(--font-display)" }}
+        >
           Experience relief to joint pain from{" "}
           <span className="relative inline-block">
             personalised care
@@ -34,7 +37,7 @@ function ApproachSection() {
               <img src={heartHandIcon} alt="" className="relative z-10 h-[44px] w-[44px]" />
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Whole-person &amp; collaborative care</h3>
+              <h3 className="mb-3 text-[18px] md:!text-[20px] !font-semibold leading-[1.35] md:!leading-[1.4]">Whole-person &amp; collaborative care</h3>
               <p className="!text-[16px] !leading-[1.6] font-normal text-white/70">
                 Rheumatology experts working across specialties (musculoskeletal, immune, and lifestyle) to treat you, not just your pain.
               </p>
@@ -50,7 +53,7 @@ function ApproachSection() {
               <img src={qualityCareIcon} alt="" className="relative z-10 h-[48px] w-[48px]" />
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Quality care that works</h3>
+              <h3 className="mb-3 text-[18px] md:!text-[20px] !font-semibold leading-[1.35] md:!leading-[1.4]">Quality care that works</h3>
               <p className="!text-[16px] !leading-[1.6] font-normal text-white/70">
                 Clinically-proven results, with most patients seeing significant reduction in swelling and stiffness through evidence-based therapies.
               </p>
@@ -66,7 +69,7 @@ function ApproachSection() {
               <img src={chatBubbleIcon} alt="" className="relative z-10 h-[44px] w-[44px]" />
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Convenient &amp; accessible</h3>
+              <h3 className="mb-3 text-[18px] md:!text-[20px] !font-semibold leading-[1.35] md:!leading-[1.4]">Convenient &amp; accessible</h3>
               <p className="!text-[16px] !leading-[1.6] font-normal text-white/70">
                 Easy to schedule and virtual follow-ups available to keep your treatment on track anytime you need us.
               </p>
@@ -82,7 +85,7 @@ function ApproachSection() {
               <img src={seenHeardIcon} alt="" className="relative z-10 h-[48px] w-[48px]" />
             </div>
             <div className="flex-1">
-              <h3 className="mb-3 !text-[20px] !font-semibold !leading-[1.4]">Be seen &amp; heard</h3>
+              <h3 className="mb-3 text-[18px] md:!text-[20px] !font-semibold leading-[1.35] md:!leading-[1.4]">Be seen &amp; heard</h3>
               <p className="!text-[16px] !leading-[1.6] font-normal text-white/70">
                 We take the time to listen, ensuring your symptoms are validated and your care plan is personalized. We're proud of our high patient satisfaction and long-term success.
               </p>
