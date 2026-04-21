@@ -9,7 +9,6 @@ import "./App.css"
 import App from "./App.jsx"
 import BlogDetail from "./pages/BlogDetail.jsx"
 import OurApproach from "./pages/OurApproach.jsx"
-import PricingInsurance from "./pages/PricingInsurance.jsx"
 import AboutUs from "./pages/AboutUs.jsx"
 import Blog from "./pages/Blog.jsx"
 import DoctorProfile from "./pages/DoctorProfile.jsx"
@@ -19,6 +18,7 @@ import Arthritis from "./pages/Arthritis.jsx"
 import KnowledgeHub from "./pages/KnowledgeHub.jsx"
 import TreatmentGuides from "./pages/TreatmentGuides.jsx"
 import Gout from "./pages/Gout.jsx"
+import Osteoarthritis from "./pages/Osteoarthritis.jsx"
 
 // Lenis smooth scroll -global
 const lenis = new Lenis({
@@ -48,7 +48,6 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/our-approach" element={<OurApproach />} />
-        <Route path="/pricing" element={<PricingInsurance />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/article/:id" element={<BlogDetail />} />
@@ -59,6 +58,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/knowledge-hub" element={<KnowledgeHub />} />
         <Route path="/treatment-guides" element={<TreatmentGuides />} />
         <Route path="/gout" element={<Gout />} />
+        <Route path="/osteoarthritis" element={<Osteoarthritis />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

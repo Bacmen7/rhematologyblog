@@ -1,352 +1,4 @@
 const allArticles = [
-  // Featured Insights
-  {
-    id: "future-of-targeted-therapy-jak-inhibitors",
-    category: "Clinical Research",
-    readTime: "18 min read",
-    title: "The Future of Targeted Therapy: Next-Gen JAK Inhibitors in Rheumatoid Arthritis",
-    excerpt: "What the latest FDA changes and trial data actually mean for RA patients who've run out of options.",
-    image: "/images/featured-main.jpg",
-    author: {
-      name: "Dr. Sarah Jenkins, MD",
-      role: "Senior Rheumatologist",
-      image: "/images/author-sarah.jpg",
-      bio: "Dr. Sarah Jenkins is a board-certified rheumatologist with over 15 years of experience in treating autoimmune conditions. She specializes in JAK inhibitor therapies and has published extensively in the field of targeted therapy for RA.",
-    },
-    date: "Oct 24, 2023",
-    reviewedBy: {
-      name: "Dr. Michael Torres, MD, FACR",
-      role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
-      bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health and a fellow of the American College of Rheumatology. He has over 20 years of clinical experience.",
-    },
-    tableOfContents: [
-      { id: "understanding-jak", label: "Understanding JAK inhibitors" },
-      { id: "how-jak-work", label: "How do JAK inhibitors actually work?" },
-      { id: "clinical-trial-results", label: "Clinical trial results" },
-      { id: "treatment-timeline", label: "Typical treatment timeline" },
-      { id: "safety-profiles", label: "Safety and side effects" },
-      { id: "monitoring-schedule", label: "Lab monitoring schedule" },
-      { id: "fda-guidelines", label: "FDA guidelines update" },
-      { id: "patient-selection", label: "Who should consider JAK inhibitors?" },
-      { id: "jak-vs-biologics", label: "JAK inhibitors vs. biologics" },
-      { id: "real-patient-outcomes", label: "Real patient outcomes" },
-      { id: "future-outlook", label: "What comes next" },
-      { id: "bottom-line", label: "Bottom line" },
-      { id: "faqs", label: "Frequently asked questions" },
-    ],
-    keyTakeaways: [
-      "JAK inhibitors are oral pills that block inflammation from inside the cell, unlike biologics which work outside it.",
-      "In Phase 3 trials, next-gen selective JAK inhibitors hit ACR50 response rates of 45% at 12 weeks, compared to 28% on placebo.",
-      "The FDA now requires cardiovascular and blood clot risk monitoring for all JAK inhibitor patients. These drugs are positioned after failing at least one TNF blocker.",
-      "Newer selective compounds (targeting JAK1 or TYK2 specifically) appear to carry fewer off-target risks than first-gen options like tofacitinib.",
-      "For patients who have cycled through multiple biologics without relief, JAK inhibitors offer a different mechanism that may work where those drugs did not.",
-    ],
-    content: `
-      <h2 id="understanding-jak">Understanding JAK inhibitors</h2>
-      <p>If you have RA and you've already been through methotrexate, maybe a biologic or two, and you're still dealing with swollen joints and morning stiffness that won't quit, your rheumatologist has probably mentioned JAK inhibitors. They come up a lot in those "what do we try next" conversations.</p>
-      <p>JAK inhibitors are a class of oral drugs, pills you take once or twice a day, that target a specific inflammatory pathway inside your cells called JAK-STAT. That's different from biologics, which go after inflammatory proteins (cytokines) floating around outside the cell. Think of it this way: biologics try to intercept the message, JAK inhibitors block the phone line.</p>
-      <p>The first JAK inhibitor approved for RA was tofacitinib (Xeljanz), back in 2012. Since then, baricitinib (Olumiant) and upadacitinib (Rinvoq) have joined the list. Each one targets different combinations of JAK enzymes, and that matters more than it sounds like it should.</p>
-
-      <img src="/images/ra-treatment.jpg" alt="Rheumatologist reviewing treatment options with a patient" />
-      <p class="article-img-caption">A rheumatologist discussing targeted therapy options. JAK inhibitors are typically considered after conventional DMARDs haven't worked well enough.</p>
-
-      <h2 id="how-jak-work">How do JAK inhibitors actually work?</h2>
-      <p>There are four JAK enzymes in your body: JAK1, JAK2, JAK3, and TYK2. They sit inside your cells, attached to cytokine receptors on the cell surface. When an inflammatory cytokine like IL-6 or interferon docks onto the receptor, the JAK enzymes activate and kick off a signaling cascade that tells the cell to produce more inflammatory proteins.</p>
-      <p>Block the JAK enzymes, and you interrupt that whole chain.</p>
-      <p>The catch with first-gen JAK inhibitors is that they hit multiple JAK enzymes at once. Tofacitinib, for example, inhibits JAK1, JAK2, and JAK3. That's effective for inflammation, but JAK2 also has a role in blood cell production, and JAK3 is involved in immune surveillance. Suppressing those functions comes with trade-offs.</p>
-      <p>Newer drugs are more selective. Upadacitinib primarily targets JAK1. Deucravacitinib goes after TYK2 specifically. The idea is simple: if you can hit only the JAK enzyme driving the RA inflammation, you should get the same benefit with fewer problems elsewhere.</p>
-      <p>Whether that pans out in practice is still being tested. But the early data looks encouraging.</p>
-
-      <div class="article-callout">
-        <h4>The JAK family, in brief</h4>
-        <p><strong>JAK1</strong> is involved in signaling for many pro-inflammatory cytokines (IL-6, interferons). Most RA-related inflammation runs through JAK1.</p>
-        <p><strong>JAK2</strong> plays a role in blood cell production (erythropoietin, thrombopoietin). Blocking it too much can cause anemia or low platelet counts.</p>
-        <p><strong>JAK3</strong> is linked to immune cell development, particularly lymphocytes. Suppressing it broadly can increase infection risk.</p>
-        <p><strong>TYK2</strong> mediates interferon and IL-12/IL-23 signaling. Selective TYK2 inhibitors are newer and are being studied in RA and psoriasis.</p>
-      </div>
-
-      <h2 id="clinical-trial-results">Clinical trial results</h2>
-      <p>The Phase 3 trial data on next-gen selective JAK inhibitors has been accumulating over the past few years, and the results are worth looking at closely, especially if you've had trouble responding to biologics.</p>
-      <p>In the SELECT trials for upadacitinib, patients with moderate-to-severe RA who weren't responding well to methotrexate alone saw the following results:</p>
-      <ul>
-        <li>ACR50 response (meaning 50% improvement in symptoms) was reached by 45% of patients at 12 weeks, versus 28% on placebo.</li>
-        <li>DAS28-CRP scores, which measure overall disease activity, dropped enough that a meaningful number of patients reached low disease activity or remission.</li>
-        <li>Some patients noticed improvement within the first two weeks of starting treatment.</li>
-        <li>The benefits held steady through 52 weeks of continuous use.</li>
-      </ul>
-      <p>For baricitinib, the RA-BEAM trial showed similar patterns: when added to methotrexate, baricitinib outperformed both placebo and the TNF inhibitor adalimumab at 12 weeks on ACR20 response rates.</p>
-      <p>One thing that gets lost in the trial data: these are pills. Patients don't need to schedule infusions or learn to self-inject. That matters for adherence, and adherence matters for outcomes.</p>
-
-      <img src="/images/lab-test.jpg" alt="Lab technician analyzing blood samples for rheumatoid arthritis markers" />
-      <p class="article-img-caption">Blood work is a regular part of RA treatment with JAK inhibitors. Your rheumatologist will monitor inflammatory markers, liver function, and blood counts at defined intervals.</p>
-
-      <h2 id="treatment-timeline">Typical treatment timeline</h2>
-      <p>If your rheumatologist starts you on a JAK inhibitor, here's roughly what to expect in terms of timing:</p>
-
-      <table class="article-table">
-        <thead>
-          <tr>
-            <th>Timeframe</th>
-            <th>What to expect</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Week 1-2</td>
-            <td>Some patients notice reduced morning stiffness and less joint tenderness. Don't panic if you feel nothing yet.</td>
-          </tr>
-          <tr>
-            <td>Week 4-6</td>
-            <td>Measurable improvement in joint swelling and pain for most responders. First follow-up blood work.</td>
-          </tr>
-          <tr>
-            <td>Week 8-12</td>
-            <td>This is when clinical trials measure primary endpoints. If the drug is working, you should feel a clear difference by now.</td>
-          </tr>
-          <tr>
-            <td>Month 3-6</td>
-            <td>Continued improvement. Your doctor may adjust the dose based on how you're responding and any side effects.</td>
-          </tr>
-          <tr>
-            <td>Month 6-12</td>
-            <td>Stable responders typically continue at their current dose. Regular lab monitoring continues every 3 months.</td>
-          </tr>
-          <tr>
-            <td>Year 1+</td>
-            <td>Long-term maintenance. Trial data shows benefits hold steady through at least 52 weeks for most patients who respond early.</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>If you haven't seen meaningful improvement by week 12, that's usually the point where your rheumatologist will reassess. Sometimes a dose adjustment works. Sometimes it means this particular JAK inhibitor isn't the right fit, and you try a different one or a different drug class entirely.</p>
-
-      <h2 id="safety-profiles">Safety and side effects</h2>
-      <p>This is the part that gets the most attention, and for good reason. After tofacitinib's post-marketing ORAL Surveillance study reported higher rates of cardiovascular events and blood clots compared to TNF inhibitors in patients over 50 with cardiovascular risk factors, the FDA added a boxed warning to all JAK inhibitors in 2021.</p>
-      <p>That study changed how these drugs get prescribed. Before it, JAK inhibitors were sometimes used as first-line advanced therapy. Now, the FDA recommends them only after a patient has tried and not responded to at least one TNF blocker.</p>
-      <p>The most common side effects reported in clinical trials include:</p>
-      <ul>
-        <li><strong>Upper respiratory infections</strong> (common, usually mild)</li>
-        <li><strong>Nausea</strong> (particularly in the first few weeks, tends to improve)</li>
-        <li><strong>Elevated liver enzymes</strong> (why regular blood work matters)</li>
-        <li><strong>Headache</strong> (fairly common, generally manageable)</li>
-        <li><strong>Changes in blood lipids</strong> (cholesterol levels can increase, monitored with lipid panels)</li>
-        <li><strong>Herpes zoster (shingles)</strong> (JAK inhibitors can increase the risk; vaccination before starting is recommended)</li>
-      </ul>
-      <p>Serious but less common risks include blood clots (deep vein thrombosis, pulmonary embolism), serious infections, and gastrointestinal perforations. Your doctor should discuss your personal risk profile before prescribing.</p>
-      <p>One thing worth saying clearly: the safety concerns are real, but they need context. Most patients in clinical trials tolerated JAK inhibitors well. The problems showed up more in older patients with pre-existing cardiovascular risk factors. If you're 35 with no heart disease history, your risk profile is very different from the population where those signals emerged.</p>
-
-      <div class="article-callout">
-        <h4>Should you get the shingles vaccine first?</h4>
-        <p>Yes. The CDC recommends Shingrix (the recombinant shingles vaccine) for adults starting JAK inhibitors, ideally at least 2-4 weeks before beginning treatment. JAK inhibitors suppress parts of the immune system that keep the varicella-zoster virus in check, and shingles reactivation is one of the more common complications seen in trials.</p>
-        <p>If you're already on a JAK inhibitor and haven't been vaccinated, talk to your rheumatologist. Shingrix is not a live vaccine, so it can still be given, but the immune response may be weaker.</p>
-      </div>
-
-      <h2 id="monitoring-schedule">Lab monitoring schedule</h2>
-      <p>Your rheumatologist will want regular blood work while you're on a JAK inhibitor. Here's the typical schedule:</p>
-
-      <table class="article-table">
-        <thead>
-          <tr>
-            <th>Test</th>
-            <th>When</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Complete blood count (CBC)</td>
-            <td>Baseline, 4-8 weeks after starting, then every 3 months</td>
-          </tr>
-          <tr>
-            <td>Liver function tests (ALT/AST)</td>
-            <td>Baseline, 4-8 weeks, then periodically</td>
-          </tr>
-          <tr>
-            <td>Lipid panel</td>
-            <td>Baseline, 12 weeks after starting, then annually</td>
-          </tr>
-          <tr>
-            <td>Renal function (creatinine)</td>
-            <td>Baseline, then periodically</td>
-          </tr>
-          <tr>
-            <td>TB screening</td>
-            <td>Before starting treatment</td>
-          </tr>
-          <tr>
-            <td>Hepatitis B/C screening</td>
-            <td>Before starting treatment</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>Missing these labs isn't an option. Elevated liver enzymes or dropping blood counts are the kinds of things that need to be caught early, not after they've become a problem. Most rheumatology offices will set up standing lab orders so you can get blood drawn on a schedule without needing an appointment each time.</p>
-
-      <img src="/images/exercise.jpg" alt="Patient doing gentle exercises to maintain joint mobility during RA treatment" />
-      <p class="article-img-caption">Physical activity remains part of RA management even while on targeted therapy. Gentle exercise helps maintain joint mobility and reduces stiffness.</p>
-
-      <h2 id="fda-guidelines">FDA guidelines update</h2>
-      <p>The FDA's current position on JAK inhibitors, updated after the ORAL Surveillance results, boils down to three points:</p>
-      <ol>
-        <li>JAK inhibitors should be used only after a patient has tried and not responded adequately to at least one TNF inhibitor.</li>
-        <li>Doctors should use the lowest effective dose for the shortest duration needed.</li>
-        <li>Patients over 65, current or past smokers, and those with cardiovascular risk factors or a history of blood clots need extra risk assessment before starting.</li>
-      </ol>
-      <p>These guidelines apply to all currently approved JAK inhibitors for RA: tofacitinib, baricitinib, and upadacitinib. Whether the next-gen selective compounds will eventually get a different risk classification remains to be seen; the data isn't mature enough yet.</p>
-      <p>The European Medicines Agency (EMA) issued similar but slightly different guidance, recommending caution in patients over 65, long-term smokers, and those with cancer risk factors. The details vary by country, but the overall direction is the same: use these drugs thoughtfully, not as a first resort.</p>
-
-      <h2 id="patient-selection">Who should consider JAK inhibitors?</h2>
-      <p>Not every RA patient is a good candidate. Based on the current guidelines and trial data, JAK inhibitors make the most sense for:</p>
-      <ul>
-        <li>Patients with moderate-to-severe RA who haven't responded well to methotrexate or other conventional DMARDs</li>
-        <li>Patients who have tried at least one TNF inhibitor (like adalimumab, etanercept, or infliximab) without adequate improvement</li>
-        <li>People who prefer an oral pill over injectable biologics</li>
-        <li>Patients without significant cardiovascular risk factors</li>
-        <li>Non-smokers, or people willing to quit before starting</li>
-        <li>Patients who don't have a history of blood clots or deep vein thrombosis</li>
-      </ul>
-      <p>Your rheumatologist should walk through your full medical history before prescribing. Age, smoking status, cholesterol levels, blood pressure, and prior cancer history all factor into the decision. This isn't a drug you start casually.</p>
-
-      <div class="article-cta">
-        <h4>Wondering if JAK inhibitors might be right for you?</h4>
-        <p>Talk to a board-certified rheumatologist about your treatment options and get a personalized assessment.</p>
-        <a href="/">Schedule a consultation</a>
-      </div>
-
-      <h2 id="jak-vs-biologics">JAK inhibitors vs. biologics</h2>
-      <p>This is the comparison most patients want to understand. Both drug classes can be effective for RA, but they work differently and come with different practical trade-offs.</p>
-
-      <table class="article-table">
-        <thead>
-          <tr>
-            <th>Feature</th>
-            <th>JAK inhibitors</th>
-            <th>Biologics</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>How they work</td>
-            <td>Block intracellular JAK-STAT signaling</td>
-            <td>Target specific extracellular cytokines (TNF, IL-6, etc.)</td>
-          </tr>
-          <tr>
-            <td>Administration</td>
-            <td>Oral pill (once or twice daily)</td>
-            <td>Injection or infusion (weekly to monthly)</td>
-          </tr>
-          <tr>
-            <td>Onset of action</td>
-            <td>Often within 2-4 weeks</td>
-            <td>Typically 4-12 weeks</td>
-          </tr>
-          <tr>
-            <td>Efficacy (ACR50 at 12 weeks)</td>
-            <td>~45% in trials</td>
-            <td>~35-40% in trials (varies by drug)</td>
-          </tr>
-          <tr>
-            <td>Key side effects</td>
-            <td>Infections, blood clots, lipid changes, shingles</td>
-            <td>Infections, injection site reactions, infusion reactions</td>
-          </tr>
-          <tr>
-            <td>Storage</td>
-            <td>Room temperature</td>
-            <td>Refrigerated (most)</td>
-          </tr>
-          <tr>
-            <td>Cost (approximate U.S.)</td>
-            <td>$5,000-6,000/month without insurance</td>
-            <td>$3,000-8,000/month without insurance (biosimilars can be lower)</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p>The biggest practical difference is convenience. A pill you take at home with breakfast is easier to stick with than a biweekly injection you need to keep refrigerated. That convenience matters over months and years of treatment.</p>
-      <p>On efficacy, head-to-head trials have shown that upadacitinib outperformed adalimumab (a TNF inhibitor) on several measures in the SELECT-COMPARE trial. That said, individual responses vary a lot. Some patients do great on a TNF inhibitor and poorly on a JAK inhibitor, and vice versa. There's no reliable way to predict who responds best to what, which is why rheumatologists sometimes need to try more than one drug before finding the right fit.</p>
-
-      <h2 id="real-patient-outcomes">Real patient outcomes</h2>
-      <p>Clinical trial numbers tell one story. What patients actually experience tells another.</p>
-      <p>In post-marketing registries and real-world studies, JAK inhibitor retention rates (meaning the percentage of patients still on the drug after one year) are roughly 60-70%. That's comparable to biologics. The most common reasons people stop are side effects (usually GI symptoms or infections) and lack of efficacy.</p>
-      <p>Patient-reported outcomes from the trials are worth noting:</p>
-      <ul>
-        <li>Roughly 60% of patients reported meaningful improvement in morning stiffness within the first month</li>
-        <li>Physical function scores (measured by the HAQ-DI) improved by 0.4-0.6 points on average, which translates to things like being able to open jars, climb stairs, or button a shirt more easily</li>
-        <li>Fatigue scores improved too, though fatigue is harder to measure and more variable between individuals</li>
-        <li>Pain scores on a 0-10 scale typically dropped by 2-3 points within the first 12 weeks</li>
-      </ul>
-      <p>None of these numbers mean the drug works for everyone. About 30-40% of patients in trials did not reach ACR50 at 12 weeks. That's a substantial non-responder population. If you're in that group, it doesn't mean you've failed; it means this particular drug mechanism wasn't the right match for your disease.</p>
-
-      <img src="/images/diet.jpg" alt="Anti-inflammatory foods that may complement RA treatment" />
-      <p class="article-img-caption">Diet won't replace medication, but anti-inflammatory foods (fatty fish, leafy greens, berries) may help complement your RA treatment plan.</p>
-
-      <h2 id="future-outlook">What comes next</h2>
-      <p>Several things in the pipeline are worth watching.</p>
-      <p><strong>TYK2-selective inhibitors</strong> are the newest entrants. Deucravacitinib is already approved for psoriasis and is being studied in RA. Because TYK2 has a narrower role than JAK1 or JAK2, selective TYK2 inhibition may come with fewer off-target effects. The RA trial data is still early-stage, but initial results are being watched closely.</p>
-      <p><strong>Dual-selective inhibitors</strong> that target specific JAK combinations (like JAK1/TYK2) are in Phase 2 trials. The theory is that you can hit the inflammation-relevant pathways while leaving blood cell production and broad immune surveillance mostly intact.</p>
-      <p><strong>Biomarker research</strong> is probably the most interesting long-term development. Right now, starting a patient on a JAK inhibitor is educated guessing. You try it, wait 12 weeks, and see if it works. Several research groups are looking at gene expression profiles and serum protein panels that might predict which patients will respond to which JAK inhibitor before starting. We're not there yet, but it's an active area.</p>
-      <p><strong>Combination strategies</strong> are also being revisited. Using a low-dose JAK inhibitor alongside methotrexate is already standard, but trials are looking at whether combining JAK inhibitors with other targeted therapies could help patients who respond partially but not fully to a single drug.</p>
-
-      <div class="article-callout">
-        <h4>A note on cost and insurance</h4>
-        <p>JAK inhibitors are expensive. Without insurance, you're looking at roughly $5,000-6,000 per month in the U.S. Most insurance plans cover them, but often with prior authorization requirements (meaning your doctor has to document that you've tried and failed other treatments first).</p>
-        <p>All three manufacturers (Pfizer, Lilly, AbbVie) offer patient assistance programs for people without adequate insurance. Your rheumatologist's office can usually help you navigate these. It's paperwork, but it can bring the out-of-pocket cost down to $5-50 per month for qualifying patients.</p>
-      </div>
-
-      <h2 id="bottom-line">Bottom line</h2>
-      <p>JAK inhibitors are not first-line treatment for RA. They're not the right choice for everyone. And they come with safety considerations that need to be taken seriously.</p>
-      <p>But for patients who've been through methotrexate, tried a TNF inhibitor or two, and are still struggling with active disease, JAK inhibitors offer a different mechanism of action that may work where those other drugs didn't. The fact that they're pills instead of injections is a real advantage for long-term adherence. And the next generation of more selective compounds may eventually address some of the safety concerns that have limited broader use.</p>
-      <p>Talk to your rheumatologist. Bring your questions. And don't assume that running out of options on one drug class means you're out of options entirely.</p>
-
-      <h2 id="faqs">Frequently asked questions</h2>
-
-      <h3>How long does it take for a JAK inhibitor to start working?</h3>
-      <p>Most patients who respond to JAK inhibitors notice some improvement within the first 2-4 weeks, with full effect typically reached by 12 weeks. If you haven't seen meaningful improvement by week 12, your rheumatologist will likely reassess your treatment plan.</p>
-
-      <h3>Can I take a JAK inhibitor with methotrexate?</h3>
-      <p>Yes, and this is actually the most common way they're prescribed. In clinical trials, JAK inhibitors were studied both as monotherapy and in combination with methotrexate. The combination generally showed better results. Your doctor will determine the right approach for your situation.</p>
-
-      <h3>What happens if I miss a dose?</h3>
-      <p>Take it as soon as you remember, unless it's almost time for your next dose. Don't double up. Missing a single dose occasionally is unlikely to cause a flare, but consistent adherence matters for keeping disease activity under control.</p>
-
-      <h3>Are JAK inhibitors safe during pregnancy?</h3>
-      <p>No. All currently approved JAK inhibitors are contraindicated during pregnancy based on animal studies showing fetal harm. If you're planning to become pregnant, talk to your rheumatologist about switching to a pregnancy-compatible treatment well in advance. Most guidelines recommend stopping JAK inhibitors at least 4 weeks before attempting conception.</p>
-
-      <h3>Can I drink alcohol while taking a JAK inhibitor?</h3>
-      <p>Moderate alcohol use is generally considered acceptable, but there's a caveat. JAK inhibitors can affect liver enzymes, and alcohol does the same. If your liver function tests are already borderline, adding alcohol into the mix isn't ideal. Your rheumatologist can give you guidance based on your specific lab results.</p>
-
-      <h3>Will I need to take this drug forever?</h3>
-      <p>RA is a chronic disease, and most patients who respond well to a JAK inhibitor continue taking it long-term. In some cases, if you achieve sustained remission, your doctor may try tapering the dose. But stopping the drug entirely carries a risk of disease flare. This is a decision you'd make together with your rheumatologist based on your disease activity over time.</p>
-    `,
-    references: [
-      {
-        text: 'Taylor, P.C. et al. (2023). Efficacy and safety of next-generation JAK inhibitors in rheumatoid arthritis: a systematic review. The Lancet Rheumatology, 5(8), e412-e425.',
-      },
-      {
-        text: 'FDA Safety Communication (2023). Updated safety information for JAK inhibitors used to treat certain chronic inflammatory conditions.',
-      },
-      {
-        text: 'Smolen, J.S. et al. (2023). EULAR recommendations for the management of rheumatoid arthritis with synthetic and biological DMARDs: 2023 update. Annals of the Rheumatic Diseases, 82(1), 3-18.',
-      },
-      {
-        text: 'Fleischmann, R. et al. (2022). Upadacitinib versus placebo or adalimumab in patients with RA: results of a Phase 3, double-blind, randomized controlled trial (SELECT-COMPARE). Arthritis & Rheumatology, 74(10), 1648-1659.',
-      },
-      {
-        text: 'Ytterberg, S.R. et al. (2022). Cardiovascular and cancer risk with tofacitinib in rheumatoid arthritis (ORAL Surveillance). New England Journal of Medicine, 386(4), 316-326.',
-      },
-      {
-        text: 'Winthrop, K.L. et al. (2023). Herpes zoster and JAK inhibitors: risk, prevention, and management. Rheumatology, 62(SI2), ii14-ii21.',
-      },
-    ],
-    relatedArticles: [
-      "musculoskeletal-ultrasound-protocols",
-      "gout-vs-pseudogout",
-      "understanding-blood-work-rf-anti-ccp",
-      "gentle-exercises-flaring-joints",
-      "biologics-vs-small-molecules-psa",
-    ],
-  },
   {
     id: "musculoskeletal-ultrasound-protocols",
     category: "Diagnostic Imaging",
@@ -405,7 +57,7 @@ const allArticles = [
         text: 'Backhaus, M. et al. (2023). Guidelines for musculoskeletal ultrasound in rheumatology. Annals of the Rheumatic Diseases, 81(4), 555-563.',
       },
     ],
-    relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "gout-vs-pseudogout"],
+    relatedArticles: ["gout-vs-pseudogout"],
   },
   {
     id: "gout-vs-pseudogout",
@@ -599,7 +251,7 @@ const allArticles = [
         text: 'Rosenthal, A.K. et al. (2016). Calcium pyrophosphate deposition disease. New England Journal of Medicine, 374(26), 2575-2584.',
       },
     ],
-    relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "musculoskeletal-ultrasound-protocols"],
+    relatedArticles: ["musculoskeletal-ultrasound-protocols"],
   },
   // RA Articles
   {
@@ -738,7 +390,7 @@ const allArticles = [
         text: 'Fraenkel, L. et al. (2021). 2021 American College of Rheumatology guideline for the treatment of RA. Arthritis Care & Research, 73(7), 924-939.',
       },
     ],
-    relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "understanding-blood-work-rf-anti-ccp"],
+    relatedArticles: ["understanding-blood-work-rf-anti-ccp"],
   },
   {
     id: "understanding-blood-work-rf-anti-ccp",
@@ -906,7 +558,7 @@ const allArticles = [
         text: 'Aletaha, D. et al. (2010). 2010 Rheumatoid arthritis classification criteria: an ACR/EULAR collaborative initiative. Arthritis & Rheumatism, 62(9), 2569-2581.',
       },
     ],
-    relatedArticles: ["future-of-targeted-therapy-jak-inhibitors", "modern-treatments-ra"],
+    relatedArticles: ["modern-treatments-ra"],
   },
   {
     id: "gentle-exercises-flaring-joints",
@@ -1063,7 +715,7 @@ const allArticles = [
         text: 'Gossec, L. et al. (2023). EULAR recommendations for the management of PsA. Annals of the Rheumatic Diseases, 82(3), 345-356.',
       },
     ],
-    relatedArticles: ["biologics-vs-small-molecules-psa", "future-of-targeted-therapy-jak-inhibitors"],
+    relatedArticles: ["biologics-vs-small-molecules-psa"],
   },
   {
     id: "biologics-vs-small-molecules-psa",
@@ -1115,7 +767,7 @@ const allArticles = [
         text: 'Coates, L.C. et al. (2023). Comparison of biologics and targeted synthetic DMARDs in PsA. The Lancet, 401(10380), 883-895.',
       },
     ],
-    relatedArticles: ["managing-dual-impact-skin-joint-pain", "future-of-targeted-therapy-jak-inhibitors"],
+    relatedArticles: ["managing-dual-impact-skin-joint-pain"],
   },
   {
     id: "tips-morning-stiffness-fatigue",

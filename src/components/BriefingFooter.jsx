@@ -43,6 +43,7 @@ function BriefingFooter() {
             <ul className="space-y-4 text-sm font-semibold text-[#1A355D]">
               <li><Link to="/arthritis" className="hover:text-[#515a6a]">Arthritis</Link></li>
               <li><Link to="/health-guide/Rheumatoid-Arthritis" className="hover:text-[#515a6a]">Rheumatoid Arthritis</Link></li>
+              <li><Link to="/osteoarthritis" className="hover:text-[#515a6a]">Osteoarthritis</Link></li>
               <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Lupus (SLE)</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Ankylosing Spondylitis</a></li>
@@ -68,7 +69,6 @@ function BriefingFooter() {
               <li><Link to="/about" className="hover:text-[#515a6a]">About Us</Link></li>
               <li><Link to="/our-approach" className="hover:text-[#515a6a]">Our Approach</Link></li>
               <li><a href="#" className="hover:text-[#515a6a]">Our Providers</a></li>
-              <li><Link to="/pricing" className="hover:text-[#515a6a]">Pricing & Insurance</Link></li>
               <li><a href="#" className="hover:text-[#515a6a]">Careers</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Newsroom</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">FAQs</a></li>

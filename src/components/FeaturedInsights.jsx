@@ -95,7 +95,7 @@ function FeaturedInsights() {
             </button>
           ) : (
             <Link
-              to="/article/future-of-targeted-therapy-jak-inhibitors"
+              to="/blog"
               className="inline-flex items-center gap-2 text-rheuma-blue font-bold hover:underline group"
             >
               View all articles
