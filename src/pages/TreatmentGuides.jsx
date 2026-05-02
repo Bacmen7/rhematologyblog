@@ -195,7 +195,7 @@ function TreatmentGuides() {
       <Header />
 
       {/* ═══ SECTION 1 -HERO ═══ */}
-      <section className="bg-background-light overflow-hidden">
+      <section className="overflow-hidden" style={{ backgroundColor: "#0f616e" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ minHeight: "75vh" }}>
             {/* Left -Content */}
@@ -207,7 +207,7 @@ function TreatmentGuides() {
                   fontWeight: 400,
                   letterSpacing: "-0.5px",
                   lineHeight: 1.08,
-                  color: "#0f616e",
+                  color: "#ffffff",
                   marginBottom: "1.25rem",
                 }}
               >
@@ -217,7 +217,7 @@ function TreatmentGuides() {
                 style={{
                   fontFamily: "var(--font-base)",
                   fontSize: "clamp(15px, 2vw, 20px)",
-                  color: "#5E5E5E",
+                  color: "rgba(255,255,255,0.75)",
                   lineHeight: 1.6,
                   marginBottom: "2rem",
                   maxWidth: "480px",
@@ -253,6 +253,20 @@ function TreatmentGuides() {
           </div>
         </div>
       </section>
+
+      <div style={{ position: "relative", marginTop: "-1px", lineHeight: 0, backgroundColor: "#0f616e" }}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          style={{ display: "block", width: "100%", height: "56px" }}
+        >
+          <path
+            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+            fill="#ffffff"
+          />
+        </svg>
+      </div>
 
       {/* ═══ SECTION 2 -DIAGNOSIS ═══ */}
       <section id="diagnosis" className="bg-white" style={{ paddingTop: "5rem", paddingBottom: "2rem" }}>
@@ -624,7 +638,7 @@ function TreatmentGuides() {
               <a
                 href="#"
                 className="inline-block rounded-full font-semibold text-[15px] text-white whitespace-nowrap transition-all hover:opacity-90"
-                style={{ backgroundColor: "#1AA3B5", padding: "14px 28px", textDecoration: "none" }}
+                style={{ backgroundColor: "#F97316", padding: "14px 28px", textDecoration: "none" }}
               >
                 Book a consultation
               </a>

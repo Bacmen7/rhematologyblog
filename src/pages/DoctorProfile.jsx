@@ -64,13 +64,13 @@ function DoctorProfile() {
       <main className="flex-1">
         {/* Header + Gallery + Tabs section */}
         <div className="bg-[#0f616e] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14 lg:pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 lg:pt-12">
 
           {/* Doctor Header */}
-          <div style={{ marginBottom: "40px", marginTop: "20px", paddingBottom: "20px" }} className="sm:mt-6">
+          <div style={{ marginBottom: "20px", marginTop: "10px", paddingBottom: "20px" }} className="sm:mt-6">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
               <div className="flex-1 max-w-[900px]">
-                <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(42px, 5vw, 70px)", lineHeight: "1.1", color: "#ffffff", marginBottom: "12px" }}>
+                <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(28px, 4vw, 48px)", lineHeight: "1.1", color: "#ffffff", marginBottom: "12px" }}>
                   {doctor.name}
                 </h1>
                 <p style={{ fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "clamp(14px, 2.5vw, 20px)", lineHeight: "1.65", marginBottom: "18px", color: "rgba(255,255,255,0.7)", maxWidth: "900px" }}>
@@ -93,7 +93,7 @@ function DoctorProfile() {
 
               <div className="hidden lg:block w-full max-w-[320px] shrink-0">
                 <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
-                  <div className="relative w-full" style={{ height: "420px", background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
+                  <div className="relative w-full" style={{ height: "300px", background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
                     <img src={doctor.image || "/docter.png"} alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                   </div>
                 </div>
@@ -186,7 +186,7 @@ function DoctorProfile() {
         </div>
         {/* Wavy bottom edge */}
         <svg
-          className="w-full h-[42px] sm:h-[72px] md:h-[108px] block"
+          className="w-full h-[30px] sm:h-[50px] md:h-[72px] block"
           preserveAspectRatio="none"
           viewBox="0 0 1440 120"
           fill="none"
@@ -564,7 +564,7 @@ function DoctorProfile() {
               <a
                 href="#"
                 className="inline-block rounded-full font-semibold text-sm sm:text-[15px] transition-all hover:opacity-90 text-center w-full sm:w-auto"
-                style={{ backgroundColor: "#1AA3B5", color: "#ffffff", padding: "14px 28px" }}
+                style={{ backgroundColor: "#F97316", color: "#ffffff", padding: "14px 28px" }}
               >
                 Schedule An Appointment
               </a>

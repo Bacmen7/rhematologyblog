@@ -488,34 +488,24 @@ function KnowledgeHub() {
       <main>
 
         {/* ═══════════ 1 · HERO ═══════════ */}
-        <section style={{ backgroundColor: "#e8f4f8", padding: "clamp(48px, 6vw, 80px) 0" }}>
+        <section style={{ backgroundColor: "#0f616e", overflow: "hidden" }}>
           <div style={{ width: "90vw", maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
-            <div className="max-w-3xl">
-              {/* Left -Text */}
-              <div>
-                <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4.2rem)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-1.4px", color: "#0f616e", marginBottom: "1.25rem" }}>
-                  Rheuma <span style={{ color: "#1AA3B5" }}>Knowledge Hub</span>
-                </h1>
-                <p style={{ fontSize: "18px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", margin: 0 }}>
-                  Your comprehensive resource for understanding rheumatic conditions, treatment options, and the latest research -written and reviewed by board-certified rheumatologists.
-                </p>
-              </div>
+            <div style={{ padding: "clamp(48px, 6vw, 80px) 0" }}>
+              <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4.2rem)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-1.4px", color: "#ffffff", marginBottom: "1.25rem" }}>
+                Rheuma <span style={{ color: "#7DE8F0" }}>Knowledge Hub</span>
+              </h1>
+              <p style={{ fontSize: "18px", lineHeight: 1.7, color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-base)", margin: 0, maxWidth: "600px" }}>
+                Your comprehensive resource for understanding rheumatic conditions, treatment options, and the latest research -written and reviewed by board-certified rheumatologists.
+              </p>
             </div>
           </div>
+          {/* Wave */}
+          <div style={{ lineHeight: 0, backgroundColor: "#0f616e" }}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: "56px" }}>
+              <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#ffffff" />
+            </svg>
+          </div>
         </section>
-        <div style={{ position: "relative", marginTop: "-1px", lineHeight: 0 }}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            style={{ display: "block", width: "100%", height: "56px" }}
-          >
-            <path
-              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-              fill="#ffffff"
-            />
-          </svg>
-        </div>
 
 
         {/* ═══════════ 2 · WHAT IS RHEUMATOLOGY ═══════════ */}
@@ -617,7 +607,7 @@ function KnowledgeHub() {
                     <button
                       onClick={() => handleAnswer(true)}
                       className="py-2.5 px-8 rounded-full font-semibold text-[14px] cursor-pointer transition-all duration-200"
-                      style={{ backgroundColor: "#1AA3B5", color: "#fff", border: "none" }}
+                      style={{ backgroundColor: "#F97316", color: "#fff", border: "none" }}
                     >
                       Yes
                     </button>
