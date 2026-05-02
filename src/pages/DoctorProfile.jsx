@@ -245,7 +245,7 @@ function DoctorProfile() {
               <section id="overview">
                 <h2 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(28px, 4vw, 34px)", lineHeight: "40px", marginBottom: "20px" }}>Overview</h2>
                 <p className="text-xs sm:text-sm text-gray-500" style={{ marginBottom: "16px" }}>About</p>
-                <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-justify sm:text-left" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>
+                <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-justify sm:text-left" style={{ fontFamily: "var(--font-base)", fontWeight: 400, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>
                   {doctor.overview.map((para, i) => (
                     <p key={i}>{para}</p>
                   ))}
@@ -279,7 +279,7 @@ function DoctorProfile() {
                     {doctor.education.map((item, i) => (
                       <li key={i} className="flex gap-2.5 sm:gap-3">
                         <div className="w-1.5 h-1.5 bg-[#0f616e] rounded-full mt-1.5 sm:mt-2 shrink-0" />
-                        <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
+                        <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 400, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -291,7 +291,7 @@ function DoctorProfile() {
                     {doctor.awards.map((item, i) => (
                       <li key={i} className="flex gap-2.5 sm:gap-3">
                         <div className="w-1.5 h-1.5 bg-[#0f616e] rounded-full mt-1.5 sm:mt-2 shrink-0" />
-                        <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
+                        <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 400, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -303,7 +303,7 @@ function DoctorProfile() {
                     {doctor.publications.map((item, i) => (
                       <li key={i} className="flex gap-2.5 sm:gap-3">
                         <div className="w-1.5 h-1.5 bg-[#0f616e] rounded-full mt-1.5 sm:mt-2 shrink-0" />
-                        <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 300, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
+                        <span className="text-sm sm:text-base" style={{ fontFamily: "var(--font-base)", fontWeight: 400, lineHeight: "1.75", color: "rgb(24, 36, 57)" }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -646,7 +646,7 @@ function PatientStoriesInline() {
             {r.visitedFor && (
               <div className="inline-block text-xs bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full mb-3">Visited for: {r.visitedFor}</div>
             )}
-            <p className="text-sm text-gray-600 leading-relaxed" style={{ display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{r.text}</p>
+            <p className="text-sm text-gray-600 leading-relaxed" style={{ fontFamily: "var(--font-base)", fontWeight: 400, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{r.text}</p>
             <button onClick={() => setSelectedStory(r)} className="text-[#0f616e] text-sm font-medium hover:underline mt-2">Read more</button>
           </div>
         ))}
@@ -690,7 +690,7 @@ function PatientStoriesInline() {
                 ))}
               </div>
             )}
-            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{selectedStory.text}</p>
+            <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line" style={{ fontFamily: "var(--font-base)", fontWeight: 400 }}>{selectedStory.text}</p>
             <div className="border-t border-gray-200 mt-6 pt-4">
               <a href="https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info" target="_blank" rel="noopener noreferrer" className="text-teal-soft text-[13px] font-medium hover:underline">View on Practo</a>
             </div>
