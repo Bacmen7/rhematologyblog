@@ -197,62 +197,34 @@ function TreatmentGuides() {
       {/* ═══ SECTION 1 -HERO ═══ */}
       <section className="relative overflow-hidden" style={{ backgroundColor: "#0f616e" }}>
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ minHeight: "75vh" }}>
-            {/* Left -Content */}
-            <div style={{ paddingTop: "3rem", paddingBottom: "3rem", paddingRight: "2rem" }}>
-              <p style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "16px" }}>
-                Treatment Guide
-              </p>
-              <h1
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
-                  fontWeight: 300,
-                  letterSpacing: "-0.5px",
-                  lineHeight: 1.1,
-                  color: "#ffffff",
-                  marginBottom: "1.25rem",
-                }}
-              >
-                Understanding Your Treatment
-              </h1>
-              <p
-                style={{
-                  fontFamily: "var(--font-base)",
-                  fontSize: "clamp(15px, 1.5vw, 18px)",
-                  color: "rgba(255,255,255,0.75)",
-                  lineHeight: 1.7,
-                  marginBottom: "2rem",
-                  maxWidth: "480px",
-                }}
-              >
-                Rheumatic conditions are highly treatable. Everything you need to know about diagnosis, medications, injections, and surgery, explained simply.
-              </p>
-              <a
-                href="#diagnosis"
-                className="inline-flex mt-4 md:mt-8 items-center gap-2.5 rounded-full pl-7 pr-5 py-3.5 text-[15px] font-bold tracking-wide text-white transition-all duration-300 hover:opacity-90"
-                style={{
-                  backgroundColor: "#e86531",
-                  fontFamily: "var(--font-base)",
-                }}
-              >
-                Explore treatment options
-                <span className="w-6 h-6 rounded-full bg-white/20 inline-flex items-center justify-center transition-colors">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                  </svg>
-                </span>
-              </a>
-            </div>
-            {/* Right -Image */}
-            <div className="hidden lg:block relative h-full">
-              <img
-                src="/images/h3.png"
-                alt="Doctor consulting with patient"
-                className="w-full h-full object-cover object-center"
-                style={{ minHeight: "75vh" }}
-              />
-            </div>
+          <div style={{ paddingTop: "5rem", paddingBottom: "7rem" }}>
+            <p style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "16px" }}>
+              Treatment Guide
+            </p>
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                fontWeight: 300,
+                letterSpacing: "-0.5px",
+                lineHeight: 1.1,
+                color: "#ffffff",
+                marginBottom: "1.25rem",
+              }}
+            >
+              Understanding Your Treatment
+            </h1>
+            <p
+              style={{
+                fontFamily: "var(--font-base)",
+                fontSize: "18px",
+                color: "rgba(255,255,255,0.75)",
+                lineHeight: 1.7,
+                maxWidth: "560px",
+              }}
+            >
+              Rheumatic conditions are highly treatable. Everything you need to know about diagnosis, medications, injections, and surgery, explained simply.
+            </p>
           </div>
         </div>
         {/* Blog-style absolute wave */}
