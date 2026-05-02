@@ -111,23 +111,26 @@ function Blog() {
           @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Open+Sans:wght@300;400;500;600;700&display=swap');
           .blog-page .font-sans-blog { font-family: 'Open Sans', sans-serif; }
           .blog-page .font-serif-blog { font-family: 'Lora', serif; }
-          .blog-hero-wave { position: absolute; bottom: -1px; left: 0; width: 100%; overflow: hidden; line-height: 0; }
-          .blog-hero-wave svg { position: relative; display: block; width: calc(100% + 1.3px); height: 50px; }
+          .blog-list-hero { padding: 0 !important; overflow: hidden; }
+          .blog-list-hero-inner { padding: clamp(48px, 6vw, 80px) 0; }
+          .blog-hero-wave { line-height: 0; background-color: #0f616e; }
+          .blog-hero-wave svg { display: block; width: 100%; height: 56px; }
           .filter-checkbox { accent-color: #1A355D; width: 16px; height: 16px; margin-right: 8px; cursor: pointer; }
         `}} />
 
         <div className="blog-page font-sans-blog text-[#1A355D] bg-white">
           {/* Hero Section */}
-          <section className="relative pt-20 pb-36 px-6 md:pt-24 md:pb-40" style={{ backgroundColor: "#0f616e" }}>
-            <div className="max-w-7xl mx-auto relative z-10">
-              <a href="#" className="text-white/60 text-sm underline hover:no-underline mb-6 inline-block">Learn</a>
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 md:gap-20">
-                <h1 className="font-serif-blog text-5xl md:text-6xl md:w-1/2" style={{ color: "#ffffff" }}>
-                  Rheumatoid Arthritis Blog
-                </h1>
-                <p className="text-lg md:text-xl font-light leading-8 md:w-1/2 md:pt-5" style={{ color: "rgba(255,255,255,0.75)" }}>
-                  Explore patient-friendly articles on early symptoms, diagnosis clues, flare triggers, and when joint pain may need a rheumatologist.
-                </p>
+          <section className="blog-list-hero custom-approach-section relative" style={{ backgroundColor: "#0f616e" }}>
+            <div className="max-w-7xl mx-auto px-6">
+              <div className="blog-list-hero-inner">
+                <div>
+                  <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4.2rem)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-1.4px", color: "#ffffff", marginBottom: "1.25rem" }}>
+                    Rheumatoid Arthritis Blog
+                  </h1>
+                  <p style={{ fontSize: "18px", lineHeight: 1.7, color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-base)", margin: 0, maxWidth: "600px" }}>
+                    Explore patient-friendly articles on early symptoms, diagnosis clues, flare triggers, and when joint pain may need a rheumatologist.
+                  </p>
+                </div>
               </div>
             </div>
 
@@ -143,7 +146,7 @@ function Blog() {
           <section className="px-6 pb-16 pt-14 md:pb-20 md:pt-16 max-w-7xl mx-auto relative z-10">
 
             {/* Filter Bar */}
-            <div className="flex justify-end mb-14 md:mb-16 relative -mt-28 md:-mt-24 z-20">
+            <div className="flex justify-end mb-12 md:mb-14 relative -mt-16 md:-mt-14 z-20">
               <div className="relative group">
                 <button className="bg-white border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.08)] rounded-full py-3.5 px-6 flex items-center gap-4 text-sm font-semibold text-[#515a6a]">
                   Content Type
