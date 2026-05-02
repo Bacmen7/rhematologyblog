@@ -57,6 +57,7 @@ function BriefingFooter() {
             <ul className="space-y-4 text-sm font-semibold text-[#1A355D]">
               <li><Link to="/knowledge-hub" className="hover:text-[#515a6a]">Knowledge Hub</Link></li>
               <li><Link to="/treatment-guides" className="hover:text-[#515a6a]">Treatment Guide</Link></li>
+              <li><Link to="/blog" className="hover:text-[#515a6a]">Blog</Link></li>
               <li><a href="#" className="hover:text-[#515a6a]">Research Articles</a></li>
               <li><a href="#" className="hover:text-[#515a6a]">Book Consultation</a></li>
               <li><Link to="/about" className="hover:text-[#515a6a]">About Us</Link></li>

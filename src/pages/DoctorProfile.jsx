@@ -64,19 +64,19 @@ function DoctorProfile() {
       <main className="flex-1">
         {/* Header + Gallery + Tabs section */}
         <div className="bg-[#0f616e] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 lg:pt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-8 sm:pt-12 lg:pt-16">
 
           {/* Doctor Header */}
-          <div style={{ marginBottom: "20px", marginTop: "10px", paddingBottom: "20px" }} className="sm:mt-6">
+          <div style={{ marginBottom: "32px", marginTop: "16px", paddingBottom: "32px" }} className="sm:mt-6">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8">
               <div className="flex-1 max-w-[900px]">
-                <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(28px, 4vw, 48px)", lineHeight: "1.1", color: "#ffffff", marginBottom: "12px" }}>
+                <h1 style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(52px, 6vw, 80px)", lineHeight: "1.1", color: "#ffffff", marginBottom: "24px" }}>
                   {doctor.name}
                 </h1>
-                <p style={{ fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "clamp(14px, 2.5vw, 20px)", lineHeight: "1.65", marginBottom: "18px", color: "rgba(255,255,255,0.7)", maxWidth: "900px" }}>
+                <p style={{ fontFamily: "var(--font-base)", fontWeight: 700, fontSize: "clamp(14px, 2vw, 18px)", lineHeight: "1.65", marginBottom: "14px", color: "rgba(255,255,255,0.7)", maxWidth: "900px" }}>
                   MBBS, MD - General Medicine, DM - Clinical Immunology and Rheumatology
                 </p>
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-2" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "clamp(12px, 1.5vw, 14px)", lineHeight: "1.7", marginBottom: "12px", color: "rgba(255,255,255,0.85)" }}>
+                <div className="flex flex-wrap items-center gap-x-4 gap-y-3" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "clamp(13px, 1.5vw, 15px)", lineHeight: "1.7", marginBottom: "16px", color: "rgba(255,255,255,0.85)" }}>
                   <span>Rheumatologist, Nephrologist</span>
                   <span style={{ color: "rgba(255,255,255,0.3)" }}>|</span>
                   <span>14 Years Exp <span style={{ fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>(6 yrs specialist)</span></span>
@@ -185,19 +185,11 @@ function DoctorProfile() {
 
         </div>
         {/* Wavy bottom edge */}
-        <svg
-          className="w-full h-[30px] sm:h-[50px] md:h-[72px] block"
-          preserveAspectRatio="none"
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ backgroundColor: "#F5F5F5" }}
-        >
-          <path
-            d="M0 0H1440V22C1298 54 1160 79 1016 83C842 88 716 50 542 34C328 15 165 43 0 90V0Z"
-            fill="#0f616e"
-          />
-        </svg>
+        <div style={{ lineHeight: 0, backgroundColor: "#0f616e" }}>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: "56px" }}>
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#F5F5F5" />
+          </svg>
+        </div>
         </div>
 
           {/* Mobile doctor summary card */}

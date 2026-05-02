@@ -19,6 +19,8 @@ import KnowledgeHub from "./pages/KnowledgeHub.jsx"
 import TreatmentGuides from "./pages/TreatmentGuides.jsx"
 import Gout from "./pages/Gout.jsx"
 import Osteoarthritis from "./pages/Osteoarthritis.jsx"
+import Doctors from "./pages/Doctors.jsx"
+import Locations from "./pages/Locations.jsx"
 
 // Lenis smooth scroll -global
 const lenis = new Lenis({
@@ -59,6 +61,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/treatment-guides" element={<TreatmentGuides />} />
         <Route path="/gout" element={<Gout />} />
         <Route path="/osteoarthritis" element={<Osteoarthritis />} />
+        <Route path="/doctors" element={<Doctors />} />
+        <Route path="/locations" element={<Locations />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

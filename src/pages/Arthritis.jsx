@@ -60,7 +60,7 @@ function Arthritis() {
   }, [])
 
   return (
-    <div className="landing-page bg-background-light text-navy-deep antialiased" style={{ fontFamily: "var(--font-base)" }}>
+    <div className="landing-page bg-background-light text-navy-deep antialiased" style={{ fontFamily: "var(--font-base)", "--color-navy-muted": "#1a1a1a" }}>
       <Header />
       <main>
 

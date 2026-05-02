@@ -79,7 +79,7 @@ function ArthritisGuide() {
   }
 
   return (
-    <div className="landing-page bg-white text-navy-deep antialiased">
+    <div className="landing-page bg-white text-navy-deep antialiased" style={{}}>
       <Header />
       <main>
 
@@ -155,7 +155,7 @@ function ArthritisGuide() {
             <div className="lg:flex lg:gap-14">
 
               {/* ── Left: Article Content ── */}
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0" style={{ "--color-navy-deep": "#1a1a1a", "--color-navy-muted": "#1a1a1a" }}>
 
                 {/* Author line */}
                 <div className="flex items-center gap-3 mb-10">
@@ -585,7 +585,7 @@ function ArthritisGuide() {
         <section className="w-full flex flex-col bg-ghost overflow-visible">
           <div style={{ height: "60px", backgroundColor: "#F5F5F5" }} />
           <svg
-            className="w-full h-[24px] sm:h-[90px] md:h-[120px] text-navy-deep block"
+            className="w-full h-[24px] sm:h-[90px] md:h-[120px] block" style={{ color: "#0f616e" }}
             preserveAspectRatio="none"
             viewBox="0 0 1440 120"
             fill="none"
@@ -595,7 +595,7 @@ function ArthritisGuide() {
               fill="currentColor"
             />
           </svg>
-          <div className="bg-navy-deep w-full overflow-visible">
+          <div style={{ backgroundColor: "#0f616e" }} className="w-full overflow-visible">
             <div className="max-w-7xl mx-auto px-6 pb-24 md:pb-32 pt-6 sm:pt-10">
               <div className="flex flex-col-reverse md:flex-row items-stretch gap-10 md:gap-16">
                 <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">

@@ -118,14 +118,14 @@ function Blog() {
 
         <div className="blog-page font-sans-blog text-[#1A355D] bg-white">
           {/* Hero Section */}
-          <section className="relative bg-[#F5F5F5] pt-20 pb-36 px-6 md:pt-24 md:pb-40">
+          <section className="relative pt-20 pb-36 px-6 md:pt-24 md:pb-40" style={{ backgroundColor: "#0f616e" }}>
             <div className="max-w-7xl mx-auto relative z-10">
-              <a href="#" className="text-[#515a6a] text-sm underline hover:no-underline mb-6 inline-block">Learn</a>
+              <a href="#" className="text-white/60 text-sm underline hover:no-underline mb-6 inline-block">Learn</a>
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-10 md:gap-20">
-                <h1 className="font-serif-blog text-5xl md:text-6xl text-[#1A355D] md:w-1/2">
+                <h1 className="font-serif-blog text-5xl md:text-6xl md:w-1/2" style={{ color: "#ffffff" }}>
                   Rheumatoid Arthritis Blog
                 </h1>
-                <p className="text-[#515a6a] text-lg md:text-xl font-light leading-8 md:w-1/2 md:pt-5">
+                <p className="text-lg md:text-xl font-light leading-8 md:w-1/2 md:pt-5" style={{ color: "rgba(255,255,255,0.75)" }}>
                   Explore patient-friendly articles on early symptoms, diagnosis clues, flare triggers, and when joint pain may need a rheumatologist.
                 </p>
               </div>
