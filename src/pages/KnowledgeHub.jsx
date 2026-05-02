@@ -489,7 +489,7 @@ function KnowledgeHub() {
 
         {/* ═══════════ 1 · HERO ═══════════ */}
         <section style={{ backgroundColor: "#0f616e" }}>
-          <div style={{ width: "90vw", maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+          <div className="max-w-7xl mx-auto px-6">
             <div style={{ padding: "clamp(48px, 6vw, 80px) 0" }}>
               <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2.5rem, 5vw, 4.2rem)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-1.4px", color: "#ffffff", marginBottom: "1.25rem" }}>
                 Rheuma <span style={{ color: "#7DE8F0" }}>Knowledge Hub</span>

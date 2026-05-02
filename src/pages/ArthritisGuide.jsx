@@ -86,7 +86,7 @@ function ArthritisGuide() {
         {/* ═══════════ HERO (Gout-style) ═══════════ */}
         <header>
           <div style={{ backgroundColor: "#0f616e" }} className="text-white">
-            <div className="max-w-7xl mx-auto px-6 md:pl-[2%] md:pr-[8%] pt-20 pb-12 flex flex-col items-start">
+            <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 md:pt-20 md:pb-12 flex flex-col items-start">
               <span
                 className="inline-block"
                 style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "24px" }}
@@ -372,9 +372,7 @@ function ArthritisGuide() {
                     At RheumaCare, our goal is to help patients move toward lower inflammation, fewer flares, better daily function, and long-term joint protection through evidence-based care.
                   </p>
                 </div>
-                <hr style={{ border: "none", borderTop: "1px solid #dadfe8", marginBottom: "2.5rem" }} />
-
-                <div id="treatment" style={{ marginBottom: "5rem", paddingTop: "2.5rem", borderTop: "1px solid #dadfe8" }}>
+                <div id="treatment" style={{ marginBottom: "5rem", paddingTop: "2.5rem" }}>
                   <h2
                     className="text-navy-deep"
                     style={{ fontFamily: "var(--font-display)", fontSize: "1.875rem", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.3px", color: "#0f616e", marginBottom: "1.5rem" }}

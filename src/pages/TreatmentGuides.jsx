@@ -195,35 +195,38 @@ function TreatmentGuides() {
       <Header />
 
       {/* ═══ SECTION 1 -HERO ═══ */}
-      <section className="overflow-hidden" style={{ backgroundColor: "#0f616e" }}>
+      <section className="relative overflow-hidden" style={{ backgroundColor: "#0f616e" }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center" style={{ minHeight: "75vh" }}>
             {/* Left -Content */}
             <div style={{ paddingTop: "3rem", paddingBottom: "3rem", paddingRight: "2rem" }}>
+              <p style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "16px" }}>
+                Treatment Guide
+              </p>
               <h1
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(40px, 5vw, 62px)",
-                  fontWeight: 400,
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  fontWeight: 300,
                   letterSpacing: "-0.5px",
-                  lineHeight: 1.08,
+                  lineHeight: 1.1,
                   color: "#ffffff",
                   marginBottom: "1.25rem",
                 }}
               >
-                It's finally time to understand your treatment
+                Understanding Your Treatment
               </h1>
               <p
                 style={{
                   fontFamily: "var(--font-base)",
-                  fontSize: "clamp(15px, 2vw, 20px)",
+                  fontSize: "clamp(15px, 1.5vw, 18px)",
                   color: "rgba(255,255,255,0.75)",
-                  lineHeight: 1.6,
+                  lineHeight: 1.7,
                   marginBottom: "2rem",
                   maxWidth: "480px",
                 }}
               >
-                Rheumatic conditions are highly treatable. Here is everything you need to know - diagnosis, medications, injections, and surgery - explained simply.
+                Rheumatic conditions are highly treatable. Everything you need to know about diagnosis, medications, injections, and surgery, explained simply.
               </p>
               <a
                 href="#diagnosis"
@@ -251,6 +254,12 @@ function TreatmentGuides() {
               />
             </div>
           </div>
+        </div>
+        {/* Blog-style absolute wave */}
+        <div style={{ position: "absolute", bottom: "-1px", left: 0, width: "100%", overflow: "hidden", lineHeight: 0 }}>
+          <svg style={{ position: "relative", display: "block", width: "calc(100% + 1.3px)", height: "60px" }} viewBox="0 0 1200 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#ffffff" />
+          </svg>
         </div>
       </section>
 
