@@ -143,7 +143,7 @@ function OsteoarthritisLiving() {
       `}</style>
       <main>
         <header style={{ backgroundColor: "#0f616e" }} className="text-white">
-          <div className="relative max-w-7xl mx-auto px-5 sm:px-6" style={{ minHeight: "380px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingTop: "3rem", paddingBottom: "2rem" }}>
+          <div className="relative max-w-7xl mx-auto px-5 sm:px-6" style={{ minHeight: "440px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingTop: "3rem", paddingBottom: "2rem" }}>
 
             {/* Breadcrumb */}
             {/* <div
@@ -173,8 +173,8 @@ function OsteoarthritisLiving() {
             >
               Osteoarthritis
               <span style={{ lineHeight: "1.2", display: "block", marginTop: "0", fontFamily: "var(--font-display)" }}>
-                <span style={{ fontSize: "1em", color: "rgba(255,255,255,0.9)" }}>Living Well</span><br />
-                <span style={{ fontSize: "0.45em", color: "rgba(255,255,255,0.9)" }}>Daily Habits That Make a Real Difference</span>
+                <span style={{ fontSize: "1em", color: "rgba(255,255,255,0.9)" }}>Living Well:</span><br />
+                <span style={{ fontSize: "0.45em", color: "rgba(255,255,255,0.9)" }}>Living With Osteoarthritis: Daily Habits That Make a Real Difference</span>
               </span>
             </h1>
 

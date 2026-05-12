@@ -259,7 +259,7 @@ function Osteoarthritis() {
 
         {/* ═══════════ HERO ═══════════ */}
         <header style={{ backgroundColor: "#0f616e" }} className="text-white">
-          <div className="relative max-w-7xl mx-auto px-5 sm:px-6" style={{ minHeight: "380px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingTop: "3rem", paddingBottom: "2rem" }}>
+          <div className="relative max-w-7xl mx-auto px-5 sm:px-6" style={{ minHeight: "440px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingTop: "3rem", paddingBottom: "2rem" }}>
 
             {/* Breadcrumb — absolute top */}
             {/* <div
