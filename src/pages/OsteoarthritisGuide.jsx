@@ -3,7 +3,7 @@ import Header from "../components/Header"
 import GoutNewsletter from "../components/GoutNewsletter"
 import BriefingFooter from "../components/BriefingFooter"
 import ReviewedConsultationCta from "../components/ReviewedConsultationCta"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Stethoscope } from "lucide-react"
 
 /* ─────────────────────────────────────────────
    DATA
@@ -513,10 +513,10 @@ function OsteoarthritisGuide() {
                     When to see a rheumatologist
                   </h2>
 
-                  <div style={{ backgroundColor: "#0f616e", borderRadius: 0, padding: "28px 28px 28px", fontFamily: "var(--font-base)" }}>
+                  <div style={{ backgroundColor: "#FFF3E8", borderRadius: 0, padding: "28px 28px 28px", fontFamily: "var(--font-base)" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "20px" }}>
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" style={{ flexShrink: 0 }}><path d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" stroke="#a0e2e4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                      <p style={{ fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#ffffff", lineHeight: 1.3, margin: 0 }}>Book an evaluation if joint pain is affecting daily life</p>
+                      <Stethoscope size={28} color="#E86531" strokeWidth={2} style={{ flexShrink: 0 }} />
+                      <p style={{ fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#0f616e", lineHeight: 1.3, margin: 0 }}>Book an evaluation if joint pain is affecting daily life</p>
                     </div>
 
                     <ul style={{ listStyleType: "none", paddingLeft: 0, marginBottom: "24px", display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -529,8 +529,8 @@ function OsteoarthritisGuide() {
                         "Pain that starts disturbing sleep, work, prayer, travel, or daily movement",
                       ].map((item, i) => (
                         <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "12px" }}>
-                          <svg width="16" height="16" viewBox="0 0 10 8" fill="none" style={{ flexShrink: 0, marginTop: "4px" }}><path d="M1 4l2.5 2.5L9 1" stroke="#a0e2e4" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                          <span style={{ fontSize: "15px", lineHeight: 1.7, color: "rgba(255,255,255,0.88)", fontFamily: "var(--font-base)" }}>{item}</span>
+                          <svg width="16" height="16" viewBox="0 0 10 8" fill="none" style={{ flexShrink: 0, marginTop: "4px" }}><path d="M1 4l2.5 2.5L9 1" stroke="#E86531" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                          <span style={{ fontSize: "15px", lineHeight: 1.7, color: "#1a1a1a", fontFamily: "var(--font-base)" }}>{item}</span>
                         </li>
                       ))}
                     </ul>
