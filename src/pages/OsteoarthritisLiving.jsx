@@ -171,7 +171,7 @@ function OsteoarthritisLiving() {
               }}
             >
               <span style={{ display: "block", fontSize: "clamp(2.8rem, 5.5vw, 4.2rem)" }}>Living With Osteoarthritis:</span>
-              <span style={{ display: "block", fontSize: "clamp(1.6rem, 3vw, 2.4rem)", color: "rgba(255,255,255,0.85)", marginTop: "0.6rem", fontWeight: 400 }}>Daily Habits That Make a Real Difference</span>
+              <span style={{ display: "block", fontSize: "clamp(1.2rem, 2.5vw, 1.8rem)", color: "rgba(255,255,255,0.85)", marginTop: "0.6rem", fontWeight: 400 }}>Daily Habits That Make a Real Difference</span>
             </h1>
 
             {/* Image */}
