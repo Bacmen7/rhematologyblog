@@ -44,7 +44,7 @@ function WellnessSeminars() {
               <img
                 alt="Wellness Seminar Session"
                 className="rounded-2xl md:rounded-[3rem] w-full h-[300px] md:h-[500px] object-cover shadow-2xl group-hover:rotate-2 transition-transform duration-500"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiP-aUoxU2OXMW5iwhL3uvfM_b078zjYwDh4hbbmbn-KyzYFq6uYOu3Wom89lnkbLxocRtzF907ZdTlJo_ve_GWV8qqkMBrvgeWoEthZZOFCuNSY3N10PKO94A4EFRdUn0BZjIlPVEw1tOCPZtJo0e_W3wvoyivR6xx6w6mpzXubJ1_ZjvGe0n47VLXvejG3VVSWQ6a2x9T2mz8OtXEz0F1KY9lZ9-ttoJFh90cZnqJRuOCMGsny-vZU6X5mNT6WNgBEYmQQ7da6A"
+                src="/images/exercise.jpg"
               />
               <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 bg-navy-deep text-white p-6 md:p-10 rounded-2xl md:rounded-[3rem] shadow-xl">
                 <h5 className="text-xl md:text-2xl font-bold mb-2">Next Event</h5>

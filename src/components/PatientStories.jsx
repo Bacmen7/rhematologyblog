@@ -15,14 +15,14 @@ function PatientStories() {
             </div>
 
             <p className="text-3xl md:text-4xl font-medium leading-tight mb-12">
-              "Before RheumaCare, even holding a coffee cup was a challenge. After three months of their biological infusion therapy, I'm back to playing tennis twice a week."
+              "Before Omni Rheuma, even holding a coffee cup was a challenge. After three months of their biological infusion therapy, I'm back to playing tennis twice a week."
             </p>
 
             <div className="flex items-center gap-4">
               <img
                 alt="Jonathan Wright"
                 className="w-16 h-16 rounded-full border-2 border-white object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBns-_-Xuv70NzC8zMtpTUxTzro6R1Ux1shXP08ls4k6t-3c4raeBpHMgRLgTE9cXKVGPjBeK2vC7YDy4PEnqgDaKqLvQ2tyZLyb7Q8LNBZzaYscPHx8q9fFu1xZs4MckM0lAV9KdI0WAc6JGtENVy1J_KpX43OEjJElsMPQuNReIr-eS_Wjd9NsnGJewP2v3HBTR-xkdKvlyhtIKia2zGLENvdnhgN8AWMH66JnjbRkYCjiYt5v4MN3sSPGjfq96vvTBuHa90og8"
+                src="/images/patient-sarah.jpg"
               />
               <div className="text-left">
                 <h5 className="font-bold text-xl">Jonathan Wright</h5>

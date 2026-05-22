@@ -7,8 +7,8 @@ function BriefingFooter() {
       <div className="max-w-7xl mx-auto">
         {/* Logo & Social */}
         <div className="mb-12">
-          <Link to="/" className="inline-block mb-8">
-            <span className="text-2xl font-extrabold tracking-tighter text-[#1A355D]">RHEUMA.</span>
+          <Link to="/" className="inline-flex items-center mb-8" aria-label="Omni Rheuma home">
+            <img src="/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
           </Link>
           <div className="flex gap-4 mb-8">
             <a href="#" className="w-10 h-10 rounded-full bg-[#1AA3B5] flex items-center justify-center text-white hover:opacity-80 transition-opacity">
@@ -44,11 +44,11 @@ function BriefingFooter() {
               <li><Link to="/arthritis" className="hover:text-[#515a6a]">Arthritis</Link></li>
               <li><Link to="/Rheumatoid-Arthritis" className="hover:text-[#515a6a]">Rheumatoid Arthritis</Link></li>
               <li><Link to="/osteoarthritis" className="hover:text-[#515a6a]">Osteoarthritis</Link></li>
-              <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li>
-              <li><a href="#" className="hover:text-[#515a6a]">Lupus (SLE)</a></li>
-              <li><a href="#" className="hover:text-[#515a6a]">Ankylosing Spondylitis</a></li>
-              <li><Link to="/gout" className="hover:text-[#515a6a]">Gout</Link></li>
-              <li><a href="#" className="hover:text-[#515a6a]">Undiagnosed Symptoms</a></li>
+              {/* <li><a href="#" className="hover:text-[#515a6a]">Psoriatic Arthritis</a></li> */}
+              {/* <li><a href="#" className="hover:text-[#515a6a]">Lupus (SLE)</a></li> */}
+              {/* <li><a href="#" className="hover:text-[#515a6a]">Ankylosing Spondylitis</a></li> */}
+              {/* <li><Link to="/gout" className="hover:text-[#515a6a]">Gout</Link></li> */}
+              {/* <li><a href="#" className="hover:text-[#515a6a]">Undiagnosed Symptoms</a></li> */}
             </ul>
           </div>
 
@@ -81,7 +81,7 @@ function BriefingFooter() {
         <div className="border-t border-gray-200 pt-8 text-[#515a6a]">
           <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-8">
             <p className="leading-relaxed text-[12px] md:max-w-[65%]">
-              Rheuma delivers personalized, whole-person medical care to people living with rheumatic conditions. Testimonials reflect individual patient experiences and results may vary.
+              Omni Rheuma delivers personalized, whole-person medical care to people living with rheumatic conditions. Testimonials reflect individual patient experiences and results may vary.
             </p>
             <div className="flex flex-wrap gap-x-5 gap-y-3 text-[12px] underline decoration-gray-300 underline-offset-4 md:text-right">
               <a href="#" className="hover:text-[#1A355D]">Privacy Policy</a>
@@ -90,7 +90,7 @@ function BriefingFooter() {
               <a href="#" className="hover:text-[#1A355D]">Notice of Privacy Practices</a>
             </div>
           </div>
-          <p className="text-[12px] mt-8">&copy; 2026 Rheuma, Inc. All rights reserved.</p>
+          <p className="text-[12px] mt-8">&copy; 2026 Omni Rheuma, Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>

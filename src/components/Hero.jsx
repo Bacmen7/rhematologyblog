@@ -5,7 +5,7 @@ import { ArrowRight } from "lucide-react"
 const emphasisWordStyle = {
   fontWeight: 700,
   fontFamily: "var(--font-base)",
-  fontSize: "0.85em",
+  fontSize: "1em",
   whiteSpace: "nowrap",
   display: "inline-block",
 }
@@ -95,7 +95,7 @@ function Hero() {
 
             {/* Mobile View Primary Text */}
             <div className="block lg:hidden mt-2 mb-6 relative z-20 max-w-[90%]">
-              <p style={{ color: "rgba(255,255,255,0.95)", fontSize: "15px", lineHeight: 1.6 }}>
+              <p style={{ color: "rgba(255,255,255,0.95)", fontSize: "13px", lineHeight: 1.55 }}>
                 Take the first step toward healthier living.
                 <br className="hidden sm:block" />
                 With expert guidance by your side,

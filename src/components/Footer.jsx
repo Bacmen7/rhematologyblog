@@ -12,10 +12,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-16">
           <div className="col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-primary p-2 rounded-lg text-navy-deep">
-                <span className="material-symbols-outlined block text-2xl">rheumatology</span>
-              </div>
-              <span className="text-xl font-extrabold tracking-tight text-navy-deep">RheumaInsights</span>
+              <img src="/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
             </div>
             <p className="text-teal-soft text-sm leading-relaxed mb-6 max-w-xs">
               The definitive clinical resource for autoimmune and musculoskeletal medicine. Peer-reviewed, evidence-based, and physician-led.
@@ -44,7 +41,7 @@ function Footer() {
         </div>
         <div className="border-t border-teal-soft/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-teal-soft/60">Medical disclaimer: This content is for professional educational purposes only.</p>
-          <p className="text-xs text-teal-soft/60">&copy; 2024 RheumaInsights Medical Media. All rights reserved.</p>
+          <p className="text-xs text-teal-soft/60">&copy; 2024 Omni Rheuma Medical Media. All rights reserved.</p>
         </div>
       </div>
     </footer>

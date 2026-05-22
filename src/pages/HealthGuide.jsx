@@ -99,7 +99,7 @@ function HealthGuide() {
         <section className="relative overflow-hidden" style={{ marginTop: "-2px", backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid md:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.98fr)] gap-6 md:gap-10 items-stretch">
-              <div className="relative z-10 flex flex-col justify-center pt-8 pb-6 md:py-8 lg:py-9">
+              <div className="relative z-10 flex flex-col justify-center pt-8 pb-16 md:pt-8 md:pb-20 lg:pt-9 lg:pb-24">
                 <h1
                   className="leading-tight"
                   style={{ letterSpacing: "-1px", marginBottom: "1rem", color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(3.1rem, 6vw, 5.35rem)", lineHeight: 1.04 }}
@@ -167,6 +167,18 @@ function HealthGuide() {
               src="/images/hero-consult.jpg"
             />
           </div>
+          <svg
+            className="absolute bottom-[-1px] left-0 w-full h-[42px] md:h-[64px] z-20"
+            viewBox="0 0 1440 80"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 80H1440V42C1204 6 959 5 719 40C478 75 236 76 0 38V80Z"
+              fill="var(--color-ghost)"
+            />
+          </svg>
         </section>
 
         {/* ═══════════ WHAT IS RHEUMATOLOGY (matching WhyRheuma dark section) ═══════════

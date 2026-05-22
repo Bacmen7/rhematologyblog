@@ -55,8 +55,8 @@ function Arthritis() {
   }, [])
 
   useEffect(() => {
-    document.title = "Arthritis Care | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Arthritis Care | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   return (
@@ -486,7 +486,7 @@ function Arthritis() {
                   items: ["Total Knee Replacement", "Total Hip Replacement", "Synovectomy", "Arthroscopy", "Spinal Fusion -end-stage AS"],
                   note: "Reserved as a last resort -only after all medical options are exhausted.",
                   color: "#fd956a",
-                  img: "https://images.unsplash.com/photo-1666214280391-8ff5bd3c0bf0?auto=format&fit=crop&w=600&q=80",
+                  img: "/images/hero-doctor.jpg",
                 },
                 {
                   icon: "fitness_center",
@@ -571,7 +571,7 @@ function Arthritis() {
               {/* Photo side */}
               <div className="relative h-[260px] lg:h-auto overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=85"
+                  src="/images/exercise.jpg"
                   alt="Person exercising actively"
                   className="w-full h-full object-cover"
                 />
@@ -785,10 +785,10 @@ function Arthritis() {
                 className="text-navy-deep"
                 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 2.75rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px", marginBottom: "1rem" }}
               >
-                The Role of RheumaCare
+                The Role of Omni Rheuma
               </h2>
               <p className="text-[15px] leading-[1.75] text-navy-muted">
-                RheumaCare is designed to bridge the gap between clinical appointments and everyday life -giving patients, caregivers, and clinicians the tools, knowledge, and support they need at every stage of the arthritis journey.
+                Omni Rheuma is designed to bridge the gap between clinical appointments and everyday life -giving patients, caregivers, and clinicians the tools, knowledge, and support they need at every stage of the arthritis journey.
               </p>
               <a
                 href="#"
@@ -848,7 +848,7 @@ function Arthritis() {
               {/* Featured card */}
               <div className="rounded-2xl border border-[#e8ecf2] overflow-hidden">
                 <div className="relative h-[320px] overflow-hidden">
-                  <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800" alt="" className="w-full h-full object-cover" />
+                  <img src="/images/lab-test.jpg" alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,97,110,.8)] to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-1.5">
@@ -875,10 +875,10 @@ function Arthritis() {
               {/* List cards */}
               <div className="flex flex-col gap-3">
                 {[
-                  { img: "https://images.unsplash.com/photo-1585435557343-3b092031a831?w=400", cat: "Medications", title: "Starting Methotrexate -What Every Patient Must Know", time: "8 min read" },
-                  { img: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400", cat: "Patient Guide", title: "RA vs Osteoarthritis -How to Tell the Difference", time: "6 min read" },
-                  { img: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
-                  { img: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=400", cat: "Lifestyle", title: "Diet & Inflammation -What to Eat With Arthritis", time: "5 min read" },
+                  { img: "/images/medication.jpg", cat: "Medications", title: "Starting Methotrexate -What Every Patient Must Know", time: "8 min read" },
+                  { img: "/images/joints.jpg", cat: "Patient Guide", title: "RA vs Osteoarthritis -How to Tell the Difference", time: "6 min read" },
+                  { img: "/images/exercise.jpg", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
+                  { img: "/images/diet.jpg", cat: "Lifestyle", title: "Diet & Inflammation -What to Eat With Arthritis", time: "5 min read" },
                 ].map((art, i) => (
                   <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#e8ecf2] bg-white cursor-pointer items-center hover:border-primary transition-colors">
                     <img src={art.img} alt="" className="w-[72px] h-[72px] rounded-[10px] object-cover shrink-0" />

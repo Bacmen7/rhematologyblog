@@ -64,8 +64,8 @@ function OsteoarthritisAdvanced() {
   const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
-    document.title = "Osteoarthritis: Injections, Surgery & What to Expect | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Osteoarthritis: Injections, Surgery & What to Expect | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   useEffect(() => {

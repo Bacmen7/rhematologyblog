@@ -39,7 +39,7 @@ function BlogDetail() {
       <section className="bg-ghost relative pb-14 md:pb-16">
         <div className="max-w-7xl mx-auto px-6 pt-5 md:pt-10">
           <nav className="flex items-center flex-wrap gap-1.5 md:gap-2 text-[12px] md:text-[13px] text-navy-muted mb-6 md:mb-10" style={{ fontFamily: "var(--font-base)", fontWeight: 600 }}>
-            <Link to="/" className="hover:text-navy-deep transition-colors">RHEUMA.</Link>
+            <Link to="/" className="hover:text-navy-deep transition-colors">Omni Rheuma</Link>
             <span>&gt;</span>
             <span>{article.category}</span>
             <span>&gt;</span>

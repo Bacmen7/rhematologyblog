@@ -57,8 +57,8 @@ function OsteoarthritisLiving() {
   const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
-    document.title = "Living With Osteoarthritis: Daily Habits That Make a Real Difference | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Living With Osteoarthritis: Daily Habits That Make a Real Difference | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   useEffect(() => {

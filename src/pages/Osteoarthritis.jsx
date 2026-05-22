@@ -178,8 +178,8 @@ function Osteoarthritis() {
   const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
-    document.title = "Osteoarthritis — Symptoms & Causes | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Osteoarthritis — Symptoms & Causes | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   /* Scroll-spy for TOC highlight */

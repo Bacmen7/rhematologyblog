@@ -22,7 +22,7 @@ function GoutNewsletter() {
           lineHeight: 1.2,
         }}
       >
-        From RheumaCare to your inbox
+        From Omni Rheuma to your inbox
       </h2>
 
       <p
@@ -79,7 +79,7 @@ function GoutNewsletter() {
               alignItems: "center",
             }}
           >
-            Learn more about RheumaCare&apos;s use of data.
+            Learn more about Omni Rheuma&apos;s use of data.
             <svg
               style={{
                 width: "14px",

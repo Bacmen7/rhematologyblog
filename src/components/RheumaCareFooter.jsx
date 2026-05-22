@@ -11,7 +11,9 @@ function RheumaCareFooter() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 mb-20">
           <div className="col-span-2 md:col-span-4 lg:col-span-1">
-            <a className="text-3xl font-bold tracking-tighter" href="#">RheumaCare</a>
+            <a className="inline-flex items-center" href="#" aria-label="Omni Rheuma home">
+              <img src="/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
+            </a>
           </div>
           {Object.entries(footerSections).map(([title, links]) => (
             <div key={title}>
@@ -27,7 +29,9 @@ function RheumaCareFooter() {
           ))}
         </div>
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-3xl font-bold tracking-tighter opacity-50">RheumaCare</div>
+          <div className="flex items-center opacity-50">
+            <img src="/logo.png" alt="Omni Rheuma logo" className="h-32 w-32 object-contain" />
+          </div>
           <div className="flex items-center gap-4">
             <div className="bg-blue-900/30 p-2 rounded-lg flex items-center gap-2 border border-blue-800/50">
               <svg className="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">

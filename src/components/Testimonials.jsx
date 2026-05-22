@@ -87,7 +87,7 @@ function Testimonials() {
         <p className="text-xs uppercase tracking-[0.25em] font-semibold text-navy-muted" style={{ marginBottom: "12px" }}>
           Trusted by 33K+ People
         </p>
-        <h2 className="text-3xl sm:text-[2.5rem] md:text-[3.5rem] leading-[1.08] tracking-[-1.2px] text-navy-deep">
+        <h2 className="text-[2.25rem] sm:text-[2.5rem] md:text-[3.5rem] leading-[1.08] tracking-[-1.2px] text-navy-deep">
           See why 98% of patients love us
         </h2>
       </div>

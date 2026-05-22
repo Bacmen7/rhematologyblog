@@ -104,8 +104,8 @@ function ArthritisGuide() {
   const [activeSection, setActiveSection] = useState("what-is-ra")
 
   useEffect(() => {
-    document.title = "Rheumatoid Arthritis: What It Is, Symptoms, Causes & Treatment Options | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Rheumatoid Arthritis: What It Is, Symptoms, Causes & Treatment Options | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   useEffect(() => {

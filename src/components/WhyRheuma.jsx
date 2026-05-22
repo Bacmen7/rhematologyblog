@@ -97,7 +97,7 @@ function WhyRheuma() {
       {/* ── Mobile Layout ── */}
       <div className="block md:hidden">
         <div className="px-5 pt-12 pb-8 text-center">
-          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "1.85rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "16px" }}>
+          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "2.25rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "16px" }}>
             Expert care for all rheumatic symptoms and conditions
           </h2>
           <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
@@ -106,13 +106,13 @@ function WhyRheuma() {
           </p>
         </div>
 
-        <div className="flex gap-3 overflow-x-auto px-4 pb-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
+        <div className="flex gap-4 overflow-x-auto px-4 pb-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
           {conditions.map((c) => (
-              <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "155px" }}>
-              <div className="w-full overflow-hidden" style={{ height: "210px", borderRadius: "14px" }}>
+              <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "185px" }}>
+              <div className="w-full overflow-hidden" style={{ height: "245px", borderRadius: "16px" }}>
                 <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
               </div>
-              <p style={{ fontSize: "12px", fontWeight: 700, color: "#0f616e", fontFamily: "var(--font-base)", marginTop: "8px", textAlign: "center", lineHeight: 1.3 }}>
+              <p style={{ fontSize: "13px", fontWeight: 700, color: "#0f616e", fontFamily: "var(--font-base)", marginTop: "10px", textAlign: "center", lineHeight: 1.3 }}>
                 {c.name}
               </p>
             </div>

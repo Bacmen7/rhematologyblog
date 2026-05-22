@@ -62,7 +62,7 @@ function VideoLibrary() {
               Rheumatology Video Library
             </p>
             <h2
-              className="text-3xl md:text-[2.75rem] leading-[1.1] tracking-tight"
+              className="text-[2.25rem] md:text-[2.75rem] leading-[1.1] tracking-tight"
               style={{ fontFamily: "var(--font-display)", fontWeight: 400 }}
             >
               Hear From Our Expert Rheumatologists

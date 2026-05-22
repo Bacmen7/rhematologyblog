@@ -100,8 +100,8 @@ function HeroSection() {
           <div className="relative">
             <img
               className="w-full h-full object-cover object-center"
-              src="https://oshihealth.com/wp-content/uploads/2025/07/GettyImages-1423956398-scaled-e1752007750748-1200x974.jpg"
-              alt="Smiling mother and child"
+              src="/images/hero-consult.jpg"
+              alt="Doctor consulting with patient"
             />
           </div>
         </div>
@@ -130,8 +130,8 @@ function HeroSection() {
         </div>
         <img
           className="w-full block"
-          src="https://oshihealth.com/wp-content/uploads/2025/07/GettyImages-1423956398-scaled-e1752007750748-1200x974.jpg"
-          alt="Smiling mother and child"
+          src="/images/hero-consult.jpg"
+          alt="Doctor consulting with patient"
         />
       </section>
     </>
@@ -265,7 +265,7 @@ function ComparisonSection() {
               <tr>
                 <th className="text-left font-normal text-sm w-[60%] p-4"></th>
                 <th className="p-4 w-[20%] text-center">
-                  <span className="text-[14px] font-extrabold tracking-tighter text-[#1A355D]">RHEUMA.</span>
+                  <span className="text-[14px] font-extrabold tracking-tighter text-[#1A355D]">Omni Rheuma</span>
                 </th>
                 <th className="p-4 w-[20%] text-center text-[11px] font-bold tracking-[0.15em] text-[#1A355D] uppercase">Other Solutions</th>
               </tr>
@@ -372,12 +372,12 @@ function TestimonialsSection() {
         {/* Circular Avatar Ring */}
         <div className="hidden lg:flex justify-center relative translate-x-[-10%]">
           <div className="testimonial-ring">
-            <div className="testimonial-avatar pos-1"><img src="https://oshihealth.com/wp-content/uploads/2024/11/ScottP.png-300x199.webp" alt="Patient" className="w-full h-full object-cover" /></div>
-            <div className="testimonial-avatar pos-2"><img src="https://oshihealth.com/wp-content/uploads/2024/11/OshiHealthTestimonialPhoto-200x300.jpg" alt="Patient" className="w-full h-full object-cover object-top" /></div>
-            <div className="testimonial-avatar pos-3"><img src="https://oshihealth.com/wp-content/uploads/2025/03/Oshi_March_IBS-diet_-Meal-planning-and-more_Graphic-1-300x186.png" alt="Patient" className="w-full h-full object-cover" /></div>
-            <div className="testimonial-avatar pos-4 z-10"><img src="https://oshihealth.com/wp-content/uploads/2024/12/GettyImages-1813378117-225x300.jpg" alt="Patient" className="w-full h-full object-cover object-top" /></div>
-            <div className="testimonial-avatar pos-5"><img src="https://oshihealth.com/wp-content/uploads/2022/07/GettyImages-1125723283-994x560-1-300x169.jpeg" alt="Patient" className="w-full h-full object-cover" /></div>
-            <div className="testimonial-avatar pos-6"><img src="https://oshihealth.com/wp-content/uploads/2025/01/Bo-headshot-217x300.jpg" alt="Patient" className="w-full h-full object-cover object-top" /></div>
+            <div className="testimonial-avatar pos-1"><img src="/images/patient-sarah.jpg" alt="Patient" className="w-full h-full object-cover" /></div>
+            <div className="testimonial-avatar pos-2"><img src="/images/patient-mark.jpg" alt="Patient" className="w-full h-full object-cover object-top" /></div>
+            <div className="testimonial-avatar pos-3"><img src="/images/dr-sarah-miller.jpg" alt="Patient" className="w-full h-full object-cover" /></div>
+            <div className="testimonial-avatar pos-4 z-10"><img src="/images/specialist-1.jpg" alt="Patient" className="w-full h-full object-cover object-top" /></div>
+            <div className="testimonial-avatar pos-5"><img src="/images/specialist-2.jpg" alt="Patient" className="w-full h-full object-cover" /></div>
+            <div className="testimonial-avatar pos-6"><img src="/images/specialist-3.jpg" alt="Patient" className="w-full h-full object-cover object-top" /></div>
           </div>
         </div>
 
@@ -416,9 +416,9 @@ function TestimonialsSection() {
 /* ───────── VIDEOS ───────── */
 function VideosSection() {
   const videos = [
-    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Oshi_Johanna_Still-9-2-1024x513.png', quote: '"I got my life back." -Maria', alt: 'Maria' },
-    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Group-4-1024x572.png', quote: '"They actually listened." -David', alt: 'David' },
-    { img: 'https://oshihealth.com/wp-content/uploads/2025/02/Group-1288-1024x576.png', quote: '"Keep going. It gets better." -Sarah', alt: 'Sarah' }
+    { img: '/images/patient-sarah.jpg', quote: '"I got my life back." -Maria', alt: 'Maria' },
+    { img: '/images/hero-consult.jpg', quote: '"They actually listened." -David', alt: 'David' },
+    { img: '/images/patient-mark.jpg', quote: '"Keep going. It gets better." -Sarah', alt: 'Sarah' }
   ]
 
   return (
@@ -475,7 +475,7 @@ function EvidenceSection() {
           {/* Article 1 */}
           <a href="#" className="flex flex-col md:flex-row gap-10 items-center group">
             <div className="w-full md:w-[350px] h-[220px] bg-white flex-shrink-0 flex items-center justify-center p-6 transition-transform duration-300 group-hover:-translate-y-1">
-              <img src="https://oshihealth.com/wp-content/uploads/2025/01/Hero-Image-Clincal-Trial-300x186.jpg" alt="Clinical Trial" className="w-full h-full object-contain" />
+              <img src="/images/lab-test.jpg" alt="Clinical testing" className="w-full h-full object-contain" />
             </div>
             <div className="w-full">
               <span className="inline-block bg-[#e0f3f5] text-[#1A355D] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full mb-4">June 26, 2025</span>
@@ -492,7 +492,7 @@ function EvidenceSection() {
           {/* Article 2 */}
           <a href="#" className="flex flex-col md:flex-row gap-10 items-center group">
             <div className="w-full md:w-[350px] h-[220px] bg-white flex-shrink-0 flex items-center justify-center p-12 transition-transform duration-300 group-hover:-translate-y-1">
-              <img src="https://oshihealth.com/wp-content/uploads/2025/01/AGA-300x56.png" alt="AGA Logo" className="w-full h-auto object-contain" />
+              <img src="/images/ultrasound.jpg" alt="Rheumatology ultrasound" className="w-full h-auto object-contain" />
             </div>
             <div className="w-full">
               <span className="inline-block bg-[#e0f3f5] text-[#1A355D] text-[10px] font-bold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full mb-4">June 26, 2025</span>

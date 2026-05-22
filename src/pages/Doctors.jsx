@@ -6,8 +6,8 @@ import CtaBanner from "../components/CtaBanner"
 
 function Doctors() {
   useEffect(() => {
-    document.title = "Our Doctors | RheumaInsights"
-    return () => { document.title = "RheumaInsights" }
+    document.title = "Our Doctors | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma" }
   }, [])
 
   return (
@@ -16,7 +16,7 @@ function Doctors() {
       <main className="flex-1">
 
         {/* Hero */}
-        <section style={{ backgroundColor: "#0f616e" }}>
+        <section className="relative overflow-hidden" style={{ backgroundColor: "#0f616e" }}>
           <div className="max-w-7xl mx-auto px-6 pt-16 pb-10 md:pt-20 md:pb-12">
             <p style={{ fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.16em", color: "#a0e2e4", marginBottom: "16px" }}>
               Our Team
@@ -28,6 +28,18 @@ function Doctors() {
               Board-certified rheumatologists with expertise in autoimmune and inflammatory conditions.
             </p>
           </div>
+          <svg
+            className="absolute bottom-[-1px] left-0 w-full h-[42px] md:h-[64px]"
+            viewBox="0 0 1440 80"
+            fill="none"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M0 80H1440V42C1204 6 959 5 719 40C478 75 236 76 0 38V80Z"
+              fill="#F5F5F5"
+            />
+          </svg>
         </section>
 
         {/* Doctor Cards - reuse existing MeetDoctors component */}

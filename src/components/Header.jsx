@@ -131,11 +131,11 @@ function Header() {
           : "bg-white/60 backdrop-blur-md border-b border-transparent"
       }`}
     >
-      <div className="px-6 lg:px-10 h-[72px] flex items-center justify-between">
+      <div className="px-6 lg:px-10 h-[88px] flex items-center justify-between">
         {/* ===== Left: Logo ===== */}
         <div className="flex items-center">
-          <Link to="/" className="text-2xl font-extrabold tracking-tighter text-navy-deep">
-            RheumaCare.
+          <Link to="/" className="flex items-center" aria-label="Omni Rheuma home">
+            <img src="/logo.png" alt="Omni Rheuma logo" className="h-28 w-28 object-contain" />
           </Link>
         </div>
 
@@ -255,8 +255,8 @@ function Header() {
         >
           {/* Top Bar */}
           <div className="flex items-center justify-between px-5 pt-5">
-            <Link to="/" className="text-xl font-extrabold tracking-tighter text-navy-deep" onClick={closeMobileMenu}>
-              RheumaCare.
+            <Link to="/" className="flex items-center" onClick={closeMobileMenu} aria-label="Omni Rheuma home">
+              <img src="/logo.png" alt="Omni Rheuma logo" className="h-24 w-24 object-contain" />
             </Link>
             <button
               className="w-10 h-10 rounded-xl bg-navy-deep text-white flex items-center justify-center hover:bg-navy-deep/90 transition-colors"
@@ -428,7 +428,7 @@ function Header() {
                   </div>
 
                   {/* Treatments below */}
-                  <div className="mt-12 pt-10 border-t border-gray-200">
+                  {/* <div className="mt-12 pt-10 border-t border-gray-200">
                     <h3 style={{ fontSize: "18px", fontWeight: 600, color: "#0f616e", marginBottom: "40px" }}>Treatment Options</h3>
                     <div className="grid grid-cols-4 gap-x-12 gap-y-8">
                       {treatments.map((item) => (
@@ -443,7 +443,7 @@ function Header() {
                         </div>
                       ))}
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
               </div>
@@ -600,7 +600,7 @@ function Header() {
             </div>
 
             {/* Treatments */}
-            <p
+            {/* <p
               className="text-[11px] tracking-[0.2em] uppercase font-bold text-navy-muted/70 mb-4"
               style={{
                 opacity: whatWeCoverVisible ? 1 : 0,
@@ -633,7 +633,7 @@ function Header() {
                   </a>
                 )
               })}
-            </div>
+            </div> */}
 
             {/* CTA */}
             <div

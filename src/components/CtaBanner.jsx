@@ -24,10 +24,9 @@ function CtaBanner() {
             {/* Left -Text */}
             <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">
               <h2
-                className="leading-[1.1] font-normal !mb-5 md:!mb-6 text-center md:text-left"
+                className="text-[2.25rem] md:text-[clamp(2rem,4vw,3.2rem)] leading-[1.1] font-normal !mb-5 md:!mb-6 text-center md:text-left"
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(2rem, 4vw, 3.2rem)",
                   fontWeight: 400,
                   lineHeight: 1.12,
                   letterSpacing: "-0.5px",

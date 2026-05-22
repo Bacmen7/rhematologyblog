@@ -12,8 +12,8 @@ function PrivacyBanner() {
           <h6 className="text-xl font-bold mb-2">Your Privacy Choices</h6>
           <p className="text-sm text-gray-500 leading-relaxed">
             We process your personal data, including limited information about the products and services in which you
-            express an interest, to show you RheumaCare ads online and to send you offers through email. We and our
-            other tracking technologies show you RheumaCare ads on other sites. These activities may be considered
+            express an interest, to show you Omni Rheuma ads online and to send you offers through email. We and our
+            other tracking technologies show you Omni Rheuma ads on other sites. These activities may be considered
             &quot;sales&quot; or &quot;sharing&quot; of personal data or &quot;targeted advertising&quot; under applicable
             state law. By clicking &quot;Allow&quot;, you agree to these activities. Click &quot;Manage&quot; to
             customize your privacy preferences. View our{" "}

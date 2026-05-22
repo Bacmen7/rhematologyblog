@@ -57,7 +57,7 @@ function SymptomQuiz() {
 
           {/* Left -Text */}
           <div className="lg:w-[40%]">
-            <h2 style={{ color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
+            <h2 className="text-[2.25rem] md:text-[clamp(1.8rem,3.5vw,2.8rem)]" style={{ color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
               When should you see a rheumatologist?
             </h2>
             <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>

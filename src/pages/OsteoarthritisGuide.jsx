@@ -57,8 +57,8 @@ function OsteoarthritisGuide() {
   const [activeSection, setActiveSection] = useState("overview")
 
   useEffect(() => {
-    document.title = "Osteoarthritis: What It Is, Symptoms, Causes & Treatment Options | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Osteoarthritis: What It Is, Symptoms, Causes & Treatment Options | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   useEffect(() => {
@@ -397,7 +397,7 @@ function OsteoarthritisGuide() {
                     ))}
                   </ul>
                   <p className="text-[16px] leading-[1.8] text-navy-muted">
-                    At RheumaInsights, our rheumatologists specialise in comprehensive osteoarthritis care. With evidence-based protocols, personalised treatment plans, and a patient-first approach, we help you manage symptoms effectively and protect your joints for the long term.
+                    At Omni Rheuma, our rheumatologists specialise in comprehensive osteoarthritis care. With evidence-based protocols, personalised treatment plans, and a patient-first approach, we help you manage symptoms effectively and protect your joints for the long term.
                   </p>
                 </div>
 

@@ -123,8 +123,8 @@ function Gout() {
   const [activeSection, setActiveSection] = useState("")
 
   useEffect(() => {
-    document.title = "Gout | RheumaInsights"
-    return () => { document.title = "RheumaInsights | Professional Rheumatology Resource" }
+    document.title = "Gout | Omni Rheuma"
+    return () => { document.title = "Omni Rheuma | Professional Rheumatology Resource" }
   }, [])
 
   /* Scroll-spy for TOC highlight */
@@ -197,7 +197,7 @@ function Gout() {
                     The good news is that gout is one of the best-understood and most treatable forms of arthritis. Unlike conditions where the underlying cause remains unclear, we know exactly what drives gout: excess uric acid. That means we have a clear target -and with the right combination of medication, lifestyle adjustments, and ongoing monitoring, most patients can eliminate flares entirely and prevent long-term joint damage.
                   </p>
                   <p className="text-[16px] leading-[1.8] text-navy-muted mb-14">
-                    At RheumaInsights, we take a comprehensive approach to gout -one that goes beyond treating individual flares. We work with you to lower your uric acid to a safe level, address the metabolic conditions that often accompany gout, and build a plan that fits your life. Read on for everything you need to know about gout symptoms, causes, diagnosis, and the treatments that make a real difference.
+                    At Omni Rheuma, we take a comprehensive approach to gout -one that goes beyond treating individual flares. We work with you to lower your uric acid to a safe level, address the metabolic conditions that often accompany gout, and build a plan that fits your life. Read on for everything you need to know about gout symptoms, causes, diagnosis, and the treatments that make a real difference.
                   </p>
                 </div>
 
@@ -363,7 +363,7 @@ function Gout() {
                     ))}
                   </ul>
                   <p className="text-[16px] leading-[1.8]" style={{ color: "#5e5e5e" }}>
-                    At RheumaInsights, our rheumatologists specialise in comprehensive gout care. With evidence-based protocols, personalised treatment plans, and a patient-first approach, we help you achieve lasting uric acid control and prevent irreversible joint damage.
+                    At Omni Rheuma, our rheumatologists specialise in comprehensive gout care. With evidence-based protocols, personalised treatment plans, and a patient-first approach, we help you achieve lasting uric acid control and prevent irreversible joint damage.
                   </p>
                 </div>
                 <hr style={{ border: "none", borderTop: "1px solid #1AA3B5", marginBottom: "2.5rem" }} />
