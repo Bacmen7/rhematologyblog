@@ -56,7 +56,7 @@ function Conditions() {
         {/* ── 1. HERO SEARCH ── */}
         <section style={{ background: "#0f616e", padding: "40px 24px 48px", textAlign: "center" }}>
           <div style={{ maxWidth: "640px", margin: "0 auto" }}>
-            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "36px" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "36px", maxWidth: "900px", margin: "0 auto 36px" }}>
               Browse rheumatic conditions reviewed by experts
             </h1>
             <div style={{ position: "relative", maxWidth: "540px", margin: "0 auto" }}>
@@ -198,7 +198,7 @@ function Conditions() {
         </section>
 
         {/* ── 6. EXPLORE BY SUBTYPE ── */}
-        <section style={{ padding: "56px 0 64px", background: "#F7F6F1" }}>
+        <section style={{ padding: "56px 0 64px", background: "#ffffff" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
             <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, marginBottom: "32px" }}>Explore by subtype</h2>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
