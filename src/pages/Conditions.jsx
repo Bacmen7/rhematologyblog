@@ -38,7 +38,6 @@ const subtypes = [
   "Sjögren's Syndrome",
   "Vasculitis",
   "Scleroderma",
-  "Polymyalgia Rheumatica",
 ]
 
 function Conditions() {
@@ -136,7 +135,7 @@ function Conditions() {
           <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 24px" }}>
             <div style={{ background: "#fff", borderRadius: "20px", overflow: "hidden", border: "1.5px solid #ebebeb" }}>
               <div style={{ padding: "24px 32px", borderBottom: "1.5px solid #ebebeb" }}>
-                <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "1.6rem", fontWeight: 400, margin: 0 }}>Explore by category</h2>
+                <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2.2rem", fontWeight: 400, margin: 0 }}>Explore by category</h2>
               </div>
               {categoryLinks.map((item, i) => (
                 <Link key={i} to={item.href}
@@ -157,7 +156,7 @@ function Conditions() {
         {/* ── 4. EXPLORE VIDEOS ── */}
         <section style={{ padding: "48px 0", background: "#f5f5f5" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "1.6rem", fontWeight: 400, textAlign: "center", marginBottom: "28px" }}>Explore videos</h2>
+            <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2.2rem", fontWeight: 400, textAlign: "center", marginBottom: "28px" }}>Explore videos</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
               {videos.map((video, i) => (
                 <div key={i} style={{ background: "#fff", borderRadius: "16px", overflow: "hidden", border: "1.5px solid #ebebeb", cursor: "pointer" }}>
@@ -174,7 +173,7 @@ function Conditions() {
                       Video
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                     </span>
-                    <h3 style={{ fontFamily: "var(--font-base)", color: "#0f2e33", fontSize: "14px", fontWeight: 600, lineHeight: 1.45, margin: 0 }}>{video.title}</h3>
+                    <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "17px", fontWeight: 400, lineHeight: 1.45, margin: 0 }}>{video.title}</h3>
                   </div>
                 </div>
               ))}
@@ -184,8 +183,8 @@ function Conditions() {
 
         {/* ── 5. EDITORIAL PROCESS ── */}
         <section style={{ padding: "32px 0 48px", background: "#f5f5f5" }}>
-          <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 24px" }}>
-            <div style={{ background: "#fff", borderRadius: "20px", padding: "24px 32px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", border: "1.5px solid #ebebeb" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+            <div style={{ background: "#fff", borderRadius: "20px", padding: "40px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", border: "1.5px solid #ebebeb" }}>
               <div style={{ flex: 1, minWidth: "240px" }}>
                 <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "1.2rem", fontWeight: 400, marginBottom: "8px" }}>Our Editorial Process</h3>
                 <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>
