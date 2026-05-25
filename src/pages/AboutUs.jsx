@@ -1,517 +1,441 @@
+import { useMemo, useState } from "react"
 import { Link } from "react-router-dom"
+import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle, Search, Zap, MapPin } from "lucide-react"
 import Header from "../components/Header"
-import Newsletter from "../components/Newsletter"
 import BriefingFooter from "../components/BriefingFooter"
 
-function AboutUs() {
+const trustCards = [
+  { icon: MessageCircle, title: "Clear & Simple Communication", desc: "We explain your condition in plain language, answer your questions patiently, and help you feel confident about your treatment plan." },
+  { icon: Search, title: "Early Diagnosis Matters", desc: "Finding rheumatic conditions early can help prevent joint damage, disability, and long-term complications." },
+  { icon: Zap, title: "Accurate Assessment", desc: "We use advanced imaging and detailed clinical evaluations to understand the cause of your symptoms and guide the right treatment." },
+  { icon: MapPin, title: "Easy Access to Care", desc: "With flexible appointments and multiple clinic locations, getting expert rheumatology care is simpler and more convenient." },
+]
+
+const steps = [
+  { num: 1, title: "Book a consultation", desc: "Call us, WhatsApp, or book online. We usually respond within 24 hours and schedule your visit at your convenience." },
+  { num: 2, title: "Diagnosis & evaluation", desc: "Your specialist reviews your symptoms, orders relevant tests, and performs a detailed joint and autoimmune evaluation." },
+  { num: 3, title: "Treatment & follow-up", desc: "A personalised treatment plan is created. We monitor your progress and adjust therapy for the best long-term outcome." },
+]
+
+const qualifications = ["MBBS", "MD — Internal Medicine", "DM — Rheumatology"]
+
+const specialistStats = [
+  { num: "15+", label: "Years experience" },
+  { num: "5,000+", label: "Patients treated" },
+  { num: "3", label: "Clinic locations" },
+]
+
+const whyUs = [
+  { image: "/images/hero-consult.jpg", title: "No unnecessary procedures", desc: "We recommend treatment only when genuinely needed, with evidence-based, patient-first decision making." },
+  { image: "/images/hero-doctor1.jpg", title: "Honest second opinions", desc: "Already advised treatment elsewhere? We provide an independent review so you can decide with clarity." },
+  { image: "/images/ultrasound.jpg", title: "Transparent costs", desc: "You receive a clear estimate before treatment, with guidance on insurance and available coverage support." },
+  { image: "/knowledge-hub-images/doctor-600.jpg", title: "Teleconsultation available", desc: "Connect online before visiting the clinic, especially if you live outside Bangalore or need initial guidance." },
+]
+
+const siteStats = [
+  { num: "5,000+", label: "Patients treated" },
+  { num: "3", label: "Clinic locations, Bangalore" },
+  { num: "15+", label: "Years in rheumatology" },
+]
+
+const conditions = [
+  {
+    title: "Rheumatoid Arthritis",
+    badge: "Primary focus",
+    prompt: "Persistent swelling, stiffness, or painful joints.",
+    description: "Rheumatoid arthritis is an autoimmune condition in which inflammation affects joints, often causing morning stiffness, pain and swelling on both sides of the body.",
+    note: "Timely specialist treatment can control inflammation and help protect joints from permanent damage.",
+    symptoms: ["Morning stiffness", "Swollen joints", "Hand pain", "Fatigue", "Reduced movement"],
+  },
+  {
+    title: "Osteoarthritis",
+    prompt: "Knee or hip pain that worsens with movement.",
+    description: "Osteoarthritis develops as joint cartilage wears down over time. Care can include exercise guidance, pain relief, injections and surgical referral when appropriate.",
+    note: "A clear diagnosis helps you stay active without over-treating symptoms.",
+    symptoms: ["Activity-related pain", "Knee stiffness", "Grinding sensation", "Limited motion"],
+  },
+  {
+    title: "Gout",
+    prompt: "Sudden severe pain, often in the big toe.",
+    description: "Gout flares happen when urate crystals build up around a joint. Proper evaluation and long-term uric acid control can reduce repeated painful episodes.",
+    note: "Repeated gout should be managed beyond temporary pain relief.",
+    symptoms: ["Sudden flare", "Redness", "Severe tenderness", "Joint warmth"],
+  },
+  {
+    title: "Lupus",
+    prompt: "Joint pain with fatigue, rash, or other symptoms.",
+    description: "Lupus is an autoimmune disease that may affect joints, skin and internal organs. A rheumatologist coordinates assessment and ongoing monitoring.",
+    note: "Early evaluation matters when symptoms appear across several body systems.",
+    symptoms: ["Fatigue", "Joint pain", "Rashes", "Sun sensitivity"],
+  },
+  {
+    title: "Ankylosing Spondylitis",
+    prompt: "Back stiffness that improves after activity.",
+    description: "Inflammatory back pain can begin in younger adults and may gradually limit spinal movement without the right care plan.",
+    note: "Treatment can reduce stiffness and preserve mobility.",
+    symptoms: ["Morning back pain", "Hip pain", "Night waking", "Stiffness"],
+  },
+  {
+    title: "Psoriatic Arthritis",
+    prompt: "Joint symptoms alongside psoriasis or nail changes.",
+    description: "Psoriatic arthritis can affect fingers, toes, spine and larger joints. Treatment addresses both inflammation and long-term joint protection.",
+    note: "Mentioning skin and nail changes during your visit can aid diagnosis.",
+    symptoms: ["Finger swelling", "Nail changes", "Heel pain", "Psoriasis"],
+  },
+]
+
+const patientReviews = [
+  {
+    quote: "After months of painful mornings, I finally understood my diagnosis. The doctor listened carefully and explained every test and treatment step in simple words.",
+    name: "Anita R.",
+    location: "Hebbal, Bengaluru",
+    initials: "AR",
+  },
+  {
+    quote: "I was worried about starting long-term treatment. Omni Rheuma gave me time to ask questions and made a practical plan. My mobility is much better now.",
+    name: "Suresh K.",
+    location: "Indiranagar, Bengaluru",
+    initials: "SK",
+  },
+  {
+    quote: "I visited for a second opinion on my joint swelling. The advice was honest, clear and never rushed. The follow-up support has been excellent.",
+    name: "Meena P.",
+    location: "Whitefield, Bengaluru",
+    initials: "MP",
+  },
+  {
+    quote: "The appointment process was easy and my gout plan was explained properly. I know what triggers to watch for and when to contact the clinic.",
+    name: "Rahul M.",
+    location: "Jayanagar, Bengaluru",
+    initials: "RM",
+  },
+  {
+    quote: "My symptoms were confusing for a long time. Getting a clear autoimmune assessment helped me feel supported and confident about next steps.",
+    name: "Lakshmi D.",
+    location: "Yelahanka, Bengaluru",
+    initials: "LD",
+  },
+  {
+    quote: "The team was warm and transparent throughout my visit. Every concern was answered without technical language, and treatment has helped greatly.",
+    name: "Kiran S.",
+    location: "Koramangala, Bengaluru",
+    initials: "KS",
+  },
+]
+
+function GoogleIcon() {
   return (
-    <div className="landing-page bg-background-light text-navy-deep antialiased">
+    <span className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-100 bg-white">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+        <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z" />
+        <path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.33-1.58-5.04-3.72H.96v2.34A9 9 0 0 0 9 18z" />
+        <path fill="#FBBC05" d="M3.96 10.7A5.4 5.4 0 0 1 3.68 9c0-.59.1-1.16.28-1.7V4.96H.96A9 9 0 0 0 0 9c0 1.45.35 2.82.96 4.04l3-2.34z" />
+        <path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.34l2.58-2.58A8.66 8.66 0 0 0 9 0 9 9 0 0 0 .96 4.96l3 2.34C4.67 5.16 6.66 3.58 9 3.58z" />
+      </svg>
+    </span>
+  )
+}
+
+export default function AboutUs() {
+  const [selectedCondition, setSelectedCondition] = useState(0)
+  const [reviewIndex, setReviewIndex] = useState(0)
+  const featuredCondition = conditions[selectedCondition]
+  const visibleReviews = useMemo(
+    () => [0, 1, 2].map((offset) => patientReviews[(reviewIndex + offset) % patientReviews.length]),
+    [reviewIndex],
+  )
+
+  return (
+    <div className="min-h-screen bg-background-light" style={{ fontFamily: "var(--font-base)" }}>
       <Header />
-      <main>
-        <HeroSection />
-        <CeoQuoteSection />
-        <PersonalStorySection />
-        <MissionSection />
-        <CoreValuesSection />
-        <LeadershipTeamSection />
-        <MedicalAdvisorsSection />
-        <PartnersSection />
-        <FeaturedInSection />
-        <PressSection />
-        <CareersSection />
-        <div className="bg-white relative">
-          <div className="absolute top-0 left-0 w-full overflow-hidden leading-none" style={{ transform: "translateY(-99%)" }}>
-            <svg viewBox="0 0 1440 32" preserveAspectRatio="none" className="relative block w-[calc(100%+1.3px)] h-[32px] md:h-[40px]">
-              <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#ffffff" />
-            </svg>
+
+      {/* ── 1. HERO ── */}
+      <section style={{ backgroundColor: "#0f616e", overflow: "hidden", position: "relative" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", minHeight: "420px" }}>
+          <div style={{ flex: "1 1 400px", padding: "clamp(40px,6vw,72px) clamp(24px,5vw,80px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.8rem, 5.8vw, 4.8rem)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-1.2px", maxWidth: "670px", marginBottom: "24px" }}>
+              Relief you can trust.{" "}
+              <span style={{ color: "#9DE5D4" }}>Care you can count on.</span>
+            </h1>
+            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "clamp(17px, 1.45vw, 19px)", lineHeight: 1.7, maxWidth: "565px", marginBottom: "36px" }}>
+              Rheumatic conditions affect millions of Indians, yet most people wait years before seeking specialist help. At Omni Rheuma, we make expert rheumatology care simple, accessible, and reassuring for every patient.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+              <Link to="/doctors" style={{ background: "#fff", color: "#0f616e", borderRadius: "100px", padding: "12px 28px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+                Meet our specialists <ArrowRight size={16} />
+              </Link>
+              <Link to="/book-appointment" style={{ border: "2px solid rgba(255,255,255,0.7)", color: "#fff", borderRadius: "100px", padding: "12px 28px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center" }}>
+                Book consultation
+              </Link>
+            </div>
           </div>
-          <Newsletter />
+          <div style={{ flex: "1 1 340px", minHeight: "300px", position: "relative", overflow: "hidden" }}>
+            <img src="/dr_image/d1.png" alt="Rheumatology specialist" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
+            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #0f616e 0%, transparent 30%)" }} />
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* ── 2. STATS ── */}
+      <section className="w-full overflow-hidden" style={{ background: "#0f616e", padding: "clamp(30px, 3vw, 40px) 0 clamp(36px, 4vw, 44px)" }}>
+        <div className="max-w-[1200px]" style={{ margin: "0 auto", padding: "0 clamp(24px, 5vw, 64px)" }}>
+          <div className="grid grid-cols-1 sm:grid-cols-3" style={{ gap: "clamp(24px, 4vw, 48px)" }}>
+            {siteStats.map((stat) => (
+              <div key={stat.label} className="overflow-hidden" style={{ textAlign: "center" }}>
+                <div className="relative" style={{ height: "clamp(130px, 12vw, 160px)" }}>
+                  <span className="absolute select-none whitespace-nowrap font-bold leading-none tracking-tight" style={{ left: "50%", top: 0, transform: "translateX(-50%)", fontSize: "clamp(52px, 5.5vw, 80px)", color: "rgba(255,255,255,0.07)" }}>{stat.num}</span>
+                  <span className="absolute select-none whitespace-nowrap font-bold leading-none tracking-tight" style={{ left: "50%", top: "clamp(28px, 2.7vw, 38px)", transform: "translateX(-50%)", fontSize: "clamp(52px, 5.5vw, 80px)", color: "rgba(255,255,255,0.14)" }}>{stat.num}</span>
+                  <span className="absolute whitespace-nowrap font-bold leading-none tracking-tight" style={{ left: "50%", top: "clamp(56px, 5.2vw, 72px)", transform: "translateX(-50%)", fontSize: "clamp(52px, 5.5vw, 80px)", color: "rgba(255,255,255,0.94)" }}>{stat.num}</span>
+                </div>
+                <p className="font-semibold uppercase" style={{ color: "rgba(255,255,255,0.68)", fontSize: "clamp(12px, 1vw, 14px)", letterSpacing: "0.14em", lineHeight: 1.35, margin: "12px 0 0" }}>{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 3. WHY TRUST US ── */}
+      <section className="w-full bg-[#eef7f5]" style={{ padding: "clamp(40px, 4vw, 48px) 0" }}>
+        <div className="max-w-[1320px]" style={{ margin: "0 auto", padding: "0 clamp(16px, 3vw, 28px)" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>Our Approach</p>
+          <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>Why patients trust Omni Rheuma</h2>
+          <p className="max-w-5xl text-base leading-relaxed text-[#5e5e5e] lg:text-lg" style={{ marginBottom: "32px" }}>
+            We believe good care starts with understanding your concerns. That&apos;s why we give every patient enough time to talk, understand their situation, and get a treatment plan that&apos;s clear and easy to follow. No rushed visits. No complicated medical terms. Just honest advice from specialists you can trust.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "24px" }}>
+            {trustCards.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-gray-200 bg-white transition-colors hover:border-[#1AA3B5]/30" style={{ padding: "32px" }}>
+                <span className="flex size-12 items-center justify-center rounded-xl bg-[#e0f3f5] text-[#0f616e]" style={{ marginBottom: "20px" }}>
+                  <item.icon size={20} strokeWidth={1.5} />
+                </span>
+                <h3 className="text-lg font-normal leading-snug text-[#0f2e33]" style={{ marginBottom: "8px" }}>{item.title}</h3>
+                <p className="text-sm leading-relaxed text-gray-500">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 4. HOW IT WORKS ── */}
+      <section className="w-full bg-[#f9f9f9]" style={{ padding: "clamp(48px, 5vw, 64px) 0" }}>
+        <div className="max-w-[1200px]" style={{ margin: "0 auto", padding: "0 16px" }}>
+          <p className="text-center text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>How It Works</p>
+          <h2 className="text-center text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "48px" }}>Your care journey in 3 steps</h2>
+          <div className="relative flex flex-col md:flex-row" style={{ gap: "clamp(32px, 4vw, 40px)" }}>
+            <div className="absolute left-[calc(16.666%+24px)] right-[calc(16.666%+24px)] top-6 hidden h-px bg-[#1AA3B5]/30 md:block" />
+            {steps.map((step) => (
+              <div key={step.num} className="flex flex-1 flex-col items-center text-center" style={{ padding: "0 24px" }}>
+                <div className="relative z-10 flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0f616e]" style={{ marginBottom: "20px" }}>
+                  <span className="text-lg text-white">{step.num}</span>
+                </div>
+                <h3 className="text-xl font-normal text-[#0f616e]" style={{ marginBottom: "12px" }}>{step.title}</h3>
+                <p className="text-base leading-relaxed text-gray-600">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 5. SPECIALIST ── */}
+      <section className="relative w-full bg-white" style={{ padding: "clamp(48px, 5vw, 64px) 0 96px" }}>
+        <div className="max-w-[1200px]" style={{ margin: "0 auto", padding: "0 16px" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>Our Specialist</p>
+          <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "40px" }}>Expert care, delivered with clarity</h2>
+          <div className="flex flex-col items-start lg:flex-row" style={{ gap: "40px" }}>
+            <div className="flex w-full shrink-0 flex-col lg:w-64" style={{ gap: "16px" }}>
+              <div className="aspect-square w-full max-w-[260px] overflow-hidden rounded-2xl border border-[#0f616e]/20 bg-[#e0f3f5]">
+                <img src="/dr_image/d2.png" alt="Dr. Raghavendra H" className="h-full w-full object-cover" />
+              </div>
+              <div>
+                <h3 className="text-xl font-normal text-[#0f2e33]">Dr. Raghavendra H</h3>
+                <p className="text-sm font-semibold text-[#1AA3B5]" style={{ marginTop: "2px" }}>Consultant Rheumatologist</p>
+                <p className="text-sm text-gray-400" style={{ marginTop: "2px" }}>Omni Rheuma, Bangalore</p>
+              </div>
+              <div className="flex flex-col" style={{ gap: "8px" }}>
+                {qualifications.map((qualification) => (
+                  <span key={qualification} className="w-fit rounded-md bg-[#e0f3f5] text-sm font-medium text-[#0f616e]" style={{ padding: "4px 12px" }}>{qualification}</span>
+                ))}
+              </div>
+            </div>
+            <div className="flex-1">
+              <div className="flex flex-wrap border-b border-gray-100" style={{ gap: "32px", marginBottom: "32px", paddingBottom: "32px" }}>
+                {specialistStats.map((stat) => (
+                  <div key={stat.label}>
+                    <span className="block text-2xl font-normal text-[#0f616e]">{stat.num}</span>
+                    <span className="text-sm text-gray-500">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-base leading-relaxed text-gray-600" style={{ marginBottom: "16px" }}>
+                Dr. Raghavendra H is a consultant rheumatologist with a focused practice in inflammatory arthritis, autoimmune disorders, and musculoskeletal conditions. He has treated over 5,000 patients across leading hospitals in Bangalore.
+              </p>
+              <p className="text-base leading-relaxed text-gray-600" style={{ marginBottom: "16px" }}>
+                His approach is thorough, patient-first, and built around helping people understand their condition before any treatment decision is made. Every consultation is unhurried, evidence-based, and focused on finding the right path for each individual.
+              </p>
+              <p className="text-base leading-relaxed text-gray-600" style={{ marginBottom: "32px" }}>
+                Dr. Raghavendra believes that no patient should feel rushed or confused during their care. He takes the time to explain diagnoses clearly, in language patients can understand.
+              </p>
+              <Link to="/book-appointment" className="inline-flex items-center rounded-full bg-[#0f616e] text-sm font-semibold text-white transition-opacity hover:opacity-90" style={{ gap: "8px", padding: "12px 28px" }}>
+                Book a consultation with Dr. Raghavendra <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <svg className="absolute -bottom-px left-0 block w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F9F9F9" />
+        </svg>
+      </section>
+
+      {/* ── 6. WHAT WE TREAT ── */}
+      <section className="relative w-full bg-[#f9f9f9]" style={{ padding: "clamp(48px, 5vw, 64px) 0 80px" }}>
+        <div className="max-w-[1200px]" style={{ margin: "0 auto", padding: "0 16px" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>What We Treat</p>
+          <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>Rheumatic conditions we specialise in</h2>
+          <p className="max-w-4xl text-base leading-relaxed text-gray-600 lg:text-lg" style={{ marginBottom: "40px" }}>
+            Our focus is on inflammatory and autoimmune conditions that affect joints, movement and quality of life. Rheumatoid arthritis is a core expertise, alongside a range of related conditions.
+          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.95fr]" style={{ gap: "20px" }}>
+            <article className="rounded-2xl border-2 border-[#0f616e] bg-white" style={{ padding: "clamp(24px, 3vw, 32px)" }}>
+              <div className="flex items-start" style={{ gap: "12px", marginBottom: "20px" }}>
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#0f616e]" style={{ marginTop: "8px" }} />
+                <div className="flex-1">
+                  <div className="flex flex-wrap items-center" style={{ gap: "12px" }}>
+                    <h3 className="text-2xl font-normal text-[#0f2e33]">{featuredCondition.title}</h3>
+                    {featuredCondition.badge && <span className="rounded-full bg-[#e86531] text-xs font-semibold text-white" style={{ padding: "4px 12px" }}>{featuredCondition.badge}</span>}
+                  </div>
+                  <p className="text-base leading-relaxed text-gray-600" style={{ marginTop: "16px" }}>{featuredCondition.description}</p>
+                  <p className="text-base leading-relaxed text-gray-600" style={{ marginTop: "16px" }}>{featuredCondition.note}</p>
+                </div>
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-500" style={{ margin: "28px 0 12px" }}>Symptoms patients commonly report</p>
+              <div className="flex flex-wrap" style={{ gap: "8px" }}>
+                {featuredCondition.symptoms.map((symptom) => (
+                  <span key={symptom} className="rounded-full bg-[#e0f3f5] text-sm font-semibold text-[#0f616e]" style={{ padding: "6px 12px" }}>{symptom}</span>
+                ))}
+              </div>
+            </article>
+            <aside className="rounded-2xl border border-gray-200 bg-white" style={{ padding: "clamp(24px, 3vw, 32px)" }}>
+              <h3 className="text-2xl font-normal text-[#0f2e33]" style={{ marginBottom: "20px" }}>We also specialise in...</h3>
+              <div className="divide-y divide-gray-100">
+                {conditions.slice(1).map((condition, index) => {
+                  const actualIndex = index + 1
+                  const active = selectedCondition === actualIndex
+                  return (
+                    <button key={condition.title} type="button" onClick={() => setSelectedCondition(actualIndex)} className="w-full text-left transition-colors hover:bg-[#eef7f5]" style={{ padding: "16px 0" }}>
+                      <span className="flex" style={{ gap: "16px" }}>
+                        <span className={`text-sm font-semibold ${active ? "text-[#0f616e]" : "text-[#1AA3B5]/55"}`} style={{ paddingTop: "4px" }}>{String(actualIndex).padStart(2, "0")}</span>
+                        <span>
+                          <span className={`block text-base font-semibold ${active ? "text-[#0f616e]" : "text-[#0f2e33]"}`}>{condition.title}</span>
+                          <span className="block text-sm italic leading-snug text-gray-500" style={{ marginTop: "4px" }}>&quot;{condition.prompt}&quot;</span>
+                        </span>
+                      </span>
+                    </button>
+                  )
+                })}
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* ── 7. WHY CHOOSE US ── */}
+      <section className="relative w-full bg-white" style={{ padding: "clamp(48px, 5vw, 64px) 0 80px" }}>
+        <div className="max-w-[1360px]" style={{ margin: "0 auto", padding: "0 16px" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>Why Patients Choose Us</p>
+          <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>Relief that goes beyond treatment</h2>
+          <p className="max-w-4xl text-lg leading-relaxed text-gray-600" style={{ marginBottom: "40px" }}>
+            Choosing the right rheumatology centre is about more than just treatment. It is about feeling heard, supported, and confident in the care you receive at every step.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "20px" }}>
+            {whyUs.map((item) => (
+              <div key={item.title} className="flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white transition-colors hover:border-[#1AA3B5]/30">
+                <div className="h-40 w-full overflow-hidden">
+                  <img src={item.image} alt="" className="h-full w-full object-cover" />
+                </div>
+                <div style={{ padding: "24px" }}>
+                  <h3 className="text-lg font-normal text-[#0f2e33]" style={{ marginBottom: "8px" }}>{item.title}</h3>
+                  <p className="text-sm leading-relaxed text-gray-500">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── 8. PATIENT STORIES ── */}
+      <section className="relative w-full bg-[#f9f9f9]" style={{ padding: "clamp(48px, 5vw, 64px) 0 clamp(112px, 9vw, 128px)" }}>
+        <div className="max-w-[1360px]" style={{ margin: "0 auto", padding: "0 16px" }}>
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>Patient Stories</p>
+          <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>
+            5,000+ patients.
+            <br />
+            5,000+ reasons to seek care earlier.
+          </h2>
+          <p className="max-w-2xl text-lg leading-relaxed text-gray-600" style={{ marginBottom: "40px" }}>
+            Here is what some of our patients have shared about their experience at Omni Rheuma. Real words, real progress.
+          </p>
+          <div className="grid grid-cols-1 items-stretch md:grid-cols-3" style={{ gap: "24px" }}>
+            {visibleReviews.map((review) => (
+              <div key={`${review.name}-${review.location}`} className="flex min-h-[370px] flex-col rounded-2xl border border-gray-200 bg-white" style={{ gap: "16px", padding: "24px" }}>
+                <div className="flex items-center justify-between" style={{ gap: "16px" }}>
+                  <div className="flex items-center" style={{ gap: "8px" }}>
+                    <GoogleIcon />
+                    <div>
+                      <p className="text-sm font-semibold leading-none text-[#0f2e33]">Google Review</p>
+                      <p className="text-xs text-gray-400" style={{ marginTop: "4px" }}>Verified patient feedback</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-[#e0f3f5] text-xs font-semibold text-[#0f616e]" style={{ padding: "4px 12px" }}>5.0</span>
+                </div>
+                <div className="flex items-center text-[#F59E0B]" style={{ gap: "2px" }} aria-label="Five star rating">
+                  {[0, 1, 2, 3, 4].map((star) => (
+                    <svg key={star} width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                  ))}
+                </div>
+                <p className="flex-1 text-base italic leading-relaxed text-gray-600">{review.quote}</p>
+                <div className="flex items-center" style={{ gap: "12px", marginTop: "auto" }}>
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#e0f3f5] text-xs font-semibold text-[#0f616e]">{review.initials}</div>
+                  <div>
+                    <p className="text-sm font-semibold text-[#0f2e33]">{review.name}</p>
+                    <p className="text-xs text-gray-400">{review.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center" style={{ gap: "12px", marginTop: "32px" }}>
+            <button type="button" aria-label="Previous review" onClick={() => setReviewIndex((current) => (current === 0 ? patientReviews.length - 1 : current - 1))} className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-white text-[#0f2e33] transition-colors hover:border-[#0f616e] hover:text-[#0f616e]">
+              <ChevronLeft size={22} />
+            </button>
+            <button type="button" aria-label="Next review" onClick={() => setReviewIndex((current) => (current + 1) % patientReviews.length)} className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-white text-[#0f2e33] transition-colors hover:border-[#0f616e] hover:text-[#0f616e]">
+              <ChevronRight size={22} />
+            </button>
+          </div>
+        </div>
+        <svg className="absolute -bottom-px left-0 block w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
+          <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#0f616e" />
+        </svg>
+      </section>
+
+      {/* ── 9. CTA ── */}
+      <section className="w-full bg-[#0f616e] text-center" style={{ padding: "80px 0 96px" }}>
+        <div className="max-w-[1200px]" style={{ margin: "0 auto", padding: "0 16px" }}>
+          <h2 style={{ color: "#ffffff", fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4.2vw, 3.25rem)", fontWeight: 400, lineHeight: 1.12, letterSpacing: "-0.5px", margin: "0 auto 24px", maxWidth: "820px", display: "block" }}>Take the first step toward relief from arthritis.</h2>
+          <p className="max-w-2xl text-lg leading-relaxed" style={{ color: "rgba(255,255,255,0.82)", margin: "0 auto 40px" }}>
+            Expert rheumatology care is just one appointment away.
+          </p>
+          <div className="flex flex-col justify-center sm:flex-row" style={{ gap: "16px" }}>
+            <Link to="/book-appointment" className="group inline-flex items-center justify-center rounded-full bg-white font-semibold text-[#0f616e] shadow-lg transition-all hover:bg-gray-100" style={{ gap: "8px", padding: "12px 32px" }}>
+              Book Your Consultation <ArrowRight className="transition-transform group-hover:translate-x-1" size={20} />
+            </Link>
+            <Link to="/doctors" className="inline-flex items-center justify-center rounded-full border-2 border-white font-semibold text-white transition-colors hover:bg-white/10" style={{ padding: "12px 32px" }}>
+              Find a Doctor Near You
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <BriefingFooter />
     </div>
   )
 }
-
-/* ───────── 1. HERO ───────── */
-function HeroSection() {
-  return (
-    <section
-      className="custom-approach-section relative overflow-hidden"
-      style={{
-        background: "radial-gradient(ellipse at 80% 0%, #b3e0e6 0%, transparent 50%), radial-gradient(ellipse at 10% 100%, #1AA3B5 0%, transparent 45%), #F5F5F5",
-      }}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-10 items-center min-h-[80vh]">
-          <div className="lg:col-span-6 py-20 lg:py-28">
-            <div className="mb-6 flex items-center gap-4">
-              <span className="h-px w-8 bg-navy-deep/30" />
-              <span className="text-xs uppercase tracking-[0.3em] font-bold text-teal-soft">Our Vision</span>
-            </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[0.96] tracking-tight mb-8">
-              A world where people live free from autoimmune suffering
-            </h1>
-            <p className="text-xl text-navy-muted leading-relaxed mb-10 max-w-lg">
-              We're on a mission to free people from the burden of autoimmune conditions by redesigning how specialist care is delivered.
-            </p>
-          </div>
-          <div className="lg:col-span-6 relative hidden lg:block">
-            <div className="aspect-[4/5] overflow-hidden">
-              <img
-                src="/images/hero-doctor.jpg"
-                alt="The Rheuma founding team"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 2. CEO QUOTE ───────── */
-function CeoQuoteSection() {
-  return (
-    <section className="custom-approach-section bg-navy-deep text-white relative overflow-hidden">
-      {/* Top wave */}
-      <svg className="absolute top-0 left-0 w-full" style={{ height: "40px", transform: "translateY(-99%)" }} preserveAspectRatio="none" viewBox="0 0 1440 32" fill="none">
-        <path d="M1440 29.3627C1194.13 4.45308 925.369 -5.17758 665.739 2.66577C461.219 8.84327 260.254 25.3195 53.9922 21.8056C35.9416 21.5019 17.9345 21.0248 0 20.4001V32H1440V29.3627Z" fill="#0f616e" />
-      </svg>
-
-      <div className="max-w-7xl mx-auto px-6 py-28 md:py-36 relative z-10">
-        <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          <div className="w-full md:w-5/12">
-            <div className="aspect-[4/5] overflow-hidden">
-              <img
-                src="/images/specialist-1.jpg"
-                alt="Dr. Amara Osei"
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-          <div className="w-full md:w-7/12">
-            <blockquote className="text-3xl md:text-[2.5rem] lg:text-[2.8rem] leading-[1.25] font-normal mb-8" style={{ fontFamily: "var(--font-base)" }}>
-              "From the beginning, our vision has been to scale access to care that millions of Americans need -bringing center-of-excellence quality rheumatology care to them, wherever they are."
-            </blockquote>
-            <cite className="not-italic flex items-center gap-3 font-semibold text-[15px]">
-              <span className="w-6 h-[1px] bg-primary block" />
-              Dr. Amara Osei, Co-Founder & CEO
-            </cite>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom wave */}
-      <svg className="absolute bottom-0 left-0 w-full" style={{ height: "60px" }} preserveAspectRatio="none" viewBox="0 0 1440 60" fill="none">
-        <path d="M0 60H1440V30C1200 -2 960 -2 720 30C480 62 240 62 0 30V60Z" fill="#F5F5F5" />
-      </svg>
-    </section>
-  )
-}
-
-/* ───────── 3. WHY REDESIGNING CARE IS PERSONAL ───────── */
-function PersonalStorySection() {
-  return (
-    <section className="py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight" style={{ marginBottom: "56px" }}>
-              Why redesigning rheumatology care is personal.
-            </h2>
-            <div className="text-navy-muted text-lg leading-[1.8] flex flex-col" style={{ gap: "32px" }}>
-              <p>
-                In 2019, our co-founder Dr. Amara Osei was diagnosed with rheumatoid arthritis after waiting nine months for a specialist appointment. By the time she saw a rheumatologist, irreversible joint damage had already set in -damage that could have been prevented with earlier intervention.
-              </p>
-              <p>
-                As she unpacked what had happened and why she hadn't gotten the care she needed in those critical early months, her passion for solving systemic problems in rheumatology was ignited. This passion and accountability to patients shaped Rheuma's path to reinvent the autoimmune patient experience, and democratize access to proven multi-disciplinary care -something that had eluded her own journey.
-              </p>
-              <p>
-                Since 2021, Rheuma has been the industry leader in virtual-first rheumatology, gaining national recognition for evidence-based care through proven outcomes. But we measure success with every patient who tells us we've changed their life.
-              </p>
-            </div>
-          </div>
-          <div className="hidden lg:block">
-            <div className="aspect-[4/5] overflow-hidden">
-              <img
-                src="/images/hero-consult.jpg"
-                alt="Why redesigning care is personal"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 4. MISSION ───────── */
-function MissionSection() {
-  return (
-    <section className="py-24 md:py-36 bg-ghost">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          <div className="lg:col-span-5">
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              Close the gap between{" "}
-              diagnosis and relief
-            </h2>
-          </div>
-          <div className="lg:col-span-6 lg:col-start-7">
-            <p className="text-navy-muted text-lg leading-[1.8] mb-8">
-              Over 54 million Americans live with an autoimmune condition. Most wait months for specialist care, see their doctor for seven minutes, and leave with more questions than answers.
-            </p>
-            <p className="text-navy-muted text-lg leading-[1.8] mb-8">
-              Rheuma exists to fix that. We combine virtual-first access, multi-specialist care teams, and technology that actually works -so patients can get from first symptom to effective treatment in weeks, not years.
-            </p>
-            <p className="text-navy-deep text-lg leading-[1.8] font-semibold">
-              Our goal is simple: no one should lose joint function, mobility, or quality of life because the system was too slow to help them.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 5. CORE VALUES (6 values with organic blob shapes) ───────── */
-function CoreValuesSection() {
-  const valuesData = [
-    {
-      title: "Urgency over bureaucracy",
-      desc: "Every week of delay can mean permanent damage",
-      icon: "speed",
-      path: "M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z",
-    },
-    {
-      title: "Patients are partners",
-      desc: "Treatment plans built with patients, not for them",
-      icon: "diversity_3",
-      path: "M55.1256 5.62319C69.5284 18.4233 75.3527 39.7894 70.0964 55.9976C65.1006 71.3957 49.3485 76.6043 33.3275 72.8197C18.4814 69.3135 4.89883 56.0577 0.773067 39.6249C-2.87611 25.0844 7.0102 15.5753 17.3399 9.11354C28.7557 1.97144 42.7234 -5.39849 55.1256 5.62319Z",
-    },
-    {
-      title: "Measure everything",
-      desc: "Quantifiable metrics over subjective impressions",
-      icon: "auto_graph",
-      path: "M61.2722 61.651C48.113 74.675 28.0401 77.5078 13.8247 69.6181C0.313371 62.1241 -2.78863 44.9948 2.32593 28.9416C7.06625 14.0642 20.5554 1.95861 35.9545 0.146643C49.5794 -1.45508 57.2138 10.23 62.0234 21.9179C67.3404 34.8367 72.6018 50.4362 61.2694 61.6482L61.2722 61.651Z",
-    },
-    {
-      title: "Stay uncomfortable",
-      desc: "Question every process that doesn't serve the patient",
-      icon: "lightbulb",
-      path: "M6.18816 64.3795C-3.39958 48.4772 -1.49202 26.3721 9.46198 11.9611C19.8727 -1.73098 37.2185 -2.93384 51.6141 4.63228C64.9551 11.6447 73.574 27.7867 71.7584 44.7011C70.1524 59.6658 57.0392 66.4641 44.5771 70.2053C30.8047 74.3397 14.4416 78.0716 6.18816 64.3795Z",
-    },
-    {
-      title: "Cultivate strong relationships",
-      desc: "Between patients, providers, and each other",
-      icon: "group",
-      path: "M73.3102 21.5931C76.7302 40.5231 67.1102 60.6731 51.6902 69.8631C37.0302 78.6031 20.2602 72.7031 9.36024 59.7131C-0.739762 47.6731 -3.15976 28.9031 4.53024 13.6331C11.3402 0.123064 26.1102 -0.996936 39.1802 0.513064C53.6302 2.18306 70.3702 5.28306 73.3102 21.5831V21.5931Z",
-    },
-    {
-      title: "Thrive on diversity",
-      desc: "An inclusive culture that reflects our patients",
-      icon: "emoji_people",
-      path: "M69.771 38.7915C71.9749 58.1348 57.8644 67.3099 44.9364 71.8246C32.8282 76.0613 18.2876 75.0816 8.90745 60.0545C-1.17152 43.9153 -2.87822 21.6461 4.7146 7.40019C11.2861 -4.91274 25.316 0.568504 37.5048 6.44693C50.93 12.9212 67.6746 20.2559 69.771 38.7915Z",
-    },
-  ]
-
-  return (
-    <section className="relative overflow-hidden py-28 md:py-36">
-      {/* Top wave */}
-      <svg className="absolute top-0 left-0 w-full" style={{ height: "80px", transform: "translateY(-99%)" }} preserveAspectRatio="none" viewBox="0 0 1440 120" fill="none">
-        <path d="M902.287 110.844C616.272 102.591 308.233 0.726051 45.0151 80.1802C29.7923 84.7785 14.8114 90.0303 0 95.8629V120H1440V0C1273.37 78.0746 1092.39 116.337 902.287 110.844Z" fill="#F5F5F5" />
-      </svg>
-
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight text-center" style={{ marginBottom: "16px" }}>
-            What drives every decision we make
-          </h2>
-          <p className="text-navy-muted text-lg max-w-2xl mx-auto text-center" style={{ marginBottom: "48px" }}>
-            These six values give us the courage to do the right thing for our patients, partners, and each other, every day.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {valuesData.map((val, idx) => (
-            <div key={idx} className="bg-white p-10 flex flex-col items-center text-center shadow-[0_2px_20px_rgba(0,0,0,0.04)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300">
-              <div className="relative w-[70px] h-[74px] flex items-center justify-center mb-5">
-                <svg className="absolute top-0 left-0 w-full h-full z-0" viewBox="0 0 74 78" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d={val.path} fill="#e0f3f5" />
-                </svg>
-                <span className="material-symbols-outlined relative z-10 text-[28px] text-navy-deep/70">{val.icon}</span>
-              </div>
-              <h3 className="text-xl font-semibold mb-2 tracking-tight">{val.title}</h3>
-              <p className="text-sm text-navy-muted leading-relaxed">{val.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 6. LEADERSHIP TEAM (horizontal scroll) ───────── */
-function LeadershipTeamSection() {
-  const leadershipData = [
-    { name: "Dr. Amara Osei", role: "Co-Founder & CEO", badge: "MD, MBA", image: "/images/specialist-1.jpg", bg: "bg-sky-soft/40" },
-    { name: "Raj Patel", role: "Co-Founder & CTO", badge: "MS CS, Stanford", image: "/images/specialist-2.jpg", bg: "bg-accent/30" },
-    { name: "Dr. Elena Vasquez", role: "Chief Medical Officer", badge: "MD, FACR", image: "/images/specialist-3.jpg", bg: "bg-primary/20" },
-    { name: "David Chen", role: "Chief Financial Officer", badge: "CPA, MBA", image: "/images/hero-doctor.jpg", bg: "bg-sky-soft/40" },
-    { name: "Sarah Mitchell", role: "Chief Product Officer", badge: "MS HCI", image: "/images/hero-consult.jpg", bg: "bg-[#485c6a]/20" },
-  ]
-
-  return (
-    <section className="py-24 md:py-36 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row gap-8 mb-16">
-          <div className="w-full md:w-1/3">
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
-              Leadership team
-            </h2>
-          </div>
-          <div className="w-full md:w-2/3">
-            <p className="text-navy-muted text-lg leading-relaxed max-w-3xl">
-              Our expert rheumatologists, engineers, and operators are{" "}
-              <span className="bg-accent/40 px-1 rounded-sm">leaders in their fields</span>
-              , with deep experience in autoimmune care, health technology, and patient experience. They've lived the problems they're solving.
-            </p>
-          </div>
-        </div>
-
-        {/* Horizontal scroll container */}
-        <div
-          className="flex overflow-x-auto gap-6 pb-8"
-          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-        >
-          {leadershipData.map((member, idx) => (
-            <div key={idx} className="flex-none w-[280px] group cursor-pointer">
-              <div className={`${member.bg} w-full aspect-square overflow-hidden mb-4 relative flex items-end justify-center`}>
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                />
-                <div className="absolute bottom-3 left-3 bg-white/60 backdrop-blur-[8px] px-3 py-1.5 rounded-full text-[10px] font-bold text-navy-deep">
-                  {member.badge}
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold tracking-tight">{member.name}</h3>
-              <p className="text-sm text-navy-muted mt-1">{member.role}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 7. MEDICAL ADVISORS ───────── */
-function MedicalAdvisorsSection() {
-  const advisorsData = [
-    { name: "Dr. James Richardson", desc: "ACR President (2024), renowned RA specialist and clinical trial leader" },
-    { name: "Dr. Maria Santos", desc: "Distinguished rheumatology researcher, Past ACR Board Member" },
-    { name: "Dr. Kevin Park", desc: "Lupus & Vasculitis Expert, Associate Editor, Arthritis & Rheumatology" },
-    { name: "Dr. Lisa Huang", desc: "Inflammatory Arthritis Expert, Clinical Professor at Stanford Medicine" },
-  ]
-
-  return (
-    <section className="bg-ghost py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row gap-8 mb-16">
-          <div className="w-full md:w-1/3">
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
-              Medical advisors
-            </h2>
-          </div>
-          <div className="w-full md:w-2/3">
-            <p className="text-navy-muted text-lg leading-relaxed max-w-3xl">
-              Our advisory board includes{" "}
-              <span className="bg-accent/40 px-1 rounded-sm">leaders in their fields</span>
-              , with advanced expertise in rheumatology, autoimmune research, and clinical innovation. Their guidance shapes our approach to evidence-based care.
-            </p>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {advisorsData.map((advisor, idx) => (
-            <div key={idx} className="bg-white p-8 shadow-[0_2px_20px_rgba(0,0,0,0.04)]">
-              <div className="w-10 h-10 rounded-full bg-sky-faint flex items-center justify-center mb-4">
-                <span className="material-symbols-outlined text-[20px] text-navy-deep/40">school</span>
-              </div>
-              <h3 className="text-lg font-semibold mb-2 tracking-tight">{advisor.name}</h3>
-              <p className="text-sm text-navy-muted leading-relaxed">{advisor.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 8. PARTNERS & AFFILIATIONS ───────── */
-function PartnersSection() {
-  return (
-    <section className="border-y border-border/40">
-      <div className="max-w-7xl mx-auto px-6 py-20 md:py-28">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
-            Trusted by the institutions{" "}
-            that matter
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-px bg-border/30">
-          {[
-            { name: "American College of Rheumatology", detail: "Institutional member since 2022. Our clinical protocols meet ACR standards of care." },
-            { name: "Harvard Medical School", detail: "Clinical research partnership studying virtual-first outcomes in autoimmune care." },
-            { name: "Mass General Brigham", detail: "Referral network partnership for complex cases requiring inpatient or procedural care." },
-            { name: "Arthritis Foundation", detail: "Official care partner. Joint research initiatives on early intervention and health equity." },
-            { name: "NCQA", detail: "Patient-Centered Specialty Practice recognition for quality measurement and care coordination." },
-            { name: "Digital Health Coalition", detail: "Founding member. Advancing standards for virtual specialty care delivery." },
-          ].map((p) => (
-            <div key={p.name} className="bg-white p-8 md:p-10">
-              <h3 className="text-[17px] font-semibold mb-2 tracking-tight">{p.name}</h3>
-              <p className="text-navy-muted text-[14px] leading-relaxed">{p.detail}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 11. FEATURED IN (Logo Garden) ───────── */
-function FeaturedInSection() {
-  return (
-    <section className="bg-navy-deep py-24 md:py-32 text-center">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="mb-6 flex items-center justify-center gap-4">
-          <span className="h-px w-8 bg-white/20" />
-          <span className="text-xs uppercase tracking-[0.3em] font-bold text-white/40">Featured In</span>
-          <span className="h-px w-8 bg-white/20" />
-        </div>
-
-        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 mt-14">
-          {[
-            "STAT News",
-            "Modern Healthcare",
-            "Fierce Healthcare",
-            "Journal of Rheumatology",
-            "Digital Health 150",
-          ].map((name, i) => (
-            <div key={i} className="text-white/30 text-lg md:text-xl font-semibold tracking-wide hover:text-white/60 transition-colors cursor-default select-none">
-              {name}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 12. PRESS & RECOGNITION ───────── */
-function PressSection() {
-  return (
-    <section className="py-24 md:py-36">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="mb-16">
-          <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight font-normal">
-            What others are saying
-          </h2>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-px bg-border/30">
-          {[
-            {
-              quote: "Rheuma is doing for rheumatology what One Medical did for primary care -making the experience of seeing a specialist feel human again.",
-              source: "STAT News",
-              year: "2024",
-            },
-            {
-              quote: "Their multi-disciplinary model cut time-to-treatment by 78% compared to traditional referral pathways. The clinical outcomes data is hard to argue with.",
-              source: "Journal of Rheumatology",
-              year: "2024",
-            },
-            {
-              quote: "A virtual-first rheumatology startup that patients actually love. In a specialty with 6-month wait times, that's worth paying attention to.",
-              source: "Modern Healthcare",
-              year: "2023",
-            },
-          ].map((t) => (
-            <div key={t.source} className="bg-ghost p-8 md:p-10 flex flex-col">
-              <p className="text-[17px] md:text-lg leading-[1.7] text-navy-muted mb-8 flex-1">
-                "{t.quote}"
-              </p>
-              <div>
-                <span className="block font-semibold text-navy-deep">{t.source}</span>
-                <span className="text-sm text-navy-muted/60">{t.year}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ───────── 13. CAREERS CTA ───────── */
-function CareersSection() {
-  return (
-    <section className="py-24 md:py-36 bg-ghost">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-12 gap-16 items-center">
-          <div className="lg:col-span-6">
-            <h2 className="text-4xl md:text-5xl leading-[1.05] tracking-tight" style={{ marginBottom: "32px" }}>
-              Help us build the future of{" "}
-              rheumatology
-            </h2>
-            <p className="text-navy-muted text-lg leading-[1.8] max-w-lg" style={{ marginBottom: "28px" }}>
-              We're looking for rheumatologists, engineers, designers, and operators who believe healthcare can work better. Remote-first, competitive compensation, and the chance to build something patients actually need.
-            </p>
-            <div className="space-y-4 mb-10">
-              {[
-                { title: "Staff Rheumatologist", location: "Remote (US)" },
-                { title: "Senior Software Engineer", location: "Remote" },
-                { title: "Clinical Operations Lead", location: "Boston / Remote" },
-                { title: "Patient Experience Designer", location: "Remote" },
-              ].map((job) => (
-                <a
-                  key={job.title}
-                  href="#"
-                  className="flex items-center justify-between py-4 border-b border-border/40 group hover:border-navy-deep/20 transition-colors"
-                >
-                  <div>
-                    <span className="font-semibold text-[16px] group-hover:text-rheuma-blue transition-colors">{job.title}</span>
-                    <span className="block text-navy-muted text-sm mt-0.5">{job.location}</span>
-                  </div>
-                  <span className="material-symbols-outlined text-[20px] text-navy-muted/30 group-hover:text-navy-deep group-hover:translate-x-1 transition-all">
-                    arrow_forward
-                  </span>
-                </a>
-              ))}
-            </div>
-            <Link
-              to="/"
-              className="text-navy-deep font-semibold text-[15px] underline decoration-primary decoration-2 underline-offset-4 hover:decoration-navy-deep transition-colors"
-            >
-              View all open positions →
-            </Link>
-          </div>
-          <div className="lg:col-span-5 lg:col-start-8 hidden lg:block">
-            <div
-              className="aspect-[4/5] overflow-hidden bg-slate-100 grayscale hover:grayscale-0 transition-all duration-700 bg-cover bg-center"
-              style={{ backgroundImage: "url('/images/hero-consult.jpg')" }}
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-
-export default AboutUs
