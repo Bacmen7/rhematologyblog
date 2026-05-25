@@ -54,29 +54,26 @@ function Conditions() {
       <main>
 
         {/* ── 1. HERO SEARCH ── */}
-        <section className="py-16 w-full" style={{ background: "#0f616e" }}>
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(1.8rem,4vw,3rem)", fontWeight: 300, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "0" }}>
+        <section style={{ background: "#0f616e", padding: "80px 24px 100px" }}>
+          <div style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.4rem,5vw,3.8rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "40px" }}>
               Browse rheumatic conditions reviewed by experts
             </h1>
-            <p style={{ color: "rgba(255,255,255,0.75)", fontSize: "16px", marginTop: "20px", marginBottom: "36px" }}>
-              Evidence-based information on autoimmune and musculoskeletal conditions.
-            </p>
-            <div style={{ position: "relative", maxWidth: "520px", margin: "0 auto" }}>
+            <div style={{ position: "relative", maxWidth: "600px", margin: "0 auto" }}>
               <input
                 type="text"
-                placeholder="Search conditions..."
+                placeholder="Search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 style={{
-                  width: "100%", borderRadius: "100px", padding: "14px 52px 14px 24px",
-                  fontSize: "15px", outline: "none", boxSizing: "border-box",
-                  background: "rgba(255,255,255,0.15)", color: "white",
+                  width: "100%", borderRadius: "12px", padding: "18px 56px 18px 28px",
+                  fontSize: "16px", outline: "none", boxSizing: "border-box",
+                  background: "rgba(255,255,255,0.18)", color: "white",
                   border: "1px solid rgba(255,255,255,0.25)",
                   fontFamily: "var(--font-base)"
                 }}
               />
-              <Search style={{ position: "absolute", right: "20px", top: "50%", transform: "translateY(-50%)", color: "rgba(255,255,255,0.6)" }} size={18} />
+              <Search style={{ position: "absolute", right: "22px", top: "50%", transform: "translateY(-50%)", color: "rgba(255,255,255,0.65)" }} size={20} />
             </div>
           </div>
         </section>
@@ -143,7 +140,7 @@ function Conditions() {
                   onMouseOver={e => e.currentTarget.style.background = "#f7fffe"}
                   onMouseOut={e => e.currentTarget.style.background = "transparent"}
                 >
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", color: "#0f2e33" }}>{item.label}</span>
+                  <span style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", color: "#0f2e33" }}>{item.label}</span>
                   <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: "#e6f6f7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <ChevronRight size={16} color="#0f616e" />
                   </div>
