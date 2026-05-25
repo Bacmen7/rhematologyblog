@@ -2,8 +2,6 @@ import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom"
 import { useEffect } from "react"
-import Lenis from "lenis"
-import "lenis/dist/lenis.css"
 import "./index.css"
 import "./App.css"
 import App from "./App.jsx"
@@ -24,24 +22,13 @@ import OsteoarthritisAdvanced from "./pages/OsteoarthritisAdvanced.jsx"
 import OsteoarthritisLiving from "./pages/OsteoarthritisLiving.jsx"
 import Doctors from "./pages/Doctors.jsx"
 import Locations from "./pages/Locations.jsx"
-
-// Lenis smooth scroll -global
-const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smooth: true,
-})
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-requestAnimationFrame(raf)
+import Conditions from "./pages/Conditions.jsx"
+import BookAppointment from "./pages/BookAppointment.jsx"
 
 function ScrollToTop() {
   const { pathname } = useLocation()
   useEffect(() => {
-    lenis.scrollTo(0, { immediate: true })
+    window.scrollTo(0, 0)
   }, [pathname])
   return null
 }
@@ -71,6 +58,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/Osteoarthritis-Living" element={<OsteoarthritisLiving />} />
         <Route path="/doctors" element={<Doctors />} />
         <Route path="/locations" element={<Locations />} />
+        <Route path="/conditions" element={<Conditions />} />
+        <Route path="/book-appointment" element={<BookAppointment />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>,

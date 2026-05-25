@@ -349,7 +349,7 @@ function Header() {
             <div className="max-w-[1400px] mx-auto px-10 py-12">
               <div className="flex gap-16">
 
-                {/* Left -Doctor Images + CTA */}
+                {/* Left -Doctor Image + CTA */}
                 <div
                   className="flex-shrink-0 w-[280px]"
                   style={{
@@ -358,12 +358,11 @@ function Header() {
                     transition: "opacity 700ms ease-out 400ms, transform 700ms ease-out 400ms",
                   }}
                 >
-                  <div className="grid grid-cols-2 gap-3 mb-8">
-                    <img src="/images/specialist-1.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
-                    <img src="/images/specialist-2.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
-                    <img src="/images/specialist-3.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
-                    <img src="/images/dr-sarah-miller.jpg" alt="" className="w-full aspect-square object-cover rounded-2xl" />
-                  </div>
+                  {/* <img
+                    src="/raghav.png"
+                    alt="Dr. Raghavendra H"
+                    className="w-[220px] aspect-square object-cover object-top rounded-2xl mb-8 bg-[#f0cfc4]"
+                  />
                   <Link
                     to="/book-appointment"
                     className="inline-flex items-center gap-2 border-2 border-[#0f616e] text-[#0f616e] px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#0f616e] hover:text-white transition-all"
@@ -371,7 +370,7 @@ function Header() {
                   >
                     Consult a specialist
                     <ArrowUpRight size={16} />
-                  </Link>
+                  </Link> */}
                 </div>
 
                 {/* Right -Conditions + Treatments Grid */}

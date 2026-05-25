@@ -77,7 +77,7 @@ function DoctorProfile() {
                   MBBS, MD - General Medicine, DM - Clinical Immunology and Rheumatology
                 </p>
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-3" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "clamp(13px, 1.5vw, 15px)", lineHeight: "1.7", marginBottom: "16px", color: "rgba(255,255,255,0.85)" }}>
-                  <span>Rheumatologist, Nephrologist</span>
+                  <span>Rheumatologist</span>
                   <span style={{ color: "rgba(255,255,255,0.3)" }}>|</span>
                   <span>14 Years Exp <span style={{ fontWeight: 400, color: "rgba(255,255,255,0.5)" }}>(6 yrs specialist)</span></span>
                   <span style={{ color: "rgba(255,255,255,0.3)" }}>|</span>
@@ -202,7 +202,7 @@ function DoctorProfile() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-[#0f616e] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
-                  <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "12px", color: "#5a6577", marginBottom: "8px" }}>Rheumatologist, Nephrologist</p>
+                  <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "12px", color: "#5a6577", marginBottom: "8px" }}>Rheumatologist</p>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
                     <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>14 Years</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Experience</span></span>
                     <span style={{ fontFamily: "var(--font-base)", fontSize: "12px", color: "#0f616e" }}><span style={{ fontWeight: 600 }}>Hebbal,</span> <span style={{ fontWeight: 400, color: "#5a6577" }}>Bengaluru</span></span>
@@ -254,7 +254,7 @@ function DoctorProfile() {
                 <div style={{ marginTop: "32px" }}>
                   <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-base)", fontWeight: 600, fontSize: "16px", lineHeight: "24px", marginBottom: "12px" }}>Specializations</h3>
                   <div className="flex flex-wrap gap-2" style={{ marginBottom: "24px" }}>
-                    {["Rheumatologist", "Nephrologist"].map((spec, i) => (
+                    {["Rheumatologist"].map((spec, i) => (
                       <span key={i} className="text-xs sm:text-sm text-gray-600 bg-[#EEF2F9] px-3 py-1.5 rounded-full">{spec}</span>
                     ))}
                   </div>
@@ -472,7 +472,7 @@ function DoctorProfile() {
                   {/* Info */}
                   <div className="p-5 sm:p-6">
                     <h3 className="text-[#0f616e]" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "24px", lineHeight: "1.2", marginBottom: "6px" }}>{doctor.name}</h3>
-                    <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "13px", color: "#5a6577", marginBottom: "16px" }}>Rheumatologist, Nephrologist</p>
+                    <p style={{ fontFamily: "var(--font-base)", fontWeight: 500, fontSize: "13px", color: "#5a6577", marginBottom: "16px" }}>Rheumatologist</p>
 
                     <div className="space-y-3" style={{ marginBottom: "20px" }}>
                       <div className="flex items-center gap-2.5">

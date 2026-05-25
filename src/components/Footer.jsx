@@ -17,6 +17,10 @@ function Footer() {
             <p className="text-teal-soft text-sm leading-relaxed mb-6 max-w-xs">
               The definitive clinical resource for autoimmune and musculoskeletal medicine. Peer-reviewed, evidence-based, and physician-led.
             </p>
+            <div className="space-y-2 text-sm font-semibold text-teal-soft mb-6">
+              <a href="tel:+919833943177" className="block hover:text-primary">+91 9833943177</a>
+              <a href="mailto:chirag@navighealth.com" className="block hover:text-primary">chirag@navighealth.com</a>
+            </div>
             <div className="flex gap-4">
               <a className="w-10 h-10 rounded-full bg-teal-soft/10 flex items-center justify-center text-teal-soft hover:bg-primary transition-colors" href="#">
                 <span className="material-symbols-outlined text-lg">share</span>

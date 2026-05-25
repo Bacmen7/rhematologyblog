@@ -24,6 +24,10 @@ function BriefingFooter() {
               <Linkedin fill="currentColor" strokeWidth={0} size={20} />
             </a>
           </div>
+          <div className="space-y-2 text-sm font-semibold text-[#1A355D]">
+            <a href="tel:+919833943177" className="block hover:text-[#515a6a]">+91 9833943177</a>
+            <a href="mailto:chirag@navighealth.com" className="block hover:text-[#515a6a]">chirag@navighealth.com</a>
+          </div>
         </div>
 
         {/* Link Columns -2-col on mobile, 4-col on desktop */}

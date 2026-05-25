@@ -95,41 +95,44 @@ function HealthGuide() {
       <Header />
       <main>
 
-        {/* ═══════════ HERO (old style -matching HealthGuideHero) ═══════════ */}
-        <section className="relative overflow-hidden" style={{ marginTop: "-2px", backgroundColor: "#0f616e" }}>
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid md:grid-cols-[minmax(0,1.02fr)_minmax(360px,0.98fr)] gap-6 md:gap-10 items-stretch">
-              <div className="relative z-10 flex flex-col justify-center pt-8 pb-16 md:pt-8 md:pb-20 lg:pt-9 lg:pb-24">
+        {/* ═══════════ HERO (home style, static) ═══════════ */}
+        <section className="custom-approach-section" style={{ padding: "0.5rem 1rem 2rem" }}>
+          <div className="w-full bg-[#0f616e] rounded-[1.5rem] md:rounded-[2rem] relative overflow-hidden flex flex-col min-h-[620px] md:min-h-[680px] lg:min-h-[620px]">
+            <div className="absolute top-0 right-0 opacity-15 pointer-events-none">
+              <svg width="400" height="400" viewBox="0 0 300 300" fill="none" className="w-[200px] md:w-[400px]">
+                <path d="M150 0H300V150C300 67.1573 232.843 0 150 0Z" fill="white" fillOpacity="0.3" />
+                <path d="M150 150H0V300C0 217.157 67.1573 150 150 150Z" fill="white" fillOpacity="0.3" />
+                <path d="M150 150H300V300C300 217.157 232.843 150 150 150Z" fill="white" fillOpacity="0.1" />
+              </svg>
+            </div>
+            <div className="absolute bottom-0 left-0 opacity-15 pointer-events-none rotate-180 transform translate-x-8 translate-y-8 md:translate-x-12 md:translate-y-12">
+              <svg width="350" height="350" viewBox="0 0 300 300" fill="none" className="w-[150px] md:w-[350px]">
+                <path d="M150 0H300V150C300 67.1573 232.843 0 150 0Z" fill="white" fillOpacity="0.3" />
+                <path d="M150 150H0V300C0 217.157 67.1573 150 150 150Z" fill="white" fillOpacity="0.3" />
+              </svg>
+            </div>
+
+            <div className="relative z-10 px-5 py-8 md:px-[2.68rem] lg:px-[4rem] md:py-[3.18rem] flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-20 w-full h-full flex-grow pb-[260px] sm:pb-[320px] md:pb-[3.18rem]">
+              <div className="flex flex-col items-start max-w-[720px] w-full pt-2 lg:pt-8">
                 <h1
-                  className="leading-tight"
-                  style={{ letterSpacing: "-1px", marginBottom: "1rem", color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "clamp(3.1rem, 6vw, 5.35rem)", lineHeight: 1.04 }}
+                  style={{ color: "#ffffff", fontWeight: 300, letterSpacing: "0", fontFamily: "var(--font-display)", lineHeight: 1.08 }}
+                  className="text-[2.55rem] sm:text-5xl md:text-[3.75rem] lg:text-[4rem]"
                 >
-                  Explore{" "}
-                  <span className="relative inline-block">
-                    Health Guide
-                    <svg
-                      className="absolute -bottom-2 left-0 h-3 w-full"
-                      fill="none"
-                      preserveAspectRatio="none"
-                      viewBox="0 0 400 12"
-                    >
-                      <path d="M2 10C80 4 200 2 398 6" stroke="#1AA3B5" strokeLinecap="round" strokeWidth="4" />
-                    </svg>
-                  </span>
+                  Explore Health Guide
                 </h1>
                 <p
-                  className="text-[1.1rem] md:text-[1.45rem] leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.82)", fontFamily: "var(--font-base)", fontWeight: 500, marginBottom: "0.25rem" }}
+                  className="mt-9 md:mt-10 text-[1.05rem] md:text-[1.25rem] leading-relaxed"
+                  style={{ color: "rgba(255,255,255,0.9)", fontFamily: "var(--font-base)", fontWeight: 500 }}
                 >
                   Reliable, rheumatology-focused medical information.
                 </p>
                 <p
-                  className="text-base leading-relaxed mt-6 max-w-[560px]"
-                  style={{ color: "rgba(255,255,255,0.72)", fontFamily: "var(--font-base)", lineHeight: 1.75 }}
+                  className="text-base leading-relaxed mt-5 max-w-[620px]"
+                  style={{ color: "rgba(255,255,255,0.76)", fontFamily: "var(--font-base)", lineHeight: 1.75 }}
                 >
                   Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
                 </p>
-                <div className="flex flex-wrap gap-4 mt-10">
+                <div className="flex flex-wrap gap-4 mt-14 md:mt-16">
                   <a
                     href="#conditions"
                     className="inline-flex items-center gap-2.5 rounded-full pl-7 pr-7 py-3.5 text-[15px] font-bold hover:opacity-90 transition-opacity"
@@ -145,40 +148,26 @@ function HealthGuide() {
                     className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-bold border-2 hover:bg-white/10 transition-colors"
                     style={{ borderColor: "rgba(255,255,255,0.22)", color: "#ffffff", fontFamily: "var(--font-base)" }}
                   >
-                    Browse Articles
-                  </Link>
+                  Browse Articles
+                </Link>
                 </div>
               </div>
-              <div className="hidden md:block self-stretch">
-                <img
-                  alt="Medical professional consulting patient"
-                  className="block w-full h-full object-cover object-center"
-                  style={{ minHeight: "100%" }}
-                  src="/images/hero-consult.jpg"
-                />
-              </div>
+            </div>
+
+            <div className="absolute bottom-0 -right-4 sm:-right-2 md:right-4 lg:right-12 w-[260px] h-[290px] sm:w-[330px] sm:h-[365px] md:w-[400px] md:h-[450px] lg:w-[430px] lg:h-[500px] z-10 overflow-visible pointer-events-none">
+              <img
+                src="/images/Ring.png"
+                alt=""
+                aria-hidden="true"
+                className="absolute left-1/2 top-[12%] h-[152%] w-[176%] -translate-x-1/2 object-contain opacity-90"
+              />
+              <img
+                src="/images/hero-slide-1.png"
+                alt="Rheumatology health guide"
+                className="absolute bottom-0 right-0 z-10 w-full h-full object-contain object-bottom"
+              />
             </div>
           </div>
-          {/* Mobile background image */}
-          <div className="absolute right-0 top-0 h-full w-full md:hidden opacity-20">
-            <img
-              alt=""
-              className="h-full w-full object-cover object-center"
-              src="/images/hero-consult.jpg"
-            />
-          </div>
-          <svg
-            className="absolute bottom-[-1px] left-0 w-full h-[42px] md:h-[64px] z-20"
-            viewBox="0 0 1440 80"
-            fill="none"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <path
-              d="M0 80H1440V42C1204 6 959 5 719 40C478 75 236 76 0 38V80Z"
-              fill="var(--color-ghost)"
-            />
-          </svg>
         </section>
 
         {/* ═══════════ WHAT IS RHEUMATOLOGY (matching WhyRheuma dark section) ═══════════
@@ -343,8 +332,8 @@ function HealthGuide() {
               <div className="h-full">
                 <div className="overflow-hidden h-full" style={{ minHeight: "100%" }}>
                   <img
-                    src="/images/hero-consult.jpg"
-                    alt="Doctor consulting patient"
+                    src="/k3.png"
+                    alt="Rheumatology specialist"
                     className="w-full h-[320px] md:h-[380px] lg:h-full object-cover"
                   />
                 </div>
@@ -546,7 +535,7 @@ function HealthGuide() {
         </section>
 
         {/* ═══════════ CTA + NEWSLETTER ═══════════ */}
-        <CtaBanner />
+        <CtaBanner spacerColor="#F5F5F5" />
         <Newsletter />
       </main>
       <BriefingFooter />

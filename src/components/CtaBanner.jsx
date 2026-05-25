@@ -1,8 +1,8 @@
-function CtaBanner() {
+function CtaBanner({ spacerColor = "#ffffff" }) {
   return (
-    <section className="w-full flex flex-col bg-white overflow-visible">
+    <section className="custom-approach-section w-full flex flex-col overflow-visible" style={{ backgroundColor: spacerColor }}>
       {/* Spacer */}
-      <div style={{ height: "80px", backgroundColor: "#ffffff" }} />
+      <div style={{ height: "80px", backgroundColor: spacerColor }} />
       {/* Wave SVG */}
       <svg
         className="w-full h-[24px] sm:h-[90px] md:h-[120px] text-[#0f616e] block"
@@ -19,7 +19,7 @@ function CtaBanner() {
 
       {/* Content Area */}
       <div className="bg-[#0f616e] w-full overflow-visible">
-        <div className="max-w-7xl mx-auto px-6 pb-24 md:pb-32 pt-6 sm:pt-10">
+        <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-12 pt-6 sm:pt-10">
           <div className="flex flex-col-reverse md:flex-row items-stretch gap-10 md:gap-16">
             {/* Left -Text */}
             <div className="flex-[1.1] flex flex-col items-center md:items-start justify-center py-4">

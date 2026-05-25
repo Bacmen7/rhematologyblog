@@ -14,6 +14,10 @@ function RheumaCareFooter() {
             <a className="inline-flex items-center" href="#" aria-label="Omni Rheuma home">
               <img src="/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
             </a>
+            <div className="mt-6 space-y-2 text-sm font-semibold">
+              <a href="tel:+919833943177" className="block text-gray-400 hover:text-white transition-colors">+91 9833943177</a>
+              <a href="mailto:chirag@navighealth.com" className="block text-gray-400 hover:text-white transition-colors">chirag@navighealth.com</a>
+            </div>
           </div>
           {Object.entries(footerSections).map(([title, links]) => (
             <div key={title}>
