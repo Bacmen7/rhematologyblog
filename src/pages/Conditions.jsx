@@ -54,10 +54,10 @@ function Conditions() {
       <main>
 
         {/* ── 1. HERO SEARCH ── */}
-        <section style={{ background: "#0f616e", padding: "40px 24px 48px", textAlign: "center" }}>
-          <div style={{ maxWidth: "640px", margin: "0 auto" }}>
-            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "36px", maxWidth: "900px", margin: "0 auto 36px" }}>
-              Browse rheumatic conditions reviewed by experts
+        <section style={{ background: "#0f616e", padding: "40px 24px 72px", textAlign: "center" }}>
+          <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.2rem,3.5vw,3rem)", fontWeight: 700, lineHeight: 1.2, letterSpacing: "-0.3px", margin: "0 auto 52px" }}>
+              Browse rheumatic conditions<br/>reviewed by experts
             </h1>
             <div style={{ position: "relative", maxWidth: "540px", margin: "0 auto" }}>
               <input
