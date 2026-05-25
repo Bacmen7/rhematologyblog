@@ -54,26 +54,26 @@ function Conditions() {
       <main>
 
         {/* ── 1. HERO SEARCH ── */}
-        <section style={{ background: "#0f616e", padding: "80px 24px 100px" }}>
-          <div style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center" }}>
-            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.4rem,5vw,3.8rem)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "40px" }}>
+        <section style={{ background: "#0f616e", padding: "40px 24px 48px", textAlign: "center" }}>
+          <div style={{ maxWidth: "640px", margin: "0 auto" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "36px" }}>
               Browse rheumatic conditions reviewed by experts
             </h1>
-            <div style={{ position: "relative", maxWidth: "600px", margin: "0 auto" }}>
+            <div style={{ position: "relative", maxWidth: "540px", margin: "0 auto" }}>
               <input
                 type="text"
                 placeholder="Search"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 style={{
-                  width: "100%", borderRadius: "12px", padding: "18px 56px 18px 28px",
+                  width: "100%", borderRadius: "100px", padding: "16px 52px 16px 24px",
                   fontSize: "16px", outline: "none", boxSizing: "border-box",
-                  background: "rgba(255,255,255,0.18)", color: "white",
-                  border: "1px solid rgba(255,255,255,0.25)",
+                  background: "rgba(255,255,255,0.15)", color: "white",
+                  border: "1px solid rgba(255,255,255,0.3)",
                   fontFamily: "var(--font-base)"
                 }}
               />
-              <Search style={{ position: "absolute", right: "22px", top: "50%", transform: "translateY(-50%)", color: "rgba(255,255,255,0.65)" }} size={20} />
+              <Search style={{ position: "absolute", right: "20px", top: "50%", transform: "translateY(-50%)", color: "rgba(255,255,255,0.6)" }} size={18} />
             </div>
           </div>
         </section>
@@ -140,7 +140,7 @@ function Conditions() {
                   onMouseOver={e => e.currentTarget.style.background = "#f7fffe"}
                   onMouseOut={e => e.currentTarget.style.background = "transparent"}
                 >
-                  <span style={{ fontFamily: "var(--font-display)", fontSize: "1.4rem", color: "#0f2e33" }}>{item.label}</span>
+                  <span style={{ fontFamily: "var(--font-base)", fontSize: "1.25rem", fontWeight: 600, color: "#0f2e33" }}>{item.label}</span>
                   <div style={{ width: "36px", height: "36px", borderRadius: "50%", background: "#e6f6f7", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                     <ChevronRight size={16} color="#0f616e" />
                   </div>
@@ -153,7 +153,7 @@ function Conditions() {
         {/* ── 4. EXPLORE VIDEOS ── */}
         <section style={{ padding: "48px 0", background: "#f5f5f5" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2.2rem", fontWeight: 400, textAlign: "center", marginBottom: "28px" }}>Explore videos</h2>
+            <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2.8rem", fontWeight: 400, textAlign: "center", marginBottom: "28px" }}>Explore videos</h2>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
               {videos.map((video, i) => (
                 <div key={i} style={{ background: "#fff", borderRadius: "16px", overflow: "hidden", border: "1.5px solid #ebebeb", cursor: "pointer" }}>
@@ -170,7 +170,7 @@ function Conditions() {
                       Video
                       <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
                     </span>
-                    <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "17px", fontWeight: 400, lineHeight: 1.45, margin: 0 }}>{video.title}</h3>
+                    <h3 style={{ fontFamily: "var(--font-base)", color: "#0f2e33", fontSize: "16px", fontWeight: 600, lineHeight: 1.45, letterSpacing: "0.01em", margin: 0 }}>{video.title}</h3>
                   </div>
                 </div>
               ))}
@@ -183,8 +183,8 @@ function Conditions() {
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
             <div style={{ background: "#fff", borderRadius: "20px", padding: "40px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", border: "1.5px solid #ebebeb" }}>
               <div style={{ flex: 1, minWidth: "240px" }}>
-                <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "1.2rem", fontWeight: 400, marginBottom: "8px" }}>Our Editorial Process</h3>
-                <p style={{ color: "#888", fontSize: "14px", lineHeight: 1.65, margin: 0 }}>
+                <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2rem", fontWeight: 400, marginBottom: "8px" }}>Our Editorial Process</h3>
+                <p style={{ color: "#888", fontSize: "16px", lineHeight: 1.65, margin: 0 }}>
                   Every piece of educational content is thoroughly reviewed by a member of{" "}
                   <Link to="/about" style={{ color: "#0f616e", fontWeight: 600, textDecoration: "none" }}>our Clinical Team</Link>.
                 </p>
