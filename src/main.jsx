@@ -6,7 +6,6 @@ import "./index.css"
 import "./App.css"
 import App from "./App.jsx"
 import BlogDetail from "./pages/BlogDetail.jsx"
-import OurApproach from "./pages/OurApproach.jsx"
 import AboutUs from "./pages/AboutUs.jsx"
 import Blog from "./pages/Blog.jsx"
 import DoctorProfile from "./pages/DoctorProfile.jsx"
@@ -39,7 +38,6 @@ createRoot(document.getElementById('root')).render(
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/our-approach" element={<OurApproach />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/article/:id" element={<BlogDetail />} />

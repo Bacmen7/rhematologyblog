@@ -82,6 +82,7 @@ const faqs = [
 
 function HealthGuide() {
   const scrollRef = useRef(null)
+  const conditionsRef = useRef(null)
 
   const scroll = (direction) => {
     if (scrollRef.current) {
@@ -177,20 +178,20 @@ function HealthGuide() {
                 </p>
               </div>
               <div style={{ display: "flex", gap: "10px", flexShrink: 0 }}>
-                <button onClick={() => scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" })} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <button onClick={() => conditionsRef.current?.scrollBy({ left: -300, behavior: "smooth" })} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <svg width="18" height="18" fill="none" stroke="#0f616e" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
                 </button>
-                <button onClick={() => scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" })} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <button onClick={() => conditionsRef.current?.scrollBy({ left: 300, behavior: "smooth" })} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
                   <svg width="18" height="18" fill="none" stroke="#0f616e" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
                 </button>
               </div>
             </div>
 
-            <div ref={scrollRef} style={{ display: "flex", gap: "20px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory", msOverflowStyle: "none", scrollbarWidth: "none" }}>
+            <div ref={conditionsRef} style={{ display: "flex", gap: "20px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory", msOverflowStyle: "none", scrollbarWidth: "none" }}>
               {conditions.map((c) => (
                 <Link
                   key={c.name}
-                  to={c.slug === "arthritis" ? "/Rheumatoid-Arthritis" : "#"}
+                  to="/conditions"
                   style={{ textDecoration: "none", flexShrink: 0, width: "280px", scrollSnapAlign: "start" }}
                 >
                   <div style={{ background: "#fff", borderRadius: "20px", padding: "28px 20px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "12px", border: "1.5px solid #e8ecf2", transition: "border-color 0.2s", cursor: "pointer", height: "100%" }}

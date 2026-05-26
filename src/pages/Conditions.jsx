@@ -199,63 +199,8 @@ function Conditions() {
           </div>
         </section>
 
-        {/* ── 6. CONDITION CARDS CAROUSEL ── */}
-        <section style={{ padding: "56px 0 72px", background: "#f5f5f5" }}>
-          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "32px" }}>
-              <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, margin: 0 }}>Browse by condition</h2>
-              <div style={{ display: "flex", gap: "10px" }}>
-                <button onClick={() => scrollCarousel("left")} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <ChevronLeft size={18} color="#0f616e" />
-                </button>
-                <button onClick={() => scrollCarousel("right")} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <ChevronRight size={18} color="#0f616e" />
-                </button>
-              </div>
-            </div>
-            <div ref={carouselRef} style={{ display: "flex", gap: "20px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory", msOverflowStyle: "none", scrollbarWidth: "none" }}>
-              {conditionCards.map((c) => (
-                <Link key={c.name} to={c.href} style={{ textDecoration: "none", flexShrink: 0, width: "280px", scrollSnapAlign: "start" }}>
-                  <div style={{ background: "#fff", borderRadius: "20px", padding: "28px 20px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "12px", border: "1.5px solid #e8ecf2", transition: "border-color 0.2s", cursor: "pointer", height: "100%" }}
-                    onMouseOver={e => e.currentTarget.style.borderColor = "#0f616e"}
-                    onMouseOut={e => e.currentTarget.style.borderColor = "#e8ecf2"}
-                  >
-                    <div style={{ width: "72px", height: "72px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <img src={c.image} alt={c.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
-                    </div>
-                    <h3 style={{ fontFamily: "var(--font-display)", color: "#0f616e", fontSize: "1.2rem", fontWeight: 500, lineHeight: 1.3, margin: 0 }}>{c.name}</h3>
-                    <p style={{ fontFamily: "var(--font-base)", color: "#5e5e5e", fontSize: "13px", lineHeight: 1.7, margin: 0, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{c.desc}</p>
-                    <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-base)", fontSize: "13px", fontWeight: 600, color: "#0f616e", marginTop: "auto", paddingTop: "4px" }}>
-                      Read more
-                      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" /></svg>
-                    </span>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* ── 7. EXPLORE BY SUBTYPE ── */}
-        <section style={{ padding: "56px 0 64px", background: "#ffffff" }}>
-          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-            <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, marginBottom: "32px" }}>Explore by subtype</h2>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-              {subtypes.map((subtype, i) => (
-                <Link key={i} to="/health-guide"
-                  style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "50px", borderRadius: "100px", border: "1.5px solid #dde8e7", background: "#fff", padding: "0 22px", fontSize: "16px", color: "#0f2e33", textDecoration: "none", fontFamily: "var(--font-base)", transition: "all 0.15s", boxShadow: "0 1px 3px rgba(15,97,110,0.05)" }}
-                  onMouseOver={e => { e.currentTarget.style.borderColor = "#0f616e"; e.currentTarget.style.color = "#0f616e" }}
-                  onMouseOut={e => { e.currentTarget.style.borderColor = "#dde8e7"; e.currentTarget.style.color = "#0f2e33" }}
-                >
-                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#9DE5D4", flexShrink: 0 }} />
-                  {subtype}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 8. EDITORIAL PROCESS ── */}
+        {/* ── 7. EDITORIAL PROCESS ── */}
         <section style={{ padding: "32px 0 48px", background: "#f5f5f5" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
             <div style={{ background: "#fff", borderRadius: "20px", padding: "40px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", border: "1.5px solid #ebebeb" }}>
@@ -270,6 +215,25 @@ function Conditions() {
                 style={{ background: "#e86531", color: "#fff", borderRadius: "100px", padding: "12px 28px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "var(--font-base)" }}>
                 Learn more
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* ── 8. EXPLORE BY SUBTYPE ── */}
+        <section style={{ padding: "56px 0 64px", background: "#ffffff" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+            <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, marginBottom: "32px" }}>Explore by subtype</h2>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+              {subtypes.map((subtype, i) => (
+                <Link key={i} to="/health-guide"
+                  style={{ display: "inline-flex", alignItems: "center", gap: "10px", minHeight: "50px", borderRadius: "100px", border: "1.5px solid #dde8e7", background: "#fff", padding: "0 22px", fontSize: "16px", color: "#0f2e33", textDecoration: "none", fontFamily: "var(--font-base)", transition: "all 0.15s", boxShadow: "0 1px 3px rgba(15,97,110,0.05)" }}
+                  onMouseOver={e => { e.currentTarget.style.borderColor = "#0f616e"; e.currentTarget.style.color = "#0f616e" }}
+                  onMouseOut={e => { e.currentTarget.style.borderColor = "#dde8e7"; e.currentTarget.style.color = "#0f2e33" }}
+                >
+                  <span style={{ width: "8px", height: "8px", borderRadius: "50%", background: "#9DE5D4", flexShrink: 0 }} />
+                  {subtype}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

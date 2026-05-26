@@ -1,406 +1,183 @@
 import { useState } from "react"
-import {
-  CalendarDays,
-  CircleUserRound,
-  MapPin,
-  MessageCircle,
-  Network,
-  Smartphone,
-  Stethoscope,
-} from "lucide-react"
 import Header from "../components/Header"
 import BriefingFooter from "../components/BriefingFooter"
 
-const stepLabels = [
-  "Which joints concern you most?",
-  "How do your symptoms feel?",
-  "How long have you had this?",
-  "About You",
-  "Specialist Consultation",
+const conditions = [
+  "Rheumatoid Arthritis",
+  "Osteoarthritis",
+  "Gout",
+  "Ankylosing Spondylitis",
+  "Lupus (SLE)",
+  "Osteoporosis",
+  "Psoriatic Arthritis",
+  "Fibromyalgia",
+  "Juvenile Idiopathic Arthritis",
+  "Not sure / Need a diagnosis",
+  "Other",
 ]
-
-const concernOptions = [
-  { label: "My hand or wrist joints", icon: Stethoscope },
-  { label: "My back, neck or spine", icon: CircleUserRound },
-  { label: "My knees, hips or feet", icon: MapPin },
-  { label: "Multiple joints or areas", icon: Network },
-]
-
-const symptomOptions = [
-  "Stiff, swollen or painful joints in the morning",
-  "Pain that increases with movement or activity",
-  "Back stiffness that improves after movement",
-  "Joint symptoms with fatigue, rash or repeated flares",
-]
-
-const durationOptions = [
-  "Less than 1 month",
-  "Less than 6 months",
-  "More than 6 months",
-  "I am not sure",
-]
-
-const consultationOptions = [
-  {
-    label: "Yes, as soon as possible",
-    help: "I need early advice from a specialist",
-    icon: Stethoscope,
-  },
-  {
-    label: "Yes, within the next few weeks",
-    help: "I would like a planned consultation",
-    icon: CalendarDays,
-  },
-  {
-    label: "Not yet - just want information",
-    help: "I am exploring care options right now",
-    icon: MessageCircle,
-  },
-  {
-    label: "Yes, via teleconsultation",
-    help: "I prefer an online consultation from home",
-    icon: Smartphone,
-  },
-]
-
-const initialData = {
-  concern: "Multiple joints or areas",
-  symptoms: "Joint symptoms with fatigue, rash or repeated flares",
-  duration: "I am not sure",
-  title: "",
-  fullName: "",
-  phone: "",
-  email: "",
-  message: "",
-  consultation: "",
-}
 
 const fieldStyle = {
-  height: "48px",
   width: "100%",
-  borderRadius: "8px",
-  border: "1px solid #d9e4e5",
-  background: "#ffffff",
-  padding: "0 12px",
-  fontSize: "16px",
-  color: "#354850",
-  outline: "none",
   fontFamily: "var(--font-base)",
+  fontSize: "16px",
+  color: "#2b3a3a",
+  padding: "12px 14px",
+  border: "1px solid #d9e4e4",
+  borderRadius: "8px",
+  background: "#ffffff",
+  outline: "none",
+  transition: "border-color 0.2s, box-shadow 0.2s",
 }
 
-function Sidebar({ step }) {
+function Field({ label, required, children }) {
   return (
-    <aside className="lg:w-[46.6%]" style={{ background: "#0f616e", color: "#ffffff", padding: "clamp(52px, 7vw, 89px) clamp(28px, 5vw, 52px) 40px" }}>
-      <div style={{ maxWidth: "390px" }}>
-        <p style={{ color: "rgba(255,255,255,0.76)", fontSize: "13px", fontWeight: 700, letterSpacing: "0.2em", marginBottom: "20px", textTransform: "uppercase" }}>
-          Omni Rheuma - India
-        </p>
-        <h1 style={{ color: "#ffffff", fontFamily: "var(--font-display)", fontSize: "clamp(2.2rem, 4.2vw, 2.65rem)", fontWeight: 400, lineHeight: 1.15, marginBottom: "24px" }}>
-          Complete Quick
-          <br />
-          Online <span style={{ color: "rgba(255,255,255,0.66)" }}>Assessment</span>
-        </h1>
-        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", lineHeight: 1.7, maxWidth: "355px", marginBottom: "30px" }}>
-          Answer a few simple questions so our rheumatology specialists can understand your symptoms and recommend the right care for you.
-        </p>
-        <ol style={{ display: "flex", flexDirection: "column", gap: "10px", listStyle: "none", margin: 0, padding: 0 }}>
-          {stepLabels.map((label, index) => {
-            const number = index + 1
-            const active = number === step
-            return (
-              <li key={label} style={{ display: "flex", alignItems: "center", gap: "10px", fontSize: "14px" }}>
-                <span style={{
-                  alignItems: "center",
-                  background: active ? "#e86531" : "rgba(255,255,255,0.2)",
-                  borderRadius: "50%",
-                  color: active ? "#ffffff" : "rgba(255,255,255,0.8)",
-                  display: "flex",
-                  flexShrink: 0,
-                  height: "28px",
-                  justifyContent: "center",
-                  width: "28px",
-                }}>
-                  {number}
-                </span>
-                <span style={{ color: active ? "#ffffff" : "rgba(255,255,255,0.78)", fontWeight: active ? 700 : 400 }}>{label}</span>
-              </li>
-            )
-          })}
-        </ol>
-      </div>
-    </aside>
-  )
-}
-
-function SelectOption({ selected, onClick, children, icon: Icon, compact = false }) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      style={{
-        alignItems: "center",
-        background: selected ? "#0f616e" : "#ffffff",
-        border: `1px solid ${selected ? "#0f616e" : "#d9e4e5"}`,
-        borderRadius: "8px",
-        color: selected ? "#ffffff" : "#354850",
-        cursor: "pointer",
-        display: "flex",
-        fontFamily: "var(--font-base)",
-        fontSize: "16px",
-        fontWeight: 600,
-        gap: "16px",
-        minHeight: compact ? "54px" : "68px",
-        padding: "10px 17px",
-        textAlign: "left",
-        transition: "all 0.2s ease",
-        width: "100%",
-      }}
-    >
-      {Icon && (
-        <span style={{
-          alignItems: "center",
-          background: selected ? "rgba(255,255,255,0.15)" : "#e6f6f7",
-          borderRadius: "8px",
-          color: selected ? "#ffffff" : "#0f616e",
-          display: "flex",
-          flexShrink: 0,
-          height: "39px",
-          justifyContent: "center",
-          width: "39px",
-        }}>
-          <Icon size={20} strokeWidth={1.7} />
-        </span>
-      )}
+    <div style={{ marginBottom: "24px" }}>
+      <label style={{ display: "block", fontWeight: 600, fontSize: "0.94rem", marginBottom: "6px", color: "#2b3a3a", fontFamily: "var(--font-base)" }}>
+        {label} {required && <span style={{ color: "#e86531" }}>*</span>}
+      </label>
       {children}
-    </button>
-  )
-}
-
-function InputField({ label, children }) {
-  return (
-    <label>
-      <span style={{ color: "#0f616e", display: "block", fontSize: "12px", fontWeight: 700, letterSpacing: "0.12em", marginBottom: "8px", textTransform: "uppercase" }}>
-        {label}
-      </span>
-      {children}
-    </label>
+    </div>
   )
 }
 
 export default function BookAppointment() {
-  const [step, setStep] = useState(1)
-  const [data, setData] = useState(initialData)
+  const [form, setForm] = useState({ name: "", age: "", phone: "", condition: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
 
-  const update = (field, value) => {
-    setData((current) => ({ ...current, [field]: value }))
-  }
+  const update = (key, val) => setForm(f => ({ ...f, [key]: val }))
 
-  const onSubmit = (event) => {
-    event.preventDefault()
-    if (step < 5) {
-      setStep((current) => current + 1)
+  const handleSubmit = () => {
+    if (!form.name || !form.age || !form.phone || !form.condition) {
+      alert("Please fill in your name, age, phone number and condition.")
       return
     }
     setSubmitted(true)
   }
 
   return (
-    <div className="min-h-screen" style={{ background: "#ffffff", color: "#0f2e33", fontFamily: "var(--font-base)" }}>
+    <div className="min-h-screen" style={{ background: "#f4fafa", fontFamily: "var(--font-base)", color: "#2b3a3a" }}>
       <Header />
-      <main>
-        <div style={{ borderBottom: "1px solid #d9e6e5", overflow: "hidden" }}>
-          <div className="flex flex-col lg:flex-row" style={{ minHeight: "calc(100vh - 82px)" }}>
-            <Sidebar step={step} />
 
-            <section className="flex-1" style={{ background: "#f7fbfa", padding: "clamp(32px, 5vw, 52px) clamp(20px, 5vw, 54px) 40px" }}>
-              <form onSubmit={onSubmit} style={{ maxWidth: "710px", width: "100%" }}>
-                <div style={{ marginBottom: "32px" }}>
-                  <div style={{ background: "#d8e7e6", height: "3px" }}>
-                    <div style={{ background: "#1AA3B5", height: "3px", transition: "width 0.25s ease", width: `${step * 20}%` }} />
-                  </div>
-                  <p style={{ color: "#66777b", fontSize: "12px", marginTop: "7px" }}>Step {step} of 5</p>
-                </div>
+      {/* Hero */}
+      <section style={{ background: "linear-gradient(150deg, #0f616e 0%, #095457 100%)", padding: "54px 0 64px", textAlign: "center" }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto", padding: "0 22px" }}>
+          <h1 style={{ fontFamily: "var(--font-display)", color: "#ffffff", fontSize: "clamp(2.1rem, 4vw, 2.7rem)", fontWeight: 400, marginBottom: "10px", lineHeight: 1.2 }}>
+            Book a Consultation
+          </h1>
+          <p style={{ color: "#d4ebeb", fontSize: "1.06rem", maxWidth: "520px", margin: "0 auto", lineHeight: 1.7 }}>
+            Request an appointment with our rheumatology team in Hebbal, Bengaluru. Share your details and we will get in touch to confirm your visit.
+          </p>
+        </div>
+      </section>
 
-                {submitted ? (
-                  <div style={{ background: "#ffffff", borderRadius: "14px", boxShadow: "0 1px 8px rgba(15,97,110,0.08)", padding: "48px 36px", textAlign: "center" }}>
-                    <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontSize: "2.2rem", marginBottom: "12px" }}>Thank you</h2>
-                    <p style={{ color: "#68787c", fontSize: "16px", lineHeight: 1.7 }}>
-                      Our rheumatology specialist will contact you shortly.
-                    </p>
-                  </div>
-                ) : (
-                  <>
-                    {step === 1 && (
-                      <div>
-                        <h2 style={{ color: "#0f616e", fontSize: "clamp(1.8rem, 3vw, 2.2rem)", lineHeight: 1.2, marginBottom: "8px" }}>
-                          Which joints are causing you the most concern?
-                        </h2>
-                        <p style={{ color: "#718287", fontSize: "16px", lineHeight: 1.7, marginBottom: "21px" }}>
-                          Select the option that best describes your symptoms
-                        </p>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                          {concernOptions.map(({ label, icon }) => (
-                            <SelectOption key={label} icon={icon} selected={data.concern === label} onClick={() => update("concern", label)}>
-                              {label}
-                            </SelectOption>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+      {/* Card */}
+      <main style={{ maxWidth: "960px", margin: "0 auto", padding: "0 32px 60px" }}>
+        <div style={{ background: "#ffffff", border: "1px solid #d9e4e4", borderRadius: "14px", padding: "clamp(36px, 5vw, 64px)", marginTop: "-36px", boxShadow: "0 10px 30px rgba(13,115,119,0.08)" }}>
 
-                    {step === 2 && (
-                      <div>
-                        <h2 style={{ color: "#0f616e", fontSize: "clamp(1.8rem, 3vw, 2.2rem)", lineHeight: 1.2, marginBottom: "8px" }}>My symptoms are...</h2>
-                        <p style={{ color: "#718287", fontSize: "16px", lineHeight: 1.7, marginBottom: "21px" }}>
-                          How would you describe the pain or stiffness you experience?
-                        </p>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
-                          {symptomOptions.map((label) => (
-                            <SelectOption key={label} compact selected={data.symptoms === label} onClick={() => update("symptoms", label)}>
-                              {label}
-                            </SelectOption>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+          {!submitted ? (
+            <>
+              <h2 style={{ fontFamily: "var(--font-display)", color: "#095457", fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 400, marginBottom: "6px", textAlign: "center" }}>
+                Tell Us About You
+              </h2>
+              <p style={{ color: "#5c6b6b", fontSize: "0.99rem", marginBottom: "36px", lineHeight: 1.65, textAlign: "center" }}>
+                Fill in a few details below and our team will reach out shortly to arrange a time that works for you.
+              </p>
 
-                    {step === 3 && (
-                      <div>
-                        <h2 style={{ color: "#0f616e", fontSize: "clamp(1.8rem, 3vw, 2.2rem)", lineHeight: 1.2, marginBottom: "8px" }}>
-                          I have had this problem for...
-                        </h2>
-                        <p style={{ color: "#718287", fontSize: "16px", lineHeight: 1.7, marginBottom: "21px" }}>
-                          This helps us understand how promptly you may need an evaluation
-                        </p>
-                        <div style={{ display: "flex", flexDirection: "column", gap: "9px" }}>
-                          {durationOptions.map((label) => (
-                            <SelectOption key={label} compact selected={data.duration === label} onClick={() => update("duration", label)}>
-                              {label}
-                            </SelectOption>
-                          ))}
-                        </div>
-                      </div>
-                    )}
+              {/* Row 1 — Full Name + Age */}
+              <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "20px" }} className="sm:grid">
+                <Field label="Full Name" required>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    value={form.name}
+                    onChange={e => update("name", e.target.value)}
+                    style={fieldStyle}
+                    onFocus={e => { e.target.style.borderColor = "#0f616e"; e.target.style.boxShadow = "0 0 0 3px #e6f2f2" }}
+                    onBlur={e => { e.target.style.borderColor = "#d9e4e4"; e.target.style.boxShadow = "none" }}
+                  />
+                </Field>
+                <Field label="Age" required>
+                  <input
+                    type="number"
+                    min="1" max="120"
+                    placeholder="e.g. 42"
+                    value={form.age}
+                    onChange={e => update("age", e.target.value)}
+                    style={fieldStyle}
+                    onFocus={e => { e.target.style.borderColor = "#0f616e"; e.target.style.boxShadow = "0 0 0 3px #e6f2f2" }}
+                    onBlur={e => { e.target.style.borderColor = "#d9e4e4"; e.target.style.boxShadow = "none" }}
+                  />
+                </Field>
+              </div>
 
-                    {step === 4 && (
-                      <div>
-                        <h2 style={{ color: "#0f616e", fontSize: "clamp(1.8rem, 3vw, 2.2rem)", lineHeight: 1.2, marginBottom: "8px" }}>About You</h2>
-                        <p style={{ color: "#718287", fontSize: "16px", lineHeight: 1.7, marginBottom: "20px" }}>
-                          A few details so we can help you better
-                        </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "12px" }}>
-                          <InputField label="Title">
-                            <select value={data.title} onChange={(event) => update("title", event.target.value)} style={fieldStyle}>
-                              <option value="">Mr</option>
-                              <option>Mrs</option>
-                              <option>Ms</option>
-                              <option>Dr</option>
-                            </select>
-                          </InputField>
-                          <InputField label="Full Name">
-                            <input required value={data.fullName} onChange={(event) => update("fullName", event.target.value)} style={fieldStyle} />
-                          </InputField>
-                          <InputField label="Phone Number">
-                            <input required type="tel" value={data.phone} onChange={(event) => update("phone", event.target.value)} style={fieldStyle} />
-                          </InputField>
-                          <InputField label="Email Address">
-                            <input required type="email" value={data.email} onChange={(event) => update("email", event.target.value)} style={fieldStyle} />
-                          </InputField>
-                          <label className="sm:col-span-2">
-                            <span style={{ color: "#0f616e", display: "block", fontSize: "12px", fontWeight: 700, letterSpacing: "0.12em", marginBottom: "8px", textTransform: "uppercase" }}>
-                              Your Message
-                            </span>
-                            <textarea value={data.message} onChange={(event) => update("message", event.target.value)} style={{ ...fieldStyle, height: "80px", padding: "12px", resize: "none" }} />
-                          </label>
-                        </div>
-                        <p style={{ color: "#e86531", fontSize: "14px", marginTop: "16px" }}>
-                          Please fill in your name, phone and email to continue.
-                        </p>
-                      </div>
-                    )}
+              {/* Row 2 — Phone + Condition */}
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+                <Field label="Phone Number" required>
+                  <input
+                    type="tel"
+                    placeholder="10-digit mobile number"
+                    value={form.phone}
+                    onChange={e => update("phone", e.target.value)}
+                    style={fieldStyle}
+                    onFocus={e => { e.target.style.borderColor = "#0f616e"; e.target.style.boxShadow = "0 0 0 3px #e6f2f2" }}
+                    onBlur={e => { e.target.style.borderColor = "#d9e4e4"; e.target.style.boxShadow = "none" }}
+                  />
+                </Field>
+                <Field label="Condition" required>
+                  <select
+                    value={form.condition}
+                    onChange={e => update("condition", e.target.value)}
+                    style={fieldStyle}
+                    onFocus={e => { e.target.style.borderColor = "#0f616e"; e.target.style.boxShadow = "0 0 0 3px #e6f2f2" }}
+                    onBlur={e => { e.target.style.borderColor = "#d9e4e4"; e.target.style.boxShadow = "none" }}
+                  >
+                    <option value="">Select a condition</option>
+                    {conditions.map(c => <option key={c}>{c}</option>)}
+                  </select>
+                </Field>
+              </div>
 
-                    {step === 5 && (
-                      <div>
-                        <h2 style={{ color: "#0f616e", fontSize: "clamp(1.8rem, 3vw, 2.2rem)", lineHeight: 1.2, marginBottom: "8px" }}>
-                          Do you require a specialist consultation right now?
-                        </h2>
-                        <p style={{ color: "#718287", fontSize: "16px", lineHeight: 1.7, marginBottom: "21px" }}>
-                          Our rheumatologists are available for in-clinic and online consultations
-                        </p>
-                        <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "12px" }}>
-                          {consultationOptions.map((option) => (
-                            <button
-                              type="button"
-                              key={option.label}
-                              onClick={() => update("consultation", option.label)}
-                              style={{
-                                background: "#ffffff",
-                                border: `1px solid ${data.consultation === option.label ? "#0f616e" : "#d9e4e5"}`,
-                                borderRadius: "11px",
-                                boxShadow: data.consultation === option.label ? "0 0 0 1px #0f616e" : "none",
-                                cursor: "pointer",
-                                minHeight: "136px",
-                                padding: "16px",
-                                textAlign: "center",
-                              }}
-                            >
-                              <option.icon color="#1AA3B5" size={28} style={{ margin: "0 auto 12px" }} />
-                              <span style={{ color: "#0f616e", display: "block", fontSize: "16px", fontWeight: 700 }}>{option.label}</span>
-                              <span style={{ color: "#738287", display: "block", fontSize: "14px", marginTop: "4px" }}>{option.help}</span>
-                            </button>
-                          ))}
-                        </div>
-                        <p style={{ color: "#e86531", fontSize: "14px", marginTop: "20px" }}>
-                          Please select an option to continue.
-                        </p>
-                      </div>
-                    )}
+              {/* Row 3 — Message full width */}
+              <Field label="Message to the Doctor">
+                <textarea
+                  placeholder="Briefly describe your symptoms, how long you have had them, and any questions you would like to ask."
+                  value={form.message}
+                  onChange={e => update("message", e.target.value)}
+                  style={{ ...fieldStyle, minHeight: "120px", resize: "vertical", padding: "12px 14px" }}
+                  onFocus={e => { e.target.style.borderColor = "#0f616e"; e.target.style.boxShadow = "0 0 0 3px #e6f2f2" }}
+                  onBlur={e => { e.target.style.borderColor = "#d9e4e4"; e.target.style.boxShadow = "none" }}
+                />
+              </Field>
 
-                    <div style={{ display: "flex", gap: "12px", justifyContent: "flex-start", marginTop: "28px" }}>
-                      <button
-                        type="button"
-                        onClick={() => setStep((current) => Math.max(1, current - 1))}
-                        style={{
-                          background: step === 1 ? "#92aaaa" : "#0f616e",
-                          border: "none",
-                          borderRadius: "9999px",
-                          color: "#ffffff",
-                          cursor: "pointer",
-                          fontSize: "14px",
-                          fontWeight: 700,
-                          height: "44px",
-                          minWidth: "112px",
-                          padding: "0 24px",
-                        }}
-                      >
-                        Back
-                      </button>
-                      <button
-                        type="submit"
-                        style={{
-                          background: "#e86531",
-                          border: "none",
-                          borderRadius: "9999px",
-                          color: "#ffffff",
-                          cursor: "pointer",
-                          fontSize: "14px",
-                          fontWeight: 700,
-                          height: "44px",
-                          minWidth: "148px",
-                          padding: "0 32px",
-                        }}
-                      >
-                        {step === 5 ? "Submit" : "Next"}
-                      </button>
-                    </div>
-                  </>
-                )}
-              </form>
-            </section>
-          </div>
+              <button
+                type="button"
+                onClick={handleSubmit}
+                style={{ background: "#e86531", color: "#ffffff", border: "none", fontFamily: "var(--font-base)", fontSize: "1rem", fontWeight: 700, padding: "12px 40px", borderRadius: "100px", cursor: "pointer", transition: "background 0.2s", display: "block", margin: "0 auto" }}
+                onMouseOver={e => e.target.style.background = "#d06020"}
+                onMouseOut={e => e.target.style.background = "#e86531"}
+              >
+                Request My Consultation
+              </button>
+              <p style={{ fontSize: "0.86rem", color: "#5c6b6b", marginTop: "14px", textAlign: "center" }}>
+                Your details are kept private and used only to arrange your appointment.
+              </p>
+            </>
+          ) : (
+            <div style={{ textAlign: "center", padding: "30px 20px" }}>
+              <div style={{ width: "60px", height: "60px", background: "#e6f2f2", borderRadius: "50%", margin: "0 auto 16px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <svg width="28" height="28" fill="none" stroke="#0f616e" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 style={{ fontFamily: "var(--font-display)", color: "#095457", fontSize: "clamp(1.6rem, 3vw, 1.9rem)", fontWeight: 400, marginBottom: "8px" }}>Request Received</h3>
+              <p style={{ color: "#5c6b6b", fontSize: "1rem", lineHeight: 1.7 }}>
+                Thank you. Our team will contact you shortly to confirm your consultation time.
+              </p>
+            </div>
+          )}
         </div>
       </main>
+
       <BriefingFooter />
     </div>
   )
