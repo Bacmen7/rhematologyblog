@@ -9,7 +9,7 @@ const articles = [
     image: "/images/pain-relief.jpg",
     category: "Early Symptoms",
     title: "Why does joint pain feel worse in the morning but improve during the day?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Explains the inflammatory cycle in rheumatoid arthritis and why movement reduces stiffness. Strong early-symptom awareness topic."
   },
   {
@@ -17,7 +17,7 @@ const articles = [
     image: "/images/hero-consult.jpg",
     category: "Autoimmune Awareness",
     title: "Can unexplained fatigue be an early sign of an autoimmune disease?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Targets patients who don’t yet recognize RA - bridges fatigue to autoimmune awareness."
   },
   {
@@ -25,7 +25,7 @@ const articles = [
     image: "/images/joints.jpg",
     category: "Symptom Pattern",
     title: "Why do both hands or both knees hurt at the same time?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Focuses on symmetrical joint pain - a key differentiator of rheumatoid arthritis."
   },
   {
@@ -33,7 +33,7 @@ const articles = [
     image: "/images/symptom-checker.jpg",
     category: "Self-Assessment",
     title: "Is your joint pain temporary or something more serious like rheumatoid arthritis?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Helps users self-assess whether their symptoms are normal or need medical attention."
   },
   {
@@ -41,7 +41,7 @@ const articles = [
     image: "/images/exercise.jpg",
     category: "Daily Life",
     title: "Why does joint stiffness increase after rest or inactivity?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Explains the concept of inactivity stiffness in RA - very relatable for patients."
   },
   {
@@ -49,7 +49,7 @@ const articles = [
     image: "/images/ultrasound.jpg",
     category: "Silent Symptoms",
     title: "Can joint swelling happen without severe pain? What it could mean",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Covers silent or mild RA symptoms that patients often ignore."
   },
   {
@@ -57,7 +57,7 @@ const articles = [
     image: "/images/hero-doctor1a.jpg",
     category: "Women & Autoimmunity",
     title: "Why do autoimmune diseases like rheumatoid arthritis affect women more?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Addresses a highly searched but under-explained topic in simple language."
   },
   {
@@ -65,7 +65,7 @@ const articles = [
     image: "/images/arthisites.jpg",
     category: "Warning Signs",
     title: "Is recurring joint pain a warning sign you should not ignore?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Focuses on flare-ups and recurring symptoms - strong for early diagnosis intent."
   },
   {
@@ -73,7 +73,7 @@ const articles = [
     image: "/images/patient-mark.jpg",
     category: "Diagnosis Journey",
     title: "Why do some people delay rheumatoid arthritis diagnosis for years?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Behavior + awareness topic builds trust and connects emotionally with patients."
   },
   {
@@ -81,7 +81,7 @@ const articles = [
     image: "/images/diet.jpg",
     category: "Lifestyle & Flares",
     title: "Can stress or lifestyle habits trigger autoimmune flare-ups?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Links modern lifestyle with autoimmune activity - highly engaging topic."
   },
   {
@@ -89,7 +89,7 @@ const articles = [
     image: "/images/ra-treatment.jpg",
     category: "Disease Progression",
     title: "What happens if joint pain is left untreated for too long?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Educates about disease progression and long-term joint damage."
   },
   {
@@ -97,7 +97,7 @@ const articles = [
     image: "/images/specialist-2.jpg",
     category: "When To See A Specialist",
     title: "How do you know if your joint pain needs a rheumatologist?",
-    author: "Merlin Rheumatology Team",
+    author: "Omni Rheuma Team",
     excerpt: "Strong conversion-focused topic - directly leads to doctor consultation."
   }
 ];

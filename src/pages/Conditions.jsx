@@ -1,15 +1,13 @@
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { ChevronLeft, ChevronRight, Search } from "lucide-react"
 import Header from "../components/Header"
 import BriefingFooter from "../components/BriefingFooter"
 
 const featured = [
-  { href: "/Rheumatoid-Arthritis", category: "Get started", title: "What is Rheumatoid Arthritis?", image: "/condition/Rheumatoid Arthritis (RA).png" },
-  { href: "/osteoarthritis", category: "Get started", title: "Understanding Osteoarthritis", image: "/condition/Osteoarthritis.png" },
-  { href: "/gout", category: "Treatment", title: "How is Gout treated?", image: "/condition/Gout.png" },
-  { href: "/health-guide", category: "Get started", title: "Living with Lupus", image: "/condition/Lupus.png" },
-  { href: "/health-guide", category: "Recovery", title: "Managing Fibromyalgia day to day", image: "/condition/Fibromyalgia.png" },
+  { href: "/Rheumatoid-Arthritis", category: "Get started", title: "What is Rheumatoid Arthritis?", image: "/c1.jpg" },
+  { href: "/Rheumatoid-Arthritis", category: "Early signs", title: "Could morning stiffness be Rheumatoid Arthritis?", image: "/c2.jpg" },
+  { href: "/Rheumatoid-Arthritis", category: "Diagnosis", title: "How is Rheumatoid Arthritis diagnosed?", image: "/c1.jpg" },
 ]
 
 const categoryLinks = [
@@ -40,12 +38,35 @@ const subtypes = [
   "Scleroderma",
 ]
 
+const conditionCards = [
+  { name: "Rheumatoid Arthritis", image: "/condition/Rheumatoid Arthritis (RA).png", desc: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments.", href: "/Rheumatoid-Arthritis" },
+  { name: "Psoriatic Arthritis", image: "/condition/Psoriatic Arthritis.png", desc: "Where skin meets joints. Understanding the psoriasis-arthritis connection and targeted therapies.", href: "#" },
+  { name: "Osteoarthritis", image: "/condition/Osteoarthritis.png", desc: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain.", href: "#" },
+  { name: "Lupus", image: "/condition/Lupus.png", desc: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management.", href: "#" },
+  { name: "Gout", image: "/condition/Gout.png", desc: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies.", href: "#" },
+  { name: "Ankylosing Spondylitis", image: "/condition/Ankylosing Spondylitis (AS).png", desc: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture.", href: "#" },
+  { name: "Fibromyalgia", image: "/condition/Fibromyalgia.png", desc: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life.", href: "#" },
+  { name: "Back & Neck Pain", image: "/condition/back.png", desc: "Identifying whether spinal pain is mechanical or inflammatory is a critical distinction for treatment.", href: "#" },
+]
+
 function Conditions() {
   const [query, setQuery] = useState("")
   const [current, setCurrent] = useState(0)
+  const carouselRef = useRef(null)
+  const scrollCarousel = (dir) => {
+    if (carouselRef.current) carouselRef.current.scrollBy({ left: dir === "left" ? -300 : 300, behavior: "smooth" })
+  }
 
   const prev = () => setCurrent((i) => (i === 0 ? featured.length - 1 : i - 1))
   const next = () => setCurrent((i) => (i === featured.length - 1 ? 0 : i + 1))
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setCurrent((i) => (i === featured.length - 1 ? 0 : i + 1))
+    }, 4500)
+
+    return () => window.clearInterval(intervalId)
+  }, [])
 
   return (
     <div className="min-h-screen bg-ghost" style={{ fontFamily: "var(--font-base)" }}>
@@ -157,8 +178,8 @@ function Conditions() {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "20px" }}>
               {videos.map((video, i) => (
                 <div key={i} style={{ background: "#fff", borderRadius: "16px", overflow: "hidden", border: "1.5px solid #ebebeb", cursor: "pointer" }}>
-                  <div style={{ width: "100%", height: "180px", position: "relative", overflow: "hidden" }}>
-                    <img src={video.image} alt={video.title} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                  <div style={{ width: "100%", aspectRatio: "8 / 5", position: "relative", overflow: "hidden", background: "#eef3f2" }}>
+                    <img src={video.image} alt={video.title} style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }} />
                     <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.25)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                       <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: "rgba(255,255,255,0.85)", display: "flex", alignItems: "center", justifyContent: "center" }}>
                         <svg width="16" height="16" viewBox="0 0 24 24" fill="#0f616e"><path d="M8 5v14l11-7z" /></svg>
@@ -178,26 +199,44 @@ function Conditions() {
           </div>
         </section>
 
-        {/* ── 5. EDITORIAL PROCESS ── */}
-        <section style={{ padding: "32px 0 48px", background: "#f5f5f5" }}>
+        {/* ── 6. CONDITION CARDS CAROUSEL ── */}
+        <section style={{ padding: "56px 0 72px", background: "#f5f5f5" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
-            <div style={{ background: "#fff", borderRadius: "20px", padding: "40px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", border: "1.5px solid #ebebeb" }}>
-              <div style={{ flex: 1, minWidth: "240px" }}>
-                <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2rem", fontWeight: 400, marginBottom: "8px" }}>Our Editorial Process</h3>
-                <p style={{ color: "#888", fontSize: "16px", lineHeight: 1.65, margin: 0 }}>
-                  Every piece of educational content is thoroughly reviewed by a member of{" "}
-                  <Link to="/about" style={{ color: "#0f616e", fontWeight: 600, textDecoration: "none" }}>our Clinical Team</Link>.
-                </p>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "32px" }}>
+              <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, margin: 0 }}>Browse by condition</h2>
+              <div style={{ display: "flex", gap: "10px" }}>
+                <button onClick={() => scrollCarousel("left")} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <ChevronLeft size={18} color="#0f616e" />
+                </button>
+                <button onClick={() => scrollCarousel("right")} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <ChevronRight size={18} color="#0f616e" />
+                </button>
               </div>
-              <Link to="/about"
-                style={{ background: "#e86531", color: "#fff", borderRadius: "100px", padding: "12px 28px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "var(--font-base)" }}>
-                Learn more
-              </Link>
+            </div>
+            <div ref={carouselRef} style={{ display: "flex", gap: "20px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory", msOverflowStyle: "none", scrollbarWidth: "none" }}>
+              {conditionCards.map((c) => (
+                <Link key={c.name} to={c.href} style={{ textDecoration: "none", flexShrink: 0, width: "280px", scrollSnapAlign: "start" }}>
+                  <div style={{ background: "#fff", borderRadius: "20px", padding: "28px 20px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "12px", border: "1.5px solid #e8ecf2", transition: "border-color 0.2s", cursor: "pointer", height: "100%" }}
+                    onMouseOver={e => e.currentTarget.style.borderColor = "#0f616e"}
+                    onMouseOut={e => e.currentTarget.style.borderColor = "#e8ecf2"}
+                  >
+                    <div style={{ width: "72px", height: "72px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <img src={c.image} alt={c.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                    </div>
+                    <h3 style={{ fontFamily: "var(--font-display)", color: "#0f616e", fontSize: "1.2rem", fontWeight: 500, lineHeight: 1.3, margin: 0 }}>{c.name}</h3>
+                    <p style={{ fontFamily: "var(--font-base)", color: "#5e5e5e", fontSize: "13px", lineHeight: 1.7, margin: 0, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{c.desc}</p>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-base)", fontSize: "13px", fontWeight: 600, color: "#0f616e", marginTop: "auto", paddingTop: "4px" }}>
+                      Read more
+                      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" /></svg>
+                    </span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* ── 6. EXPLORE BY SUBTYPE ── */}
+        {/* ── 7. EXPLORE BY SUBTYPE ── */}
         <section style={{ padding: "56px 0 64px", background: "#ffffff" }}>
           <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
             <h2 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "clamp(1.8rem,3.5vw,2.5rem)", fontWeight: 400, marginBottom: "32px" }}>Explore by subtype</h2>
@@ -212,6 +251,25 @@ function Conditions() {
                   {subtype}
                 </Link>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── 8. EDITORIAL PROCESS ── */}
+        <section style={{ padding: "32px 0 48px", background: "#f5f5f5" }}>
+          <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "0 24px" }}>
+            <div style={{ background: "#fff", borderRadius: "20px", padding: "40px 48px", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "20px", border: "1.5px solid #ebebeb" }}>
+              <div style={{ flex: 1, minWidth: "240px" }}>
+                <h3 style={{ fontFamily: "var(--font-display)", color: "#0f2e33", fontSize: "2rem", fontWeight: 400, marginBottom: "8px" }}>Our Editorial Process</h3>
+                <p style={{ color: "#888", fontSize: "16px", lineHeight: 1.65, margin: 0 }}>
+                  Every piece of educational content is thoroughly reviewed by a member of{" "}
+                  <Link to="/about" style={{ color: "#0f616e", fontWeight: 600, textDecoration: "none" }}>our Clinical Team</Link>.
+                </p>
+              </div>
+              <Link to="/about"
+                style={{ background: "#e86531", color: "#fff", borderRadius: "100px", padding: "12px 28px", fontSize: "14px", fontWeight: 700, textDecoration: "none", whiteSpace: "nowrap", fontFamily: "var(--font-base)" }}>
+                Learn more
+              </Link>
             </div>
           </div>
         </section>

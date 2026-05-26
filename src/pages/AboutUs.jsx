@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import { Link } from "react-router-dom"
 import { ArrowRight, ChevronLeft, ChevronRight, MessageCircle, Search, Zap, MapPin } from "lucide-react"
 import Header from "../components/Header"
@@ -26,8 +26,8 @@ const specialistStats = [
 ]
 
 const whyUs = [
-  { image: "/images/hero-consult.jpg", title: "No unnecessary procedures", desc: "We recommend treatment only when genuinely needed, with evidence-based, patient-first decision making." },
-  { image: "/images/hero-doctor1.jpg", title: "Honest second opinions", desc: "Already advised treatment elsewhere? We provide an independent review so you can decide with clarity." },
+  { image: "/images/ra-treatment.jpg", title: "No unnecessary procedures", desc: "We recommend treatment only when genuinely needed, with evidence-based, patient-first decision making." },
+  { image: "/images/hero-doctora.jpg", title: "Honest second opinions", desc: "Already advised treatment elsewhere? We provide an independent review so you can decide with clarity." },
   { image: "/images/ultrasound.jpg", title: "Transparent costs", desc: "You receive a clear estimate before treatment, with guidance on insurance and available coverage support." },
   { image: "/knowledge-hub-images/doctor-600.jpg", title: "Teleconsultation available", desc: "Connect online before visiting the clinic, especially if you live outside Bangalore or need initial guidance." },
 ]
@@ -41,7 +41,6 @@ const siteStats = [
 const conditions = [
   {
     title: "Rheumatoid Arthritis",
-    badge: "Primary focus",
     prompt: "Persistent swelling, stiffness, or painful joints.",
     description: "Rheumatoid arthritis is an autoimmune condition in which inflammation affects joints, often causing morning stiffness, pain and swelling on both sides of the body.",
     note: "Timely specialist treatment can control inflammation and help protect joints from permanent damage.",
@@ -137,13 +136,19 @@ function GoogleIcon() {
 }
 
 export default function AboutUs() {
-  const [selectedCondition, setSelectedCondition] = useState(0)
+  const conditionsRef = useRef(null)
   const [reviewIndex, setReviewIndex] = useState(0)
-  const featuredCondition = conditions[selectedCondition]
   const visibleReviews = useMemo(
     () => [0, 1, 2].map((offset) => patientReviews[(reviewIndex + offset) % patientReviews.length]),
     [reviewIndex],
   )
+  const scrollConditions = (direction) => {
+    const track = conditionsRef.current
+    if (!track) return
+    const card = track.querySelector("[data-condition-card]")
+    const distance = card ? card.getBoundingClientRect().width + 20 : 340
+    track.scrollBy({ left: direction === "left" ? -distance : distance, behavior: "smooth" })
+  }
 
   return (
     <div className="min-h-screen bg-background-light" style={{ fontFamily: "var(--font-base)" }}>
@@ -151,16 +156,16 @@ export default function AboutUs() {
 
       {/* ── 1. HERO ── */}
       <section style={{ backgroundColor: "#0f616e", overflow: "hidden", position: "relative" }}>
-        <div style={{ display: "flex", flexWrap: "wrap", minHeight: "420px" }}>
-          <div style={{ flex: "1 1 400px", padding: "clamp(40px,6vw,72px) clamp(24px,5vw,80px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.8rem, 5.8vw, 4.8rem)", fontWeight: 300, lineHeight: 1.05, letterSpacing: "-1.2px", maxWidth: "670px", marginBottom: "24px" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", minHeight: "560px" }}>
+          <div style={{ flex: "1.02 1 450px", padding: "clamp(54px, 7vw, 88px) clamp(28px, 5vw, 72px)", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.5rem, 4.4vw, 4rem)", fontWeight: 300, lineHeight: 1.11, letterSpacing: "-0.8px", maxWidth: "650px", marginBottom: "30px" }}>
               Relief you can trust.{" "}
               <span style={{ color: "#9DE5D4" }}>Care you can count on.</span>
             </h1>
-            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "clamp(17px, 1.45vw, 19px)", lineHeight: 1.7, maxWidth: "565px", marginBottom: "36px" }}>
+            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "clamp(16px, 1.25vw, 18px)", lineHeight: 1.78, maxWidth: "600px", marginBottom: "42px" }}>
               Rheumatic conditions affect millions of Indians, yet most people wait years before seeking specialist help. At Omni Rheuma, we make expert rheumatology care simple, accessible, and reassuring for every patient.
             </p>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
               <Link to="/doctors" style={{ background: "#fff", color: "#0f616e", borderRadius: "100px", padding: "12px 28px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}>
                 Meet our specialists <ArrowRight size={16} />
               </Link>
@@ -169,9 +174,11 @@ export default function AboutUs() {
               </Link>
             </div>
           </div>
-          <div style={{ flex: "1 1 340px", minHeight: "300px", position: "relative", overflow: "hidden" }}>
-            <img src="/dr_image/d1.png" alt="Rheumatology specialist" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, #0f616e 0%, transparent 30%)" }} />
+          <div style={{ flex: "0.98 1 420px", minHeight: "560px", position: "relative", overflow: "hidden" }}>
+            <div style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
+              <img src="/ri.png" alt="Rheumatology specialist caring for a patient" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,97,110,0.12), transparent 18%)", pointerEvents: "none" }} />
+            </div>
           </div>
         </div>
       </section>
@@ -199,7 +206,7 @@ export default function AboutUs() {
         <div className="max-w-[1320px]" style={{ margin: "0 auto", padding: "0 clamp(16px, 3vw, 28px)" }}>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>Our Approach</p>
           <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>Why patients trust Omni Rheuma</h2>
-          <p className="max-w-5xl text-base leading-relaxed text-[#5e5e5e] lg:text-lg" style={{ marginBottom: "32px" }}>
+          <p className="w-full text-base leading-relaxed text-[#5e5e5e] lg:text-lg" style={{ marginBottom: "32px" }}>
             We believe good care starts with understanding your concerns. That&apos;s why we give every patient enough time to talk, understand their situation, and get a treatment plan that&apos;s clear and easy to follow. No rushed visits. No complicated medical terms. Just honest advice from specialists you can trust.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "24px" }}>
@@ -244,7 +251,7 @@ export default function AboutUs() {
           <div className="flex flex-col items-start lg:flex-row" style={{ gap: "40px" }}>
             <div className="flex w-full shrink-0 flex-col lg:w-64" style={{ gap: "16px" }}>
               <div className="aspect-square w-full max-w-[260px] overflow-hidden rounded-2xl border border-[#0f616e]/20 bg-[#e0f3f5]">
-                <img src="/dr_image/d2.png" alt="Dr. Raghavendra H" className="h-full w-full object-cover" />
+                <img src="/raghav.png" alt="Dr. Raghavendra H" className="h-full w-full object-cover object-top" />
               </div>
               <div>
                 <h3 className="text-xl font-normal text-[#0f2e33]">Dr. Raghavendra H</h3>
@@ -291,49 +298,55 @@ export default function AboutUs() {
         <div className="max-w-[1200px]" style={{ margin: "0 auto", padding: "0 16px" }}>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>What We Treat</p>
           <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>Rheumatic conditions we specialise in</h2>
-          <p className="max-w-4xl text-base leading-relaxed text-gray-600 lg:text-lg" style={{ marginBottom: "40px" }}>
-            Our focus is on inflammatory and autoimmune conditions that affect joints, movement and quality of life. Rheumatoid arthritis is a core expertise, alongside a range of related conditions.
+          <p className="w-full text-base leading-relaxed text-gray-600 lg:text-lg" style={{ marginBottom: "40px" }}>
+            Our specialists care for major inflammatory, autoimmune and degenerative rheumatic conditions that affect joints, movement and quality of life.
           </p>
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.95fr]" style={{ gap: "20px" }}>
-            <article className="rounded-2xl border-2 border-[#0f616e] bg-white" style={{ padding: "clamp(24px, 3vw, 32px)" }}>
-              <div className="flex items-start" style={{ gap: "12px", marginBottom: "20px" }}>
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#0f616e]" style={{ marginTop: "8px" }} />
-                <div className="flex-1">
-                  <div className="flex flex-wrap items-center" style={{ gap: "12px" }}>
-                    <h3 className="text-2xl font-normal text-[#0f2e33]">{featuredCondition.title}</h3>
-                    {featuredCondition.badge && <span className="rounded-full bg-[#e86531] text-xs font-semibold text-white" style={{ padding: "4px 12px" }}>{featuredCondition.badge}</span>}
-                  </div>
-                  <p className="text-base leading-relaxed text-gray-600" style={{ marginTop: "16px" }}>{featuredCondition.description}</p>
-                  <p className="text-base leading-relaxed text-gray-600" style={{ marginTop: "16px" }}>{featuredCondition.note}</p>
+          <div
+            ref={conditionsRef}
+            className="scrollbar-hide flex overflow-x-auto"
+            style={{ gap: "20px", paddingBottom: "8px", scrollSnapType: "x mandatory" }}
+          >
+            {conditions.map((condition) => (
+              <article
+                key={condition.title}
+                data-condition-card
+                className="flex shrink-0 flex-col rounded-2xl border border-gray-200 bg-white transition-colors hover:border-[#0f616e]/45"
+                style={{ flexBasis: "clamp(285px, calc((100% - 40px) / 3), 386px)", height: "525px", padding: "clamp(22px, 2vw, 28px)", scrollSnapAlign: "start" }}
+              >
+                <div className="flex items-start" style={{ gap: "10px", marginBottom: "12px", minHeight: "34px" }}>
+                  <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#1AA3B5]" style={{ marginTop: "9px" }} />
+                  <h3 className="text-xl font-normal text-[#0f2e33]" style={{ lineHeight: 1.25 }}>{condition.title}</h3>
                 </div>
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-500" style={{ margin: "28px 0 12px" }}>Symptoms patients commonly report</p>
-              <div className="flex flex-wrap" style={{ gap: "8px" }}>
-                {featuredCondition.symptoms.map((symptom) => (
-                  <span key={symptom} className="rounded-full bg-[#e0f3f5] text-sm font-semibold text-[#0f616e]" style={{ padding: "6px 12px" }}>{symptom}</span>
-                ))}
-              </div>
-            </article>
-            <aside className="rounded-2xl border border-gray-200 bg-white" style={{ padding: "clamp(24px, 3vw, 32px)" }}>
-              <h3 className="text-2xl font-normal text-[#0f2e33]" style={{ marginBottom: "20px" }}>We also specialise in...</h3>
-              <div className="divide-y divide-gray-100">
-                {conditions.slice(1).map((condition, index) => {
-                  const actualIndex = index + 1
-                  const active = selectedCondition === actualIndex
-                  return (
-                    <button key={condition.title} type="button" onClick={() => setSelectedCondition(actualIndex)} className="w-full text-left transition-colors hover:bg-[#eef7f5]" style={{ padding: "16px 0" }}>
-                      <span className="flex" style={{ gap: "16px" }}>
-                        <span className={`text-sm font-semibold ${active ? "text-[#0f616e]" : "text-[#1AA3B5]/55"}`} style={{ paddingTop: "4px" }}>{String(actualIndex).padStart(2, "0")}</span>
-                        <span>
-                          <span className={`block text-base font-semibold ${active ? "text-[#0f616e]" : "text-[#0f2e33]"}`}>{condition.title}</span>
-                          <span className="block text-sm italic leading-snug text-gray-500" style={{ marginTop: "4px" }}>&quot;{condition.prompt}&quot;</span>
-                        </span>
-                      </span>
-                    </button>
-                  )
-                })}
-              </div>
-            </aside>
+                <p className="text-sm italic leading-relaxed text-gray-500" style={{ minHeight: "58px", marginBottom: "16px" }}>&quot;{condition.prompt}&quot;</p>
+                <p className="text-sm leading-relaxed text-gray-600" style={{ minHeight: "148px", marginBottom: "24px" }}>{condition.description}</p>
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-gray-500" style={{ marginBottom: "10px" }}>Common symptoms</p>
+                  <div className="flex flex-wrap" style={{ gap: "7px" }}>
+                    {condition.symptoms.slice(0, 4).map((symptom) => (
+                      <span key={symptom} className="rounded-full bg-[#e0f3f5] text-xs font-semibold text-[#0f616e]" style={{ padding: "5px 10px" }}>{symptom}</span>
+                    ))}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+          <div className="flex justify-center" style={{ gap: "12px", marginTop: "32px" }}>
+            <button
+              type="button"
+              aria-label="Previous condition"
+              onClick={() => scrollConditions("left")}
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-white text-[#0f2e33] transition-colors hover:border-[#0f616e] hover:text-[#0f616e]"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              type="button"
+              aria-label="Next condition"
+              onClick={() => scrollConditions("right")}
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-gray-200 bg-white text-[#0f2e33] transition-colors hover:border-[#0f616e] hover:text-[#0f616e]"
+            >
+              <ChevronRight size={22} />
+            </button>
           </div>
         </div>
       </section>
@@ -343,7 +356,7 @@ export default function AboutUs() {
         <div className="max-w-[1360px]" style={{ margin: "0 auto", padding: "0 16px" }}>
           <p className="text-sm font-semibold uppercase tracking-wider text-[#1AA3B5]" style={{ marginBottom: "12px" }}>Why Patients Choose Us</p>
           <h2 className="text-3xl font-normal text-[#0f2e33] lg:text-4xl" style={{ marginBottom: "16px" }}>Relief that goes beyond treatment</h2>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-600" style={{ marginBottom: "40px" }}>
+          <p className="w-full text-lg leading-relaxed text-gray-600" style={{ marginBottom: "40px" }}>
             Choosing the right rheumatology centre is about more than just treatment. It is about feeling heard, supported, and confident in the care you receive at every step.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "20px" }}>
@@ -371,7 +384,7 @@ export default function AboutUs() {
             <br />
             5,000+ reasons to seek care earlier.
           </h2>
-          <p className="max-w-2xl text-lg leading-relaxed text-gray-600" style={{ marginBottom: "40px" }}>
+          <p className="w-full text-lg leading-relaxed text-gray-600" style={{ marginBottom: "40px" }}>
             Here is what some of our patients have shared about their experience at Omni Rheuma. Real words, real progress.
           </p>
           <div className="grid grid-cols-1 items-stretch md:grid-cols-3" style={{ gap: "24px" }}>

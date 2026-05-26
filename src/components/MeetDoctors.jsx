@@ -17,35 +17,19 @@ function MeetDoctors() {
     <section style={{ backgroundColor: "#e0f3f5", padding: "4rem 0" }}>
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4" style={{ marginBottom: "2rem" }}>
-          <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px" }}>
+        <div style={{ marginBottom: "2rem", textAlign: "center" }}>
+          <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "0.75rem" }}>
             Meet Our Rheumatology Specialists
           </h2>
-          {/* Arrows -desktop */}
-          <div className="hidden md:flex gap-3">
-            <button
-              onClick={() => setStart(Math.max(0, start - 1))}
-              disabled={!canPrev}
-              className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-opacity"
-              style={{ backgroundColor: "#a0e2e4", border: "none", opacity: canPrev ? 1 : 0.4 }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6" /></svg>
-            </button>
-            <button
-              onClick={() => setStart(Math.min(doctors.length - 4, start + 1))}
-              disabled={!canNext}
-              className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-opacity"
-              style={{ backgroundColor: "#a0e2e4", border: "none", opacity: canNext ? 1 : 0.4 }}
-            >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
-            </button>
-          </div>
+          <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5e5e5e", margin: "0 auto", maxWidth: "560px" }}>
+            Our board-certified expert represents the global frontier of autoimmune research and clinical care.
+          </p>
         </div>
 
         {/* Doctor Cards */}
-        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-4 md:gap-6 md:overflow-visible md:pb-0">
+        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:flex md:justify-center md:gap-6 md:overflow-visible md:pb-0">
           {doctors.map((doc, i) => (
-            <div key={i} className="min-w-[70vw] sm:min-w-[260px] md:min-w-0 snap-start flex flex-col">
+            <div key={i} className="min-w-[70vw] sm:min-w-[260px] md:min-w-0 md:w-[300px] snap-start flex flex-col">
               {/* Image */}
               <div className="overflow-hidden" style={{ backgroundColor: "#f5c6b0", borderRadius: 0 }}>
                 <img

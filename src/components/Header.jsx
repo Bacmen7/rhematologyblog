@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { ArrowUpRight, ArrowRight } from "lucide-react"
 
 function Header() {
@@ -12,7 +12,6 @@ function Header() {
   const [whatWeCoverVisible, setWhatWeCoverVisible] = useState(false)
 
   const [scrolled, setScrolled] = useState(false)
-  const [osteoExpanded, setOsteoExpanded] = useState(false)
 
   const desktopNav = [
     { label: "Patient Education", to: "/health-guide" },
@@ -37,21 +36,6 @@ function Header() {
     "Ankylosing Spondylitis",
   ]
 
-  const treatments = [
-    "Medications & Biologics",
-    "Physical Therapy",
-    "Joint Injections",
-    "Lifestyle & Diet",
-    "Surgical Options",
-    "Pain Management",
-  ]
-
-  const osteoarthritisPages = [
-    { label: "Osteoarthritis Guide", to: "/Osteoarthritis-Guide" },
-    { label: "Advanced Treatment", to: "/Osteoarthritis-Advanced" },
-    { label: "Living With Osteoarthritis", to: "/Osteoarthritis-Living" },
-  ]
-
   // Track scroll for header shadow
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 10)
@@ -61,29 +45,47 @@ function Header() {
 
   // Mobile Menu animation
   useEffect(() => {
+    let frame
+    let visibleFrame
     if (mobileMenuOpen) {
-      setMobileMenuMounted(true)
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => setMobileMenuVisible(true))
+      frame = requestAnimationFrame(() => {
+        setMobileMenuMounted(true)
+        visibleFrame = requestAnimationFrame(() => setMobileMenuVisible(true))
       })
     } else {
-      setMobileMenuVisible(false)
+      frame = requestAnimationFrame(() => setMobileMenuVisible(false))
       const timer = setTimeout(() => setMobileMenuMounted(false), 350)
-      return () => clearTimeout(timer)
+      return () => {
+        cancelAnimationFrame(frame)
+        clearTimeout(timer)
+      }
+    }
+    return () => {
+      cancelAnimationFrame(frame)
+      if (visibleFrame) cancelAnimationFrame(visibleFrame)
     }
   }, [mobileMenuOpen])
 
   // What We Cover animation
   useEffect(() => {
+    let frame
+    let visibleFrame
     if (whatWeCoverOpen) {
-      setWhatWeCoverMounted(true)
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => setWhatWeCoverVisible(true))
+      frame = requestAnimationFrame(() => {
+        setWhatWeCoverMounted(true)
+        visibleFrame = requestAnimationFrame(() => setWhatWeCoverVisible(true))
       })
     } else {
-      setWhatWeCoverVisible(false)
+      frame = requestAnimationFrame(() => setWhatWeCoverVisible(false))
       const timer = setTimeout(() => setWhatWeCoverMounted(false), 900)
-      return () => clearTimeout(timer)
+      return () => {
+        cancelAnimationFrame(frame)
+        clearTimeout(timer)
+      }
+    }
+    return () => {
+      cancelAnimationFrame(frame)
+      if (visibleFrame) cancelAnimationFrame(visibleFrame)
     }
   }, [whatWeCoverOpen])
 
@@ -338,7 +340,7 @@ function Header() {
       {/* ===== What We Cover - Full Page Slide Down (Desktop) ===== */}
       {whatWeCoverMounted && (
         <div
-          className="hidden md:block fixed inset-x-0 top-[72px] z-40"
+          className="hidden md:block fixed inset-x-0 top-[88px] z-40"
           style={{
             maxHeight: whatWeCoverVisible ? "85vh" : "0",
             overflow: "hidden",
@@ -346,53 +348,26 @@ function Header() {
           }}
         >
           <div className="bg-[#f0f5f5] border-t border-gray-200">
-            <div className="max-w-[1400px] mx-auto px-10 py-12">
-              <div className="flex gap-16">
-
-                {/* Left -Doctor Image + CTA */}
+            <div className="max-w-[1240px] mx-auto px-10 py-12">
+              <div className="flex justify-center">
                 <div
-                  className="flex-shrink-0 w-[280px]"
+                  className="w-full"
                   style={{
                     opacity: whatWeCoverVisible ? 1 : 0,
-                    transform: whatWeCoverVisible ? "translateX(0)" : "translateX(40px)",
-                    transition: "opacity 700ms ease-out 400ms, transform 700ms ease-out 400ms",
+                    transform: whatWeCoverVisible ? "translateY(0)" : "translateY(-10px)",
+                    transition: "opacity 500ms ease-out 250ms, transform 500ms ease-out 250ms",
                   }}
                 >
-                  {/* <img
-                    src="/raghav.png"
-                    alt="Dr. Raghavendra H"
-                    className="w-[220px] aspect-square object-cover object-top rounded-2xl mb-8 bg-[#f0cfc4]"
-                  />
-                  <Link
-                    to="/book-appointment"
-                    className="inline-flex items-center gap-2 border-2 border-[#0f616e] text-[#0f616e] px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#0f616e] hover:text-white transition-all"
-                    onClick={closeWhatWeCover}
-                  >
-                    Consult a specialist
-                    <ArrowUpRight size={16} />
-                  </Link> */}
-                </div>
-
-                {/* Right -Conditions + Treatments Grid */}
-                <div
-                  className="flex-1"
-                  style={{
-                    opacity: whatWeCoverVisible ? 1 : 0,
-                    transform: whatWeCoverVisible ? "translateX(0)" : "translateX(60px)",
-                    transition: "opacity 700ms ease-out 400ms, transform 700ms ease-out 400ms",
-                  }}
-                >
-                  <div className="grid grid-cols-4 gap-x-12 gap-y-8">
+                  <div className="grid grid-cols-4 gap-x-10 gap-y-12 text-center">
                     {conditions.map((item) => {
                       const conditionRoutes = { "Rheumatoid Arthritis": "/Rheumatoid-Arthritis", "Gout": "/gout", "Osteoarthritis": "/osteoarthritis" }
                       const to = conditionRoutes[item]
-                      const hasSubLinks = item === "Osteoarthritis"
                       return (
-                        <div key={item}>
+                        <div key={item} className="flex justify-center">
                           {to ? (
                             <Link
                               to={to}
-                              className="flex items-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline"
+                              className="inline-flex items-center justify-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline"
                               onClick={closeWhatWeCover}
                             >
                               {item}
@@ -400,26 +375,12 @@ function Header() {
                             </Link>
                           ) : (
                             <a
-                              className="flex items-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline cursor-pointer"
+                              className="inline-flex items-center justify-center gap-1 text-[#0f616e] font-semibold text-[15px] hover:underline cursor-pointer"
                               onClick={closeWhatWeCover}
                             >
                               {item}
                               <ArrowUpRight size={14} />
                             </a>
-                          )}
-                          {hasSubLinks && (
-                            <div className="mt-3 flex flex-col gap-2 border-l border-[#0f616e]/25 pl-3">
-                              {osteoarthritisPages.map((page) => (
-                                <Link
-                                  key={page.to}
-                                  to={page.to}
-                                  className="text-[13px] leading-snug text-[#515a6a] hover:text-[#0f616e] hover:underline"
-                                  onClick={closeWhatWeCover}
-                                >
-                                  {page.label}
-                                </Link>
-                              ))}
-                            </div>
                           )}
                         </div>
                       )
@@ -444,7 +405,6 @@ function Header() {
                     </div>
                   </div> */}
                 </div>
-
               </div>
             </div>
           </div>
@@ -531,17 +491,12 @@ function Header() {
               {conditions.map((item, index) => {
                 const condRoutes = { "Rheumatoid Arthritis": "/Rheumatoid-Arthritis", "Gout": "/gout", "Osteoarthritis": "/osteoarthritis" }
                 const condTo = condRoutes[item]
-                const hasSubLinks = item === "Osteoarthritis"
                 const condStyle = {
                   opacity: whatWeCoverVisible ? 1 : 0,
                   transform: whatWeCoverVisible ? "translateY(0)" : "translateY(12px)",
                   transition: `opacity 0.35s ease ${230 + index * 40}ms, transform 0.35s ease ${230 + index * 40}ms`,
                 }
-                const rightIcon = hasSubLinks ? (
-                  <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0" style={{ transition: "transform 0.2s", transform: osteoExpanded ? "rotate(180deg)" : "rotate(0deg)" }}>
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6"/></svg>
-                  </span>
-                ) : (
+                const rightIcon = (
                   <span className="w-7 h-7 rounded-full bg-[#a0e2e4] inline-flex items-center justify-center flex-shrink-0">
                     <ArrowRight size={15} className="text-[#0f616e]" />
                   </span>
@@ -556,14 +511,7 @@ function Header() {
                 )
                 return (
                   <div key={item} className="border-b border-gray-100" style={condStyle}>
-                    {hasSubLinks ? (
-                      <a
-                        className="flex items-center justify-between py-4 cursor-pointer"
-                        onClick={() => setOsteoExpanded(prev => !prev)}
-                      >
-                        {condInner}
-                      </a>
-                    ) : condTo ? (
+                    {condTo ? (
                       <Link
                         to={condTo}
                         className="flex items-center justify-between py-4"
@@ -578,20 +526,6 @@ function Header() {
                       >
                         {condInner}
                       </a>
-                    )}
-                    {hasSubLinks && osteoExpanded && (
-                      <div className="pb-4 pl-4 flex flex-col gap-3">
-                        {osteoarthritisPages.map((page) => (
-                          <Link
-                            key={page.to}
-                            to={page.to}
-                            className="text-[14px] font-medium text-navy-muted hover:text-[#0f616e]"
-                            onClick={closeWhatWeCover}
-                          >
-                            {page.label}
-                          </Link>
-                        ))}
-                      </div>
                     )}
                   </div>
                 )

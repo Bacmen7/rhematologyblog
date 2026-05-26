@@ -95,77 +95,35 @@ function HealthGuide() {
       <Header />
       <main>
 
-        {/* ═══════════ HERO (home style, static) ═══════════ */}
-        <section className="custom-approach-section" style={{ padding: "0.5rem 1rem 2rem" }}>
-          <div className="w-full bg-[#0f616e] rounded-[1.5rem] md:rounded-[2rem] relative overflow-hidden flex flex-col min-h-[620px] md:min-h-[680px] lg:min-h-[620px]">
-            <div className="absolute top-0 right-0 opacity-15 pointer-events-none">
-              <svg width="400" height="400" viewBox="0 0 300 300" fill="none" className="w-[200px] md:w-[400px]">
-                <path d="M150 0H300V150C300 67.1573 232.843 0 150 0Z" fill="white" fillOpacity="0.3" />
-                <path d="M150 150H0V300C0 217.157 67.1573 150 150 150Z" fill="white" fillOpacity="0.3" />
-                <path d="M150 150H300V300C300 217.157 232.843 150 150 150Z" fill="white" fillOpacity="0.1" />
-              </svg>
-            </div>
-            <div className="absolute bottom-0 left-0 opacity-15 pointer-events-none rotate-180 transform translate-x-8 translate-y-8 md:translate-x-12 md:translate-y-12">
-              <svg width="350" height="350" viewBox="0 0 300 300" fill="none" className="w-[150px] md:w-[350px]">
-                <path d="M150 0H300V150C300 67.1573 232.843 0 150 0Z" fill="white" fillOpacity="0.3" />
-                <path d="M150 150H0V300C0 217.157 67.1573 150 150 150Z" fill="white" fillOpacity="0.3" />
-              </svg>
-            </div>
-
-            <div className="relative z-10 px-5 py-8 md:px-[2.68rem] lg:px-[4rem] md:py-[3.18rem] flex flex-col lg:flex-row justify-between items-start gap-8 lg:gap-20 w-full h-full flex-grow pb-[260px] sm:pb-[320px] md:pb-[3.18rem]">
-              <div className="flex flex-col items-start max-w-[720px] w-full pt-2 lg:pt-8">
-                <h1
-                  style={{ color: "#ffffff", fontWeight: 300, letterSpacing: "0", fontFamily: "var(--font-display)", lineHeight: 1.08 }}
-                  className="text-[2.55rem] sm:text-5xl md:text-[3.75rem] lg:text-[4rem]"
-                >
-                  Explore Health Guide
-                </h1>
-                <p
-                  className="mt-9 md:mt-10 text-[1.05rem] md:text-[1.25rem] leading-relaxed"
-                  style={{ color: "rgba(255,255,255,0.9)", fontFamily: "var(--font-base)", fontWeight: 500 }}
-                >
-                  Reliable, rheumatology-focused medical information.
-                </p>
-                <p
-                  className="text-base leading-relaxed mt-5 max-w-[620px]"
-                  style={{ color: "rgba(255,255,255,0.76)", fontFamily: "var(--font-base)", lineHeight: 1.75 }}
-                >
-                  Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
-                </p>
-                <div className="flex flex-wrap gap-4 mt-14 md:mt-16">
-                  <a
-                    href="#conditions"
-                    className="inline-flex items-center gap-2.5 rounded-full pl-7 pr-7 py-3.5 text-[15px] font-bold hover:opacity-90 transition-opacity"
-                    style={{ backgroundColor: "#e86531", color: "#ffffff", fontFamily: "var(--font-base)" }}
-                  >
-                    Explore Conditions
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-white/20 transition-colors">
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                    </span>
-                  </a>
-                  <Link
-                    to="/blog"
-                    className="inline-flex items-center justify-center rounded-full px-7 py-3.5 text-[15px] font-bold border-2 hover:bg-white/10 transition-colors"
-                    style={{ borderColor: "rgba(255,255,255,0.22)", color: "#ffffff", fontFamily: "var(--font-base)" }}
-                  >
-                  Browse Articles
-                </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 -right-4 sm:-right-2 md:right-4 lg:right-12 w-[260px] h-[290px] sm:w-[330px] sm:h-[365px] md:w-[400px] md:h-[450px] lg:w-[430px] lg:h-[500px] z-10 overflow-visible pointer-events-none">
-              <img
-                src="/images/Ring.png"
-                alt=""
-                aria-hidden="true"
-                className="absolute left-1/2 top-[12%] h-[152%] w-[176%] -translate-x-1/2 object-contain opacity-90"
-              />
-              <img
-                src="/images/hero-slide-1.png"
-                alt="Rheumatology health guide"
-                className="absolute bottom-0 right-0 z-10 w-full h-full object-contain object-bottom"
-              />
+        {/* ═══════════ HERO ═══════════ */}
+        <section style={{ position: "relative", overflow: "hidden", minHeight: "380px" }}>
+          {/* BG image full width */}
+          <img src="/h1.jpg" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
+          {/* Dark overlay */}
+          <div style={{ position: "absolute", inset: 0, background: "rgba(15,97,110,0.55)", pointerEvents: "none" }} />
+          {/* Content */}
+          <div style={{ position: "relative", zIndex: 1, padding: "clamp(54px, 7vw, 88px) clamp(28px, 5vw, 72px)", display: "flex", flexDirection: "column", justifyContent: "center", minHeight: "380px", maxWidth: "760px" }}>
+            <h1 style={{ fontFamily: "var(--font-display)", color: "#fff", fontSize: "clamp(2.5rem, 4.4vw, 4rem)", fontWeight: 300, lineHeight: 1.11, letterSpacing: "-0.8px", maxWidth: "650px", marginBottom: "30px" }}>
+              Explore Health Guide.{" "}
+              <span style={{ color: "#9DE5D4" }}>Understand your condition.</span>
+            </h1>
+            <p style={{ color: "rgba(255,255,255,0.82)", fontSize: "clamp(16px, 1.25vw, 18px)", lineHeight: 1.78, maxWidth: "600px", marginBottom: "42px" }}>
+              Written and reviewed by board-certified rheumatologists. Evidence-based articles, condition guides, and treatment information to help you take an active role in your care.
+            </p>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "16px" }}>
+              <a
+                href="#conditions"
+                style={{ background: "#e86531", color: "#fff", borderRadius: "100px", padding: "12px 28px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center", gap: "8px" }}
+              >
+                Explore Conditions
+                <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+              </a>
+              <Link
+                to="/blog"
+                style={{ border: "2px solid rgba(255,255,255,0.7)", color: "#fff", borderRadius: "100px", padding: "12px 28px", fontWeight: 700, fontSize: "15px", textDecoration: "none", display: "inline-flex", alignItems: "center" }}
+              >
+                Browse Articles
+              </Link>
             </div>
           </div>
         </section>
@@ -206,52 +164,51 @@ function HealthGuide() {
         </section>
         */}
 
-        {/* ═══════════ CONDITIONS GRID (matching ConditionsGrid) ═══════════ */}
+        {/* ═══════════ CONDITIONS CAROUSEL ═══════════ */}
         <section id="conditions" className="py-20 md:py-28 bg-ghost">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mt-4 md:mt-6 mb-14 md:mb-16 max-w-3xl mx-auto flex flex-col items-center">
-              <h2
-                className="text-navy-deep mb-4 text-center"
-                style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", lineHeight: 1.08, letterSpacing: "-1px" }}
-              >
-                Explore by Condition
-              </h2>
-              <p
-                className="text-navy-muted max-w-[680px] mx-auto text-center"
-                style={{ fontFamily: "var(--font-base)", fontSize: "16px", lineHeight: 1.75 }}
-              >
-                Each guide is written by a board-certified rheumatologist, covering symptoms, diagnosis, treatment options, and daily management strategies.
-              </p>
+            <div className="flex items-center justify-between mb-10">
+              <div>
+                <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 400, color: "#0f616e", margin: 0, lineHeight: 1.08, letterSpacing: "-1px" }}>
+                  Explore by Condition
+                </h2>
+                <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.75, color: "#5e5e5e", marginTop: "16px", maxWidth: "100%" }}>
+                  Each guide is written by a board-certified rheumatologist, covering symptoms, diagnosis, treatment options, and daily management strategies.
+                </p>
+              </div>
+              <div style={{ display: "flex", gap: "10px", flexShrink: 0 }}>
+                <button onClick={() => scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" })} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <svg width="18" height="18" fill="none" stroke="#0f616e" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+                </button>
+                <button onClick={() => scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" })} style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1.5px solid #dde8e7", background: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                  <svg width="18" height="18" fill="none" stroke="#0f616e" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </button>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 md:gap-5">
+            <div ref={scrollRef} style={{ display: "flex", gap: "20px", overflowX: "auto", paddingBottom: "12px", scrollSnapType: "x mandatory", msOverflowStyle: "none", scrollbarWidth: "none" }}>
               {conditions.map((c) => (
                 <Link
                   key={c.name}
                   to={c.slug === "arthritis" ? "/Rheumatoid-Arthritis" : "#"}
-                  className="bg-white rounded-[24px] py-7 px-5 md:px-6 flex flex-col items-center text-center gap-3 border border-[#e8ecf2] hover:border-primary transition-colors cursor-pointer min-h-[290px] md:min-h-[305px]"
+                  style={{ textDecoration: "none", flexShrink: 0, width: "280px", scrollSnapAlign: "start" }}
                 >
-                  <div className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center">
-                    <img src={c.image} alt={c.name} className="max-w-full max-h-full object-contain" />
+                  <div style={{ background: "#fff", borderRadius: "20px", padding: "28px 20px", display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "12px", border: "1.5px solid #e8ecf2", transition: "border-color 0.2s", cursor: "pointer", height: "100%" }}
+                    onMouseOver={e => e.currentTarget.style.borderColor = "#0f616e"}
+                    onMouseOut={e => e.currentTarget.style.borderColor = "#e8ecf2"}
+                  >
+                    <div style={{ width: "72px", height: "72px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                      <img src={c.image} alt={c.name} style={{ maxWidth: "100%", maxHeight: "100%", objectFit: "contain" }} />
+                    </div>
+                    <h3 style={{ fontFamily: "var(--font-display)", color: "#0f616e", fontSize: "1.2rem", fontWeight: 500, lineHeight: 1.3, margin: 0 }}>{c.name}</h3>
+                    <p style={{ fontFamily: "var(--font-base)", color: "#5e5e5e", fontSize: "13px", lineHeight: 1.72, margin: 0, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                      {getPreviewText(c.description)}
+                    </p>
+                    <span style={{ display: "inline-flex", alignItems: "center", gap: "6px", fontFamily: "var(--font-base)", fontSize: "13px", fontWeight: 600, color: "#0f616e", marginTop: "auto", paddingTop: "4px" }}>
+                      Read more
+                      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" /></svg>
+                    </span>
                   </div>
-                  <h3 className="text-sm font-medium text-navy-deep leading-snug">
-                    {c.name}
-                  </h3>
-                  <p
-                    className="text-navy-muted max-w-[240px] mx-auto line-clamp-2"
-                    style={{ fontFamily: "var(--font-base)", fontSize: "14px", lineHeight: 1.72 }}
-                  >
-                    {getPreviewText(c.description)}
-                  </p>
-                  <span
-                    className="mt-1 inline-flex items-center gap-2 text-navy-deep"
-                    style={{ fontFamily: "var(--font-base)", fontSize: "13px", fontWeight: 600 }}
-                  >
-                    Read more
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path d="M14 5l7 7m0 0l-7 7m7-7H3" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.4" />
-                    </svg>
-                  </span>
                 </Link>
               ))}
             </div>
@@ -544,3 +501,4 @@ function HealthGuide() {
 }
 
 export default HealthGuide
+

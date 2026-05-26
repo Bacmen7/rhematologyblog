@@ -25,7 +25,7 @@ function Doctors() {
               Meet Our Specialists
             </h1>
             <p style={{ fontSize: "18px", lineHeight: 1.7, color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-base)", margin: 0, maxWidth: "600px" }}>
-              Board-certified rheumatologists with expertise in autoimmune and inflammatory conditions.
+              Our board-certified expert represents the global frontier of autoimmune research and clinical care.
             </p>
           </div>
           <div style={{ lineHeight: 0, backgroundColor: "#0f616e" }}>
