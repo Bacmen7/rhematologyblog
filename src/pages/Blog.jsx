@@ -6,7 +6,7 @@ import BriefingFooter from "../components/BriefingFooter"
 const articles = [
   {
     id: 1,
-    image: "/images/pain-relief.jpg",
+    image: "/blog-articles/morning-joint-stiffness.webp",
     category: "Early Symptoms",
     title: "Why does joint pain feel worse in the morning but improve during the day?",
     author: "Omni Rheuma Team",
@@ -14,7 +14,7 @@ const articles = [
   },
   {
     id: 2,
-    image: "/images/hero-consult.jpg",
+    image: "/blog-articles/autoimmune-fatigue.webp",
     category: "Autoimmune Awareness",
     title: "Can unexplained fatigue be an early sign of an autoimmune disease?",
     author: "Omni Rheuma Team",
@@ -22,7 +22,7 @@ const articles = [
   },
   {
     id: 3,
-    image: "/images/joints.jpg",
+    image: "/blog-articles/symmetrical-joint-pain.webp",
     category: "Symptom Pattern",
     title: "Why do both hands or both knees hurt at the same time?",
     author: "Omni Rheuma Team",
@@ -30,7 +30,7 @@ const articles = [
   },
   {
     id: 4,
-    image: "/images/symptom-checker.jpg",
+    image: "/blog-articles/joint-pain-assessment.webp",
     category: "Self-Assessment",
     title: "Is your joint pain temporary or something more serious like rheumatoid arthritis?",
     author: "Omni Rheuma Team",
@@ -38,7 +38,7 @@ const articles = [
   },
   {
     id: 5,
-    image: "/images/exercise.jpg",
+    image: "/blog-articles/stiffness-after-rest.webp",
     category: "Daily Life",
     title: "Why does joint stiffness increase after rest or inactivity?",
     author: "Omni Rheuma Team",
@@ -46,7 +46,7 @@ const articles = [
   },
   {
     id: 6,
-    image: "/images/ultrasound.jpg",
+    image: "/blog-articles/silent-joint-swelling.webp",
     category: "Silent Symptoms",
     title: "Can joint swelling happen without severe pain? What it could mean",
     author: "Omni Rheuma Team",
@@ -54,7 +54,7 @@ const articles = [
   },
   {
     id: 7,
-    image: "/images/hero-doctor1a.jpg",
+    image: "/blog-articles/women-autoimmune-awareness.webp",
     category: "Women & Autoimmunity",
     title: "Why do autoimmune diseases like rheumatoid arthritis affect women more?",
     author: "Omni Rheuma Team",
@@ -62,7 +62,7 @@ const articles = [
   },
   {
     id: 8,
-    image: "/images/arthisites.jpg",
+    image: "/blog-articles/recurring-joint-pain.webp",
     category: "Warning Signs",
     title: "Is recurring joint pain a warning sign you should not ignore?",
     author: "Omni Rheuma Team",
@@ -70,7 +70,7 @@ const articles = [
   },
   {
     id: 9,
-    image: "/images/patient-mark.jpg",
+    image: "/blog-articles/delayed-ra-diagnosis.webp",
     category: "Diagnosis Journey",
     title: "Why do some people delay rheumatoid arthritis diagnosis for years?",
     author: "Omni Rheuma Team",
@@ -78,7 +78,7 @@ const articles = [
   },
   {
     id: 10,
-    image: "/images/diet.jpg",
+    image: "/blog-articles/lifestyle-flare-triggers.webp",
     category: "Lifestyle & Flares",
     title: "Can stress or lifestyle habits trigger autoimmune flare-ups?",
     author: "Omni Rheuma Team",
@@ -86,7 +86,7 @@ const articles = [
   },
   {
     id: 11,
-    image: "/images/ra-treatment.jpg",
+    image: "/blog-articles/untreated-joint-pain.webp",
     category: "Disease Progression",
     title: "What happens if joint pain is left untreated for too long?",
     author: "Omni Rheuma Team",
@@ -94,7 +94,7 @@ const articles = [
   },
   {
     id: 12,
-    image: "/images/specialist-2.jpg",
+    image: "/blog-articles/see-a-rheumatologist.webp",
     category: "When To See A Specialist",
     title: "How do you know if your joint pain needs a rheumatologist?",
     author: "Omni Rheuma Team",

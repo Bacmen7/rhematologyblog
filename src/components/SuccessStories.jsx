@@ -21,18 +21,22 @@ const videos = [
   {
     id: "niyfFNDQjok",
     title: "Living with Rheumatoid Arthritis -A Patient's Journey to Remission",
+    image: "/patient-stories/journey-to-remission.webp",
   },
   {
     id: "niyfFNDQjok",
     title: "How Early RA Diagnosis Changed My Life -Patient Success Story",
+    image: "/patient-stories/early-diagnosis-changed-life.webp",
   },
   {
     id: "niyfFNDQjok",
     title: "Managing RA with Biologics -Real Patient Experience & Results",
+    image: "/patient-stories/biologics-real-experience.webp",
   },
   {
     id: "niyfFNDQjok",
     title: "From Chronic Pain to Active Life -RA Treatment Success at Our Clinic",
+    image: "/patient-stories/from-pain-to-active-life.webp",
   },
 ]
 
@@ -99,7 +103,7 @@ function SuccessStories() {
                 <div className="p-3 pb-0">
                   <div className="relative aspect-video bg-gray-100 overflow-hidden rounded-lg">
                     <img
-                      src={`https://img.youtube.com/vi/${video.id}/hqdefault.jpg`}
+                      src={video.image}
                       alt={video.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
