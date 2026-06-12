@@ -8,7 +8,7 @@ const articles = [
   {
     id: "biologics-vs-small-molecules-psa",
     title: "Biologics vs Small Molecules for PsA",
-    image: "/images/medication.jpg",
+    image: "/images/medication.webp",
     readTime: "15 min read",
     category: "Treatment",
     author: "Dr. James Chen",
@@ -17,7 +17,7 @@ const articles = [
   {
     id: "tips-morning-stiffness-fatigue",
     title: "Tips for Morning Stiffness and Fatigue",
-    image: "/images/pain-relief.jpg",
+    image: "/images/pain-relief.webp",
     readTime: "7 min read",
     category: "Lifestyle",
     author: "Angela Myers",

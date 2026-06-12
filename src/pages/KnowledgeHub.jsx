@@ -48,8 +48,8 @@ const conditionData = {
     ],
     when: "If you have joint swelling lasting more than 6 weeks, morning stiffness exceeding 30 minutes, or a positive RF/Anti-CCP blood test, consult a rheumatologist promptly.",
     articles: [
-      { img: "/images/lab-test.jpg", cat: "Research", title: "Treat-to-Target Strategies in RA", time: "8 min" },
-      { img: "/images/medication.jpg", cat: "Treatment", title: "Methotrexate: What You Need to Know", time: "6 min" },
+      { img: "/images/lab-test.webp", cat: "Research", title: "Treat-to-Target Strategies in RA", time: "8 min" },
+      { img: "/images/medication.webp", cat: "Treatment", title: "Methotrexate: What You Need to Know", time: "6 min" },
     ],
   },
   oa: {
@@ -72,8 +72,8 @@ const conditionData = {
     ],
     when: "If joint pain limits daily activities, doesn't respond to over-the-counter treatments, or you hear grinding/clicking in your joints, see a specialist for evaluation.",
     articles: [
-      { img: "/images/exercise.jpg", cat: "Lifestyle", title: "Exercise Strategies for Knee OA", time: "7 min" },
-      { img: "/images/medication.jpg", cat: "Treatment", title: "When to Consider Joint Replacement", time: "9 min" },
+      { img: "/images/exercise.webp", cat: "Lifestyle", title: "Exercise Strategies for Knee OA", time: "7 min" },
+      { img: "/images/medication.webp", cat: "Treatment", title: "When to Consider Joint Replacement", time: "9 min" },
     ],
   },
   psa: {
@@ -96,8 +96,8 @@ const conditionData = {
     ],
     when: "If you have psoriasis and develop joint pain, swelling, or stiffness -or if you notice sausage-like swelling of fingers/toes -seek rheumatology evaluation promptly.",
     articles: [
-      { img: "/images/hero-doctor.jpg", cat: "Research", title: "IL-17 vs TNF Inhibitors in PsA", time: "6 min" },
-      { img: "/images/medication.jpg", cat: "Diagnosis", title: "Recognising Early PsA", time: "5 min" },
+      { img: "/images/hero-doctor.webp", cat: "Research", title: "IL-17 vs TNF Inhibitors in PsA", time: "6 min" },
+      { img: "/images/medication.webp", cat: "Diagnosis", title: "Recognising Early PsA", time: "5 min" },
     ],
   },
   as: {
@@ -120,8 +120,8 @@ const conditionData = {
     ],
     when: "If you're under 40 with back pain lasting more than 3 months that improves with movement and worsens at rest, especially with night pain, see a rheumatologist.",
     articles: [
-      { img: "/images/exercise.jpg", cat: "Lifestyle", title: "Exercise Programs for AS Patients", time: "7 min" },
-      { img: "/images/lab-test.jpg", cat: "Research", title: "HLA-B27 and Axial SpA", time: "8 min" },
+      { img: "/images/exercise.webp", cat: "Lifestyle", title: "Exercise Programs for AS Patients", time: "7 min" },
+      { img: "/images/lab-test.webp", cat: "Research", title: "HLA-B27 and Axial SpA", time: "8 min" },
     ],
   },
   gout: {
@@ -144,8 +144,8 @@ const conditionData = {
     ],
     when: "If you experience sudden, severe joint pain with redness and swelling -especially in the big toe, ankle, or knee -seek urgent evaluation to confirm gout and begin treatment.",
     articles: [
-      { img: "/images/medication.jpg", cat: "Treatment", title: "Urate-Lowering Therapy Guide", time: "6 min" },
-      { img: "/images/hero-doctor.jpg", cat: "Lifestyle", title: "Gout and Diet: What Works", time: "5 min" },
+      { img: "/images/medication.webp", cat: "Treatment", title: "Urate-Lowering Therapy Guide", time: "6 min" },
+      { img: "/images/hero-doctor.webp", cat: "Lifestyle", title: "Gout and Diet: What Works", time: "5 min" },
     ],
   },
   ctd: {
@@ -168,8 +168,8 @@ const conditionData = {
     ],
     when: "If you have Raynaud's phenomenon combined with joint pain, skin changes, muscle weakness, or unexplained organ dysfunction, a rheumatology evaluation is essential.",
     articles: [
-      { img: "/images/lab-test.jpg", cat: "Diagnosis", title: "Understanding ANA Testing", time: "7 min" },
-      { img: "/images/medication.jpg", cat: "Research", title: "Advances in Scleroderma Treatment", time: "8 min" },
+      { img: "/images/lab-test.webp", cat: "Diagnosis", title: "Understanding ANA Testing", time: "7 min" },
+      { img: "/images/medication.webp", cat: "Research", title: "Advances in Scleroderma Treatment", time: "8 min" },
     ],
   },
   fibro: {
@@ -192,8 +192,8 @@ const conditionData = {
     ],
     when: "If you have widespread pain lasting more than 3 months with significant fatigue and sleep problems that don't improve with rest, a rheumatologist can help establish the diagnosis and create a treatment plan.",
     articles: [
-      { img: "/images/exercise.jpg", cat: "Lifestyle", title: "Exercise for Fibromyalgia", time: "6 min" },
-      { img: "/images/hero-doctor.jpg", cat: "Treatment", title: "CBT and Chronic Pain", time: "7 min" },
+      { img: "/images/exercise.webp", cat: "Lifestyle", title: "Exercise for Fibromyalgia", time: "6 min" },
+      { img: "/images/hero-doctor.webp", cat: "Treatment", title: "CBT and Chronic Pain", time: "7 min" },
     ],
   },
   vasculitis: {
@@ -216,8 +216,8 @@ const conditionData = {
     ],
     when: "If you experience unexplained fever, weight loss, new severe headaches (especially over age 50), skin purpura, or blood/protein in urine combined with joint pain, seek urgent evaluation.",
     articles: [
-      { img: "/images/lab-test.jpg", cat: "Research", title: "Rituximab in ANCA Vasculitis", time: "9 min" },
-      { img: "/images/medication.jpg", cat: "Diagnosis", title: "GCA: Recognising the Signs", time: "6 min" },
+      { img: "/images/lab-test.webp", cat: "Research", title: "Rituximab in ANCA Vasculitis", time: "9 min" },
+      { img: "/images/medication.webp", cat: "Diagnosis", title: "GCA: Recognising the Signs", time: "6 min" },
     ],
   },
   lupus: {
@@ -240,8 +240,8 @@ const conditionData = {
     ],
     when: "If you have a butterfly rash, joint pain, unexplained fatigue, mouth sores, sun sensitivity, or a positive ANA test, consult a rheumatologist for lupus evaluation.",
     articles: [
-      { img: "/images/hero-doctor.jpg", cat: "Research", title: "Belimumab + Voclosporin in Lupus Nephritis", time: "7 min" },
-      { img: "/images/lab-test.jpg", cat: "Treatment", title: "Hydroxychloroquine: The Lupus Essential", time: "5 min" },
+      { img: "/images/hero-doctor.webp", cat: "Research", title: "Belimumab + Voclosporin in Lupus Nephritis", time: "7 min" },
+      { img: "/images/lab-test.webp", cat: "Treatment", title: "Hydroxychloroquine: The Lupus Essential", time: "5 min" },
     ],
   },
   reactive: {
@@ -251,7 +251,7 @@ const conditionData = {
     keyPoints: ["Triggered by infections (Chlamydia, Salmonella, Shigella)", "Classic triad: arthritis, urethritis, conjunctivitis", "Asymmetric joint involvement, often lower limbs", "ESR/CRP elevated, HLA-B27 positive in many cases"],
     treatment: ["NSAIDs for joint inflammation", "Antibiotics if active infection", "DMARDs for chronic cases", "Physiotherapy"],
     when: "Joint swelling after a gastrointestinal or genitourinary infection, especially with eye redness or urinary symptoms.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
   },
   sjogrens: {
     name: "Sjögren's Syndrome",
@@ -260,7 +260,7 @@ const conditionData = {
     keyPoints: ["Dry eyes and dry mouth are cardinal symptoms", "ANA, SSA/SSB antibodies are key diagnostic markers", "Can occur alone (primary) or with other autoimmune conditions", "Increased risk of lymphoma"],
     treatment: ["Artificial tears and saliva substitutes", "Hydroxychloroquine for systemic features", "Pilocarpine for severe dryness", "Regular dental care essential"],
     when: "Persistent dry eyes/mouth with joint pain, fatigue, or positive ANA.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
   },
   jia: {
     name: "Juvenile Idiopathic Arthritis",
@@ -269,7 +269,7 @@ const conditionData = {
     keyPoints: ["Persistent joint swelling in children lasting >6 weeks", "Multiple subtypes: oligoarticular, polyarticular, systemic", "ANA and ESR help classify subtypes", "Eye screening essential -risk of uveitis"],
     treatment: ["NSAIDs for mild disease", "Methotrexate for polyarticular JIA", "Biologics (TNF inhibitors, IL-6 blockers)", "Regular ophthalmology screening"],
     when: "Any child with persistent joint swelling, limping, or stiffness lasting more than 6 weeks.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
   },
   pmr: {
     name: "Polymyalgia Rheumatica",
@@ -278,7 +278,7 @@ const conditionData = {
     keyPoints: ["Bilateral shoulder and hip stiffness and pain", "Age >50, rapid onset over days to weeks", "ESR/CRP dramatically elevated", "Dramatic response to low-dose prednisolone is diagnostic"],
     treatment: ["Low-dose prednisolone (15–20mg) -first-line", "Slow steroid taper over 12–18 months", "Methotrexate as steroid-sparing agent", "Monitor for giant cell arteritis symptoms"],
     when: "Sudden bilateral shoulder/hip stiffness in someone over 50 with raised inflammatory markers.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Guide", title: "Understanding Your Condition", time: "5 min" }],
   },
   osteoporosis: {
     name: "Osteoporosis",
@@ -287,7 +287,7 @@ const conditionData = {
     keyPoints: ["Silent disease -often diagnosed after fracture", "DEXA scan is the gold standard for diagnosis", "Risk factors: age, female sex, steroid use, family history", "Vertebral and hip fractures cause significant morbidity"],
     treatment: ["Calcium and vitamin D supplementation", "Bisphosphonates (alendronate, zoledronic acid)", "Denosumab for high-risk patients", "Weight-bearing exercise"],
     when: "Fragility fracture, long-term steroid use, or DEXA T-score ≤ -2.5.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Guide", title: "Understanding Bone Density Tests", time: "5 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Guide", title: "Understanding Bone Density Tests", time: "5 min" }],
   },
   scleroderma: {
     name: "Systemic Sclerosis",
@@ -296,7 +296,7 @@ const conditionData = {
     keyPoints: ["Skin tightening is the hallmark feature", "Raynaud's phenomenon in >90% of patients", "ANA and Scl-70 antibodies aid diagnosis", "Interstitial lung disease is a major complication"],
     treatment: ["Calcium channel blockers for Raynaud's", "Mycophenolate for skin and lung involvement", "Nintedanib for progressive lung fibrosis", "Regular pulmonary function monitoring"],
     when: "Skin tightening, Raynaud's phenomenon with digital ulcers, or unexplained shortness of breath.",
-    articles: [{ img: "/images/lab-test.jpg", cat: "Clinical", title: "Scleroderma: Early Recognition", time: "6 min" }],
+    articles: [{ img: "/images/lab-test.webp", cat: "Clinical", title: "Scleroderma: Early Recognition", time: "6 min" }],
   },
   septic: {
     name: "Septic Arthritis",
@@ -305,7 +305,7 @@ const conditionData = {
     keyPoints: ["Hot, swollen, extremely painful single joint", "Fever + joint swelling = emergency until proven otherwise", "Joint aspiration with culture is diagnostic gold standard", "Staphylococcus aureus is the most common cause"],
     treatment: ["Urgent joint aspiration", "IV antibiotics -empiric then targeted", "Surgical washout if no improvement", "Close monitoring of joint function"],
     when: "Any hot, swollen, extremely painful joint with fever -seek emergency care immediately.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Emergency", title: "Septic Arthritis: Act Fast", time: "4 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Emergency", title: "Septic Arthritis: Act Fast", time: "4 min" }],
   },
   cppd: {
     name: "Crystal Arthropathies (CPPD)",
@@ -314,7 +314,7 @@ const conditionData = {
     keyPoints: ["Acute joint inflammation mimicking gout", "X-ray shows chondrocalcinosis (cartilage calcification)", "Crystal analysis confirms diagnosis", "Common in elderly, associated with osteoarthritis"],
     treatment: ["NSAIDs or colchicine for acute attacks", "Joint aspiration with corticosteroid injection", "Low-dose colchicine for prophylaxis", "No urate-lowering therapy needed (unlike gout)"],
     when: "Acute joint swelling in an elderly patient, especially knee or wrist, with X-ray showing calcification.",
-    articles: [{ img: "/images/lab-test.jpg", cat: "Diagnosis", title: "CPPD vs Gout: Key Differences", time: "5 min" }],
+    articles: [{ img: "/images/lab-test.webp", cat: "Diagnosis", title: "CPPD vs Gout: Key Differences", time: "5 min" }],
   },
   mctd: {
     name: "Mixed Connective Tissue Disease",
@@ -323,7 +323,7 @@ const conditionData = {
     keyPoints: ["Overlap features of lupus, scleroderma, myositis", "Anti-U1 RNP antibody is the diagnostic marker", "Raynaud's and puffy fingers are early signs", "Pulmonary hypertension is a serious complication"],
     treatment: ["NSAIDs for mild joint symptoms", "Corticosteroids for flares", "Hydroxychloroquine for skin and joints", "Immunosuppressants for organ involvement"],
     when: "Joint pain with Raynaud's, swollen fingers, and features of multiple autoimmune conditions.",
-    articles: [{ img: "/images/hero-doctor.jpg", cat: "Clinical", title: "Recognising MCTD", time: "6 min" }],
+    articles: [{ img: "/images/hero-doctor.webp", cat: "Clinical", title: "Recognising MCTD", time: "6 min" }],
   },
   raynauds: {
     name: "Raynaud's Phenomenon",
@@ -332,62 +332,62 @@ const conditionData = {
     keyPoints: ["Finger colour change in cold: white → blue → red", "Primary Raynaud's is common and benign", "Secondary Raynaud's associated with scleroderma, lupus, MCTD", "Nailfold capillaroscopy helps distinguish primary from secondary"],
     treatment: ["Keep hands warm -prevention is key", "Calcium channel blockers (nifedipine)", "Avoid vasoconstrictors (smoking, certain medications)", "Investigate for underlying autoimmune cause"],
     when: "Finger colour changes with cold exposure, especially if associated with digital ulcers or other autoimmune symptoms.",
-    articles: [{ img: "/images/lab-test.jpg", cat: "Guide", title: "Raynaud's: When to Worry", time: "5 min" }],
+    articles: [{ img: "/images/lab-test.webp", cat: "Guide", title: "Raynaud's: When to Worry", time: "5 min" }],
   },
 }
 
 const treatmentCards = [
   {
-    img: "/images/medication.jpg",
+    img: "/images/medication.webp",
     badge: "Disease-Modifying",
     title: "DMARDs",
     desc: "Methotrexate, Hydroxychloroquine, Sulfasalazine, Leflunomide",
     footer: "First-line therapy for inflammatory arthritis",
   },
   {
-    img: "/images/lab-test.jpg",
+    img: "/images/lab-test.webp",
     badge: "Biologics",
     title: "Biologic Therapies",
     desc: "TNF inhibitors, IL-6, IL-17, B-cell",
     footer: "Precision-targeted immune modulation",
   },
   {
-    img: "/images/hero-doctor.jpg",
+    img: "/images/hero-doctor.webp",
     badge: "JAK Inhibitors",
     title: "JAK Inhibitors",
     desc: "Baricitinib, Tofacitinib, Upadacitinib",
     footer: "Oral small-molecule targeted therapy",
   },
   {
-    img: "/images/exercise.jpg",
+    img: "/images/exercise.webp",
     badge: "Physiotherapy",
     title: "Physiotherapy & Exercise",
     desc: "Joint mobilisation, strength training, hydrotherapy",
     footer: "Restore function and reduce pain",
   },
   {
-    img: "/images/medication.jpg",
+    img: "/images/medication.webp",
     badge: "Procedures",
     title: "Joint Injections",
     desc: "Corticosteroid, hyaluronic acid, PRP",
     footer: "Targeted relief for specific joints",
   },
   {
-    img: "/images/joints.jpg",
+    img: "/images/joints.webp",
     badge: "Surgery",
     title: "Surgery",
     desc: "TKR, THR, synovectomy, arthroscopy, spinal fusion",
     footer: "When conservative options aren't enough",
   },
   {
-    img: "/images/diet.jpg",
+    img: "/images/diet.webp",
     badge: "Lifestyle",
     title: "Diet & Nutrition",
     desc: "Mediterranean diet, omega-3, weight management",
     footer: "Anti-inflammatory eating strategies",
   },
   {
-    img: "/images/pain-relief.jpg",
+    img: "/images/pain-relief.webp",
     badge: "Pain Management",
     title: "Pain Management",
     desc: "NSAIDs, analgesics, topical agents, TENS, CBT",
@@ -396,7 +396,7 @@ const treatmentCards = [
 ]
 
 const featuredArticle = {
-  img: "/images/lab-test.jpg",
+  img: "/images/lab-test.webp",
   cat: "Research",
   title: "Treat-to-Target in RA: Does Achieving Remission Actually Prevent Long-Term Joint Damage?",
   author: "Dr. Priya Menon",
@@ -405,10 +405,10 @@ const featuredArticle = {
 }
 
 const articleList = [
-  { img: "/images/hero-doctor.jpg", cat: "Research", title: "IL-17 vs TNF Inhibitors in PsA", time: "6 min read" },
-  { img: "/images/medication.jpg", cat: "Safety", title: "JAK Inhibitors in 2025: Updated CV Risk Data", time: "9 min read" },
-  { img: "/images/lab-test.jpg", cat: "Research", title: "Belimumab + Voclosporin in Lupus Nephritis", time: "7 min read" },
-  { img: "/images/diet.jpg", cat: "Lifestyle", title: "Mediterranean Diet and CRP Reduction in RA", time: "5 min read" },
+  { img: "/images/hero-doctor.webp", cat: "Research", title: "IL-17 vs TNF Inhibitors in PsA", time: "6 min read" },
+  { img: "/images/medication.webp", cat: "Safety", title: "JAK Inhibitors in 2025: Updated CV Risk Data", time: "9 min read" },
+  { img: "/images/lab-test.webp", cat: "Research", title: "Belimumab + Voclosporin in Lupus Nephritis", time: "7 min read" },
+  { img: "/images/diet.webp", cat: "Lifestyle", title: "Mediterranean Diet and CRP Reduction in RA", time: "5 min read" },
 ]
 
 /* ─────────────────────────────────────────────

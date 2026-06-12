@@ -18,7 +18,7 @@ const slides = [
         Struggling with Pain in Your <span style={emphasisWordStyle}>Joints</span>, <span style={emphasisWordStyle}>Bones</span>, or <span style={emphasisWordStyle}>Muscles</span>?
       </>
     ),
-    image: "/images/hero-slide-1.png",
+    image: "/images/hero-slide-1.webp",
   },
   {
     id: 1,
@@ -27,7 +27,7 @@ const slides = [
         Your path to <span style={emphasisWordStyle}>pain-free</span> living starts <span style={emphasisWordStyle}>here</span>
       </>
     ),
-    image: "/images/hero-slide-2.png",
+    image: "/images/hero-slide-2.webp",
   },
   {
     id: 2,
@@ -36,7 +36,7 @@ const slides = [
         Advanced care for <span style={emphasisWordStyle}>autoimmune</span> conditions
       </>
     ),
-    image: "/images/hero-slide-3.png",
+    image: "/images/hero-slide-3.webp",
   },
 ]
 
@@ -137,7 +137,7 @@ function Hero() {
               }`}
             >
               <img
-                src="/images/Ring.png"
+                src="/images/Ring.webp"
                 alt=""
                 aria-hidden="true"
                 className="absolute left-1/2 top-[13%] h-[152%] w-[176%] -translate-x-1/2 object-contain opacity-90"

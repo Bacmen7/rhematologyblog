@@ -1,35 +1,35 @@
 const conditions = [
   {
     name: "Rheumatoid Arthritis (RA)",
-    image: "/condition/Rheumatoid Arthritis (RA).png",
+    image: "/condition/Rheumatoid Arthritis (RA).webp",
   },
   {
     name: "Ankylosing Spondylitis (AS)",
-    image: "/condition/Ankylosing Spondylitis (AS).png",
+    image: "/condition/Ankylosing Spondylitis (AS).webp",
   },
   {
     name: "Osteoarthritis",
-    image: "/condition/Osteoarthritis.png",
+    image: "/condition/Osteoarthritis.webp",
   },
   {
     name: "Lupus",
-    image: "/condition/Lupus.png",
+    image: "/condition/Lupus.webp",
   },
   {
     name: "Gout",
-    image: "/condition/Gout.png",
+    image: "/condition/Gout.webp",
   },
   {
     name: "Psoriatic Arthritis",
-    image: "/condition/Psoriatic Arthritis.png",
+    image: "/condition/Psoriatic Arthritis.webp",
   },
   {
     name: "Fibromyalgia",
-    image: "/condition/Fibromyalgia.png",
+    image: "/condition/Fibromyalgia.webp",
   },
   {
     name: "Back & Neck Pain",
-    image: "/condition/back.png",
+    image: "/condition/back.webp",
   },
 ]
 

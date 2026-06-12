@@ -16,14 +16,14 @@ const getPreviewText = (text) => {
    ───────────────────────────────────────────── */
 
 const conditions = [
-  { name: "Rheumatoid Arthritis", slug: "arthritis", image: "/condition/Rheumatoid Arthritis (RA).png", description: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments." },
-  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.png", description: "Where skin meets joints. Understanding the psoriasis-arthritis connection and targeted therapies." },
-  { name: "Osteoarthritis", slug: "osteoarthritis", image: "/condition/Osteoarthritis.png", description: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain." },
-  { name: "Lupus", slug: "lupus", image: "/condition/Lupus.png", description: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management." },
-  { name: "Gout", slug: "gout", image: "/condition/Gout.png", description: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies." },
-  { name: "Ankylosing Spondylitis", slug: "ankylosing-spondylitis", image: "/condition/Ankylosing Spondylitis (AS).png", description: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture." },
-  { name: "Fibromyalgia", slug: "fibromyalgia", image: "/condition/Fibromyalgia.png", description: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life." },
-  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.png", description: "Identifying whether spinal pain is mechanical or inflammatory is a critical distinction for treatment." },
+  { name: "Rheumatoid Arthritis", slug: "arthritis", image: "/condition/Rheumatoid Arthritis (RA).webp", description: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments." },
+  { name: "Psoriatic Arthritis", slug: "psoriatic-arthritis", image: "/condition/Psoriatic Arthritis.webp", description: "Where skin meets joints. Understanding the psoriasis-arthritis connection and targeted therapies." },
+  { name: "Osteoarthritis", slug: "osteoarthritis", image: "/condition/Osteoarthritis.webp", description: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain." },
+  { name: "Lupus", slug: "lupus", image: "/condition/Lupus.webp", description: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management." },
+  { name: "Gout", slug: "gout", image: "/condition/Gout.webp", description: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies." },
+  { name: "Ankylosing Spondylitis", slug: "ankylosing-spondylitis", image: "/condition/Ankylosing Spondylitis (AS).webp", description: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture." },
+  { name: "Fibromyalgia", slug: "fibromyalgia", image: "/condition/Fibromyalgia.webp", description: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life." },
+  { name: "Back & Neck Pain", slug: "back-neck-pain", image: "/condition/back.webp", description: "Identifying whether spinal pain is mechanical or inflammatory is a critical distinction for treatment." },
 ]
 
 const whatIsRheumatology = [
@@ -62,9 +62,9 @@ const warningSignals = [
 ]
 
 const featuredArticles = [
-  { id: "understanding-blood-work-rf-anti-ccp", title: "Understanding your Blood Work: RF and Anti-CCP", image: "/images/lab-test.jpg", readTime: "12 min read", category: "Diagnostics", author: "Dr. Sarah Miller", excerpt: "Learn what RF and Anti-CCP blood tests mean for your rheumatoid arthritis diagnosis and treatment plan." },
-  { id: "gentle-exercises-flaring-joints", title: "Gentle Exercises for Flaring Joints", image: "/images/exercise.jpg", readTime: "8 min read", category: "Lifestyle", author: "Dr. James Chen", excerpt: "Safe, low-impact exercises that can help maintain mobility and reduce pain during RA flares." },
-  { id: "anti-inflammatory-diet", title: "The Anti-Inflammatory Diet: Truths vs Myths", image: "/images/diet.jpg", readTime: "10 min read", category: "Diet & Nutrition", author: "Angela Myers", excerpt: "Separating fact from fiction when it comes to anti-inflammatory foods and their impact on symptoms." },
+  { id: "understanding-blood-work-rf-anti-ccp", title: "Understanding your Blood Work: RF and Anti-CCP", image: "/images/lab-test.webp", readTime: "12 min read", category: "Diagnostics", author: "Dr. Sarah Miller", excerpt: "Learn what RF and Anti-CCP blood tests mean for your rheumatoid arthritis diagnosis and treatment plan." },
+  { id: "gentle-exercises-flaring-joints", title: "Gentle Exercises for Flaring Joints", image: "/images/exercise.webp", readTime: "8 min read", category: "Lifestyle", author: "Dr. James Chen", excerpt: "Safe, low-impact exercises that can help maintain mobility and reduce pain during RA flares." },
+  { id: "anti-inflammatory-diet", title: "The Anti-Inflammatory Diet: Truths vs Myths", image: "/images/diet.webp", readTime: "10 min read", category: "Diet & Nutrition", author: "Angela Myers", excerpt: "Separating fact from fiction when it comes to anti-inflammatory foods and their impact on symptoms." },
 ]
 
 const faqs = [
@@ -99,7 +99,7 @@ function HealthGuide() {
         {/* ═══════════ HERO ═══════════ */}
         <section style={{ position: "relative", overflow: "hidden", minHeight: "380px" }}>
           {/* BG image full width */}
-          <img src="/h1.jpg" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
+          <img src="/h1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
           {/* Dark overlay */}
           <div style={{ position: "absolute", inset: 0, background: "rgba(15,97,110,0.55)", pointerEvents: "none" }} />
           {/* Content */}
@@ -290,7 +290,7 @@ function HealthGuide() {
               <div className="h-full">
                 <div className="overflow-hidden h-full" style={{ minHeight: "100%" }}>
                   <img
-                    src="/k3.png"
+                    src="/k3.webp"
                     alt="Rheumatology specialist"
                     className="w-full h-[320px] md:h-[380px] lg:h-full object-cover"
                   />

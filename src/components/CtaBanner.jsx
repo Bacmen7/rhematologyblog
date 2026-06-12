@@ -77,7 +77,7 @@ function CtaBanner({ spacerColor = "#ffffff" }) {
             {/* Right -Image (overflow into wave) */}
             <div className="flex-1 relative min-h-[200px] md:min-h-[250px]">
               <img
-                src="/images/hero-consult.jpg"
+                src="/images/hero-consult.webp"
                 alt="Doctor consulting with patient"
                 className="w-full block rounded-[4px] absolute bottom-0"
                 style={{

@@ -170,7 +170,7 @@ function Gout() {
 
                 {/* Author line */}
                 <div className="flex items-center gap-3 mb-10">
-                  <img src="/raghav.png" alt="Dr. Raghavendra H" className="w-10 h-10 rounded-full object-cover object-top bg-[#f0cfc4]" />
+                  <img src="/raghav.webp" alt="Dr. Raghavendra H" className="w-10 h-10 rounded-full object-cover object-top bg-[#f0cfc4]" />
                   <div>
                     <p className="text-sm font-semibold text-navy-deep leading-tight">Dr. Raghavendra H</p>
                     <p className="text-xs text-navy-muted">Rheumatologist &middot; Reviewed Mar 2026</p>
@@ -388,22 +388,22 @@ function Gout() {
                   <div className="border border-border overflow-hidden" style={{ borderRadius: 0, marginBottom: "2.5rem" }}>
                     <div className="flex">
                       <div className="hidden md:block w-[220px] shrink-0">
-                        <img src="/images/hero-doctor.jpg" alt="Rheuma specialist" className="w-full h-full object-cover" />
+                        <img src="/images/hero-doctor.webp" alt="Rheuma specialist" className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 p-5 md:p-6">
                         <h3 className="text-navy-deep mb-5" style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 400, lineHeight: 1.2 }}>
                           Rheuma&apos;s care for gout
                         </h3>
                         <div className="flex items-start gap-3 mb-4">
-                          <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top bg-[#f0cfc4] shrink-0" />
+                          <img src="/raghav.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top bg-[#f0cfc4] shrink-0" />
                           <p className="text-[13px] leading-[1.6] text-navy-deep"><strong className="font-bold" style={{ color: "#1AA3B5" }}>Rheumatologist:</strong> Confirms diagnosis, prescribes urate-lowering therapy, and monitors uric acid targets.</p>
                         </div>
                         <div className="flex items-start gap-3 mb-4">
-                          <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top bg-[#dce7f7] shrink-0" />
+                          <img src="/d1.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top bg-[#dce7f7] shrink-0" />
                           <p className="text-[13px] leading-[1.6] text-navy-deep"><strong className="font-bold" style={{ color: "#1AA3B5" }}>Dietitian:</strong> Creates a personalized low-purine nutrition plan that you can actually stick to.</p>
                         </div>
                         <div className="flex items-start gap-3">
-                          <img src="/d2.png" alt="" className="w-10 h-10 rounded-full object-cover object-top bg-[#e0f3f5] shrink-0" />
+                          <img src="/d2.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top bg-[#e0f3f5] shrink-0" />
                           <p className="text-[13px] leading-[1.6] text-navy-deep"><strong className="font-bold" style={{ color: "#1AA3B5" }}>Care Coordinator:</strong> Manages follow-ups, lab work scheduling, and keeps your entire care team aligned.</p>
                         </div>
                       </div>

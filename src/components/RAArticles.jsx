@@ -5,7 +5,7 @@ const articles = [
   {
     id: "understanding-blood-work-rf-anti-ccp",
     title: "Understanding your Blood Work: RF and Anti-CCP",
-    image: "/images/lab-test.jpg",
+    image: "/images/lab-test.webp",
     readTime: "12 min read",
     category: "Diagnostics",
     author: "Dr. Sarah Miller",
@@ -14,7 +14,7 @@ const articles = [
   {
     id: "gentle-exercises-flaring-joints",
     title: "Gentle Exercises for Flaring Joints",
-    image: "/images/exercise.jpg",
+    image: "/images/exercise.webp",
     readTime: "8 min read",
     category: "Lifestyle",
     author: "Dr. James Chen",
@@ -23,7 +23,7 @@ const articles = [
   {
     id: "anti-inflammatory-diet",
     title: "The Anti-Inflammatory Diet: Truths vs Myths",
-    image: "/images/diet.jpg",
+    image: "/images/diet.webp",
     readTime: "10 min read",
     category: "Diet & Nutrition",
     author: "Angela Myers",

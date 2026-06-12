@@ -13,7 +13,7 @@ function HealthGuideHero() {
             <img
               alt="Medical professional consulting patient"
               className="w-full h-full object-cover object-center"
-              src="/images/mango.jpg"
+              src="/images/mango.webp"
             />
           </div>
         </div>
@@ -23,7 +23,7 @@ function HealthGuideHero() {
         <img
           alt=""
           className="h-full w-full object-cover object-center"
-          src="/images/mango.jpg"
+          src="/images/mango.webp"
         />
       </div>
     </section>

@@ -44,7 +44,7 @@ function WellnessSeminars() {
               <img
                 alt="Wellness Seminar Session"
                 className="rounded-2xl md:rounded-[3rem] w-full h-[300px] md:h-[500px] object-cover shadow-2xl group-hover:rotate-2 transition-transform duration-500"
-                src="/images/exercise.jpg"
+                src="/images/exercise.webp"
               />
               <div className="absolute -bottom-6 -left-4 md:-bottom-8 md:-left-8 bg-navy-deep text-white p-6 md:p-10 rounded-2xl md:rounded-[3rem] shadow-xl">
                 <h5 className="text-xl md:text-2xl font-bold mb-2">Next Event</h5>

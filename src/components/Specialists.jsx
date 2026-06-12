@@ -45,7 +45,7 @@ function SpecialistCard({ doc }) {
             {doc.name}
           </h3>
         </Link>
-        <p className="text-[13px]" style={{ color: "#5e5e5e", marginBottom: "0.75rem" }}>Rheumatologist, Nephrologist</p>
+        <p className="text-[13px]" style={{ color: "#5e5e5e", marginBottom: "0.75rem" }}>Rheumatologist</p>
         <Link
           to={`/specialist/${doc.id}`}
           className="inline-flex items-center gap-1.5 text-[13px] font-semibold underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"

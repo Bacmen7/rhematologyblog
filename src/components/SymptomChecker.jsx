@@ -19,7 +19,7 @@ function SymptomChecker() {
             <img
               className="rounded-2xl shadow-2xl rotate-3 w-64 h-80 object-cover"
               alt="Medical imaging on a screen"
-              src="/images/symptom-checker.jpg"
+              src="/images/symptom-checker.webp"
             />
           </div>
         </div>

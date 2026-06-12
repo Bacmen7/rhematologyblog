@@ -22,7 +22,7 @@ function BriefingHero() {
         <div className="lg:col-span-7">
           <div
             className="aspect-[16/10] rounded-sm overflow-hidden bg-slate-100 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/featured-main.jpg')" }}
+            style={{ backgroundImage: "url('/images/featured-main.webp')" }}
           />
         </div>
       </div>

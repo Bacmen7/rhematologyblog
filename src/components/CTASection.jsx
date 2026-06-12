@@ -42,7 +42,7 @@ function CTASection() {
           <div className="hidden md:block rounded-2xl overflow-hidden">
             <img
               className="w-full h-[360px] object-cover object-center"
-              src="/images/hero-doctor.jpg"
+              src="/images/hero-doctor.webp"
               alt="Patient using phone for virtual consultation"
             />
           </div>

@@ -5,18 +5,18 @@ const allArticles = [
     readTime: "9 min read",
     title: "Early Detection: Musculoskeletal Ultrasound Protocols",
     excerpt: "How standard ultrasound protocols can catch inflammatory arthritis before X-rays do.",
-    image: "/images/ultrasound.jpg",
+    image: "/images/ultrasound.webp",
     author: {
       name: "Dr. Emily Chen, MD",
       role: "Diagnostic Radiologist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Emily Chen specializes in musculoskeletal imaging with a focus on early detection of inflammatory arthritis using advanced ultrasound techniques.",
     },
     date: "Oct 18, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health and a fellow of the American College of Rheumatology.",
     },
     tableOfContents: [
@@ -65,18 +65,18 @@ const allArticles = [
     readTime: "11 min read",
     title: "Gout vs. Pseudogout: A Differential Diagnostic Guide",
     excerpt: "They look similar at the bedside but the crystals tell different stories.",
-    image: "/images/crystal-deposits.jpg",
+    image: "/images/crystal-deposits.webp",
     author: {
       name: "Dr. James Patel, MD",
       role: "Rheumatology Fellow",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. James Patel is a rheumatology fellow specializing in crystal arthropathies and metabolic bone disease.",
     },
     date: "Oct 10, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -100,7 +100,7 @@ const allArticles = [
       <p>That's the problem. A red, hot, swollen joint could be either one. It could also be infection, which is a whole different emergency. So the workup matters, and skipping it because "it's probably gout" is how diagnoses get missed.</p>
       <p><strong><u>Gout</u></strong> is caused by monosodium urate (MSU) crystals. These form when uric acid levels in the blood stay elevated over time. <strong><u>Pseudogout</u></strong>, formally called calcium pyrophosphate deposition disease (CPPD), is caused by calcium pyrophosphate (CPP) crystals depositing in cartilage and joint tissue. The mechanism is different, the risk factors are different, and the prevention strategy is different.</p>
 
-      <img src="/images/crystal-deposits.jpg" alt="Microscopic crystal deposits in joint tissue" />
+      <img src="/images/crystal-deposits.webp" alt="Microscopic crystal deposits in joint tissue" />
       <p class="article-img-caption">Crystal arthropathies cause acute joint inflammation when crystals deposit in synovial fluid and trigger an immune response.</p>
 
       <h2 id="clinical-presentation">Clinical presentation</h2>
@@ -260,18 +260,18 @@ const allArticles = [
     readTime: "10 min read",
     title: "Modern Treatments for RA: What You Need to Know",
     excerpt: "What's actually available for RA right now, from methotrexate to the newest biologics.",
-    image: "/images/ra-treatment.jpg",
+    image: "/images/ra-treatment.webp",
     author: {
       name: "Dr. Sarah Jenkins, MD",
       role: "Senior Rheumatologist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Sarah Jenkins is a board-certified rheumatologist specializing in RA treatment strategies.",
     },
     date: "Nov 2, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -294,7 +294,7 @@ const allArticles = [
       <p>The current standard is called <strong>"treat to target."</strong> You pick a goal, usually remission or at least low disease activity, and you adjust medication until you get there. If the first drug doesn't work well enough by 3 months, you don't wait around hoping. You add or switch.</p>
       <p>That sounds straightforward on paper. In practice, finding the right drug or combination for each patient takes trial and error. People respond differently to the same medication, and what works well for one person may do nothing for another.</p>
 
-      <img src="/images/ra-treatment.jpg" alt="Doctor discussing treatment plan with RA patient" />
+      <img src="/images/ra-treatment.webp" alt="Doctor discussing treatment plan with RA patient" />
       <p class="article-img-caption">Treatment decisions in RA are made together with your rheumatologist, based on disease severity, other health conditions, and how you've responded to prior drugs.</p>
 
       <h2 id="dmards">DMARDs: the foundation</h2>
@@ -398,18 +398,18 @@ const allArticles = [
     readTime: "12 min read",
     title: "Understanding your Blood Work: RF and Anti-CCP",
     excerpt: "What RF and anti-CCP results actually tell your doctor, and what they don't.",
-    image: "/images/lab-test.jpg",
+    image: "/images/lab-test.webp",
     author: {
       name: "Dr. Lisa Wang, MD",
       role: "Clinical Immunologist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Lisa Wang specializes in clinical immunology and laboratory diagnostics for autoimmune diseases.",
     },
     date: "Nov 10, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -433,7 +433,7 @@ const allArticles = [
       <p>You'll probably get these drawn at your first rheumatology appointment, sometimes even before. Your primary care doctor may order them based on joint symptoms alone. The results help determine how likely RA is, how aggressive it might be, and how urgently treatment needs to start.</p>
       <p>But there's a catch most patients don't hear about: these tests have limits. A positive result doesn't guarantee RA, and a negative one doesn't rule it out. Understanding what your numbers actually mean, and what they don't, saves a lot of confusion down the road.</p>
 
-      <img src="/images/lab-test.jpg" alt="Blood sample tubes in a clinical laboratory" />
+      <img src="/images/lab-test.webp" alt="Blood sample tubes in a clinical laboratory" />
       <p class="article-img-caption">RF and anti-CCP are usually drawn together at the first rheumatology visit. Results typically come back within a few days.</p>
 
       <h2 id="rf">Rheumatoid factor explained</h2>
@@ -566,18 +566,18 @@ const allArticles = [
     readTime: "8 min read",
     title: "Gentle Exercises for Flaring Joints",
     excerpt: "What you can (and should) do when your joints are flaring up.",
-    image: "/images/exercise.jpg",
+    image: "/images/exercise.webp",
     author: {
       name: "Dr. Karen Mitchell, PT",
       role: "Physical Therapist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Karen Mitchell is a licensed physical therapist with expertise in rheumatic disease rehabilitation.",
     },
     date: "Nov 5, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -618,18 +618,18 @@ const allArticles = [
     readTime: "10 min read",
     title: "The Anti-Inflammatory Diet: Truths vs Myths",
     excerpt: "Which dietary advice actually holds up, and which is just noise.",
-    image: "/images/diet.jpg",
+    image: "/images/diet.webp",
     author: {
       name: "Dr. Rachel Green, RD",
       role: "Clinical Dietitian",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Rachel Green is a registered dietitian specializing in anti-inflammatory nutrition for autoimmune conditions.",
     },
     date: "Oct 28, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -671,18 +671,18 @@ const allArticles = [
     readTime: "11 min read",
     title: "Managing the Dual Impact of Skin and Joint Pain",
     excerpt: "When your disease attacks skin and joints at the same time, treatment gets complicated.",
-    image: "/images/psa-insight.jpg",
+    image: "/images/psa-insight.webp",
     author: {
       name: "Dr. Sarah Jenkins, MD",
       role: "Senior Rheumatologist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Sarah Jenkins specializes in psoriatic arthritis management with integrated dermatological care.",
     },
     date: "Oct 15, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -723,18 +723,18 @@ const allArticles = [
     readTime: "15 min read",
     title: "Biologics vs Small Molecules for PsA",
     excerpt: "Injections vs pills for PsA: what the head-to-head data actually shows.",
-    image: "/images/medication.jpg",
+    image: "/images/medication.webp",
     author: {
       name: "Dr. Sarah Jenkins, MD",
       role: "Senior Rheumatologist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Sarah Jenkins is a board-certified rheumatologist with expertise in PsA treatment options.",
     },
     date: "Oct 20, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [
@@ -775,18 +775,18 @@ const allArticles = [
     readTime: "7 min read",
     title: "Tips for Morning Stiffness and Fatigue",
     excerpt: "The first hour of the day is the hardest. Here's how to make it less miserable.",
-    image: "/images/pain-relief.jpg",
+    image: "/images/pain-relief.webp",
     author: {
       name: "Dr. Karen Mitchell, PT",
       role: "Physical Therapist",
-      image: "/images/author-sarah.jpg",
+      image: "/images/author-sarah.webp",
       bio: "Dr. Karen Mitchell specializes in rehabilitation for inflammatory arthritis patients.",
     },
     date: "Oct 12, 2023",
     reviewedBy: {
       name: "Dr. Michael Torres, MD, FACR",
       role: "Chief of Rheumatology, Metro Health",
-      image: "/images/specialist-1.jpg",
+      image: "/images/specialist-1.webp",
       bio: "Dr. Michael Torres is the Chief of Rheumatology at Metro Health.",
     },
     tableOfContents: [

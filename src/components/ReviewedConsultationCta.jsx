@@ -45,7 +45,7 @@ export default function ReviewedConsultationCta({ style = {} }) {
         </a>
       </div>
       <div className="hidden md:block" style={{ width: "200px", flexShrink: 0, overflow: "hidden" }}>
-        <img src="/images/12hero-slide-1.png" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
+        <img src="/images/12hero-slide-1.webp" alt="" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
       </div>
     </div>
   )

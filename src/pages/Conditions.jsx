@@ -5,9 +5,9 @@ import Header from "../components/Header"
 import BriefingFooter from "../components/BriefingFooter"
 
 const featured = [
-  { href: "/Rheumatoid-Arthritis", category: "Get started", title: "What is Rheumatoid Arthritis?", image: "/c1.jpg" },
-  { href: "/Rheumatoid-Arthritis", category: "Early signs", title: "Could morning stiffness be Rheumatoid Arthritis?", image: "/c2.jpg" },
-  { href: "/Rheumatoid-Arthritis", category: "Diagnosis", title: "How is Rheumatoid Arthritis diagnosed?", image: "/c1.jpg" },
+  { href: "/Rheumatoid-Arthritis", category: "Get started", title: "What is Rheumatoid Arthritis?", image: "/c1.webp" },
+  { href: "/Rheumatoid-Arthritis", category: "Early signs", title: "Could morning stiffness be Rheumatoid Arthritis?", image: "/c2.webp" },
+  { href: "/Rheumatoid-Arthritis", category: "Diagnosis", title: "How is Rheumatoid Arthritis diagnosed?", image: "/c1.webp" },
 ]
 
 const categoryLinks = [
@@ -19,9 +19,9 @@ const categoryLinks = [
 ]
 
 const videos = [
-  { image: "/content-thumbs/psa-video.png", title: "What is Rheumatoid Arthritis? Causes, Symptoms & When To See A Doctor" },
-  { image: "/content-thumbs/lupus-video.png", title: "Osteoarthritis vs Rheumatoid Arthritis — What's the difference?" },
-  { image: "/content-thumbs/fibromyalgia-video.png", title: "How to recognise rheumatic disease: Key warning signs" },
+  { image: "/content-thumbs/psa-video.webp", title: "What is Rheumatoid Arthritis? Causes, Symptoms & When To See A Doctor" },
+  { image: "/content-thumbs/lupus-video.webp", title: "Osteoarthritis vs Rheumatoid Arthritis — What's the difference?" },
+  { image: "/content-thumbs/fibromyalgia-video.webp", title: "How to recognise rheumatic disease: Key warning signs" },
 ]
 
 const subtypes = [
@@ -39,14 +39,14 @@ const subtypes = [
 ]
 
 const conditionCards = [
-  { name: "Rheumatoid Arthritis", image: "/condition/Rheumatoid Arthritis (RA).png", desc: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments.", href: "/Rheumatoid-Arthritis" },
-  { name: "Psoriatic Arthritis", image: "/condition/Psoriatic Arthritis.png", desc: "Where skin meets joints. Understanding the psoriasis-arthritis connection and targeted therapies.", href: "#" },
-  { name: "Osteoarthritis", image: "/condition/Osteoarthritis.png", desc: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain.", href: "#" },
-  { name: "Lupus", image: "/condition/Lupus.png", desc: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management.", href: "#" },
-  { name: "Gout", image: "/condition/Gout.png", desc: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies.", href: "#" },
-  { name: "Ankylosing Spondylitis", image: "/condition/Ankylosing Spondylitis (AS).png", desc: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture.", href: "#" },
-  { name: "Fibromyalgia", image: "/condition/Fibromyalgia.png", desc: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life.", href: "#" },
-  { name: "Back & Neck Pain", image: "/condition/back.png", desc: "Identifying whether spinal pain is mechanical or inflammatory is a critical distinction for treatment.", href: "#" },
+  { name: "Rheumatoid Arthritis", image: "/condition/Rheumatoid Arthritis (RA).webp", desc: "Autoimmune joint inflammation affecting 1.3M+ Americans. Learn about early diagnosis and modern treatments.", href: "/Rheumatoid-Arthritis" },
+  { name: "Psoriatic Arthritis", image: "/condition/Psoriatic Arthritis.webp", desc: "Where skin meets joints. Understanding the psoriasis-arthritis connection and targeted therapies.", href: "#" },
+  { name: "Osteoarthritis", image: "/condition/Osteoarthritis.webp", desc: "The most common form of arthritis. Evidence-based approaches to manage cartilage loss and pain.", href: "#" },
+  { name: "Lupus", image: "/condition/Lupus.webp", desc: "A complex autoimmune disease affecting multiple organ systems. Expert guidance for flare management.", href: "#" },
+  { name: "Gout", image: "/condition/Gout.webp", desc: "Caused by uric acid crystal deposits. Prevent flares with medication, diet, and lifestyle strategies.", href: "#" },
+  { name: "Ankylosing Spondylitis", image: "/condition/Ankylosing Spondylitis (AS).webp", desc: "Chronic spinal inflammation that can fuse vertebrae. Early treatment preserves mobility and posture.", href: "#" },
+  { name: "Fibromyalgia", image: "/condition/Fibromyalgia.webp", desc: "Widespread pain with fatigue and cognitive difficulties. Multi-modal treatment can restore quality of life.", href: "#" },
+  { name: "Back & Neck Pain", image: "/condition/back.webp", desc: "Identifying whether spinal pain is mechanical or inflammatory is a critical distinction for treatment.", href: "#" },
 ]
 
 function Conditions() {

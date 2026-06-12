@@ -9,7 +9,7 @@ function FocusDiagnostic() {
         <div className="lg:col-span-5 space-y-8">
           <div
             className="aspect-square w-full grayscale opacity-80 bg-cover bg-center"
-            style={{ backgroundImage: "url('/images/ultrasound.jpg')" }}
+            style={{ backgroundImage: "url('/images/ultrasound.webp')" }}
           />
           <p className="text-lg leading-relaxed text-slate-500">
             Advanced MSK ultrasound integration is no longer a diagnostic luxury. It has become a prerequisite for early intervention strategies that demonstrably reduce long-term disability claims.

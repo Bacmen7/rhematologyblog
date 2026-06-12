@@ -3,7 +3,7 @@ const specialists = [
     id: 1,
     name: "Dr. Raghavendra H",
     title: "Specialist Rheumatologist | 10+ Years of Experience",
-    image: "/raghav.png",
+    image: "/raghav.webp",
     qualification: "MBBS | MD (Internal Medicine) | DM (Rheumatology & Clinical Immunology)",
     experience: "13 Years",
     location: "Hebbal, Bengaluru",

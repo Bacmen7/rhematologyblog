@@ -22,7 +22,7 @@ function PatientStories() {
               <img
                 alt="Jonathan Wright"
                 className="w-16 h-16 rounded-full border-2 border-white object-cover"
-                src="/images/patient-sarah.jpg"
+                src="/images/patient-sarah.webp"
               />
               <div className="text-left">
                 <h5 className="font-bold text-xl">Jonathan Wright</h5>

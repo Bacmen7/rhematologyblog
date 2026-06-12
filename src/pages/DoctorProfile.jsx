@@ -46,9 +46,9 @@ function DoctorProfile() {
   ]
 
   const galleryImages = [
-    { src: "/d3.png", alt: "Dr. Raghavendra with patient" },
-    { src: "/d2.png", alt: "Doctor Portrait" },
-    { src: "/d1.png", alt: "Dr. Raghavendra H" },
+    { src: "/d3.webp", alt: "Dr. Raghavendra with patient" },
+    { src: "/d2.webp", alt: "Doctor Portrait" },
+    { src: "/d1.webp", alt: "Dr. Raghavendra H" },
   ]
 
   const changeGalleryImage = (direction) => {
@@ -94,7 +94,7 @@ function DoctorProfile() {
               <div className="hidden lg:block w-full max-w-[320px] shrink-0">
                 <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
                   <div className="relative w-full" style={{ height: "300px", background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
-                    <img src={doctor.image || "/docter.png"} alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                    <img src={doctor.image || "/docter.webp"} alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                   </div>
                 </div>
               </div>
@@ -198,7 +198,7 @@ function DoctorProfile() {
             <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
               <div className="flex items-center gap-4 p-4">
                 <div className="w-20 h-20 shrink-0 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
-                  <img src="/docter.png" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                  <img src="/docter.webp" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-[#0f616e] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
@@ -401,12 +401,12 @@ function DoctorProfile() {
                       bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
                     },
                     {
-                      name: "Trilife Hospital - Kalyan Nagar",
-                      area: "Kalyan Nagar, Bangalore",
+                      name: "Sri Durga Ortho & Neuro Clinic",
+                      area: "Rachenahalli, Bangalore",
                       rating: 4.0,
-                      address: "216, 7th Main, 80 Feet Road, 1st Block, HRBR Layout, Landmark: Near Om Shakti Temple, Bangalore",
+                      address: "No.42 And 25, 1st Floor, 80 Feet Road, Dr Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Bengaluru 560077",
                       timings: [
-                        { days: "Tue, Thu, Sat", time: "10:00 AM - 02:00 PM" },
+                        { days: "Mon - Sat", time: "04:00 PM - 07:00 PM" },
                       ],
                       fee: "₹1200",
                       bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
@@ -467,7 +467,7 @@ function DoctorProfile() {
                 <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
                   {/* Image with gradient bg */}
                   <div className="relative w-full" style={{ height: "280px", background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
-                    <img src="/docter.png" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                    <img src="/docter.webp" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                   </div>
                   {/* Info */}
                   <div className="p-5 sm:p-6">

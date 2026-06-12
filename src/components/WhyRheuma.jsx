@@ -3,35 +3,35 @@ import { useRef, useEffect, useCallback } from "react"
 const conditions = [
   {
     name: "Rheumatoid Arthritis",
-    image: "/rheumatic/RheumatoidArthritis.png",
+    image: "/rheumatic/RheumatoidArthritis.webp",
   },
   {
     name: "Psoriatic Arthritis",
-    image: "/rheumatic/Psoriatic_Arthritis.jpg",
+    image: "/rheumatic/Psoriatic_Arthritis.webp",
   },
   {
     name: "Lupus",
-    image: "/rheumatic/Lupus.png",
+    image: "/rheumatic/Lupus.webp",
   },
   {
     name: "Osteoarthritis",
-    image: "/rheumatic/joint_pain.png",
+    image: "/rheumatic/joint_pain.webp",
   },
   {
     name: "Gout",
-    image: "/rheumatic/Gout.png",
+    image: "/rheumatic/Gout.webp",
   },
   {
     name: "Spondylitis",
-    image: "/rheumatic/Spondylitis.png",
+    image: "/rheumatic/Spondylitis.webp",
   },
   {
     name: "Vasculitis",
-    image: "/rheumatic/Vasculitis.png",
+    image: "/rheumatic/Vasculitis.webp",
   },
   {
     name: "Undiagnosed",
-    image: "/rheumatic/Undiagoned.png",
+    image: "/rheumatic/Undiagoned.webp",
   },
 ]
 

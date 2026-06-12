@@ -87,8 +87,8 @@ function Arthritis() {
               </h1>
 
               <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
-                <img src="/raghav.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
-                <img src="/d1.png" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/raghav.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/d1.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
               </div>
 
               <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -131,7 +131,7 @@ function Arthritis() {
               </div>
               {/* Right -Image */}
               <div className="hidden lg:block">
-                <img src="/images/arthisites.jpg" alt="Arthritis overview" className="w-full h-[300px] object-cover" style={{ borderRadius: "12px" }} />
+                <img src="/images/arthisites.webp" alt="Arthritis overview" className="w-full h-[300px] object-cover" style={{ borderRadius: "12px" }} />
               </div>
             </div>
           </div>
@@ -197,10 +197,10 @@ function Arthritis() {
             {/* 4 square cards -carousel on mobile */}
             <div ref={typesRef} onScroll={handleTypesScroll} className="flex gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-hide sm:grid sm:grid-cols-2 md:grid-cols-4 sm:gap-5 sm:overflow-visible sm:pb-0">
               {[
-                { img: "/condition/Rheumatoid Arthritis (RA).png", label: "Rheumatoid Arthritis", abbr: "RA", link: "/Rheumatoid-Arthritis" },
-                { img: "/condition/Osteoarthritis.png", label: "Osteoarthritis", abbr: "OA", link: "/health-guide" },
-                { img: "/condition/Psoriatic Arthritis.png", label: "Psoriatic Arthritis", abbr: "PSA", link: "/health-guide" },
-                { img: "/condition/Ankylosing Spondylitis (AS).png", label: "Ankylosing Spondylitis", abbr: "AS", link: "/health-guide" },
+                { img: "/condition/Rheumatoid Arthritis (RA).webp", label: "Rheumatoid Arthritis", abbr: "RA", link: "/Rheumatoid-Arthritis" },
+                { img: "/condition/Osteoarthritis.webp", label: "Osteoarthritis", abbr: "OA", link: "/health-guide" },
+                { img: "/condition/Psoriatic Arthritis.webp", label: "Psoriatic Arthritis", abbr: "PSA", link: "/health-guide" },
+                { img: "/condition/Ankylosing Spondylitis (AS).webp", label: "Ankylosing Spondylitis", abbr: "AS", link: "/health-guide" },
               ].map((type, i) => (
                 <Link
                   key={i}
@@ -313,7 +313,7 @@ function Arthritis() {
 
               {/* Left -Joint Diagram (sticky) */}
               <div className="flex-1 mb-12 lg:mb-0 lg:sticky lg:top-[140px] self-start">
-                <img src="/images/joints.jpg" alt="Healthy Joint vs Inflamed Joint" className="w-full object-cover" style={{ borderRadius: 0 }} />
+                <img src="/images/joints.webp" alt="Healthy Joint vs Inflamed Joint" className="w-full object-cover" style={{ borderRadius: 0 }} />
               </div>
 
               {/* Right -3 Steps */}
@@ -486,7 +486,7 @@ function Arthritis() {
                   items: ["Total Knee Replacement", "Total Hip Replacement", "Synovectomy", "Arthroscopy", "Spinal Fusion -end-stage AS"],
                   note: "Reserved as a last resort -only after all medical options are exhausted.",
                   color: "#fd956a",
-                  img: "/images/hero-doctor.jpg",
+                  img: "/images/hero-doctor.webp",
                 },
                 {
                   icon: "fitness_center",
@@ -571,7 +571,7 @@ function Arthritis() {
               {/* Photo side */}
               <div className="relative h-[260px] lg:h-auto overflow-hidden">
                 <img
-                  src="/images/exercise.jpg"
+                  src="/images/exercise.webp"
                   alt="Person exercising actively"
                   className="w-full h-full object-cover"
                 />
@@ -848,7 +848,7 @@ function Arthritis() {
               {/* Featured card */}
               <div className="rounded-2xl border border-[#e8ecf2] overflow-hidden">
                 <div className="relative h-[320px] overflow-hidden">
-                  <img src="/images/lab-test.jpg" alt="" className="w-full h-full object-cover" />
+                  <img src="/images/lab-test.webp" alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,97,110,.8)] to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-1.5">
@@ -875,10 +875,10 @@ function Arthritis() {
               {/* List cards */}
               <div className="flex flex-col gap-3">
                 {[
-                  { img: "/images/medication.jpg", cat: "Medications", title: "Starting Methotrexate -What Every Patient Must Know", time: "8 min read" },
-                  { img: "/images/joints.jpg", cat: "Patient Guide", title: "RA vs Osteoarthritis -How to Tell the Difference", time: "6 min read" },
-                  { img: "/images/exercise.jpg", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
-                  { img: "/images/diet.jpg", cat: "Lifestyle", title: "Diet & Inflammation -What to Eat With Arthritis", time: "5 min read" },
+                  { img: "/images/medication.webp", cat: "Medications", title: "Starting Methotrexate -What Every Patient Must Know", time: "8 min read" },
+                  { img: "/images/joints.webp", cat: "Patient Guide", title: "RA vs Osteoarthritis -How to Tell the Difference", time: "6 min read" },
+                  { img: "/images/exercise.webp", cat: "Physiotherapy", title: "Best Exercises for Ankylosing Spondylitis", time: "7 min read" },
+                  { img: "/images/diet.webp", cat: "Lifestyle", title: "Diet & Inflammation -What to Eat With Arthritis", time: "5 min read" },
                 ].map((art, i) => (
                   <div key={i} className="flex gap-4 p-4 rounded-2xl border border-[#e8ecf2] bg-white cursor-pointer items-center hover:border-primary transition-colors">
                     <img src={art.img} alt="" className="w-[72px] h-[72px] rounded-[10px] object-cover shrink-0" />
@@ -985,7 +985,7 @@ function Arthritis() {
                 </div>
                 <div className="flex-1 relative min-h-[200px] md:min-h-[250px]">
                   <img
-                    src="/images/hero-consult.jpg"
+                    src="/images/hero-consult.webp"
                     alt="Doctor consulting with patient"
                     className="w-full block rounded-[4px] absolute bottom-0"
                     style={{ height: "clamp(300px, 50vw, 520px)", objectFit: "cover", objectPosition: "center 20%" }}

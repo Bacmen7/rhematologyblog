@@ -12,22 +12,22 @@ const diagnosisSteps = [
   {
     title: "Symptom review",
     desc: "Which joints, how long, morning stiffness, family history",
-    img: "/treatmnetguide/joint.png",
+    img: "/treatmnetguide/joint.webp",
   },
   {
     title: "Physical examination",
     desc: "Joint count, swelling, tenderness, range of motion",
-    img: "/treatmnetguide/knee.png",
+    img: "/treatmnetguide/knee.webp",
   },
   {
     title: "Blood tests",
     desc: "RF, Anti-CCP, CRP, ESR, ANA -inflammation and antibody markers",
-    img: "/treatmnetguide/blood_test.png",
+    img: "/treatmnetguide/blood_test.webp",
   },
   {
     title: "Imaging",
     desc: "X-ray, MRI, or ultrasound -to see joint damage and inflammation",
-    img: "/treatmnetguide/xray.png",
+    img: "/treatmnetguide/xray.webp",
   },
 ]
 
@@ -35,17 +35,17 @@ const treatmentCards = [
   {
     title: "Medications",
     desc: "Pain relief, disease-modifying drugs, biologic therapies, and JAK inhibitors -the foundation of treatment for most rheumatic conditions.",
-    img: "/treatmnetguide/blog1.png",
+    img: "/treatmnetguide/blog1.webp",
   },
   {
     title: "Injections & Procedures",
     desc: "Corticosteroid injections, hyaluronic acid, and joint aspiration -fast, localised relief delivered directly to the affected joint.",
-    img: "/treatmnetguide/blog2.png",
+    img: "/treatmnetguide/blog2.webp",
   },
   {
     title: "Surgery",
     desc: "Joint replacement, synovectomy, and spinal surgery -considered only when all other treatments have not provided enough relief.",
-    img: "/treatmnetguide/blog3.png",
+    img: "/treatmnetguide/blog3.webp",
   },
 ]
 
@@ -460,7 +460,7 @@ function TreatmentGuides() {
               style={{ borderRadius: "10px" }}
             >
               <div className="h-56 overflow-hidden">
-                <img src="/treatmnetguide/v1.png" alt="Treatment journey" className="w-full h-full object-cover object-top" />
+                <img src="/treatmnetguide/v1.webp" alt="Treatment journey" className="w-full h-full object-cover object-top" />
               </div>
               <div className="p-6">
                 <h3

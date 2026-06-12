@@ -116,7 +116,7 @@ function App() {
 
         {/* <StrategicNetwork /> */}
 
-        <CtaBanner />
+        <CtaBanner spacerColor="#F5F5F5" />
 
         <div className="pt-6 md:pt-10 bg-white">
           <Newsletter />

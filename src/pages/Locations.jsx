@@ -30,12 +30,12 @@ const locations = [
     bookingUrl: "https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/info",
   },
   {
-    name: "Trilife Hospital - Kalyan Nagar",
-    area: "Kalyan Nagar, Bangalore",
-    address: "216, 7th Main, 80 Feet Road, 1st Block, HRBR Layout, Landmark: Near Om Shakti Temple, Bangalore",
-    phone: "+91 80 4444 6666",
+    name: "Sri Durga Ortho & Neuro Clinic",
+    area: "Rachenahalli, Bangalore",
+    address: "No.42 And 25, 1st Floor, 80 Feet Road, Dr Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Bengaluru 560077",
+    phone: "+91 99804 45660",
     timings: [
-      { days: "Tue, Thu, Sat", time: "10:00 AM – 02:00 PM" },
+      { days: "Mon – Sat", time: "04:00 PM – 07:00 PM" },
     ],
     fee: "₹1200",
     doctor: "Dr. Raghavendra H",
