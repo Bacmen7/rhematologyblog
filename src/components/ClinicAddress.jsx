@@ -24,7 +24,7 @@ function ClinicAddress() {
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(15, 97, 110, 0.82)" }} />
       </div>
 
-      <div style={{ position: "relative", zIndex: 1, width: "100%", display: "flex", flexDirection: "row", gap: "0", alignItems: "stretch" }}>
+      <div className="clinic-address-layout" style={{ position: "relative", zIndex: 1, width: "100%" }}>
 
         {/* Left: Addresses */}
         <div style={{ flex: "1 1 0", padding: "3rem 2rem 3rem 3rem" }}>
@@ -32,9 +32,9 @@ function ClinicAddress() {
             Our Addresses
           </h2>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0" }}>
+          <div className="clinic-locations-grid">
             {locations.map((loc, i) => (
-              <div key={i} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "10px", padding: "0 24px", borderRight: i < locations.length - 1 ? "1px solid rgba(255,255,255,0.25)" : "none" }}>
+              <div key={i} className={i < locations.length - 1 ? "clinic-location-divider" : ""} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "10px", padding: "0 24px", borderRight: i < locations.length - 1 ? "1px solid rgba(255,255,255,0.25)" : "none" }}>
                 {/* Pin icon */}
                 <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.15)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   {loc.isVideo ? (
@@ -68,7 +68,7 @@ function ClinicAddress() {
         </div>
 
         {/* Right: Book Consultation Form */}
-        <div style={{ flex: "0 0 420px", backgroundColor: "#fff", borderRadius: "0", padding: "2.25rem 2.5rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "2rem 2rem 2rem 0" }}>
+        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "0", padding: "2.25rem 2.5rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "2rem 2rem 2rem 0" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, color: "#0f616e", marginBottom: "1.5rem", textAlign: "center" }}>
             Book Your Consultation
           </h3>

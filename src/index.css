@@ -115,3 +115,141 @@ p {
   color: var(--color-navy-muted);
 }
 
+/* ── HeroNew responsive ── */
+.hero-image-panel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 32%;
+  height: 100%;
+  z-index: 0;
+}
+.hero-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 400px 32%;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .hero-image-panel {
+    display: none;
+  }
+  .hero-content-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .hero-spacer {
+    display: none;
+  }
+  .hero-heading {
+    font-size: 1.9rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* ── HeroStats responsive ── */
+.hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 768px) {
+  .hero-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+}
+
+/* ── WhyChooseCards responsive ── */
+.why-choose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .why-choose-section {
+    padding: 2rem 1rem !important;
+  }
+  .why-choose-card {
+    padding: 1.5rem !important;
+    min-height: unset !important;
+  }
+  .why-choose-heading {
+    white-space: normal !important;
+    font-size: 1.15rem !important;
+  }
+}
+
+/* ── TreatmentOfferings responsive ── */
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .treatment-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  .treatment-section {
+    padding: 4rem 1.25rem 3rem !important;
+  }
+}
+
+/* ── ComparisonTable responsive ── */
+.comparison-table-row,
+.comparison-table-header {
+  display: grid;
+  grid-template-columns: 1fr 160px 160px;
+}
+@media (max-width: 640px) {
+  .comparison-table-row,
+  .comparison-table-header {
+    grid-template-columns: 1fr 80px 80px;
+  }
+  .comparison-icon-cell {
+    padding: 12px 8px !important;
+  }
+}
+
+/* ── ClinicAddress responsive ── */
+.clinic-address-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: stretch;
+}
+.clinic-locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.clinic-form-panel {
+  flex: 0 0 420px;
+}
+@media (max-width: 900px) {
+  .clinic-address-layout {
+    flex-direction: column;
+  }
+  .clinic-form-panel {
+    flex: none;
+    width: auto;
+    margin: 0 1rem 1rem !important;
+  }
+  .clinic-locations-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .clinic-location-divider {
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    padding-bottom: 24px !important;
+  }
+}
+

@@ -22,7 +22,7 @@ function ComparisonTable() {
         <div style={{ width: "100%", borderRadius: "16px", overflow: "hidden", border: "1px solid #e2e8f0" }}>
 
           {/* Header row */}
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 160px 160px", backgroundColor: "#f8fafc" }}>
+          <div className="comparison-table-header" style={{ backgroundColor: "#f8fafc" }}>
             <div style={{ padding: "16px 20px", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#0f2044" }}>
               Advantages
             </div>
@@ -38,15 +38,16 @@ function ComparisonTable() {
           {rows.map((row, i) => (
             <div
               key={i}
-              style={{ display: "grid", gridTemplateColumns: "1fr 160px 160px", borderTop: "1px solid #e2e8f0", backgroundColor: i % 2 === 0 ? "#fff" : "#fafcff" }}
+              className="comparison-table-row"
+              style={{ borderTop: "1px solid #e2e8f0", backgroundColor: i % 2 === 0 ? "#fff" : "#fafcff" }}
             >
               <div style={{ padding: "16px 20px", fontFamily: "var(--font-base)", fontSize: "15px", fontWeight: 500, color: "#333" }}>
                 {row}
               </div>
-              <div style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
+              <div className="comparison-icon-cell" style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
                 <img src="/right_icon.webp" alt="Yes" width="32" height="32" style={{ display: "inline-block" }} />
               </div>
-              <div style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
+              <div className="comparison-icon-cell" style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
                 <img src="/wrong_icon.webp" alt="No" width="32" height="32" style={{ display: "inline-block" }} />
               </div>
             </div>

@@ -13,7 +13,7 @@ function HeroNew() {
     <section style={{ backgroundColor: "#eef3fb", position: "relative", overflow: "hidden" }}>
 
       {/* RIGHT: image edge-to-edge */}
-      <div style={{ position: "absolute", right: 0, top: 0, width: "32%", height: "100%", zIndex: 0 }}>
+      <div className="hero-image-panel">
         <img
           src="/herodadi.png"
           alt="Happy patient"
@@ -28,7 +28,7 @@ function HeroNew() {
 
         {/* TOP: centered heading + subheading */}
         <div style={{ textAlign: "center", marginBottom: "2rem", paddingRight: "0" }}>
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.5px", color: "#0f616e", margin: 0 }}>
+          <h1 className="hero-heading" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.8rem, 3.4vw, 2.8rem)", fontWeight: 700, lineHeight: 1.15, letterSpacing: "-0.5px", color: "#0f616e", margin: 0 }}>
             No. 1 Clinic for Advanced Rheumatology<br />
             &amp; Autoimmune Care in Bengaluru
           </h1>
@@ -38,7 +38,7 @@ function HeroNew() {
         </div>
 
         {/* BOTTOM ROW: bullets left | form center | spacer right */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 400px 32%", gap: "32px", alignItems: "start" }}>
+        <div className="hero-content-grid">
 
           {/* LEFT: bullets full width with dividers */}
           <div>
@@ -102,7 +102,7 @@ function HeroNew() {
           </div>
 
           {/* SPACER for image */}
-          <div />
+          <div className="hero-spacer" />
 
         </div>
       </div>

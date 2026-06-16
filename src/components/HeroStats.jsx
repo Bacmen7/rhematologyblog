@@ -8,7 +8,7 @@ const stats = [
 function HeroStats() {
   return (
     <section style={{ backgroundColor: "#0f616e", padding: "3rem 1rem" }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "16px" }}>
+      <div className="hero-stats-grid" style={{ maxWidth: "1280px", margin: "0 auto", gap: "16px" }}>
         {stats.map((s, i) => (
           <div
             key={i}

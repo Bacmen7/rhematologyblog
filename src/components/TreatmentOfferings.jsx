@@ -25,7 +25,7 @@ const treatments = [
 
 function TreatmentOfferings() {
   return (
-    <section style={{ backgroundColor: "#f8f9fb", padding: "7rem 1.5rem 5rem" }}>
+    <section className="treatment-section" style={{ backgroundColor: "#f8f9fb", padding: "7rem 1.5rem 5rem" }}>
       <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
 
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
@@ -37,7 +37,7 @@ function TreatmentOfferings() {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "32px" }} className="treatment-grid">
+        <div className="treatment-grid">
           {treatments.map((t, i) => (
             <div key={i} style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "16px" }}>
               <div style={{ width: "72px", height: "72px", borderRadius: "50%", backgroundColor: "#e0f3f5", display: "flex", alignItems: "center", justifyContent: "center" }}>
