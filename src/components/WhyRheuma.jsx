@@ -98,7 +98,7 @@ function WhyRheuma() {
       <div className="block md:hidden">
         <div className="px-5 pt-12 pb-8 text-center">
           <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "2.25rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "16px" }}>
-            Expert care for all rheumatic symptoms and conditions
+            Our Specialities In Rheumatology
           </h2>
           <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
             From osteoarthritis to complex autoimmune disorders, we diagnose and treat{" "}
@@ -125,9 +125,7 @@ function WhyRheuma() {
         {/* Header -centered */}
         <div className="max-w-7xl mx-auto px-6 text-center" style={{ marginBottom: "3.5rem" }}>
           <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
-            Expert care for all rheumatic
-            <br />
-            symptoms and conditions
+            Our Specialities In Rheumatology
           </h2>
           <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", maxWidth: "600px", margin: "0 auto" }}>
             From osteoarthritis to complex autoimmune disorders, we diagnose and treat{" "}

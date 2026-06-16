@@ -10,6 +10,7 @@ import PsAArticles from "./components/PsAArticles"
 import Specialists from "./components/Specialists"
 import WhyRheumaCare from "./components/WhyRheumaCare"
 import DrProfile from "./components/DrProfile"
+import TreatmentOfferings from "./components/TreatmentOfferings"
 import MeetDoctors from "./components/MeetDoctors"
 import Testimonials from "./components/Testimonials"
 import CTASection from "./components/CTASection"
@@ -71,7 +72,7 @@ function App() {
         {/* ═══════════════════════════════════════════════
             ZONE 2 -HEALTH GUIDE & CONDITIONS
         ═══════════════════════════════════════════════ */}
-        <HealthGuideHero />
+        {/* <HealthGuideHero /> */}
         {/* <QuickLinks /> */}
 
         {/* <div className="bg-white">
@@ -85,9 +86,10 @@ function App() {
         {/* ═══════════════════════════════════════════════
             ZONE 3 -CLINICAL EXPERTISE & SPECIALISTS
         ═══════════════════════════════════════════════ */}
+        <TreatmentOfferings />
         <ApproachSection />
 
-        <Specialists />
+        {/* <Specialists /> */}
 
         <Testimonials />
 
