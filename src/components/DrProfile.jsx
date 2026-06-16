@@ -55,13 +55,13 @@ function DrProfile() {
           </p>
 
           <p style={{ margin: 0, fontSize: "15px", fontWeight: 700, color: "#fff", lineHeight: 1.5 }}>
-            DM Rheumatology Gold Medalist — Specialist in Joint, Bone &amp; Autoimmune Conditions with 13+ Years of Experience.
+            DM Rheumatology Gold Medalist- Specialist in Joint, Bone &amp; Autoimmune Conditions with 13+ Years of Experience.
           </p>
 
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "8px" }}>
             <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#fff" }}>
               <Check size={15} strokeWidth={3} style={{ color: "#fff", flexShrink: 0 }} />
-              Gold Medalist in DM Rheumatology &amp; Clinical Immunology — TN MGR University
+              Gold Medalist in DM Rheumatology &amp; Clinical Immunology- TN MGR University
             </li>
             <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#fff" }}>
               <Check size={15} strokeWidth={3} style={{ color: "#fff", flexShrink: 0 }} />

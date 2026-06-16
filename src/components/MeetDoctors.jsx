@@ -60,7 +60,7 @@ function MeetDoctors() {
             <ul className="space-y-2 mb-6">
               <li className="flex items-start gap-2 text-[14px] text-white/90">
                 <Check size={16} strokeWidth={3} className="mt-0.5 shrink-0 text-[#e86531]" />
-                Gold Medalist in DM Rheumatology &amp; Clinical Immunology — TN MGR University
+                Gold Medalist in DM Rheumatology &amp; Clinical Immunology- TN MGR University
               </li>
               <li className="flex items-start gap-2 text-[14px] text-white/90">
                 <Check size={16} strokeWidth={3} className="mt-0.5 shrink-0 text-[#e86531]" />

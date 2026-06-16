@@ -30,13 +30,13 @@ function WhyRheumaCare() {
           {/* Left: Text + bullets + CTA */}
           <div style={{ flex: "1 1 340px", minWidth: "0" }}>
             <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#444", marginBottom: "1rem" }}>
-              RheumaCare is one of the very few DM-qualified rheumatology practices in Karnataka — a specialist who works exclusively on joint, bone, and autoimmune conditions. This is not general medicine. Every diagnosis, every treatment plan, and every follow-up is built around your specific condition and how it affects your daily life.
+              RheumaCare is one of the very few DM-qualified rheumatology practices in Karnataka- a specialist who works exclusively on joint, bone, and autoimmune conditions. This is not general medicine. Every diagnosis, every treatment plan, and every follow-up is built around your specific condition and how it affects your daily life.
             </p>
             <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#444", marginBottom: "1rem" }}>
               Too many patients spend years moving from one general physician to another, managing symptoms with painkillers, never getting a clear answer. At RheumaCare, that cycle ends with your very first visit.
             </p>
             <p style={{ fontSize: "15px", lineHeight: 1.75, color: "#444", marginBottom: "1.5rem" }}>
-              Patients leave with clarity — a real diagnosis, a treatment plan that works, and the confidence that someone truly understands what they are going through.
+              Patients leave with clarity- a real diagnosis, a treatment plan that works, and the confidence that someone truly understands what they are going through.
             </p>
 
             {/* Bullets */}

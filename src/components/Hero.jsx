@@ -140,7 +140,7 @@ function Hero() {
             </Link>
           </div>
 
-          {/* Desktop View Primary Text — hide on slide 0 */}
+          {/* Desktop View Primary Text- hide on slide 0 */}
           {currentSlide !== 0 && (
             <div className="hidden lg:block w-full max-w-[580px] lg:mt-16 xl:mt-20 relative z-20 lg:mr-4 xl:mr-8 pr-4">
               <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "20px", lineHeight: 1.6 }}>
