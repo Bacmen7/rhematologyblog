@@ -1,0 +1,72 @@
+import { Link } from "react-router-dom"
+
+const rows = [
+  "DM-Qualified Rheumatology Specialist",
+  "Accurate Diagnosis in First Visit",
+  "Biologic & Biosimilar Therapies",
+  "Personalised Treatment Plans",
+  "Affordable Generic Medicines",
+  "1-on-1 Care by Senior Doctor",
+]
+
+function ComparisonTable() {
+  return (
+    <section style={{ backgroundColor: "#fff", padding: "4rem 1.5rem" }}>
+      <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, color: "#0f616e", textAlign: "center", marginBottom: "2.5rem", letterSpacing: "-0.8px", lineHeight: 1.1 }}>
+          Why Choose Omni RheumaCare?
+        </h2>
+
+        {/* Table */}
+        <div style={{ width: "100%", borderRadius: "16px", overflow: "hidden", border: "1px solid #e2e8f0" }}>
+
+          {/* Header row */}
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 160px 160px", backgroundColor: "#f8fafc" }}>
+            <div style={{ padding: "16px 20px", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#0f2044" }}>
+              Advantages
+            </div>
+            <div style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#0f616e", backgroundColor: "#e8f4f8" }}>
+              Omni RheumaCare
+            </div>
+            <div style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#666" }}>
+              Other Clinics / Hospitals
+            </div>
+          </div>
+
+          {/* Data rows */}
+          {rows.map((row, i) => (
+            <div
+              key={i}
+              style={{ display: "grid", gridTemplateColumns: "1fr 160px 160px", borderTop: "1px solid #e2e8f0", backgroundColor: i % 2 === 0 ? "#fff" : "#fafcff" }}
+            >
+              <div style={{ padding: "16px 20px", fontFamily: "var(--font-base)", fontSize: "15px", fontWeight: 500, color: "#333" }}>
+                {row}
+              </div>
+              <div style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
+                <img src="/right_icon.webp" alt="Yes" width="32" height="32" style={{ display: "inline-block" }} />
+              </div>
+              <div style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
+                <img src="/wrong_icon.webp" alt="No" width="32" height="32" style={{ display: "inline-block" }} />
+              </div>
+            </div>
+          ))}
+
+        </div>
+
+        {/* CTA */}
+        <div style={{ textAlign: "center", marginTop: "2rem" }}>
+          <Link
+            to="/book-appointment"
+            style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 40px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none", fontFamily: "var(--font-base)" }}
+          >
+            Book Consultation
+          </Link>
+        </div>
+
+      </div>
+    </section>
+  )
+}
+
+export default ComparisonTable

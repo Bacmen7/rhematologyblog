@@ -1,5 +1,9 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+import HeroNew from "./components/HeroNew"
+import HeroStats from "./components/HeroStats"
+import WhyChooseCards from "./components/WhyChooseCards"
+import ComparisonTable from "./components/ComparisonTable"
 import HealthGuideHero from "./components/HealthGuideHero"
 import ApproachSection from "./components/ApproachSection"
 import CategoryFilters from "./components/CategoryFilters"
@@ -33,6 +37,7 @@ import CtaBanner from "./components/CtaBanner"
 import BriefingFooter from "./components/BriefingFooter"
 import PrivacyBanner from "./components/PrivacyBanner"
 import GoogleReviews from "./components/GoogleReviews"
+import ClinicAddress from "./components/ClinicAddress"
 import SpecializedCare from "./components/SpecializedCare"
 import SymptomQuiz from "./components/SymptomQuiz"
 import SuccessStories from "./components/SuccessStories"
@@ -46,8 +51,12 @@ function App() {
         {/* ═══════════════════════════════════════════════
             ZONE 1 -INTRO & DISCOVERY
         ═══════════════════════════════════════════════ */}
-        <Hero />
-        <StatsBar />
+        {/* <Hero /> */}
+        <HeroNew />
+        <HeroStats />
+        <WhyChooseCards />
+        <ComparisonTable />
+        {/* <StatsBar /> */}
         <WhyRheumaCare />
         <DrProfile />
         {/* <PatientControl /> */}
@@ -115,11 +124,13 @@ function App() {
           <ExploreTopics />
         </div> */}
 
-        <FAQ />
+        <ClinicAddress />
 
         {/* <WellnessSeminars /> */}
 
         {/* <StrategicNetwork /> */}
+
+        <FAQ />
 
         <CtaBanner spacerColor="#F5F5F5" />
 

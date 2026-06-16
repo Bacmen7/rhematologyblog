@@ -17,12 +17,12 @@ function WhyRheumaCare() {
   const [playing, setPlaying] = useState(false)
 
   return (
-    <section style={{ backgroundColor: "#fff", padding: "5rem 1.5rem" }}>
+    <section style={{ backgroundColor: "#f5f5f5", padding: "5rem 1.5rem" }}>
       <div style={{ maxWidth: "1140px", margin: "0 auto" }}>
 
         {/* Heading centered */}
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, color: "#0f616e", textAlign: "left", marginBottom: "2.5rem", letterSpacing: "-0.8px", lineHeight: 1.1 }}>
-          Why Omni RheumaCare Is The Best Choice For Your Joint Health?
+          Still Living With Joint Pain? Here's Why Patients Choose Omni RheumaCare.
         </h2>
 
         <div style={{ display: "flex", flexDirection: "row", gap: "48px", alignItems: "flex-start", flexWrap: "wrap" }}>
