@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Check } from "lucide-react"
 
 const emphasisWordStyle = {
   fontWeight: 700,
@@ -15,10 +15,17 @@ const slides = [
     id: 0,
     heading: (
       <>
-        Struggling with Pain in Your <span style={emphasisWordStyle}>Joints</span>, <span style={emphasisWordStyle}>Bones</span>, or <span style={emphasisWordStyle}>Muscles</span>?
+        No. 1 Clinic for Advanced <span style={emphasisWordStyle}>Rheumatology</span> &amp; <span style={emphasisWordStyle}>Autoimmune</span> Care in Bengaluru
       </>
     ),
     image: "/images/hero-slide-1.webp",
+    bullets: [
+      "1500+ Successful Patient Outcomes",
+      "Treating RA, Gout & Ankylosing Spondylitis",
+      "DMARDs, Biologic & Joint Injection Therapies",
+      "Most Advanced Rheumatology Treatments",
+      "Minimally Invasive Joint Procedures",
+    ],
   },
   {
     id: 1,
@@ -75,8 +82,8 @@ function Hero() {
           {/* Left Side: Headings & Button */}
           <div className="flex flex-col items-start max-w-3xl w-full pt-2 lg:pt-4">
 
-            {/* Fixed Height Text Container */}
-            <div className="relative w-full h-[150px] sm:h-[180px] md:h-[280px] lg:h-[340px] max-w-[900px]">
+            {/* Text Container */}
+            <div className="relative w-full min-h-[150px] sm:min-h-[180px] md:min-h-[280px] lg:min-h-[340px] max-w-[600px]">
               {slides.map((slide, index) => (
                 <div
                   key={`text-${slide.id}`}
@@ -86,9 +93,25 @@ function Hero() {
                       : "opacity-0 translate-y-6 pointer-events-none"
                   }`}
                 >
-                  <h1 style={{ color: "#ffffff", fontWeight: 300, letterSpacing: "-0.5px", fontFamily: "var(--font-display)" }} className="text-[2.5rem] leading-[1.2] sm:text-5xl md:text-[4.2rem] lg:text-[4.8rem] md:leading-[1.1] tracking-tight">
+                  <h1
+                    style={{ color: "#ffffff", fontWeight: 300, letterSpacing: "-0.5px", fontFamily: "var(--font-display)" }}
+                    className={slide.bullets
+                      ? "text-[1.6rem] leading-[1.2] sm:text-[1.9rem] md:text-[2.4rem] lg:text-[2.8rem] md:leading-[1.15] tracking-tight"
+                      : "text-[2.5rem] leading-[1.2] sm:text-5xl md:text-[4.2rem] lg:text-[4.8rem] md:leading-[1.1] tracking-tight"
+                    }
+                  >
                     {slide.heading}
                   </h1>
+                  {slide.bullets && (
+                    <ul className="mt-4 space-y-2">
+                      {slide.bullets.map((b, i) => (
+                        <li key={i} className="flex items-center gap-2 text-white text-[13px] sm:text-[14px] md:text-[15px]">
+                          <Check size={15} strokeWidth={3} className="shrink-0" style={{ color: "#e86531" }} />
+                          {b}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               ))}
             </div>
@@ -117,12 +140,14 @@ function Hero() {
             </Link>
           </div>
 
-          {/* Desktop View Primary Text */}
-          <div className="hidden lg:block w-full max-w-[580px] lg:mt-16 xl:mt-20 relative z-20 lg:mr-4 xl:mr-8 pr-4">
-            <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "20px", lineHeight: 1.6 }}>
-              Diagnosed with Rheumatoid Arthritis, Osteoarthritis, or Musculoskeletal Pain? Consult a Rheumatologist Today for Expert Care and Lasting Relief.
-            </p>
-          </div>
+          {/* Desktop View Primary Text — hide on slide 0 */}
+          {currentSlide !== 0 && (
+            <div className="hidden lg:block w-full max-w-[580px] lg:mt-16 xl:mt-20 relative z-20 lg:mr-4 xl:mr-8 pr-4">
+              <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "20px", lineHeight: 1.6 }}>
+                Diagnosed with Rheumatoid Arthritis, Osteoarthritis, or Musculoskeletal Pain? Consult a Rheumatologist Today for Expert Care and Lasting Relief.
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Right Edge: Image Section */}

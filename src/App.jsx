@@ -8,6 +8,9 @@ import FeaturedInsights from "./components/FeaturedInsights"
 import RAArticles from "./components/RAArticles"
 import PsAArticles from "./components/PsAArticles"
 import Specialists from "./components/Specialists"
+import WhyRheumaCare from "./components/WhyRheumaCare"
+import DrProfile from "./components/DrProfile"
+import MeetDoctors from "./components/MeetDoctors"
 import Testimonials from "./components/Testimonials"
 import CTASection from "./components/CTASection"
 import StatsBar from "./components/StatsBar"
@@ -44,6 +47,8 @@ function App() {
         ═══════════════════════════════════════════════ */}
         <Hero />
         <StatsBar />
+        <WhyRheumaCare />
+        <DrProfile />
         {/* <PatientControl /> */}
 
         {/* <InsurancePartners /> */}
@@ -108,9 +113,7 @@ function App() {
           <ExploreTopics />
         </div> */}
 
-        {/* <div className="bg-ghost">
-          <FAQ />
-        </div> */}
+        <FAQ />
 
         {/* <WellnessSeminars /> */}
 

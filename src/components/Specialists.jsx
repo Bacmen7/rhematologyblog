@@ -19,46 +19,40 @@ function Specialists() {
 
         {/* Single Doctor Card */}
         <div className="max-w-[320px] sm:max-w-[360px] mx-auto">
-          <SpecialistCard doc={doc} />
+          <div className="flex flex-col">
+            {/* Image */}
+            <Link to={`/specialist/${doc.id}`} className="block overflow-hidden bg-[#e0f3f5]">
+              <img
+                src={doc.image}
+                alt={doc.name}
+                className="w-full h-[300px] sm:h-[340px] object-cover object-top transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </Link>
+
+            {/* Info */}
+            <div style={{ paddingTop: "1rem" }}>
+              <Link to={`/specialist/${doc.id}`} className="inline-block">
+                <h3 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, lineHeight: 1.25, marginBottom: "0.25rem" }}>
+                  {doc.name}
+                </h3>
+              </Link>
+              <p className="text-[13px]" style={{ color: "#5e5e5e", marginBottom: "0.75rem" }}>Rheumatologist</p>
+              <Link
+                to={`/specialist/${doc.id}`}
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
+                style={{ color: "#0f616e" }}
+              >
+                Read bio
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-  )
-}
-
-function SpecialistCard({ doc }) {
-  return (
-    <div className="flex flex-col">
-      {/* Image */}
-      <Link to={`/specialist/${doc.id}`} className="block overflow-hidden bg-[#e0f3f5]" style={{ borderRadius: "0" }}>
-        <img
-          src={doc.image}
-          alt={doc.name}
-          className="w-full h-[300px] sm:h-[340px] object-cover object-top transition-transform duration-300 hover:scale-[1.02]"
-        />
-      </Link>
-
-      {/* Info */}
-      <div style={{ paddingTop: "1rem" }}>
-        <Link to={`/specialist/${doc.id}`} className="inline-block">
-          <h3 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, lineHeight: 1.25, marginBottom: "0.25rem" }}>
-            {doc.name}
-          </h3>
-        </Link>
-        <p className="text-[13px]" style={{ color: "#5e5e5e", marginBottom: "0.75rem" }}>Rheumatologist</p>
-        <Link
-          to={`/specialist/${doc.id}`}
-          className="inline-flex items-center gap-1.5 text-[13px] font-semibold underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
-          style={{ color: "#0f616e" }}
-        >
-          Read bio
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M7 17L17 7" />
-            <path d="M7 7h10v10" />
-          </svg>
-        </Link>
-      </div>
-    </div>
   )
 }
 
