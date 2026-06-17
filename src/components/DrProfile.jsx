@@ -61,8 +61,8 @@ function DrProfile() {
 
           <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
             {["DM Rheumatology Gold Medalist", "Specialist in Joint, Bone & Autoimmune Conditions", "14 Years of Clinical Experience"].map((item, i) => (
-              <li key={i} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "15px", fontWeight: 700, color: "#fff" }}>
-                <Check size={15} strokeWidth={3} style={{ color: "#1AA3B5", flexShrink: 0 }} />
+              <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "8px", fontSize: "15px", fontWeight: 700, color: "#fff" }}>
+                <Check size={15} strokeWidth={3} style={{ color: "#1AA3B5", flexShrink: 0, marginTop: "3px" }} />
                 {item}
               </li>
             ))}
@@ -84,12 +84,13 @@ function DrProfile() {
 
           {/* CTAs */}
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "28px" }}>
-            <Link
-              to="/book-appointment"
-              style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 36px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}
+            <a
+              href="#book-consultation"
+              onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
+              style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 36px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none", cursor: "pointer" }}
             >
               Book Consultation Now
-            </Link>
+            </a>
             <Link
               to="/specialist/1"
               style={{ display: "inline-block", backgroundColor: "transparent", color: "#fff", padding: "14px 36px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none", border: "2px solid rgba(255,255,255,0.7)" }}

@@ -4,7 +4,6 @@ const bullets = [
   "Rheumatoid Arthritis, Gout, Lupus, Ankylosing Spondylitis and more",
   "1500+ patients treated successfully",
   "Advanced therapies for joint health and overall wellbeing",
-  "One-on-one consultation with Dr. Raghavendra H",
 ]
 
 const conditions = [
@@ -94,17 +93,19 @@ function HeroV2() {
           </ul>
 
           {/* CTAs */}
-          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "16px", flexWrap: "wrap", marginTop: "1.5rem" }}>
-            <Link
-              to="/book-appointment"
+          <div className="hero-cta-row" style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "12px", flexWrap: "nowrap", marginTop: "1.5rem" }}>
+            <a
+              href="#book-consultation"
+              onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
               style={{
-                display: "inline-flex", alignItems: "center", gap: "8px",
+                display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "8px",
                 backgroundColor: "#e86531", color: "#fff",
                 padding: "13px 24px", borderRadius: "100px",
                 fontWeight: 700, fontSize: "14px",
                 textDecoration: "none",
                 fontFamily: "'usual', system-ui, sans-serif",
                 whiteSpace: "nowrap",
+                cursor: "pointer",
               }}
             >
               Book a Consultation
@@ -112,14 +113,14 @@ function HeroV2() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </Link>
+            </a>
             <a
-              href="tel:+91XXXXXXXXXX"
+              href="tel:+919980445660"
               style={{
-                display: "inline-flex", alignItems: "center", gap: "8px",
-                color: "#0f616e", padding: "12px 20px",
+                display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px",
+                color: "#0f616e", padding: "13px 24px",
                 borderRadius: "100px",
-                fontWeight: 700, fontSize: "13.5px",
+                fontWeight: 700, fontSize: "14px",
                 textDecoration: "none",
                 fontFamily: "'usual', system-ui, sans-serif",
                 whiteSpace: "nowrap",
@@ -129,7 +130,7 @@ function HeroV2() {
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e86531" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.51a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
               </svg>
-              +91 XXXXX XXXXX
+              +91 99804 45660
             </a>
           </div>
 

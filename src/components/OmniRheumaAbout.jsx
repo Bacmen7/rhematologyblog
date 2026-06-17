@@ -79,26 +79,28 @@ function OmniRheumaAbout() {
           </blockquote>
 
           <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.75, color: "#555", marginBottom: "1rem" }}>
-            In India, most people suffering from joint pain are older adults with limited access to specialist care. They spend years on painkillers prescribed by general physicians, never reaching a rheumatologist who can identify the real cause.
+            Most people with joint pain spend years on painkillers, never reaching a rheumatologist who can find the actual cause.
           </p>
-          <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.75, color: "#555", marginBottom: "1rem" }}>
-            We connect patients directly to qualified rheumatologists across India. No long referral chains, no months-long waiting periods. Whether you are newly diagnosed, dealing with a flare, or want a second opinion on a diagnosis you have been living with for years, we get you to the right specialist faster.
-          </p>
-          <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.75, color: "#555", marginBottom: "1rem" }}>
-            We are not here to manage symptoms. We are here to find the cause, treat it precisely, and support you through every step of recovery.
+          <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.75, color: "#555", marginBottom: "1.5rem" }}>
+            We connect you directly to the right specialist. No referral chains, no long waits.
           </p>
           <p style={{ fontFamily: "var(--font-base)", fontSize: "15px", lineHeight: 1.75, color: "#555", marginBottom: "1.5rem" }}>
             Find a rheumatologist near you today.
           </p>
-          <a href="/book-appointment" style={{
-            display: "inline-block",
-            backgroundColor: "#e86531", color: "#fff",
-            padding: "13px 32px", borderRadius: "50px",
-            fontWeight: 700, fontSize: "15px",
-            textDecoration: "none",
-            fontFamily: "var(--font-base)",
-          }}>
-            Book your consultation on Omni Rheuma
+          <a
+            href="#book-consultation"
+            onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
+            style={{
+              display: "inline-block",
+              backgroundColor: "#e86531", color: "#fff",
+              padding: "13px 32px", borderRadius: "50px",
+              fontWeight: 700, fontSize: "15px",
+              textDecoration: "none",
+              fontFamily: "var(--font-base)",
+              cursor: "pointer",
+            }}
+          >
+            Book Appointment
           </a>
         </div>
 

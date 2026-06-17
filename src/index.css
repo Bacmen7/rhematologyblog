@@ -158,7 +158,11 @@ p {
   }
   .hero-stats-grid > div {
     border-right: none !important;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-bottom: none !important;
+  }
+  .hero-stats-grid > div:nth-child(1),
+  .hero-stats-grid > div:nth-child(2) {
+    border-bottom: 1px solid rgba(255,255,255,0.2) !important;
   }
 }
 
@@ -206,6 +210,8 @@ p {
 @media (max-width: 640px) {
   .hide-mobile { display: none; }
   .show-mobile { display: inline; }
+  .hero-cta-row { flex-direction: column !important; align-items: stretch !important; }
+  .hero-cta-row a { text-align: center; }
 }
 
 /* ── ComparisonTable responsive ── */
@@ -263,7 +269,8 @@ p {
   .clinic-form-panel {
     flex: none;
     width: auto;
-    margin: 0 1rem 1rem !important;
+    margin: 1rem 1rem 0 !important;
+    order: -1;
   }
   .clinic-locations-grid {
     grid-template-columns: 1fr;
@@ -292,8 +299,12 @@ p {
     align-items: center !important;
     max-width: 100% !important;
   }
+  .dr-profile-content ul {
+    align-self: flex-start;
+    text-align: left;
+  }
   .dr-profile-content ul li {
-    justify-content: center;
+    justify-content: flex-start;
   }
   .dr-profile-content > div:last-child {
     justify-content: center;

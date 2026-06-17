@@ -2,12 +2,12 @@ import { Link } from "react-router-dom"
 
 const locations = [
   {
-    name: "Indiranagar, Bengaluru",
-    address: "Omni RheumaCare Clinic, CMH Road, Indiranagar, Bengaluru - 560038",
+    name: "Sri Durga Ortho & Neuro Clinic",
+    address: "No.42 And 25, 1st Floor, 80 Feet Road, Dr Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Bengaluru - 560077",
   },
   {
-    name: "Koramangala, Bengaluru",
-    address: "Omni RheumaCare, 80 Feet Road, Koramangala, Bengaluru - 560034",
+    name: "Consulting Hours",
+    address: "Mon – Sat, 4:00 PM – 7:00 PM",
   },
   {
     name: "Video Consultation",
@@ -18,7 +18,7 @@ const locations = [
 
 function ClinicAddress() {
   return (
-    <section style={{ position: "relative", overflow: "hidden" }}>
+    <section id="book-consultation" style={{ position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
         <img src="/h1.webp" alt="" aria-hidden="true" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(15, 97, 110, 0.82)" }} />
@@ -62,7 +62,7 @@ function ClinicAddress() {
           <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
             <p style={{ fontWeight: 700, fontSize: "22px", color: "#fff", marginBottom: "6px", fontFamily: "var(--font-display)" }}>Get in touch</p>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", fontFamily: "var(--font-base)" }}>
-              +91 98450 00000 &nbsp;|&nbsp; contact@omnirheuma.com
+              +91 99804 45660 &nbsp;|&nbsp; contact@omnirheuma.com
             </p>
           </div>
         </div>
@@ -89,12 +89,12 @@ function ClinicAddress() {
               rows={4}
               style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", resize: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
             />
-            <Link
-              to="/book-appointment"
-              style={{ display: "block", textAlign: "center", backgroundColor: "#e86531", color: "#fff", padding: "14px", borderRadius: "8px", fontWeight: 700, fontSize: "15px", textDecoration: "none", marginTop: "4px" }}
+            <button
+              type="submit"
+              style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: "#e86531", color: "#fff", padding: "14px", borderRadius: "8px", fontWeight: 700, fontSize: "15px", border: "none", marginTop: "4px", cursor: "pointer", fontFamily: "var(--font-base)" }}
             >
               Book Your Appointment Now
-            </Link>
+            </button>
             <p style={{ textAlign: "center", fontSize: "12px", color: "rgba(255,255,255,0.5)", margin: 0, fontFamily: "var(--font-base)" }}>
               We call back within 24 hours · No spam
             </p>

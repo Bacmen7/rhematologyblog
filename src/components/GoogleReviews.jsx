@@ -225,7 +225,7 @@ function GoogleReviews() {
             {reviewsData.map((review) => (
               <div
                 key={review.id}
-                className="w-[280px] min-w-[280px] sm:w-[320px] sm:min-w-[320px] lg:w-[340px] lg:min-w-[340px] flex-shrink-0"
+                className="w-[85vw] min-w-[85vw] sm:w-[320px] sm:min-w-[320px] lg:w-[340px] lg:min-w-[340px] flex-shrink-0"
                 style={{ scrollSnapAlign: "start" }}
               >
                 <ReviewCard review={review} />

@@ -16,7 +16,7 @@ function ComparisonTable() {
       <div className="comparison-wrapper" style={{ maxWidth: "860px", margin: "0 auto" }}>
 
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, color: "#0f616e", textAlign: "center", marginBottom: "2.5rem", letterSpacing: "-0.8px", lineHeight: 1.1 }}>
-          Why Choose Omni RheumaCare?
+          Why Choose Omni Rheuma?
         </h2>
 
         {/* Table */}
@@ -60,12 +60,13 @@ function ComparisonTable() {
 
         {/* CTA */}
         <div style={{ textAlign: "center", marginTop: "2rem" }}>
-          <Link
-            to="/book-appointment"
-            style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 40px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none", fontFamily: "var(--font-base)" }}
+          <a
+            href="#book-consultation"
+            onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
+            style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 40px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none", fontFamily: "var(--font-base)", cursor: "pointer" }}
           >
             Book Consultation
-          </Link>
+          </a>
         </div>
 
       </div>
