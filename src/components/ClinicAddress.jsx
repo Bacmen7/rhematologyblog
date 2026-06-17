@@ -84,8 +84,24 @@ function ClinicAddress() {
               placeholder="Phone"
               style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
             />
+            <div style={{ position: "relative" }}>
+              <select style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#888", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff", appearance: "none" }}>
+                <option value="">Select Condition</option>
+                <option>Rheumatoid Arthritis</option>
+                <option>Gout</option>
+                <option>Lupus</option>
+                <option>Ankylosing Spondylitis</option>
+                <option>Psoriatic Arthritis</option>
+                <option>Osteoarthritis</option>
+                <option>Fibromyalgia</option>
+                <option>Other</option>
+              </select>
+              <svg style={{ position: "absolute", right: "14px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }} width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </div>
             <textarea
-              placeholder="Post Your Problems"
+              placeholder="Post Your Problem (optional)"
               rows={4}
               style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", resize: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
             />
@@ -95,6 +111,9 @@ function ClinicAddress() {
             >
               Book Your Appointment Now
             </Link>
+            <p style={{ textAlign: "center", fontSize: "12px", color: "rgba(255,255,255,0.5)", margin: 0, fontFamily: "var(--font-base)" }}>
+              We call back within 2 hours · No spam
+            </p>
           </form>
         </div>
 

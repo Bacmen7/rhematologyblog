@@ -3,10 +3,11 @@ import { Link } from "react-router-dom"
 const rows = [
   "DM-Qualified Rheumatology Specialist",
   "Accurate Diagnosis in First Visit",
-  "Biologic & Biosimilar Therapies",
+  "Advanced Therapies",
   "Personalised Treatment Plans",
-  "Affordable Generic Medicines",
   "1-on-1 Care by Senior Doctor",
+  "Between Clinic Visits Patient Care",
+  "Customized Diet Plans for Your Rheumatology",
 ]
 
 function ComparisonTable() {

@@ -96,7 +96,9 @@ function WhyRheumaCare() {
           </div>
 
         </div>
-      </div>
+
+
+</div>
     </section>
   )
 }

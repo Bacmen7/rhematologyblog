@@ -2,12 +2,12 @@ const stats = [
   { number: "1500+", label: "Patients Treated" },
   { number: "90%+", label: "Relief in 10 Weeks" },
   { number: "14+", label: "Years of Expertise" },
-  { number: "6", label: "Research Publications" },
+  { number: "4.5", label: "Google Rating" },
 ]
 
 function HeroStats() {
   return (
-    <section style={{ backgroundColor: "#0f616e", padding: "3rem 1rem" }}>
+    <section style={{ backgroundColor: "#0f616e", padding: "1.5rem 1rem" }}>
       <div className="hero-stats-grid" style={{ maxWidth: "1280px", margin: "0 auto", gap: "16px" }}>
         {stats.map((s, i) => (
           <div

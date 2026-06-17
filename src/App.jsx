@@ -1,6 +1,7 @@
 import Header from "./components/Header"
 import Hero from "./components/Hero"
 import HeroNew from "./components/HeroNew"
+import HeroV2 from "./components/HeroV2"
 import HeroStats from "./components/HeroStats"
 import WhyChooseCards from "./components/WhyChooseCards"
 import ComparisonTable from "./components/ComparisonTable"
@@ -23,6 +24,7 @@ import InsurancePartners from "./components/InsurancePartners"
 import ConditionsGrid from "./components/ConditionsGrid"
 import PatientControl from "./components/PatientControl"
 import WhyRheuma from "./components/WhyRheuma"
+import OmniRheumaAbout from "./components/OmniRheumaAbout"
 
 import BriefingHero from "./components/BriefingHero"
 import FocusJAK from "./components/FocusJAK"
@@ -52,7 +54,8 @@ function App() {
             ZONE 1 -INTRO & DISCOVERY
         ═══════════════════════════════════════════════ */}
         {/* <Hero /> */}
-        <HeroNew />
+        {/* <HeroNew /> */}
+        <HeroV2 />
         <HeroStats />
         <WhyChooseCards />
         <ComparisonTable />
@@ -66,8 +69,9 @@ function App() {
 
         <WhyRheuma />
 
-        <SpecializedCare />
+        {/* <SpecializedCare /> */}
 
+        <OmniRheumaAbout />
         <SymptomQuiz />
 
         {/* <div className="bg-white">
@@ -95,12 +99,12 @@ function App() {
         {/* ═══════════════════════════════════════════════
             ZONE 3 -CLINICAL EXPERTISE & SPECIALISTS
         ═══════════════════════════════════════════════ */}
-        <TreatmentOfferings />
-        <ApproachSection />
+        {/* <TreatmentOfferings /> */}
+        {/* <ApproachSection /> */}
 
         {/* <Specialists /> */}
 
-        <Testimonials />
+        {/* <Testimonials /> */}
 
         <GoogleReviews />
 
@@ -124,24 +128,24 @@ function App() {
           <ExploreTopics />
         </div> */}
 
-        <ClinicAddress />
+        <FAQ />
 
         {/* <WellnessSeminars /> */}
 
         {/* <StrategicNetwork /> */}
 
-        <FAQ />
+        <ClinicAddress />
 
-        <CtaBanner spacerColor="#F5F5F5" />
+        {/* <CtaBanner spacerColor="#F5F5F5" /> */}
 
-        <div className="pt-6 md:pt-10 bg-white">
+        {/* <div className="pt-6 md:pt-10 bg-white">
           <Newsletter />
-        </div>
+        </div> */}
 
         {/* <CTASection /> */}
       </main>
 
-      <BriefingFooter />
+      {/* <BriefingFooter /> */}
       {/* <PrivacyBanner /> */}
     </div>
   )
