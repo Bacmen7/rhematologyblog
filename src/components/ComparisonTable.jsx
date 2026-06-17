@@ -28,7 +28,7 @@ function ComparisonTable() {
               Advantages
             </div>
             <div style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#0f616e", backgroundColor: "#e8f4f8" }}>
-              <span className="hide-mobile">Omni RheumaCare</span>
+              <span className="hide-mobile">Omni Rheuma</span>
               <span className="show-mobile">Omni</span>
             </div>
             <div style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#666" }}>
