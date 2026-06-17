@@ -148,6 +148,14 @@ function HeroV2() {
             </a>
           </div>
 
+          {/* Mobile image — shown only on mobile */}
+          <img
+            src="/herodadi.png"
+            alt="Patient"
+            className="md:hidden hero-v2-mobile-img"
+            style={{ maxHeight: "280px", objectFit: "cover", objectPosition: "center top", display: "block", marginTop: "1.5rem", marginBottom: "-1px" }}
+          />
+
         </div>
 
         {/* ── CENTER: full image ── */}
