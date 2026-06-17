@@ -115,7 +115,7 @@ function HeroV2() {
               </svg>
             </a>
             <a
-              href="tel:+919980445660"
+              href="tel:+918290638358"
               style={{
                 display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "6px",
                 color: "#0f616e", padding: "13px 24px",

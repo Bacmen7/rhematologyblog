@@ -199,26 +199,17 @@ function Header() {
             </span>
           </a>
 
-          {/* Mobile Book CTA */}
+          {/* Mobile Call Now CTA */}
           <a
-            href="#book-consultation"
-            onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
-            className="md:hidden inline-flex items-center gap-2 text-white pl-5 pr-4 py-2.5 rounded-full font-bold text-[14px] tracking-wide"
-            style={{ backgroundColor: "#e86531", cursor: "pointer" }}
-          >
-            Book Now
-          </a>
-
-          {/* Mobile Call icon (right of Book Now) */}
-          <a
-            href="tel:+919980445660"
-            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-full"
-            style={{ backgroundColor: "#e8f4f6" }}
+            href="tel:+918290638358"
+            className="md:hidden inline-flex items-center gap-2 text-white pl-4 pr-5 py-2.5 rounded-full font-bold text-[14px] tracking-wide"
+            style={{ backgroundColor: "#e86531" }}
             aria-label="Call us"
           >
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.51a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
             </svg>
+            Call Now
           </a>
         </div>
       </div>

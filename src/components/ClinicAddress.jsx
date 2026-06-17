@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const locations = [
   {
     name: "Sri Durga Ortho & Neuro Clinic",
-    address: "No.42 And 25, 1st Floor, 80 Feet Road, Dr Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Bengaluru - 560077",
+    address: "No. 42 & 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077",
   },
   {
     name: "Consulting Hours",
@@ -62,7 +62,7 @@ function ClinicAddress() {
           <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
             <p style={{ fontWeight: 700, fontSize: "22px", color: "#fff", marginBottom: "6px", fontFamily: "var(--font-display)" }}>Get in touch</p>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", fontFamily: "var(--font-base)" }}>
-              +91 99804 45660 &nbsp;|&nbsp; contact@omnirheuma.com
+              +91 82906 38358 &nbsp;|&nbsp; omnirheuma@gmail.com
             </p>
           </div>
         </div>

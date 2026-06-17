@@ -71,7 +71,7 @@ function App() {
 
         {/* <SpecializedCare /> */}
 
-        <OmniRheumaAbout />
+        {/* <OmniRheumaAbout /> */}
         <SymptomQuiz />
 
         {/* <div className="bg-white">
