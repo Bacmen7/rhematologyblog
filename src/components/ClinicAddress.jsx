@@ -2,12 +2,12 @@ import { Link } from "react-router-dom"
 
 const locations = [
   {
-    name: "Sri Durga Ortho & Neuro Clinic",
+    name: "",
     address: "No. 42 & 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077",
   },
   {
     name: "Consulting Hours",
-    address: "Mon – Sat, 4:00 PM – 7:00 PM",
+    address: "Mon – Sat, 9:00 AM – 9:00 PM",
   },
   {
     name: "Video Consultation",
