@@ -259,7 +259,7 @@ function HeroV2() {
               </button>
 
               <p style={{ textAlign: "center", fontSize: "11px", color: "rgba(255,255,255,0.35)", fontFamily: "'usual', system-ui, sans-serif", margin: "10px 0 0" }}>
-                We call back within 2 hours
+                We call back within 24 hours
               </p>
 
               <a href="https://wa.me/91XXXXXXXXXX" style={{

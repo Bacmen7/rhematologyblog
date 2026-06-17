@@ -172,11 +172,7 @@ function GoogleReviews() {
   }
 
   return (
-    <section className="bg-[#a0e2e4] py-20 md:py-28 custom-approach-section relative">
-      {/* Top wave */}
-      <svg className="absolute -top-[33px] left-0 w-full block" style={{ height: "34px" }} preserveAspectRatio="none" viewBox="0 0 1440 40" fill="none">
-        <path d="M0 40H1440V18C1200 38 960 38 720 18C480 -2 240 -2 0 18V40Z" fill="#a0e2e4" />
-      </svg>
+    <section className="bg-[#a0e2e4] py-20 md:py-28 custom-approach-section">
 
       <div className="max-w-7xl mx-auto px-6">
 

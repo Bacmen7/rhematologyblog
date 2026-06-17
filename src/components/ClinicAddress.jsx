@@ -96,7 +96,7 @@ function ClinicAddress() {
               Book Your Appointment Now
             </Link>
             <p style={{ textAlign: "center", fontSize: "12px", color: "rgba(255,255,255,0.5)", margin: 0, fontFamily: "var(--font-base)" }}>
-              We call back within 2 hours · No spam
+              We call back within 24 hours · No spam
             </p>
           </form>
         </div>
