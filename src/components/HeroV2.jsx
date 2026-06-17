@@ -94,7 +94,7 @@ function HeroV2() {
           </ul>
 
           {/* CTAs */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap", marginTop: "1.5rem" }}>
+          <div style={{ display: "flex", flexDirection: "row", alignItems: "center", gap: "16px", flexWrap: "wrap", marginTop: "1.5rem" }}>
             <Link
               to="/book-appointment"
               style={{

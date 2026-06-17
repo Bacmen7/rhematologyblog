@@ -76,12 +76,9 @@ function DrProfile() {
             <p style={{ margin: "0 0 16px", fontFamily: "var(--font-display)", fontSize: "16px", fontStyle: "italic", color: "rgba(255,255,255,0.92)", lineHeight: 1.7, paddingLeft: "8px" }}>
               "Most patients who come to me have spent years being told their pain is normal. It is not. Every joint condition has a name, a cause, and a treatment. My job is to find all three."
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-              <div style={{ width: "28px", height: "2px", backgroundColor: "#1AA3B5", borderRadius: "2px" }} />
-              <cite style={{ fontSize: "12px", fontWeight: 700, color: "#1AA3B5", letterSpacing: "0.5px", fontStyle: "normal", fontFamily: "var(--font-base)" }}>
-                Dr. Raghavendra H, DM Rheumatologist
-              </cite>
-            </div>
+            <cite style={{ fontSize: "12px", fontWeight: 700, color: "#1AA3B5", letterSpacing: "0.5px", fontStyle: "normal", fontFamily: "var(--font-base)" }}>
+              Dr. Raghavendra H, DM Rheumatologist
+            </cite>
           </div>
 
 
