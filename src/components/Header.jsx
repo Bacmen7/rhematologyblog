@@ -142,9 +142,8 @@ function Header() {
         </div>
 
         {/* ===== Center: Nav ===== */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
+        {/* <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <nav className="hidden md:flex items-center gap-1">
-            {/* What We Cover - Dropdown */}
             <button
               aria-expanded={whatWeCoverOpen}
               className={`relative inline-flex items-center gap-1 px-3.5 py-2 rounded-lg transition-all duration-200 ${
@@ -167,8 +166,6 @@ function Header() {
                 expand_more
               </span>
             </button>
-
-            {/* Regular nav links */}
             {desktopNav.map((item) => (
               <Link
                 key={item.label}
@@ -180,7 +177,7 @@ function Header() {
               </Link>
             ))}
           </nav>
-        </div>
+        </div> */}
 
         {/* ===== Right: Actions ===== */}
         <div className="flex items-center gap-2 md:gap-3">

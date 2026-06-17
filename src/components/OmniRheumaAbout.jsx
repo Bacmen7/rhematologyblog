@@ -37,7 +37,7 @@ const services = [
 function OmniRheumaAbout() {
   return (
     <section style={{ backgroundColor: "#fff", padding: "5rem 1.5rem" }}>
-      <div style={{
+      <div className="omni-about-grid" style={{
         maxWidth: "1140px", margin: "0 auto",
         display: "grid", gridTemplateColumns: "1.4fr 1fr",
         gap: "48px", alignItems: "center",

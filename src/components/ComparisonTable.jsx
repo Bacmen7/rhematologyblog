@@ -12,8 +12,8 @@ const rows = [
 
 function ComparisonTable() {
   return (
-    <section style={{ backgroundColor: "#fff", padding: "4rem 1.5rem" }}>
-      <div style={{ maxWidth: "860px", margin: "0 auto" }}>
+    <section className="comparison-section" style={{ backgroundColor: "#fff", padding: "4rem 1.5rem" }}>
+      <div className="comparison-wrapper" style={{ maxWidth: "860px", margin: "0 auto" }}>
 
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3.2rem)", fontWeight: 400, color: "#0f616e", textAlign: "center", marginBottom: "2.5rem", letterSpacing: "-0.8px", lineHeight: 1.1 }}>
           Why Choose Omni RheumaCare?
@@ -28,10 +28,12 @@ function ComparisonTable() {
               Advantages
             </div>
             <div style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#0f616e", backgroundColor: "#e8f4f8" }}>
-              Omni RheumaCare
+              <span className="hide-mobile">Omni RheumaCare</span>
+              <span className="show-mobile">Omni</span>
             </div>
             <div style={{ padding: "16px 20px", textAlign: "center", fontFamily: "var(--font-base)", fontSize: "16px", fontWeight: 700, color: "#666" }}>
-              Other Clinics / Hospitals
+              <span className="hide-mobile">Other Clinics / Hospitals</span>
+              <span className="show-mobile">Others</span>
             </div>
           </div>
 

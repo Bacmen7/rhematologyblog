@@ -108,9 +108,9 @@ function App() {
 
         <GoogleReviews />
 
-        <div className="bg-white">
+        {/* <div className="bg-white">
           <SuccessStories />
-        </div>
+        </div> */}
 
         {/* <VideoLibrary /> */}
 

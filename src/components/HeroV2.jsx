@@ -172,15 +172,11 @@ function HeroV2() {
             {/* Avatar */}
             <div style={{
               width: "52px", height: "52px", borderRadius: "50%",
-              backgroundColor: "rgba(255,255,255,0.15)",
-              border: "2px solid rgba(255,255,255,0.25)",
+              border: "2px solid rgba(255,255,255,0.4)",
               flexShrink: 0,
-              display: "flex", alignItems: "center", justifyContent: "center",
               overflow: "hidden",
             }}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
-              </svg>
+              <img src="/Drraghvendra.jpeg" alt="Dr. Raghavendra H" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top", display: "block" }} />
             </div>
             {/* Info */}
             <div>
