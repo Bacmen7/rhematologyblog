@@ -120,8 +120,9 @@ function SymptomQuiz() {
                   </p>
                   <div className="flex gap-3 justify-center">
                     <a
-                      href="/book-appointment"
-                      style={{ backgroundColor: "#e8fa6d", color: "#0f616e", padding: "12px 28px", borderRadius: "9999px", fontSize: "14px", fontWeight: 600, fontFamily: "var(--font-base)", textDecoration: "none" }}
+                      href="#book-consultation"
+                      onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
+                      style={{ backgroundColor: "#e8fa6d", color: "#0f616e", padding: "12px 28px", borderRadius: "9999px", fontSize: "14px", fontWeight: 600, fontFamily: "var(--font-base)", textDecoration: "none", cursor: "pointer" }}
                     >
                       Book Consultation
                     </a>
