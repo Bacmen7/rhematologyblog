@@ -27,8 +27,8 @@ function HeroV2() {
     const message = form[2].value
     const subject = encodeURIComponent("New Appointment Request - Omni Rheuma")
     const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nMessage: ${message || "—"}`)
-    window.location.href = `mailto:omnirheuma@gmail.com?subject=${subject}&body=${body}`
-    setSubmitted(true)
+    window.open(`mailto:omnirheuma@gmail.com?subject=${subject}&body=${body}`)
+    window.location.href = "/thank-you"
   }
 
   return (
