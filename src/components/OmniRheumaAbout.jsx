@@ -26,12 +26,6 @@ const services = [
     desc: "Built around your condition and life",
     svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>,
   },
-  {
-    title: "Affordable Care",
-    desc: "Generic medicines and PM-JAY accepted",
-    highlight: true,
-    svg: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#e86531" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>,
-  },
 ]
 
 function OmniRheumaAbout() {
@@ -129,7 +123,7 @@ function OmniRheumaAbout() {
                   flexShrink: 0,
                   width: "38px", height: "38px",
                   borderRadius: "10px",
-                  backgroundColor: s.highlight ? "rgba(232,101,49,0.08)" : "#eef6f8",
+                  backgroundColor: s.green ? "rgba(22,163,74,0.08)" : s.highlight ? "rgba(232,101,49,0.08)" : "#eef6f8",
                   display: "flex", alignItems: "center", justifyContent: "center",
                 }}>
                   {s.svg}
@@ -137,7 +131,7 @@ function OmniRheumaAbout() {
                 <div>
                   <p style={{
                     fontFamily: "var(--font-base)", fontSize: "14px", fontWeight: 700,
-                    color: s.highlight ? "#e86531" : "#0f2044", margin: "0 0 3px",
+                    color: s.green ? "#16a34a" : s.highlight ? "#e86531" : "#0f2044", margin: "0 0 3px",
                   }}>
                     {s.title}
                   </p>

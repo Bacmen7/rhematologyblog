@@ -231,23 +231,19 @@ function HeroV2() {
                 />
               ))}
 
-              <div style={{ position: "relative" }}>
-                <select style={{
+              <textarea
+                placeholder="Your Message (optional)"
+                rows={3}
+                style={{
                   width: "100%", padding: "12px 14px",
                   border: "none", borderRadius: "8px",
                   backgroundColor: "#fff",
-                  fontSize: "13px", color: "#888",
+                  fontSize: "13px", color: "#1a3a4a",
                   outline: "none", boxSizing: "border-box",
                   fontFamily: "'usual', system-ui, sans-serif",
-                  appearance: "none", cursor: "pointer",
-                }}>
-                  <option value="">Select Condition *</option>
-                  {conditions.map((c) => <option key={c}>{c}</option>)}
-                </select>
-                <svg style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", pointerEvents: "none" }} width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#888" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </div>
+                  resize: "none",
+                }}
+              />
 
               <button type="submit" style={{
                 width: "100%", padding: "14px",

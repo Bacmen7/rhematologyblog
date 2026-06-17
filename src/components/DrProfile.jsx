@@ -59,30 +59,31 @@ function DrProfile() {
             {doc.qualification}
           </p>
 
-          <p style={{ margin: 0, fontSize: "15px", fontWeight: 700, color: "#fff", lineHeight: 1.5 }}>
-            DM Rheumatology Gold Medalist &nbsp;·&nbsp; Specialist in Joint, Bone &amp; Autoimmune Conditions &nbsp;·&nbsp; 14 Years of Clinical Experience
-          </p>
+          <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "6px" }}>
+            {["DM Rheumatology Gold Medalist", "Specialist in Joint, Bone & Autoimmune Conditions", "14 Years of Clinical Experience"].map((item, i) => (
+              <li key={i} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "15px", fontWeight: 700, color: "#fff" }}>
+                <Check size={15} strokeWidth={3} style={{ color: "#1AA3B5", flexShrink: 0 }} />
+                {item}
+              </li>
+            ))}
+          </ul>
 
           {/* Quote */}
-          <blockquote style={{ margin: "8px 0 0", backgroundColor: "rgba(255,255,255,0.08)", borderRadius: "10px", padding: "18px 22px", borderLeft: "3px solid rgba(255,255,255,0.3)" }}>
-            <p style={{ margin: "0 0 10px", fontFamily: "var(--font-display)", fontSize: "15px", fontStyle: "italic", color: "rgba(255,255,255,0.9)", lineHeight: 1.65 }}>
+          <div style={{ margin: "8px 0 0", position: "relative", padding: "24px 28px 20px", backgroundColor: "rgba(255,255,255,0.06)", borderRadius: "14px" }}>
+            <svg style={{ position: "absolute", top: "16px", left: "20px", opacity: 0.2 }} width="32" height="32" viewBox="0 0 24 24" fill="#fff">
+              <path d="M11.192 15.757c0-.88-.23-1.618-.69-2.217-.326-.412-.768-.683-1.327-.812-.55-.128-1.07-.137-1.54-.028-.16-.95.1-1.95.78-3 .53-.81 1.24-1.48 2.13-2.01L9.44 6.44c-.87.5-1.63 1.14-2.28 1.92-.65.78-1.14 1.64-1.47 2.57-.33.93-.49 1.84-.49 2.74 0 1.39.37 2.48 1.1 3.27.74.8 1.7 1.2 2.88 1.2.98 0 1.77-.3 2.38-.9.61-.6.91-1.38.91-2.34zm7.68 0c0-.88-.23-1.618-.69-2.217-.326-.42-.77-.692-1.327-.817-.56-.124-1.074-.13-1.54-.022-.16-.95.1-1.95.78-3 .53-.81 1.24-1.48 2.13-2.01l-1.1-1.16c-.87.5-1.63 1.14-2.28 1.92-.65.78-1.14 1.64-1.47 2.57-.33.93-.49 1.84-.49 2.74 0 1.39.37 2.48 1.1 3.27.74.8 1.7 1.2 2.88 1.2.98 0 1.77-.3 2.38-.9.61-.6.91-1.38.91-2.34z"/>
+            </svg>
+            <p style={{ margin: "0 0 16px", fontFamily: "var(--font-display)", fontSize: "16px", fontStyle: "italic", color: "rgba(255,255,255,0.92)", lineHeight: 1.7, paddingLeft: "8px" }}>
               "Most patients who come to me have spent years being told their pain is normal. It is not. Every joint condition has a name, a cause, and a treatment. My job is to find all three."
             </p>
-            <cite style={{ fontSize: "11px", fontWeight: 700, color: "rgba(255,255,255,0.45)", letterSpacing: "1px", textTransform: "uppercase", fontStyle: "normal", fontFamily: "var(--font-base)" }}>
-              — Dr. Raghavendra H, DM Rheumatologist
-            </cite>
-          </blockquote>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <div style={{ width: "28px", height: "2px", backgroundColor: "#1AA3B5", borderRadius: "2px" }} />
+              <cite style={{ fontSize: "12px", fontWeight: 700, color: "#1AA3B5", letterSpacing: "0.5px", fontStyle: "normal", fontFamily: "var(--font-base)" }}>
+                Dr. Raghavendra H, DM Rheumatologist
+              </cite>
+            </div>
+          </div>
 
-          <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "8px" }}>
-            <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#fff" }}>
-              <Check size={15} strokeWidth={3} style={{ color: "#fff", flexShrink: 0 }} />
-              Gold Medalist in DM Rheumatology &amp; Clinical Immunology- TN MGR University
-            </li>
-            <li style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#fff" }}>
-              <Check size={15} strokeWidth={3} style={{ color: "#fff", flexShrink: 0 }} />
-              6 Peer-Reviewed Publications in International Rheumatology Journals
-            </li>
-          </ul>
 
           {/* CTAs */}
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "28px" }}>
