@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { useState } from "react"
 
 const locations = [
   {
@@ -17,6 +17,20 @@ const locations = [
 ]
 
 function ClinicAddress() {
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const form = e.target
+    const name = form[0].value
+    const phone = form[1].value
+    const message = form[2].value
+    const subject = encodeURIComponent("New Appointment Request - Omni Rheuma")
+    const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nMessage: ${message || "—"}`)
+    window.location.href = `mailto:omnirheuma@gmail.com?subject=${subject}&body=${body}`
+    setSubmitted(true)
+  }
+
   return (
     <section id="book-consultation" style={{ position: "relative", overflow: "hidden" }}>
       <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
@@ -73,32 +87,46 @@ function ClinicAddress() {
             Book Your Consultation
           </h3>
 
-          <form onSubmit={(e) => e.preventDefault()} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-            <input
-              type="text"
-              placeholder="Name"
-              style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
-            />
-            <input
-              type="tel"
-              placeholder="Phone"
-              style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
-            />
-            <textarea
-              placeholder="Post Your Problem (optional)"
-              rows={4}
-              style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", resize: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
-            />
-            <button
-              type="submit"
-              style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: "#e86531", color: "#fff", padding: "14px", borderRadius: "8px", fontWeight: 700, fontSize: "15px", border: "none", marginTop: "4px", cursor: "pointer", fontFamily: "var(--font-base)" }}
-            >
-              Book Your Appointment Now
-            </button>
-            <p style={{ textAlign: "center", fontSize: "12px", color: "rgba(255,255,255,0.5)", margin: 0, fontFamily: "var(--font-base)" }}>
-              We call back within 24 hours · No spam
-            </p>
-          </form>
+          {submitted ? (
+            <div style={{ textAlign: "center", padding: "2rem 0" }}>
+              <div style={{ width: "56px", height: "56px", borderRadius: "50%", backgroundColor: "#e8f4f6", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 16px" }}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
+              <p style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 700, color: "#0f616e", margin: "0 0 8px" }}>Successfully Booked!</p>
+              <p style={{ fontFamily: "var(--font-base)", fontSize: "14px", color: "#666", margin: 0 }}>We'll call you back within 24 hours.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+              <input
+                type="text"
+                placeholder="Name"
+                required
+                style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
+              />
+              <input
+                type="tel"
+                placeholder="Phone"
+                required
+                style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
+              />
+              <textarea
+                placeholder="Post Your Problem (optional)"
+                rows={4}
+                style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", resize: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
+              />
+              <button
+                type="submit"
+                style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: "#e86531", color: "#fff", padding: "14px", borderRadius: "8px", fontWeight: 700, fontSize: "15px", border: "none", marginTop: "4px", cursor: "pointer", fontFamily: "var(--font-base)" }}
+              >
+                Book Appointment
+              </button>
+              <p style={{ textAlign: "center", fontSize: "12px", color: "#999", margin: 0, fontFamily: "var(--font-base)" }}>
+                We call back within 24 hours · No spam
+              </p>
+            </form>
+          )}
         </div>
 
       </div>

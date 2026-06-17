@@ -29,16 +29,7 @@ function DrProfile() {
     <section style={{ backgroundColor: "#0f616e", padding: "5% 5%" }}>
       <div className="dr-profile-wrapper" style={{ display: "flex", flexDirection: "row", gap: "60px", alignItems: "flex-start", maxWidth: "1140px", margin: "0 auto", flexWrap: "wrap" }}>
 
-        {/* Left: Photo */}
-        <div style={{ flex: "0 0 auto", width: "420px", marginRight: "40px" }} className="hidden md:block">
-          <img
-            src="/Drraghvendra.jpeg"
-            alt={doc.name}
-            style={{ width: "420px", display: "block", objectFit: "contain", maxWidth: "100%" }}
-          />
-        </div>
-
-        {/* Right: Content */}
+        {/* Left: Content */}
         <div className="dr-profile-content" style={{ flex: "1 1 0", minWidth: "0", maxWidth: "600px", color: "#ffffff", display: "flex", flexDirection: "column", gap: "12px" }}>
 
           {/* Eyebrow */}
@@ -103,6 +94,16 @@ function DrProfile() {
           </div>
 
         </div>
+
+        {/* Right: Photo */}
+        <div style={{ flex: "0 0 auto", width: "420px", marginLeft: "40px" }} className="hidden md:block">
+          <img
+            src="/Drraghvendra.jpeg"
+            alt={doc.name}
+            style={{ width: "420px", display: "block", objectFit: "contain", maxWidth: "100%" }}
+          />
+        </div>
+
       </div>
     </section>
   )
