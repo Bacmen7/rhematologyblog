@@ -32,14 +32,14 @@ function DrProfile() {
         {/* Left: Photo */}
         <div style={{ flex: "0 0 auto", width: "320px", marginRight: "40px" }} className="hidden md:block">
           <img
-            src={doc.image}
+            src="/Drraghvendra.jpeg"
             alt={doc.name}
             style={{ width: "320px", display: "block" }}
           />
         </div>
 
         {/* Right: Content */}
-        <div style={{ flex: "1 1 0", minWidth: "0", color: "#ffffff", display: "flex", flexDirection: "column", gap: "12px" }}>
+        <div style={{ flex: "1 1 0", minWidth: "0", maxWidth: "600px", color: "#ffffff", display: "flex", flexDirection: "column", gap: "12px" }}>
 
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 400, letterSpacing: "-0.5px", lineHeight: 1.1, margin: 0, color: "#fff" }}>
             {doc.name}
@@ -47,7 +47,7 @@ function DrProfile() {
 
           {/* Mobile photo */}
           <div className="block md:hidden">
-            <img src={doc.image} alt={doc.name} style={{ width: "100%", maxWidth: "320px", display: "block", margin: "8px 0" }} />
+            <img src="/Drraghvendra.jpeg" alt={doc.name} style={{ width: "100%", maxWidth: "320px", display: "block", margin: "8px 0" }} />
           </div>
 
           <p style={{ margin: 0, fontSize: "15px", fontWeight: 600, color: "#fff" }}>
@@ -69,40 +69,8 @@ function DrProfile() {
             </li>
           </ul>
 
-          {/* Stats */}
-          <div style={{ display: "flex", alignItems: "center", margin: "16px 0" }}>
-            {stats.map((s, i) => (
-              <>
-                <div key={i} style={{ flex: 1, textAlign: "center" }}>
-                  <div style={{ fontSize: "1.8rem", fontWeight: 700, color: "#fff", lineHeight: 1 }}>{s.number}</div>
-                  <div style={{ fontSize: "13px", color: "rgba(255,255,255,0.85)", marginTop: "4px", lineHeight: 1.3 }}>{s.label}</div>
-                </div>
-                {i < stats.length - 1 && (
-                  <div style={{ width: "1px", height: "48px", backgroundColor: "rgba(255,255,255,0.4)", flexShrink: 0 }} />
-                )}
-              </>
-            ))}
-          </div>
-
-          {/* Scope */}
-          <h3 style={{ margin: 0, fontSize: "1.1rem", fontWeight: 700, color: "#fff" }}>Scope Of Services</h3>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 32px" }}>
-            {scopeLeft.map((item, i) => (
-              <div key={`l${i}`} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#fff" }}>
-                <Check size={14} strokeWidth={3} style={{ color: "#fff", flexShrink: 0 }} />
-                {item}
-              </div>
-            ))}
-            {scopeRight.map((item, i) => (
-              <div key={`r${i}`} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", color: "#fff" }}>
-                <Check size={14} strokeWidth={3} style={{ color: "#fff", flexShrink: 0 }} />
-                {item}
-              </div>
-            ))}
-          </div>
-
           {/* CTAs */}
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "8px" }}>
+          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginTop: "28px" }}>
             <Link
               to="/book-appointment"
               style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 36px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none" }}

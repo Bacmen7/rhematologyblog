@@ -7,7 +7,7 @@ const stats = [
 
 function HeroStats() {
   return (
-    <section style={{ backgroundColor: "#0f616e", padding: "1.5rem 1rem" }}>
+    <section className="hero-stats-section" style={{ backgroundColor: "#0f616e", padding: "3rem 1rem" }}>
       <div className="hero-stats-grid" style={{ maxWidth: "1280px", margin: "0 auto", gap: "16px" }}>
         {stats.map((s, i) => (
           <div

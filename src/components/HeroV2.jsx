@@ -19,22 +19,24 @@ const conditions = [
 
 function HeroV2() {
   return (
-    <section style={{
+    <section className="hero-v2-section" style={{
       width: "100%",
       backgroundColor: "#e8f4f6",
       position: "relative",
       overflow: "hidden",
-      marginTop: "-88px",
+      display: "flex",
+      flexDirection: "column",
     }}>
       <div style={{
         display: "grid",
         gridTemplateColumns: "minmax(420px, 1fr) 1.1fr 400px",
         alignItems: "stretch",
+        minHeight: "520px",
       }}>
 
         {/* ── LEFT: content ── */}
         <div style={{
-          padding: "calc(88px + 0.5rem) 2.5rem 1.2rem clamp(1.5rem, 5vw, 4rem)",
+          padding: "3rem 2.5rem 3rem clamp(1.5rem, 5vw, 4rem)",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -67,7 +69,7 @@ function HeroV2() {
           </p>
 
           {/* Bullets */}
-          <ul style={{ listStyle: "none", margin: 0, padding: 0, display: "flex", flexDirection: "column", gap: "9px" }}>
+          <ul style={{ listStyle: "none", margin: "1.2rem 0", padding: 0, display: "flex", flexDirection: "column", gap: "14px" }}>
             {bullets.map((b, i) => (
               <li key={i} style={{
                 display: "flex", alignItems: "flex-start", gap: "10px",
@@ -91,36 +93,8 @@ function HeroV2() {
             ))}
           </ul>
 
-          {/* Rating pills */}
-          <div style={{
-            display: "inline-flex", alignItems: "center",
-            backgroundColor: "#fff", borderRadius: "100px",
-            padding: "7px 6px",
-            boxShadow: "0 1px 4px rgba(15,97,110,0.1)",
-            gap: "0",
-            alignSelf: "flex-start",
-          }}>
-            <div style={{ display: "flex", alignItems: "center", gap: "7px", padding: "0 12px" }}>
-              <div style={{ display: "flex", gap: "2px" }}>
-                {[...Array(5)].map((_, i) => (
-                  <svg key={i} width="11" height="11" viewBox="0 0 24 24" fill="#FCB900" stroke="#FCB900" strokeWidth="1" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                ))}
-              </div>
-              <span style={{ fontSize: "12px", fontWeight: 600, color: "#0f616e", fontFamily: "var(--font-base)", whiteSpace: "nowrap" }}>4.9 Google Rating</span>
-            </div>
-            <div style={{ width: "1px", height: "16px", backgroundColor: "#d0e8ec" }} />
-            <div style={{ display: "flex", alignItems: "center", gap: "7px", padding: "0 12px" }}>
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#1AA3B5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
-              </svg>
-              <span style={{ fontSize: "12px", fontWeight: 600, color: "#0f616e", fontFamily: "var(--font-base)", whiteSpace: "nowrap" }}>Manipal Hospitals, Bengaluru</span>
-            </div>
-          </div>
-
           {/* CTAs */}
-          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexWrap: "wrap", marginTop: "1rem" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap", marginTop: "1.5rem" }}>
             <Link
               to="/book-appointment"
               style={{
@@ -162,23 +136,25 @@ function HeroV2() {
         </div>
 
         {/* ── CENTER: full image ── */}
-        <div style={{ position: "relative", overflow: "hidden", backgroundColor: "#e8f4f6" }}>
-          <img
-            src="/herodadi.png"
-            alt="Patient"
-            style={{
+        <div style={{ overflow: "hidden", backgroundColor: "#e8f4f6", display: "flex" }}>
+          <div style={{ position: "relative", flex: 1 }}>
+            <img
+              src="/herodadi.png"
+              alt="Patient"
+              style={{
+                position: "absolute", inset: 0,
+                width: "100%", height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                display: "block",
+              }}
+            />
+            <div style={{
               position: "absolute", inset: 0,
-              width: "100%", height: "100%",
-              objectFit: "cover",
-              objectPosition: "center top",
-              display: "block",
-            }}
-          />
-          <div style={{
-            position: "absolute", inset: 0,
-            background: "linear-gradient(to right, #e8f4f6 0%, rgba(232,244,246,0.4) 12%, transparent 28%)",
-            pointerEvents: "none",
-          }} />
+              background: "linear-gradient(to right, #e8f4f6 0%, rgba(232,244,246,0.4) 12%, transparent 28%)",
+              pointerEvents: "none",
+            }} />
+          </div>
         </div>
 
         {/* ── RIGHT: form panel ── */}
@@ -187,37 +163,49 @@ function HeroV2() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          padding: "calc(88px + 1.5rem) 28px 2rem",
+          padding: "3rem 28px",
           gap: "24px",
         }}>
 
           {/* Doctor strip */}
-          <div>
-            <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "10px" }}>
-              <img
-                src="/drrag.png"
-                alt="Dr. Raghavendra H"
-                onError={(e) => { e.target.style.display = "none"; e.target.nextSibling.style.display = "flex"; }}
-                style={{ width: "48px", height: "48px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, border: "2px solid rgba(255,255,255,0.2)" }}
-              />
-              <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.1)", border: "2px solid rgba(255,255,255,0.2)", flexShrink: 0, alignItems: "center", justifyContent: "center", display: "none" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
-                </svg>
-              </div>
-              <div>
-                <div style={{ fontSize: "15px", fontWeight: 700, color: "#fff", fontFamily: "var(--font-display)", lineHeight: 1.2 }}>Dr. Raghavendra H</div>
-                <div style={{ fontSize: "11.5px", color: "rgba(255,255,255,0.6)", fontFamily: "var(--font-base)", marginTop: "2px" }}>DM Rheumatology · Gold Medallist</div>
-              </div>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
+            {/* Avatar */}
+            <div style={{
+              width: "52px", height: "52px", borderRadius: "50%",
+              backgroundColor: "rgba(255,255,255,0.15)",
+              border: "2px solid rgba(255,255,255,0.25)",
+              flexShrink: 0,
+              display: "flex", alignItems: "center", justifyContent: "center",
+              overflow: "hidden",
+            }}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" />
+              </svg>
             </div>
-            <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <span style={{ backgroundColor: "rgba(232,101,49,0.85)", color: "#fff", fontSize: "10px", fontWeight: 700, padding: "3px 10px", borderRadius: "4px", fontFamily: "var(--font-base)", letterSpacing: "0.5px" }}>Rheumatologist</span>
-              <span style={{ display: "flex", alignItems: "center", gap: "4px", color: "rgba(255,255,255,0.8)", fontSize: "11px", fontFamily: "var(--font-base)", fontWeight: 600 }}>
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="#FCB900" stroke="#FCB900" strokeWidth="1" strokeLinejoin="round">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                </svg>
-                4.9
-              </span>
+            {/* Info */}
+            <div>
+              <div style={{ fontSize: "14px", fontWeight: 700, color: "#fff", fontFamily: "var(--font-base)", lineHeight: 1.3 }}>Dr. Raghavendra H</div>
+              <div style={{ fontSize: "11px", color: "rgba(255,255,255,0.55)", fontFamily: "var(--font-base)", marginBottom: "7px" }}>DM Rheumatology · Gold Medallist</div>
+              <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+                <span style={{
+                  backgroundColor: "#e86531", color: "#fff",
+                  fontSize: "10px", fontWeight: 700,
+                  padding: "3px 10px", borderRadius: "100px",
+                  fontFamily: "var(--font-base)", letterSpacing: "0.3px",
+                }}>DM Rheumatologist</span>
+                <span style={{
+                  display: "flex", alignItems: "center", gap: "4px",
+                  backgroundColor: "rgba(255,255,255,0.12)",
+                  borderRadius: "100px", padding: "3px 8px",
+                  fontSize: "10.5px", fontWeight: 600,
+                  color: "#fff", fontFamily: "var(--font-base)",
+                }}>
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="#FCB900" stroke="#FCB900" strokeWidth="1" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  4.9
+                </span>
+              </div>
             </div>
           </div>
 

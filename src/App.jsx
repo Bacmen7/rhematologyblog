@@ -57,10 +57,10 @@ function App() {
         {/* <HeroNew /> */}
         <HeroV2 />
         <HeroStats />
-        <WhyChooseCards />
+        {/* <WhyChooseCards /> */}
         <ComparisonTable />
         {/* <StatsBar /> */}
-        <WhyRheumaCare />
+        {/* <WhyRheumaCare /> */}
         <DrProfile />
         {/* <PatientControl /> */}
 
@@ -112,7 +112,7 @@ function App() {
           <SuccessStories />
         </div>
 
-        <VideoLibrary />
+        {/* <VideoLibrary /> */}
 
         {/* ═══════════════════════════════════════════════
             ZONE 4 -EXECUTIVE BRIEFING & RESEARCH
