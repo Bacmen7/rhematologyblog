@@ -83,7 +83,7 @@ function DrProfile() {
               onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
               style={{ display: "inline-block", backgroundColor: "#e86531", color: "#fff", padding: "14px 36px", borderRadius: "50px", fontWeight: 700, fontSize: "15px", textDecoration: "none", cursor: "pointer" }}
             >
-              Book Consultation Now
+              Ask a Specialist
             </a>
             <Link
               to="/specialist/1"

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 const bullets = [
   "Rheumatoid Arthritis, Gout, Lupus, Ankylosing Spondylitis and more",
@@ -16,18 +16,30 @@ const conditions = [
   "Osteoarthritis",
 ]
 
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUDPYes__c1Zt8e_DM7Q5kgdiBIfFfPLrTr8MouZa1je8uGW8LgO6j83uE0qO_3RU0/exec"
+
 function HeroV2() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const nameRef = useRef(null)
+  const phoneRef = useRef(null)
+  const messageRef = useRef(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const form = e.target
-    const name = form[0].value
-    const phone = form[1].value
-    const message = form[2].value
-    const subject = encodeURIComponent("New Appointment Request - Omni Rheuma")
-    const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nMessage: ${message || "—"}`)
-    window.open(`mailto:omnirheuma@gmail.com?subject=${subject}&body=${body}`)
+    if (loading) return
+    setLoading(true)
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          name: nameRef.current?.value || "",
+          phone: phoneRef.current?.value || "",
+          message: messageRef.current?.value || "",
+          source: "hero-form",
+        }),
+      })
+    } catch (_) {}
     window.location.href = "/thank-you"
   }
 
@@ -249,24 +261,37 @@ function HeroV2() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                {["Full Name *", "Mobile Number *"].map((ph, i) => (
-                  <input
-                    key={i}
-                    type={i === 1 ? "tel" : "text"}
-                    placeholder={ph}
-                    required
-                    style={{
-                      width: "100%", padding: "12px 14px",
-                      border: "none", borderRadius: "8px",
-                      backgroundColor: "#fff",
-                      fontSize: "13px", color: "#1a3a4a",
-                      outline: "none", boxSizing: "border-box",
-                      fontFamily: "'usual', system-ui, sans-serif",
-                    }}
-                  />
-                ))}
+                <input
+                  ref={nameRef}
+                  type="text"
+                  placeholder="Full Name *"
+                  required
+                  style={{
+                    width: "100%", padding: "12px 14px",
+                    border: "none", borderRadius: "8px",
+                    backgroundColor: "#fff",
+                    fontSize: "13px", color: "#1a3a4a",
+                    outline: "none", boxSizing: "border-box",
+                    fontFamily: "'usual', system-ui, sans-serif",
+                  }}
+                />
+                <input
+                  ref={phoneRef}
+                  type="tel"
+                  placeholder="Mobile Number *"
+                  required
+                  style={{
+                    width: "100%", padding: "12px 14px",
+                    border: "none", borderRadius: "8px",
+                    backgroundColor: "#fff",
+                    fontSize: "13px", color: "#1a3a4a",
+                    outline: "none", boxSizing: "border-box",
+                    fontFamily: "'usual', system-ui, sans-serif",
+                  }}
+                />
 
                 <textarea
+                  ref={messageRef}
                   placeholder="Your Message (optional)"
                   rows={3}
                   style={{
@@ -280,17 +305,17 @@ function HeroV2() {
                   }}
                 />
 
-                <button type="submit" style={{
+                <button type="submit" disabled={loading} style={{
                   width: "100%", padding: "14px",
-                  backgroundColor: "#e86531", color: "#fff",
+                  backgroundColor: loading ? "#a0a4ac" : "#e86531", color: "#fff",
                   border: "none", borderRadius: "8px",
                   fontWeight: 700, fontSize: "14px",
-                  cursor: "pointer",
+                  cursor: loading ? "not-allowed" : "pointer",
                   fontFamily: "'usual', system-ui, sans-serif",
                   marginTop: "4px",
                   letterSpacing: "0.3px",
                 }}>
-                  Book Now
+                  {loading ? "Booking..." : "Book Now"}
                 </button>
 
                 <p style={{ textAlign: "center", fontSize: "11px", color: "rgba(255,255,255,0.35)", fontFamily: "'usual', system-ui, sans-serif", margin: "10px 0 0" }}>

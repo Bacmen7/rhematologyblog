@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useState } from "react"
 import Header from "../components/Header"
 import BriefingFooter from "../components/BriefingFooter"
+import ClinicAddress from "../components/ClinicAddress"
 import specialists from "../data/specialists"
 
 function DoctorProfile() {
@@ -21,7 +22,7 @@ function DoctorProfile() {
             <Link to="/" className="text-teal-soft font-semibold underline">Back to home</Link>
           </div>
         </div>
-        <BriefingFooter />
+        <ClinicAddress />
       </div>
     )
   }
@@ -574,7 +575,7 @@ function DoctorProfile() {
         </div>
       </section>
 
-      <BriefingFooter />
+      <ClinicAddress />
     </div>
   )
 }

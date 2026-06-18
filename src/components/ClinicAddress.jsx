@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 const locations = [
   {
@@ -16,18 +16,30 @@ const locations = [
   },
 ]
 
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUDPYes__c1Zt8e_DM7Q5kgdiBIfFfPLrTr8MouZa1je8uGW8LgO6j83uE0qO_3RU0/exec"
+
 function ClinicAddress() {
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const nameRef = useRef(null)
+  const phoneRef = useRef(null)
+  const messageRef = useRef(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const form = e.target
-    const name = form[0].value
-    const phone = form[1].value
-    const message = form[2].value
-    const subject = encodeURIComponent("New Appointment Request - Omni Rheuma")
-    const body = encodeURIComponent(`Name: ${name}\nPhone: ${phone}\nMessage: ${message || "—"}`)
-    window.open(`mailto:omnirheuma@gmail.com?subject=${subject}&body=${body}`)
+    if (loading) return
+    setLoading(true)
+    try {
+      await fetch(APPS_SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify({
+          name: nameRef.current?.value || "",
+          phone: phoneRef.current?.value || "",
+          message: messageRef.current?.value || "",
+          source: "clinic-form",
+        }),
+      })
+    } catch (_) {}
     window.location.href = "/thank-you"
   }
 
@@ -100,27 +112,31 @@ function ClinicAddress() {
           ) : (
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
               <input
+                ref={nameRef}
                 type="text"
                 placeholder="Name"
                 required
                 style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
               />
               <input
+                ref={phoneRef}
                 type="tel"
                 placeholder="Phone"
                 required
                 style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
               />
               <textarea
+                ref={messageRef}
                 placeholder="Post Your Problem (optional)"
                 rows={4}
                 style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", resize: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
               />
               <button
                 type="submit"
-                style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: "#e86531", color: "#fff", padding: "14px", borderRadius: "8px", fontWeight: 700, fontSize: "15px", border: "none", marginTop: "4px", cursor: "pointer", fontFamily: "var(--font-base)" }}
+                disabled={loading}
+                style={{ display: "block", width: "100%", textAlign: "center", backgroundColor: loading ? "#a0a4ac" : "#e86531", color: "#fff", padding: "14px", borderRadius: "8px", fontWeight: 700, fontSize: "15px", border: "none", marginTop: "4px", cursor: loading ? "not-allowed" : "pointer", fontFamily: "var(--font-base)" }}
               >
-                Book Appointment
+                {loading ? "Booking..." : "Book Appointment"}
               </button>
               <p style={{ textAlign: "center", fontSize: "12px", color: "#999", margin: 0, fontFamily: "var(--font-base)" }}>
                 We call back within 24 hours · No spam
