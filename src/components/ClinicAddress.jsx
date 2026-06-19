@@ -2,17 +2,16 @@ import { useState, useRef } from "react"
 
 const locations = [
   {
-    name: "Manipal",
+    name: "Omni Rheuma Clinics: Rachenahalli, Thanisandra",
     address: "No. 42 & 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077",
   },
   {
-    name: "Consulting Hours",
-    address: "Mon – Sat, 9:00 AM – 9:00 PM",
+    name: "Manipal Hospital: Hebbal",
+    address: "Manipal Hospital, Hebbal, Bengaluru",
   },
   {
-    name: "Video Consultation",
-    address: "Available Online – Consult from anywhere in India",
-    isVideo: true,
+    name: "Manipal Hospital: Yelahanka",
+    address: "Manipal Hospital, Yelahanka, Bengaluru",
   },
 ]
 
@@ -50,17 +49,20 @@ function ClinicAddress() {
         <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(15, 97, 110, 0.82)" }} />
       </div>
 
+      <div style={{ position: "relative", zIndex: 1, width: "100%", paddingTop: "3rem", textAlign: "center" }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: "3rem", letterSpacing: "-0.5px" }}>
+          Our Addresses
+        </h2>
+      </div>
+
       <div className="clinic-address-layout" style={{ position: "relative", zIndex: 1, width: "100%" }}>
 
         {/* Left: Addresses */}
-        <div style={{ flex: "1 1 0", padding: "3rem 2rem 2rem 3rem" }}>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: "2.5rem", letterSpacing: "-0.5px" }}>
-            Our Addresses
-          </h2>
+        <div style={{ flex: "1 1 0", padding: "0 2rem 2rem 3rem" }}>
 
           <div className="clinic-locations-grid">
             {locations.map((loc, i) => (
-              <div key={i} className={i < locations.length - 1 ? "clinic-location-divider" : ""} style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center", gap: "10px", padding: "0 24px", borderRight: i < locations.length - 1 ? "1px solid rgba(255,255,255,0.25)" : "none" }}>
+              <div key={i} className={i < locations.length - 1 ? "clinic-location-divider" : ""} style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", gap: "10px", padding: "0 24px", borderRight: i < locations.length - 1 ? "1px solid rgba(255,255,255,0.25)" : "none" }}>
                 {/* Pin icon */}
                 <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.15)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                   {loc.isVideo ? (
@@ -78,21 +80,13 @@ function ClinicAddress() {
                 {/* Vertical divider (except last col) */}
                 <div>
                   <p style={{ fontWeight: 700, color: "#fff", fontSize: "16px", margin: "0 0 6px", fontFamily: "var(--font-base)" }}>{loc.name}</p>
-                  <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "17px", lineHeight: 1.65, margin: 0, fontFamily: "var(--font-base)" }}>{loc.address}</p>
+                  <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "17px", lineHeight: 1.65, margin: 0, fontFamily: "var(--font-base)", textAlign: "left" }}>{loc.address}</p>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Get in touch */}
-          <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
-            <p style={{ fontWeight: 700, fontSize: "22px", color: "#fff", marginBottom: "6px", fontFamily: "var(--font-display)" }}>Get in touch</p>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", fontFamily: "var(--font-base)" }}>
-              <a href="tel:+918290638358" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>+91 82906 38358</a>
-              &nbsp;|&nbsp;
-              <a href="mailto:omnirheuma@gmail.com" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>omnirheuma@gmail.com</a>
-            </p>
-          </div>
         </div>
 
         {/* Right: Book Consultation Form */}
@@ -141,12 +135,22 @@ function ClinicAddress() {
                 {loading ? "Booking..." : "Book Appointment"}
               </button>
               <p style={{ textAlign: "center", fontSize: "12px", color: "#999", margin: "2px 0 0", fontFamily: "var(--font-base)" }}>
-                We call back within 24 hours · No spam
+                We call back within 1 hour · No spam
               </p>
             </form>
           )}
         </div>
 
+      </div>
+
+      {/* Full-width contact bar */}
+      <div style={{ textAlign: "center", padding: "1.5rem 1rem 2rem", position: "relative", zIndex: 1 }}>
+        <p style={{ fontWeight: 700, fontSize: "20px", color: "#fff", marginBottom: "6px", fontFamily: "var(--font-display)" }}>For appointments, please call</p>
+        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", fontFamily: "var(--font-base)" }}>
+          <a href="tel:+918290638358" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>+91 82906 38358</a>
+          &nbsp;|&nbsp;
+          <a href="mailto:omnirheuma@gmail.com" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>omnirheuma@gmail.com</a>
+        </p>
       </div>
     </section>
   )

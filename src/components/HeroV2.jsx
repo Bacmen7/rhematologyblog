@@ -265,6 +265,9 @@ function HeroV2() {
                   </svg>
                 )}
               </button>
+              <p style={{ textAlign: "center", fontSize: "12px", color: "#999", margin: "2px 0 0", fontFamily: "var(--font-base)" }}>
+                We call back within 1 hour · No spam
+              </p>
 
             </form>
           </div>
@@ -328,15 +331,6 @@ function HeroV2() {
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
             </svg>
-          </a>
-          <a
-            href="tel:+918290638358"
-            style={{ display: "inline-flex", alignItems: "center", gap: "6px", color: "#0f616e", padding: "13px 24px", borderRadius: "100px", fontWeight: 700, fontSize: "14px", textDecoration: "none", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e86531" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.51a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            Call Now
           </a>
         </div>
         <div style={{ position: "relative", width: "100%", height: "260px" }}>

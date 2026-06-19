@@ -269,8 +269,8 @@ p {
   }
   .clinic-form-panel {
     flex: none;
-    width: auto;
-    margin: 1rem 1rem 0 !important;
+    width: calc(100% - 2rem) !important;
+    margin: 1rem 1rem 2.5rem !important;
     order: -1;
   }
   .clinic-locations-grid {
@@ -281,6 +281,13 @@ p {
     border-right: none !important;
     border-bottom: 1px solid rgba(255,255,255,0.25);
     padding-bottom: 24px !important;
+  }
+  .clinic-locations-grid > div {
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .clinic-locations-grid > div p {
+    text-align: center !important;
   }
 }
 
