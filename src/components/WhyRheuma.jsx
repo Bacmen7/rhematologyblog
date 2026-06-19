@@ -1,166 +1,184 @@
-const s = { stroke: "#0f616e", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round", fill: "none" }
+import { useRef, useEffect, useCallback } from "react"
 
 const conditions = [
   {
     name: "Rheumatoid Arthritis",
-    description: "Autoimmune joint inflammation affecting hands, wrists, feet, and larger joints.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2" />
-        <path d="M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2" />
-        <path d="M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8" />
-        <path d="M6 14v1a6 6 0 006 6h0a6 6 0 006-6v-5a2 2 0 00-2-2 2 2 0 00-2 2v-2.5" />
-      </svg>
-    ),
+    image: "/rheumatic/RheumatoidArthritis.webp",
   },
   {
     name: "Psoriatic Arthritis",
-    description: "Joint pain and swelling linked with psoriasis, nail changes, and tendon pain.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <path d="M12 2a5 5 0 015 5c0 3-2 5-5 7-3-2-5-4-5-7a5 5 0 015-5z" />
-        <circle cx="12" cy="7" r="1.5" fill="#0f616e" stroke="none" />
-        <path d="M8 17c0 2.5 1.8 4 4 4s4-1.5 4-4" />
-        <path d="M9 20h6" />
-      </svg>
-    ),
+    image: "/rheumatic/Psoriatic_Arthritis.webp",
   },
   {
     name: "Lupus",
-    description: "A systemic autoimmune condition that can involve skin, joints, kidneys, and blood.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-      </svg>
-    ),
+    image: "/rheumatic/Lupus.webp",
   },
   {
     name: "Osteoarthritis",
-    description: "Wear-and-tear cartilage changes causing stiffness, pain, and reduced mobility.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <circle cx="12" cy="5" r="3" />
-        <path d="M12 8v4" />
-        <path d="M9 12h6" />
-        <path d="M9 12l-2 8" />
-        <path d="M15 12l2 8" />
-        <path d="M7 20h10" />
-      </svg>
-    ),
+    image: "/rheumatic/joint_pain.webp",
   },
   {
     name: "Gout",
-    description: "Sudden painful joint attacks caused by uric acid crystal buildup.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-      </svg>
-    ),
+    image: "/rheumatic/Gout.webp",
   },
   {
     name: "Spondylitis",
-    description: "Inflammatory spine and sacroiliac joint pain, often worse with rest.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <path d="M12 2v20" />
-        <path d="M9 5h6" />
-        <path d="M8 9h8" />
-        <path d="M8 13h8" />
-        <path d="M9 17h6" />
-        <path d="M10 21h4" />
-      </svg>
-    ),
+    image: "/rheumatic/Spondylitis.webp",
   },
   {
     name: "Vasculitis",
-    description: "Inflammation of blood vessels that may affect skin, nerves, kidneys, or lungs.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <path d="M12 2a8 8 0 00-8 8c0 5 8 12 8 12s8-7 8-12a8 8 0 00-8-8z" />
-        <path d="M12 6v4l2 2" />
-      </svg>
-    ),
+    image: "/rheumatic/Vasculitis.webp",
   },
   {
     name: "Undiagnosed",
-    description: "Persistent joint pain, swelling, stiffness, fatigue, or unexplained autoimmune symptoms.",
-    icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" {...s}>
-        <circle cx="12" cy="12" r="10" />
-        <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
-        <circle cx="12" cy="17" r=".5" fill="#0f616e" stroke="none" />
-      </svg>
-    ),
+    image: "/rheumatic/Undiagoned.webp",
   },
 ]
 
 function WhyRheuma() {
+  const scrollRef = useRef(null)
+  const isScrolling = useRef(false)
+
+  // 3 sets: [...conditions, ...conditions, ...conditions]
+  // Start in the middle set so we can scroll both directions
+  const tripled = [...conditions, ...conditions, ...conditions]
+
+  // On mount, jump to the middle set (no animation)
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    // Wait for render
+    requestAnimationFrame(() => {
+      const oneSetWidth = el.scrollWidth / 3
+      el.scrollLeft = oneSetWidth
+    })
+  }, [])
+
+  // When scroll settles, silently jump back to middle set if we've gone too far
+  const handleScroll = useCallback(() => {
+    if (isScrolling.current) return
+    const el = scrollRef.current
+    if (!el) return
+    const oneSetWidth = el.scrollWidth / 3
+    if (el.scrollLeft < oneSetWidth * 0.15) {
+      el.style.scrollBehavior = "auto"
+      el.scrollLeft += oneSetWidth
+      el.style.scrollBehavior = "smooth"
+    } else if (el.scrollLeft > oneSetWidth * 1.85) {
+      el.style.scrollBehavior = "auto"
+      el.scrollLeft -= oneSetWidth
+      el.style.scrollBehavior = "smooth"
+    }
+  }, [])
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el) return
+    let timeout
+    const onScroll = () => {
+      clearTimeout(timeout)
+      timeout = setTimeout(handleScroll, 100)
+    }
+    el.addEventListener("scroll", onScroll)
+    return () => { el.removeEventListener("scroll", onScroll); clearTimeout(timeout) }
+  }, [handleScroll])
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      isScrolling.current = true
+      scrollRef.current.scrollBy({ left: direction === "left" ? -400 : 400, behavior: "smooth" })
+      setTimeout(() => { isScrolling.current = false }, 500)
+    }
+  }
+
   return (
-    <section className="custom-approach-section" style={{ backgroundColor: "#f4f6f8", padding: "4.75rem 0 4.25rem" }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div style={{ textAlign: "center", marginBottom: "3.5rem" }}>
-          <h2 style={{
-            color: "#0f616e",
-            fontFamily: "var(--font-display)",
-            fontWeight: 700,
-            fontSize: "clamp(1.9rem, 3vw, 2.45rem)",
-            lineHeight: 1.18,
-            margin: "0 0 14px",
-          }}>
-            Our Specialities In Rheumatology
+    <section className="custom-approach-section" style={{ backgroundColor: "#e8f4f8", overflow: "hidden" }}>
+
+      {/* ── Mobile Layout ── */}
+      <div className="block md:hidden">
+        <div className="px-5 pt-12 pb-8 text-center">
+          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "2.25rem", lineHeight: 1.15, letterSpacing: "-0.5px", marginBottom: "16px" }}>
+            Expert care for all rheumatic symptoms and conditions
           </h2>
-          <p style={{
-            color: "#2f2f2f",
-            fontFamily: "var(--font-base)",
-            fontSize: "15px",
-            lineHeight: 1.7,
-            maxWidth: "680px",
-            margin: "0 auto",
-          }}>
-            From osteoarthritis to complex autoimmune disorders, we diagnose and treat rheumatic and autoimmune conditions.
+          <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)" }}>
+            From osteoarthritis to complex autoimmune disorders, we diagnose and treat{" "}
+            <strong style={{ color: "#ffffff", background: "#1AA3B5", padding: "2px 8px", borderRadius: "4px", fontWeight: 600 }}>rheumatic and autoimmune conditions</strong>.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "16px" }}>
-          {conditions.map((condition) => (
-            <article key={condition.name} style={{
-              backgroundColor: "#fff",
-              borderRadius: "14px",
-              padding: "24px 20px",
-              border: "1px solid #e2eef0",
-              display: "flex", flexDirection: "column", gap: "12px",
-            }}>
-              <div style={{
-                width: "48px", height: "48px", borderRadius: "12px",
-                backgroundColor: "#e8f4f6",
-                display: "flex", alignItems: "center", justifyContent: "center",
-                flexShrink: 0,
-              }}>
-                {condition.icon}
+        <div className="flex gap-4 overflow-x-auto px-4 pb-8" style={{ scrollbarWidth: "none", msOverflowStyle: "none", WebkitOverflowScrolling: "touch" }}>
+          {conditions.map((c) => (
+              <div key={c.name} className="flex-shrink-0 flex flex-col items-center" style={{ width: "185px" }}>
+              <div className="w-full overflow-hidden" style={{ height: "245px", borderRadius: "16px" }}>
+                <img src={c.image} alt={c.name} className="w-full h-full object-cover" />
               </div>
-              <h3 style={{
-                color: "#0f616e",
-                fontFamily: "var(--font-base)",
-                fontSize: "18px",
-                fontWeight: 700,
-                lineHeight: 1.25,
-                margin: 0,
-              }}>
-                {condition.name}
-              </h3>
-              <p style={{
-                color: "#555",
-                fontFamily: "var(--font-base)",
-                fontSize: "17px",
-                lineHeight: 1.65,
-                margin: 0,
-              }}>
-                {condition.description}
+              <p style={{ fontSize: "13px", fontWeight: 700, color: "#0f616e", fontFamily: "var(--font-base)", marginTop: "10px", textAlign: "center", lineHeight: 1.3 }}>
+                {c.name}
               </p>
-            </article>
+            </div>
           ))}
         </div>
       </div>
+
+      {/* ── Desktop Layout ── */}
+      <div className="hidden md:block" style={{ paddingTop: "5rem", paddingBottom: "4rem" }}>
+        {/* Header -centered */}
+        <div className="max-w-7xl mx-auto px-6 text-center" style={{ marginBottom: "3.5rem" }}>
+          <h2 style={{ color: "#0f616e", fontFamily: "var(--font-display)", fontWeight: 400, fontSize: "clamp(2rem, 4vw, 3.2rem)", lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
+            Expert care for all rheumatic
+            <br />
+            symptoms and conditions
+          </h2>
+          <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5E5E5E", fontFamily: "var(--font-base)", maxWidth: "600px", margin: "0 auto" }}>
+            From osteoarthritis to complex autoimmune disorders, we diagnose and treat{" "}
+            <strong style={{ color: "#ffffff", background: "#1AA3B5", padding: "2px 8px", borderRadius: "4px", fontWeight: 600 }}>rheumatic and autoimmune conditions</strong>.
+          </p>
+        </div>
+
+        {/* Image carousel -full width with arrows */}
+        <div className="relative">
+          {/* Left arrow -white border circle, white arrow */}
+          <button
+            onClick={() => scroll("left")}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors"
+            style={{ border: "2px solid #ffffff", backgroundColor: "transparent" }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="#ffffff" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M15 19l-7-7 7-7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {/* Right arrow -white border circle, white arrow */}
+          <button
+            onClick={() => scroll("right")}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center cursor-pointer hover:bg-white/10 transition-colors"
+            style={{ border: "2px solid #ffffff", backgroundColor: "transparent" }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="#ffffff" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path d="M9 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </button>
+
+          {/* Scrollable track */}
+          <div
+            ref={scrollRef}
+            className="flex overflow-x-auto px-12"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none", scrollBehavior: "smooth" }}
+          >
+            {tripled.map((c, i) => (
+              <div key={`${c.name}-${i}`} className="flex-shrink-0 flex flex-col items-center cursor-pointer group" style={{ width: "272px", padding: "0 clamp(14px, 1.111vw, 16px)" }}>
+                <div className="w-full overflow-hidden" style={{ height: "340px", borderRadius: "20px" }}>
+                  <img src={c.image} alt={c.name} className="w-full h-full object-contain" />
+                </div>
+                <p className="w-full text-center" style={{ fontSize: "16px", fontWeight: 600, color: "#182439", fontFamily: "var(--font-base)", marginTop: "16px", lineHeight: 1.3, paddingInline: "6px" }}>
+                  {c.name}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
     </section>
   )
 }

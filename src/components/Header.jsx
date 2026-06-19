@@ -134,16 +134,17 @@ function Header() {
       }`}
     >
       <div className="px-6 lg:px-10 h-[88px] flex items-center justify-between">
-        {/* ===== Left: Logo + Mobile Call ===== */}
-        <div className="flex items-center gap-3">
+        {/* ===== Left: Logo ===== */}
+        <div className="flex items-center">
           <Link to="/" className="flex items-center" aria-label="Omni Rheuma home">
             <img src="/logo.png" alt="Omni Rheuma logo" className="h-28 w-28 object-contain" />
           </Link>
         </div>
 
         {/* ===== Center: Nav ===== */}
-        {/* <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center">
           <nav className="hidden md:flex items-center gap-1">
+            {/* What We Cover - Dropdown */}
             <button
               aria-expanded={whatWeCoverOpen}
               className={`relative inline-flex items-center gap-1 px-3.5 py-2 rounded-lg transition-all duration-200 ${
@@ -166,6 +167,8 @@ function Header() {
                 expand_more
               </span>
             </button>
+
+            {/* Regular nav links */}
             {desktopNav.map((item) => (
               <Link
                 key={item.label}
@@ -177,34 +180,60 @@ function Header() {
               </Link>
             ))}
           </nav>
-        </div> */}
+        </div>
 
         {/* ===== Right: Actions ===== */}
         <div className="flex items-center gap-2 md:gap-3">
-          {/* Call Now CTA */}
-          <a
-            href="tel:+918290638358"
+          {/* Search */}
+          <button className="hidden lg:flex items-center justify-center w-10 h-10 rounded-xl text-navy-muted hover:text-navy-deep hover:bg-navy-deep/[0.04] transition-all duration-200">
+            <span className="material-symbols-outlined text-[22px]">search</span>
+          </button>
+
+          {/* Book Consultation CTA */}
+          <Link
+            to="/book-appointment"
             className="hidden md:inline-flex items-center gap-2 text-white pl-5 pr-4 py-2.5 rounded-full font-bold text-[13px] tracking-wide transition-all duration-300 hover:opacity-90 group"
             style={{ backgroundColor: "#e86531" }}
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.51a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            Call Now
-          </a>
+            Book Consultation
+            <span className="w-5 h-5 rounded-full bg-white/20 inline-flex items-center justify-center group-hover:bg-white/30 transition-colors">
+              <ArrowRight size={14} />
+            </span>
+          </Link>
 
-          {/* Mobile Call Now CTA */}
-          <a
-            href="tel:+918290638358"
-            className="md:hidden inline-flex items-center gap-2 text-white pl-4 pr-5 py-2.5 rounded-full font-bold text-[14px] tracking-wide"
-            style={{ backgroundColor: "#e86531" }}
-            aria-label="Call us"
+          {/* Mobile Menu Toggle */}
+          <button
+            aria-label="Toggle menu"
+            aria-expanded={mobileMenuOpen}
+            className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl text-navy-deep hover:bg-navy-deep/[0.04] transition-colors"
+            onClick={() => {
+              setMobileMenuOpen((prev) => !prev)
+              setWhatWeCoverOpen(false)
+            }}
+            type="button"
           >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.51a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
-            </svg>
-            Call Now
-          </a>
+            <div className="relative w-5 h-5 flex items-center justify-center">
+              <span
+                className="absolute h-[2px] w-5 bg-current rounded-full transition-all duration-300"
+                style={{
+                  transform: mobileMenuOpen ? "rotate(45deg)" : "translateY(-4px)",
+                }}
+              />
+              <span
+                className="absolute h-[2px] w-5 bg-current rounded-full transition-all duration-300"
+                style={{
+                  opacity: mobileMenuOpen ? 0 : 1,
+                  transform: mobileMenuOpen ? "scaleX(0)" : "scaleX(1)",
+                }}
+              />
+              <span
+                className="absolute h-[2px] w-5 bg-current rounded-full transition-all duration-300"
+                style={{
+                  transform: mobileMenuOpen ? "rotate(-45deg)" : "translateY(4px)",
+                }}
+              />
+            </div>
+          </button>
         </div>
       </div>
 
@@ -295,14 +324,14 @@ function Header() {
               transition: "opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1) 400ms, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1) 400ms",
             }}
           >
-            <a
-              href="#book-consultation"
-              onClick={(e) => { e.preventDefault(); closeMobileMenu(); setTimeout(() => document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }), 350) }}
+            <Link
+              to="/book-appointment"
               className="w-full max-w-[300px] text-center text-white py-4 rounded-2xl font-bold text-[15px] transition-all shadow-[0_4px_20px_rgba(232,101,49,0.3)] hover:opacity-90"
-              style={{ backgroundColor: "#e86531", cursor: "pointer" }}
+              style={{ backgroundColor: "#e86531" }}
+              onClick={closeMobileMenu}
             >
               Book Consultation
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -550,15 +579,15 @@ function Header() {
             >
               <p className="text-[14px] font-semibold text-navy-deep mb-2">Not sure where to start?</p>
               <p className="text-[13px] text-navy-muted mb-3">Our specialists can help identify your condition and the right treatment plan.</p>
-              <a
-                href="#book-consultation"
-                onClick={(e) => { e.preventDefault(); closeWhatWeCover(); setTimeout(() => document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }), 350) }}
+              <Link
+                to="/book-appointment"
                 className="inline-flex items-center gap-2 text-[13px] font-bold text-white px-5 py-2.5 rounded-full transition-all hover:opacity-90"
-                style={{ backgroundColor: "#e86531", cursor: "pointer" }}
+                style={{ backgroundColor: "#e86531" }}
+                onClick={closeWhatWeCover}
               >
                 Book Consultation
                 <ArrowRight size={14} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>

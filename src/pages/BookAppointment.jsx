@@ -83,7 +83,7 @@ export default function BookAppointment() {
                 Fill in a few details below and our team will reach out shortly to arrange a time that works for you.
               </p>
 
-              {/* Row 1- Full Name + Age */}
+              {/* Row 1 — Full Name + Age */}
               <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr", gap: "20px" }} className="sm:grid">
                 <Field label="Full Name" required>
                   <input
@@ -110,7 +110,7 @@ export default function BookAppointment() {
                 </Field>
               </div>
 
-              {/* Row 2- Phone + Condition */}
+              {/* Row 2 — Phone + Condition */}
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
                 <Field label="Phone Number" required>
                   <input
@@ -137,7 +137,7 @@ export default function BookAppointment() {
                 </Field>
               </div>
 
-              {/* Row 3- Message full width */}
+              {/* Row 3 — Message full width */}
               <Field label="Message to the Doctor">
                 <textarea
                   placeholder="Briefly describe your symptoms, how long you have had them, and any questions you would like to ask."

@@ -117,9 +117,12 @@ function Testimonials() {
                   {r.quote}
                 </p>
               </div>
-              <p className="mt-4 sm:mt-6 text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-navy-muted">
-                -{r.name}
-              </p>
+              <div className="mt-4 sm:mt-6 flex items-center justify-between">
+                <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold text-navy-muted">
+                  -{r.name}
+                </p>
+                <img src="/practo.png" alt="Practo" style={{ height: "20px", objectFit: "contain", opacity: 0.7 }} />
+              </div>
             </div>
           ))}
         </div>

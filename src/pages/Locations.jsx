@@ -64,7 +64,7 @@ function Locations() {
               Our Clinics
             </h1>
             <p style={{ fontSize: "18px", lineHeight: 1.7, color: "rgba(255,255,255,0.75)", fontFamily: "var(--font-base)", margin: 0, maxWidth: "600px" }}>
-              Three convenient locations across Bengaluru- walk in or book an appointment online.
+              Three convenient locations across Bengaluru — walk in or book an appointment online.
             </p>
           </div>
           <div style={{ lineHeight: 0, backgroundColor: "#0f616e" }}>
