@@ -33,7 +33,7 @@ function HeroStats() {
             <p
               style={{
                 fontFamily: "var(--font-base)",
-                fontSize: "14px",
+                fontSize: "17px",
                 fontWeight: 500,
                 color: "rgba(255,255,255,0.88)",
                 marginTop: "8px",

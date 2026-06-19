@@ -55,6 +55,7 @@
 body {
   margin: 0;
   font-family: var(--font-base);
+  font-size: 17px;
   background: var(--color-background-light);
   color: var(--color-navy-deep);
   letter-spacing: 0.015em;

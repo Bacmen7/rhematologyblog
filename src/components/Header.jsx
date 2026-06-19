@@ -181,22 +181,16 @@ function Header() {
 
         {/* ===== Right: Actions ===== */}
         <div className="flex items-center gap-2 md:gap-3">
-          {/* Search */}
-          <button className="hidden lg:flex items-center justify-center w-10 h-10 rounded-xl text-navy-muted hover:text-navy-deep hover:bg-navy-deep/[0.04] transition-all duration-200">
-            <span className="material-symbols-outlined text-[22px]">search</span>
-          </button>
-
-          {/* Book Consultation CTA */}
+          {/* Call Now CTA */}
           <a
-            href="#book-consultation"
-            onClick={(e) => { e.preventDefault(); document.getElementById("book-consultation")?.scrollIntoView({ behavior: "smooth" }) }}
+            href="tel:+918290638358"
             className="hidden md:inline-flex items-center gap-2 text-white pl-5 pr-4 py-2.5 rounded-full font-bold text-[13px] tracking-wide transition-all duration-300 hover:opacity-90 group"
-            style={{ backgroundColor: "#e86531", cursor: "pointer" }}
+            style={{ backgroundColor: "#e86531" }}
           >
-            Book Consultation
-            <span className="w-5 h-5 rounded-full bg-white/20 inline-flex items-center justify-center group-hover:bg-white/30 transition-colors">
-              <ArrowRight size={14} />
-            </span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.1 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.51a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            Call Now
           </a>
 
           {/* Mobile Call Now CTA */}

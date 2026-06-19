@@ -130,7 +130,7 @@ function ReviewCard({ review }) {
       </div>
 
       {/* Review text */}
-      <p className="text-[13.5px] text-[#4f4f4f] leading-[1.75] mb-3 flex-grow" style={{ fontFamily: "var(--font-base)" }}>
+      <p className="text-[17px] text-[#4f4f4f] leading-[1.75] mb-3 flex-grow" style={{ fontFamily: "var(--font-base)" }}>
         {visibleText}
       </p>
 
@@ -192,27 +192,18 @@ function GoogleReviews() {
               What Are Patients Saying?
             </h2>
             <p
-              className="text-sm text-[#5e5e5e] leading-relaxed"
+              className="text-[17px] text-[#5e5e5e] leading-relaxed"
               style={{ fontFamily: "var(--font-base)", maxWidth: "560px" }}
             >
               With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
             </p>
           </div>
           {/* Review source */}
-          <a
-            href="https://www.practo.com/bangalore/doctor/raghavendra-h-rheumatologist/recommended"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 shrink-0"
-            style={{ textDecoration: "none" }}
-          >
+          <div className="inline-flex items-center gap-3 shrink-0">
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
               <img src="/practo.png" alt="Practo" style={{ height: "36px", width: "auto", display: "block" }} />
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f616e" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
-              </svg>
             </div>
-          </a>
+          </div>
         </div>
 
         {/* Cards carousel */}

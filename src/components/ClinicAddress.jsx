@@ -78,7 +78,7 @@ function ClinicAddress() {
                 {/* Vertical divider (except last col) */}
                 <div>
                   <p style={{ fontWeight: 700, color: "#fff", fontSize: "16px", margin: "0 0 6px", fontFamily: "var(--font-base)" }}>{loc.name}</p>
-                  <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "14px", lineHeight: 1.65, margin: 0, fontFamily: "var(--font-base)" }}>{loc.address}</p>
+                  <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "17px", lineHeight: 1.65, margin: 0, fontFamily: "var(--font-base)" }}>{loc.address}</p>
                 </div>
               </div>
             ))}
@@ -88,13 +88,15 @@ function ClinicAddress() {
           <div style={{ marginTop: "2.5rem", textAlign: "center" }}>
             <p style={{ fontWeight: 700, fontSize: "22px", color: "#fff", marginBottom: "6px", fontFamily: "var(--font-display)" }}>Get in touch</p>
             <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", fontFamily: "var(--font-base)" }}>
-              +91 82906 38358 &nbsp;|&nbsp; omnirheuma@gmail.com
+              <a href="tel:+918290638358" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>+91 82906 38358</a>
+              &nbsp;|&nbsp;
+              <a href="mailto:omnirheuma@gmail.com" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>omnirheuma@gmail.com</a>
             </p>
           </div>
         </div>
 
         {/* Right: Book Consultation Form */}
-        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "0", padding: "2.25rem 2.5rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "2rem 2rem 2rem 0" }}>
+        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "16px", padding: "2.25rem 2.5rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "2rem 2rem 2rem 0" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, color: "#0f616e", marginBottom: "1.5rem", textAlign: "center" }}>
             Book Your Consultation
           </h3>

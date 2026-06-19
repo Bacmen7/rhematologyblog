@@ -60,7 +60,7 @@ function SymptomQuiz() {
             <h2 className="text-[2.25rem] md:text-[clamp(1.8rem,3.5vw,2.8rem)]" style={{ color: "#ffffff", fontFamily: "var(--font-display)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.8px", marginBottom: "20px" }}>
               When should you see a rheumatologist?
             </h2>
-            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "15px", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>
+            <p style={{ color: "rgba(255,255,255,0.7)", fontSize: "17px", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>
               Answer a few short questions -we'll help you understand whether a specialist consultation would be beneficial.
             </p>
           </div>
@@ -75,10 +75,10 @@ function SymptomQuiz() {
                     Question {currentQ + 1} of {questions.length}
                   </p>
 
-                  <h3 style={{ fontSize: "20px", fontWeight: 600, color: "#ffffff", marginBottom: "8px", fontFamily: "var(--font-display)" }}>
+                  <h3 style={{ fontSize: "22px", fontWeight: 600, color: "#ffffff", marginBottom: "8px", fontFamily: "var(--font-display)" }}>
                     {questions[currentQ].question}
                   </h3>
-                  <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.7)", marginBottom: "28px", fontFamily: "var(--font-base)" }}>
+                  <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.7)", marginBottom: "28px", fontFamily: "var(--font-base)" }}>
                     {questions[currentQ].subtitle}
                   </p>
 
@@ -113,7 +113,7 @@ function SymptomQuiz() {
                   <h3 style={{ fontSize: "22px", fontWeight: 600, color: "#ffffff", marginBottom: "12px", fontFamily: "var(--font-display)" }}>
                     {yesCount >= 3 ? "We recommend seeing a rheumatologist" : "Your symptoms may not require a specialist yet"}
                   </h3>
-                  <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.7)", marginBottom: "24px", fontFamily: "var(--font-base)", lineHeight: 1.7 }}>
+                  <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.7)", marginBottom: "24px", fontFamily: "var(--font-base)", lineHeight: 1.7 }}>
                     {yesCount >= 3
                       ? "Based on your answers, a consultation with a rheumatologist could help identify and manage your condition early."
                       : "However, if symptoms persist or worsen, consider consulting a rheumatologist for a thorough evaluation."}

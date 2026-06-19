@@ -41,14 +41,14 @@ function FAQ() {
         onClick={() => setOpenIndex(openIndex === index ? null : index)}
         style={{ width: "100%", padding: "16px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", background: "#fff", cursor: "pointer", border: "none", textAlign: "left", gap: "12px" }}
       >
-        <span style={{ fontFamily: "var(--font-base)", fontSize: "15px", fontWeight: 600, color: "#1a202c", lineHeight: 1.5 }}>{faq.question}</span>
+        <span style={{ fontFamily: "var(--font-base)", fontSize: "17px", fontWeight: 600, color: "#1a202c", lineHeight: 1.5 }}>{faq.question}</span>
         {openIndex === index
           ? <Minus size={16} style={{ color: "#0f616e", flexShrink: 0 }} />
           : <Plus size={16} style={{ color: "#0f616e", flexShrink: 0 }} />
         }
       </button>
       {openIndex === index && (
-        <div style={{ padding: "0 20px 16px", paddingTop: "12px", fontSize: "14px", color: "#64748b", lineHeight: 1.7, borderTop: "1px solid #e2e8f0", fontFamily: "var(--font-base)" }}>
+        <div style={{ padding: "0 20px 16px", paddingTop: "12px", fontSize: "17px", color: "#64748b", lineHeight: 1.7, borderTop: "1px solid #e2e8f0", fontFamily: "var(--font-base)" }}>
           {faq.answer}
         </div>
       )}

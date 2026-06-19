@@ -141,7 +141,7 @@ function WhyRheuma() {
               <h3 style={{
                 color: "#0f616e",
                 fontFamily: "var(--font-base)",
-                fontSize: "15px",
+                fontSize: "18px",
                 fontWeight: 700,
                 lineHeight: 1.25,
                 margin: 0,
@@ -151,7 +151,7 @@ function WhyRheuma() {
               <p style={{
                 color: "#555",
                 fontFamily: "var(--font-base)",
-                fontSize: "13px",
+                fontSize: "17px",
                 lineHeight: 1.65,
                 margin: 0,
               }}>
