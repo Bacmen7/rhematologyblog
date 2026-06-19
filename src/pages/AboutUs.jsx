@@ -17,7 +17,7 @@ const steps = [
   { num: 3, title: "Treatment & follow-up", desc: "A personalised treatment plan is created. We monitor your progress and adjust therapy for the best long-term outcome." },
 ]
 
-const qualifications = ["MBBS", "MD — Internal Medicine", "DM — Rheumatology"]
+const qualifications = ["MBBS", "MD- Internal Medicine", "DM- Rheumatology"]
 
 const specialistStats = [
   { num: "15+", label: "Years experience" },

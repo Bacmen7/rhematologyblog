@@ -1,8 +1,8 @@
 const stats = [
-  { number: "1500+", label: "Patients Treated" },
-  { number: "90%+", label: "Relief in 10 Weeks" },
+  { number: "15,000+", label: "Patients Treated" },
+  { number: "1 Hr", label: "Call Back Guarantee" },
   { number: "14+", label: "Years of Expertise" },
-  { number: "4.5", label: "Google Rating" },
+  { number: "4.9 / 5", label: "Patient Satisfaction Rating" },
 ]
 
 function HeroStats() {

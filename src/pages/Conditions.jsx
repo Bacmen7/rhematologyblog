@@ -20,7 +20,7 @@ const categoryLinks = [
 
 const videos = [
   { image: "/content-thumbs/psa-video.webp", title: "What is Rheumatoid Arthritis? Causes, Symptoms & When To See A Doctor" },
-  { image: "/content-thumbs/lupus-video.webp", title: "Osteoarthritis vs Rheumatoid Arthritis — What's the difference?" },
+  { image: "/content-thumbs/lupus-video.webp", title: "Osteoarthritis vs Rheumatoid Arthritis- What's the difference?" },
   { image: "/content-thumbs/fibromyalgia-video.webp", title: "How to recognise rheumatic disease: Key warning signs" },
 ]
 

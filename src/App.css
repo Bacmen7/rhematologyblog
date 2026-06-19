@@ -1,4 +1,4 @@
-/* Guide article fonts — match home page */
+/* Guide article fonts- match home page */
 .guide-article-content {
   font-family: var(--font-base) !important;
 }
@@ -29,7 +29,7 @@
   font-family: var(--font-base) !important;
 }
 
-/* Guide article h2 — bold underline line below, with space */
+/* Guide article h2- bold underline line below, with space */
 .guide-article-content h2 {
   text-decoration: none !important;
   border-bottom: 2px solid #c8d0dc !important;
@@ -37,7 +37,7 @@
   margin-bottom: 2rem !important;
 }
 
-/* Section dividers — breathing room above each section */
+/* Section dividers- breathing room above each section */
 .guide-article-content [data-toc-section]:not(:first-of-type) {
   border-top: none !important;
   padding-top: 1.75rem !important;
@@ -78,15 +78,15 @@
 }
 
 /* Keep section spacing tighter across landing page */
-.landing-page main > div > section:not(.custom-approach-section),
-.landing-page main > section:not(.custom-approach-section) {
+.landing-page main > div > section:not(.custom-approach-section):not(.hero-v2-section):not(.hero-stats-section),
+.landing-page main > section:not(.custom-approach-section):not(.hero-v2-section):not(.hero-stats-section) {
   padding-top: 4.5rem !important;
   padding-bottom: 4.5rem !important;
 }
 
 @media (max-width: 768px) {
-  .landing-page main > div > section:not(.custom-approach-section),
-  .landing-page main > section:not(.custom-approach-section) {
+  .landing-page main > div > section:not(.custom-approach-section):not(.hero-v2-section):not(.hero-stats-section),
+  .landing-page main > section:not(.custom-approach-section):not(.hero-v2-section):not(.hero-stats-section) {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
   }

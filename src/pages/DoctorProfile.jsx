@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useState } from "react"
 import Header from "../components/Header"
 import BriefingFooter from "../components/BriefingFooter"
+import ClinicAddress from "../components/ClinicAddress"
 import specialists from "../data/specialists"
 
 function DoctorProfile() {
@@ -21,7 +22,7 @@ function DoctorProfile() {
             <Link to="/" className="text-teal-soft font-semibold underline">Back to home</Link>
           </div>
         </div>
-        <BriefingFooter />
+        <ClinicAddress />
       </div>
     )
   }
@@ -563,10 +564,10 @@ function DoctorProfile() {
               <div className="flex items-center gap-2 text-white">
                 <span className="text-sm sm:text-[15px] text-gray-100 opacity-90">or</span>
                 <a
-                  href="tel:+918290638358"
+                  href="tel:+918001025555"
                   className="text-sm sm:text-[15px] font-semibold underline decoration-2 underline-offset-[6px] hover:text-[#1AA3B5] transition-colors text-white"
                 >
-                  call +91 82906 38358
+                  call 1800 102 5555
                 </a>
               </div>
             </div>
@@ -574,7 +575,7 @@ function DoctorProfile() {
         </div>
       </section>
 
-      <BriefingFooter />
+      <ClinicAddress />
     </div>
   )
 }

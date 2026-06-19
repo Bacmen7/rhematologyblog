@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 
 const bullets = [
   "Rheumatoid Arthritis, Gout, Lupus, Ankylosing Spondylitis and more",
-  "1500+ patients treated successfully",
+  "15,000+ patients treated successfully",
   "Advanced therapies for joint health and overall wellbeing",
 ]
 
@@ -49,7 +49,7 @@ function HeroV2() {
         maxWidth: "1400px",
         margin: "0 auto",
         display: "grid",
-        gridTemplateColumns: "1fr 400px 340px",
+        gridTemplateColumns: "1fr 370px 400px",
         minHeight: "560px",
         alignItems: "center",
         padding: "3rem clamp(1.5rem, 4vw, 4rem)",
@@ -115,7 +115,7 @@ function HeroV2() {
                 style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
               />
               <img
-                src="/images/hero-slide-1.webp"
+                src="/images/hero-slide-3.webp"
                 alt="Patient"
                 style={{ position: "absolute", top: "9%", left: "9%", width: "82%", height: "82%", objectFit: "cover", objectPosition: "center top", borderRadius: "10px" }}
               />
@@ -163,7 +163,7 @@ function HeroV2() {
         </div>
 
         {/* CENTER: form card */}
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "center", order: 3, }}>
           <div style={{
             backgroundColor: "#fff",
             borderRadius: "16px",
@@ -251,16 +251,17 @@ function HeroV2() {
                   </svg>
                 )}
               </button>
+
             </form>
           </div>
         </div>
 
         {/* RIGHT: ring + hero image */}
-        <div className="hero-img-desktop" style={{
+        <div className="hero-img-desktop" style={{ order: 2,
           position: "relative",
           minHeight: "480px",
           display: "flex",
-          alignItems: "center",
+          alignItems: "flex-end",
           justifyContent: "center",
         }}>
           {/* Ring background */}
@@ -278,18 +279,18 @@ function HeroV2() {
           />
           {/* Hero slide image on top of ring */}
           <img
-            src="/images/hero-slide-1.webp"
+            src="/images/hero-slide-3.webp"
             alt="Patient"
             style={{
               position: "absolute",
               zIndex: 2,
-              width: "82%",
-              height: "82%",
-              objectFit: "cover",
-              objectPosition: "center top",
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              objectPosition: "center center",
               borderRadius: "12px",
-              top: "9%",
-              left: "9%",
+              top: "0%",
+              left: "0%",
             }}
           />
         </div>
@@ -326,7 +327,7 @@ function HeroV2() {
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
         />
         <img
-          src="/images/hero-slide-1.webp"
+          src="/images/hero-slide-3.webp"
           alt="Patient"
           style={{ position: "absolute", top: "9%", left: "9%", width: "82%", height: "82%", objectFit: "cover", objectPosition: "center top", borderRadius: "10px" }}
         />
@@ -337,6 +338,7 @@ function HeroV2() {
         @media (max-width: 1024px) {
           .hero-v2-inner {
             grid-template-columns: 1fr 360px !important;
+            order: unset !important;
           }
           .hero-img-desktop {
             display: none !important;

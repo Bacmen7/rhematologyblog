@@ -18,8 +18,8 @@ function Footer() {
               The definitive clinical resource for autoimmune and musculoskeletal medicine. Peer-reviewed, evidence-based, and physician-led.
             </p>
             <div className="space-y-2 text-sm font-semibold text-teal-soft mb-6">
-              <a href="tel:+918290638358" className="block hover:text-primary">+91 82906 38358</a>
-              <a href="mailto:omnirheuma@gmail.com" className="block hover:text-primary">omnirheuma@gmail.com</a>
+              <a href="tel:+919833943177" className="block hover:text-primary">+91 9833943177</a>
+              <a href="mailto:chirag@navighealth.com" className="block hover:text-primary">chirag@navighealth.com</a>
             </div>
             <div className="flex gap-4">
               <a className="w-10 h-10 rounded-full bg-teal-soft/10 flex items-center justify-center text-teal-soft hover:bg-primary transition-colors" href="#">
@@ -45,7 +45,7 @@ function Footer() {
         </div>
         <div className="border-t border-teal-soft/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-xs text-teal-soft/60">Medical disclaimer: This content is for professional educational purposes only.</p>
-          <p className="text-xs text-teal-soft/60">&copy; 2024 Omni Rheuma Medical Media.</p>
+          <p className="text-xs text-teal-soft/60">&copy; 2024 Omni Rheuma Medical Media. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 
 const locations = [
   {
-    name: "Manipal Hospital",
+    name: "",
     address: "No. 42 & 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077",
   },
   {
@@ -53,7 +53,7 @@ function ClinicAddress() {
       <div className="clinic-address-layout" style={{ position: "relative", zIndex: 1, width: "100%" }}>
 
         {/* Left: Addresses */}
-        <div style={{ flex: "1 1 0", padding: "3rem 2rem 3rem 3rem" }}>
+        <div style={{ flex: "1 1 0", padding: "3rem 2rem 2rem 3rem" }}>
           <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: "2.5rem", letterSpacing: "-0.5px" }}>
             Our Addresses
           </h2>
@@ -96,8 +96,8 @@ function ClinicAddress() {
         </div>
 
         {/* Right: Book Consultation Form */}
-        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "16px", padding: "2.25rem 2.5rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "2rem 2rem 2rem 0" }}>
-          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, color: "#0f616e", marginBottom: "1.5rem", textAlign: "center" }}>
+        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "16px", padding: "1.5rem 2rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "1.5rem 1.5rem 1.5rem 0", alignSelf: "center" }}>
+          <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 700, color: "#0f616e", marginBottom: "1rem", textAlign: "center" }}>
             Book Your Consultation
           </h3>
 
@@ -112,7 +112,7 @@ function ClinicAddress() {
               <p style={{ fontFamily: "var(--font-base)", fontSize: "14px", color: "#666", margin: 0 }}>We'll call you back within 24 hours.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
               <input
                 ref={nameRef}
                 type="text"
@@ -130,7 +130,7 @@ function ClinicAddress() {
               <textarea
                 ref={messageRef}
                 placeholder="Post Your Problem (optional)"
-                rows={4}
+                rows={2}
                 style={{ width: "100%", padding: "13px 16px", border: "1.5px solid #e2e8f0", borderRadius: "8px", fontSize: "14px", color: "#333", outline: "none", resize: "none", boxSizing: "border-box", fontFamily: "var(--font-base)", backgroundColor: "#fff" }}
               />
               <button
@@ -140,7 +140,7 @@ function ClinicAddress() {
               >
                 {loading ? "Booking..." : "Book Appointment"}
               </button>
-              <p style={{ textAlign: "center", fontSize: "12px", color: "#999", margin: 0, fontFamily: "var(--font-base)" }}>
+              <p style={{ textAlign: "center", fontSize: "12px", color: "#999", margin: "2px 0 0", fontFamily: "var(--font-base)" }}>
                 We call back within 24 hours · No spam
               </p>
             </form>

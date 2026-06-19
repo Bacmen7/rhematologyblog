@@ -15,8 +15,8 @@ function RheumaCareFooter() {
               <img src="/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
             </a>
             <div className="mt-6 space-y-2 text-sm font-semibold">
-              <a href="tel:+918290638358" className="block text-gray-400 hover:text-white transition-colors">+91 82906 38358</a>
-              <a href="mailto:omnirheuma@gmail.com" className="block text-gray-400 hover:text-white transition-colors">omnirheuma@gmail.com</a>
+              <a href="tel:+919833943177" className="block text-gray-400 hover:text-white transition-colors">+91 9833943177</a>
+              <a href="mailto:chirag@navighealth.com" className="block text-gray-400 hover:text-white transition-colors">chirag@navighealth.com</a>
             </div>
           </div>
           {Object.entries(footerSections).map(([title, links]) => (

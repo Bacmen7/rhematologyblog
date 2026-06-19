@@ -1,60 +1,53 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
-
-const doctors = [
-  // { name: "Dr. Priya Menon", title: "Senior Consultant Rheumatologist", img: "/images/dr-elena.webp" },
-  { name: "Dr. Raghavendra H", title: "Rheumatologist", img: "/raghav.webp" },
-  // { name: "Dr. Sarah Miller", title: "Clinical Rheumatologist", img: "/images/dr-sarah-miller.webp" },
-  // { name: "Dr. James Chen", title: "Rheumatologist & Researcher", img: "/images/dr-james.webp" },
-]
+import specialists from "../data/specialists.js"
 
 function MeetDoctors() {
-  const [start, setStart] = useState(0)
-  const canPrev = start > 0
-  const canNext = start < doctors.length - 4
-
   return (
-    <section style={{ backgroundColor: "#e0f3f5", padding: "4rem 0" }}>
+    <section className="py-16 md:py-24 pb-24 md:pb-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div style={{ marginBottom: "2rem", textAlign: "center" }}>
-          <h2 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "clamp(1.75rem, 4vw, 2.5rem)", fontWeight: 400, lineHeight: 1.1, letterSpacing: "-0.5px", marginBottom: "0.75rem" }}>
-            Meet Our Rheumatology Specialists
+        <div className="mb-12 text-center">
+          <h2 style={{ fontFamily: "var(--font-display)", fontWeight: 400, letterSpacing: "-0.8px", color: "#0f616e", marginBottom: "12px" }} className="text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            Meet Our <span style={{ color: "#1AA3B5" }}>Specialist</span>
           </h2>
-          <p style={{ fontSize: "16px", lineHeight: 1.7, color: "#5e5e5e", margin: "0 auto", maxWidth: "560px" }}>
+          <p style={{ fontSize: "15px", color: "#5E5E5E", lineHeight: 1.7, fontFamily: "var(--font-base)" }}>
             Our board-certified expert represents the global frontier of autoimmune research and clinical care.
           </p>
         </div>
 
-        {/* Doctor Cards */}
-        <div className="flex gap-5 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:flex md:justify-center md:gap-6 md:overflow-visible md:pb-0">
-          {doctors.map((doc, i) => (
-            <div key={i} className="min-w-[70vw] sm:min-w-[260px] md:min-w-0 md:w-[300px] snap-start flex flex-col">
-              {/* Image */}
-              <div className="overflow-hidden" style={{ backgroundColor: "#f5c6b0", borderRadius: 0 }}>
-                <img
-                  src={doc.img}
-                  alt={doc.name}
-                  className="w-full h-[280px] sm:h-[320px] object-cover object-top"
-                />
-              </div>
-              {/* Info */}
-              <div style={{ paddingTop: "1rem" }}>
+        {/* Single Doctor Card */}
+        <div className="max-w-[320px] sm:max-w-[360px] mx-auto">
+          <div className="flex flex-col">
+            {/* Image */}
+            <Link to={`/specialist/${specialists[0].id}`} className="block overflow-hidden bg-[#e0f3f5]">
+              <img
+                src={specialists[0].image}
+                alt={specialists[0].name}
+                className="w-full h-[300px] sm:h-[340px] object-cover object-top transition-transform duration-300 hover:scale-[1.02]"
+              />
+            </Link>
+
+            {/* Info */}
+            <div style={{ paddingTop: "1rem" }}>
+              <Link to={`/specialist/${specialists[0].id}`} className="inline-block">
                 <h3 className="text-navy-deep" style={{ fontFamily: "var(--font-display)", fontSize: "1.15rem", fontWeight: 400, lineHeight: 1.25, marginBottom: "0.25rem" }}>
-                  {doc.name}
+                  {specialists[0].name}
                 </h3>
-                <p className="text-[13px]" style={{ color: "#5e5e5e", marginBottom: "0.75rem" }}>{doc.title}</p>
-                <Link
-                  to="/specialist/1"
-                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
-                  style={{ color: "#0f616e" }}
-                >
-                  Read bio
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6" /></svg>
-                </Link>
-              </div>
+              </Link>
+              <p className="text-[13px]" style={{ color: "#5e5e5e", marginBottom: "0.75rem" }}>Rheumatologist</p>
+              <Link
+                to={`/specialist/${specialists[0].id}`}
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold underline underline-offset-4 decoration-1 hover:opacity-70 transition-opacity"
+                style={{ color: "#0f616e" }}
+              >
+                Read bio
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M7 17L17 7" />
+                  <path d="M7 7h10v10" />
+                </svg>
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
