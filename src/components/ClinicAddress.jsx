@@ -2,7 +2,7 @@ import { useState, useRef } from "react"
 
 const locations = [
   {
-    name: "",
+    name: "Manipal Hospital",
     address: "No. 42 & 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077",
   },
   {
