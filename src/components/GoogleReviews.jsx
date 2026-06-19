@@ -195,7 +195,7 @@ function GoogleReviews() {
               className="text-[17px] text-[#5e5e5e] leading-relaxed"
               style={{ fontFamily: "var(--font-base)", maxWidth: "560px" }}
             >
-              With over 2,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
+              With over 15,000 patients treated at our rheumatology practice, and specialist expertise in autoimmune conditions, you can trust us to deliver expert care and consistent results.
             </p>
           </div>
           {/* Review source */}
