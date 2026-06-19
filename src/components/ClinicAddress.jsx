@@ -54,7 +54,7 @@ function ClinicAddress() {
           </div>
 
           {/* Also practices at */}
-          <p style={{ color: "#fff", fontSize: "18px", fontFamily: "var(--font-base)", margin: "0 0 14px", paddingLeft: "70px", lineHeight: 1.6 }}>
+          <p style={{ color: "#fff", fontSize: "18px", fontFamily: "var(--font-base)", margin: "1.5rem 0 14px", paddingLeft: "70px", lineHeight: 1.6 }}>
             Dr Raghavendra also practices at Manipal Hospital (Hebbal and Yelahanka)
           </p>
 
