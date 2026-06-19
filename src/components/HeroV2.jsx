@@ -1,4 +1,10 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
+
+const heroSlides = [
+  "/images/slide.png",
+  "/images/slide2.png",
+  "/images/slide3.png",
+]
 
 const bullets = [
   "Rheumatoid Arthritis, Gout, Lupus, Ankylosing Spondylitis and more",
@@ -12,6 +18,14 @@ const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUDPYes__c1Zt8
 
 function HeroV2() {
   const [loading, setLoading] = useState(false)
+  const [slideIndex, setSlideIndex] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIndex((prev) => (prev + 1) % heroSlides.length)
+    }, 3000)
+    return () => clearInterval(timer)
+  }, [])
   const nameRef = useRef(null)
   const phoneRef = useRef(null)
   const cityRef = useRef(null)
@@ -115,7 +129,7 @@ function HeroV2() {
                 style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
               />
               <img
-                src="/images/hero-slide-3.webp"
+                src="/images/slide.png"
                 alt="Patient"
                 style={{ position: "absolute", top: "9%", left: "9%", width: "82%", height: "82%", objectFit: "cover", objectPosition: "center top", borderRadius: "10px" }}
               />
@@ -277,22 +291,27 @@ function HeroV2() {
               zIndex: 1,
             }}
           />
-          {/* Hero slide image on top of ring */}
-          <img
-            src="/images/hero-slide-3.webp"
-            alt="Patient"
-            style={{
-              position: "absolute",
-              zIndex: 2,
-              width: "100%",
-              height: "100%",
-              objectFit: "contain",
-              objectPosition: "center center",
-              borderRadius: "12px",
-              top: "0%",
-              left: "0%",
-            }}
-          />
+          {/* Hero slide images — carousel */}
+          {heroSlides.map((src, i) => (
+            <img
+              key={src}
+              src={src}
+              alt="Patient"
+              style={{
+                position: "absolute",
+                zIndex: 2,
+                width: "100%",
+                height: "100%",
+                objectFit: "contain",
+                objectPosition: "center center",
+                borderRadius: "12px",
+                top: "0%",
+                left: "0%",
+                opacity: i === slideIndex ? 1 : 0,
+                transition: "opacity 0.7s ease",
+              }}
+            />
+          ))}
         </div>
 
       </div>
@@ -326,11 +345,14 @@ function HeroV2() {
           alt=""
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
         />
-        <img
-          src="/images/hero-slide-3.webp"
-          alt="Patient"
-          style={{ position: "absolute", top: "9%", left: "9%", width: "82%", height: "82%", objectFit: "cover", objectPosition: "center top", borderRadius: "10px" }}
-        />
+        {heroSlides.map((src, i) => (
+          <img
+            key={src}
+            src={src}
+            alt="Patient"
+            style={{ position: "absolute", top: "9%", left: "9%", width: "82%", height: "82%", objectFit: "contain", borderRadius: "10px", opacity: i === slideIndex ? 1 : 0, transition: "opacity 0.7s ease" }}
+          />
+        ))}
         </div>
       </div>
 
