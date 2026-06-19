@@ -1,20 +1,5 @@
 import { useState, useRef } from "react"
 
-const locations = [
-  {
-    name: "Omni Rheuma Clinics: Rachenahalli, Thanisandra",
-    address: "No. 42 & 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077",
-  },
-  {
-    name: "Manipal Hospital: Hebbal",
-    address: "Manipal Hospital, Hebbal, Bengaluru",
-  },
-  {
-    name: "Manipal Hospital: Yelahanka",
-    address: "Manipal Hospital, Yelahanka, Bengaluru",
-  },
-]
-
 const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwUDPYes__c1Zt8e_DM7Q5kgdiBIfFfPLrTr8MouZa1je8uGW8LgO6j83uE0qO_3RU0/exec"
 
 function ClinicAddress() {
@@ -43,54 +28,52 @@ function ClinicAddress() {
   }
 
   return (
-    <section id="book-consultation" style={{ position: "relative", overflow: "hidden" }}>
-      <div style={{ position: "absolute", inset: 0, zIndex: 0 }}>
-        <img src="/h1.webp" alt="" aria-hidden="true" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
-        <div style={{ position: "absolute", inset: 0, backgroundColor: "rgba(15, 97, 110, 0.82)" }} />
-      </div>
-
-      <div style={{ position: "relative", zIndex: 1, width: "100%", paddingTop: "3rem", textAlign: "center" }}>
-        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 700, color: "#fff", textAlign: "center", marginBottom: "3rem", letterSpacing: "-0.5px" }}>
-          Our Addresses
-        </h2>
-      </div>
+    <section id="book-consultation" style={{ position: "relative", overflow: "hidden", backgroundColor: "#0f616e" }}>
 
       <div className="clinic-address-layout" style={{ position: "relative", zIndex: 1, width: "100%" }}>
 
-        {/* Left: Addresses */}
-        <div style={{ flex: "1 1 0", padding: "0 2rem 2rem 3rem" }}>
+        {/* Left: Address content */}
+        <div style={{ flex: "1 1 0", padding: "1rem 2rem 1rem 4rem", display: "flex", flexDirection: "column", justifyContent: "center" }}>
 
-          <div className="clinic-locations-grid">
-            {locations.map((loc, i) => (
-              <div key={i} className={i < locations.length - 1 ? "clinic-location-divider" : ""} style={{ display: "flex", flexDirection: "column", alignItems: "flex-start", textAlign: "left", gap: "10px", padding: "0 24px", borderRight: i < locations.length - 1 ? "1px solid rgba(255,255,255,0.25)" : "none" }}>
-                {/* Pin icon */}
-                <div style={{ width: "48px", height: "48px", borderRadius: "50%", backgroundColor: "rgba(255,255,255,0.15)", border: "2px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                  {loc.isVideo ? (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="23 7 16 12 23 17 23 7" />
-                      <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                    </svg>
-                  ) : (
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                  )}
-                </div>
-                {/* Vertical divider (except last col) */}
-                <div>
-                  <p style={{ fontWeight: 700, color: "#fff", fontSize: "16px", margin: "0 0 6px", fontFamily: "var(--font-base)" }}>{loc.name}</p>
-                  <p style={{ color: "rgba(255,255,255,0.78)", fontSize: "17px", lineHeight: 1.65, margin: 0, fontFamily: "var(--font-base)", textAlign: "left" }}>{loc.address}</p>
-                </div>
-              </div>
-            ))}
+          {/* Clinic name + address with icon */}
+          <div style={{ display: "flex", alignItems: "flex-start", gap: "20px", marginBottom: "14px" }}>
+            <div style={{ width: "50px", height: "50px", borderRadius: "50%", border: "1.5px solid rgba(255,255,255,0.4)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0, marginTop: "4px" }}>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div style={{ flex: 1 }}>
+              <p style={{ fontWeight: 700, color: "#fff", fontSize: "26px", margin: "0 0 14px", fontFamily: "var(--font-base)", lineHeight: 1.3 }}>
+                Omni Rheuma Clinics: Rachenahalli, Thanisandra
+              </p>
+              <p style={{ color: "rgba(255,255,255,0.9)", fontSize: "18px", lineHeight: 1.7, margin: 0, fontFamily: "var(--font-base)", maxWidth: "520px" }}>
+                No. 42 &amp; 25, 1st Floor, 80 Feet Road, Dr. Shiva Ram Karanth Nagar, MCEHS Layout, Rachenahalli, Thanisandra, above Pepperfry Furniture, RK Hegde Nagar, Bengaluru - 560077
+              </p>
+            </div>
           </div>
 
-          {/* Get in touch */}
+          {/* Also practices at */}
+          <p style={{ color: "#fff", fontSize: "18px", fontFamily: "var(--font-base)", margin: "0 0 14px", paddingLeft: "70px", lineHeight: 1.6 }}>
+            Dr Raghavendra also practices at Manipal Hospital (Hebbal and Yelahanka)
+          </p>
+
+          {/* Contact */}
+          <div style={{ paddingLeft: "70px", marginTop: "1.5rem" }}>
+            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: "15px", fontFamily: "var(--font-base)", margin: "0 0 12px", textTransform: "uppercase", letterSpacing: "1.5px", fontWeight: 600 }}>
+              For appointments, please call
+            </p>
+            <p style={{ margin: 0, fontFamily: "var(--font-base)", fontSize: "20px" }}>
+              <a href="tel:+918290638358" style={{ color: "#fff", textDecoration: "none", fontWeight: 700 }}>+91 82906 38358</a>
+              <span style={{ color: "rgba(255,255,255,0.35)", margin: "0 14px" }}>|</span>
+              <a href="mailto:omnirheuma@gmail.com" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none", fontWeight: 400 }}>omnirheuma@gmail.com</a>
+            </p>
+          </div>
+
         </div>
 
         {/* Right: Book Consultation Form */}
-        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "16px", padding: "1.5rem 2rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "1.5rem 1.5rem 1.5rem 0", alignSelf: "center" }}>
+        <div className="clinic-form-panel" style={{ backgroundColor: "#fff", borderRadius: "16px", padding: "1.5rem 2rem", boxShadow: "0 8px 40px rgba(0,0,0,0.25)", margin: "0.75rem 8rem 0.75rem 2rem", alignSelf: "center" }}>
           <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 700, color: "#0f616e", marginBottom: "1rem", textAlign: "center" }}>
             Book Your Consultation
           </h3>
@@ -103,7 +86,7 @@ function ClinicAddress() {
                 </svg>
               </div>
               <p style={{ fontFamily: "var(--font-display)", fontSize: "1.2rem", fontWeight: 700, color: "#0f616e", margin: "0 0 8px" }}>Successfully Booked!</p>
-              <p style={{ fontFamily: "var(--font-base)", fontSize: "14px", color: "#666", margin: 0 }}>We'll call you back within 24 hours.</p>
+              <p style={{ fontFamily: "var(--font-base)", fontSize: "14px", color: "#666", margin: 0 }}>We'll call you back within 1 hour.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -141,16 +124,6 @@ function ClinicAddress() {
           )}
         </div>
 
-      </div>
-
-      {/* Full-width contact bar */}
-      <div style={{ textAlign: "center", padding: "1.5rem 1rem 2rem", position: "relative", zIndex: 1 }}>
-        <p style={{ fontWeight: 700, fontSize: "20px", color: "#fff", marginBottom: "6px", fontFamily: "var(--font-display)" }}>For appointments, please call</p>
-        <p style={{ color: "rgba(255,255,255,0.85)", fontSize: "16px", fontFamily: "var(--font-base)" }}>
-          <a href="tel:+918290638358" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>+91 82906 38358</a>
-          &nbsp;|&nbsp;
-          <a href="mailto:omnirheuma@gmail.com" style={{ color: "rgba(255,255,255,0.85)", textDecoration: "none" }}>omnirheuma@gmail.com</a>
-        </p>
       </div>
     </section>
   )
