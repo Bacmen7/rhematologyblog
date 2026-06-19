@@ -270,8 +270,10 @@ p {
   .clinic-form-panel {
     flex: none;
     width: calc(100% - 2rem) !important;
-    margin: 1rem 1rem 2.5rem !important;
+    margin: 1rem 1rem 1.5rem !important;
     order: -1;
+    max-width: 480px !important;
+    align-self: center !important;
   }
   .clinic-locations-grid {
     grid-template-columns: 1fr;
@@ -288,6 +290,45 @@ p {
   }
   .clinic-locations-grid > div p {
     text-align: center !important;
+  }
+  /* Mobile: stack icon above content, all centered */
+  .clinic-address-layout > div:first-child {
+    padding: 2rem 1.25rem !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .clinic-address-layout > div:first-child > div:first-child {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 14px !important;
+  }
+  .clinic-address-layout > div:first-child > div:first-child > div:last-child {
+    text-align: center !important;
+  }
+  .clinic-address-layout > div:first-child > div:first-child p {
+    text-align: center !important;
+  }
+  .clinic-address-layout > div:first-child > p {
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+  .clinic-address-layout > div:first-child > div:last-child {
+    padding-left: 0 !important;
+    text-align: center !important;
+  }
+  .clinic-address-layout > div:first-child > div:last-child p:last-child {
+    font-size: 20px !important;
+    line-height: 1.8 !important;
+  }
+  .clinic-address-layout > div:first-child > div:last-child p:last-child a {
+    display: block !important;
+    white-space: nowrap !important;
+  }
+  .clinic-address-layout > div:first-child > div:last-child p:last-child span {
+    display: none !important;
+    visibility: hidden !important;
+    font-size: 0 !important;
   }
 }
 
