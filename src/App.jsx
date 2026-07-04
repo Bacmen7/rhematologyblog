@@ -1,152 +1,31 @@
 import Header from "./components/Header"
-import Hero from "./components/Hero"
-import HeroNew from "./components/HeroNew"
 import HeroV2 from "./components/HeroV2"
 import HeroStats from "./components/HeroStats"
-import WhyChooseCards from "./components/WhyChooseCards"
 import ComparisonTable from "./components/ComparisonTable"
-import HealthGuideHero from "./components/HealthGuideHero"
-import ApproachSection from "./components/ApproachSection"
-import CategoryFilters from "./components/CategoryFilters"
-import QuickLinks from "./components/QuickLinks"
-import FeaturedInsights from "./components/FeaturedInsights"
-import RAArticles from "./components/RAArticles"
-import PsAArticles from "./components/PsAArticles"
-import Specialists from "./components/Specialists"
-import WhyRheumaCare from "./components/WhyRheumaCare"
 import DrProfile from "./components/DrProfile"
-import TreatmentOfferings from "./components/TreatmentOfferings"
-import MeetDoctors from "./components/MeetDoctors"
-import Testimonials from "./components/Testimonials"
-import CTASection from "./components/CTASection"
-import StatsBar from "./components/StatsBar"
-import InsurancePartners from "./components/InsurancePartners"
-import ConditionsGrid from "./components/ConditionsGrid"
-import PatientControl from "./components/PatientControl"
 import WhyRheuma from "./components/WhyRheuma"
-import OmniRheumaAbout from "./components/OmniRheumaAbout"
-
-import BriefingHero from "./components/BriefingHero"
-import FocusJAK from "./components/FocusJAK"
-import FocusDiagnostic from "./components/FocusDiagnostic"
-import ResearchUpdates from "./components/ResearchUpdates"
-import ExploreTopics from "./components/ExploreTopics"
 import FAQ from "./components/FAQ"
-import WellnessSeminars from "./components/WellnessSeminars"
-import StrategicNetwork from "./components/StrategicNetwork"
-import Newsletter from "./components/Newsletter"
-import CtaBanner from "./components/CtaBanner"
-import BriefingFooter from "./components/BriefingFooter"
-import PrivacyBanner from "./components/PrivacyBanner"
 import GoogleReviews from "./components/GoogleReviews"
 import ClinicAddress from "./components/ClinicAddress"
-import SpecializedCare from "./components/SpecializedCare"
 import SymptomQuiz from "./components/SymptomQuiz"
-import SuccessStories from "./components/SuccessStories"
-import VideoLibrary from "./components/VideoLibrary"
+import ConsultPopup from "./components/ConsultPopup"
 
 function App() {
   return (
     <div className="landing-page bg-background-light text-navy-deep antialiased">
+      <ConsultPopup />
       <Header />
       <main>
-        {/* ═══════════════════════════════════════════════
-            ZONE 1 -INTRO & DISCOVERY
-        ═══════════════════════════════════════════════ */}
-        {/* <Hero /> */}
-        {/* <HeroNew /> */}
         <HeroV2 />
         <HeroStats />
-        {/* <WhyChooseCards /> */}
         <ComparisonTable />
-        {/* <StatsBar /> */}
-        {/* <WhyRheumaCare /> */}
         <DrProfile />
-        {/* <PatientControl /> */}
-
-        {/* <InsurancePartners /> */}
-        {/* <ConditionsGrid /> */}
-
         <WhyRheuma />
-
-        {/* <SpecializedCare /> */}
-
-        {/* <OmniRheumaAbout /> */}
         <SymptomQuiz />
-
-        {/* <div className="bg-white">
-          <CategoryFilters />
-        </div> */}
-
-        {/* <div className="bg-white">
-          <FeaturedInsights />
-        </div> */}
-
-        {/* ═══════════════════════════════════════════════
-            ZONE 2 -HEALTH GUIDE & CONDITIONS
-        ═══════════════════════════════════════════════ */}
-        {/* <HealthGuideHero /> */}
-        {/* <QuickLinks /> */}
-
-        {/* <div className="bg-white">
-          <RAArticles />
-        </div>
-
-        <div className="bg-ghost">
-          <PsAArticles />
-        </div> */}
-
-        {/* ═══════════════════════════════════════════════
-            ZONE 3 -CLINICAL EXPERTISE & SPECIALISTS
-        ═══════════════════════════════════════════════ */}
-        {/* <TreatmentOfferings /> */}
-        {/* <ApproachSection /> */}
-
-        {/* <Specialists /> */}
-
-        {/* <Testimonials /> */}
-
         <GoogleReviews />
-
-        {/* <div className="bg-white">
-          <SuccessStories />
-        </div> */}
-
-        {/* <VideoLibrary /> */}
-
-        {/* ═══════════════════════════════════════════════
-            ZONE 4 -EXECUTIVE BRIEFING & RESEARCH
-        ═══════════════════════════════════════════════ */}
-        {/* <div className="bg-white">
-          <ResearchUpdates />
-        </div> */}
-
-        {/* ═══════════════════════════════════════════════
-            ZONE 5 -ENGAGE & CONVERT
-        ═══════════════════════════════════════════════ */}
-        {/* <div className="bg-white">
-          <ExploreTopics />
-        </div> */}
-
         <FAQ />
-
-        {/* <WellnessSeminars /> */}
-
-        {/* <StrategicNetwork /> */}
-
         <ClinicAddress />
-
-        {/* <CtaBanner spacerColor="#F5F5F5" /> */}
-
-        {/* <div className="pt-6 md:pt-10 bg-white">
-          <Newsletter />
-        </div> */}
-
-        {/* <CTASection /> */}
       </main>
-
-      {/* <BriefingFooter /> */}
-      {/* <PrivacyBanner /> */}
 
       {/* Floating WhatsApp — mobile only */}
       <a

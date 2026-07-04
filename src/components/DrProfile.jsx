@@ -43,7 +43,7 @@ function DrProfile() {
 
           {/* Mobile photo */}
           <div className="block md:hidden">
-            <img src="/Drraghvendra.jpeg" alt={doc.name} style={{ width: "100%", maxWidth: "320px", display: "block", margin: "8px 0" }} />
+            <img src="/rheumatologist-doctor-bangalore/Drraghvendra.jpeg" alt={doc.name} style={{ width: "100%", maxWidth: "320px", display: "block", margin: "8px 0" }} />
           </div>
 
           <p style={{ margin: 0, fontSize: "15px", fontWeight: 600, color: "#fff" }}>
@@ -98,7 +98,7 @@ function DrProfile() {
         {/* Right: Photo */}
         <div style={{ flex: "0 0 auto", width: "420px", marginLeft: "40px" }} className="hidden md:block">
           <img
-            src="/Drraghvendra.jpeg"
+            src="/rheumatologist-doctor-bangalore/Drraghvendra.jpeg"
             alt={doc.name}
             style={{ width: "420px", display: "block", objectFit: "contain", maxWidth: "100%" }}
           />

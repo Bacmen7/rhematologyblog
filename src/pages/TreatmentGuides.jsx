@@ -460,7 +460,7 @@ function TreatmentGuides() {
               style={{ borderRadius: "10px" }}
             >
               <div className="h-56 overflow-hidden">
-                <img src="/treatmnetguide/v1.webp" alt="Treatment journey" className="w-full h-full object-cover object-top" />
+                <img src="/rheumatologist-doctor-bangalore/treatmnetguide/v1.webp" alt="Treatment journey" className="w-full h-full object-cover object-top" />
               </div>
               <div className="p-6">
                 <h3

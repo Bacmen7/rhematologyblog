@@ -165,7 +165,7 @@ function OsteoarthritisGuide() {
             {/* Right: Image */}
             <div className="hidden md:block" style={{ width: "420px", height: "280px", flexShrink: 0, overflow: "hidden", alignSelf: "flex-end" }}>
               <img
-                src="/OA.webp"
+                src="/rheumatologist-doctor-bangalore/OA.webp"
                 alt="Osteoarthritis"
                 style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "center bottom", display: "block" }}
               />
@@ -608,7 +608,7 @@ function OsteoarthritisGuide() {
                   </div>
                   <div style={{ backgroundColor: "#0f616e", color: "#ffffff", padding: "20px 22px", fontFamily: "var(--font-base)", flex: "0 0 auto" }}>
                     <div className="flex items-center gap-3" style={{ marginBottom: "12px" }}>
-                      <img src="/raghav.webp" alt="Dr. Raghavendra H" className="w-12 h-12 rounded-full object-cover object-top bg-[#f0cfc4] shrink-0" />
+                      <img src="/rheumatologist-doctor-bangalore/raghav.webp" alt="Dr. Raghavendra H" className="w-12 h-12 rounded-full object-cover object-top bg-[#f0cfc4] shrink-0" />
                       <div>
                         <p style={{ fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "rgba(255,255,255,0.62)", marginBottom: "5px" }}>Medically reviewed by</p>
                         <p style={{ fontSize: "16px", fontWeight: 700, lineHeight: 1.2, color: "#ffffff" }}>Dr. Raghavendra H</p>

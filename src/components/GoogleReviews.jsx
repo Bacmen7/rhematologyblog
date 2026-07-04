@@ -156,7 +156,7 @@ function ReviewCard({ review }) {
 
       {/* Source marker */}
       <div className="flex items-center justify-end">
-        <img src="/practo.png" alt="Practo" style={{ height: "20px", width: "auto", display: "block" }} />
+        <img src="/rheumatologist-doctor-bangalore/practo.png" alt="Practo" style={{ height: "20px", width: "auto", display: "block" }} />
       </div>
     </div>
   )
@@ -201,7 +201,7 @@ function GoogleReviews() {
           {/* Review source */}
           <div className="inline-flex items-center gap-3 shrink-0">
             <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-              <img src="/practo.png" alt="Practo" style={{ height: "36px", width: "auto", display: "block" }} />
+              <img src="/rheumatologist-doctor-bangalore/practo.png" alt="Practo" style={{ height: "36px", width: "auto", display: "block" }} />
             </div>
           </div>
         </div>

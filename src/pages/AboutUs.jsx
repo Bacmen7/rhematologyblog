@@ -176,7 +176,7 @@ export default function AboutUs() {
           </div>
           <div style={{ flex: "0.98 1 420px", minHeight: "560px", position: "relative", overflow: "hidden" }}>
             <div style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}>
-              <img src="/ri.webp" alt="Rheumatology specialist caring for a patient" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
+              <img src="/rheumatologist-doctor-bangalore/ri.webp" alt="Rheumatology specialist caring for a patient" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(15,97,110,0.12), transparent 18%)", pointerEvents: "none" }} />
             </div>
           </div>
@@ -251,7 +251,7 @@ export default function AboutUs() {
           <div className="flex flex-col items-start lg:flex-row" style={{ gap: "40px" }}>
             <div className="flex w-full shrink-0 flex-col lg:w-64" style={{ gap: "16px" }}>
               <div className="aspect-square w-full max-w-[260px] overflow-hidden rounded-2xl border border-[#0f616e]/20 bg-[#e0f3f5]">
-                <img src="/raghav.webp" alt="Dr. Raghavendra H" className="h-full w-full object-cover object-top" />
+                <img src="/rheumatologist-doctor-bangalore/raghav.webp" alt="Dr. Raghavendra H" className="h-full w-full object-cover object-top" />
               </div>
               <div>
                 <h3 className="text-xl font-normal text-[#0f2e33]">Dr. Raghavendra H</h3>

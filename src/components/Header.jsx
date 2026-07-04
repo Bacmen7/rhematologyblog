@@ -137,7 +137,7 @@ function Header() {
         {/* ===== Left: Logo + Mobile Call ===== */}
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center" aria-label="Omni Rheuma home">
-            <img src="/logo.png" alt="Omni Rheuma logo" className="h-28 w-28 object-contain" />
+            <img src="/rheumatologist-doctor-bangalore/logo.png" alt="Omni Rheuma logo" className="h-28 w-28 object-contain" />
           </Link>
         </div>
 
@@ -229,7 +229,7 @@ function Header() {
           {/* Top Bar */}
           <div className="flex items-center justify-between px-5 pt-5">
             <Link to="/" className="flex items-center" onClick={closeMobileMenu} aria-label="Omni Rheuma home">
-              <img src="/logo.png" alt="Omni Rheuma logo" className="h-24 w-24 object-contain" />
+              <img src="/rheumatologist-doctor-bangalore/logo.png" alt="Omni Rheuma logo" className="h-24 w-24 object-contain" />
             </Link>
             <button
               className="w-10 h-10 rounded-xl bg-navy-deep text-white flex items-center justify-center hover:bg-navy-deep/90 transition-colors"

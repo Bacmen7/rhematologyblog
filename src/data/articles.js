@@ -100,7 +100,7 @@ const allArticles = [
       <p>That's the problem. A red, hot, swollen joint could be either one. It could also be infection, which is a whole different emergency. So the workup matters, and skipping it because "it's probably gout" is how diagnoses get missed.</p>
       <p><strong><u>Gout</u></strong> is caused by monosodium urate (MSU) crystals. These form when uric acid levels in the blood stay elevated over time. <strong><u>Pseudogout</u></strong>, formally called calcium pyrophosphate deposition disease (CPPD), is caused by calcium pyrophosphate (CPP) crystals depositing in cartilage and joint tissue. The mechanism is different, the risk factors are different, and the prevention strategy is different.</p>
 
-      <img src="/images/crystal-deposits.webp" alt="Microscopic crystal deposits in joint tissue" />
+      <img src="/rheumatologist-doctor-bangalore/images/crystal-deposits.webp" alt="Microscopic crystal deposits in joint tissue" />
       <p class="article-img-caption">Crystal arthropathies cause acute joint inflammation when crystals deposit in synovial fluid and trigger an immune response.</p>
 
       <h2 id="clinical-presentation">Clinical presentation</h2>
@@ -294,7 +294,7 @@ const allArticles = [
       <p>The current standard is called <strong>"treat to target."</strong> You pick a goal, usually remission or at least low disease activity, and you adjust medication until you get there. If the first drug doesn't work well enough by 3 months, you don't wait around hoping. You add or switch.</p>
       <p>That sounds straightforward on paper. In practice, finding the right drug or combination for each patient takes trial and error. People respond differently to the same medication, and what works well for one person may do nothing for another.</p>
 
-      <img src="/images/ra-treatment.webp" alt="Doctor discussing treatment plan with RA patient" />
+      <img src="/rheumatologist-doctor-bangalore/images/ra-treatment.webp" alt="Doctor discussing treatment plan with RA patient" />
       <p class="article-img-caption">Treatment decisions in RA are made together with your rheumatologist, based on disease severity, other health conditions, and how you've responded to prior drugs.</p>
 
       <h2 id="dmards">DMARDs: the foundation</h2>
@@ -433,7 +433,7 @@ const allArticles = [
       <p>You'll probably get these drawn at your first rheumatology appointment, sometimes even before. Your primary care doctor may order them based on joint symptoms alone. The results help determine how likely RA is, how aggressive it might be, and how urgently treatment needs to start.</p>
       <p>But there's a catch most patients don't hear about: these tests have limits. A positive result doesn't guarantee RA, and a negative one doesn't rule it out. Understanding what your numbers actually mean, and what they don't, saves a lot of confusion down the road.</p>
 
-      <img src="/images/lab-test.webp" alt="Blood sample tubes in a clinical laboratory" />
+      <img src="/rheumatologist-doctor-bangalore/images/lab-test.webp" alt="Blood sample tubes in a clinical laboratory" />
       <p class="article-img-caption">RF and anti-CCP are usually drawn together at the first rheumatology visit. Results typically come back within a few days.</p>
 
       <h2 id="rf">Rheumatoid factor explained</h2>

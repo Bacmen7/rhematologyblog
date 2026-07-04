@@ -99,7 +99,7 @@ function HealthGuide() {
         {/* ═══════════ HERO ═══════════ */}
         <section style={{ position: "relative", overflow: "hidden", minHeight: "380px" }}>
           {/* BG image full width */}
-          <img src="/h1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
+          <img src="/rheumatologist-doctor-bangalore/h1.webp" alt="" aria-hidden="true" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" }} />
           {/* Dark overlay */}
           <div style={{ position: "absolute", inset: 0, background: "rgba(15,97,110,0.55)", pointerEvents: "none" }} />
           {/* Content */}
@@ -290,7 +290,7 @@ function HealthGuide() {
               <div className="h-full">
                 <div className="overflow-hidden h-full" style={{ minHeight: "100%" }}>
                   <img
-                    src="/k3.webp"
+                    src="/rheumatologist-doctor-bangalore/k3.webp"
                     alt="Rheumatology specialist"
                     className="w-full h-[320px] md:h-[380px] lg:h-full object-cover"
                   />

@@ -8,7 +8,7 @@ function BriefingFooter() {
         {/* Logo & Social */}
         <div className="mb-12">
           <Link to="/" className="inline-flex items-center mb-8" aria-label="Omni Rheuma home">
-            <img src="/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
+            <img src="/rheumatologist-doctor-bangalore/logo.png" alt="Omni Rheuma logo" className="h-40 w-40 object-contain" />
           </Link>
           <div className="flex gap-4 mb-8">
             <a href="#" className="w-10 h-10 rounded-full bg-[#1AA3B5] flex items-center justify-center text-white hover:opacity-80 transition-opacity">

@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect } from "react"
 
 const heroSlides = [
-  "/images/slide.png",
-  "/images/slide2.png",
-  "/images/slide3.png",
+  "/rheumatologist-doctor-bangalore/images/slide.png",
+  "/rheumatologist-doctor-bangalore/images/slide2.png",
+  "/rheumatologist-doctor-bangalore/images/slide3.png",
 ]
 
 const bullets = [
@@ -47,7 +47,7 @@ function HeroV2() {
         }),
       })
     } catch (_) {}
-    window.location.href = "/thank-you"
+    window.location.href = "/rheumatologist-doctor-bangalore/thank-you"
   }
 
   return (
@@ -124,12 +124,12 @@ function HeroV2() {
             {/* Mobile image — right of text */}
             <div className="hero-mobile-img" style={{ position: "relative", height: "220px" }}>
               <img
-                src="/images/Ring.webp"
+                src="/rheumatologist-doctor-bangalore/images/Ring.webp"
                 alt=""
                 style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
               />
               <img
-                src="/images/slide.png"
+                src="/rheumatologist-doctor-bangalore/images/slide.png"
                 alt="Patient"
                 style={{ position: "absolute", top: "9%", left: "9%", width: "82%", height: "82%", objectFit: "cover", objectPosition: "center top", borderRadius: "10px" }}
               />
@@ -283,7 +283,7 @@ function HeroV2() {
         }}>
           {/* Ring background */}
           <img
-            src="/images/Ring.webp"
+            src="/rheumatologist-doctor-bangalore/images/Ring.webp"
             alt=""
             style={{
               position: "absolute",
@@ -335,7 +335,7 @@ function HeroV2() {
         </div>
         <div style={{ position: "relative", width: "100%", height: "260px" }}>
         <img
-          src="/images/Ring.webp"
+          src="/rheumatologist-doctor-bangalore/images/Ring.webp"
           alt=""
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "contain" }}
         />

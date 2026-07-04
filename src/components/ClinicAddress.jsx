@@ -24,7 +24,7 @@ function ClinicAddress() {
         }),
       })
     } catch (_) {}
-    window.location.href = "/thank-you"
+    window.location.href = "/rheumatologist-doctor-bangalore/thank-you"
   }
 
   return (

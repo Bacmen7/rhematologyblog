@@ -48,10 +48,10 @@ function ComparisonTable() {
                 {row}
               </div>
               <div className="comparison-icon-cell" style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
-                <img src="/right_icon.webp" alt="Yes" width="32" height="32" style={{ display: "inline-block" }} />
+                <img src="/rheumatologist-doctor-bangalore/right_icon.webp" alt="Yes" width="32" height="32" style={{ display: "inline-block" }} />
               </div>
               <div className="comparison-icon-cell" style={{ padding: "16px 20px", textAlign: "center", backgroundColor: "#eef6f8" }}>
-                <img src="/wrong_icon.webp" alt="No" width="32" height="32" style={{ display: "inline-block" }} />
+                <img src="/rheumatologist-doctor-bangalore/wrong_icon.webp" alt="No" width="32" height="32" style={{ display: "inline-block" }} />
               </div>
             </div>
           ))}

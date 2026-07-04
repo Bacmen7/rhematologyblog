@@ -14,7 +14,7 @@ function RheumaCareHero() {
         <img
           alt="Medical professional consulting patient"
           className="h-full w-full object-cover object-center"
-          src="/images/hero-consult.webp"
+          src="/rheumatologist-doctor-bangalore/images/hero-consult.webp"
         />
       </div>
     </section>

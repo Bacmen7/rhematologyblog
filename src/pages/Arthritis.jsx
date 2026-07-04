@@ -87,8 +87,8 @@ function Arthritis() {
               </h1>
 
               <div className="flex -space-x-2" style={{ marginBottom: "14px" }}>
-                <img src="/raghav.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
-                <img src="/d1.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/rheumatologist-doctor-bangalore/raghav.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
+                <img src="/rheumatologist-doctor-bangalore/d1.webp" alt="" className="w-10 h-10 rounded-full object-cover object-top border-2 bg-[#e0f3f5]" style={{ borderColor: "rgba(255,255,255,.15)" }} />
               </div>
 
               <div style={{ fontFamily: "usual, Arial, Helvetica, sans-serif", display: "flex", flexDirection: "column", gap: "2px" }}>
@@ -131,7 +131,7 @@ function Arthritis() {
               </div>
               {/* Right -Image */}
               <div className="hidden lg:block">
-                <img src="/images/arthisites.webp" alt="Arthritis overview" className="w-full h-[300px] object-cover" style={{ borderRadius: "12px" }} />
+                <img src="/rheumatologist-doctor-bangalore/images/arthisites.webp" alt="Arthritis overview" className="w-full h-[300px] object-cover" style={{ borderRadius: "12px" }} />
               </div>
             </div>
           </div>
@@ -313,7 +313,7 @@ function Arthritis() {
 
               {/* Left -Joint Diagram (sticky) */}
               <div className="flex-1 mb-12 lg:mb-0 lg:sticky lg:top-[140px] self-start">
-                <img src="/images/joints.webp" alt="Healthy Joint vs Inflamed Joint" className="w-full object-cover" style={{ borderRadius: 0 }} />
+                <img src="/rheumatologist-doctor-bangalore/images/joints.webp" alt="Healthy Joint vs Inflamed Joint" className="w-full object-cover" style={{ borderRadius: 0 }} />
               </div>
 
               {/* Right -3 Steps */}
@@ -571,7 +571,7 @@ function Arthritis() {
               {/* Photo side */}
               <div className="relative h-[260px] lg:h-auto overflow-hidden">
                 <img
-                  src="/images/exercise.webp"
+                  src="/rheumatologist-doctor-bangalore/images/exercise.webp"
                   alt="Person exercising actively"
                   className="w-full h-full object-cover"
                 />
@@ -848,7 +848,7 @@ function Arthritis() {
               {/* Featured card */}
               <div className="rounded-2xl border border-[#e8ecf2] overflow-hidden">
                 <div className="relative h-[320px] overflow-hidden">
-                  <img src="/images/lab-test.webp" alt="" className="w-full h-full object-cover" />
+                  <img src="/rheumatologist-doctor-bangalore/images/lab-test.webp" alt="" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[rgba(15,97,110,.8)] to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="flex items-center gap-1.5 text-[10px] font-bold uppercase text-[#1AA3B5] tracking-[0.06em] mb-1.5">
@@ -985,7 +985,7 @@ function Arthritis() {
                 </div>
                 <div className="flex-1 relative min-h-[200px] md:min-h-[250px]">
                   <img
-                    src="/images/hero-consult.webp"
+                    src="/rheumatologist-doctor-bangalore/images/hero-consult.webp"
                     alt="Doctor consulting with patient"
                     className="w-full block rounded-[4px] absolute bottom-0"
                     style={{ height: "clamp(300px, 50vw, 520px)", objectFit: "cover", objectPosition: "center 20%" }}

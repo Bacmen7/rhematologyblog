@@ -35,7 +35,7 @@ function ScrollToTop() {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/rheumatologist-doctor-bangalore">
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />

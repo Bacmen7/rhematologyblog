@@ -199,7 +199,7 @@ function DoctorProfile() {
             <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
               <div className="flex items-center gap-4 p-4">
                 <div className="w-20 h-20 shrink-0 rounded-xl overflow-hidden" style={{ background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
-                  <img src="/docter.webp" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                  <img src="/rheumatologist-doctor-bangalore/docter.webp" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="text-[#0f616e] truncate" style={{ fontFamily: "var(--font-display)", fontWeight: 300, fontSize: "18px", lineHeight: "1.2", marginBottom: "4px" }}>{doctor.name}</h3>
@@ -468,7 +468,7 @@ function DoctorProfile() {
                 <div className="overflow-hidden bg-white" style={{ borderRadius: "6px" }}>
                   {/* Image with gradient bg */}
                   <div className="relative w-full" style={{ height: "280px", background: "linear-gradient(135deg, #D4F3F2 0%, #e8f4f8 50%, #EEF2F9 100%)" }}>
-                    <img src="/docter.webp" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
+                    <img src="/rheumatologist-doctor-bangalore/docter.webp" alt={doctor.name} className="w-full h-full object-contain object-bottom" />
                   </div>
                   {/* Info */}
                   <div className="p-5 sm:p-6">
